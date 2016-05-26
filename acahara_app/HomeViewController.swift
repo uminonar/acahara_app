@@ -10,12 +10,23 @@ import UIKit
 
 class FirstViewController: UIViewController,UITableViewDelegate,UITableViewDataSource {
     
+    // ボタンを用意
+    var addBtn: UIBarButtonItem!
+    
     var posts:[NSDictionary] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
         homeTableView.registerNib(UINib(nibName: "postCustomCell", bundle: nil), forCellReuseIdentifier: "postCustomCell")
+        
+        // タイトルを付けておきましょう
+        self.title = "Home"
+        
+        // addBtnを設置
+        addBtn = UIBarButtonItem(barButtonSystemItem: .Compose, target: self, action: "onClick")
+        self.navigationItem.rightBarButtonItem = addBtn
+
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -54,6 +65,15 @@ class FirstViewController: UIViewController,UITableViewDelegate,UITableViewDataS
         
     return cell
     }
+    
+    // addBtnをタップしたときのアクション
+    func onClick() {
+        
+        let second = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("AddViewController") as UIViewController
+        
+        self.navigationController?.pushViewController(second, animated: true)
+    }
+
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

@@ -28,8 +28,8 @@ class homeTableViewCell: UITableViewCell {
         
         postPortrait.image = UIImage(named:"selfee1.JPG")
         
-        let volume = FAKFontAwesome.volumeUpIconWithSize(18)
-        let volumeImage = volume.imageWithSize(CGSizeMake(18, 18))
+//        let volume = FAKFontAwesome.volumeUpIconWithSize(18)
+//        let volumeImage = volume.imageWithSize(CGSizeMake(18, 18))
     }
 
     @IBAction func btnMore(sender: UIButton) {
