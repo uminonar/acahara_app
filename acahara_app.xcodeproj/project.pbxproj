@@ -20,6 +20,8 @@
 		0B0094C01CF70D760041B3B5 /* homeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B0094BF1CF70D760041B3B5 /* homeTableViewCell.swift */; };
 		0B0094C21CF715360041B3B5 /* selfee1.JPG in Resources */ = {isa = PBXBuildFile; fileRef = 0B0094C11CF715360041B3B5 /* selfee1.JPG */; };
 		0B03D2901CF7D58E0050119E /* AddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B03D28F1CF7D58E0050119E /* AddViewController.swift */; };
+		0B03D2921CF7F4FB0050119E /* AddWhereViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B03D2911CF7F4FB0050119E /* AddWhereViewController.swift */; };
+		0B03D2941CF7F6050050119E /* AddWhoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B03D2931CF7F6050050119E /* AddWhoViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -62,6 +64,8 @@
 		0B0094C61CF71A9B0041B3B5 /* acahara_appTests-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "acahara_appTests-Bridging-Header.h"; sourceTree = "<group>"; };
 		0B0094C71CF71A9B0041B3B5 /* acahara_appUITests-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "acahara_appUITests-Bridging-Header.h"; sourceTree = "<group>"; };
 		0B03D28F1CF7D58E0050119E /* AddViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddViewController.swift; sourceTree = "<group>"; };
+		0B03D2911CF7F4FB0050119E /* AddWhereViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddWhereViewController.swift; sourceTree = "<group>"; };
+		0B03D2931CF7F6050050119E /* AddWhoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddWhoViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -118,6 +122,8 @@
 				0B0094891CF6FFB90041B3B5 /* AppDelegate.swift */,
 				0B00948B1CF6FFB90041B3B5 /* HomeViewController.swift */,
 				0B03D28F1CF7D58E0050119E /* AddViewController.swift */,
+				0B03D2911CF7F4FB0050119E /* AddWhereViewController.swift */,
+				0B03D2931CF7F6050050119E /* AddWhoViewController.swift */,
 				0B0094BF1CF70D760041B3B5 /* homeTableViewCell.swift */,
 				0B0094B91CF708120041B3B5 /* postCustomCell.xib */,
 				0B00948D1CF6FFB90041B3B5 /* SettingViewController.swift */,
@@ -283,10 +289,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0B03D2941CF7F6050050119E /* AddWhoViewController.swift in Sources */,
 				0B03D2901CF7D58E0050119E /* AddViewController.swift in Sources */,
 				0B00948E1CF6FFB90041B3B5 /* SettingViewController.swift in Sources */,
 				0B00948A1CF6FFB90041B3B5 /* AppDelegate.swift in Sources */,
 				0B0094C01CF70D760041B3B5 /* homeTableViewCell.swift in Sources */,
+				0B03D2921CF7F4FB0050119E /* AddWhereViewController.swift in Sources */,
 				0B00948C1CF6FFB90041B3B5 /* HomeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

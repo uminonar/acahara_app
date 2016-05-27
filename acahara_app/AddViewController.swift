@@ -10,6 +10,8 @@ import UIKit
 
 class AddViewController: UIViewController {
     
+    let myBoundSize: CGSize = UIScreen.mainScreen().bounds.size
+    
     @IBOutlet weak var addBar: UIView!
     @IBOutlet weak var addSelfee: UIImageView!
     @IBOutlet weak var addName: UILabel!
@@ -36,8 +38,6 @@ class AddViewController: UIViewController {
     @IBOutlet weak var addMoviePlus: UIImageView!
     @IBOutlet weak var addMovieFile: UIImageView!
 
-
-    
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -75,8 +75,6 @@ class AddViewController: UIViewController {
         
         // 枠の角を丸くする。
         addTextView.layer.cornerRadius = 8
-    
-
     }
     
     
@@ -86,14 +84,71 @@ class AddViewController: UIViewController {
         addSelfee.image = UIImage(named: "portrait1.JPG")
         //        bottomView.frame = CGRectMake(0, myBoundSize.height-428, 320, 428)
         
+        
+        
+        //ユーザーデフォルトから保存されたデータを取り出す
+        var myDefault = NSUserDefaults.standardUserDefaults()
+        
+        //データを呼び出して
+        var myStr = myDefault.stringForKey("uString")
+        
+        //文字列が入っていたら、表示する
+        print(myStr)
+        addUniversity.text = myStr
+
+        
     }
 
     @IBAction func addSwitch(sender: UISwitch) {
         if sender.on == true { //== trueはなくても良い
             importance.text = "重要"
         }else{
-            importance.text = "通常表示"
+            importance.text = "通常"
     }
+    }
+    
+    func textfieldShouldBeginEditing(textField: UITextField) -> Bool {
+        print(textField.tag)
+        print("addwhen")
+        
+        if textField.tag == 1000{
+            UIView.animateWithDuration(1, animations: { () -> Void in self.addMoveView.frame = CGRectMake(0,333, self.myBoundSize.width, 428)
+                }, completion: { finished in print("addMoveViewを動かした")
+            })
+            return false
+        }
+        
+        if textField.tag == 2000{
+            let addWhere = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("addWhereViewController") as UIViewController
+            
+            presentViewController(addWhere, animated: true, completion: nil)
+            return false
+        }
+        
+        if textField.tag == 3000{
+            let addWhere = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("addWhoViewController") as UIViewController
+            
+            presentViewController(addWhere, animated: true, completion: nil)
+            
+            return false
+        }
+        
+        if textField.tag == 4000{
+            //ユーザーデフォルトを用意する
+            var myDefault = NSUserDefaults.standardUserDefaults()
+            
+            //データを書き込んで
+            myDefault.setObject(sender.text, forKey: "uString")
+            
+            //即反映させる
+            myDefault.synchronize()
+            
+        }
+        
+        
+        
+
+    
     }
 
     override func didReceiveMemoryWarning() {
