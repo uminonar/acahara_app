@@ -15,10 +15,11 @@
 		0B0094961CF6FFB90041B3B5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0B0094941CF6FFB90041B3B5 /* LaunchScreen.storyboard */; };
 		0B0094A11CF6FFB90041B3B5 /* acahara_appTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B0094A01CF6FFB90041B3B5 /* acahara_appTests.swift */; };
 		0B0094AC1CF6FFB90041B3B5 /* acahara_appUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B0094AB1CF6FFB90041B3B5 /* acahara_appUITests.swift */; };
-		0B0094BA1CF708120041B3B5 /* postCutomCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0B0094B91CF708120041B3B5 /* postCutomCell.xib */; };
+		0B0094BA1CF708120041B3B5 /* postCustomCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0B0094B91CF708120041B3B5 /* postCustomCell.xib */; };
 		0B0094BE1CF70C440041B3B5 /* posts in Resources */ = {isa = PBXBuildFile; fileRef = 0B0094BD1CF70C440041B3B5 /* posts */; };
 		0B0094C01CF70D760041B3B5 /* homeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B0094BF1CF70D760041B3B5 /* homeTableViewCell.swift */; };
 		0B0094C21CF715360041B3B5 /* selfee1.JPG in Resources */ = {isa = PBXBuildFile; fileRef = 0B0094C11CF715360041B3B5 /* selfee1.JPG */; };
+		0B03D2901CF7D58E0050119E /* AddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B03D28F1CF7D58E0050119E /* AddViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,13 +54,14 @@
 		0B0094A71CF6FFB90041B3B5 /* acahara_appUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = acahara_appUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0B0094AB1CF6FFB90041B3B5 /* acahara_appUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = acahara_appUITests.swift; sourceTree = "<group>"; };
 		0B0094AD1CF6FFB90041B3B5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		0B0094B91CF708120041B3B5 /* postCutomCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = postCutomCell.xib; sourceTree = "<group>"; };
+		0B0094B91CF708120041B3B5 /* postCustomCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = postCustomCell.xib; sourceTree = "<group>"; };
 		0B0094BD1CF70C440041B3B5 /* posts */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = posts; sourceTree = "<group>"; };
 		0B0094BF1CF70D760041B3B5 /* homeTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = homeTableViewCell.swift; sourceTree = "<group>"; };
 		0B0094C11CF715360041B3B5 /* selfee1.JPG */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = selfee1.JPG; sourceTree = "<group>"; };
 		0B0094C31CF71A560041B3B5 /* acahara_app-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "acahara_app-Bridging-Header.h"; sourceTree = "<group>"; };
 		0B0094C61CF71A9B0041B3B5 /* acahara_appTests-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "acahara_appTests-Bridging-Header.h"; sourceTree = "<group>"; };
 		0B0094C71CF71A9B0041B3B5 /* acahara_appUITests-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "acahara_appUITests-Bridging-Header.h"; sourceTree = "<group>"; };
+		0B03D28F1CF7D58E0050119E /* AddViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,8 +117,9 @@
 			children = (
 				0B0094891CF6FFB90041B3B5 /* AppDelegate.swift */,
 				0B00948B1CF6FFB90041B3B5 /* HomeViewController.swift */,
+				0B03D28F1CF7D58E0050119E /* AddViewController.swift */,
 				0B0094BF1CF70D760041B3B5 /* homeTableViewCell.swift */,
-				0B0094B91CF708120041B3B5 /* postCutomCell.xib */,
+				0B0094B91CF708120041B3B5 /* postCustomCell.xib */,
 				0B00948D1CF6FFB90041B3B5 /* SettingViewController.swift */,
 				0B00948F1CF6FFB90041B3B5 /* Main.storyboard */,
 				0B0094921CF6FFB90041B3B5 /* Assets.xcassets */,
@@ -250,7 +253,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0B0094BA1CF708120041B3B5 /* postCutomCell.xib in Resources */,
+				0B0094BA1CF708120041B3B5 /* postCustomCell.xib in Resources */,
 				0B0094C21CF715360041B3B5 /* selfee1.JPG in Resources */,
 				0B0094BE1CF70C440041B3B5 /* posts in Resources */,
 				0B0094961CF6FFB90041B3B5 /* LaunchScreen.storyboard in Resources */,
@@ -280,6 +283,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0B03D2901CF7D58E0050119E /* AddViewController.swift in Sources */,
 				0B00948E1CF6FFB90041B3B5 /* SettingViewController.swift in Sources */,
 				0B00948A1CF6FFB90041B3B5 /* AppDelegate.swift in Sources */,
 				0B0094C01CF70D760041B3B5 /* homeTableViewCell.swift in Sources */,
