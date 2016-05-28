@@ -81,10 +81,12 @@ class AddWhereViewController: UIViewController,UITableViewDelegate,UITableViewDa
 //        
 //    }
 
-    @IBAction func returnLocation(sender: UITextField) {
-        
-    }
 
+
+    @IBAction func cancelBtn(sender: UIButton) {
+        self.dismissViewControllerAnimated(true, completion: nil)
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

@@ -186,6 +186,9 @@
                                         <state key="normal" title="キャンセル">
                                             <color key="titleColor" red="1" green="0.2825267662" blue="0.20350203559999999" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
+                                        <connections>
+                                            <action selector="cancelBtn:" destination="yxV-lR-jcr" eventType="touchUpInside" id="zIo-M7-qyN"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
@@ -196,7 +199,6 @@
                                 <textInputTraits key="textInputTraits"/>
                                 <connections>
                                     <action selector="locTextField:" destination="yxV-lR-jcr" eventType="editingDidEnd" id="Vea-Vy-eGD"/>
-                                    <action selector="returnLocation:" destination="yxV-lR-jcr" eventType="editingDidEnd" id="EnP-Wa-t9d"/>
                                 </connections>
                             </textField>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="37" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="66O-R5-NCz">
