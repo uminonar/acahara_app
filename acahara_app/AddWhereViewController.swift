@@ -21,6 +21,9 @@ class AddWhereViewController: UIViewController,UITableViewDelegate,UITableViewDa
         super.viewDidLoad()
 
         var myDefault = NSUserDefaults.standardUserDefaults()
+//　　　　　履歴全件削除の設定
+//        var appDomain:String = NSBundle.mainBundle().bundleIdentifier!
+//        myDefault.removePersistentDomainForName(appDomain)
         
         if(myDefault.objectForKey("locationList") != nil){
             //データを呼び出して
