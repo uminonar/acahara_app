@@ -22,7 +22,7 @@ class homeTableViewCell: UITableViewCell {
     @IBOutlet weak var postImageView: UIImageView!
     @IBOutlet weak var settingBtn: UIButton!
     
-    
+
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -34,11 +34,24 @@ class homeTableViewCell: UITableViewCell {
         
         postVolume.image = volumeImage
         
+
+
+        
+        
+        
     }
 
     @IBAction func btnMore(sender: UIButton) {
         //detail画面へ遷移
     }
+    
+    @IBAction func settingBtn(sender: UIButton) {
+        
+        
+        
+        
+    }
+    
     
     override func setSelected(selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)

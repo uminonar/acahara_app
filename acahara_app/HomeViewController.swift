@@ -65,9 +65,14 @@ class HomeViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
         cell.postImageView.image = UIImage(named:(posts[indexPath.row]["picture"] as! String))
         
         
+        //postsのopenFlag==1のセルだけ下のようにしたい
+        cell.backgroundColor = UIColor.groupTableViewBackgroundColor()
+        cell.postDiary.backgroundColor = UIColor.groupTableViewBackgroundColor()
         
-    return cell
+        
+        return cell
     }
+
     
     // addBtnをタップしたときのアクション
     func onClick() {
