@@ -102,9 +102,9 @@ class AddViewController: UIViewController {
 
     @IBAction func addSwitch(sender: UISwitch) {
         if sender.on == true { //== trueはなくても良い
-            addImportance.text = "重要"
+            addImportance.text = "相談に利用予定"
         }else{
-            addImportance.text = "通常"
+            addImportance.text = "念のため記録"
     }
     }
     
