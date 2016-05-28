@@ -4,7 +4,7 @@
 # use_frameworks!
 
 target 'acahara_app' do
-
+pod 'FontAwesomeKit', '~> 2.1.0'
 end
 
 target 'acahara_appTests' do

@@ -16,12 +16,17 @@
 		0B0094A11CF6FFB90041B3B5 /* acahara_appTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B0094A01CF6FFB90041B3B5 /* acahara_appTests.swift */; };
 		0B0094AC1CF6FFB90041B3B5 /* acahara_appUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B0094AB1CF6FFB90041B3B5 /* acahara_appUITests.swift */; };
 		0B0094BA1CF708120041B3B5 /* postCustomCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0B0094B91CF708120041B3B5 /* postCustomCell.xib */; };
-		0B0094BE1CF70C440041B3B5 /* posts in Resources */ = {isa = PBXBuildFile; fileRef = 0B0094BD1CF70C440041B3B5 /* posts */; };
+		0B0094BE1CF70C440041B3B5 /* posts.txt in Resources */ = {isa = PBXBuildFile; fileRef = 0B0094BD1CF70C440041B3B5 /* posts.txt */; };
 		0B0094C01CF70D760041B3B5 /* homeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B0094BF1CF70D760041B3B5 /* homeTableViewCell.swift */; };
-		0B0094C21CF715360041B3B5 /* selfee1.JPG in Resources */ = {isa = PBXBuildFile; fileRef = 0B0094C11CF715360041B3B5 /* selfee1.JPG */; };
 		0B03D2901CF7D58E0050119E /* AddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B03D28F1CF7D58E0050119E /* AddViewController.swift */; };
 		0B03D2921CF7F4FB0050119E /* AddWhereViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B03D2911CF7F4FB0050119E /* AddWhereViewController.swift */; };
 		0B03D2941CF7F6050050119E /* AddWhoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B03D2931CF7F6050050119E /* AddWhoViewController.swift */; };
+		0BFFF9D11CF82C8900CD1D65 /* selfee.JPG in Resources */ = {isa = PBXBuildFile; fileRef = 0BFFF9D01CF82C8900CD1D65 /* selfee.JPG */; };
+		0BFFF9D31CF82D8400CD1D65 /* pic3.JPG in Resources */ = {isa = PBXBuildFile; fileRef = 0BFFF9D21CF82D8400CD1D65 /* pic3.JPG */; };
+		0BFFF9D51CF82DA400CD1D65 /* pic1.JPG in Resources */ = {isa = PBXBuildFile; fileRef = 0BFFF9D41CF82DA400CD1D65 /* pic1.JPG */; };
+		4D76ADF7242958E2BB870AD8 /* libPods-acahara_app.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 00DB18DBECA6510ACAAC1FF7 /* libPods-acahara_app.a */; };
+		D1E546A272048A6CFA197D7F /* libPods-acahara_appTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 87DA4741452B75F867554587 /* libPods-acahara_appTests.a */; };
+		F2BB6600C7ED54E6BD4FF4E1 /* libPods-acahara_appUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AE52AE623E123E179E1D209 /* libPods-acahara_appUITests.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,6 +47,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		00DB18DBECA6510ACAAC1FF7 /* libPods-acahara_app.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-acahara_app.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0B0094861CF6FFB90041B3B5 /* acahara_app.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = acahara_app.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0B0094891CF6FFB90041B3B5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0B00948B1CF6FFB90041B3B5 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
@@ -57,15 +63,25 @@
 		0B0094AB1CF6FFB90041B3B5 /* acahara_appUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = acahara_appUITests.swift; sourceTree = "<group>"; };
 		0B0094AD1CF6FFB90041B3B5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0B0094B91CF708120041B3B5 /* postCustomCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = postCustomCell.xib; sourceTree = "<group>"; };
-		0B0094BD1CF70C440041B3B5 /* posts */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = posts; sourceTree = "<group>"; };
+		0B0094BD1CF70C440041B3B5 /* posts.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = posts.txt; sourceTree = "<group>"; };
 		0B0094BF1CF70D760041B3B5 /* homeTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = homeTableViewCell.swift; sourceTree = "<group>"; };
-		0B0094C11CF715360041B3B5 /* selfee1.JPG */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = selfee1.JPG; sourceTree = "<group>"; };
 		0B0094C31CF71A560041B3B5 /* acahara_app-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "acahara_app-Bridging-Header.h"; sourceTree = "<group>"; };
 		0B0094C61CF71A9B0041B3B5 /* acahara_appTests-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "acahara_appTests-Bridging-Header.h"; sourceTree = "<group>"; };
 		0B0094C71CF71A9B0041B3B5 /* acahara_appUITests-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "acahara_appUITests-Bridging-Header.h"; sourceTree = "<group>"; };
 		0B03D28F1CF7D58E0050119E /* AddViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddViewController.swift; sourceTree = "<group>"; };
 		0B03D2911CF7F4FB0050119E /* AddWhereViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddWhereViewController.swift; sourceTree = "<group>"; };
 		0B03D2931CF7F6050050119E /* AddWhoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddWhoViewController.swift; sourceTree = "<group>"; };
+		0BFFF9D01CF82C8900CD1D65 /* selfee.JPG */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = selfee.JPG; sourceTree = "<group>"; };
+		0BFFF9D21CF82D8400CD1D65 /* pic3.JPG */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = pic3.JPG; sourceTree = "<group>"; };
+		0BFFF9D41CF82DA400CD1D65 /* pic1.JPG */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = pic1.JPG; sourceTree = "<group>"; };
+		1AE52AE623E123E179E1D209 /* libPods-acahara_appUITests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-acahara_appUITests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		57CEE69A79183AE3F940409C /* Pods-acahara_app.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-acahara_app.debug.xcconfig"; path = "Pods/Target Support Files/Pods-acahara_app/Pods-acahara_app.debug.xcconfig"; sourceTree = "<group>"; };
+		656496383B37E6EECBE8630A /* Pods-acahara_appUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-acahara_appUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-acahara_appUITests/Pods-acahara_appUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		87DA4741452B75F867554587 /* libPods-acahara_appTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-acahara_appTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		9B48241CEC2687D2BB63CC4F /* Pods-acahara_app.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-acahara_app.release.xcconfig"; path = "Pods/Target Support Files/Pods-acahara_app/Pods-acahara_app.release.xcconfig"; sourceTree = "<group>"; };
+		A1C07BB02BCFA70445733C50 /* Pods-acahara_appTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-acahara_appTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-acahara_appTests/Pods-acahara_appTests.release.xcconfig"; sourceTree = "<group>"; };
+		AB7EEB21F159E31BF5D48C25 /* Pods-acahara_appTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-acahara_appTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-acahara_appTests/Pods-acahara_appTests.debug.xcconfig"; sourceTree = "<group>"; };
+		F61F3DBDFC6C79EBF3ABEC72 /* Pods-acahara_appUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-acahara_appUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-acahara_appUITests/Pods-acahara_appUITests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,6 +89,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4D76ADF7242958E2BB870AD8 /* libPods-acahara_app.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -80,6 +97,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D1E546A272048A6CFA197D7F /* libPods-acahara_appTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -87,6 +105,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F2BB6600C7ED54E6BD4FF4E1 /* libPods-acahara_appUITests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -103,6 +122,8 @@
 				0B0094C31CF71A560041B3B5 /* acahara_app-Bridging-Header.h */,
 				0B0094C61CF71A9B0041B3B5 /* acahara_appTests-Bridging-Header.h */,
 				0B0094C71CF71A9B0041B3B5 /* acahara_appUITests-Bridging-Header.h */,
+				5016A44C20C51341C014E92E /* Pods */,
+				21214F4F16B41737C73D163A /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -121,18 +142,20 @@
 			children = (
 				0B0094891CF6FFB90041B3B5 /* AppDelegate.swift */,
 				0B00948B1CF6FFB90041B3B5 /* HomeViewController.swift */,
+				0B0094BF1CF70D760041B3B5 /* homeTableViewCell.swift */,
+				0B0094B91CF708120041B3B5 /* postCustomCell.xib */,
 				0B03D28F1CF7D58E0050119E /* AddViewController.swift */,
 				0B03D2911CF7F4FB0050119E /* AddWhereViewController.swift */,
 				0B03D2931CF7F6050050119E /* AddWhoViewController.swift */,
-				0B0094BF1CF70D760041B3B5 /* homeTableViewCell.swift */,
-				0B0094B91CF708120041B3B5 /* postCustomCell.xib */,
 				0B00948D1CF6FFB90041B3B5 /* SettingViewController.swift */,
 				0B00948F1CF6FFB90041B3B5 /* Main.storyboard */,
 				0B0094921CF6FFB90041B3B5 /* Assets.xcassets */,
-				0B0094C11CF715360041B3B5 /* selfee1.JPG */,
+				0BFFF9D41CF82DA400CD1D65 /* pic1.JPG */,
+				0BFFF9D21CF82D8400CD1D65 /* pic3.JPG */,
+				0BFFF9D01CF82C8900CD1D65 /* selfee.JPG */,
 				0B0094941CF6FFB90041B3B5 /* LaunchScreen.storyboard */,
 				0B0094971CF6FFB90041B3B5 /* Info.plist */,
-				0B0094BD1CF70C440041B3B5 /* posts */,
+				0B0094BD1CF70C440041B3B5 /* posts.txt */,
 			);
 			path = acahara_app;
 			sourceTree = "<group>";
@@ -155,6 +178,29 @@
 			path = acahara_appUITests;
 			sourceTree = "<group>";
 		};
+		21214F4F16B41737C73D163A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				00DB18DBECA6510ACAAC1FF7 /* libPods-acahara_app.a */,
+				87DA4741452B75F867554587 /* libPods-acahara_appTests.a */,
+				1AE52AE623E123E179E1D209 /* libPods-acahara_appUITests.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		5016A44C20C51341C014E92E /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				57CEE69A79183AE3F940409C /* Pods-acahara_app.debug.xcconfig */,
+				9B48241CEC2687D2BB63CC4F /* Pods-acahara_app.release.xcconfig */,
+				AB7EEB21F159E31BF5D48C25 /* Pods-acahara_appTests.debug.xcconfig */,
+				A1C07BB02BCFA70445733C50 /* Pods-acahara_appTests.release.xcconfig */,
+				656496383B37E6EECBE8630A /* Pods-acahara_appUITests.debug.xcconfig */,
+				F61F3DBDFC6C79EBF3ABEC72 /* Pods-acahara_appUITests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -162,9 +208,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 0B0094B01CF6FFB90041B3B5 /* Build configuration list for PBXNativeTarget "acahara_app" */;
 			buildPhases = (
+				9314F4CF2A95ED0BDDA15F1D /* 📦 Check Pods Manifest.lock */,
 				0B0094821CF6FFB90041B3B5 /* Sources */,
 				0B0094831CF6FFB90041B3B5 /* Frameworks */,
 				0B0094841CF6FFB90041B3B5 /* Resources */,
+				ED6F6BB716AA15B70A8CCD76 /* 📦 Embed Pods Frameworks */,
+				74E9F5BCDFD574C8E0E91DB5 /* 📦 Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -179,9 +228,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 0B0094B31CF6FFB90041B3B5 /* Build configuration list for PBXNativeTarget "acahara_appTests" */;
 			buildPhases = (
+				1AC51B30DEA9808F2BC0BB25 /* 📦 Check Pods Manifest.lock */,
 				0B0094981CF6FFB90041B3B5 /* Sources */,
 				0B0094991CF6FFB90041B3B5 /* Frameworks */,
 				0B00949A1CF6FFB90041B3B5 /* Resources */,
+				35DCD04D102290362F5C0BF1 /* 📦 Embed Pods Frameworks */,
+				4C04DF334DF45CAAAC4696F8 /* 📦 Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -197,9 +249,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 0B0094B61CF6FFB90041B3B5 /* Build configuration list for PBXNativeTarget "acahara_appUITests" */;
 			buildPhases = (
+				880E79B56AF76CB15C078689 /* 📦 Check Pods Manifest.lock */,
 				0B0094A31CF6FFB90041B3B5 /* Sources */,
 				0B0094A41CF6FFB90041B3B5 /* Frameworks */,
 				0B0094A51CF6FFB90041B3B5 /* Resources */,
+				0BA1BDD4D408FA720D9732EE /* 📦 Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -260,10 +314,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				0B0094BA1CF708120041B3B5 /* postCustomCell.xib in Resources */,
-				0B0094C21CF715360041B3B5 /* selfee1.JPG in Resources */,
-				0B0094BE1CF70C440041B3B5 /* posts in Resources */,
+				0B0094BE1CF70C440041B3B5 /* posts.txt in Resources */,
 				0B0094961CF6FFB90041B3B5 /* LaunchScreen.storyboard in Resources */,
+				0BFFF9D31CF82D8400CD1D65 /* pic3.JPG in Resources */,
+				0BFFF9D11CF82C8900CD1D65 /* selfee.JPG in Resources */,
 				0B0094931CF6FFB90041B3B5 /* Assets.xcassets in Resources */,
+				0BFFF9D51CF82DA400CD1D65 /* pic1.JPG in Resources */,
 				0B0094911CF6FFB90041B3B5 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -283,6 +339,129 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		0BA1BDD4D408FA720D9732EE /* 📦 Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-acahara_appUITests/Pods-acahara_appUITests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		1AC51B30DEA9808F2BC0BB25 /* 📦 Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		35DCD04D102290362F5C0BF1 /* 📦 Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-acahara_appTests/Pods-acahara_appTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		4C04DF334DF45CAAAC4696F8 /* 📦 Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-acahara_appTests/Pods-acahara_appTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		74E9F5BCDFD574C8E0E91DB5 /* 📦 Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-acahara_app/Pods-acahara_app-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		880E79B56AF76CB15C078689 /* 📦 Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		9314F4CF2A95ED0BDDA15F1D /* 📦 Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		ED6F6BB716AA15B70A8CCD76 /* 📦 Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-acahara_app/Pods-acahara_app-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		0B0094821CF6FFB90041B3B5 /* Sources */ = {
@@ -435,6 +614,7 @@
 		};
 		0B0094B11CF6FFB90041B3B5 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 57CEE69A79183AE3F940409C /* Pods-acahara_app.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
@@ -449,6 +629,7 @@
 		};
 		0B0094B21CF6FFB90041B3B5 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9B48241CEC2687D2BB63CC4F /* Pods-acahara_app.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
@@ -462,6 +643,7 @@
 		};
 		0B0094B41CF6FFB90041B3B5 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = AB7EEB21F159E31BF5D48C25 /* Pods-acahara_appTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CLANG_ENABLE_MODULES = YES;
@@ -477,6 +659,7 @@
 		};
 		0B0094B51CF6FFB90041B3B5 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A1C07BB02BCFA70445733C50 /* Pods-acahara_appTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CLANG_ENABLE_MODULES = YES;
@@ -491,6 +674,7 @@
 		};
 		0B0094B71CF6FFB90041B3B5 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 656496383B37E6EECBE8630A /* Pods-acahara_appUITests.debug.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = acahara_appUITests/Info.plist;
@@ -505,6 +689,7 @@
 		};
 		0B0094B81CF6FFB90041B3B5 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F61F3DBDFC6C79EBF3ABEC72 /* Pods-acahara_appUITests.release.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = acahara_appUITests/Info.plist;

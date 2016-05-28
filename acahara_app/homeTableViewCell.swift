@@ -26,10 +26,13 @@ class homeTableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         
-        postPortrait.image = UIImage(named:"selfee1.JPG")
+        postPortrait.image = UIImage(named:"selfee.JPG")
         
-//        let volume = FAKFontAwesome.volumeUpIconWithSize(18)
-//        let volumeImage = volume.imageWithSize(CGSizeMake(18, 18))
+        let volume = FAKFontAwesome.volumeUpIconWithSize(18)
+        let volumeImage = volume.imageWithSize(CGSizeMake(18, 18))
+        
+        postVolume.image = volumeImage
+        
     }
 
     @IBAction func btnMore(sender: UIButton) {

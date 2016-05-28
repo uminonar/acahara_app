@@ -8,8 +8,11 @@
 
 import UIKit
 
-class FirstViewController: UIViewController,UITableViewDelegate,UITableViewDataSource {
+class HomeViewController: UIViewController,UITableViewDelegate,UITableViewDataSource {
     
+    @IBOutlet weak var homeTableView: UITableView!
+
+  
     // ボタンを用意
     var addBtn: UIBarButtonItem!
     

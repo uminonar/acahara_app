@@ -15,13 +15,6 @@ class SecondViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
-     let font = FAKFontAwesome.trashIconWithSize(40)
-    // 下記でアイコンの色も変えられます
-    // trash.addAttribute(NSForegroundColorAttributeName, value: UIColor.whiteColor())
-    let trashImage = trash.imageWithSize(CGSizeMake(40, 40))
-    
-     font.image = trashImage
     }
 
    
