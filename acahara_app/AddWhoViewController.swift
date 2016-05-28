@@ -17,11 +17,21 @@ class AddWhoViewController: UIViewController,UITableViewDataSource,UITableViewDe
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        var myDefault = NSUserDefaults.standardUserDefaults()
+        
+        
+        //履歴全件削除の設定 1回使ったらコメントアウト
+        //        var appDomain:String = NSBundle.mainBundle().bundleIdentifier!
+        //        myDefault.removePersistentDomainForName(appDomain)
+        
+        if(myDefault.objectForKey("nameList") != nil){
+            //データを呼び出して
+            nameList = myDefault.objectForKey("nameList") as! Array
+        }
         print(nameList)
-        // Do any additional setup after loading the view.
     }
-    
-    
+
     
     
     //行数を設定する
@@ -61,7 +71,30 @@ class AddWhoViewController: UIViewController,UITableViewDataSource,UITableViewDe
     
 
     @IBAction func retrunName(sender: UITextField) {
+        var tmpStr = nameTextField.text
         
+        if tmpStr?.characters.count != 0{
+            
+            nameList.append(tmpStr!)
+            
+            print(nameList)
+            
+            //ユーザーデフォルトに保存
+            //ユーザーデフォルトを用意する
+            var myDefault = NSUserDefaults.standardUserDefaults()
+            
+            //データを書き込んで
+            myDefault.setObject(nameList, forKey: "nameList")
+            
+            //即反映させる
+            myDefault.synchronize()
+            
+            
+            //画面を閉じる機能がここでは効かない。なぜ？
+            self.dismissViewControllerAnimated(true, completion: nil)
+            
+        }
+
     }
 
 

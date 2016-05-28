@@ -86,11 +86,11 @@ class AddViewController: UIViewController {
         var myDefault = NSUserDefaults.standardUserDefaults()
         
         //データを呼び出して
-        var myStr = myDefault.stringForKey("uString")
+        var uniStr = myDefault.stringForKey("uniStr")
         
         //文字列が入っていたら、表示する
-        print(myStr)
-        addUniversity.text = myStr
+        print(uniStr)
+        addUniversity.text = uniStr
         
         addDatePIcker.datePickerMode=UIDatePickerMode.DateAndTime
         let df=NSDateFormatter()
@@ -119,14 +119,7 @@ class AddViewController: UIViewController {
             UIView.animateWithDuration(0.4, animations: { () -> Void in self.addMoveView.frame = CGRectMake(0,380, self.myBoundSize.width, 442)
                 }, completion: { finished in print("addMoveViewを動かした")
                 
-//                //初期の日付を設定（デフォルトだと今日になってる）
-//                let df = NSDateFormatter()
-//                //日付のフォーマットを指定
-//                df.dateFormat = "yyyy/MM/dd"
-//                
-//                addDatePicker.maximumDate =
-//                        df
-                    
+
             })
             return false
         }
@@ -144,26 +137,25 @@ class AddViewController: UIViewController {
             presentViewController(AddWho, animated: true, completion: nil)
             
             return false
+        }else{
+      
+             return true
         }
 
-    
-        return true
-        
     }
     
-    @IBAction func addDatePicker(sender: UIDatePicker) {
+       
+
+        
+    @IBAction func pickerDateChange(sender: UIDatePicker) {
         
         let df = NSDateFormatter()
         df.dateFormat = "yyyy/MM/dd HH:MM"
         var dateStr = df.stringFromDate(sender.date)
         addWhen.text = dateStr+" 頃"
-        
     }
-    
-    
-    
-    
-    
+
+        
     
     
     
@@ -174,12 +166,10 @@ class AddViewController: UIViewController {
             var myDefault = NSUserDefaults.standardUserDefaults()
             
             //データを書き込んで
-            myDefault.setObject(textField.text, forKey: "uString")
+            myDefault.setObject(textField.text, forKey: "uniStr")
             
             //即反映させる
             myDefault.synchronize()
-            
-            
             
             return true
         }

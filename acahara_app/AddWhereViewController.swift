@@ -12,7 +12,8 @@ class AddWhereViewController: UIViewController,UITableViewDelegate,UITableViewDa
     
     var selectedLocation = "where"
 
-    @IBOutlet weak var placeTextFIeld: UITextField!
+    @IBOutlet weak var placeTextField: UITextField!
+
 
     
     var placeList = ["日吉協生館３階ミーティングルーム","日吉協生館委員長室","荻窪自宅"]
@@ -69,32 +70,33 @@ class AddWhereViewController: UIViewController,UITableViewDelegate,UITableViewDa
     //    }
     
     
-    @IBAction func locTextField(sender: UITextField) {
 
-        var tmpStr = placeTextFIeld.text
-
+    @IBAction func returnPlace(sender: UITextField) {
+        var tmpStr = placeTextField.text
+        
         if tmpStr?.characters.count != 0{
-        
-        placeList.append(tmpStr!)
-        
-        print(placeList)
-        
-        //ユーザーデフォルトに保存
-        //ユーザーデフォルトを用意する
-        var myDefault = NSUserDefaults.standardUserDefaults()
-        
-        //データを書き込んで
-        myDefault.setObject(placeList, forKey: "placeList")
-        
-        //即反映させる
-        myDefault.synchronize()
-        
-        
-        //画面を閉じる機能がここでは効かない。なぜ？
-        self.dismissViewControllerAnimated(true, completion: nil)
+            
+            placeList.append(tmpStr!)
+            
+            print(placeList)
+            
+            //ユーザーデフォルトに保存
+            //ユーザーデフォルトを用意する
+            var myDefault = NSUserDefaults.standardUserDefaults()
+            
+            //データを書き込んで
+            myDefault.setObject(placeList, forKey: "placeList")
+            
+            //即反映させる
+            myDefault.synchronize()
+            
+            
+            //画面を閉じる機能がここでは効かない。なぜ？
+            self.dismissViewControllerAnimated(true, completion: nil)
             
         }
     }
+
     
     @IBAction func cancelBtn(sender: UIButton) {
         self.dismissViewControllerAnimated(true, completion: nil)
