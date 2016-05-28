@@ -14,14 +14,16 @@ class AddWhereViewController: UIViewController,UITableViewDelegate,UITableViewDa
 
     @IBOutlet weak var locationTextField: UITextField!
     
-    var locList = ["日吉共生館３階ミーティングルーム","日吉共生館委員長室","荻窪自宅"]
+    var locList = ["日吉協生館３階ミーティングルーム","日吉協生館委員長室","荻窪自宅"]
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         var myDefault = NSUserDefaults.standardUserDefaults()
-//　　　　　履歴全件削除の設定
+        
+        
+        //履歴全件削除の設定 1回使ったらコメントアウト
 //        var appDomain:String = NSBundle.mainBundle().bundleIdentifier!
 //        myDefault.removePersistentDomainForName(appDomain)
         
@@ -75,8 +77,12 @@ class AddWhereViewController: UIViewController,UITableViewDelegate,UITableViewDa
     
     
     @IBAction func locTextField(sender: UITextField) {
+
+        var tmpStr = locationTextField.text
+
+        if tmpStr?.characters.count != 0{
         
-        locList.append(sender.text!)
+        locList.append(tmpStr!)
         
         print(locList)
         
@@ -93,7 +99,8 @@ class AddWhereViewController: UIViewController,UITableViewDelegate,UITableViewDa
         
         //画面を閉じる機能がここでは効かない。なぜ？
         self.dismissViewControllerAnimated(true, completion: nil)
-        
+            
+        }
     }
     
     
