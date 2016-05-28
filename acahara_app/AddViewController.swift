@@ -103,8 +103,10 @@ class AddViewController: UIViewController {
     @IBAction func addSwitch(sender: UISwitch) {
         if sender.on == true { //== trueはなくても良い
             addImportance.text = "相談に利用予定"
+            //投稿情報のopenを１にする
         }else{
             addImportance.text = "念のため記録"
+            //投稿情報のopenを０にする→ホーム画面でBgcwを薄いグレーに変えて
     }
     }
     
@@ -137,9 +139,9 @@ class AddViewController: UIViewController {
         }
         
         if textField.tag == 3000{
-            let addWhere = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("addWhoViewController") as UIViewController
+            let AddWho = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("AddWhoViewController") as UIViewController
             
-            presentViewController(addWhere, animated: true, completion: nil)
+            presentViewController(AddWho, animated: true, completion: nil)
             
             return false
         }

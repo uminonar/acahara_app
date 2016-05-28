@@ -20,6 +20,7 @@ class homeTableViewCell: UITableViewCell {
     @IBOutlet weak var postDiary: UITextView!
     @IBOutlet weak var postVolume: UIImageView!
     @IBOutlet weak var postImageView: UIImageView!
+    @IBOutlet weak var settingBtn: UIButton!
     
     
     

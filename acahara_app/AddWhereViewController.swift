@@ -12,9 +12,10 @@ class AddWhereViewController: UIViewController,UITableViewDelegate,UITableViewDa
     
     var selectedLocation = "where"
 
-    @IBOutlet weak var locationTextField: UITextField!
+    @IBOutlet weak var placeTextFIeld: UITextField!
+
     
-    var locList = ["日吉協生館３階ミーティングルーム","日吉協生館委員長室","荻窪自宅"]
+    var placeList = ["日吉協生館３階ミーティングルーム","日吉協生館委員長室","荻窪自宅"]
     
     
     override func viewDidLoad() {
@@ -23,21 +24,21 @@ class AddWhereViewController: UIViewController,UITableViewDelegate,UITableViewDa
         var myDefault = NSUserDefaults.standardUserDefaults()
         
         
-        //履歴全件削除の設定 1回使ったらコメントアウト
+//履歴全件削除の設定 1回使ったらコメントアウト
 //        var appDomain:String = NSBundle.mainBundle().bundleIdentifier!
 //        myDefault.removePersistentDomainForName(appDomain)
         
-        if(myDefault.objectForKey("locationList") != nil){
+        if(myDefault.objectForKey("placeList") != nil){
             //データを呼び出して
-            locList = myDefault.objectForKey("locationList") as! Array
+            placeList = myDefault.objectForKey("placeList") as! Array
         }
-        print(locList)
+        print(placeList)
     }
 
     //行数を設定する
     
     func tableView (tableView:UITableView, numberOfRowsInSection section:Int)->Int{
-        return locList.count
+        return placeList.count
     }
     
     
@@ -50,9 +51,9 @@ class AddWhereViewController: UIViewController,UITableViewDelegate,UITableViewDa
         cell.textLabel?.textColor = UIColor.grayColor()
         
         
-        var location = locList[indexPath.row] as! String
+        var place = placeList[indexPath.row] as! String
         
-        cell.textLabel?.text = "\(location)"
+        cell.textLabel?.text = "\(place)"
         
         return cell
     }
@@ -68,30 +69,22 @@ class AddWhereViewController: UIViewController,UITableViewDelegate,UITableViewDa
     //    }
     
     
-    
-    @IBAction func cancelBtn(sender: UIButton) {
-        self.dismissViewControllerAnimated(true, completion: nil)
-    }
-    
-    
-    
-    
     @IBAction func locTextField(sender: UITextField) {
 
-        var tmpStr = locationTextField.text
+        var tmpStr = placeTextFIeld.text
 
         if tmpStr?.characters.count != 0{
         
-        locList.append(tmpStr!)
+        placeList.append(tmpStr!)
         
-        print(locList)
+        print(placeList)
         
         //ユーザーデフォルトに保存
         //ユーザーデフォルトを用意する
         var myDefault = NSUserDefaults.standardUserDefaults()
         
         //データを書き込んで
-        myDefault.setObject(locList, forKey: "locationList")
+        myDefault.setObject(placeList, forKey: "placeList")
         
         //即反映させる
         myDefault.synchronize()
@@ -103,6 +96,9 @@ class AddWhereViewController: UIViewController,UITableViewDelegate,UITableViewDa
         }
     }
     
+    @IBAction func cancelBtn(sender: UIButton) {
+        self.dismissViewControllerAnimated(true, completion: nil)
+    } 
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
