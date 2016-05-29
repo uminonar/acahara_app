@@ -54,8 +54,6 @@ class HomeViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
         // 1. 生成するセルをカスタムクラスへダウンキャスト
         // 既存のCell生成コードの後に as! <Cellのカスタムクラス名> という記述を追加
         var cell = tableView.dequeueReusableCellWithIdentifier("postCustomCell", forIndexPath: indexPath) as! homeTableViewCell
-        
-        
         cell.postCreated.text = posts[indexPath.row]["created"] as! String
         cell.postWhen.text = posts[indexPath.row]["when"] as! String
         cell.postWhere.text = posts[indexPath.row]["where"] as! String
@@ -72,6 +70,24 @@ class HomeViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
         
         return cell
     }
+    
+    func tappedSettingBtn(){
+        var settingController = UIAlertController(title: "この投稿を変更する", message: "削除？変更？", preferredStyle: .ActionSheet)
+        settingController.addAction(UIAlertAction(title: "削除", style: .Default, handler: { action in print("OK!")}))
+        
+        settingController.addAction(UIAlertAction(title: "モード変更", style: .Default, handler: { action in print("OK!")}))
+        
+        
+        settingController.addAction(UIAlertAction(title: "キャンセル", style: .Cancel, handler: { action in
+            print("cancel")
+        }))
+        
+        
+        presentViewController(settingController, animated: true, completion: nil)
+    }
+
+    
+
 
     
     // addBtnをタップしたときのアクション

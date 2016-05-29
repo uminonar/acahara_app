@@ -20,10 +20,6 @@
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="iPb-82-FIC">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="65"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0qU-HH-IVI">
-                                        <rect key="frame" x="8" y="27" width="75" height="30"/>
-                                        <state key="normal" title="キャンセル"/>
-                                    </button>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ssJ-Cs-r6t">
                                         <rect key="frame" x="266" y="27" width="30" height="30"/>
                                         <state key="normal" title="保存"/>
@@ -230,7 +226,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qm4-HI-ctd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2117" y="285"/>
+            <point key="canvasLocation" x="1949" y="-127"/>
         </scene>
         <!--Add Who View Controller-->
         <scene sceneID="rZP-pm-Yzr">
@@ -309,9 +305,9 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4r3-H0-8L4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2494" y="285"/>
+            <point key="canvasLocation" x="1955" y="589"/>
         </scene>
-        <!--Setting-->
+        <!--Home-->
         <scene sceneID="wg7-f3-ORb">
             <objects>
                 <viewController id="8rJ-Kc-sve" customClass="SecondViewController" customModule="acahara_app" customModuleProvider="target" sceneMemberID="viewController">
@@ -345,7 +341,7 @@
                             <constraint firstAttribute="centerY" secondItem="zEq-FU-wV5" secondAttribute="centerY" id="qzY-Ky-pLD"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Setting" image="second" id="cPa-gy-q4n"/>
+                    <tabBarItem key="tabBarItem" title="Home" image="second" id="cPa-gy-q4n"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Nw-L8-lE0" sceneMemberID="firstResponder"/>

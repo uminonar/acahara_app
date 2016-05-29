@@ -45,12 +45,14 @@ class homeTableViewCell: UITableViewCell {
         //detail画面へ遷移
     }
     
-    @IBAction func settingBtn(sender: UIButton) {
+  
+
+
         
+
+    
         
-        
-        
-    }
+    
     
     
     override func setSelected(selected: Bool, animated: Bool) {
