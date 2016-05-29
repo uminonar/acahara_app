@@ -8,13 +8,30 @@
 
 import UIKit
 
-class SecondViewController: UIViewController {
+class SettingViewController: UIViewController {
 
-    @IBOutlet weak var font: UIImageView!
+    @IBOutlet weak var settingSelfee: UIImageView!
+    @IBOutlet weak var settingSelfeeCamera: UIImageView!
+
+
+    @IBOutlet weak var settingBGI: UIImageView!
+    @IBOutlet weak var settingBGCamera: UIImageView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        settingBGI.image = UIImage(named: "bgImage.JPG")
+        settingSelfee.image = UIImage(named:"selfee.JPG")
+        
+        
+        let camera = FAKFontAwesome.cameraIconWithSize(25)
+        let bgCameraImg = camera.imageWithSize(CGSizeMake(25, 25))
+        settingBGCamera.image = bgCameraImg
+        
+        let selCamera = FAKFontAwesome.cameraIconWithSize(25)
+        let selCameraImg = selCamera.imageWithSize(CGSizeMake(25, 25))
+        settingSelfeeCamera.image = selCameraImg
+
     }
 
    

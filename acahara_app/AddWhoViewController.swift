@@ -75,7 +75,7 @@ class AddWhoViewController: UIViewController,UITableViewDataSource,UITableViewDe
         
         var AddVC = segue.destinationViewController as! AddViewController
         
-        AddVC.name = setName
+        AddVC.addName.text = setName
     }
 
 

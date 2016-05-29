@@ -8,7 +8,7 @@
 
 import UIKit
 
-class AddWhereViewController: UIViewController,UITableViewDelegate,UITableViewDataSource {
+class AddWhereViewController: UIViewController,UITableViewDelegate,UITableViewDataSource{
     
     var setPlace = "セットできていません"
     var selectedLocation = "where"
@@ -92,6 +92,8 @@ class AddWhereViewController: UIViewController,UITableViewDelegate,UITableViewDa
         
         if tmpStr?.characters.count != 0{
             
+            var setPlace = tmpStr
+            
             placeList.append(tmpStr!)
             
             print(placeList)
@@ -107,12 +109,15 @@ class AddWhereViewController: UIViewController,UITableViewDelegate,UITableViewDa
             myDefault.synchronize()
             
             
+            
+            
             //画面を閉じる機能がここでは効かない。なぜ？
             self.dismissViewControllerAnimated(true, completion: nil)
             
         }
     }
 
+  
     
     @IBAction func cancelBtn(sender: UIButton) {
         self.dismissViewControllerAnimated(true, completion: nil)
