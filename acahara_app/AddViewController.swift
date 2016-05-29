@@ -10,6 +10,10 @@ import UIKit
 
 class AddViewController: UIViewController {
     
+
+    var name:String = "値が渡されていません。"
+    
+    
     let myBoundSize: CGSize = UIScreen.mainScreen().bounds.size
     
     @IBOutlet weak var addBar: UIView!

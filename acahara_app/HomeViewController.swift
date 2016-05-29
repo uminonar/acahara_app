@@ -10,6 +10,8 @@ import UIKit
 
 class HomeViewController: UIViewController,UITableViewDelegate,UITableViewDataSource {
     
+
+    @IBOutlet weak var homeBgImage: UITableView!
     @IBOutlet weak var homeTableView: UITableView!
 
   
@@ -29,6 +31,9 @@ class HomeViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
         // addBtnを設置
         addBtn = UIBarButtonItem(barButtonSystemItem: .Compose, target: self, action: "onClick")
         self.navigationItem.rightBarButtonItem = addBtn
+        
+        //イメージに背景画像を設置
+        
 
     }
     
@@ -71,7 +76,8 @@ class HomeViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
         return cell
     }
     
-    func tappedSettingBtn(){
+    @IBAction func settingBtn(sender: UIButton) {
+   
         var settingController = UIAlertController(title: "この投稿を変更する", message: "削除？変更？", preferredStyle: .ActionSheet)
         settingController.addAction(UIAlertAction(title: "削除", style: .Default, handler: { action in print("OK!")}))
         
@@ -86,10 +92,10 @@ class HomeViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
         presentViewController(settingController, animated: true, completion: nil)
     }
 
-    
 
 
-    
+
+
     // addBtnをタップしたときのアクション
     func onClick() {
         

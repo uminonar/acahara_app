@@ -10,6 +10,7 @@ import UIKit
 
 class AddWhereViewController: UIViewController,UITableViewDelegate,UITableViewDataSource {
     
+    var setPlace = "セットできていません"
     var selectedLocation = "where"
 
     @IBOutlet weak var placeTextField: UITextField!
@@ -60,19 +61,34 @@ class AddWhereViewController: UIViewController,UITableViewDelegate,UITableViewDa
     }
     
     //行を選択した時の処理
-    //    func tableView (tableView:UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-    //        print("\(indexPath.row)行目を選択")
-    //
-    //        var location = locLi
-    //    st[indexPath.row]
-    //        selectedLocation = location
-    //
-    //    }
+        func tableView (tableView:UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        print("\(indexPath.row)を選択")
+        
+            var place = placeList[indexPath.row]
+            performSegueWithIdentifier("backAddFromP", sender: nil)
+            
+            var setPlace = place
+            
+            self.dismissViewControllerAnimated(true, completion: nil)
+            
+        }
+    
+    
+        override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        
+            var AddVC = segue.destinationViewController as! AddViewController
+        
+            AddVC.addWhere.text = setPlace
+        }
+    
+    
+    
+    
     
     
 
     @IBAction func returnPlace(sender: UITextField) {
-        var tmpStr = placeTextField.text
+         var tmpStr = placeTextField.text
         
         if tmpStr?.characters.count != 0{
             

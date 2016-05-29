@@ -10,7 +10,9 @@ import UIKit
 
 class AddWhoViewController: UIViewController,UITableViewDataSource,UITableViewDelegate
 {
-
+    
+    var setName:String = "セットできていません"
+    
     @IBOutlet weak var nameTextField: UITextField!
     
     var nameList = ["稲陰正彦教授","杉浦准教授","中村伊知哉教授"]
@@ -21,10 +23,10 @@ class AddWhoViewController: UIViewController,UITableViewDataSource,UITableViewDe
         var myDefault = NSUserDefaults.standardUserDefaults()
         
         
-        //履歴全件削除の設定 1回使ったらコメントアウト
-        //        var appDomain:String = NSBundle.mainBundle().bundleIdentifier!
-        //        myDefault.removePersistentDomainForName(appDomain)
-        
+//        履歴全件削除の設定 1回使ったらコメントアウト
+//                var appDomain:String = NSBundle.mainBundle().bundleIdentifier!
+//                myDefault.removePersistentDomainForName(appDomain)
+//        
         if(myDefault.objectForKey("nameList") != nil){
             //データを呼び出して
             nameList = myDefault.objectForKey("nameList") as! Array
@@ -59,18 +61,27 @@ class AddWhoViewController: UIViewController,UITableViewDataSource,UITableViewDe
         return cell
     }
     
-    //行を選択した時の処理
-    //    func tableView (tableView:UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-    //        print("\(indexPath.row)行目を選択")
-    //
-    //        var location = locLi
-    //    st[indexPath.row]
-    //        selectedLocation = location
-    //
-    //    }
+//    行を選択した時の処理
+    func tableView (tableView:UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+            print("\(indexPath.row)を選択")
     
+            var name = nameList[indexPath.row]
+            performSegueWithIdentifier("backAddFromN", sender: nil)
+            self.dismissViewControllerAnimated(true, completion: nil)
+        
+        }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        
+        var AddVC = segue.destinationViewController as! AddViewController
+        
+        AddVC.name = setName
+    }
 
-    @IBAction func retrunName(sender: UITextField) {
+
+ 
+    @IBAction func returnName(sender: AnyObject) {
+
         var tmpStr = nameTextField.text
         
         if tmpStr?.characters.count != 0{
@@ -97,10 +108,6 @@ class AddWhoViewController: UIViewController,UITableViewDataSource,UITableViewDe
 
     }
 
-
-    
-    
-    
     
     
     @IBAction func cancelBtn(sender: UIButton) {

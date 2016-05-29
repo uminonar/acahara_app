@@ -92,7 +92,7 @@
                 <outlet property="postWho" destination="3Uk-Nr-QHO" id="S0c-ci-PkC"/>
                 <outlet property="settingBtn" destination="5Kx-iM-8dL" id="MbC-sP-T6t"/>
             </connections>
-            <point key="canvasLocation" x="88" y="38.5"/>
+            <point key="canvasLocation" x="128" y="21.5"/>
         </tableViewCell>
     </objects>
 </document>
