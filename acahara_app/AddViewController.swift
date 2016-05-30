@@ -71,6 +71,10 @@ class AddViewController: UIViewController {
         
         // 枠の角を丸くする。
         addDiary.layer.cornerRadius = 8
+        
+        //tapGestureRecognizerをaddDiaryテキストフィールドに設定
+        let myTap = UITapGestureRecognizer(target: self, action: "tapGesture:")
+        addDiary.addGestureRecognizer(myTap)
     }
     
     
@@ -193,10 +197,23 @@ class AddViewController: UIViewController {
         }
         
         return true
-
     
     }
-
+    
+    internal func tapGesture(sender: UITapGestureRecognizer){
+        
+        let AddDiaryVC = UIStoryboard(name: "Main",bundle: nil).instantiateViewControllerWithIdentifier("AddDiaryViewController") as UIViewController
+        
+// showで遷移するバージョン           navigationController?.pushViewController(AddDiaryVC, animated: true)
+        
+        
+  
+//モーダルで遷移するバージョン
+        presentViewController(AddDiaryVC, animated: true, completion: nil)
+    }
+    
+    
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
