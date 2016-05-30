@@ -85,13 +85,29 @@ class AddViewController: UIViewController {
         //ユーザーデフォルトから保存されたデータを取り出す
         var myDefault = NSUserDefaults.standardUserDefaults()
         
-        //データを呼び出して
+        //大学、データを呼び出して文字列が入っていたら、表示する
         var uniStr = myDefault.stringForKey("uniStr")
         
-        //文字列が入っていたら、表示する
-        print(uniStr)
-        addUniversity.text = uniStr
+        if ( uniStr != nil){
+            addUniversity.text = uniStr
+        }
         
+        //場所、データを呼び出して文字列が入っていたら表示する
+        var selectedPlace = myDefault.stringForKey("selectedPlace")
+        
+        if( selectedPlace != nil){
+            print(selectedPlace)
+            addWhere.text = selectedPlace
+        }
+        
+        
+        //場所、データを呼び出して文字列が入っていたら表示する
+        var selectedName = myDefault.stringForKey("selectedName")
+        
+        if( selectedName != nil){
+            print(selectedName)
+            addWho.text = selectedName
+        }
         addDatePIcker.datePickerMode=UIDatePickerMode.DateAndTime
         let df=NSDateFormatter()
         df.dateFormat = "yyyy/MM/dd"
@@ -100,6 +116,7 @@ class AddViewController: UIViewController {
         addWhen.tintColor =  UIColor.redColor()
     }
 
+    
     @IBAction func addSwitch(sender: UISwitch) {
         if sender.on == true { //== trueはなくても良い
             addImportance.text = "相談に利用予定"
@@ -109,6 +126,7 @@ class AddViewController: UIViewController {
             //投稿情報のopenを０にする→ホーム画面でBgcwを薄いグレーに変えて
     }
     }
+    
     
     func textFieldShouldBeginEditing(textField: UITextField) -> Bool {
         print(textField.tag)

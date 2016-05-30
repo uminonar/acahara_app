@@ -18,7 +18,9 @@ class HomeViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
     // ボタンを用意
     var addBtn: UIBarButtonItem!
     
-    var posts:[NSDictionary] = []
+    var posts:NSMutableArray = []
+    
+    //var temp:NSMutableArray
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -44,7 +46,7 @@ class HomeViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
         let jsonArray = (try! NSJSONSerialization.JSONObjectWithData(jsondata!, options: [])) as! NSArray
         
         for data in jsonArray{
-            posts.append(data as! NSDictionary)
+            posts.addObject(data as! NSMutableDictionary)
         }
     }
     
@@ -69,19 +71,51 @@ class HomeViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
         
         
         //postsのopenFlag==1のセルだけ下のようにしたい
-        cell.backgroundColor = UIColor.groupTableViewBackgroundColor()
-        cell.postDiary.backgroundColor = UIColor.groupTableViewBackgroundColor()
         
+        var openFlag:String = posts[indexPath.row]["openFlag"] as! String
+        
+        if (openFlag == "1"){
+
+            cell.backgroundColor = UIColor.groupTableViewBackgroundColor()
+            cell.postDiary.backgroundColor = UIColor.groupTableViewBackgroundColor()
+        
+        }else{
+            cell.backgroundColor = UIColor.whiteColor()
+            cell.postDiary.backgroundColor = UIColor.whiteColor()
+            
+        }
+        
+        //settingBtnの後に：をつけることで、sender情報を使える
+        cell.settingBtn.addTarget(self, action:"settingBtn:", forControlEvents:.TouchUpInside)
+        cell.settingBtn.tag = indexPath.row
+        
+        
+        cell.postMoreBtn.addTarget(self, action:"detailVC:",forControlEvents:.TouchUpInside)
         
         return cell
     }
     
-    @IBAction func settingBtn(sender: UIButton) {
-   
-        var settingController = UIAlertController(title: "この投稿を変更する", message: "削除？変更？", preferredStyle: .ActionSheet)
-        settingController.addAction(UIAlertAction(title: "削除", style: .Default, handler: { action in print("OK!")}))
+    
+    func settingBtn(sender: UIButton) {
         
-        settingController.addAction(UIAlertAction(title: "モード変更", style: .Default, handler: { action in print("OK!")}))
+        print("\(sender.tag)番目")
+        
+        var settingController = UIAlertController(title: "", message: "", preferredStyle: .ActionSheet)
+        settingController.addAction(UIAlertAction(title: "削除", style: .Default, handler: { action in self.confirm(sender.tag)}))
+        
+        //openFlagが１の時は「念のため記述」にしたい、０の時は「相談に利用予定」 = posts[indexPath.row][openFlag]どう書く？if、ここに書ける？
+        
+        var tempStr:String = ""
+        var openFlag:String = posts[sender.tag]["openFlag"] as! String
+        
+        
+
+        if(openFlag == "1"){
+            tempStr = "「相談に利用予定」へ変更"
+        }else{
+            tempStr = "「念のため記録」へ変更"
+        }
+        settingController.addAction(UIAlertAction(title: tempStr, style: .Default, handler:{ action in self.changeMode(sender.tag)}))
         
         
         settingController.addAction(UIAlertAction(title: "キャンセル", style: .Cancel, handler: { action in
@@ -91,8 +125,56 @@ class HomeViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
         
         presentViewController(settingController, animated: true, completion: nil)
     }
+    
 
+  func changeMode(tag:Int){
+    var openFlag:String = posts[tag]["openFlag"] as! String
+    
+    var dic:NSMutableDictionary = posts[tag].mutableCopy() as! NSMutableDictionary
+    
+    if (openFlag=="0"){
+        dic.setValue("1", forKey: "openFlag")
+    }else{
+        dic.setValue("0", forKey: "openFlag")
 
+    }
+    
+    posts[tag] = dic
+    
+    homeTableView.reloadData()
+    
+   }
+    
+    func confirm(tag:Int){
+        
+        var alertController = UIAlertController(title:"ご注意", message: "本当に削除しますか？", preferredStyle: .Alert)
+        
+        
+        alertController.addAction(UIAlertAction(title: "OK", style: .Default, handler: {action in self.deletePost(tag
+            )}))
+        
+        alertController.addAction(UIAlertAction(title: "cancel", style: .Cancel, handler: {action in print("cancel")}))
+        
+        presentViewController(alertController, animated: true, completion: nil)
+    }
+    
+    func deletePost(tag:Int){
+//        論理削除を記述したいけど、どうやる？以下は物理削除だけれど書き方は？サーバー
+        
+        posts.removeObjectAtIndex(tag)
+        self.homeTableView.reloadData()
+    }
+    
+    
+    //moreボタンでdetailVCに遷移する  下記、Mainではない?これ何？
+    func detailVC(sender: UIButton){
+        
+        let detailVC = UIStoryboard(name: "Main",bundle: nil).instantiateViewControllerWithIdentifier("DetailViewController") as UIViewController
+        
+        navigationController?.pushViewController(detailVC, animated: true)
+    }
+
+    
 
 
 

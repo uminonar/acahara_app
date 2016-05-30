@@ -66,7 +66,16 @@ class AddWhoViewController: UIViewController,UITableViewDataSource,UITableViewDe
             print("\(indexPath.row)を選択")
     
             var name = nameList[indexPath.row]
-            performSegueWithIdentifier("backAddFromN", sender: nil)
+        
+            //ユーザーデフォルトを用意する
+            var myDefault = NSUserDefaults.standardUserDefaults()
+        
+            //データを書き込んで
+            myDefault.setObject(name, forKey: "selectedName")
+        
+            //即反映させる
+            myDefault.synchronize()
+        
             self.dismissViewControllerAnimated(true, completion: nil)
         
         }
@@ -82,11 +91,12 @@ class AddWhoViewController: UIViewController,UITableViewDataSource,UITableViewDe
  
     @IBAction func returnName(sender: AnyObject) {
 
-        var tmpStr = nameTextField.text
+        var name = nameTextField.text
         
-        if tmpStr?.characters.count != 0{
+        if name?.characters.count != 0{
             
-            nameList.append(tmpStr!)
+            
+            nameList.append(name!)
             
             print(nameList)
             
@@ -96,6 +106,8 @@ class AddWhoViewController: UIViewController,UITableViewDataSource,UITableViewDe
             
             //データを書き込んで
             myDefault.setObject(nameList, forKey: "nameList")
+            
+            myDefault.setObject(name, forKey: "selectedName")
             
             //即反映させる
             myDefault.synchronize()

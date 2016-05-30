@@ -21,6 +21,7 @@ class homeTableViewCell: UITableViewCell {
     @IBOutlet weak var postVolume: UIImageView!
     @IBOutlet weak var postImageView: UIImageView!
     @IBOutlet weak var settingBtn: UIButton!
+    @IBOutlet weak var postMoreBtn: UIButton!
     
 
     
@@ -41,10 +42,7 @@ class homeTableViewCell: UITableViewCell {
         
     }
 
-    @IBAction func btnMore(sender: UIButton) {
-        //detail画面へ遷移
-    }
-    
+
   
 
 

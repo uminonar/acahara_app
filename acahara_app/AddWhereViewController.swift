@@ -65,9 +65,15 @@ class AddWhereViewController: UIViewController,UITableViewDelegate,UITableViewDa
         print("\(indexPath.row)を選択")
         
             var place = placeList[indexPath.row]
-            performSegueWithIdentifier("backAddFromP", sender: nil)
             
-            var setPlace = place
+            //ユーザーデフォルトを用意する
+            var myDefault = NSUserDefaults.standardUserDefaults()
+            
+            //データを書き込んで
+            myDefault.setObject(place, forKey: "selectedPlace")
+            
+            //即反映させる
+            myDefault.synchronize()
             
             self.dismissViewControllerAnimated(true, completion: nil)
             
@@ -88,22 +94,23 @@ class AddWhereViewController: UIViewController,UITableViewDelegate,UITableViewDa
     
 
     @IBAction func returnPlace(sender: UITextField) {
-         var tmpStr = placeTextField.text
         
-        if tmpStr?.characters.count != 0{
+        var place = placeTextField.text
+        if place?.characters.count != 0{
             
-            var setPlace = tmpStr
-            
-            placeList.append(tmpStr!)
+            placeList.append(place!)
             
             print(placeList)
-            
+          
             //ユーザーデフォルトに保存
             //ユーザーデフォルトを用意する
             var myDefault = NSUserDefaults.standardUserDefaults()
             
             //データを書き込んで
             myDefault.setObject(placeList, forKey: "placeList")
+            
+            myDefault.setObject(place, forKey: "selectedPlace")
+            
             
             //即反映させる
             myDefault.synchronize()
