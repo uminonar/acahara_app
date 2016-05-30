@@ -27,8 +27,7 @@ class HomeViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
         
         homeTableView.registerNib(UINib(nibName: "postCustomCell", bundle: nil), forCellReuseIdentifier: "postCustomCell")
         
-        // タイトルを付けておきましょう
-        self.title = "Home"
+//        self.title = "Home"
         
         // addBtnを設置
         addBtn = UIBarButtonItem(barButtonSystemItem: .Compose, target: self, action: "onClick")
