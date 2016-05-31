@@ -20,67 +20,69 @@ class AddWhoViewController: UIViewController,UITableViewDataSource,UITableViewDe
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        
+
+        
         var myDefault = NSUserDefaults.standardUserDefaults()
         
         
 //        履歴全件削除の設定 1回使ったらコメントアウト
-//                var appDomain:String = NSBundle.mainBundle().bundleIdentifier!
-//                myDefault.removePersistentDomainForName(appDomain)
+//        var appDomain:String = NSBundle.mainBundle().bundleIdentifier!
+//        myDefault.removePersistentDomainForName(appDomain)
 //        
         if(myDefault.objectForKey("nameList") != nil){
             //データを呼び出して
             nameList = myDefault.objectForKey("nameList") as! Array
+            }
+            print(nameList)
         }
-        print(nameList)
-    }
 
     
     
     //行数を設定する
     
-    func tableView (tableView:UITableView, numberOfRowsInSection section:Int)->Int{
-        return nameList.count
-        print(nameList.count)
-    }
+        func tableView (tableView:UITableView, numberOfRowsInSection section:Int)->Int{
+            return nameList.count
+            print(nameList.count)
+        }
     
     //行の中身を設定する
-    func tableView (tableView:UITableView, cellForRowAtIndexPath indexPath:NSIndexPath) -> UITableViewCell{
-        var cell = UITableViewCell(style: .Default, reuseIdentifier: "whoCell")
+        func tableView (tableView:UITableView, cellForRowAtIndexPath indexPath:NSIndexPath) -> UITableViewCell{
+            var cell = UITableViewCell(style: .Default, reuseIdentifier: "whoCell")
         
-        //cell.textLabel!.text = "\(indexPath.row)行目"
+            //cell.textLabel!.text = "\(indexPath.row)行目"
         
-        //文字色をグレーにする
+            //文字色をグレーにする
         
-        cell.textLabel?.textColor = UIColor.grayColor()
+            cell.textLabel?.textColor = UIColor.grayColor()
         
         
-        var name = nameList[indexPath.row] as! String
+            var name = nameList[indexPath.row] as! String
         
-        cell.textLabel?.text = "\(name)"
+            cell.textLabel?.text = "\(name)"
         
-        return cell
-    }
+            return cell
+        }
     
-//    行を選択した時の処理
-    func tableView (tableView:UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-            print("\(indexPath.row)を選択")
+    //    行を選択した時の処理
+        func tableView (tableView:UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+                print("\(indexPath.row)を選択")
     
-            var name = nameList[indexPath.row]
+                var name = nameList[indexPath.row]
         
             //ユーザーデフォルトを用意する
-            var myDefault = NSUserDefaults.standardUserDefaults()
+                var myDefault = NSUserDefaults.standardUserDefaults()
         
             //データを書き込んで
-            myDefault.setObject(name, forKey: "selectedName")
+                myDefault.setObject(name, forKey: "selectedName")
         
             //即反映させる
-            myDefault.synchronize()
+                myDefault.synchronize()
         
             self.dismissViewControllerAnimated(true, completion: nil)
         
-        }
+            }
     
-
 
  
     @IBAction func returnName(sender: AnyObject) {
@@ -119,6 +121,9 @@ class AddWhoViewController: UIViewController,UITableViewDataSource,UITableViewDe
     @IBAction func cancelBtn(sender: UIButton) {
         self.dismissViewControllerAnimated(true, completion: nil)
     }
+    
+    
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

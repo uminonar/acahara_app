@@ -26,12 +26,26 @@ class AddDiaryViewController: UIViewController {
 //                myDefault.removePersistentDomainForName(appDomain)
         
     }
+    
+    override func viewWillAppear(animated: Bool) {
+        
+        var myDefault = NSUserDefaults.standardUserDefaults()
+        var diary = myDefault.stringForKey("diary")
+        
+        if( diary != nil){
+            print(diary)
+            diaryTextView.text = diary
+        }
+
+        
+    }
+    
 
     @IBAction func saveBtn(sender: UIButton) {
         
         var diaryText = diaryTextView.text
     
-        if(diaryText != nil){
+        //if ((diaryText != nil) && (diaryText != "")){
             //ユーザーデフォルトを用意する
             var myDefault = NSUserDefaults.standardUserDefaults()
             //データを書き込んで
@@ -41,9 +55,9 @@ class AddDiaryViewController: UIViewController {
             myDefault.synchronize()
             
             self.dismissViewControllerAnimated(true, completion: nil)
-        }
+        //}
         
-        }
+    }
     
     
     

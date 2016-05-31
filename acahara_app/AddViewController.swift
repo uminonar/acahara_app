@@ -41,7 +41,7 @@ class AddViewController: UIViewController {
         super.viewDidLoad()
         
         // addBtnを設置
-        addBtn = UIBarButtonItem(barButtonSystemItem: .Save, target: self, action: "onClick")
+        addBtn = UIBarButtonItem(barButtonSystemItem: .Save, target: self, action: "tapSave")
         
         
         self.navigationItem.rightBarButtonItem = addBtn
@@ -122,8 +122,16 @@ class AddViewController: UIViewController {
         //Diaryデータを呼び出して文字列が入っていたら表示する
         var diaryText =
             myDefault.stringForKey("diary")
+        if((diaryText != nil) && (diaryText != "")){
+            print(diaryText)
+            addDiary.text = diaryText
+            addDiary.textColor = UIColor.blackColor()
+        }else{
+            addDiary.text = "大丈夫！しっかり記録していきましょう。。具体的にどんなことがありましたか？"
+            addDiary.textColor = UIColor.lightGrayColor()
+        }
 
-        print(diaryText)
+//        print(diaryText)
 //        addDiary.text = diaryText
 //        addDiary.textColor = UIColor.blackColor()
         
@@ -234,7 +242,7 @@ class AddViewController: UIViewController {
     
 
     // addBtnをタップしたときのアクション
-    func onClick() {
+    func tapSave() {
         //必須項目が記入済みか、チェックする
         //未記入があったら、記入してくださいのアラート
         
@@ -242,12 +250,14 @@ class AddViewController: UIViewController {
         //データをサーバーに渡す処理
         //UserDefaultのdiaryキーのところを空にする
         
-        //履歴全件削除の設定 1回使ったらコメントアウト
+        //diary履歴削除の設定
                 var myDefault = NSUserDefaults.standardUserDefaults()
         
                 var appDomain:String = NSBundle.mainBundle().bundleIdentifier!
                 myDefault.removeObjectForKey("diary")
                 myDefault.synchronize()
+        
+        
         
     }
     
