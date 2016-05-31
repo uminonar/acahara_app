@@ -173,7 +173,6 @@ class HomeViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
         navigationController?.pushViewController(detailVC, animated: true)
     }
 
-    
 
 
 

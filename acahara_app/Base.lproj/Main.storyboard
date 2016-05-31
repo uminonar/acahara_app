@@ -152,7 +152,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="a9s-BA-NuN" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <tapGestureRecognizer id="4Z1-Jr-ahA"/>
             </objects>
-            <point key="canvasLocation" x="1511" y="243"/>
+            <point key="canvasLocation" x="1511" y="191"/>
         </scene>
         <!--Add Diary View Controller-->
         <scene sceneID="fUl-bo-QwH">
@@ -185,18 +185,23 @@
                                             <action selector="cancelBtn:" destination="ym4-25-gw8" eventType="touchUpInside" id="8J0-Cr-mgf"/>
                                         </connections>
                                     </button>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="保存" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sIo-Gl-buA">
-                                        <rect key="frame" x="275" y="29" width="37" height="21"/>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fN2-Kn-5l5">
+                                        <rect key="frame" x="274" y="23" width="30" height="29"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <color key="textColor" red="1" green="0.28301024270000003" blue="0.2225288543" alpha="1" colorSpace="calibratedRGB"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
+                                        <state key="normal" title="保存">
+                                            <color key="titleColor" red="1" green="0.26478197129999997" blue="0.072038469189999996" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="saveBtn:" destination="ym4-25-gw8" eventType="touchUpInside" id="zcm-Xu-gUP"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
                             </view>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="jio" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="DCs-pB-rrP">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="DCs-pB-rrP">
                                 <rect key="frame" x="3" y="62" width="315" height="328"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="textColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
@@ -204,10 +209,13 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <connections>
+                        <outlet property="diaryTextView" destination="DCs-pB-rrP" id="jys-Xx-TVi"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yaU-BX-4kL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1845" y="563"/>
+            <point key="canvasLocation" x="1726" y="575"/>
         </scene>
         <!--Detail View Controller-->
         <scene sceneID="gUV-zK-K1c">

@@ -10,15 +10,31 @@ import UIKit
 
 class AddDiaryViewController: UIViewController {
 
+    @IBOutlet weak var diaryTextView: UITextView!
+
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
     }
 
-    
-    
-    
+    @IBAction func saveBtn(sender: UIButton) {
+        
+        
+        var diaryText = diaryTextView.text
+        
+        //ユーザーデフォルトを用意する
+        var myDefault = NSUserDefaults.standardUserDefaults()
+        
+        //データを書き込んで
+        myDefault.setObject(diaryText, forKey: "diary")
+        
+        //即反映させる
+        myDefault.synchronize()
+
+        self.dismissViewControllerAnimated(true, completion: nil)
+    }
     
     
     

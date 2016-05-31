@@ -82,9 +82,6 @@ class AddViewController: UIViewController {
         
         addName.text = "uminonar"
         addSelfee.image = UIImage(named: "selfee.JPG")
-        //        bottomView.frame = CGRectMake(0, myBoundSize.height-428, 320, 428)
-        
-        
         
         //ユーザーデフォルトから保存されたデータを取り出す
         var myDefault = NSUserDefaults.standardUserDefaults()
@@ -105,12 +102,24 @@ class AddViewController: UIViewController {
         }
         
         
-        //場所、データを呼び出して文字列が入っていたら表示する
+        //名前、データを呼び出して文字列が入っていたら表示する
         var selectedName = myDefault.stringForKey("selectedName")
         
         if( selectedName != nil){
             print(selectedName)
             addWho.text = selectedName
+        }
+        
+        //Diaryデータを呼び出して文字列が入っていたら表示する
+        var diaryText =
+            myDefault.stringForKey("diary")
+        
+        if(diaryText != nil){
+            print(diaryText)
+            addDiary.text = diaryText
+            addDiary.textColor = UIColor.blackColor()
+            
+            
         }
         addDatePIcker.datePickerMode=UIDatePickerMode.DateAndTime
         let df=NSDateFormatter()
@@ -199,6 +208,7 @@ class AddViewController: UIViewController {
         return true
     
     }
+    
     
     internal func tapGesture(sender: UITapGestureRecognizer){
         
