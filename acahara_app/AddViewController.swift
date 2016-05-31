@@ -9,6 +9,8 @@
 import UIKit
 
 class AddViewController: UIViewController {
+    // ボタンを用意
+    var addBtn: UIBarButtonItem!
     
     let myBoundSize: CGSize = UIScreen.mainScreen().bounds.size
     
@@ -37,6 +39,13 @@ class AddViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // addBtnを設置
+        addBtn = UIBarButtonItem(barButtonSystemItem: .Save, target: self, action: "onClick")
+        
+        
+        self.navigationItem.rightBarButtonItem = addBtn
+
 
         //色が変わらない！！！なぜ？
         let plus = FAKFontAwesome.plusIconWithSize(15)
@@ -113,14 +122,13 @@ class AddViewController: UIViewController {
         //Diaryデータを呼び出して文字列が入っていたら表示する
         var diaryText =
             myDefault.stringForKey("diary")
+
+        print(diaryText)
+//        addDiary.text = diaryText
+//        addDiary.textColor = UIColor.blackColor()
         
-        if(diaryText != nil){
-            print(diaryText)
-            addDiary.text = diaryText
-            addDiary.textColor = UIColor.blackColor()
             
-            
-        }
+        //データピッカーの設定を指定する
         addDatePIcker.datePickerMode=UIDatePickerMode.DateAndTime
         let df=NSDateFormatter()
         df.dateFormat = "yyyy/MM/dd"
@@ -184,6 +192,8 @@ class AddViewController: UIViewController {
         df.dateFormat = "yyyy/MM/dd HH:MM"
         var dateStr = df.stringFromDate(sender.date)
         addWhen.text = dateStr+" 頃"
+        
+        addWhen?.becomeFirstResponder()
     }
 
         
@@ -214,15 +224,32 @@ class AddViewController: UIViewController {
         
         let AddDiaryVC = UIStoryboard(name: "Main",bundle: nil).instantiateViewControllerWithIdentifier("AddDiaryViewController") as UIViewController
         
-// showで遷移するバージョン           navigationController?.pushViewController(AddDiaryVC, animated: true)
+        // showで遷移するバージョン           navigationController?.pushViewController(AddDiaryVC, animated: true)
         
         
   
-//モーダルで遷移するバージョン
+        //モーダルで遷移するバージョン
         presentViewController(AddDiaryVC, animated: true, completion: nil)
     }
     
-    
+
+    // addBtnをタップしたときのアクション
+    func onClick() {
+        //必須項目が記入済みか、チェックする
+        //未記入があったら、記入してくださいのアラート
+        
+        //全て記入済みだったら、
+        //データをサーバーに渡す処理
+        //UserDefaultのdiaryキーのところを空にする
+        
+        //履歴全件削除の設定 1回使ったらコメントアウト
+                var myDefault = NSUserDefaults.standardUserDefaults()
+        
+                var appDomain:String = NSBundle.mainBundle().bundleIdentifier!
+                myDefault.removeObjectForKey("diary")
+                myDefault.synchronize()
+        
+    }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

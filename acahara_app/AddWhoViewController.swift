@@ -11,7 +11,7 @@ import UIKit
 class AddWhoViewController: UIViewController,UITableViewDataSource,UITableViewDelegate
 {
     
-    var setName:String = "セットできていません"
+
     
     @IBOutlet weak var nameTextField: UITextField!
     
@@ -80,12 +80,6 @@ class AddWhoViewController: UIViewController,UITableViewDataSource,UITableViewDe
         
         }
     
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        
-        var AddVC = segue.destinationViewController as! AddViewController
-        
-        AddVC.addName.text = setName
-    }
 
 
  

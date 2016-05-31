@@ -106,7 +106,7 @@
                                         <rect key="frame" x="221" y="304" width="50" height="50"/>
                                     </imageView>
                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="大丈夫！しっかり記録していきましょう。。具体的にどんなことがありましたか？" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="J87-A3-zbg">
-                                        <rect key="frame" x="14" y="162" width="296" height="108"/>
+                                        <rect key="frame" x="14" y="162" width="296" height="100"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <gestureRecognizers/>
                                         <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
@@ -152,7 +152,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="a9s-BA-NuN" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <tapGestureRecognizer id="4Z1-Jr-ahA"/>
             </objects>
-            <point key="canvasLocation" x="1511" y="191"/>
+            <point key="canvasLocation" x="1562" y="179"/>
         </scene>
         <!--Add Diary View Controller-->
         <scene sceneID="fUl-bo-QwH">
@@ -188,7 +188,7 @@
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fN2-Kn-5l5">
                                         <rect key="frame" x="274" y="23" width="30" height="29"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <state key="normal" title="保存">
+                                        <state key="normal" title="決定">
                                             <color key="titleColor" red="1" green="0.26478197129999997" blue="0.072038469189999996" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
                                         <connections>
@@ -205,6 +205,13 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IH8-95-2yY">
+                                <rect key="frame" x="263" y="68" width="37" height="30"/>
+                                <state key="normal" title="close"/>
+                                <connections>
+                                    <action selector="closeKeyBoardBtn:" destination="ym4-25-gw8" eventType="touchUpInside" id="Qfk-PR-l5f"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -215,7 +222,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yaU-BX-4kL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1726" y="575"/>
+            <point key="canvasLocation" x="1729" y="420"/>
         </scene>
         <!--Detail View Controller-->
         <scene sceneID="gUV-zK-K1c">

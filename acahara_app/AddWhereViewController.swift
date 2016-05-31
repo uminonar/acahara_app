@@ -9,9 +9,7 @@
 import UIKit
 
 class AddWhereViewController: UIViewController,UITableViewDelegate,UITableViewDataSource{
-    
-    var setPlace = "セットできていません"
-    var selectedLocation = "where"
+
 
     @IBOutlet weak var placeTextField: UITextField!
 
@@ -26,9 +24,12 @@ class AddWhereViewController: UIViewController,UITableViewDelegate,UITableViewDa
         var myDefault = NSUserDefaults.standardUserDefaults()
         
         
-//履歴全件削除の設定 1回使ったらコメントアウト
+    //履歴全件削除の設定 1回使ったらコメントアウト
 //        var appDomain:String = NSBundle.mainBundle().bundleIdentifier!
 //        myDefault.removePersistentDomainForName(appDomain)
+//        
+//        myDefault.removeObjectForKey("diary")
+//        myDefault.synchronize()
         
         if(myDefault.objectForKey("placeList") != nil){
             //データを呼び出して
@@ -79,18 +80,7 @@ class AddWhereViewController: UIViewController,UITableViewDelegate,UITableViewDa
             
         }
     
-    
-        override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        
-            var AddVC = segue.destinationViewController as! AddViewController
-        
-            AddVC.addWhere.text = setPlace
-        }
-    
-    
-    
-    
-    
+
     
 
     @IBAction func returnPlace(sender: UITextField) {
@@ -115,16 +105,13 @@ class AddWhereViewController: UIViewController,UITableViewDelegate,UITableViewDa
             //即反映させる
             myDefault.synchronize()
             
-            
-            
-            
-            //画面を閉じる機能がここでは効かない。なぜ？
+            //画面を落とす
             self.dismissViewControllerAnimated(true, completion: nil)
             
         }
     }
 
-  
+    
     
     @IBAction func cancelBtn(sender: UIButton) {
         self.dismissViewControllerAnimated(true, completion: nil)

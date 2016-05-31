@@ -159,13 +159,12 @@ class HomeViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
     
     func deletePost(tag:Int){
 //        論理削除を記述したいけど、どうやる？以下は物理削除だけれど書き方は？サーバー
-        
         posts.removeObjectAtIndex(tag)
         self.homeTableView.reloadData()
     }
     
     
-    //moreボタンでdetailVCに遷移する  下記、Mainではない?これ何？
+    //moreボタンでdetailVCに遷移する
     func detailVC(sender: UIButton){
         
         let detailVC = UIStoryboard(name: "Main",bundle: nil).instantiateViewControllerWithIdentifier("DetailViewController") as UIViewController

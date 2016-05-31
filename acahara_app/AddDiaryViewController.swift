@@ -15,26 +15,35 @@ class AddDiaryViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        
+        //最初からカーソルが反転してキーボードが表示される処理
+        diaryTextView.becomeFirstResponder()
+        
+//履歴全件削除の設定 1回使ったらコメントアウト
+//        var myDefault = NSUserDefaults.standardUserDefaults()
+//        
+//        var appDomain:String = NSBundle.mainBundle().bundleIdentifier!
+//                myDefault.removePersistentDomainForName(appDomain)
+        
     }
 
     @IBAction func saveBtn(sender: UIButton) {
         
-        
         var diaryText = diaryTextView.text
+    
+        if(diaryText != nil){
+            //ユーザーデフォルトを用意する
+            var myDefault = NSUserDefaults.standardUserDefaults()
+            //データを書き込んで
+            myDefault.setObject(diaryText, forKey: "diary")
+            
+            //即反映させる
+            myDefault.synchronize()
+            
+            self.dismissViewControllerAnimated(true, completion: nil)
+        }
         
-        //ユーザーデフォルトを用意する
-        var myDefault = NSUserDefaults.standardUserDefaults()
-        
-        //データを書き込んで
-        myDefault.setObject(diaryText, forKey: "diary")
-        
-        //即反映させる
-        myDefault.synchronize()
-
-        self.dismissViewControllerAnimated(true, completion: nil)
-    }
+        }
     
     
     
@@ -42,6 +51,9 @@ class AddDiaryViewController: UIViewController {
         self.dismissViewControllerAnimated(true, completion: nil)
     }
     
+    @IBAction func closeKeyBoardBtn(sender: UIButton) {
+        diaryTextView.resignFirstResponder()
+    }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
