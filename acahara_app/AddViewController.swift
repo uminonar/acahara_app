@@ -17,24 +17,21 @@ class AddViewController: UIViewController {
     @IBOutlet weak var addBar: UIView!
     @IBOutlet weak var addSelfee: UIImageView!
     @IBOutlet weak var addName: UILabel!
-    @IBOutlet weak var addWhen: UITextField!
+    @IBOutlet weak var addWhen: UILabel!
     @IBOutlet weak var addDatePIcker: UIDatePicker!
     @IBOutlet weak var addMoveView: UIView!
     @IBOutlet weak var addWhere: UITextField!
     @IBOutlet weak var addWho: UITextField!
     @IBOutlet weak var addUniversity: UITextField!
-
     @IBOutlet weak var addImportance: UILabel!
     @IBOutlet weak var addDiary: UITextView!
-    
     @IBOutlet weak var addMicPlus: UIImageView!
     @IBOutlet weak var addMicPhone: UIImageView!
-
     @IBOutlet weak var addPicPlus: UIImageView!
     @IBOutlet weak var addPicFile: UIImageView!
-
     @IBOutlet weak var addMoviePlus: UIImageView!
     @IBOutlet weak var addMovieFile: UIImageView!
+
 
 
     override func viewDidLoad() {
@@ -138,11 +135,7 @@ class AddViewController: UIViewController {
             
         //データピッカーの設定を指定する
         addDatePIcker.datePickerMode=UIDatePickerMode.DateAndTime
-        let df=NSDateFormatter()
-        df.dateFormat = "yyyy/MM/dd"
         addDatePIcker.maximumDate=NSDate()
-        
-        addWhen.tintColor =  UIColor.redColor()
     }
 
     
@@ -156,29 +149,20 @@ class AddViewController: UIViewController {
     }
     }
     
+
     
     func textFieldShouldBeginEditing(textField: UITextField) -> Bool {
         print(textField.tag)
-        print("addwhen")
+        
         
         if textField.tag == 1000{
-            
-            UIView.animateWithDuration(0.4, animations: { () -> Void in self.addMoveView.frame = CGRectMake(0,380, self.myBoundSize.width, 442)
-                }, completion: { finished in print("addMoveViewを動かした")
-                
-
-            })
-            return false
-        }
-        
-        if textField.tag == 2000{
             let AddWhere = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("AddWhereViewController") as UIViewController
             
             presentViewController(AddWhere, animated: true, completion: nil)
             return false
         }
         
-        if textField.tag == 3000{
+        if textField.tag == 2000{
             let AddWho = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("AddWhoViewController") as UIViewController
             
             presentViewController(AddWho, animated: true, completion: nil)
@@ -191,26 +175,9 @@ class AddViewController: UIViewController {
 
     }
     
-       
-
-        
-    @IBAction func pickerDateChange(sender: UIDatePicker) {
-        
-        let df = NSDateFormatter()
-        df.dateFormat = "yyyy/MM/dd HH:MM"
-        var dateStr = df.stringFromDate(sender.date)
-        addWhen.text = dateStr+" 頃"
-        
-        addWhen?.becomeFirstResponder()
-    }
-
-        
-    
-    
-    
     
     func textFieldShouldEndEditing(textField: UITextField) -> Bool {
-        if textField.tag == 4000{
+        if textField.tag == 3000{
             //ユーザーデフォルトを用意する
             var myDefault = NSUserDefaults.standardUserDefaults()
             
@@ -260,6 +227,40 @@ class AddViewController: UIViewController {
         
         
     }
+    
+    
+    //addWhenラベルをタップしたらピッカーを表示する　機能しない、なぜ？？？？
+    @IBAction func addWhen(sender: UITapGestureRecognizer) {
+        
+        if(addWhen.textColor != UIColor.redColor()){
+           
+            UIView.animateWithDuration(0.4, animations: { () -> Void in self.addMoveView.frame = CGRectMake(0,380, self.myBoundSize.width, 442)
+                }, completion: { finished in print("addMoveViewを動かした")
+                    
+            })
+        }else{
+            UIView.animateWithDuration(0.4, animations: { () -> Void in self.addMoveView.frame = CGRectMake(0,130, self.myBoundSize.width, 442)
+                }, completion: { finished in print("addMoveViewを動かした")})
+            addWhen.textColor = UIColor.blackColor()
+        
+        }
+    }
+    
+    @IBAction func pickerDateChange(sender: UIDatePicker) {
+        
+        let df = NSDateFormatter()
+        df.dateFormat = "yyyy/MM/dd HH:MM"
+        var dateStr = df.stringFromDate(sender.date)
+        
+        addWhen.text = dateStr+" 頃"
+        
+        addWhen.textColor = UIColor.redColor()
+        
+    }
+
+    
+    
+    
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
