@@ -28,16 +28,16 @@
                                 <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
                             </view>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4VZ-dl-Mku">
-                                <rect key="frame" x="15" y="72" width="50" height="50"/>
+                                <rect key="frame" x="15" y="76" width="40" height="40"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Uminonar" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="R9H-zg-d0J">
-                                <rect key="frame" x="79" y="72" width="75" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="uminonar" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="R9H-zg-d0J">
+                                <rect key="frame" x="63" y="71" width="72" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <datePicker contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="LrV-2x-I8q">
-                                <rect key="frame" x="0.0" y="130" width="320" height="216"/>
+                                <rect key="frame" x="0.0" y="148" width="320" height="216"/>
                                 <date key="date" timeIntervalSinceReferenceDate="486042437.74520999">
                                     <!--2016-05-27 11:47:17 +0000-->
                                 </date>
@@ -46,10 +46,31 @@
                                     <action selector="pickerDateChange:" destination="RKv-1L-k6a" eventType="valueChanged" id="q6M-o2-TRN"/>
                                 </connections>
                             </datePicker>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="2016/05/18 13:45 " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wYz-d8-jpP">
+                                <rect key="frame" x="90" y="129" width="140" height="21"/>
+                                <gestureRecognizers/>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <color key="textColor" red="1" green="0.22663640860000001" blue="0.2822809678" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="fQ1-4a-T9G" appends="YES" id="N4v-vJ-aFu"/>
+                                </connections>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="頃" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="B0N-JX-rvD">
+                                <rect key="frame" x="232" y="129" width="25" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <color key="textColor" red="1" green="0.22663640860000001" blue="0.2822809678" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" tag="1000" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="いつその問題は起きましたか？" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="HjK-42-NRb">
+                                <rect key="frame" x="63" y="94" width="245" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4Td-0N-9lf">
-                                <rect key="frame" x="0.0" y="130" width="320" height="442"/>
+                                <rect key="frame" x="0.0" y="126" width="320" height="442"/>
                                 <subviews>
-                                    <textField opaque="NO" clipsSubviews="YES" tag="1000" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="どこでその問題は起きましたか？" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="oRu-6R-Q2c">
+                                    <textField opaque="NO" clipsSubviews="YES" tag="2000" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="どこでその問題は起きましたか？" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="oRu-6R-Q2c">
                                         <rect key="frame" x="14" y="4" width="296" height="30"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
@@ -57,7 +78,7 @@
                                             <outlet property="delegate" destination="RKv-1L-k6a" id="Tqg-oc-uXt"/>
                                         </connections>
                                     </textField>
-                                    <textField opaque="NO" clipsSubviews="YES" tag="2000" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="誰が問題ですか？" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="tuP-LW-LXy">
+                                    <textField opaque="NO" clipsSubviews="YES" tag="3000" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="誰が問題ですか？" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="tuP-LW-LXy">
                                         <rect key="frame" x="14" y="42" width="296" height="30"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
@@ -65,7 +86,7 @@
                                             <outlet property="delegate" destination="RKv-1L-k6a" id="nqx-Pe-xYr"/>
                                         </connections>
                                     </textField>
-                                    <textField opaque="NO" clipsSubviews="YES" tag="3000" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="どこの大学の何という学部/学科ですか？" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4Zh-P2-yHj">
+                                    <textField opaque="NO" clipsSubviews="YES" tag="4000" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="どこの大学の何という学部/学科ですか？" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4Zh-P2-yHj">
                                         <rect key="frame" x="14" y="80" width="296" height="30"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
@@ -86,10 +107,11 @@
                                         <rect key="frame" x="244" y="124" width="25" height="25"/>
                                     </imageView>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tV0-yO-axv">
-                                        <rect key="frame" x="28" y="316" width="25" height="25"/>
+                                        <rect key="frame" x="58" y="316" width="25" height="25"/>
                                     </imageView>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vjO-LK-rMu">
-                                        <rect key="frame" x="61" y="304" width="50" height="50"/>
+                                        <rect key="frame" x="91" y="304" width="50" height="50"/>
+                                        <gestureRecognizers/>
                                     </imageView>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cmu-ZU-c6a">
                                         <rect key="frame" x="188" y="316" width="25" height="25"/>
@@ -114,19 +136,19 @@
                                         <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Mut-D5-o5O">
+                                        <rect key="frame" x="54" y="283" width="103" height="105"/>
+                                        <gestureRecognizers/>
+                                        <connections>
+                                            <outletCollection property="gestureRecognizers" destination="TTA-Ts-cVQ" appends="YES" id="L82-Tj-3kt"/>
+                                        </connections>
+                                    </view>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ijr-1a-aVa">
+                                        <rect key="frame" x="46" y="270" width="249" height="142"/>
+                                    </imageView>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
-                            <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="いつその問題は起きましたか？" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KYd-ey-J69">
-                                <rect key="frame" x="73" y="101" width="238" height="21"/>
-                                <gestureRecognizers/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <color key="textColor" red="0.76834935897435896" green="0.76834935897435896" blue="0.76834935897435896" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                                <connections>
-                                    <outletCollection property="gestureRecognizers" destination="9Hp-iS-dq3" appends="YES" id="NPk-R3-UCw"/>
-                                </connections>
-                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -146,9 +168,12 @@
                         <outlet property="addPicPlus" destination="tV0-yO-axv" id="1Zo-Gw-epL"/>
                         <outlet property="addSelfee" destination="4VZ-dl-Mku" id="VeB-fx-f3c"/>
                         <outlet property="addUniversity" destination="4Zh-P2-yHj" id="jcf-48-gfB"/>
-                        <outlet property="addWhen" destination="KYd-ey-J69" id="7A3-AC-588"/>
+                        <outlet property="addWhen" destination="HjK-42-NRb" id="0sr-OL-cpq"/>
                         <outlet property="addWhere" destination="oRu-6R-Q2c" id="lUC-Yn-Ycx"/>
                         <outlet property="addWho" destination="tuP-LW-LXy" id="dzO-7b-Rwd"/>
+                        <outlet property="picBase" destination="ijr-1a-aVa" id="hGQ-LI-z1c"/>
+                        <outlet property="tapPicFile" destination="Mut-D5-o5O" id="ewN-xP-agM"/>
+                        <outlet property="timeLabel" destination="wYz-d8-jpP" id="Vl0-cn-AMp"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="a9s-BA-NuN" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -157,9 +182,14 @@
                         <action selector="tapDiary:" destination="RKv-1L-k6a" id="RhF-aH-jtA"/>
                     </connections>
                 </tapGestureRecognizer>
-                <tapGestureRecognizer id="9Hp-iS-dq3">
+                <tapGestureRecognizer id="TTA-Ts-cVQ">
                     <connections>
-                        <action selector="addWhen:" destination="RKv-1L-k6a" id="5Ty-Ph-t0d"/>
+                        <action selector="tapPicFile:" destination="RKv-1L-k6a" id="9uI-i3-ydB"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer id="fQ1-4a-T9G">
+                    <connections>
+                        <action selector="tapDecideTime:" destination="RKv-1L-k6a" id="MJb-A6-0WF"/>
                     </connections>
                 </tapGestureRecognizer>
             </objects>

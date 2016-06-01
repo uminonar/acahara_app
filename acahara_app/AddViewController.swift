@@ -8,7 +8,14 @@
 
 import UIKit
 
-class AddViewController: UIViewController {
+class AddViewController: UIViewController,UIImagePickerControllerDelegate,UINavigationControllerDelegate {
+    
+    @IBOutlet weak var timeLabel: UILabel!
+    
+    @IBOutlet weak var picBase: UIImageView!
+    @IBOutlet weak var tapPicFile: UIView!
+    
+    
     // ボタンを用意
     var addBtn: UIBarButtonItem!
     
@@ -17,7 +24,7 @@ class AddViewController: UIViewController {
     @IBOutlet weak var addBar: UIView!
     @IBOutlet weak var addSelfee: UIImageView!
     @IBOutlet weak var addName: UILabel!
-    @IBOutlet weak var addWhen: UILabel!
+    @IBOutlet weak var addWhen: UITextField!
     @IBOutlet weak var addDatePIcker: UIDatePicker!
     @IBOutlet weak var addMoveView: UIView!
     @IBOutlet weak var addWhere: UITextField!
@@ -154,15 +161,23 @@ class AddViewController: UIViewController {
     func textFieldShouldBeginEditing(textField: UITextField) -> Bool {
         print(textField.tag)
         
-        
         if textField.tag == 1000{
+            
+            UIView.animateWithDuration(0.4, animations: { () -> Void in self.addMoveView.frame = CGRectMake(0,380, self.myBoundSize.width, 442)
+                }, completion: { finished in print("addMoveViewを動かした")
+                    
+            })
+            return false
+        }
+        
+        if textField.tag == 2000{
             let AddWhere = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("AddWhereViewController") as UIViewController
             
             presentViewController(AddWhere, animated: true, completion: nil)
             return false
         }
         
-        if textField.tag == 2000{
+        if textField.tag == 3000{
             let AddWho = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("AddWhoViewController") as UIViewController
             
             presentViewController(AddWho, animated: true, completion: nil)
@@ -177,7 +192,7 @@ class AddViewController: UIViewController {
     
     
     func textFieldShouldEndEditing(textField: UITextField) -> Bool {
-        if textField.tag == 3000{
+        if textField.tag == 4000{
             //ユーザーデフォルトを用意する
             var myDefault = NSUserDefaults.standardUserDefaults()
             
@@ -208,7 +223,7 @@ class AddViewController: UIViewController {
 //    }
     
 
-    // addBtnをタップしたときのアクション
+  
     func tapSave() {
         //必須項目が記入済みか、チェックする
         //未記入があったら、記入してくださいのアラート
@@ -234,7 +249,7 @@ class AddViewController: UIViewController {
                 addWhere.text=""
                 addWho.text=""
         
-                //なぜ効かない？
+                //前ページに遷移する
                 navigationController?.popViewControllerAnimated(true)
         
         
@@ -247,30 +262,12 @@ class AddViewController: UIViewController {
         
         // showで遷移するバージョン           navigationController?.pushViewController(AddDiaryVC, animated: true)
         
-        
-        
         //モーダルで遷移するバージョン
         presentViewController(AddDiaryVC, animated: true, completion: nil)
     }
     
-    //addWhenラベルをタップしたらピッカーを表示する　機能しない、なぜ？？？？
-
-        
-    @IBAction func addWhen(sender: UITapGestureRecognizer) {
     
-        if(addWhen.textColor != UIColor.redColor()){
-           
-            UIView.animateWithDuration(0.4, animations: { () -> Void in self.addMoveView.frame = CGRectMake(0,380, self.myBoundSize.width, 442)
-                }, completion: { finished in print("addMoveViewを動かした")
-                    
-            })
-        }else{
-            UIView.animateWithDuration(0.4, animations: { () -> Void in self.addMoveView.frame = CGRectMake(0,130, self.myBoundSize.width, 442)
-                }, completion: { finished in print("addMoveViewを動かした")})
-            addWhen.textColor = UIColor.blackColor()
-        
-        }
-    }
+    //addWhenを編集し始めたらピッカーを表示する
     
     @IBAction func pickerDateChange(sender: UIDatePicker) {
         
@@ -278,16 +275,44 @@ class AddViewController: UIViewController {
         df.dateFormat = "yyyy/MM/dd HH:MM"
         var dateStr = df.stringFromDate(sender.date)
         
-        addWhen.text = dateStr+" 頃"
-        
-        addWhen.textColor = UIColor.redColor()
+        timeLabel.text = dateStr
         
     }
 
+    //datePickerの赤字の日時がタップされたらaddWhenテキストフィールドに赤字の日時を代入しDatePickerを閉じる
+    @IBAction func tapDecideTime(sender: UITapGestureRecognizer) {
+        
+        addWhen.text = timeLabel.text
+        
+        
+        UIView.animateWithDuration(0.4, animations: { () -> Void in self.addMoveView.frame = CGRectMake(0,126, self.myBoundSize.width, 442)
+            }, completion: { finished in print("addMoveViewを動かした")
+                
+        })
+        
+    }
+    
+    //pictureFileがタップされた時の処理
+ 
+    @IBAction func tapPicFile(sender: UITapGestureRecognizer) {
+        var photoPick = UIImagePickerController()
+        photoPick.delegate = self
+        photoPick.sourceType = .PhotoLibrary
+        self.presentViewController(photoPick, animated: true, completion: nil)
+    }
+    
+    func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]){
+        picBase.image = info[UIImagePickerControllerOriginalImage] as? UIImage
+        self.dismissViewControllerAnimated(true, completion: nil)
+    }
+        
+//    func imagePickerControllerDidCancel(picker: UIImagePickerController){
+//    
+//    }
+
     
     
-    
-    
+
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
