@@ -27,7 +27,12 @@ class HelpViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
         let jsonArray = (try! NSJSONSerialization.JSONObjectWithData(jsondata!, options: [])) as! NSArray
         
         for data in jsonArray{
-            posts.addObject(data as! NSMutableDictionary)
+            
+            var openFlag:String = data["openFlag"] as! String
+            
+            if openFlag == "0"{
+                posts.addObject(data as! NSMutableDictionary)
+            }
         }
     }
     
@@ -55,18 +60,18 @@ class HelpViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
         
         var openFlag:String = posts[indexPath.row]["openFlag"] as! String
         
-        if (openFlag == "1"){
-            
-            //セルを見せない？消す？どうする？
-            cell.backgroundColor = UIColor.groupTableViewBackgroundColor()
-            cell.postDiary.backgroundColor = UIColor.groupTableViewBackgroundColor()
-            
-        }else{
-            cell.backgroundColor = UIColor.whiteColor()
-            cell.postDiary.backgroundColor = UIColor.whiteColor()
-            
-        }
-        
+//        if (openFlag == "1"){
+//            
+//            //セルを見せない？消す？どうする？
+//            cell.backgroundColor = UIColor.groupTableViewBackgroundColor()
+//            cell.postDiary.backgroundColor = UIColor.groupTableViewBackgroundColor()
+//            
+//        }else{
+//            cell.backgroundColor = UIColor.whiteColor()
+//            cell.postDiary.backgroundColor = UIColor.whiteColor()
+//            
+//        }
+//        
         //settingBtnの後に：をつけることで、sender情報を使える
         cell.settingBtn.addTarget(self, action:"settingBtn:", forControlEvents:.TouchUpInside)
         cell.settingBtn.tag = indexPath.row

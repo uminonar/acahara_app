@@ -195,17 +195,17 @@ class AddViewController: UIViewController {
     }
     
     
-    internal func tapGesture(sender: UITapGestureRecognizer){
-        
-        let AddDiaryVC = UIStoryboard(name: "Main",bundle: nil).instantiateViewControllerWithIdentifier("AddDiaryViewController") as UIViewController
-        
-        // showで遷移するバージョン           navigationController?.pushViewController(AddDiaryVC, animated: true)
-        
-        
-  
-        //モーダルで遷移するバージョン
-        presentViewController(AddDiaryVC, animated: true, completion: nil)
-    }
+//    internal func tapGesture(sender: UITapGestureRecognizer){
+//        
+//        let AddDiaryVC = UIStoryboard(name: "Main",bundle: nil).instantiateViewControllerWithIdentifier("AddDiaryViewController") as UIViewController
+//        
+//        // showで遷移するバージョン           navigationController?.pushViewController(AddDiaryVC, animated: true)
+//        
+//        
+//  
+//        //モーダルで遷移するバージョン
+//        presentViewController(AddDiaryVC, animated: true, completion: nil)
+//    }
     
 
     // addBtnをタップしたときのアクション
@@ -235,12 +235,23 @@ class AddViewController: UIViewController {
                 addWho.text=""
         
                 //なぜ効かない？
-                navigationController?.
-        popViewControllerAnimated(true)
+                navigationController?.popViewControllerAnimated(true)
         
         
     }
     
+    @IBAction func tapDiary(sender: UITapGestureRecognizer) {
+        
+        
+        let AddDiaryVC = UIStoryboard(name: "Main",bundle: nil).instantiateViewControllerWithIdentifier("AddDiaryViewController") as UIViewController
+        
+        // showで遷移するバージョン           navigationController?.pushViewController(AddDiaryVC, animated: true)
+        
+        
+        
+        //モーダルで遷移するバージョン
+        presentViewController(AddDiaryVC, animated: true, completion: nil)
+    }
     
     //addWhenラベルをタップしたらピッカーを表示する　機能しない、なぜ？？？？
     @IBAction func addWhen(sender: UITapGestureRecognizer) {
