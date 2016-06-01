@@ -235,7 +235,8 @@ class AddViewController: UIViewController {
                 addWho.text=""
         
                 //なぜ効かない？
-                self.dismissViewControllerAnimated(true, completion: nil)
+                navigationController?.
+        popViewControllerAnimated(true)
         
         
     }

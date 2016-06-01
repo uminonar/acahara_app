@@ -48,7 +48,7 @@ class DetailViewController: UIViewController {
         detailWho.text = dic["who"] as! String
         detailUniversity.text = dic["university"] as! String
         detailTextView.text = dic["diary"] as! String
-        detailImageView.image = UIImage(named: "picture")
+        detailImageView.image = UIImage(named: dic["picture"] as! String)
         
         let volume = FAKFontAwesome.volumeUpIconWithSize(18)
         let volumeImage = volume.imageWithSize(CGSizeMake(18, 18))

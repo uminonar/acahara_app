@@ -88,27 +88,11 @@ class HomeViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
         cell.settingBtn.tag = indexPath.row
         
         
-        cell.postMoreBtn.addTarget(self, action:"detailVC:",forControlEvents:.TouchUpInside)
-        
+        cell.postMoreBtn.addTarget(self, action:"showMore:",forControlEvents:.TouchUpInside)
+        cell.settingBtn.tag = indexPath.row
         return cell
     }
     
-    
-    //行が選択された時の処理 もっと読むが押された時の処理でないといけない？だいたいsegue?ここで使える？
-    func tableView (tableView:UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        print("\(indexPath.row)行目を選択")
-        
-        selectedIndex = indexPath.row
-        performSegueWithIdentifier("showDetailView", sender: nil)
-    }
-    
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        
-        var detailVC = segue.destinationViewController as! DetailViewController
-        
-        detailVC.dtSelectedIndex = selectedIndex
-    }
-
     
     //削除が選択された時の関数
     func settingBtn(sender: UIButton) {
@@ -181,9 +165,13 @@ class HomeViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
     
     
     //moreボタンでdetailVCに遷移する
-    func detailVC(sender: UIButton){
+    func showMore(sender: UIButton){
         
-        let detailVC = UIStoryboard(name: "Main",bundle: nil).instantiateViewControllerWithIdentifier("DetailViewController") as UIViewController
+        let detailVC = UIStoryboard(name: "Main",bundle: nil).instantiateViewControllerWithIdentifier("DetailViewController") as! DetailViewController
+        
+        detailVC.dtSelectedIndex = sender.tag
+        
+        
         
         navigationController?.pushViewController(detailVC, animated: true)
     }
