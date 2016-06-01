@@ -224,6 +224,18 @@ class AddViewController: UIViewController {
                 myDefault.removeObjectForKey("diary")
                 myDefault.synchronize()
         
+                myDefault.removeObjectForKey("selectedPlace")
+                myDefault.synchronize()
+        
+                myDefault.removeObjectForKey("selectedName")
+                myDefault.synchronize()
+        
+                addWhen.text=""
+                addWhere.text=""
+                addWho.text=""
+        
+                //なぜ効かない？
+                self.dismissViewControllerAnimated(true, completion: nil)
         
         
     }

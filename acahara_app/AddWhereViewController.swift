@@ -20,24 +20,28 @@ class AddWhereViewController: UIViewController,UITableViewDelegate,UITableViewDa
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+    }
+    
+    override func viewWillAppear(animated: Bool) {
         var myDefault = NSUserDefaults.standardUserDefaults()
         
-        
-    //履歴全件削除の設定 1回使ったらコメントアウト
-//        var appDomain:String = NSBundle.mainBundle().bundleIdentifier!
-//        myDefault.removePersistentDomainForName(appDomain)
+        //履歴全件削除の設定 1回使ったらコメントアウト
+//                var appDomain:String = NSBundle.mainBundle().bundleIdentifier!
+//                myDefault.removePersistentDomainForName(appDomain)
 //        
-//        myDefault.removeObjectForKey("diary")
-//        myDefault.synchronize()
+//                myDefault.removeObjectForKey("diary")
+//                myDefault.synchronize()
+        
         
         if(myDefault.objectForKey("placeList") != nil){
             //データを呼び出して
             placeList = myDefault.objectForKey("placeList") as! Array
+            }
+            print(placeList)
         }
-        print(placeList)
-    }
 
+    
+    
     //行数を設定する
     
     func tableView (tableView:UITableView, numberOfRowsInSection section:Int)->Int{
@@ -81,19 +85,31 @@ class AddWhereViewController: UIViewController,UITableViewDelegate,UITableViewDa
         }
     
     //セルの削除許可を与える
-//    func tableView(tableView: UITableView,canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool
-//    {
-//        return true
-//    }
-//    
-//    //削除ボタンが押された時の処理
-//    override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
-//        if editingStyle == UITableViewCellEditingStyle.Delete {
-//            placeList.removeAtIndex(indexPath.row)
-//            tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: UITableViewRowAnimation.Automatic)
-//        }
-//     }
-//
+    func tableView(tableView: UITableView,canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool
+    {
+        return true
+    }
+    
+    //削除ボタンが押された時の処理
+    func tableView (tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
+        if editingStyle == UITableViewCellEditingStyle.Delete {
+            placeList.removeAtIndex(indexPath.row)
+            tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: UITableViewRowAnimation.Automatic)
+            
+            
+            
+            //ユーザーデフォルトを用意する
+            var myDefault = NSUserDefaults.standardUserDefaults()
+            
+            //データを書き込んで
+            myDefault.setObject(placeList, forKey: "placeList")
+            
+            //即反映させる
+            myDefault.synchronize()
+
+        }
+     }
+
     
 
     @IBAction func returnPlace(sender: UITextField) {

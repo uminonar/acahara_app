@@ -10,8 +10,7 @@ import UIKit
 
 class HomeViewController: UIViewController,UITableViewDelegate,UITableViewDataSource {
     
-
-    @IBOutlet weak var homeBgImage: UITableView!
+    var selectedIndex = -1
     @IBOutlet weak var homeTableView: UITableView!
 
   
@@ -95,6 +94,23 @@ class HomeViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
     }
     
     
+    //行が選択された時の処理 もっと読むが押された時の処理でないといけない？だいたいsegue?ここで使える？
+    func tableView (tableView:UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        print("\(indexPath.row)行目を選択")
+        
+        selectedIndex = indexPath.row
+        performSegueWithIdentifier("showDetailView", sender: nil)
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        
+        var detailVC = segue.destinationViewController as! DetailViewController
+        
+        detailVC.dtSelectedIndex = selectedIndex
+    }
+
+    
+    //削除が選択された時の関数
     func settingBtn(sender: UIButton) {
         
         print("\(sender.tag)番目")
