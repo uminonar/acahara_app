@@ -78,9 +78,9 @@ class AddViewController: UIViewController {
         // 枠の角を丸くする。
         addDiary.layer.cornerRadius = 8
         
-        //tapGestureRecognizerをaddDiaryテキストフィールドに設定
-        let myTap = UITapGestureRecognizer(target: self, action: "tapGesture:")
-        addDiary.addGestureRecognizer(myTap)
+//        //tapGestureRecognizerをaddDiaryテキストフィールドに設定
+//        let myTap = UITapGestureRecognizer(target: self, action: "tapGesture:")
+//        addDiary.addGestureRecognizer(myTap)
     }
     
     
@@ -254,8 +254,10 @@ class AddViewController: UIViewController {
     }
     
     //addWhenラベルをタップしたらピッカーを表示する　機能しない、なぜ？？？？
-    @IBAction func addWhen(sender: UITapGestureRecognizer) {
+
         
+    @IBAction func addWhen(sender: UITapGestureRecognizer) {
+    
         if(addWhen.textColor != UIColor.redColor()){
            
             UIView.animateWithDuration(0.4, animations: { () -> Void in self.addMoveView.frame = CGRectMake(0,380, self.myBoundSize.width, 442)

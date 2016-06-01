@@ -119,9 +119,13 @@
                             </view>
                             <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="いつその問題は起きましたか？" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KYd-ey-J69">
                                 <rect key="frame" x="73" y="101" width="238" height="21"/>
+                                <gestureRecognizers/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <color key="textColor" red="0.76834935897435896" green="0.76834935897435896" blue="0.76834935897435896" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="9Hp-iS-dq3" appends="YES" id="NPk-R3-UCw"/>
+                                </connections>
                             </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -151,6 +155,11 @@
                 <tapGestureRecognizer id="Q9S-iL-Krn">
                     <connections>
                         <action selector="tapDiary:" destination="RKv-1L-k6a" id="RhF-aH-jtA"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer id="9Hp-iS-dq3">
+                    <connections>
+                        <action selector="addWhen:" destination="RKv-1L-k6a" id="5Ty-Ph-t0d"/>
                     </connections>
                 </tapGestureRecognizer>
             </objects>
