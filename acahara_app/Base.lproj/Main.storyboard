@@ -98,32 +98,26 @@
                                         </connections>
                                     </textField>
                                     <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="CUr-K1-oew">
-                                        <rect key="frame" x="19" y="233" width="51" height="31"/>
+                                        <rect key="frame" x="233" y="398" width="51" height="31"/>
                                         <connections>
                                             <action selector="addSwitch:" destination="RKv-1L-k6a" eventType="valueChanged" id="hbn-Md-bba"/>
                                         </connections>
                                     </switch>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="woP-2a-DsE">
-                                        <rect key="frame" x="221" y="246" width="15" height="15"/>
-                                    </imageView>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ZaP-Dn-UzO">
-                                        <rect key="frame" x="239" y="241" width="25" height="25"/>
-                                    </imageView>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tV0-yO-axv">
-                                        <rect key="frame" x="58" y="316" width="25" height="25"/>
+                                        <rect key="frame" x="63" y="301" width="25" height="25"/>
                                     </imageView>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vjO-LK-rMu">
-                                        <rect key="frame" x="91" y="304" width="50" height="50"/>
+                                        <rect key="frame" x="96" y="289" width="50" height="50"/>
                                         <gestureRecognizers/>
                                     </imageView>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cmu-ZU-c6a">
-                                        <rect key="frame" x="188" y="316" width="25" height="25"/>
+                                        <rect key="frame" x="193" y="301" width="25" height="25"/>
                                     </imageView>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="y8m-Vq-LaL">
-                                        <rect key="frame" x="221" y="304" width="50" height="50"/>
+                                        <rect key="frame" x="226" y="289" width="50" height="50"/>
                                     </imageView>
                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="大丈夫！しっかり記録していきましょう。。具体的にどんなことがありましたか？" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="J87-A3-zbg">
-                                        <rect key="frame" x="14" y="118" width="296" height="100"/>
+                                        <rect key="frame" x="14" y="118" width="296" height="117"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <gestureRecognizers/>
                                         <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
@@ -134,30 +128,36 @@
                                         </connections>
                                     </textView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="相談に利用予定" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qKd-7C-Ikn">
-                                        <rect key="frame" x="76" y="240" width="129" height="21"/>
+                                        <rect key="frame" x="119" y="403" width="129" height="21"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Mut-D5-o5O">
-                                        <rect key="frame" x="54" y="283" width="103" height="105"/>
+                                        <rect key="frame" x="59" y="268" width="103" height="105"/>
                                         <gestureRecognizers/>
                                         <connections>
                                             <outletCollection property="gestureRecognizers" destination="TTA-Ts-cVQ" appends="YES" id="L82-Tj-3kt"/>
                                         </connections>
                                     </view>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ijr-1a-aVa">
-                                        <rect key="frame" x="56" y="278" width="249" height="142"/>
+                                        <rect key="frame" x="53" y="243" width="249" height="142"/>
                                     </imageView>
                                     <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bNz-MH-1Nf">
-                                        <rect key="frame" x="184" y="285" width="98" height="103"/>
+                                        <rect key="frame" x="189" y="248" width="98" height="103"/>
                                         <gestureRecognizers/>
                                         <connections>
                                             <outletCollection property="gestureRecognizers" destination="mFG-i6-hc5" appends="YES" id="1uW-4W-Bug"/>
                                         </connections>
                                     </view>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="woP-2a-DsE">
+                                        <rect key="frame" x="28" y="404" width="15" height="15"/>
+                                    </imageView>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ZaP-Dn-UzO">
+                                        <rect key="frame" x="46" y="399" width="25" height="25"/>
+                                    </imageView>
                                     <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="d29-pI-WkU">
-                                        <rect key="frame" x="212" y="233" width="69" height="37"/>
+                                        <rect key="frame" x="19" y="393" width="69" height="37"/>
                                         <gestureRecognizers/>
                                         <connections>
                                             <outletCollection property="gestureRecognizers" destination="jF6-rG-L8e" appends="YES" id="2ZT-lm-go2"/>
@@ -222,7 +222,7 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="1544" y="136"/>
+            <point key="canvasLocation" x="1544" y="89"/>
         </scene>
         <!--Add Sound View Controller-->
         <scene sceneID="lDg-yG-hv3">
@@ -249,13 +249,16 @@
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MxY-Lf-Qjk">
-                                <rect key="frame" x="145" y="120" width="30" height="30"/>
+                                <rect key="frame" x="108" y="145" width="30" height="30"/>
                                 <state key="normal" title="REC">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="StartAction:" destination="Ma1-6i-x4N" eventType="touchUpInside" id="KYh-o8-X0l"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zMZ-KW-YtO">
-                                <rect key="frame" x="42" y="348" width="48" height="30"/>
+                                <rect key="frame" x="20" y="332" width="48" height="30"/>
                                 <state key="normal" title="Cancel">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -264,10 +267,37 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="44e-fv-yGb">
-                                <rect key="frame" x="233" y="348" width="34" height="30"/>
+                                <rect key="frame" x="260" y="332" width="34" height="30"/>
                                 <state key="normal" title="Save">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ske-NZ-NHI">
+                                <rect key="frame" x="186" y="145" width="32" height="30"/>
+                                <state key="normal" title="Stop">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="tapRecStop:" destination="Ma1-6i-x4N" eventType="touchUpInside" id="bI8-wE-b4w"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ktr-BM-9vH">
+                                <rect key="frame" x="186" y="332" width="32" height="30"/>
+                                <state key="normal" title="Stop">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="tapPlayStop:" destination="Ma1-6i-x4N" eventType="touchUpInside" id="t8R-H4-2cn"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ar2-nf-P6z">
+                                <rect key="frame" x="113" y="332" width="30" height="30"/>
+                                <state key="normal" title="Play">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="tapPlay:" destination="Ma1-6i-x4N" eventType="touchUpInside" id="fUe-Oh-xt8"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -275,10 +305,13 @@
                     <toolbarItems/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <connections>
+                        <outlet property="timeLabel" destination="cLs-yO-ljA" id="yYG-96-S66"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vHc-ph-joa" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2034" y="-149"/>
+            <point key="canvasLocation" x="2034" y="-84"/>
         </scene>
         <!--Add Diary View Controller-->
         <scene sceneID="fUl-bo-QwH">

@@ -230,13 +230,21 @@ class AddViewController: UIViewController,UIImagePickerControllerDelegate,UINavi
     //AddDiaryの画面をタップしたら記入画面がモーダルで立ち上がる
     @IBAction func tapDiary(sender: UITapGestureRecognizer) {
         
+        UIView.animateWithDuration(0.4, animations: { () -> Void in self.addDiary.frame = CGRectMake(12,20, self.myBoundSize.width-24, self.myBoundSize.height)
+            }, completion: { finished in print("addMoveViewを動かした")
+                
+        })
+
         
-        let AddDiaryVC = UIStoryboard(name: "Main",bundle: nil).instantiateViewControllerWithIdentifier("AddDiaryViewController") as UIViewController
+        
+        
+        
+//        let AddDiaryVC = UIStoryboard(name: "Main",bundle: nil).instantiateViewControllerWithIdentifier("AddDiaryViewController") as UIViewController
         
         // showで遷移するバージョン           navigationController?.pushViewController(AddDiaryVC, animated: true)
         
         //モーダルで遷移するバージョン
-        presentViewController(AddDiaryVC, animated: true, completion: nil)
+//        presentViewController(AddDiaryVC, animated: true, completion: nil)
     }
     
     
