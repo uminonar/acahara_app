@@ -66,6 +66,9 @@
                                 <rect key="frame" x="63" y="94" width="245" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="RKv-1L-k6a" id="jMC-eh-Umv"/>
+                                </connections>
                             </textField>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4Td-0N-9lf">
                                 <rect key="frame" x="0.0" y="126" width="320" height="442"/>
@@ -95,16 +98,16 @@
                                         </connections>
                                     </textField>
                                     <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="CUr-K1-oew">
-                                        <rect key="frame" x="16" y="123" width="51" height="31"/>
+                                        <rect key="frame" x="19" y="233" width="51" height="31"/>
                                         <connections>
                                             <action selector="addSwitch:" destination="RKv-1L-k6a" eventType="valueChanged" id="hbn-Md-bba"/>
                                         </connections>
                                     </switch>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="woP-2a-DsE">
-                                        <rect key="frame" x="226" y="129" width="15" height="15"/>
+                                        <rect key="frame" x="221" y="246" width="15" height="15"/>
                                     </imageView>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ZaP-Dn-UzO">
-                                        <rect key="frame" x="244" y="124" width="25" height="25"/>
+                                        <rect key="frame" x="239" y="241" width="25" height="25"/>
                                     </imageView>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tV0-yO-axv">
                                         <rect key="frame" x="58" y="316" width="25" height="25"/>
@@ -120,7 +123,7 @@
                                         <rect key="frame" x="221" y="304" width="50" height="50"/>
                                     </imageView>
                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="大丈夫！しっかり記録していきましょう。。具体的にどんなことがありましたか？" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="J87-A3-zbg">
-                                        <rect key="frame" x="14" y="162" width="296" height="100"/>
+                                        <rect key="frame" x="14" y="118" width="296" height="100"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <gestureRecognizers/>
                                         <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
@@ -131,7 +134,7 @@
                                         </connections>
                                     </textView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="相談に利用予定" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qKd-7C-Ikn">
-                                        <rect key="frame" x="73" y="129" width="129" height="21"/>
+                                        <rect key="frame" x="76" y="240" width="129" height="21"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
@@ -144,8 +147,22 @@
                                         </connections>
                                     </view>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ijr-1a-aVa">
-                                        <rect key="frame" x="46" y="270" width="249" height="142"/>
+                                        <rect key="frame" x="56" y="278" width="249" height="142"/>
                                     </imageView>
+                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bNz-MH-1Nf">
+                                        <rect key="frame" x="184" y="285" width="98" height="103"/>
+                                        <gestureRecognizers/>
+                                        <connections>
+                                            <outletCollection property="gestureRecognizers" destination="mFG-i6-hc5" appends="YES" id="1uW-4W-Bug"/>
+                                        </connections>
+                                    </view>
+                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="d29-pI-WkU">
+                                        <rect key="frame" x="212" y="233" width="69" height="37"/>
+                                        <gestureRecognizers/>
+                                        <connections>
+                                            <outletCollection property="gestureRecognizers" destination="jF6-rG-L8e" appends="YES" id="2ZT-lm-go2"/>
+                                        </connections>
+                                    </view>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
@@ -172,7 +189,9 @@
                         <outlet property="addWhere" destination="oRu-6R-Q2c" id="lUC-Yn-Ycx"/>
                         <outlet property="addWho" destination="tuP-LW-LXy" id="dzO-7b-Rwd"/>
                         <outlet property="picBase" destination="ijr-1a-aVa" id="hGQ-LI-z1c"/>
+                        <outlet property="tapMovFile" destination="bNz-MH-1Nf" id="yOy-G9-oS1"/>
                         <outlet property="tapPicFile" destination="Mut-D5-o5O" id="ewN-xP-agM"/>
+                        <outlet property="tapSound" destination="d29-pI-WkU" id="Nxb-Kc-QYU"/>
                         <outlet property="timeLabel" destination="wYz-d8-jpP" id="Vl0-cn-AMp"/>
                     </connections>
                 </viewController>
@@ -192,8 +211,74 @@
                         <action selector="tapDecideTime:" destination="RKv-1L-k6a" id="MJb-A6-0WF"/>
                     </connections>
                 </tapGestureRecognizer>
+                <tapGestureRecognizer id="mFG-i6-hc5">
+                    <connections>
+                        <action selector="tapMovFile:" destination="RKv-1L-k6a" id="gGP-Dv-Riq"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer id="jF6-rG-L8e">
+                    <connections>
+                        <action selector="tapSound:" destination="RKv-1L-k6a" id="wrM-mn-wU8"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="1544" y="136"/>
+        </scene>
+        <!--Add Sound View Controller-->
+        <scene sceneID="lDg-yG-hv3">
+            <objects>
+                <viewController storyboardIdentifier="AddSoundViewController" id="Ma1-6i-x4N" customClass="AddSoundViewController" customModule="acahara_app" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="n9M-hM-SKa"/>
+                        <viewControllerLayoutGuide type="bottom" id="fb3-bS-Zyc"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Lou-Jv-Paj">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="L0K-iP-hXU">
+                                <rect key="frame" x="0.0" y="188" width="320" height="128"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="00:00:00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cLs-yO-ljA">
+                                        <rect key="frame" x="117" y="52" width="86" height="24"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MxY-Lf-Qjk">
+                                <rect key="frame" x="145" y="120" width="30" height="30"/>
+                                <state key="normal" title="REC">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zMZ-KW-YtO">
+                                <rect key="frame" x="42" y="348" width="48" height="30"/>
+                                <state key="normal" title="Cancel">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="tapCancel:" destination="Ma1-6i-x4N" eventType="touchUpInside" id="KiT-eT-zi9"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="44e-fv-yGb">
+                                <rect key="frame" x="233" y="348" width="34" height="30"/>
+                                <state key="normal" title="Save">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                    </view>
+                    <toolbarItems/>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vHc-ph-joa" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2034" y="-149"/>
         </scene>
         <!--Add Diary View Controller-->
         <scene sceneID="fUl-bo-QwH">
