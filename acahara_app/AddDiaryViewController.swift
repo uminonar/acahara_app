@@ -32,7 +32,7 @@ class AddDiaryViewController: UIViewController, UITextViewDelegate {
 //                myDefault.removePersistentDomainForName(appDomain)
         
         //決定ボタンのついたラベルをキーボードの上に設置
-        var accessoryView = UIView(frame: CGRectMake(0, 178, 320, 28))
+        var accessoryView = UIView(frame: CGRectMake(0, 178, 320, 30))
         
         accessoryView.backgroundColor = UIColor.groupTableViewBackgroundColor()
         
