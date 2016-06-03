@@ -371,7 +371,24 @@ class AddViewController: UIViewController,UIImagePickerControllerDelegate,UINavi
     
     
     @IBAction func cancelBtn(sender: UIButton) {
+        var myDefault = NSUserDefaults.standardUserDefaults()
+        var appDomain:String = NSBundle.mainBundle().bundleIdentifier!
+        myDefault.removeObjectForKey("diary")
+        myDefault.synchronize()
+        
+        myDefault.removeObjectForKey("selectedPlace")
+        myDefault.synchronize()
+        
+        myDefault.removeObjectForKey("selectedName")
+        myDefault.synchronize()
+        
+        addWhen.text=""
+        addWhere.text=""
+        addWho.text=""
+        addDiary.text=""
+        
         self.dismissViewControllerAnimated(true, completion: nil)
+        
     }
     
     

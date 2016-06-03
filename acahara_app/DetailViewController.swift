@@ -41,7 +41,7 @@ class DetailViewController: UIViewController {
         let dic = jsonArray[dtSelectedIndex]
         
         detailSelfee.image=UIImage(named: "selfee.JPG")
-        detailName.text = "Uminonar"
+        detailName.text = "uminonar"
         detailWhen.text = dic["when"] as! String
         detailWhere.text = dic["where"] as! String
         detailWho.text = dic["who"] as! String

@@ -73,8 +73,8 @@ class HelpViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
 //        }
 //        
         //settingBtnの後に：をつけることで、sender情報を使える
-        cell.settingBtn.addTarget(self, action:"settingBtn:", forControlEvents:.TouchUpInside)
-        cell.settingBtn.tag = indexPath.row
+        cell.postEllipsisBtn.addTarget(self, action:"settingBtn:", forControlEvents:.TouchUpInside)
+        cell.postEllipsisBtn.tag = indexPath.row
         
         
         cell.postMoreBtn.addTarget(self, action:"detailVC:",forControlEvents:.TouchUpInside)

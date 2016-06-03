@@ -20,8 +20,10 @@ class homeTableViewCell: UITableViewCell {
     @IBOutlet weak var postDiary: UITextView!
     @IBOutlet weak var postVolume: UIImageView!
     @IBOutlet weak var postImageView: UIImageView!
-    @IBOutlet weak var settingBtn: UIButton!
     @IBOutlet weak var postMoreBtn: UIButton!
+    @IBOutlet weak var postEllipsis: UIImageView!
+    @IBOutlet weak var postEllipsisBtn: UIButton!
+
     
     @IBOutlet weak var postImageViewBtn: UIButton!
     @IBOutlet weak var postTextViewBtn: UIButton!
@@ -34,14 +36,12 @@ class homeTableViewCell: UITableViewCell {
         
         let volume = FAKFontAwesome.volumeUpIconWithSize(18)
         let volumeImage = volume.imageWithSize(CGSizeMake(18, 18))
-        
         postVolume.image = volumeImage
         
-
-
-        
-        
-        
+        let ellipsis = FAKFontAwesome.ellipsisHIconWithSize(20)
+        let ellipsisImage = ellipsis.imageWithSize(CGSizeMake(20,20))
+        postEllipsis.image = ellipsisImage
+    
     }
 
 

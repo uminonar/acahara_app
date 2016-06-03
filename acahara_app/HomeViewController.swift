@@ -88,9 +88,9 @@ class HomeViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
     
     //.xibファイルのボタンがタップされ時の処理
         
-     //settingBtn等の後に：をつけることで、sender情報を使える
-        cell.settingBtn.addTarget(self, action:"settingBtn:", forControlEvents:.TouchUpInside)
-        cell.settingBtn.tag = indexPath.row
+     //postEllipsisBtn等の後に：をつけることで、sender情報を使える
+        cell.postEllipsisBtn.addTarget(self, action:"postEllipsisBtn:", forControlEvents:.TouchUpInside)
+        cell.postEllipsisBtn.tag = indexPath.row
         
         
         cell.postMoreBtn.addTarget(self, action:"showMore:",forControlEvents:.TouchUpInside)
@@ -107,12 +107,12 @@ class HomeViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
     
     
     //削除が選択された時の関数
-    func settingBtn(sender: UIButton) {
+    func postEllipsisBtn(sender: UIButton) {
         
         print("\(sender.tag)番目")
         
-        var settingController = UIAlertController(title: "", message: "", preferredStyle: .ActionSheet)
-        settingController.addAction(UIAlertAction(title: "削除", style: .Default, handler: { action in self.confirm(sender.tag)}))
+        var postEllipsisController = UIAlertController(title: "", message: "", preferredStyle: .ActionSheet)
+        postEllipsisController.addAction(UIAlertAction(title: "削除", style: .Default, handler: { action in self.confirm(sender.tag)}))
         
         //openFlagが１の時は「念のため記述」にしたい、０の時は「相談に利用予定」 = posts[indexPath.row][openFlag]どう書く？if、ここに書ける？
         
@@ -126,15 +126,15 @@ class HomeViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
         }else{
             tempStr = "「念のため記録」へ変更"
         }
-        settingController.addAction(UIAlertAction(title: tempStr, style: .Default, handler:{ action in self.changeMode(sender.tag)}))
+        postEllipsisController.addAction(UIAlertAction(title: tempStr, style: .Default, handler:{ action in self.changeMode(sender.tag)}))
         
         
-        settingController.addAction(UIAlertAction(title: "キャンセル", style: .Cancel, handler: { action in
+        postEllipsisController.addAction(UIAlertAction(title: "キャンセル", style: .Cancel, handler: { action in
             print("cancel")
         }))
         
         
-        presentViewController(settingController, animated: true, completion: nil)
+        presentViewController(postEllipsisController, animated: true, completion: nil)
     }
 
     //moreボタンpostTextViewBtnでdetailVCに遷移する
