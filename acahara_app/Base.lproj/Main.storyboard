@@ -232,7 +232,7 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="1419" y="-264"/>
+            <point key="canvasLocation" x="2259" y="-598"/>
         </scene>
         <!--Add Sound View Controller-->
         <scene sceneID="lDg-yG-hv3">
@@ -321,7 +321,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vHc-ph-joa" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2034" y="-84"/>
+            <point key="canvasLocation" x="3250" y="76"/>
         </scene>
         <!--Add Diary View Controller-->
         <scene sceneID="fUl-bo-QwH">
@@ -365,7 +365,7 @@
                                         </connections>
                                     </button>
                                 </subviews>
-                                <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                             </view>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xDz-hH-Jmx">
                                 <rect key="frame" x="0.0" y="62" width="318" height="506"/>
@@ -394,7 +394,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yaU-BX-4kL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1246" y="688"/>
+            <point key="canvasLocation" x="2854" y="88"/>
         </scene>
         <!--Detail View Controller-->
         <scene sceneID="gUV-zK-K1c">
@@ -475,7 +475,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gqd-fK-SM2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2155" y="-838"/>
+            <point key="canvasLocation" x="1641" y="-1362"/>
         </scene>
         <!--Add Where View Controller-->
         <scene sceneID="Kew-QI-ZGB">
@@ -517,7 +517,6 @@
                                 <textInputTraits key="textInputTraits"/>
                                 <connections>
                                     <action selector="returnPlace:" destination="yxV-lR-jcr" eventType="editingDidEndOnExit" id="1OW-wO-6ey"/>
-                                    <segue destination="RKv-1L-k6a" kind="modal" identifier="backAddFromP" id="5Gk-vs-Jfh"/>
                                 </connections>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="　履歴" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RXC-uh-QSR">
@@ -555,7 +554,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qm4-HI-ctd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2555" y="-838"/>
+            <point key="canvasLocation" x="3219" y="-598"/>
         </scene>
         <!--Add Who View Controller-->
         <scene sceneID="rZP-pm-Yzr">
@@ -597,7 +596,6 @@
                                 <textInputTraits key="textInputTraits"/>
                                 <connections>
                                     <action selector="returnName:" destination="ZrA-Jg-g6a" eventType="editingDidEndOnExit" id="Hac-ub-EEt"/>
-                                    <segue destination="RKv-1L-k6a" kind="show" identifier="backAddFromP" id="88d-y7-6ak"/>
                                 </connections>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="　履歴" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="chz-fF-ICR">
@@ -635,7 +633,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4r3-H0-8L4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2177" y="513"/>
+            <point key="canvasLocation" x="2841" y="-607"/>
         </scene>
         <!--Setting-->
         <scene sceneID="wg7-f3-ORb">
@@ -675,7 +673,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Nw-L8-lE0" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="545" y="1199"/>
+            <point key="canvasLocation" x="553" y="1015"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="yl2-sM-qoP">
@@ -777,7 +775,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aTu-bO-ZU4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-670" y="1120"/>
+            <point key="canvasLocation" x="-670" y="976"/>
         </scene>
         <!--home-->
         <scene sceneID="EwQ-kF-APk">
@@ -823,7 +821,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6SI-Rc-7ug" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1728" y="-1674"/>
+            <point key="canvasLocation" x="1200" y="-1370"/>
         </scene>
         <!--Home View Controller-->
         <scene sceneID="vSC-CP-D99">
@@ -871,14 +869,11 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GQ9-Ta-OaL" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <tapGestureRecognizer id="dQf-OF-Zog"/>
             </objects>
-            <point key="canvasLocation" x="1539" y="-844"/>
+            <point key="canvasLocation" x="1387" y="-336"/>
         </scene>
     </scenes>
     <resources>
         <image name="first" width="30" height="30"/>
         <image name="second" width="30" height="30"/>
     </resources>
-    <inferredMetricsTieBreakers>
-        <segue reference="5Gk-vs-Jfh"/>
-    </inferredMetricsTieBreakers>
 </document>

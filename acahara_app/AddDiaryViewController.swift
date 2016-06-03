@@ -31,15 +31,19 @@ class AddDiaryViewController: UIViewController, UITextViewDelegate {
 //        var appDomain:String = NSBundle.mainBundle().bundleIdentifier!
 //                myDefault.removePersistentDomainForName(appDomain)
         
-        var accessoryView = UIView(frame: CGRectMake(0, 178, 320, 35))
+        //決定ボタンのついたラベルをキーボードの上に設置
+        var accessoryView = UIView(frame: CGRectMake(0, 178, 320, 28))
         
-        accessoryView.backgroundColor = UIColor.blackColor()
+        accessoryView.backgroundColor = UIColor.groupTableViewBackgroundColor()
         
         
         
-        var closeButton = UIButton(frame: CGRectMake(myBoundsize.width-60, 0, 40, 30))
+        var closeButton = UIButton(frame: CGRectMake(myBoundsize.width-60, 5, 40, 20))
+        
+        //決定のフォントサイズを小さくしたい、どうする？
         closeButton.setTitle("決定", forState: UIControlState.Normal)
-        closeButton.setTitleColor(UIColor.whiteColor(), forState: UIControlState.Normal)
+        closeButton.setTitleColor(UIColor.lightGrayColor(),
+        forState: UIControlState.Normal)
         closeButton.contentHorizontalAlignment = UIControlContentHorizontalAlignment.Right
         closeButton.addTarget(self, action: "onClickCloseButton:", forControlEvents: .TouchUpInside)
         accessoryView.addSubview(closeButton)
