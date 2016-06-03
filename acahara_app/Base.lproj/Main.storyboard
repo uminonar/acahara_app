@@ -357,7 +357,7 @@
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fN2-Kn-5l5">
                                         <rect key="frame" x="274" y="23" width="30" height="29"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <state key="normal" title="決定">
+                                        <state key="normal" title="完了">
                                             <color key="titleColor" red="1" green="0.26478197129999997" blue="0.072038469189999996" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
                                         <connections>
@@ -374,7 +374,7 @@
                                         <rect key="frame" x="0.0" y="-5" width="318" height="511"/>
                                         <subviews>
                                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="VXV-D6-5sd">
-                                                <rect key="frame" x="0.0" y="8" width="318" height="178"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="318" height="186"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                             </textView>
@@ -394,7 +394,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yaU-BX-4kL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1212" y="861"/>
+            <point key="canvasLocation" x="1246" y="688"/>
         </scene>
         <!--Detail View Controller-->
         <scene sceneID="gUV-zK-K1c">
@@ -442,15 +442,12 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="xIZ-gX-Gth">
-                                <rect key="frame" x="55" y="160" width="240" height="272"/>
+                                <rect key="frame" x="55" y="160" width="240" height="251"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zK2-CA-9aF">
-                                <rect key="frame" x="285" y="107" width="15" height="15"/>
-                            </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="2時間前" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="96I-h0-kSy">
                                 <rect key="frame" x="254" y="72" width="61" height="23"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="11"/>
@@ -458,7 +455,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Qal-zx-VYg">
-                                <rect key="frame" x="55" y="444" width="249" height="142"/>
+                                <rect key="frame" x="55" y="448" width="249" height="142"/>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -471,7 +468,6 @@
                         <outlet property="detailSelfee" destination="V6I-Tg-iGb" id="jWY-Te-yRy"/>
                         <outlet property="detailTextView" destination="xIZ-gX-Gth" id="YRG-F0-Olc"/>
                         <outlet property="detailUniversity" destination="2gj-aF-hkg" id="JfT-P3-OQl"/>
-                        <outlet property="detailVolume" destination="zK2-CA-9aF" id="eFC-LV-Nzz"/>
                         <outlet property="detailWhen" destination="0jv-qg-s4f" id="PWa-P7-U2A"/>
                         <outlet property="detailWhere" destination="Bcv-Uh-T15" id="ppP-zN-GNz"/>
                         <outlet property="detailWho" destination="U65-q1-zge" id="129-8H-DfA"/>
@@ -801,6 +797,30 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BXo-U6-bey" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="750" y="-320"/>
+        </scene>
+        <!--Picture View Controller-->
+        <scene sceneID="2LX-EH-4EC">
+            <objects>
+                <viewController storyboardIdentifier="PictureViewController" id="0Lg-Ar-jf5" customClass="PictureViewController" customModule="acahara_app" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="3mU-4J-sOc"/>
+                        <viewControllerLayoutGuide type="bottom" id="3Sa-16-TkQ"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="9ck-ch-Lxe">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2hC-F9-xyv">
+                                <rect key="frame" x="0.0" y="142" width="320" height="217"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6SI-Rc-7ug" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1728" y="-1674"/>
         </scene>
         <!--Home View Controller-->
         <scene sceneID="vSC-CP-D99">

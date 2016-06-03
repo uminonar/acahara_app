@@ -89,7 +89,7 @@ class HomeViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
         
         
         cell.postMoreBtn.addTarget(self, action:"showMore:",forControlEvents:.TouchUpInside)
-        cell.settingBtn.tag = indexPath.row
+        cell.postMoreBtn.tag = indexPath.row
         
         
         cell.postImageViewBtn.addTarget(self, action:"showMore:", forControlEvents:.TouchUpInside)
@@ -129,9 +129,31 @@ class HomeViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
         
         presentViewController(settingController, animated: true, completion: nil)
     }
-    
 
-  func changeMode(tag:Int){
+    //moreボタンでdetailVCに遷移する
+    func showMore(sender: UIButton){
+        
+        let detailVC = UIStoryboard(name: "Main",bundle: nil).instantiateViewControllerWithIdentifier("DetailViewController") as! DetailViewController
+        
+        detailVC.dtSelectedIndex = sender.tag
+        
+        
+        
+        navigationController?.pushViewController(detailVC, animated: true)
+    }
+    
+    //addImageViewBtnをタップするとdetailVCに遷移する
+    //    func showImage(sender: UIButton){
+    //
+    //        let detailVC = UIStoryboard(name: "Main",bundle: nil).instantiateViewControllerWithIdentifier("DetailViewController") as! DetailViewController
+    //
+    //        detailVC.dtSelectedIndex = sender.tag
+    //
+    //    }
+
+    
+    
+    func changeMode(tag:Int){
     var openFlag:String = posts[tag]["openFlag"] as! String
     
     var dic:NSMutableDictionary = posts[tag].mutableCopy() as! NSMutableDictionary
@@ -169,26 +191,7 @@ class HomeViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
     }
     
     
-    //moreボタンでdetailVCに遷移する
-    func showMore(sender: UIButton){
-        
-        let detailVC = UIStoryboard(name: "Main",bundle: nil).instantiateViewControllerWithIdentifier("DetailViewController") as! DetailViewController
-        
-        detailVC.dtSelectedIndex = sender.tag
-        
-        
-        
-        navigationController?.pushViewController(detailVC, animated: true)
-    }
-    
-    //addImageViewBtnをタップするとdetailVCに遷移する
-//    func showImage(sender: UIButton){
-//        
-//        let detailVC = UIStoryboard(name: "Main",bundle: nil).instantiateViewControllerWithIdentifier("DetailViewController") as! DetailViewController
-//        
-//        detailVC.dtSelectedIndex = sender.tag
-//        
-//    }
+
 
 
 

@@ -21,7 +21,6 @@ class DetailViewController: UIViewController {
     @IBOutlet weak var detailWho: UILabel!
     @IBOutlet weak var detailUniversity: UILabel!
     @IBOutlet weak var detailCreated: UILabel!
-    @IBOutlet weak var detailVolume: UIImageView!
     @IBOutlet weak var detailTextView: UITextView!
     @IBOutlet weak var detailImageView: UIImageView!
 
@@ -49,11 +48,7 @@ class DetailViewController: UIViewController {
         detailUniversity.text = dic["university"] as! String
         detailTextView.text = dic["diary"] as! String
         detailImageView.image = UIImage(named: dic["picture"] as! String)
-        
-        let volume = FAKFontAwesome.volumeUpIconWithSize(18)
-        let volumeImage = volume.imageWithSize(CGSizeMake(18, 18))
-        
-        detailVolume.image = volumeImage
+
         
     }
     

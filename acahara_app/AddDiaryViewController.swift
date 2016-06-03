@@ -38,7 +38,7 @@ class AddDiaryViewController: UIViewController, UITextViewDelegate {
         
         
         var closeButton = UIButton(frame: CGRectMake(myBoundsize.width-60, 0, 40, 30))
-        closeButton.setTitle("完了", forState: UIControlState.Normal)
+        closeButton.setTitle("決定", forState: UIControlState.Normal)
         closeButton.setTitleColor(UIColor.whiteColor(), forState: UIControlState.Normal)
         closeButton.contentHorizontalAlignment = UIControlContentHorizontalAlignment.Right
         closeButton.addTarget(self, action: "onClickCloseButton:", forControlEvents: .TouchUpInside)
@@ -56,7 +56,7 @@ class AddDiaryViewController: UIViewController, UITextViewDelegate {
     func onClickCloseButton(sender: UIButton) {
         diaryTextView.resignFirstResponder()
         
-        diaryTextView.frame = CGRectMake(0, 20, 320, 460)
+        diaryTextView.frame = CGRectMake(0, 20, 320, 700)
         
     }
     
@@ -159,6 +159,9 @@ class AddDiaryViewController: UIViewController, UITextViewDelegate {
     
     
     @IBAction func cancelBtn(sender: UIButton) {
+        
+        diaryTextView.resignFirstResponder()
+        
         self.dismissViewControllerAnimated(true, completion: nil)
     }
     

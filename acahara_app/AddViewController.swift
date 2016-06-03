@@ -356,7 +356,7 @@ class AddViewController: UIViewController,UIImagePickerControllerDelegate,UINavi
     }
     
     //どうして効かない？
-    override func viewDidDisappear(animated: Bool) {
+    override func viewWillDisappear(animated: Bool) {
        
         let alert: UIAlertController = UIAlertController(title: "記録成功！", message: "負けないで！", preferredStyle: .Alert)
         self.presentViewController(alert, animated: true) { () -> Void in
