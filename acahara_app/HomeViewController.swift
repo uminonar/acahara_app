@@ -60,7 +60,9 @@ class HomeViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
         // 既存のCell生成コードの後に as! <Cellのカスタムクラス名> という記述を追加
         var cell = tableView.dequeueReusableCellWithIdentifier("postCustomCell", forIndexPath: indexPath) as! homeTableViewCell
         cell.postCreated.text = posts[indexPath.row]["created"] as! String
-        cell.postWhen.text = posts[indexPath.row]["when"] as! String
+        
+        var dateTime = posts[indexPath.row]["when"] as! String
+        cell.postWhen.text = dateTime+" 頃"
         cell.postWhere.text = posts[indexPath.row]["where"] as! String
         cell.postWho.text = posts[indexPath.row]["who"] as! String
         cell.postUniversity.text = posts[indexPath.row]["university"] as! String
@@ -83,7 +85,10 @@ class HomeViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
             
         }
         
-        //settingBtnの後に：をつけることで、sender情報を使える
+    
+    //.xibファイルのボタンがタップされ時の処理
+        
+     //settingBtn等の後に：をつけることで、sender情報を使える
         cell.settingBtn.addTarget(self, action:"settingBtn:", forControlEvents:.TouchUpInside)
         cell.settingBtn.tag = indexPath.row
         
@@ -91,8 +96,10 @@ class HomeViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
         cell.postMoreBtn.addTarget(self, action:"showMore:",forControlEvents:.TouchUpInside)
         cell.postMoreBtn.tag = indexPath.row
         
+        cell.postTextViewBtn.addTarget(self, action:"showMore:",forControlEvents: .TouchUpInside)
+        cell.postTextViewBtn.tag = indexPath.row
         
-        cell.postImageViewBtn.addTarget(self, action:"showMore:", forControlEvents:.TouchUpInside)
+        cell.postImageViewBtn.addTarget(self, action: "showPicture:", forControlEvents: .TouchUpInside)
         cell.postImageViewBtn.tag = indexPath.row
         
         return cell
@@ -130,7 +137,7 @@ class HomeViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
         presentViewController(settingController, animated: true, completion: nil)
     }
 
-    //moreボタンでdetailVCに遷移する
+    //moreボタンpostTextViewBtnでdetailVCに遷移する
     func showMore(sender: UIButton){
         
         let detailVC = UIStoryboard(name: "Main",bundle: nil).instantiateViewControllerWithIdentifier("DetailViewController") as! DetailViewController
@@ -142,14 +149,16 @@ class HomeViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
         navigationController?.pushViewController(detailVC, animated: true)
     }
     
-    //addImageViewBtnをタップするとdetailVCに遷移する
-    //    func showImage(sender: UIButton){
-    //
-    //        let detailVC = UIStoryboard(name: "Main",bundle: nil).instantiateViewControllerWithIdentifier("DetailViewController") as! DetailViewController
-    //
-    //        detailVC.dtSelectedIndex = sender.tag
-    //
-    //    }
+    //postImageViewBtnをタップするとpictureVCに遷移する
+        func showPicture(sender: UIButton){
+    
+            let pictureVC = UIStoryboard(name: "Main",bundle: nil).instantiateViewControllerWithIdentifier("PictureViewController") as! PictureViewController
+    
+           pictureVC.picSelectedIndex = sender.tag
+    
+        }
+    
+   
 
     
     

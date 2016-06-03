@@ -9,11 +9,27 @@
 import UIKit
 
 class PictureViewController: UIViewController {
+    
+    var picSelectedIndex = -1
 
+    @IBOutlet weak var pictureImageView: UIImageView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        print(picSelectedIndex)
+        
+       
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        let path = NSBundle.mainBundle().pathForResource("posts", ofType: "txt")
+        let jsondata = NSData(contentsOfFile: path!)
+        
+        let jsonArray = (try! NSJSONSerialization.JSONObjectWithData(jsondata!, options: [])) as! NSArray
+        
+        let dic = jsonArray[picSelectedIndex]
 
-        // Do any additional setup after loading the view.
+        pictureImageView.image = UIImage(named: dic["picture"] as! String)
     }
 
     override func didReceiveMemoryWarning() {
