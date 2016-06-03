@@ -90,6 +90,11 @@ class HomeViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
         
         cell.postMoreBtn.addTarget(self, action:"showMore:",forControlEvents:.TouchUpInside)
         cell.settingBtn.tag = indexPath.row
+        
+        
+        cell.postImageViewBtn.addTarget(self, action:"showMore:", forControlEvents:.TouchUpInside)
+        cell.postImageViewBtn.tag = indexPath.row
+        
         return cell
     }
     
@@ -175,6 +180,15 @@ class HomeViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
         
         navigationController?.pushViewController(detailVC, animated: true)
     }
+    
+    //addImageViewBtnをタップするとdetailVCに遷移する
+//    func showImage(sender: UIButton){
+//        
+//        let detailVC = UIStoryboard(name: "Main",bundle: nil).instantiateViewControllerWithIdentifier("DetailViewController") as! DetailViewController
+//        
+//        detailVC.dtSelectedIndex = sender.tag
+//        
+//    }
 
 
 
@@ -182,10 +196,24 @@ class HomeViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
     // addBtnをタップしたときのアクション
     func onClick() {
         
-        let second = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("AddViewController") as UIViewController
         
-        self.navigationController?.pushViewController(second, animated: true)
+        let AddView = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("AddViewController") as UIViewController
+        
+        presentViewController(AddView, animated: true, completion: nil)
+        
+        //ナビゲーションコントローラによる遷移
+        //  let second = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("AddViewController") as UIViewController
+
+        // 　self.navigationController?.pushViewController(second, animated: true)
+        
+        // その際に、次の画面でタブを消す設定、エラーが出る
+        //        var add = AddViewController(nibName:"AddViewController",bundle:nil)
+        //        add.hidesBottomBarWhenPushed = true
+        //
+        //        self.navigationController?.pushViewController(add,animated:true)
     }
+
+    
 
 
     override func didReceiveMemoryWarning() {

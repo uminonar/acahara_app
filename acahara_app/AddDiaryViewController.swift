@@ -8,13 +8,19 @@
 
 import UIKit
 
-class AddDiaryViewController: UIViewController {
+class AddDiaryViewController: UIViewController, UITextViewDelegate {
 
+    @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var diaryTextView: UITextView!
 
     
+    //起動画面サイズの取得
+    let myBoundsize:CGSize = UIScreen.mainScreen().bounds.size
+
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        diaryTextView.delegate = self
         
         //最初からカーソルが反転してキーボードが表示される処理
         diaryTextView.becomeFirstResponder()
@@ -25,7 +31,35 @@ class AddDiaryViewController: UIViewController {
 //        var appDomain:String = NSBundle.mainBundle().bundleIdentifier!
 //                myDefault.removePersistentDomainForName(appDomain)
         
+        var accessoryView = UIView(frame: CGRectMake(0, 178, 320, 35))
+        
+        accessoryView.backgroundColor = UIColor.blackColor()
+        
+        
+        
+        var closeButton = UIButton(frame: CGRectMake(myBoundsize.width-60, 0, 40, 30))
+        closeButton.setTitle("完了", forState: UIControlState.Normal)
+        closeButton.setTitleColor(UIColor.whiteColor(), forState: UIControlState.Normal)
+        closeButton.contentHorizontalAlignment = UIControlContentHorizontalAlignment.Right
+        closeButton.addTarget(self, action: "onClickCloseButton:", forControlEvents: .TouchUpInside)
+        accessoryView.addSubview(closeButton)
+        
+
+        diaryTextView.inputAccessoryView = accessoryView
+        
+
+        
+        
+        
     }
+    
+    func onClickCloseButton(sender: UIButton) {
+        diaryTextView.resignFirstResponder()
+        
+        diaryTextView.frame = CGRectMake(0, 20, 320, 460)
+        
+    }
+    
     
     override func viewWillAppear(animated: Bool) {
         
@@ -36,10 +70,71 @@ class AddDiaryViewController: UIViewController {
             print(diary)
             diaryTextView.text = diary
         }
+        
+        NSNotificationCenter.defaultCenter().addObserver(self,
+                                                         selector: "keyboardWillBeShown:",
+                                                         name: UIKeyboardWillShowNotification,
+                                                         object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self,
+                                                         selector: "keyboardWillBeHidden:",
+                                                         name: UIKeyboardWillHideNotification,
+                                                         object: nil)
 
         
     }
     
+    override func viewWillDisappear(animated: Bool) {
+        super.viewWillDisappear(animated)
+        
+        NSNotificationCenter.defaultCenter().removeObserver(self,
+                                                            name: UIKeyboardWillShowNotification,
+                                                            object: nil)
+        NSNotificationCenter.defaultCenter().removeObserver(self,
+                                                            name: UIKeyboardWillHideNotification,
+                                                            object: nil)
+    }
+
+    func keyboardWillBeShown(notification: NSNotification) {
+        if let userInfo = notification.userInfo {
+            if let keyboardFrame = userInfo[UIKeyboardFrameEndUserInfoKey]?.CGRectValue, animationDuration = userInfo[UIKeyboardAnimationDurationUserInfoKey]?.doubleValue {
+                restoreScrollViewSize()
+                
+                let convertedKeyboardFrame = scrollView.convertRect(keyboardFrame, fromView: nil)
+                let offsetY: CGFloat = CGRectGetMaxY(diaryTextView.frame) - CGRectGetMinY(convertedKeyboardFrame)
+                if offsetY < 0 { return }
+                updateScrollViewSize(offsetY, duration: animationDuration)
+            }
+        }
+    }
+    
+    func keyboardWillBeHidden(notification: NSNotification) {
+        restoreScrollViewSize()
+    }
+
+    // MARK: - UITextFieldDelegate//ここがリターンじゃなくボタンの設定も？//ここが効かない,テキストフィールドなので　doneボタンを付ける
+//    func textFieldShouldReturn(textField: UITextField) -> Bool {
+//        textField.resignFirstResponder()
+//        return true
+//    }
+    
+    
+    func updateScrollViewSize(moveSize: CGFloat, duration: NSTimeInterval) {
+        UIView.beginAnimations("ResizeForKeyboard", context: nil)
+        UIView.setAnimationDuration(duration)
+        
+        let contentInsets = UIEdgeInsetsMake(0, 0, moveSize, 0)
+        scrollView.contentInset = contentInsets
+        scrollView.scrollIndicatorInsets = contentInsets
+        scrollView.contentOffset = CGPointMake(0, moveSize)
+        
+        UIView.commitAnimations()
+    }
+    
+    func restoreScrollViewSize() {
+        scrollView.contentInset = UIEdgeInsetsZero
+        scrollView.scrollIndicatorInsets = UIEdgeInsetsZero
+    }
+
 
     @IBAction func saveBtn(sender: UIButton) {
         
@@ -53,8 +148,10 @@ class AddDiaryViewController: UIViewController {
             
             //即反映させる
             myDefault.synchronize()
+        
+        diaryTextView.resignFirstResponder()
             
-            self.dismissViewControllerAnimated(true, completion: nil)
+        self.dismissViewControllerAnimated(true, completion: nil)
         //}
         
     }
@@ -65,9 +162,10 @@ class AddDiaryViewController: UIViewController {
         self.dismissViewControllerAnimated(true, completion: nil)
     }
     
-    @IBAction func closeKeyBoardBtn(sender: UIButton) {
-        diaryTextView.resignFirstResponder()
-    }
+    
+
+    
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

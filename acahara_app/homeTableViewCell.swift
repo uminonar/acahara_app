@@ -23,6 +23,7 @@ class homeTableViewCell: UITableViewCell {
     @IBOutlet weak var settingBtn: UIButton!
     @IBOutlet weak var postMoreBtn: UIButton!
     
+    @IBOutlet weak var postImageViewBtn: UIButton!
 
     
     override func awakeFromNib() {

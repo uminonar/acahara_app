@@ -23,6 +23,16 @@
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ssJ-Cs-r6t">
                                         <rect key="frame" x="266" y="27" width="30" height="30"/>
                                         <state key="normal" title="保存"/>
+                                        <connections>
+                                            <action selector="saveBtn:" destination="RKv-1L-k6a" eventType="touchUpInside" id="CTB-T3-i3x"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f5I-6P-aYk">
+                                        <rect key="frame" x="13" y="27" width="75" height="30"/>
+                                        <state key="normal" title="キャンセル"/>
+                                        <connections>
+                                            <action selector="cancelBtn:" destination="RKv-1L-k6a" eventType="touchUpInside" id="lgy-jO-giv"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
@@ -71,7 +81,7 @@
                                 </connections>
                             </textField>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4Td-0N-9lf">
-                                <rect key="frame" x="0.0" y="126" width="320" height="442"/>
+                                <rect key="frame" x="0.0" y="129" width="320" height="442"/>
                                 <subviews>
                                     <textField opaque="NO" clipsSubviews="YES" tag="2000" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="どこでその問題は起きましたか？" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="oRu-6R-Q2c">
                                         <rect key="frame" x="14" y="4" width="296" height="30"/>
@@ -98,26 +108,13 @@
                                         </connections>
                                     </textField>
                                     <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="CUr-K1-oew">
-                                        <rect key="frame" x="233" y="398" width="51" height="31"/>
+                                        <rect key="frame" x="246" y="387" width="51" height="31"/>
                                         <connections>
                                             <action selector="addSwitch:" destination="RKv-1L-k6a" eventType="valueChanged" id="hbn-Md-bba"/>
                                         </connections>
                                     </switch>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tV0-yO-axv">
-                                        <rect key="frame" x="63" y="301" width="25" height="25"/>
-                                    </imageView>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vjO-LK-rMu">
-                                        <rect key="frame" x="96" y="289" width="50" height="50"/>
-                                        <gestureRecognizers/>
-                                    </imageView>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cmu-ZU-c6a">
-                                        <rect key="frame" x="193" y="301" width="25" height="25"/>
-                                    </imageView>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="y8m-Vq-LaL">
-                                        <rect key="frame" x="226" y="289" width="50" height="50"/>
-                                    </imageView>
                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="大丈夫！しっかり記録していきましょう。。具体的にどんなことがありましたか？" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="J87-A3-zbg">
-                                        <rect key="frame" x="14" y="118" width="296" height="117"/>
+                                        <rect key="frame" x="14" y="118" width="296" height="122"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <gestureRecognizers/>
                                         <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
@@ -128,36 +125,49 @@
                                         </connections>
                                     </textView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="相談に利用予定" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qKd-7C-Ikn">
-                                        <rect key="frame" x="119" y="403" width="129" height="21"/>
+                                        <rect key="frame" x="141" y="393" width="129" height="21"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="woP-2a-DsE">
+                                        <rect key="frame" x="62" y="398" width="15" height="15"/>
+                                    </imageView>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ZaP-Dn-UzO">
+                                        <rect key="frame" x="80" y="393" width="25" height="25"/>
+                                    </imageView>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tV0-yO-axv">
+                                        <rect key="frame" x="63" y="304" width="25" height="25"/>
+                                    </imageView>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vjO-LK-rMu">
+                                        <rect key="frame" x="96" y="292" width="50" height="50"/>
+                                        <gestureRecognizers/>
+                                    </imageView>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cmu-ZU-c6a">
+                                        <rect key="frame" x="193" y="304" width="25" height="25"/>
+                                    </imageView>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="y8m-Vq-LaL">
+                                        <rect key="frame" x="226" y="292" width="50" height="50"/>
+                                    </imageView>
                                     <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Mut-D5-o5O">
-                                        <rect key="frame" x="59" y="268" width="103" height="105"/>
+                                        <rect key="frame" x="59" y="271" width="103" height="105"/>
                                         <gestureRecognizers/>
                                         <connections>
                                             <outletCollection property="gestureRecognizers" destination="TTA-Ts-cVQ" appends="YES" id="L82-Tj-3kt"/>
                                         </connections>
                                     </view>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ijr-1a-aVa">
-                                        <rect key="frame" x="53" y="243" width="249" height="142"/>
-                                    </imageView>
                                     <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bNz-MH-1Nf">
-                                        <rect key="frame" x="189" y="248" width="98" height="103"/>
+                                        <rect key="frame" x="184" y="265" width="98" height="103"/>
                                         <gestureRecognizers/>
                                         <connections>
                                             <outletCollection property="gestureRecognizers" destination="mFG-i6-hc5" appends="YES" id="1uW-4W-Bug"/>
                                         </connections>
                                     </view>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="woP-2a-DsE">
-                                        <rect key="frame" x="28" y="404" width="15" height="15"/>
-                                    </imageView>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ZaP-Dn-UzO">
-                                        <rect key="frame" x="46" y="399" width="25" height="25"/>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ijr-1a-aVa">
+                                        <rect key="frame" x="62" y="248" width="240" height="134"/>
                                     </imageView>
                                     <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="d29-pI-WkU">
-                                        <rect key="frame" x="19" y="393" width="69" height="37"/>
+                                        <rect key="frame" x="53" y="387" width="69" height="37"/>
                                         <gestureRecognizers/>
                                         <connections>
                                             <outletCollection property="gestureRecognizers" destination="jF6-rG-L8e" appends="YES" id="2ZT-lm-go2"/>
@@ -222,7 +232,7 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="1544" y="89"/>
+            <point key="canvasLocation" x="1376" y="41"/>
         </scene>
         <!--Add Sound View Controller-->
         <scene sceneID="lDg-yG-hv3">
@@ -357,31 +367,34 @@
                                 </subviews>
                                 <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
                             </view>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="DCs-pB-rrP">
-                                <rect key="frame" x="3" y="62" width="315" height="328"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <color key="textColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IH8-95-2yY">
-                                <rect key="frame" x="263" y="68" width="37" height="30"/>
-                                <state key="normal" title="close"/>
-                                <connections>
-                                    <action selector="closeKeyBoardBtn:" destination="ym4-25-gw8" eventType="touchUpInside" id="Qfk-PR-l5f"/>
-                                </connections>
-                            </button>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xDz-hH-Jmx">
+                                <rect key="frame" x="0.0" y="62" width="318" height="506"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="atW-Vt-I4o">
+                                        <rect key="frame" x="0.0" y="-5" width="318" height="511"/>
+                                        <subviews>
+                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="VXV-D6-5sd">
+                                                <rect key="frame" x="0.0" y="8" width="318" height="178"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                            </textView>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    </view>
+                                </subviews>
+                            </scrollView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
-                        <outlet property="diaryTextView" destination="DCs-pB-rrP" id="jys-Xx-TVi"/>
+                        <outlet property="diaryTextView" destination="VXV-D6-5sd" id="Cse-ZS-B4T"/>
+                        <outlet property="scrollView" destination="xDz-hH-Jmx" id="hYT-t4-7pH"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yaU-BX-4kL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1944" y="537"/>
+            <point key="canvasLocation" x="1212" y="861"/>
         </scene>
         <!--Detail View Controller-->
         <scene sceneID="gUV-zK-K1c">
@@ -812,6 +825,10 @@
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="354"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
+                                        <gestureRecognizers/>
+                                        <connections>
+                                            <outletCollection property="gestureRecognizers" destination="dQf-OF-Zog" appends="YES" id="egB-Zm-QwK"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>
@@ -829,6 +846,7 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GQ9-Ta-OaL" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="dQf-OF-Zog"/>
             </objects>
             <point key="canvasLocation" x="1539" y="-844"/>
         </scene>

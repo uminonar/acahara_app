@@ -230,21 +230,19 @@ class AddViewController: UIViewController,UIImagePickerControllerDelegate,UINavi
     //AddDiaryの画面をタップしたら記入画面がモーダルで立ち上がる
     @IBAction func tapDiary(sender: UITapGestureRecognizer) {
         
-        UIView.animateWithDuration(0.4, animations: { () -> Void in self.addDiary.frame = CGRectMake(12,20, self.myBoundSize.width-24, self.myBoundSize.height)
-            }, completion: { finished in print("addMoveViewを動かした")
-                
-        })
+//        UIView.animateWithDuration(0.4, animations: { () -> Void in self.addDiary.frame = CGRectMake(12,20, self.myBoundSize.width-24, self.myBoundSize.height)
+//            }, completion: { finished in print("addMoveViewを動かした")
+//                
+//        })
 
         
         
-        
-        
-//        let AddDiaryVC = UIStoryboard(name: "Main",bundle: nil).instantiateViewControllerWithIdentifier("AddDiaryViewController") as UIViewController
+        let AddDiaryVC = UIStoryboard(name: "Main",bundle: nil).instantiateViewControllerWithIdentifier("AddDiaryViewController") as UIViewController
         
         // showで遷移するバージョン           navigationController?.pushViewController(AddDiaryVC, animated: true)
         
-        //モーダルで遷移するバージョン
-//        presentViewController(AddDiaryVC, animated: true, completion: nil)
+//        モーダルで遷移するバージョン
+        presentViewController(AddDiaryVC, animated: true, completion: nil)
     }
     
     
@@ -324,7 +322,8 @@ class AddViewController: UIViewController,UIImagePickerControllerDelegate,UINavi
     }
     
     //Saveボタンが押された時の処理
-    func tapSave() {
+    @IBAction func saveBtn(sender: UIButton) {
+
         //必須項目が記入済みか、チェックする
         //未記入があったら、記入してくださいのアラート
         
@@ -348,12 +347,33 @@ class AddViewController: UIViewController,UIImagePickerControllerDelegate,UINavi
         addWhen.text=""
         addWhere.text=""
         addWho.text=""
+        addDiary.text=""
         
-        //前ページに遷移する　モーダル画面じゃなくので、dismissじゃないバージョン
-        navigationController?.popViewControllerAnimated(true)
+        //前ページに遷移する　モーダル画面じゃなくので、dismissじゃないバージョンnavigationController?.popViewControllerAnimated(true)
         
+        self.dismissViewControllerAnimated(false, completion: nil)
         
     }
+    
+    //どうして効かない？
+    override func viewDidDisappear(animated: Bool) {
+       
+        let alert: UIAlertController = UIAlertController(title: "記録成功！", message: "負けないで！", preferredStyle: .Alert)
+        self.presentViewController(alert, animated: true) { () -> Void in
+            let delay = 4.0 * Double(NSEC_PER_SEC)
+            let time  = dispatch_time(DISPATCH_TIME_NOW, Int64(delay))
+            dispatch_after(time, dispatch_get_main_queue(), {
+                self.dismissViewControllerAnimated(true, completion: nil)
+            })
+        }
+
+    }
+    
+    
+    @IBAction func cancelBtn(sender: UIButton) {
+        self.dismissViewControllerAnimated(true, completion: nil)
+    }
+    
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
