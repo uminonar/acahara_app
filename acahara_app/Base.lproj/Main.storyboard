@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="49e-Tb-3d3">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="QiM-gj-Thz">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -232,7 +232,7 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="2259" y="-598"/>
+            <point key="canvasLocation" x="3597" y="-398"/>
         </scene>
         <!--Add Sound View Controller-->
         <scene sceneID="lDg-yG-hv3">
@@ -321,7 +321,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vHc-ph-joa" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3250" y="76"/>
+            <point key="canvasLocation" x="4902" y="76"/>
         </scene>
         <!--Add Diary View Controller-->
         <scene sceneID="fUl-bo-QwH">
@@ -394,7 +394,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yaU-BX-4kL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2854" y="88"/>
+            <point key="canvasLocation" x="4474" y="88"/>
         </scene>
         <!--Detail View Controller-->
         <scene sceneID="gUV-zK-K1c">
@@ -554,7 +554,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qm4-HI-ctd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3219" y="-598"/>
+            <point key="canvasLocation" x="4843" y="-598"/>
         </scene>
         <!--Add Who View Controller-->
         <scene sceneID="rZP-pm-Yzr">
@@ -633,7 +633,102 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4r3-H0-8L4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2841" y="-607"/>
+            <point key="canvasLocation" x="4465" y="-607"/>
+        </scene>
+        <!--Assist-->
+        <scene sceneID="Q9P-vS-lK5">
+            <objects>
+                <viewController storyboardIdentifier="AssistViewController" id="Jzm-d0-H3C" customClass="AssistViewController" customModule="acahara_app" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="F1t-dr-43D"/>
+                        <viewControllerLayoutGuide type="bottom" id="XYN-CC-hRI"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="doh-As-vUF">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="相談相手を選んでください。" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qvR-Is-FMC">
+                                <rect key="frame" x="38" y="108" width="221" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="アシストサービス" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lVc-g0-TGZ">
+                                <rect key="frame" x="38" y="79" width="136" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xiO-V8-oRU">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="65"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                            </view>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ZYA-fe-avj">
+                                <rect key="frame" x="15" y="82" width="15" height="15"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Z0G-dr-Xvu">
+                                <rect key="frame" x="15" y="111" width="15" height="15"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7F6-q0-Xfb">
+                                <rect key="frame" x="38" y="144" width="75" height="75"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="NJg-mt-16w">
+                                <rect key="frame" x="131" y="144" width="75" height="75"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="luc-K8-y9U">
+                                <rect key="frame" x="225" y="144" width="75" height="75"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qPv-gC-sTi">
+                                <rect key="frame" x="37" y="234" width="75" height="75"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="VbJ-hm-k5M">
+                                <rect key="frame" x="131" y="234" width="75" height="75"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2Kd-wL-9qy">
+                                <rect key="frame" x="225" y="234" width="75" height="75"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="相談内容（編集可能）" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RtI-gc-h2X">
+                                <rect key="frame" x="38" y="317" width="170" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="1iJ-Vr-Qii">
+                                <rect key="frame" x="37" y="335" width="263" height="124"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="見せたい出来事を選択してください。" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CJV-n2-eKH">
+                                <rect key="frame" x="38" y="475" width="289" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="GOt-r7-cRS">
+                                <rect key="frame" x="15" y="478" width="15" height="15"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Assist" id="yXQ-Q2-kxN"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <connections>
+                        <outlet property="assailant" destination="NJg-mt-16w" id="kj7-VG-JkD"/>
+                        <outlet property="assistComments" destination="Z0G-dr-Xvu" id="e6T-l3-T39"/>
+                        <outlet property="assistEye" destination="GOt-r7-cRS" id="t1m-1L-YXb"/>
+                        <outlet property="assistInfo" destination="ZYA-fe-avj" id="4jc-Qp-ynF"/>
+                        <outlet property="committee" destination="qPv-gC-sTi" id="OPU-8w-ZQ4"/>
+                        <outlet property="friend" destination="luc-K8-y9U" id="fxr-v8-QrG"/>
+                        <outlet property="lawyer" destination="VbJ-hm-k5M" id="MmN-mB-Gfv"/>
+                        <outlet property="professor" destination="7F6-q0-Xfb" id="AD6-2F-ItX"/>
+                        <outlet property="psychotherapist" destination="2Kd-wL-9qy" id="BG7-1Q-z9k"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="TVB-3e-4LM" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3207" y="-398"/>
         </scene>
         <!--Setting-->
         <scene sceneID="wg7-f3-ORb">
@@ -673,128 +768,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Nw-L8-lE0" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="553" y="1015"/>
-        </scene>
-        <!--Tab Bar Controller-->
-        <scene sceneID="yl2-sM-qoP">
-            <objects>
-                <tabBarController id="49e-Tb-3d3" sceneMemberID="viewController">
-                    <nil key="simulatedBottomBarMetrics"/>
-                    <tabBar key="tabBar" contentMode="scaleToFill" id="W28-zg-YXA">
-                        <rect key="frame" x="0.0" y="975" width="768" height="49"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
-                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                    </tabBar>
-                    <connections>
-                        <segue destination="q4e-eA-BZr" kind="relationship" relationship="viewControllers" id="u7Y-xg-7CH"/>
-                        <segue destination="8rJ-Kc-sve" kind="relationship" relationship="viewControllers" id="lzU-1b-eKA"/>
-                        <segue destination="OcE-dE-mCn" kind="relationship" relationship="viewControllers" id="0XZ-lB-B2f"/>
-                    </connections>
-                </tabBarController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="HuB-VB-40B" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="0.0" y="0.0"/>
-        </scene>
-        <!--Help View Controller-->
-        <scene sceneID="2HH-1I-J32">
-            <objects>
-                <viewController id="OcE-dE-mCn" customClass="HelpViewController" customModule="acahara_app" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="mdv-2t-l7b"/>
-                        <viewControllerLayoutGuide type="bottom" id="Gr2-Ra-f6G"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="8CF-Mu-TaX">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="4Zg-fZ-Aue">
-                                <rect key="frame" x="18" y="52" width="285" height="204"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <string key="text">このサービスではアカハラの被害者が誰かに相談する時に、何度も被害状況を説明して追体験しなくても済むように作られています。相談記録の証拠も残ります。やり方は簡単です！まず相談したい相手方のタイプを選んでください。そうすると相手方への相談定型文が現れます。ご希望に応じてそれを編集してください。次に相談したい出来事を選択してください。メールをタップすると、相手方へ、出来事が確認できる、その人だけが見れて他の人は覗けない「特別なページ」のリンクと相談文が送られます。</string>
-                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fMn-va-EHJ">
-                                <rect key="frame" x="23" y="281" width="45" height="30"/>
-                                <state key="normal" title="弁護士"/>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jfN-kx-SAT">
-                                <rect key="frame" x="246" y="281" width="45" height="30"/>
-                                <state key="normal" title="加害者"/>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gQp-GI-Lb1">
-                                <rect key="frame" x="96" y="281" width="120" height="30"/>
-                                <state key="normal" title="加害者以外の教授"/>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5GN-IM-igj">
-                                <rect key="frame" x="22" y="319" width="240" height="30"/>
-                                <state key="normal" title="ハラスメント防止委員会などの組織"/>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eGJ-sX-Ga0">
-                                <rect key="frame" x="23" y="357" width="75" height="30"/>
-                                <state key="normal" title="友達／知人"/>
-                            </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="〜このサービスについて〜" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h9q-fb-9Tm">
-                                <rect key="frame" x="20" y="28" width="191" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="355" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="9PZ-Kf-P5E">
-                                <rect key="frame" x="0.0" y="391" width="320" height="128"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="ChV-Ub-248">
-                                        <rect key="frame" x="0.0" y="28" width="320" height="355"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ChV-Ub-248" id="I4e-f2-jer">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="354"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
-                                </prototypes>
-                                <connections>
-                                    <outlet property="dataSource" destination="OcE-dE-mCn" id="cGH-FD-qU4"/>
-                                    <outlet property="delegate" destination="OcE-dE-mCn" id="gtp-yq-Zxy"/>
-                                </connections>
-                            </tableView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="相談したい相手は誰ですか？" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vw2-h5-j7f">
-                                <rect key="frame" x="23" y="252" width="221" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                    <tabBarItem key="tabBarItem" systemItem="contacts" id="her-KW-b1B"/>
-                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
-                    <connections>
-                        <outlet property="helpTableView" destination="9PZ-Kf-P5E" id="hvc-Nu-gJ5"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="aTu-bO-ZU4" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-670" y="976"/>
-        </scene>
-        <!--home-->
-        <scene sceneID="EwQ-kF-APk">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="q4e-eA-BZr" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="home" image="first" id="acW-dT-cKf"/>
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="jhZ-IV-Iwl">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="kag-Be-bqJ" kind="relationship" relationship="rootViewController" id="SZJ-Pj-6qX"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="BXo-U6-bey" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="750" y="-320"/>
+            <point key="canvasLocation" x="153" y="943"/>
         </scene>
         <!--Picture View Controller-->
         <scene sceneID="2LX-EH-4EC">
@@ -826,7 +800,7 @@
         <!--Home View Controller-->
         <scene sceneID="vSC-CP-D99">
             <objects>
-                <viewController id="kag-Be-bqJ" customClass="HomeViewController" customModule="acahara_app" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="HomeViewController" id="kag-Be-bqJ" customClass="HomeViewController" customModule="acahara_app" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="jAm-tT-eWd"/>
                         <viewControllerLayoutGuide type="bottom" id="L6R-Rr-Nlx"/>
@@ -869,11 +843,48 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GQ9-Ta-OaL" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <tapGestureRecognizer id="dQf-OF-Zog"/>
             </objects>
-            <point key="canvasLocation" x="1387" y="-336"/>
+            <point key="canvasLocation" x="2884" y="-398"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="DGx-O7-fe8">
+            <objects>
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="QiM-gj-Thz" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" id="mfY-Mm-P7U">
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="kmR-6f-bWc" kind="relationship" relationship="viewControllers" id="wzE-7e-22c"/>
+                        <segue destination="8rJ-Kc-sve" kind="relationship" relationship="viewControllers" id="wbi-qp-VNf"/>
+                        <segue destination="Jzm-d0-H3C" kind="relationship" relationship="viewControllers" id="mWE-A9-1De"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="oUi-Vr-v48" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-279" y="-73"/>
+        </scene>
+        <!--Home-->
+        <scene sceneID="ktl-z2-Gpu">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="kmR-6f-bWc" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Home" id="o1I-ZY-DA3"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="e23-0V-7wY">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="kag-Be-bqJ" kind="relationship" relationship="rootViewController" id="8Sx-wh-pv6"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ThS-8K-nvF" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2199" y="-336"/>
         </scene>
     </scenes>
     <resources>
-        <image name="first" width="30" height="30"/>
         <image name="second" width="30" height="30"/>
     </resources>
 </document>

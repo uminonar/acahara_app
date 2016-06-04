@@ -38,10 +38,12 @@ class AddDiaryViewController: UIViewController, UITextViewDelegate {
         
         
         
-        var closeButton = UIButton(frame: CGRectMake(myBoundsize.width-60, 5, 40, 20))
+        var closeButton = UIButton(frame: CGRectMake(myBoundsize.width-50, 5, 40, 20))
         
-        //決定のフォントサイズを小さくしたい、どうする？
+       
         closeButton.setTitle("決定", forState: UIControlState.Normal)
+        //決定のフォントサイズを小さくする
+        closeButton.titleLabel?.font = UIFont.systemFontOfSize(15)
         closeButton.setTitleColor(UIColor.lightGrayColor(),
         forState: UIControlState.Normal)
         closeButton.contentHorizontalAlignment = UIControlContentHorizontalAlignment.Right

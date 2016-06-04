@@ -86,7 +86,7 @@ class HomeViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
         }
         
     
-    //.xibファイルのボタンがタップされ時の処理
+     //.xibファイルのボタンがタップされ時の処理
         
      //postEllipsisBtn等の後に：をつけることで、sender情報を使える
         cell.postEllipsisBtn.addTarget(self, action:"postEllipsisBtn:", forControlEvents:.TouchUpInside)
@@ -180,6 +180,8 @@ class HomeViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
     
    }
     
+    
+    //削除が選択された時の、確認アラート
     func confirm(tag:Int){
         
         var alertController = UIAlertController(title:"ご注意", message: "本当に削除しますか？", preferredStyle: .Alert)

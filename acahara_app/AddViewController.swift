@@ -349,7 +349,8 @@ class AddViewController: UIViewController,UIImagePickerControllerDelegate,UINavi
         addWho.text=""
         addDiary.text=""
         
-        //前ページに遷移する　モーダル画面じゃなくので、dismissじゃないバージョンnavigationController?.popViewControllerAnimated(true)
+        //前ページに遷移する　モーダル画面じゃなくので、dismissじゃないバージョン
+        //navigationController?.popViewControllerAnimated(true)
         
         self.dismissViewControllerAnimated(false, completion: nil)
         

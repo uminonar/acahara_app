@@ -21,9 +21,9 @@
 		0B03D2921CF7F4FB0050119E /* AddWhereViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B03D2911CF7F4FB0050119E /* AddWhereViewController.swift */; };
 		0B03D2941CF7F6050050119E /* AddWhoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B03D2931CF7F6050050119E /* AddWhoViewController.swift */; };
 		0B0686C71CFBFA58002AB722 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B0686C61CFBFA58002AB722 /* DetailViewController.swift */; };
+		0B94338B1D0275AA00A93027 /* AssistViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B94338A1D0275AA00A93027 /* AssistViewController.swift */; };
 		0B9DBFE71CFFF1F200B78293 /* AddSoundViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B9DBFE61CFFF1F200B78293 /* AddSoundViewController.swift */; };
 		0B9DF2611D01ADC100B478C7 /* PictureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B9DF2601D01ADC100B478C7 /* PictureViewController.swift */; };
-		0BA5624D1CFAF48E00760490 /* HelpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BA5624C1CFAF48E00760490 /* HelpViewController.swift */; };
 		0BA5624F1CFB112600760490 /* bgImage.JPG in Resources */ = {isa = PBXBuildFile; fileRef = 0BA5624E1CFB112600760490 /* bgImage.JPG */; };
 		0BADA6181CFB3089001702D7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0BADA6161CFB3089001702D7 /* Main.storyboard */; };
 		0BADA61A1CFB3B9E001702D7 /* AddDiaryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BADA6191CFB3B9E001702D7 /* AddDiaryViewController.swift */; };
@@ -77,9 +77,9 @@
 		0B03D2911CF7F4FB0050119E /* AddWhereViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddWhereViewController.swift; sourceTree = "<group>"; };
 		0B03D2931CF7F6050050119E /* AddWhoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddWhoViewController.swift; sourceTree = "<group>"; };
 		0B0686C61CFBFA58002AB722 /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		0B94338A1D0275AA00A93027 /* AssistViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AssistViewController.swift; sourceTree = "<group>"; };
 		0B9DBFE61CFFF1F200B78293 /* AddSoundViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddSoundViewController.swift; sourceTree = "<group>"; };
 		0B9DF2601D01ADC100B478C7 /* PictureViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PictureViewController.swift; sourceTree = "<group>"; };
-		0BA5624C1CFAF48E00760490 /* HelpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HelpViewController.swift; sourceTree = "<group>"; };
 		0BA5624E1CFB112600760490 /* bgImage.JPG */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = bgImage.JPG; sourceTree = "<group>"; };
 		0BADA6171CFB3089001702D7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		0BADA6191CFB3B9E001702D7 /* AddDiaryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddDiaryViewController.swift; sourceTree = "<group>"; };
@@ -154,7 +154,6 @@
 			children = (
 				0B0094891CF6FFB90041B3B5 /* AppDelegate.swift */,
 				0B00948B1CF6FFB90041B3B5 /* HomeViewController.swift */,
-				0BA5624C1CFAF48E00760490 /* HelpViewController.swift */,
 				0B0686C61CFBFA58002AB722 /* DetailViewController.swift */,
 				0B0094BF1CF70D760041B3B5 /* homeTableViewCell.swift */,
 				0B0094B91CF708120041B3B5 /* postCustomCell.xib */,
@@ -165,6 +164,7 @@
 				0BADA6191CFB3B9E001702D7 /* AddDiaryViewController.swift */,
 				0B9DBFE61CFFF1F200B78293 /* AddSoundViewController.swift */,
 				0B00948D1CF6FFB90041B3B5 /* SettingViewController.swift */,
+				0B94338A1D0275AA00A93027 /* AssistViewController.swift */,
 				0BADA6161CFB3089001702D7 /* Main.storyboard */,
 				0B0094921CF6FFB90041B3B5 /* Assets.xcassets */,
 				0BA5624E1CFB112600760490 /* bgImage.JPG */,
@@ -491,10 +491,10 @@
 				0B03D2941CF7F6050050119E /* AddWhoViewController.swift in Sources */,
 				0B9DF2611D01ADC100B478C7 /* PictureViewController.swift in Sources */,
 				0BADA61A1CFB3B9E001702D7 /* AddDiaryViewController.swift in Sources */,
+				0B94338B1D0275AA00A93027 /* AssistViewController.swift in Sources */,
 				0B9DBFE71CFFF1F200B78293 /* AddSoundViewController.swift in Sources */,
 				0B03D2901CF7D58E0050119E /* AddViewController.swift in Sources */,
 				0B00948E1CF6FFB90041B3B5 /* SettingViewController.swift in Sources */,
-				0BA5624D1CFAF48E00760490 /* HelpViewController.swift in Sources */,
 				0B00948A1CF6FFB90041B3B5 /* AppDelegate.swift in Sources */,
 				0B0094C01CF70D760041B3B5 /* homeTableViewCell.swift in Sources */,
 				0B0686C71CFBFA58002AB722 /* DetailViewController.swift in Sources */,
