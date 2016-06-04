@@ -730,7 +730,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TVB-3e-4LM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1399" y="842"/>
+            <point key="canvasLocation" x="1284" y="602"/>
         </scene>
         <!--Chose Posts View Controller-->
         <scene sceneID="5Ur-Ea-ese">
@@ -750,22 +750,45 @@
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5zK-QG-FnK">
                                         <rect key="frame" x="268" y="27" width="30" height="30"/>
                                         <state key="normal" title="選択"/>
+                                        <connections>
+                                            <action selector="selectedBtn:" destination="Af2-dK-aGT" eventType="touchUpInside" id="VHL-pO-4CG"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nBp-S0-SH0">
                                         <rect key="frame" x="8" y="27" width="75" height="30"/>
                                         <state key="normal" title="キャンセル"/>
+                                        <connections>
+                                            <action selector="cancelBtn:" destination="Af2-dK-aGT" eventType="touchUpInside" id="EBc-Fp-xUi"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
                             </view>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="355" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="no6-2p-dO7">
+                                <rect key="frame" x="0.0" y="65" width="320" height="503"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="choseCell" id="WJz-ky-HuC">
+                                        <rect key="frame" x="0.0" y="28" width="320" height="355"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="WJz-ky-HuC" id="t5Q-mN-Sod">
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="354"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <connections>
+                        <outlet property="choseTableView" destination="no6-2p-dO7" id="GlI-cD-XzQ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZgU-72-vuF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1697" y="817"/>
+            <point key="canvasLocation" x="1662" y="200"/>
         </scene>
         <!--Setting-->
         <scene sceneID="wg7-f3-ORb">
