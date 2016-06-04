@@ -12,7 +12,7 @@ class AssistViewController: UIViewController {
 
 
 
-    
+    @IBOutlet weak var assistMailContent: UITextView!
     @IBOutlet weak var assistComments: UIImageView!
     @IBOutlet weak var assistInfo: UIImageView!
     @IBOutlet weak var assistEye: UIImageView!
@@ -32,11 +32,21 @@ class AssistViewController: UIViewController {
         let eyeImage = eye.imageWithSize(CGSizeMake(15, 15))
         assistEye.image = eyeImage
         
-
+        
+        // assistMailContentのTextViewに枠をつける。
+        assistMailContent.layer.borderWidth = 0.5
+        
+        // 枠の色を設定する。
+        assistMailContent.layer.borderColor = UIColor.lightGrayColor().CGColor
+        
+        // 枠の角を丸くする。
+        assistMailContent.layer.cornerRadius = 8
+        
+       
     }
     
     override func viewWillAppear(animated: Bool) {
-
+        
     }
     
 
@@ -45,9 +55,43 @@ class AssistViewController: UIViewController {
         let ChosePostsVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("ChosePostsViewController") as UIViewController
         
         presentViewController(ChosePostsVC, animated: true, completion: nil)
-
+        
         
     }
+       @IBAction func questionBtn(sender: UIButton) {
+        //ChosePostsVCへモーダル遷移
+        let ChosePostsVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("ChosePostsViewController") as UIViewController
+        
+        presentViewController(ChosePostsVC, animated: true, completion: nil)
+    }
+    
+    @IBAction func professorBtn(sender: UIButton) {
+       
+        assistMailContent.text = "aiueo"
+        assistMailContent.textColor = UIColor.blackColor()
+        
+    }
+    @IBAction func assailant(sender: UIButton) {
+        assistMailContent.text = ""
+    }
+    @IBAction func committeeBtn(sender: UIButton) {
+        assistMailContent.text = ""
+    }
+    @IBAction func psycotherapistBtn(sender: UIButton) {
+        assistMailContent.text = ""
+    }
+    @IBAction func lawyerBtn(sender: UIButton) {
+        assistMailContent.text = ""
+    }
+    @IBAction func friendBtn(sender: UIButton) {
+        assistMailContent.text = ""
+    }
+    
+    
+ 
+    
+    
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

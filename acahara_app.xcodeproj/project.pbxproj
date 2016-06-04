@@ -34,6 +34,8 @@
 		0BA5624F1CFB112600760490 /* bgImage.JPG in Resources */ = {isa = PBXBuildFile; fileRef = 0BA5624E1CFB112600760490 /* bgImage.JPG */; };
 		0BADA6181CFB3089001702D7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0BADA6161CFB3089001702D7 /* Main.storyboard */; };
 		0BADA61A1CFB3B9E001702D7 /* AddDiaryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BADA6191CFB3B9E001702D7 /* AddDiaryViewController.swift */; };
+		0BC1DB101D0378E100D203C1 /* question.png in Resources */ = {isa = PBXBuildFile; fileRef = 0BC1DB0F1D0378E100D203C1 /* question.png */; };
+		0BC1DB121D037B3B00D203C1 /* s_question.png in Resources */ = {isa = PBXBuildFile; fileRef = 0BC1DB111D037B3B00D203C1 /* s_question.png */; };
 		0BFFF9D11CF82C8900CD1D65 /* selfee.JPG in Resources */ = {isa = PBXBuildFile; fileRef = 0BFFF9D01CF82C8900CD1D65 /* selfee.JPG */; };
 		0BFFF9D31CF82D8400CD1D65 /* pic3.JPG in Resources */ = {isa = PBXBuildFile; fileRef = 0BFFF9D21CF82D8400CD1D65 /* pic3.JPG */; };
 		0BFFF9D51CF82DA400CD1D65 /* pic1.JPG in Resources */ = {isa = PBXBuildFile; fileRef = 0BFFF9D41CF82DA400CD1D65 /* pic1.JPG */; };
@@ -97,6 +99,8 @@
 		0BA5624E1CFB112600760490 /* bgImage.JPG */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = bgImage.JPG; sourceTree = "<group>"; };
 		0BADA6171CFB3089001702D7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		0BADA6191CFB3B9E001702D7 /* AddDiaryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddDiaryViewController.swift; sourceTree = "<group>"; };
+		0BC1DB0F1D0378E100D203C1 /* question.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = question.png; sourceTree = "<group>"; };
+		0BC1DB111D037B3B00D203C1 /* s_question.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = s_question.png; sourceTree = "<group>"; };
 		0BFFF9D01CF82C8900CD1D65 /* selfee.JPG */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = selfee.JPG; sourceTree = "<group>"; };
 		0BFFF9D21CF82D8400CD1D65 /* pic3.JPG */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = pic3.JPG; sourceTree = "<group>"; };
 		0BFFF9D41CF82DA400CD1D65 /* pic1.JPG */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = pic1.JPG; sourceTree = "<group>"; };
@@ -182,6 +186,8 @@
 				0B09F2481D02C38E006F11D5 /* ChosePostsViewController.swift */,
 				0BADA6161CFB3089001702D7 /* Main.storyboard */,
 				0B0094921CF6FFB90041B3B5 /* Assets.xcassets */,
+				0BC1DB111D037B3B00D203C1 /* s_question.png */,
+				0BC1DB0F1D0378E100D203C1 /* question.png */,
 				0B0538371D03041900D3AF6B /* friend.jpg */,
 				0B0538331D02FD8B00D3AF6B /* lawyer.jpg */,
 				0B0538311D02FD8700D3AF6B /* psycotherapist.jpg */,
@@ -360,9 +366,11 @@
 				0B0538341D02FD8B00D3AF6B /* lawyer.jpg in Resources */,
 				0B0538381D03041900D3AF6B /* friend.jpg in Resources */,
 				0B05382E1D02FD7D00D3AF6B /* assailant.jpg in Resources */,
+				0BC1DB101D0378E100D203C1 /* question.png in Resources */,
 				0BFFF9D31CF82D8400CD1D65 /* pic3.JPG in Resources */,
 				0BFFF9D11CF82C8900CD1D65 /* selfee.JPG in Resources */,
 				0B0094931CF6FFB90041B3B5 /* Assets.xcassets in Resources */,
+				0BC1DB121D037B3B00D203C1 /* s_question.png in Resources */,
 				0B0538301D02FD8300D3AF6B /* professor.jpg in Resources */,
 				0BADA6181CFB3089001702D7 /* Main.storyboard in Resources */,
 				0BFFF9D51CF82DA400CD1D65 /* pic1.JPG in Resources */,

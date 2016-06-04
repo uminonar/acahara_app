@@ -649,7 +649,7 @@
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="相談相手を選んでください。" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qvR-Is-FMC">
                                 <rect key="frame" x="40" y="108" width="221" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -667,7 +667,8 @@
                                 <rect key="frame" x="15" y="478" width="15" height="15"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ama-cA-bVs">
-                                <rect key="frame" x="37" y="471" width="255" height="30"/>
+                                <rect key="frame" x="32" y="471" width="239" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                 <state key="normal" title="見せたい出来事を選択してください。">
                                     <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
@@ -675,25 +676,29 @@
                                     <action selector="chosePostsVC:" destination="Jzm-d0-H3C" eventType="touchUpInside" id="KCf-bX-hQJ"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bkT-bx-yJA">
-                                <rect key="frame" x="37" y="147" width="60" height="60"/>
-                                <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
-                                <state key="normal" image="professor.jpg"/>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XXR-C6-jS7">
                                 <rect key="frame" x="130" y="147" width="60" height="60"/>
                                 <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <state key="normal" image="assailant.jpg"/>
+                                <connections>
+                                    <action selector="assailant:" destination="Jzm-d0-H3C" eventType="touchUpInside" id="ENv-s0-VjL"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hFg-9Y-uMv">
                                 <rect key="frame" x="224" y="147" width="60" height="60"/>
                                 <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <state key="normal" image="committeee のコピー.jpg"/>
+                                <connections>
+                                    <action selector="committeeBtn:" destination="Jzm-d0-H3C" eventType="touchUpInside" id="I6b-y2-35s"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pJS-2s-mpE">
                                 <rect key="frame" x="37" y="235" width="60" height="60"/>
                                 <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <state key="normal" image="psycotherapist.jpg"/>
+                                <connections>
+                                    <action selector="psycotherapistBtn:" destination="Jzm-d0-H3C" eventType="touchUpInside" id="BTx-vs-1Yn"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KdR-bR-KLY">
                                 <rect key="frame" x="130" y="231" width="60" height="67"/>
@@ -701,6 +706,9 @@
                                 <state key="normal" image="lawyer.jpg">
                                     <color key="titleColor" red="0.0" green="0.50196081400000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="lawyerBtn:" destination="Jzm-d0-H3C" eventType="touchUpInside" id="2TX-OT-SZl"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="教授" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ceI-fP-Ycl">
                                 <rect key="frame" x="53" y="203" width="28" height="17"/>
@@ -735,6 +743,9 @@
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fen-pH-YlD">
                                 <rect key="frame" x="224" y="235" width="60" height="60"/>
                                 <state key="normal" image="friend.jpg"/>
+                                <connections>
+                                    <action selector="friendBtn:" destination="Jzm-d0-H3C" eventType="touchUpInside" id="jLf-cL-E5t"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="友達" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QSQ-PJ-zOA">
                                 <rect key="frame" x="237" y="289" width="34" height="21"/>
@@ -743,23 +754,42 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="相談内容（編集可能）" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RtI-gc-h2X">
-                                <rect key="frame" x="37" y="328" width="170" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <rect key="frame" x="37" y="326" width="170" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                 <color key="textColor" red="1" green="0.22663640860000001" blue="0.2822809678" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="75E-gf-Fvb">
-                                <rect key="frame" x="37" y="75" width="180" height="30"/>
+                                <rect key="frame" x="27" y="75" width="180" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                 <state key="normal" title="アシストサービスについて">
                                     <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                             </button>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="□□□　□□先生" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="1iJ-Vr-Qii">
-                                <rect key="frame" x="32" y="357" width="280" height="116"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="1iJ-Vr-Qii">
+                                <rect key="frame" x="32" y="347" width="276" height="116"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bkT-bx-yJA">
+                                <rect key="frame" x="37" y="147" width="60" height="60"/>
+                                <state key="normal" image="professor.jpg"/>
+                                <state key="selected">
+                                    <color key="titleShadowColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="professorBtn:" destination="Jzm-d0-H3C" eventType="touchUpInside" id="k7f-qa-I9K"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MDu-kN-V9F">
+                                <rect key="frame" x="68" y="501" width="204" height="150"/>
+                                <state key="normal" title="Button" image="s_question.png"/>
+                                <connections>
+                                    <action selector="questionBtn:" destination="Jzm-d0-H3C" eventType="touchUpInside" id="L8J-CB-l91"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -769,6 +799,7 @@
                         <outlet property="assistComments" destination="Z0G-dr-Xvu" id="ZBd-oF-Rbc"/>
                         <outlet property="assistEye" destination="GOt-r7-cRS" id="t1m-1L-YXb"/>
                         <outlet property="assistInfo" destination="ZYA-fe-avj" id="4jc-Qp-ynF"/>
+                        <outlet property="assistMailContent" destination="1iJ-Vr-Qii" id="ELg-if-yQF"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TVB-3e-4LM" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -994,6 +1025,7 @@
         <image name="lawyer.jpg" width="60" height="67"/>
         <image name="professor.jpg" width="60" height="60"/>
         <image name="psycotherapist.jpg" width="60" height="60"/>
+        <image name="s_question.png" width="150" height="150"/>
         <image name="second" width="30" height="30"/>
     </resources>
 </document>
