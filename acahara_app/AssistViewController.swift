@@ -11,12 +11,6 @@ import UIKit
 class AssistViewController: UIViewController {
 
 
-    @IBOutlet weak var professor: UIImageView!
-    @IBOutlet weak var assailant: UIImageView!
-    @IBOutlet weak var friend: UIImageView!
-    @IBOutlet weak var committee: UIImageView!
-    @IBOutlet weak var lawyer: UIImageView!
-    @IBOutlet weak var psychotherapist: UIImageView!
 
     
     @IBOutlet weak var assistComments: UIImageView!

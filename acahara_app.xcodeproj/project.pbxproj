@@ -20,6 +20,12 @@
 		0B03D2901CF7D58E0050119E /* AddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B03D28F1CF7D58E0050119E /* AddViewController.swift */; };
 		0B03D2921CF7F4FB0050119E /* AddWhereViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B03D2911CF7F4FB0050119E /* AddWhereViewController.swift */; };
 		0B03D2941CF7F6050050119E /* AddWhoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B03D2931CF7F6050050119E /* AddWhoViewController.swift */; };
+		0B05382C1D02FD7700D3AF6B /* committeee のコピー.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 0B05382B1D02FD7700D3AF6B /* committeee のコピー.jpg */; };
+		0B05382E1D02FD7D00D3AF6B /* assailant.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 0B05382D1D02FD7D00D3AF6B /* assailant.jpg */; };
+		0B0538301D02FD8300D3AF6B /* professor.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 0B05382F1D02FD8300D3AF6B /* professor.jpg */; };
+		0B0538321D02FD8700D3AF6B /* psycotherapist.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 0B0538311D02FD8700D3AF6B /* psycotherapist.jpg */; };
+		0B0538341D02FD8B00D3AF6B /* lawyer.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 0B0538331D02FD8B00D3AF6B /* lawyer.jpg */; };
+		0B0538381D03041900D3AF6B /* friend.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 0B0538371D03041900D3AF6B /* friend.jpg */; };
 		0B0686C71CFBFA58002AB722 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B0686C61CFBFA58002AB722 /* DetailViewController.swift */; };
 		0B09F2491D02C38E006F11D5 /* ChosePostsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B09F2481D02C38E006F11D5 /* ChosePostsViewController.swift */; };
 		0B94338B1D0275AA00A93027 /* AssistViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B94338A1D0275AA00A93027 /* AssistViewController.swift */; };
@@ -77,6 +83,12 @@
 		0B03D28F1CF7D58E0050119E /* AddViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddViewController.swift; sourceTree = "<group>"; };
 		0B03D2911CF7F4FB0050119E /* AddWhereViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddWhereViewController.swift; sourceTree = "<group>"; };
 		0B03D2931CF7F6050050119E /* AddWhoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddWhoViewController.swift; sourceTree = "<group>"; };
+		0B05382B1D02FD7700D3AF6B /* committeee のコピー.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "committeee のコピー.jpg"; sourceTree = "<group>"; };
+		0B05382D1D02FD7D00D3AF6B /* assailant.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = assailant.jpg; sourceTree = "<group>"; };
+		0B05382F1D02FD8300D3AF6B /* professor.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = professor.jpg; sourceTree = "<group>"; };
+		0B0538311D02FD8700D3AF6B /* psycotherapist.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = psycotherapist.jpg; sourceTree = "<group>"; };
+		0B0538331D02FD8B00D3AF6B /* lawyer.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = lawyer.jpg; sourceTree = "<group>"; };
+		0B0538371D03041900D3AF6B /* friend.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = friend.jpg; sourceTree = "<group>"; };
 		0B0686C61CFBFA58002AB722 /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		0B09F2481D02C38E006F11D5 /* ChosePostsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChosePostsViewController.swift; sourceTree = "<group>"; };
 		0B94338A1D0275AA00A93027 /* AssistViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AssistViewController.swift; sourceTree = "<group>"; };
@@ -170,6 +182,12 @@
 				0B09F2481D02C38E006F11D5 /* ChosePostsViewController.swift */,
 				0BADA6161CFB3089001702D7 /* Main.storyboard */,
 				0B0094921CF6FFB90041B3B5 /* Assets.xcassets */,
+				0B0538371D03041900D3AF6B /* friend.jpg */,
+				0B0538331D02FD8B00D3AF6B /* lawyer.jpg */,
+				0B0538311D02FD8700D3AF6B /* psycotherapist.jpg */,
+				0B05382F1D02FD8300D3AF6B /* professor.jpg */,
+				0B05382D1D02FD7D00D3AF6B /* assailant.jpg */,
+				0B05382B1D02FD7700D3AF6B /* committeee のコピー.jpg */,
 				0BA5624E1CFB112600760490 /* bgImage.JPG */,
 				0BFFF9D41CF82DA400CD1D65 /* pic1.JPG */,
 				0BFFF9D21CF82D8400CD1D65 /* pic3.JPG */,
@@ -335,15 +353,21 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0B0538321D02FD8700D3AF6B /* psycotherapist.jpg in Resources */,
 				0B0094BA1CF708120041B3B5 /* postCustomCell.xib in Resources */,
 				0B0094BE1CF70C440041B3B5 /* posts.txt in Resources */,
 				0B0094961CF6FFB90041B3B5 /* LaunchScreen.storyboard in Resources */,
+				0B0538341D02FD8B00D3AF6B /* lawyer.jpg in Resources */,
+				0B0538381D03041900D3AF6B /* friend.jpg in Resources */,
+				0B05382E1D02FD7D00D3AF6B /* assailant.jpg in Resources */,
 				0BFFF9D31CF82D8400CD1D65 /* pic3.JPG in Resources */,
 				0BFFF9D11CF82C8900CD1D65 /* selfee.JPG in Resources */,
 				0B0094931CF6FFB90041B3B5 /* Assets.xcassets in Resources */,
+				0B0538301D02FD8300D3AF6B /* professor.jpg in Resources */,
 				0BADA6181CFB3089001702D7 /* Main.storyboard in Resources */,
 				0BFFF9D51CF82DA400CD1D65 /* pic1.JPG in Resources */,
 				0BA5624F1CFB112600760490 /* bgImage.JPG in Resources */,
+				0B05382C1D02FD7700D3AF6B /* committeee のコピー.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
