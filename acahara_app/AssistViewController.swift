@@ -12,6 +12,7 @@ class AssistViewController: UIViewController {
 
 
 
+    @IBOutlet weak var assistSideTrig: UIButton!
     @IBOutlet weak var assistMailContent: UITextView!
     @IBOutlet weak var assistComments: UIImageView!
     @IBOutlet weak var assistInfo: UIImageView!
@@ -19,6 +20,12 @@ class AssistViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        
+//        let sideT = FAKFontAwesome.barsIconWithSize(40)
+//        let sideTImage = sideT.imageWithSize(CGSizeMake(40, 40))
+//        assistSideTrig.imageView = UIImage(named:sideTImage)
+//        
         
         let info = FAKFontAwesome.infoIconWithSize(15)
         let infoImage = info.imageWithSize(CGSizeMake(15, 15))

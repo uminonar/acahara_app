@@ -34,7 +34,7 @@ class AddDiaryViewController: UIViewController, UITextViewDelegate {
         //決定ボタンのついたラベルをキーボードの上に設置
         var accessoryView = UIView(frame: CGRectMake(0, 178, 320, 30))
         
-        accessoryView.backgroundColor = UIColor.groupTableViewBackgroundColor()
+        accessoryView.backgroundColor = UIColor.lightGrayColor()
         
         
         
@@ -44,7 +44,7 @@ class AddDiaryViewController: UIViewController, UITextViewDelegate {
         closeButton.setTitle("決定", forState: UIControlState.Normal)
         //決定のフォントサイズを小さくする
         closeButton.titleLabel?.font = UIFont.systemFontOfSize(15)
-        closeButton.setTitleColor(UIColor.lightGrayColor(),
+        closeButton.setTitleColor(UIColor.whiteColor(),
         forState: UIControlState.Normal)
         closeButton.contentHorizontalAlignment = UIControlContentHorizontalAlignment.Right
         closeButton.addTarget(self, action: "onClickCloseButton:", forControlEvents: .TouchUpInside)
