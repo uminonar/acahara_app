@@ -19,7 +19,6 @@ class AssistViewController: UIViewController {
     @IBOutlet weak var psychotherapist: UIImageView!
 
     
-    
     @IBOutlet weak var assistComments: UIImageView!
     @IBOutlet weak var assistInfo: UIImageView!
     @IBOutlet weak var assistEye: UIImageView!
@@ -46,10 +45,15 @@ class AssistViewController: UIViewController {
 
     }
     
-    
-    
-    
-    
+
+    @IBAction func chosePostsVC(sender: UIButton) {
+        //ChosePostsVCへモーダル遷移
+        let ChosePostsVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("ChosePostsViewController") as UIViewController
+        
+        presentViewController(ChosePostsVC, animated: true, completion: nil)
+
+        
+    }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

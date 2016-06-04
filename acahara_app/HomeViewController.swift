@@ -154,7 +154,10 @@ class HomeViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
     
             let pictureVC = UIStoryboard(name: "Main",bundle: nil).instantiateViewControllerWithIdentifier("PictureViewController") as! PictureViewController
     
-           pictureVC.picSelectedIndex = sender.tag
+            pictureVC.picSelectedIndex = sender.tag
+            
+            navigationController?.pushViewController(pictureVC, animated: true)
+
     
         }
     
