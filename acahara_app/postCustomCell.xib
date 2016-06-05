@@ -32,7 +32,7 @@
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="慶應義塾大学大学院メディアデザイン研究科　" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PIm-cJ-6qp">
                         <rect key="frame" x="56" y="68" width="210" height="12"/>
                         <fontDescription key="fontDescription" type="system" pointSize="10"/>
-                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="textColor" red="0.0" green="0.50196081400000003" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="uminonar" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="y1p-GZ-S1C">
@@ -102,7 +102,7 @@
                 <outlet property="postWhere" destination="w5U-vt-3Wp" id="aho-9p-4Gc"/>
                 <outlet property="postWho" destination="3Uk-Nr-QHO" id="S0c-ci-PkC"/>
             </connections>
-            <point key="canvasLocation" x="7" y="66.5"/>
+            <point key="canvasLocation" x="177" y="50.5"/>
         </tableViewCell>
     </objects>
 </document>
