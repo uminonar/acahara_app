@@ -37,6 +37,13 @@
 		0BC1DB101D0378E100D203C1 /* question.png in Resources */ = {isa = PBXBuildFile; fileRef = 0BC1DB0F1D0378E100D203C1 /* question.png */; };
 		0BC1DB121D037B3B00D203C1 /* s_question.png in Resources */ = {isa = PBXBuildFile; fileRef = 0BC1DB111D037B3B00D203C1 /* s_question.png */; };
 		0BD4F1541D051A28001AA8EC /* MailContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BD4F1531D051A28001AA8EC /* MailContentViewController.swift */; };
+		0BE248981D05A97A002BEC1F /* AddTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BE248971D05A97A002BEC1F /* AddTableViewController.swift */; };
+		0BE2489C1D05AAE1002BEC1F /* dateTime.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0BE2489B1D05AAE1002BEC1F /* dateTime.xib */; };
+		0BE2489E1D05ABEB002BEC1F /* dateTimeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BE2489D1D05ABEB002BEC1F /* dateTimeTableViewCell.swift */; };
+		0BE248A01D05AC8D002BEC1F /* datePicker.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0BE2489F1D05AC8D002BEC1F /* datePicker.xib */; };
+		0BE248A21D05ACEE002BEC1F /* datePickerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BE248A11D05ACEE002BEC1F /* datePickerTableViewCell.swift */; };
+		0BE248A41D05AEE0002BEC1F /* bottom.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0BE248A31D05AEE0002BEC1F /* bottom.xib */; };
+		0BE248A61D05B18E002BEC1F /* bottomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BE248A51D05B18E002BEC1F /* bottomTableViewCell.swift */; };
 		0BFFF9D11CF82C8900CD1D65 /* selfee.JPG in Resources */ = {isa = PBXBuildFile; fileRef = 0BFFF9D01CF82C8900CD1D65 /* selfee.JPG */; };
 		0BFFF9D31CF82D8400CD1D65 /* pic3.JPG in Resources */ = {isa = PBXBuildFile; fileRef = 0BFFF9D21CF82D8400CD1D65 /* pic3.JPG */; };
 		0BFFF9D51CF82DA400CD1D65 /* pic1.JPG in Resources */ = {isa = PBXBuildFile; fileRef = 0BFFF9D41CF82DA400CD1D65 /* pic1.JPG */; };
@@ -103,6 +110,13 @@
 		0BC1DB0F1D0378E100D203C1 /* question.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = question.png; sourceTree = "<group>"; };
 		0BC1DB111D037B3B00D203C1 /* s_question.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = s_question.png; sourceTree = "<group>"; };
 		0BD4F1531D051A28001AA8EC /* MailContentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MailContentViewController.swift; sourceTree = "<group>"; };
+		0BE248971D05A97A002BEC1F /* AddTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddTableViewController.swift; sourceTree = "<group>"; };
+		0BE2489B1D05AAE1002BEC1F /* dateTime.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = dateTime.xib; sourceTree = "<group>"; };
+		0BE2489D1D05ABEB002BEC1F /* dateTimeTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = dateTimeTableViewCell.swift; sourceTree = "<group>"; };
+		0BE2489F1D05AC8D002BEC1F /* datePicker.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = datePicker.xib; sourceTree = "<group>"; };
+		0BE248A11D05ACEE002BEC1F /* datePickerTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = datePickerTableViewCell.swift; sourceTree = "<group>"; };
+		0BE248A31D05AEE0002BEC1F /* bottom.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = bottom.xib; sourceTree = "<group>"; };
+		0BE248A51D05B18E002BEC1F /* bottomTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = bottomTableViewCell.swift; sourceTree = "<group>"; };
 		0BFFF9D01CF82C8900CD1D65 /* selfee.JPG */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = selfee.JPG; sourceTree = "<group>"; };
 		0BFFF9D21CF82D8400CD1D65 /* pic3.JPG */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = pic3.JPG; sourceTree = "<group>"; };
 		0BFFF9D41CF82DA400CD1D65 /* pic1.JPG */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = pic1.JPG; sourceTree = "<group>"; };
@@ -176,8 +190,15 @@
 				0B00948B1CF6FFB90041B3B5 /* HomeViewController.swift */,
 				0B0686C61CFBFA58002AB722 /* DetailViewController.swift */,
 				0B0094BF1CF70D760041B3B5 /* homeTableViewCell.swift */,
+				0BE2489D1D05ABEB002BEC1F /* dateTimeTableViewCell.swift */,
+				0BE248A11D05ACEE002BEC1F /* datePickerTableViewCell.swift */,
+				0BE248A51D05B18E002BEC1F /* bottomTableViewCell.swift */,
 				0B0094B91CF708120041B3B5 /* postCustomCell.xib */,
+				0BE2489B1D05AAE1002BEC1F /* dateTime.xib */,
+				0BE2489F1D05AC8D002BEC1F /* datePicker.xib */,
+				0BE248A31D05AEE0002BEC1F /* bottom.xib */,
 				0B03D28F1CF7D58E0050119E /* AddViewController.swift */,
+				0BE248971D05A97A002BEC1F /* AddTableViewController.swift */,
 				0B9DF2601D01ADC100B478C7 /* PictureViewController.swift */,
 				0B03D2911CF7F4FB0050119E /* AddWhereViewController.swift */,
 				0B03D2931CF7F6050050119E /* AddWhoViewController.swift */,
@@ -364,14 +385,17 @@
 			files = (
 				0B0538321D02FD8700D3AF6B /* psycotherapist.jpg in Resources */,
 				0B0094BA1CF708120041B3B5 /* postCustomCell.xib in Resources */,
+				0BE248A01D05AC8D002BEC1F /* datePicker.xib in Resources */,
 				0B0094BE1CF70C440041B3B5 /* posts.txt in Resources */,
 				0B0094961CF6FFB90041B3B5 /* LaunchScreen.storyboard in Resources */,
 				0B0538341D02FD8B00D3AF6B /* lawyer.jpg in Resources */,
 				0B0538381D03041900D3AF6B /* friend.jpg in Resources */,
+				0BE2489C1D05AAE1002BEC1F /* dateTime.xib in Resources */,
 				0B05382E1D02FD7D00D3AF6B /* assailant.jpg in Resources */,
 				0BC1DB101D0378E100D203C1 /* question.png in Resources */,
 				0BFFF9D31CF82D8400CD1D65 /* pic3.JPG in Resources */,
 				0BFFF9D11CF82C8900CD1D65 /* selfee.JPG in Resources */,
+				0BE248A41D05AEE0002BEC1F /* bottom.xib in Resources */,
 				0B0094931CF6FFB90041B3B5 /* Assets.xcassets in Resources */,
 				0BC1DB121D037B3B00D203C1 /* s_question.png in Resources */,
 				0B0538301D02FD8300D3AF6B /* professor.jpg in Resources */,
@@ -528,18 +552,22 @@
 			files = (
 				0B03D2941CF7F6050050119E /* AddWhoViewController.swift in Sources */,
 				0B9DF2611D01ADC100B478C7 /* PictureViewController.swift in Sources */,
+				0BE248A61D05B18E002BEC1F /* bottomTableViewCell.swift in Sources */,
 				0BADA61A1CFB3B9E001702D7 /* AddDiaryViewController.swift in Sources */,
 				0B94338B1D0275AA00A93027 /* AssistViewController.swift in Sources */,
 				0B9DBFE71CFFF1F200B78293 /* AddSoundViewController.swift in Sources */,
 				0B03D2901CF7D58E0050119E /* AddViewController.swift in Sources */,
+				0BE2489E1D05ABEB002BEC1F /* dateTimeTableViewCell.swift in Sources */,
 				0B00948E1CF6FFB90041B3B5 /* SettingViewController.swift in Sources */,
 				0BD4F1541D051A28001AA8EC /* MailContentViewController.swift in Sources */,
 				0B09F2491D02C38E006F11D5 /* ChosePostsViewController.swift in Sources */,
 				0B00948A1CF6FFB90041B3B5 /* AppDelegate.swift in Sources */,
+				0BE248A21D05ACEE002BEC1F /* datePickerTableViewCell.swift in Sources */,
 				0B0094C01CF70D760041B3B5 /* homeTableViewCell.swift in Sources */,
 				0B0686C71CFBFA58002AB722 /* DetailViewController.swift in Sources */,
 				0B03D2921CF7F4FB0050119E /* AddWhereViewController.swift in Sources */,
 				0B00948C1CF6FFB90041B3B5 /* HomeViewController.swift in Sources */,
+				0BE248981D05A97A002BEC1F /* AddTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

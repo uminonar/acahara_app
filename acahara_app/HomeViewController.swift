@@ -94,12 +94,17 @@ class HomeViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
         
         //postsのopenFlag==1のセルだけ下のようにしたい
         
+        //色を使って指定する
+        let paleBlue:UIColor = UIColor(red:0.914,green:0.941,blue:0.980,alpha:1.0)
+        
+        
         var openFlag:String = posts[indexPath.row]["openFlag"] as! String
         
-        if (openFlag == "1"){
+        if (openFlag == "0"){
+            
 
-            cell.backgroundColor = UIColor.groupTableViewBackgroundColor()
-            cell.postDiary.backgroundColor = UIColor.groupTableViewBackgroundColor()
+            cell.backgroundColor = paleBlue
+            cell.postDiary.backgroundColor = paleBlue
         
         }else{
             cell.backgroundColor = UIColor.whiteColor()

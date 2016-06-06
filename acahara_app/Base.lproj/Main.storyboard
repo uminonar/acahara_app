@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="QiM-gj-Thz">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="hdK-iu-PPf">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -22,14 +22,18 @@
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ssJ-Cs-r6t">
                                         <rect key="frame" x="266" y="27" width="30" height="30"/>
-                                        <state key="normal" title="保存"/>
+                                        <state key="normal" title="保存">
+                                            <color key="titleColor" red="1" green="0.40000000600000002" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
                                         <connections>
                                             <action selector="saveBtn:" destination="RKv-1L-k6a" eventType="touchUpInside" id="CTB-T3-i3x"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f5I-6P-aYk">
                                         <rect key="frame" x="13" y="27" width="75" height="30"/>
-                                        <state key="normal" title="キャンセル"/>
+                                        <state key="normal" title="キャンセル">
+                                            <color key="titleColor" red="1" green="0.40000000600000002" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
                                         <connections>
                                             <action selector="cancelBtn:" destination="RKv-1L-k6a" eventType="touchUpInside" id="lgy-jO-giv"/>
                                         </connections>
@@ -438,7 +442,6 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="慶應義塾大学大学院メディアデザイン研究科　" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2gj-aF-hkg">
                                 <rect key="frame" x="55" y="131" width="210" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="10"/>
-                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="xIZ-gX-Gth">
@@ -502,7 +505,7 @@
                                         <rect key="frame" x="247" y="22" width="63" height="30"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                         <state key="normal" title="キャンセル">
-                                            <color key="titleColor" red="1" green="0.2825267662" blue="0.20350203559999999" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="titleColor" red="1" green="0.40000000600000002" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
                                         <connections>
                                             <action selector="cancelBtn:" destination="yxV-lR-jcr" eventType="touchUpInside" id="zIo-M7-qyN"/>
@@ -554,7 +557,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qm4-HI-ctd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4843" y="-598"/>
+            <point key="canvasLocation" x="4561" y="-621"/>
         </scene>
         <!--Add Who View Controller-->
         <scene sceneID="rZP-pm-Yzr">
@@ -575,7 +578,7 @@
                                         <rect key="frame" x="243" y="22" width="75" height="30"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                         <state key="normal" title="キャンセル">
-                                            <color key="titleColor" red="1" green="0.2349481991" blue="0.1617049921" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="titleColor" red="1" green="0.40000000600000002" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
                                         <connections>
                                             <action selector="cancelBtn:" destination="ZrA-Jg-g6a" eventType="touchUpInside" id="Jm8-93-pCO"/>
@@ -633,7 +636,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4r3-H0-8L4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4465" y="-607"/>
+            <point key="canvasLocation" x="4111" y="-627"/>
         </scene>
         <!--Assist-->
         <scene sceneID="Q9P-vS-lK5">
@@ -661,7 +664,9 @@
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="C46-WU-dUY">
                                         <rect key="frame" x="269" y="27" width="30" height="30"/>
-                                        <state key="normal" title="決定"/>
+                                        <state key="normal" title="決定">
+                                            <color key="titleColor" red="1" green="0.40000000600000002" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
                                         <connections>
                                             <action selector="sendBtn:" destination="Jzm-d0-H3C" eventType="touchUpInside" id="bNz-AV-mX8"/>
                                         </connections>
@@ -765,12 +770,6 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="相談内容（編集可能）" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RtI-gc-h2X">
-                                <rect key="frame" x="37" y="326" width="170" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                                <color key="textColor" red="1" green="0.22663640860000001" blue="0.2822809678" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="75E-gf-Fvb">
                                 <rect key="frame" x="27" y="75" width="180" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="13"/>
@@ -805,6 +804,13 @@
                                 <connections>
                                     <action selector="questionBtn:" destination="Jzm-d0-H3C" eventType="touchUpInside" id="L8J-CB-l91"/>
                                 </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="M9k-MB-44P">
+                                <rect key="frame" x="40" y="318" width="130" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                <state key="normal" title="相談内容（編集可能）">
+                                    <color key="titleColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -845,14 +851,18 @@
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5zK-QG-FnK">
                                         <rect key="frame" x="268" y="27" width="30" height="30"/>
-                                        <state key="normal" title="選択"/>
+                                        <state key="normal" title="選択">
+                                            <color key="titleColor" red="1" green="0.40000000600000002" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
                                         <connections>
                                             <action selector="selectedBtn:" destination="Af2-dK-aGT" eventType="touchUpInside" id="VHL-pO-4CG"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nBp-S0-SH0">
                                         <rect key="frame" x="8" y="27" width="75" height="30"/>
-                                        <state key="normal" title="キャンセル"/>
+                                        <state key="normal" title="キャンセル">
+                                            <color key="titleColor" red="1" green="0.40000000600000002" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
                                         <connections>
                                             <action selector="cancelBtn:" destination="Af2-dK-aGT" eventType="touchUpInside" id="EBc-Fp-xUi"/>
                                         </connections>
@@ -908,14 +918,18 @@
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SYu-I7-mR0">
                                         <rect key="frame" x="8" y="25" width="75" height="30"/>
-                                        <state key="normal" title="キャンセル"/>
+                                        <state key="normal" title="キャンセル">
+                                            <color key="titleColor" red="1" green="0.40000000600000002" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
                                         <connections>
                                             <action selector="cancelBtn:" destination="Afw-ic-o1L" eventType="touchUpInside" id="3hd-FJ-zdd"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bqt-Z9-mds">
                                         <rect key="frame" x="274" y="25" width="30" height="30"/>
-                                        <state key="normal" title="完了"/>
+                                        <state key="normal" title="完了">
+                                            <color key="titleColor" red="1" green="0.40000000600000002" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
                                         <connections>
                                             <action selector="saveBtn:" destination="Afw-ic-o1L" eventType="touchUpInside" id="mX0-6Y-dlT"/>
                                         </connections>
@@ -981,7 +995,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Tcc-E4-cRe" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1917" y="-123"/>
+            <point key="canvasLocation" x="1935" y="-52"/>
         </scene>
         <!--Setting-->
         <scene sceneID="wg7-f3-ORb">
@@ -1049,6 +1063,44 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6SI-Rc-7ug" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1200" y="-1370"/>
+        </scene>
+        <!--Add Table View Controller-->
+        <scene sceneID="DU1-PZ-BXm">
+            <objects>
+                <viewController storyboardIdentifier="AddTableViewController" id="hdK-iu-PPf" customClass="AddTableViewController" customModule="acahara_app" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Ib4-79-mXc"/>
+                        <viewControllerLayoutGuide type="bottom" id="IqA-oF-auj"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="0X3-bZ-QjH">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="E4X-tB-gck">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="EqT-Tp-8OA">
+                                        <rect key="frame" x="0.0" y="28" width="320" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="EqT-Tp-8OA" id="9pD-IX-JFp">
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <connections>
+                        <outlet property="addTableView" destination="E4X-tB-gck" id="r3e-bf-31q"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="m1x-0I-r90" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3644" y="-1747"/>
         </scene>
         <!--Home View Controller-->
         <scene sceneID="vSC-CP-D99">

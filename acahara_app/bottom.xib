@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="397" id="tA9-Qh-LHL" customClass="bottomTableViewCell" customModule="acahara_app" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="397"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="tA9-Qh-LHL" id="MJ7-2I-Doi">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="396"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder=" どこでその問題は起きましたか？" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dRm-FQ-5hX">
+                        <rect key="frame" x="8" y="8" width="304" height="30"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <textInputTraits key="textInputTraits"/>
+                    </textField>
+                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="誰が問題ですか？" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="XuH-Y7-MQK">
+                        <rect key="frame" x="8" y="46" width="304" height="30"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <textInputTraits key="textInputTraits"/>
+                    </textField>
+                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="どこの大学の何という学部/学科ですか？" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="5dg-U3-rqd">
+                        <rect key="frame" x="8" y="84" width="304" height="30"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <textInputTraits key="textInputTraits"/>
+                    </textField>
+                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="大丈夫！しっかり記録していきましょう。具体的にどんなことがありましたか？" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="37f-P8-Wcl">
+                        <rect key="frame" x="8" y="122" width="304" height="106"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                    </textView>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="41q-2j-dOT">
+                        <rect key="frame" x="77" y="289" width="25" height="25"/>
+                    </imageView>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gOf-pR-dYo">
+                        <rect key="frame" x="110" y="277" width="50" height="50"/>
+                    </imageView>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Sib-wj-nkE">
+                        <rect key="frame" x="200" y="289" width="25" height="25"/>
+                    </imageView>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="M26-JL-5cp">
+                        <rect key="frame" x="233" y="277" width="50" height="50"/>
+                    </imageView>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="r0m-pm-8tO">
+                        <rect key="frame" x="83" y="363" width="25" height="25"/>
+                    </imageView>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="MGi-2v-S9H">
+                        <rect key="frame" x="60" y="368" width="15" height="15"/>
+                    </imageView>
+                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ylr-nQ-SqT">
+                        <rect key="frame" x="244" y="360" width="51" height="31"/>
+                    </switch>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="相談に利用予定" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h5i-Vo-nrP">
+                        <rect key="frame" x="134" y="365" width="102" height="21"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3Tz-wh-EVR">
+                        <rect key="frame" x="67" y="265" width="98" height="74"/>
+                    </button>
+                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="orR-DF-BkI">
+                        <rect key="frame" x="190" y="265" width="103" height="74"/>
+                    </button>
+                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CLC-Z6-rcH">
+                        <rect key="frame" x="60" y="362" width="48" height="30"/>
+                    </button>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="QDx-kM-l9c">
+                        <rect key="frame" x="76" y="236" width="217" height="119"/>
+                    </imageView>
+                </subviews>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="addDiary" destination="37f-P8-Wcl" id="zYR-Fx-QhH"/>
+                <outlet property="addImportance" destination="h5i-Vo-nrP" id="50Y-zX-xpE"/>
+                <outlet property="addMicPhone" destination="r0m-pm-8tO" id="Igj-Fx-gaY"/>
+                <outlet property="addMicPlus" destination="MGi-2v-S9H" id="HYU-fx-fnk"/>
+                <outlet property="addMovieFile" destination="M26-JL-5cp" id="yqh-AB-zDZ"/>
+                <outlet property="addMoviePlus" destination="Sib-wj-nkE" id="Ylp-9S-ic3"/>
+                <outlet property="addPicFile" destination="gOf-pR-dYo" id="Ian-mb-r0S"/>
+                <outlet property="addPicPlus" destination="41q-2j-dOT" id="h0s-kU-SeA"/>
+                <outlet property="addSwitch" destination="ylr-nQ-SqT" id="wRX-0b-DJe"/>
+                <outlet property="addUniversity" destination="5dg-U3-rqd" id="xME-cR-ghu"/>
+                <outlet property="addWhere" destination="dRm-FQ-5hX" id="P70-HC-UhY"/>
+                <outlet property="addWho" destination="XuH-Y7-MQK" id="73p-YI-89D"/>
+                <outlet property="movieFileBtn" destination="orR-DF-BkI" id="uzQ-dY-SRK"/>
+                <outlet property="picBase" destination="QDx-kM-l9c" id="e0a-If-adF"/>
+                <outlet property="picFileBtn" destination="3Tz-wh-EVR" id="Weg-dx-9y7"/>
+                <outlet property="tapSound" destination="CLC-Z6-rcH" id="HGb-Ci-fdj"/>
+            </connections>
+            <point key="canvasLocation" x="217" y="285.5"/>
+        </tableViewCell>
+    </objects>
+</document>
