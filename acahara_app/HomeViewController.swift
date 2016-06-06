@@ -38,6 +38,28 @@ class HomeViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
     }
     
     override func viewWillAppear(animated: Bool) {
+        var myDefault = NSUserDefaults.standardUserDefaults()
+        var afterSaved = myDefault.objectForKey("saveSuccess")
+        
+        
+        if( afterSaved != nil){
+            let alert: UIAlertController = UIAlertController(title: "記録成功", message: "負けないで！", preferredStyle: .Alert)
+            self.presentViewController(alert, animated: true) { () -> Void in
+            let delay = 1.0 * Double(NSEC_PER_SEC)
+            let time  = dispatch_time(DISPATCH_TIME_NOW, Int64(delay))
+            dispatch_after(time, dispatch_get_main_queue(), {
+            self.dismissViewControllerAnimated(true, completion: nil)
+            })
+                
+            myDefault.removeObjectForKey("saveSuccess")
+            myDefault.synchronize()
+
+        }
+            
+        }
+            
+        
+        
         let path = NSBundle.mainBundle().pathForResource("posts", ofType: "txt")
         let jsondata = NSData(contentsOfFile: path!)
         

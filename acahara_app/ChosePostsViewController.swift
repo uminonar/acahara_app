@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ChosePostsViewController: UIViewController {
+class ChosePostsViewController: UIViewController,UITableViewDelegate,UITableViewDataSource {
 
     @IBOutlet weak var choseTableView: UITableView!
     var posts:NSMutableArray = []
@@ -16,6 +16,9 @@ class ChosePostsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        choseTableView.allowsMultipleSelectionDuringEditing = true
+        choseTableView.setEditing(true, animated: true)
+        
         choseTableView.registerNib(UINib(nibName: "postCustomCell", bundle: nil), forCellReuseIdentifier: "postCustomCell")
     }
     
@@ -27,12 +30,15 @@ class ChosePostsViewController: UIViewController {
         for data in jsonArray{
             
             //openFlag=0のものだけここのpostsには収めたい。どうする？
-//            if (data["openFlag"]!="0"){
+            var openFlag = data["openFlag"] as! String
+            if (openFlag == "0"){
             
                 posts.addObject(data as! NSMutableDictionary)
-//            }
+            }
         }
     }
+    
+ 
     
     //行数決定
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

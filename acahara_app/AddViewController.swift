@@ -349,28 +349,36 @@ class AddViewController: UIViewController,UIImagePickerControllerDelegate,UINavi
         addWho.text=""
         addDiary.text=""
         
-        //前ページに遷移する　モーダル画面じゃなくので、dismissじゃないバージョン
+        //前ページに遷移する　モーダル画面じゃなくので、dismissじゃないバージョン　後学のため残す
         //navigationController?.popViewControllerAnimated(true)
-        
-        self.dismissViewControllerAnimated(false, completion: nil)
-        
-    }
-    
-    //どうして効かない？
-    override func viewWillDisappear(animated: Bool) {
-       
-        let alert: UIAlertController = UIAlertController(title: "記録成功！", message: "負けないで！", preferredStyle: .Alert)
-        self.presentViewController(alert, animated: true) { () -> Void in
-            let delay = 4.0 * Double(NSEC_PER_SEC)
-            let time  = dispatch_time(DISPATCH_TIME_NOW, Int64(delay))
-            dispatch_after(time, dispatch_get_main_queue(), {
-                self.dismissViewControllerAnimated(true, completion: nil)
-            })
-        }
 
+        //userDefaultにデータを書き込んで
+        myDefault.setObject("true", forKey: "saveSuccess")
+        
+        //即反映させる
+        myDefault.synchronize()
+        
+        self.dismissViewControllerAnimated(true, completion: nil)
+
+
+        
     }
     
+    //どうして効かない？多分、つけたい画面がすでにない？んー、。いずれにせよ、次の表示される画面に通常は出す。userDefaultかflagで判定して
+//    override func viewWillDisappear(animated: Bool) {
+////       
+////        let alert: UIAlertController = UIAlertController(title: "記録成功！", message: "負けないで！", preferredStyle: .Alert)
+//        self.presentViewController(alert, animated: true) { () -> Void in
+//            let delay = 4.0 * Double(NSEC_PER_SEC)
+//            let time  = dispatch_time(DISPATCH_TIME_NOW, Int64(delay))
+//            dispatch_after(time, dispatch_get_main_queue(), {
+//                self.dismissViewControllerAnimated(true, completion: nil)
+//            })
+//        }
+
+//    }
     
+
     @IBAction func cancelBtn(sender: UIButton) {
         var myDefault = NSUserDefaults.standardUserDefaults()
         var appDomain:String = NSBundle.mainBundle().bundleIdentifier!

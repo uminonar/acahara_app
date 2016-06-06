@@ -36,6 +36,7 @@
 		0BADA61A1CFB3B9E001702D7 /* AddDiaryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BADA6191CFB3B9E001702D7 /* AddDiaryViewController.swift */; };
 		0BC1DB101D0378E100D203C1 /* question.png in Resources */ = {isa = PBXBuildFile; fileRef = 0BC1DB0F1D0378E100D203C1 /* question.png */; };
 		0BC1DB121D037B3B00D203C1 /* s_question.png in Resources */ = {isa = PBXBuildFile; fileRef = 0BC1DB111D037B3B00D203C1 /* s_question.png */; };
+		0BD4F1541D051A28001AA8EC /* MailContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BD4F1531D051A28001AA8EC /* MailContentViewController.swift */; };
 		0BFFF9D11CF82C8900CD1D65 /* selfee.JPG in Resources */ = {isa = PBXBuildFile; fileRef = 0BFFF9D01CF82C8900CD1D65 /* selfee.JPG */; };
 		0BFFF9D31CF82D8400CD1D65 /* pic3.JPG in Resources */ = {isa = PBXBuildFile; fileRef = 0BFFF9D21CF82D8400CD1D65 /* pic3.JPG */; };
 		0BFFF9D51CF82DA400CD1D65 /* pic1.JPG in Resources */ = {isa = PBXBuildFile; fileRef = 0BFFF9D41CF82DA400CD1D65 /* pic1.JPG */; };
@@ -101,6 +102,7 @@
 		0BADA6191CFB3B9E001702D7 /* AddDiaryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddDiaryViewController.swift; sourceTree = "<group>"; };
 		0BC1DB0F1D0378E100D203C1 /* question.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = question.png; sourceTree = "<group>"; };
 		0BC1DB111D037B3B00D203C1 /* s_question.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = s_question.png; sourceTree = "<group>"; };
+		0BD4F1531D051A28001AA8EC /* MailContentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MailContentViewController.swift; sourceTree = "<group>"; };
 		0BFFF9D01CF82C8900CD1D65 /* selfee.JPG */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = selfee.JPG; sourceTree = "<group>"; };
 		0BFFF9D21CF82D8400CD1D65 /* pic3.JPG */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = pic3.JPG; sourceTree = "<group>"; };
 		0BFFF9D41CF82DA400CD1D65 /* pic1.JPG */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = pic1.JPG; sourceTree = "<group>"; };
@@ -183,6 +185,7 @@
 				0B9DBFE61CFFF1F200B78293 /* AddSoundViewController.swift */,
 				0B00948D1CF6FFB90041B3B5 /* SettingViewController.swift */,
 				0B94338A1D0275AA00A93027 /* AssistViewController.swift */,
+				0BD4F1531D051A28001AA8EC /* MailContentViewController.swift */,
 				0B09F2481D02C38E006F11D5 /* ChosePostsViewController.swift */,
 				0BADA6161CFB3089001702D7 /* Main.storyboard */,
 				0B0094921CF6FFB90041B3B5 /* Assets.xcassets */,
@@ -530,6 +533,7 @@
 				0B9DBFE71CFFF1F200B78293 /* AddSoundViewController.swift in Sources */,
 				0B03D2901CF7D58E0050119E /* AddViewController.swift in Sources */,
 				0B00948E1CF6FFB90041B3B5 /* SettingViewController.swift in Sources */,
+				0BD4F1541D051A28001AA8EC /* MailContentViewController.swift in Sources */,
 				0B09F2491D02C38E006F11D5 /* ChosePostsViewController.swift in Sources */,
 				0B00948A1CF6FFB90041B3B5 /* AppDelegate.swift in Sources */,
 				0B0094C01CF70D760041B3B5 /* homeTableViewCell.swift in Sources */,
