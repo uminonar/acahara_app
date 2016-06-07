@@ -8,7 +8,7 @@
 
 import UIKit
 
-class dateTimeTableViewCell: UITableViewCell {
+class dateTimeTableViewCell: UITableViewCell,UITextFieldDelegate {
 
     @IBOutlet weak var addName: UILabel!
     @IBOutlet weak var addWhen: UITextField!
@@ -21,6 +21,7 @@ class dateTimeTableViewCell: UITableViewCell {
         addName.text
             = "uminonar"//ここだと表示されないのん？なぜ？
         
+    
         
     }
 
@@ -29,5 +30,13 @@ class dateTimeTableViewCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
+
+    func textFieldShouldBeginEditing(textField: UITextField) -> Bool{
+        
+        return false
+    }
+
+    
+   
 
 }

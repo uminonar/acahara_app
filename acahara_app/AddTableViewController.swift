@@ -8,7 +8,7 @@
 
 import UIKit
 
-class AddTableViewController: UIViewController {
+class AddTableViewController: UIViewController,UITableViewDelegate,UITableViewDataSource, UIImagePickerControllerDelegate,UITextFieldDelegate{
     var expandflag = false
     var rownumber = 2
     
@@ -28,6 +28,12 @@ class AddTableViewController: UIViewController {
         addTableView.registerNib(UINib(nibName: "bottomCell", bundle: nil), forCellReuseIdentifier: "bottomCell")
     }
     
+    
+    override func viewWillAppear(animated: Bool) {
+        print("再表示")
+        addTableView.reloadData()
+    }
+    
     //行数決定
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return rownumber
@@ -37,7 +43,7 @@ class AddTableViewController: UIViewController {
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
         //var cell: UITableViewCell?
-        
+    
         
         if indexPath.row == 0{
             
@@ -46,16 +52,24 @@ class AddTableViewController: UIViewController {
             
             //datePickerの値をuserDefaultから取り出す
             var myDefault = NSUserDefaults.standardUserDefaults()
+            var cancel = myDefault.stringForKey("cancel")
+            if ( cancel == "true"){
+//                cell.
+                
+                
+            }
             var changedDT = myDefault.stringForKey("selectedDT")
             
             //userDefaultから取り出されたdatePickerの日時をセット
             cell.addWhen.text = changedDT
             cell.addWhen.textColor = UIColor.redColor()
-            cell.addName.text
-                = "uminonar"
+            cell.addName.text = "uminonar"
             
+            cell.addWhen.delegate = self
+            
+
             return cell
-            
+
         }else{
             if expandflag {
                 
@@ -69,6 +83,9 @@ class AddTableViewController: UIViewController {
                 
                 var cell:bottomTableViewCell = tableView.dequeueReusableCellWithIdentifier("bottomCell", forIndexPath: indexPath) as! bottomTableViewCell
                 
+                cell.addWhere.delegate = self
+                cell.addWho.delegate = self
+                cell.addUniversity.delegate = self
                 
                 //ユーザーデフォルトから保存されたデータを取り出す
                 var myDefault = NSUserDefaults.standardUserDefaults()
@@ -86,9 +103,10 @@ class AddTableViewController: UIViewController {
                 if( selectedPlace != nil){
                     print(selectedPlace)
                     cell.addWhere.text = selectedPlace
+                    
                 }
                 
-                
+            
                 //名前、データを呼び出して文字列が入っていたら表示する
                 var selectedName = myDefault.stringForKey("selectedName")
                 
@@ -112,19 +130,19 @@ class AddTableViewController: UIViewController {
                 //.xibファイルのボタンなどがタップされ時の処理
                 
                 //postEllipsisBtn等の後に：をつけることで、sender情報を使える
-                cell.addWhere.addTarget(self, action:"addWhere:", forControlEvents:UIControlEvents.TouchDown)
+                cell.addWhere.addTarget(self, action:Selector("setWhere:"), forControlEvents:UIControlEvents.EditingDidBegin)
                 
-                cell.addWho.addTarget(self, action: "addWho:", forControlEvents:UIControlEvents.TouchDown)
+                cell.addWho.addTarget(self, action: Selector("addWho:"), forControlEvents:UIControlEvents.EditingDidBegin)
                 
                 cell.addUniversity.addTarget(self, action: "addUniversity:", forControlEvents: UIControlEvents.EditingDidEndOnExit)//EditingDidEnd?違いは,カーソル離れたとき
                 
-                //何がダメ？
-                cell.addUniversity.tag = sender.text
+                //TODO:何がダメ？
+//                cell.addUniversity.tag = sender.text
                 
                 
                 
                 // Add tap gesture recognizer to Text View
-                let tap = UITapGestureRecognizer(target: self, action: Selector("tapAddDiary:"))
+                let tap = UITapGestureRecognizer(target: self, action: "addDiary")
 //                tap.delegate = self
                 cell.addDiary.addGestureRecognizer(tap)
                 
@@ -135,24 +153,34 @@ class AddTableViewController: UIViewController {
                 
                 if ( changedSwitch != nil ){
                     cell.addImportance.text = "相談に利用予定"
+                    cell.addSwitch.on = true
                 }else{
                     cell.addImportance.text = "念のため記録"
+                    cell.addSwitch.on = false
                 }
                 
-                cell.picFileBtn.addTarget(self, action:"picFileBtn:",forControlEvents:.TouchUpInside)
+                cell.picFileBtn.addTarget(self, action:Selector("setPicFileBtn:"),forControlEvents:.TouchUpInside)
                 cell.movieFileBtn.addTarget(self, action: "movieFileBtn", forControlEvents: .TouchUpInside)
                 cell.tapSound.addTarget(self, action: "tapSound", forControlEvents: .TouchUpInside)
                 
                 var picBaseImage = myDefault.stringForKey("pic")
                 
                 if ( picBaseImage != nil ){
-                    //ここはこれじゃダメ？
-                    cell.picBase.image = picBaseImage
+                    //TODO:ここはこれじゃダメ？
+//                    cell.picBase.image = picBaseImage
 
                 
-                return cell
+                    return cell
                 
+            
+                }
+                
+                
+                return cell
+
+        
             }
+    
         }
     }
     
@@ -176,17 +204,17 @@ class AddTableViewController: UIViewController {
         //myTableView.reloadData()
     }
     
-    func addWhere(){
+    func setWhere(sender:UITextField){
         
-        //これで合ってる？
-        self.resignFirstResponder()
+        //これで合ってる？これは立ち上がっているキーボードを下す処理
+        //self.resignFirstResponder()
         
         let AddWhere = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("AddWhereViewController") as UIViewController
         
         presentViewController(AddWhere, animated: true, completion: nil)
     }
 
-    func addWho(){
+    func addWho(sender:UITextField){
         
         self.resignFirstResponder()
 
@@ -240,33 +268,42 @@ class AddTableViewController: UIViewController {
             //投稿情報のopenを1にする
             openFlag = 1
         }
+        
+        // 対象行だけ更新
+        let row = NSIndexPath(forRow: 1, inSection: 0)
+        addTableView.reloadRowsAtIndexPaths([row], withRowAnimation: UITableViewRowAnimation.Fade)
 
+        
+        
     }
     
-    func picFileBtn(){
+    func setPicFileBtn(sender:UIImageView){
         //pictureFileがタップされた時、カメラロールが現れ、選択された写真がaddImageViewに収められる
             var photoPick = UIImagePickerController()
         
-            //ここは何がダメ？
-            photoPick.delegate = self
+            //TODO:ここは何がダメ？
+//            photoPick.delegate = self
         
             photoPick.sourceType = .PhotoLibrary
             self.presentViewController(photoPick, animated: true, completion: nil)
-        }
+    }
         
+    
         func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]){
             
             var picBaseImage = info[UIImagePickerControllerOriginalImage] as? UIImage
+            
             
             var myDefault = NSUserDefaults.standardUserDefaults()
             myDefault.setObject(picBaseImage, forKey: "pic")
             
             self.dismissViewControllerAnimated(true, completion: nil)
             
-            
-        }
-
+     
     }
+    
+
+
     
     func movieFileBtn(){
         //ここはどうする？
@@ -348,13 +385,13 @@ class AddTableViewController: UIViewController {
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat
     {
         if indexPath.row == 0 {
-            return 70
+            return 55
         }
         if indexPath.row == 1 {
             if expandflag {
                 return 180
             }else{
-                return 120
+                return 420
             }
         }
         
@@ -376,12 +413,13 @@ class AddTableViewController: UIViewController {
         myDefault.removeObjectForKey("selectedName")
         myDefault.synchronize()
         
+        myDefault.setObject("true", forKey: "cancel")
         
-        //ここはどうする？
-        addWhen.text=""
-        addWhere.text=""
-        addWho.text=""
-        addDiary.text=""
+        //ここはどうする？ reload()
+//        addWhen.text=""
+//        addWhere.text=""
+//        addWho.text=""
+//        addDiary.text=""
 
         
         self.dismissViewControllerAnimated(true, completion: nil)
@@ -411,11 +449,11 @@ class AddTableViewController: UIViewController {
         myDefault.synchronize()
         
         
-        //ここどうしたら良い？
-        addWhen.text=""
-        addWhere.text=""
-        addWho.text=""
-        addDiary.text=""
+        //TODO:ここどうしたら良い？
+//        addWhen.text=""
+//        addWhere.text=""
+//        addWho.text=""
+//        addDiary.text=""
         
         //前ページに遷移する　モーダル画面じゃなくので、dismissじゃないバージョン　後学のため残す
         //navigationController?.popViewControllerAnimated(true)
@@ -430,6 +468,36 @@ class AddTableViewController: UIViewController {
         
         
         
+    }
+    
+    func textFieldShouldBeginEditing(textField: UITextField) -> Bool{
+    
+        if textField.tag == 1000{
+            let row = NSIndexPath(forRow: 0, inSection: 0)
+            
+            if expandflag {
+                expandflag = !expandflag
+                self.toContract(addTableView, indexPath: row)
+                
+            }else{
+                expandflag = !expandflag
+                self.toExpand(addTableView, indexPath: row)
+            }
+
+        
+        }
+        
+        // setWhere
+        if textField.tag == 2000{
+            self.setWhere(textField)
+        }
+        
+        // addWho
+        if textField.tag == 3000{
+            self.addWho(textField)
+        }
+        
+        return false
     }
     
  

@@ -38,18 +38,22 @@ class bottomTableViewCell: UITableViewCell {
         addDiary.layer.cornerRadius = 8
         
         let plus = FAKFontAwesome.plusIconWithSize(15)
+        plus.addAttribute(NSForegroundColorAttributeName, value: UIColor.lightGrayColor())
         let plusImage = plus.imageWithSize(CGSizeMake(15, 15))
         addMicPlus.image = plusImage
         
         let mike = FAKFontAwesome.microphoneIconWithSize(25)
+        mike.addAttribute(NSForegroundColorAttributeName, value: UIColor.lightGrayColor())
         let mikeImg = mike.imageWithSize(CGSizeMake(25, 25))
         addMicPhone.image = mikeImg
         
         let plus2 = FAKFontAwesome.plusIconWithSize(25)
+        plus2.addAttribute(NSForegroundColorAttributeName, value: UIColor.lightGrayColor())
         let plus2Img = plus2.imageWithSize(CGSizeMake(25, 25))
         addPicPlus.image = plus2Img
         
         let addImage = FAKFontAwesome.fileImageOIconWithSize(50)
+        addImage.addAttribute(NSForegroundColorAttributeName, value: UIColor.lightGrayColor())
         let addI = addImage.imageWithSize(CGSizeMake(50, 50))
         addPicFile.image = addI
         
@@ -58,6 +62,7 @@ class bottomTableViewCell: UITableViewCell {
         addMoviePlus.image = plus2Img
         
         let addMo = FAKFontAwesome.fileMovieOIconWithSize(50)
+        addMo.addAttribute(NSForegroundColorAttributeName, value: UIColor.lightGrayColor())
         let addM = addMo.imageWithSize(CGSizeMake(50, 50))
         addMovieFile.image = addM
 
