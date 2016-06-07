@@ -94,14 +94,15 @@ class HomeViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
         
         //postsのopenFlag==1のセルだけ下のようにしたい
         
-        //色を使って指定する
-        let paleBlue:UIColor = UIColor(red:0.914,green:0.941,blue:0.980,alpha:1.0)
+        
         
         
         var openFlag:String = posts[indexPath.row]["openFlag"] as! String
         
         if (openFlag == "0"){
             
+            //色を使って指定する
+            let paleBlue:UIColor = UIColor(red:0.914,green:0.941,blue:0.980,alpha:1.0)
 
             cell.backgroundColor = paleBlue
             cell.postDiary.backgroundColor = paleBlue
@@ -112,10 +113,9 @@ class HomeViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
             
         }
         
-    
-     //.xibファイルのボタンがタップされ時の処理
+        //.xibファイルのボタンがタップされ時の処理
         
-     //postEllipsisBtn等の後に：をつけることで、sender情報を使える
+        //postEllipsisBtn等の後に：をつけることで、sender情報を使える
         cell.postEllipsisBtn.addTarget(self, action:"postEllipsisBtn:", forControlEvents:.TouchUpInside)
         cell.postEllipsisBtn.tag = indexPath.row
         
@@ -128,7 +128,10 @@ class HomeViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
         
         cell.postImageViewBtn.addTarget(self, action: "showPicture:", forControlEvents: .TouchUpInside)
         cell.postImageViewBtn.tag = indexPath.row
+
         
+    
+
         return cell
     }
     

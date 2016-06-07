@@ -19,12 +19,12 @@
                         <date key="date" timeIntervalSinceReferenceDate="486911144.351677">
                             <!--2016-06-06 13:05:44 +0000-->
                         </date>
-                        <connections>
-                            <action selector="addDatePicker:" destination="Jgj-PN-4gz" eventType="valueChanged" id="v2w-eY-Xfx"/>
-                        </connections>
                     </datePicker>
                 </subviews>
             </tableViewCellContentView>
+            <connections>
+                <outlet property="addDatePicker" destination="bhA-So-2ad" id="BJV-e7-giQ"/>
+            </connections>
             <point key="canvasLocation" x="225" y="265.5"/>
         </tableViewCell>
     </objects>

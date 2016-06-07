@@ -10,11 +10,18 @@ import UIKit
 
 class dateTimeTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var addName: UILabel!
     @IBOutlet weak var addWhen: UITextField!
     @IBOutlet weak var addSelfee: UIImageView!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        
+        addSelfee.image = UIImage(named:"selfee.JPG")
+        addName.text
+            = "uminonar"//ここだと表示されないのん？なぜ？
+        
+        
     }
 
     override func setSelected(selected: Bool, animated: Bool) {
