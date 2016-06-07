@@ -38,10 +38,15 @@ class HomeViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
     }
     
     override func viewWillAppear(animated: Bool) {
+        
+        //データ記録画面で保存した後に表示されたとわかったとき
         var myDefault = NSUserDefaults.standardUserDefaults()
         var afterSaved = myDefault.objectForKey("saveSuccess")
         
+        //最新情報をリロード
+        homeTableView.reloadData()
         
+        //保存成功のアラートを表示
         if( afterSaved != nil){
             let alert: UIAlertController = UIAlertController(title: "記録成功", message: "負けないで！", preferredStyle: .Alert)
             self.presentViewController(alert, animated: true) { () -> Void in
@@ -244,9 +249,9 @@ class HomeViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
     func onClick() {
         
         
-        let AddView = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("AddViewController") as UIViewController
+        let AddTableView = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("AddTableViewController") as UIViewController
         
-        presentViewController(AddView, animated: true, completion: nil)
+        presentViewController(AddTableView, animated: true, completion: nil)
         
         //ナビゲーションコントローラによる遷移
         //  let second = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("AddViewController") as UIViewController

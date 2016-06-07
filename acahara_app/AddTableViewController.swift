@@ -26,6 +26,16 @@ class AddTableViewController: UIViewController,UITableViewDelegate,UITableViewDa
         addTableView.registerNib(UINib(nibName: "datePickerCell", bundle: nil), forCellReuseIdentifier: "datePickerCell")
         
         addTableView.registerNib(UINib(nibName: "bottomCell", bundle: nil), forCellReuseIdentifier: "bottomCell")
+        
+        //テーブルビューの罫線を消す
+        addTableView.separatorColor = UIColor.clearColor()
+        
+        //
+        
+        
+        
+        
+        
     }
     
     
@@ -52,20 +62,28 @@ class AddTableViewController: UIViewController,UITableViewDelegate,UITableViewDa
             
             //datePickerの値をuserDefaultから取り出す
             var myDefault = NSUserDefaults.standardUserDefaults()
-            var cancel = myDefault.stringForKey("cancel")
-            if ( cancel == "true"){
-//                cell.
-                
-                
-            }
-            var changedDT = myDefault.stringForKey("selectedDT")
+            var dateStr = myDefault.stringForKey("selectedDT")
             
             //userDefaultから取り出されたdatePickerの日時をセット
-            cell.addWhen.text = changedDT
-            cell.addWhen.textColor = UIColor.redColor()
+            
+            if dateStr == nil{
+                cell.addWhen.text = ""
+            }else{
+                
+                cell.addWhen.text = dateStr!+" 頃"
+            }
+            
+            if expandflag{
+                cell.addWhen.textColor = UIColor.redColor()
+              
+            }else{
+                cell.addWhen.textColor = UIColor.blackColor()
+            }
+            
+            
             cell.addName.text = "uminonar"
             
-            cell.addWhen.delegate = self
+            cell.addWhen.delegate = self//なぜここでいる？
             
 
             return cell
@@ -123,7 +141,7 @@ class AddTableViewController: UIViewController,UITableViewDelegate,UITableViewDa
                     cell.addDiary.text = diaryText
                     cell.addDiary.textColor = UIColor.blackColor()
                 }else{
-                    cell.addDiary.text = "大丈夫！しっかり記録していきましょう。。具体的にどんなことがありましたか？"
+                    cell.addDiary.text = "大丈夫！しっかり記録していきましょう。。。\n具体的にどんなことがありましたか？"
                     cell.addDiary.textColor = UIColor.lightGrayColor()
                 }
 
@@ -132,9 +150,9 @@ class AddTableViewController: UIViewController,UITableViewDelegate,UITableViewDa
                 //postEllipsisBtn等の後に：をつけることで、sender情報を使える
                 cell.addWhere.addTarget(self, action:Selector("setWhere:"), forControlEvents:UIControlEvents.EditingDidBegin)
                 
-                cell.addWho.addTarget(self, action: Selector("addWho:"), forControlEvents:UIControlEvents.EditingDidBegin)
+                cell.addWho.addTarget(self, action: Selector("setWho:"), forControlEvents:UIControlEvents.EditingDidBegin)
                 
-                cell.addUniversity.addTarget(self, action: "addUniversity:", forControlEvents: UIControlEvents.EditingDidEndOnExit)//EditingDidEnd?違いは,カーソル離れたとき
+                cell.addUniversity.addTarget(self, action: "setUniversity:", forControlEvents: UIControlEvents.EditingDidEndOnExit)//EditingDidEnd?違いは,カーソル離れたとき
                 
                 //TODO:何がダメ？
 //                cell.addUniversity.tag = sender.text
@@ -142,9 +160,11 @@ class AddTableViewController: UIViewController,UITableViewDelegate,UITableViewDa
                 
                 
                 // Add tap gesture recognizer to Text View
-                let tap = UITapGestureRecognizer(target: self, action: "addDiary")
+                let tap = UITapGestureRecognizer(target: self, action: "setDiary")
 //                tap.delegate = self
                 cell.addDiary.addGestureRecognizer(tap)
+                
+                
                 
                 // SwitchのOn/Off切り替わりの際に、呼ばれるイベントを設定する.
                 cell.addSwitch.addTarget(self, action: "changeSwitch:", forControlEvents: UIControlEvents.ValueChanged)
@@ -188,10 +208,10 @@ class AddTableViewController: UIViewController,UITableViewDelegate,UITableViewDa
     func changedDT(sender:UIDatePicker){
             
         let df = NSDateFormatter()
-        df.dateFormat = "yyyy/MM/dd HH:MM"
+        df.dateFormat = "yyyy/MM/dd HH:mm"
         var dateStr = df.stringFromDate(sender.date)
             
-        //daatePickerで取得した日時をuserDefaultにセット
+//        daatePickerで取得した日時をuserDefaultにセット
         var myDefault = NSUserDefaults.standardUserDefaults()
         myDefault.setObject(dateStr, forKey: "selectedDT")
         myDefault.synchronize()
@@ -214,7 +234,7 @@ class AddTableViewController: UIViewController,UITableViewDelegate,UITableViewDa
         presentViewController(AddWhere, animated: true, completion: nil)
     }
 
-    func addWho(sender:UITextField){
+    func setWho(sender:UITextField){
         
         self.resignFirstResponder()
 
@@ -224,9 +244,9 @@ class AddTableViewController: UIViewController,UITableViewDelegate,UITableViewDa
         
     }
     
-    func addUniversity(tag:String){
+    func setUniversity(tag:String){
         
-        //これ合ってる？
+        //これ合ってる？効いてない
         self.isFirstResponder()
         
         //ユーザーデフォルトを用意する
@@ -240,7 +260,7 @@ class AddTableViewController: UIViewController,UITableViewDelegate,UITableViewDa
 
     }
     
-    func addDiary(){
+    func setDiary(){
         //addDiaryがタップされたら
         let AddDiaryVC = UIStoryboard(name: "Main",bundle: nil).instantiateViewControllerWithIdentifier("AddDiaryViewController") as UIViewController
         
@@ -272,10 +292,9 @@ class AddTableViewController: UIViewController,UITableViewDelegate,UITableViewDa
         // 対象行だけ更新
         let row = NSIndexPath(forRow: 1, inSection: 0)
         addTableView.reloadRowsAtIndexPaths([row], withRowAnimation: UITableViewRowAnimation.Fade)
-
-        
         
     }
+    
     
     func setPicFileBtn(sender:UIImageView){
         //pictureFileがタップされた時、カメラロールが現れ、選択された写真がaddImageViewに収められる
@@ -356,6 +375,10 @@ class AddTableViewController: UIViewController,UITableViewDelegate,UITableViewDa
         
         tableView.deleteRowsAtIndexPaths(indexPaths,
                                          withRowAnimation: UITableViewRowAnimation.Fade)
+        // 0行だけ更新(addWhen.textを黒字に変更したいので）
+        let row = NSIndexPath(forRow: 0, inSection: 0)
+        addTableView.reloadRowsAtIndexPaths([row], withRowAnimation: UITableViewRowAnimation.Fade)
+        
     }
     
     /// open details
@@ -380,6 +403,9 @@ class AddTableViewController: UIViewController,UITableViewDelegate,UITableViewDa
         tableView.scrollToRowAtIndexPath(NSIndexPath(
             forRow: indexPath.row, inSection: indexPath.section),
                                          atScrollPosition: UITableViewScrollPosition.Top, animated: true)
+        // 0行だけ更新(addWhen.textを赤字に変更したいので）
+        let row = NSIndexPath(forRow: 0, inSection: 0)
+        addTableView.reloadRowsAtIndexPaths([row], withRowAnimation: UITableViewRowAnimation.Fade)
     }
     
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat
@@ -404,16 +430,16 @@ class AddTableViewController: UIViewController,UITableViewDelegate,UITableViewDa
         
         var myDefault = NSUserDefaults.standardUserDefaults()
         var appDomain:String = NSBundle.mainBundle().bundleIdentifier!
-        myDefault.removeObjectForKey("diary")
-        myDefault.synchronize()
         
+        myDefault.removeObjectForKey("selectedDT")
         myDefault.removeObjectForKey("selectedPlace")
-        myDefault.synchronize()
-        
         myDefault.removeObjectForKey("selectedName")
-        myDefault.synchronize()
+//        myDefault.removeObjectForKey("uniStr")
+        myDefault.removeObjectForKey("diary")
         
         myDefault.setObject("true", forKey: "cancel")
+        
+        myDefault.synchronize()
         
         //ここはどうする？ reload()
 //        addWhen.text=""
@@ -437,38 +463,28 @@ class AddTableViewController: UIViewController,UITableViewDelegate,UITableViewDa
         
         //テキストフィールドに記入するためにユーザーデフォルトに入れていた直前１件の履歴削除
         var myDefault = NSUserDefaults.standardUserDefaults()
-        
+
         var appDomain:String = NSBundle.mainBundle().bundleIdentifier!
-        myDefault.removeObjectForKey("diary")
-        myDefault.synchronize()
         
+        myDefault.removeObjectForKey("selectedDT")
         myDefault.removeObjectForKey("selectedPlace")
-        myDefault.synchronize()
-        
         myDefault.removeObjectForKey("selectedName")
-        myDefault.synchronize()
+//        myDefault.removeObjectForKey("uniStr")
+        myDefault.removeObjectForKey("diary")
         
-        
-        //TODO:ここどうしたら良い？
-//        addWhen.text=""
-//        addWhere.text=""
-//        addWho.text=""
-//        addDiary.text=""
-        
-        //前ページに遷移する　モーダル画面じゃなくので、dismissじゃないバージョン　後学のため残す
-        //navigationController?.popViewControllerAnimated(true)
-        
-        //userDefaultにデータを書き込んで
+        //userDefaultにデータを書き込んで保存したことを書き込む
         myDefault.setObject("true", forKey: "saveSuccess")
         
         //即反映させる
         myDefault.synchronize()
         
+        //前ページに遷移する　モーダル画面じゃなくので、dismissじゃないバージョン　後学のため残す
+        //navigationController?.popViewControllerAnimated(true)
+
         self.dismissViewControllerAnimated(true, completion: nil)
         
-        
-        
     }
+    
     
     func textFieldShouldBeginEditing(textField: UITextField) -> Bool{
     
@@ -479,27 +495,51 @@ class AddTableViewController: UIViewController,UITableViewDelegate,UITableViewDa
                 expandflag = !expandflag
                 self.toContract(addTableView, indexPath: row)
                 
+                
+                
             }else{
                 expandflag = !expandflag
                 self.toExpand(addTableView, indexPath: row)
             }
-
+            return false
         
         }
         
         // setWhere
         if textField.tag == 2000{
             self.setWhere(textField)
+            return false
         }
         
         // addWho
         if textField.tag == 3000{
-            self.addWho(textField)
+            self.setWho(textField)
+            return false
+        }else{
+    
+            return true
+        }
+    }
+
+    //addUniversityのテキストフィールドは、returnタップ時にユーザーデフォルトに収め、キーボーードも立ち上げたいので他のテキストフィールドとは処理を分けている
+    func textFieldShouldEndEditing(textField: UITextField) -> Bool {
+        if textField.tag == 4000{
+            //ユーザーデフォルトを用意する
+            var myDefault = NSUserDefaults.standardUserDefaults()
+            
+            //データを書き込んで
+            myDefault.setObject(textField.text, forKey: "uniStr")
+            
+            //即反映させる
+            myDefault.synchronize()
+            
+            return true
         }
         
-        return false
+        return true
+        
     }
-    
+
  
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

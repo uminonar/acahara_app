@@ -143,6 +143,8 @@ class AddWhereViewController: UIViewController,UITableViewDelegate,UITableViewDa
     
     
     @IBAction func cancelBtn(sender: UIButton) {
+        
+        self.resignFirstResponder()
         self.dismissViewControllerAnimated(true, completion: nil)
     } 
     
