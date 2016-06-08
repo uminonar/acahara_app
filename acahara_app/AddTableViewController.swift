@@ -44,8 +44,8 @@ class AddTableViewController: UIViewController,UITableViewDelegate,UITableViewDa
         
         
         //myDefaulの各項目がnilでなかったら保存ボタンを表示したい。。。ん
-//        if (sWhen==nil || sWhere==nil || sWho==nil || sUni==nil || sDiary == nil){
-//            
+//       if (sWhen==nil || sWhere==nil || sWho==nil || sUni==nil || sDiary == nil){
+//        
 //            self.addSaveBtn.hidden = true
 //        }else{
 //            self.addSaveBtn.hidden = false

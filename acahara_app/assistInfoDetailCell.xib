@@ -15,7 +15,7 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" text="このサービスは、アカハラの被害を誰かに相談する時に、何度も繰り返し説明を強いられ追体験をしないで済むように作られました。" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3iB-f3-M99">
-                        <rect key="frame" x="13" y="13" width="293" height="128"/>
+                        <rect key="frame" x="8" y="0.0" width="304" height="128"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <fontDescription key="fontDescription" type="system" pointSize="13"/>
                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>

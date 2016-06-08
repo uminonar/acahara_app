@@ -63,16 +63,29 @@ class AssistTableViewController: UIViewController,UITableViewDelegate,UITableVie
             //cellを生成？
             var cell:assistInfoTableViewCell = tableView.dequeueReusableCellWithIdentifier("assistInfoCell", forIndexPath: indexPath) as! assistInfoTableViewCell
             
-            
             return cell
             
-            
-        
         }
         
+        var adjustrow_no = indexPath.row
         
+        if expandflag{
+            if indexPath.row == 1{
+
+                
+            var cell:assistInfoDetailTableViewCell = tableView.dequeueReusableCellWithIdentifier("assistInfoDetailCell", forIndexPath: indexPath) as! assistInfoDetailTableViewCell
+                
+                
+            return cell
+
+            }
         
-        if indexPath.row == 1{
+            adjustrow_no--
+        }
+            
+    
+        
+        if adjustrow_no == 1{
             
             //cellを生成？
             var cell:assistChoseAdvisorTableViewCell = tableView.dequeueReusableCellWithIdentifier("assistChoseAdvisorCell", forIndexPath: indexPath) as! assistChoseAdvisorTableViewCell
@@ -82,7 +95,7 @@ class AssistTableViewController: UIViewController,UITableViewDelegate,UITableVie
             
         }
         
-        if indexPath.row == 2 {
+        if adjustrow_no == 2 {
             
             var cell:assistChosePostsTableViewCell = tableView.dequeueReusableCellWithIdentifier("assistChosePostsCell", forIndexPath: indexPath) as! assistChosePostsTableViewCell
             
@@ -213,21 +226,98 @@ class AssistTableViewController: UIViewController,UITableViewDelegate,UITableVie
         
     }
     
+
+    
+    // delegate didSelectRow
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        
+        if 0 == indexPath.row {
+            //            // switching open or close
+            //            sections[indexPath.section].extended = !sections[indexPath.section].extended
+            
+            if expandflag {
+                expandflag = !expandflag
+                self.toContract(tableView, indexPath: indexPath)
+                
+            }else{
+                expandflag = !expandflag
+                self.toExpand(tableView, indexPath: indexPath)
+            }
+            
+            
+        }
+        // deselec
+        tableView.deselectRowAtIndexPath(indexPath, animated: true)
+    }
+    
+    
+    
+    /// close details
+    /// - parameter tableView: self.tableView
+    /// - parameter indexPath: NSIndexPath
+    /// - returns:
+    private func toContract(tableView: UITableView, indexPath: NSIndexPath) {
+        let startRow = indexPath.row + 1
+        //let endRow = sections[indexPath.section].details.count + 1
+        let endRow = startRow + 1
+        
+        var indexPaths: [NSIndexPath] = []
+        for var i = startRow; i < endRow; i++ {
+            indexPaths.append(NSIndexPath(forRow: i , inSection: indexPath.section))
+        }
+        rownumber -= 1
+        
+        tableView.deleteRowsAtIndexPaths(indexPaths,
+                                         withRowAnimation: UITableViewRowAnimation.Fade)
+
+        
+    }
+
+    /// open details
+    /// - parameter tableView: self.tableView
+    /// - parameter indexPath: NSIndexPath
+    /// - returns:
+    private func toExpand(tableView: UITableView, indexPath: NSIndexPath) {
+        let startRow = indexPath.row + 1
+        //let endRow = sections[indexPath.section].details.count + 1
+        let endRow = startRow + 1
+        
+        var indexPaths: [NSIndexPath] = []
+        for var i = startRow; i < endRow; i++ {
+            
+            indexPaths.append(NSIndexPath(forRow: i, inSection: indexPath.section))
+        }
+        
+        rownumber += 1
+        tableView.insertRowsAtIndexPaths(indexPaths, withRowAnimation: UITableViewRowAnimation.Fade)
+        
+        // scroll to the selected cell.
+        tableView.scrollToRowAtIndexPath(NSIndexPath(
+            forRow: indexPath.row, inSection: indexPath.section),
+                                         atScrollPosition: UITableViewScrollPosition.Top, animated: true)
+        
+        
+        
+        
+        
+        
+    }
+    
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat
     {
         if indexPath.row == 0 {
-            return 55
+            return 45
         }
         if indexPath.row == 1 {
-            return 386
+            return 380
         }
         if indexPath.row == 2 {
-            return 150
+            return 350
         }
         
-        return 80.0//ここの意味は？
+        return 100//ここの意味は？とりあえず全部のケースを網羅する。
     }
-
+    
     
 
     override func didReceiveMemoryWarning() {
