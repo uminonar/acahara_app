@@ -39,6 +39,7 @@ class homeTableViewCell: UITableViewCell {
         postVolume.image = volumeImage
         
         let ellipsis = FAKFontAwesome.ellipsisHIconWithSize(20)
+        ellipsis.addAttribute(NSForegroundColorAttributeName, value: UIColor.lightGrayColor())
         let ellipsisImage = ellipsis.imageWithSize(CGSizeMake(20,20))
         postEllipsis.image = ellipsisImage
     

@@ -9,6 +9,9 @@
 import UIKit
 
 class AddTableViewController: UIViewController,UITableViewDelegate,UITableViewDataSource, UIImagePickerControllerDelegate,UITextFieldDelegate{
+  
+    @IBOutlet weak var addSaveBtn: UIButton!
+    
     var expandflag = false
     var rownumber = 2
     
@@ -30,16 +33,29 @@ class AddTableViewController: UIViewController,UITableViewDelegate,UITableViewDa
         //テーブルビューの罫線を消す
         addTableView.separatorColor = UIColor.clearColor()
         
-        //
+        //記入必須項目が未記入のうちは保存ボタンはhiddenにしておく
+        var myDefault = NSUserDefaults.standardUserDefaults()
+        var sWhen = myDefault.stringForKey("selectedDT")
+        var sWhere = myDefault.stringForKey("selectedPlace")
+        var sWho = myDefault.stringForKey("selectedName")
+        var sUni = myDefault.stringForKey("uniStr")
+        var sDiary = myDefault.stringForKey("diary")
         
         
         
-        
-        
+        //myDefaulの各項目がnilでなかったら保存ボタンを表示したい。。。ん
+//        if (sWhen==nil || sWhere==nil || sWho==nil || sUni==nil || sDiary == nil){
+//            
+//            self.addSaveBtn.hidden = true
+//        }else{
+//            self.addSaveBtn.hidden = false
+//        }
+
     }
     
     
     override func viewWillAppear(animated: Bool) {
+        //ここは何の意味があるの？
         print("再表示")
         addTableView.reloadData()
     }
@@ -141,7 +157,7 @@ class AddTableViewController: UIViewController,UITableViewDelegate,UITableViewDa
                     cell.addDiary.text = diaryText
                     cell.addDiary.textColor = UIColor.blackColor()
                 }else{
-                    cell.addDiary.text = "大丈夫！しっかり記録していきましょう。。。\n具体的にどんなことがありましたか？"
+                    cell.addDiary.text = "大丈夫！しっかり記録していきましょう。。\n具体的にどんなことがありましたか？"
                     cell.addDiary.textColor = UIColor.lightGrayColor()
                 }
 
@@ -155,7 +171,7 @@ class AddTableViewController: UIViewController,UITableViewDelegate,UITableViewDa
                 cell.addUniversity.addTarget(self, action: "setUniversity:", forControlEvents: UIControlEvents.EditingDidEndOnExit)//EditingDidEnd?違いは,カーソル離れたとき
                 
                 //TODO:何がダメ？
-//                cell.addUniversity.tag = sender.text
+//                cell.addUniversity.tag = sender.text  tagじゃなく(sender.UITextFeield)で。。
                 
                 
                 
@@ -163,6 +179,8 @@ class AddTableViewController: UIViewController,UITableViewDelegate,UITableViewDa
                 let tap = UITapGestureRecognizer(target: self, action: "setDiary")
 //                tap.delegate = self
                 cell.addDiary.addGestureRecognizer(tap)
+                
+                
                 
                 
                 
@@ -244,19 +262,20 @@ class AddTableViewController: UIViewController,UITableViewDelegate,UITableViewDa
         
     }
     
-    func setUniversity(tag:String){
-        
-        //これ合ってる？効いてない
-        self.isFirstResponder()
+    func setUniversity(sender:UITextField){
+
         
         //ユーザーデフォルトを用意する
         var myDefault = NSUserDefaults.standardUserDefaults()
         
         //データを書き込んで
-        myDefault.setObject(tag, forKey: "uniStr")
+        myDefault.setObject(sender.text, forKey: "uniStr")
         
         //即反映させる
         myDefault.synchronize()
+        
+        
+        self.resignFirstResponder()
 
     }
     
@@ -308,7 +327,7 @@ class AddTableViewController: UIViewController,UITableViewDelegate,UITableViewDa
     }
         
     
-        func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]){
+    func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]){
             
             var picBaseImage = info[UIImagePickerControllerOriginalImage] as? UIImage
             

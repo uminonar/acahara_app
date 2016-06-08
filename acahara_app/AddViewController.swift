@@ -11,6 +11,7 @@ import MobileCoreServices
 
 class AddViewController: UIViewController,UIImagePickerControllerDelegate,UINavigationControllerDelegate {
     
+    @IBOutlet weak var addTableSaveBtn: UIButton!
     @IBOutlet weak var timeLabel: UILabel!
     @IBOutlet weak var picBase: UIImageView!
     @IBOutlet weak var tapPicFile: UIView!

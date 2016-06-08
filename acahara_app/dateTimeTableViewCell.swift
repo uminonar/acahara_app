@@ -9,6 +9,8 @@
 import UIKit
 
 class dateTimeTableViewCell: UITableViewCell,UITextFieldDelegate {
+    
+
 
     @IBOutlet weak var addName: UILabel!
     @IBOutlet weak var addWhen: UITextField!
@@ -21,8 +23,21 @@ class dateTimeTableViewCell: UITableViewCell,UITextFieldDelegate {
         addName.text
             = "uminonar"//ここだと表示されないのん？なぜ？
         
-    
         
+        //色を使って指定する
+        let palePink:UIColor = UIColor(red:1.0,green:0.66,blue:0.66,alpha:1.0)
+        
+        
+        
+        
+        
+        let asta = FAKFontAwesome.asteriskIconWithSize(10)
+        asta.addAttribute(NSForegroundColorAttributeName, value: palePink)
+        let astaImage = asta.imageWithSize(CGSizeMake(10,10))
+        
+        
+        
+
     }
 
     override func setSelected(selected: Bool, animated: Bool) {

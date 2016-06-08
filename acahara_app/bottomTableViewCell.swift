@@ -65,8 +65,9 @@ class bottomTableViewCell: UITableViewCell {
         addMo.addAttribute(NSForegroundColorAttributeName, value: UIColor.lightGrayColor())
         let addM = addMo.imageWithSize(CGSizeMake(50, 50))
         addMovieFile.image = addM
-
         
+        
+ 
     }
 
 
