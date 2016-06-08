@@ -26,9 +26,10 @@
                 </subviews>
             </tableViewCellContentView>
             <connections>
-                <outlet property="assistInfo" destination="0Yb-Vb-dxU" id="XIk-AB-VFf"/>
+                <outlet property="assistInfo" destination="0Yb-Vb-dxU" id="PTy-Za-PdB"/>
+                <outlet property="assistInfoS" destination="H3I-Bv-s5k" id="Wqh-LL-76T"/>
             </connections>
-            <point key="canvasLocation" x="2" y="158"/>
+            <point key="canvasLocation" x="-68" y="147"/>
         </tableViewCell>
     </objects>
 </document>
