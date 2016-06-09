@@ -157,7 +157,7 @@ class AddTableViewController: UIViewController,UITableViewDelegate,UITableViewDa
                     cell.addDiary.text = diaryText
                     cell.addDiary.textColor = UIColor.blackColor()
                 }else{
-                    cell.addDiary.text = "大丈夫！しっかり記録していきましょう。。\n具体的にどんなことがありましたか？"
+                    cell.addDiary.text = "大丈夫！しっかり記録していきましょう。。\n具体的にどんなことがありましたか？どのな状況でそれが起きましたか？"
                     cell.addDiary.textColor = UIColor.lightGrayColor()
                 }
 
@@ -227,6 +227,7 @@ class AddTableViewController: UIViewController,UITableViewDelegate,UITableViewDa
             
         let df = NSDateFormatter()
         df.dateFormat = "yyyy/MM/dd HH:mm"
+        sender.maximumDate = NSDate()
         var dateStr = df.stringFromDate(sender.date)
             
 //        daatePickerで取得した日時をuserDefaultにセット

@@ -156,7 +156,7 @@ class AssistViewController: UIViewController {
         myDefault.removeObjectForKey("selectedText")
         myDefault.synchronize()
         
-        myDefault.synchronize()
+
         
         //assistMailContentを空にする
         assistMailContent.text = ""

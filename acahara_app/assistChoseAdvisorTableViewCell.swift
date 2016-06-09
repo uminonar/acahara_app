@@ -28,6 +28,16 @@ class assistChoseAdvisorTableViewCell: UITableViewCell {
         let comments = FAKFontAwesome.commentsOIconWithSize(15)
         let commentsImage = comments.imageWithSize(CGSizeMake(15, 15))
         assistComments.image = commentsImage
+        
+        // assistMailContentのTextViewに枠をつける。
+        assistMailContent.layer.borderWidth = 0.5
+        
+        // 枠の色を設定する。
+        assistMailContent.layer.borderColor = UIColor.lightGrayColor().CGColor
+        
+        // 枠の角を丸くする。
+        assistMailContent.layer.cornerRadius = 8
+        
     }
 
     override func setSelected(selected: Bool, animated: Bool) {

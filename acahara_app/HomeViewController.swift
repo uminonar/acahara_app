@@ -25,6 +25,7 @@ class HomeViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
         super.viewDidLoad()
         
         homeTableView.registerNib(UINib(nibName: "postCustomCell", bundle: nil), forCellReuseIdentifier: "postCustomCell")
+//        homeTableView.registerNib(UINib(nibName: "homeIntroCell", bundle: nil), forCellReuseIdentifier: "homeIntroCell")
         
 //        self.title = "Home"
         
@@ -39,28 +40,29 @@ class HomeViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
     
     override func viewWillAppear(animated: Bool) {
         
+        // ナビゲーションを透明にする処理
+//        self.navigationController!.navigationBar.setBackgroundImage(UIImage(), forBarMetrics: .Default)
+//        self.navigationController!.navigationBar.shadowImage = UIImage()
+        
         //データ記録画面で保存した後に表示されたとわかったとき
         var myDefault = NSUserDefaults.standardUserDefaults()
         var afterSaved = myDefault.objectForKey("saveSuccess")
-        
-        //最新情報をリロード
-        homeTableView.reloadData()
-        
         //保存成功のアラートを表示
-        if( afterSaved != nil){
-            let alert: UIAlertController = UIAlertController(title: "記録成功", message: "負けないで！", preferredStyle: .Alert)
-            self.presentViewController(alert, animated: true) { () -> Void in
-            let delay = 1.0 * Double(NSEC_PER_SEC)
-            let time  = dispatch_time(DISPATCH_TIME_NOW, Int64(delay))
-            dispatch_after(time, dispatch_get_main_queue(), {
-            self.dismissViewControllerAnimated(true, completion: nil)
-            })
+            if( afterSaved != nil){
+                let alert: UIAlertController = UIAlertController(title: "記録成功", message: "負けないで！", preferredStyle: .Alert)
+                self.presentViewController(alert, animated: true) { () -> Void in
+                let delay = 1.0 * Double(NSEC_PER_SEC)
+                    let time  = dispatch_time(DISPATCH_TIME_NOW, Int64(delay))
+                    dispatch_after(time, dispatch_get_main_queue(), {
+                        self.dismissViewControllerAnimated(true, completion: nil)
+                    })
                 
-            myDefault.removeObjectForKey("saveSuccess")
-            myDefault.synchronize()
+        myDefault.removeObjectForKey("saveSuccess")
+        myDefault.synchronize()
 
-        }
-            
+        //最新情報をリロード
+//      self.homeTableView.reloadData()//これ何の意味？
+            }
         }
             
         
@@ -82,6 +84,16 @@ class HomeViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
 
     //表示内容を決定
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) ->UITableViewCell{
+        
+//        if indexPath.row == 0{
+//            
+//            //cellを生成？
+//            var cell:homeIntroTableViewCell = tableView.dequeueReusableCellWithIdentifier("homeIntroCell", forIndexPath: indexPath) as! homeIntroTableViewCell
+//            
+//
+//            return cell
+//        }else{
+
             
         // 1. 生成するセルをカスタムクラスへダウンキャスト
         // 既存のCell生成コードの後に as! <Cellのカスタムクラス名> という記述を追加
@@ -98,9 +110,6 @@ class HomeViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
         
         
         //postsのopenFlag==1のセルだけ下のようにしたい
-        
-        
-        
         
         var openFlag:String = posts[indexPath.row]["openFlag"] as! String
         
@@ -134,11 +143,24 @@ class HomeViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
         cell.postImageViewBtn.addTarget(self, action: "showPicture:", forControlEvents: .TouchUpInside)
         cell.postImageViewBtn.tag = indexPath.row
 
-        
-    
-
         return cell
+        
     }
+    
+    
+    //各行の高さを指定する
+//    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat
+//    {
+//        if indexPath.row == 0 {
+//            return 110
+//        }else{
+//      
+//            return 355
+//        }
+//        
+//        return 80//ここの意味は？とりあえず全部のケースを網羅する。
+//    }
+    
     
     
     //削除が選択された時の関数

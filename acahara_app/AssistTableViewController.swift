@@ -66,11 +66,11 @@ class AssistTableViewController: UIViewController,UITableViewDelegate,UITableVie
             if expandflag{
                 
                 let info = FAKFontAwesome.infoIconWithSize(15)
-                info.addAttribute(NSForegroundColorAttributeName, value: UIColor.redColor())
+                info.addAttribute(NSForegroundColorAttributeName, value: UIColor.blueColor())
                 let infoImage = info.imageWithSize(CGSizeMake(15, 15))
                 cell.assistInfo.image = infoImage
                 
-                cell.assistInfoS.textColor = UIColor.redColor()
+                cell.assistInfoS.textColor = UIColor.blueColor()
 
             }else{
                 
@@ -117,20 +117,22 @@ class AssistTableViewController: UIViewController,UITableViewDelegate,UITableVie
             
         
             
-                            var myDefault = NSUserDefaults.standardUserDefaults()
-                            var editedText = myDefault.objectForKey("")
-                            if(editedText != nil){
-            //                    cell.assistMailContent.text = editedText
-                            }
+                           var myDefault = NSUserDefaults.standardUserDefaults()
+                            var editedText = myDefault.objectForKey("mailContent")
+                                if(editedText != nil){
+                                cell.assistMailContent.text = editedText as! String
+                                }
             
                             //TODO:編集ページで保存されたらeditedTextを更新する処理をして
                             //TODO:キャンセルと保存の時に必ずnilに戻して
 
             
                             var advisor = myDefault.stringForKey("selectedAdvisor")
-                            if(advisor != nil){
-                                var mContent = mailContent[advisor!] as! String?
-                                cell.assistMailContent.text = mContent
+                                if(advisor != nil){
+                                    var mContent = mailContent[advisor!] as! String?
+                                    cell.assistMailContent.text = mContent
+                                }else{
+                                    cell.assistMailContent.text = ""
                             }
             
             
@@ -138,8 +140,8 @@ class AssistTableViewController: UIViewController,UITableViewDelegate,UITableVie
             
             
                             // tap gesture recognizer をassistMailContentのTextViewに設置
-                            let tap = UITapGestureRecognizer(target: self, action:"setMailContent:")
-                            //                tap.delegate = self
+                            let tap = UITapGestureRecognizer(target: self, action:"editMailContent:")
+//                                       tap.delegate = self
                             cell.assistMailContent.addGestureRecognizer(tap)
             
             
@@ -151,19 +153,19 @@ class AssistTableViewController: UIViewController,UITableViewDelegate,UITableVie
                             cell.professor.tag = 100//professor
             
                             cell.assailant.addTarget(self, action:Selector("insert:"), forControlEvents:UIControlEvents.TouchUpInside)
-                            cell.professor.tag = 200//assailant
+                            cell.assailant.tag = 200//assailant
             
                             cell.committee.addTarget(self, action:Selector("insert:"), forControlEvents:UIControlEvents.TouchUpInside)
-                            cell.professor.tag = 300//committee
+                            cell.committee.tag = 300//committee
             
                             cell.psycotherapist.addTarget(self, action:Selector("insert:"), forControlEvents:UIControlEvents.TouchUpInside)
-                            cell.professor.tag = 400//psychotherapist
+                            cell.psycotherapist.tag = 400//psychotherapist
             
                             cell.lawyer.addTarget(self, action:Selector("insert:"), forControlEvents:UIControlEvents.TouchUpInside)
-                            cell.professor.tag = 500//lawyer
+                            cell.lawyer.tag = 500//lawyer
                                 
                             cell.friend.addTarget(self, action:Selector("insert:"), forControlEvents:UIControlEvents.TouchUpInside)
-                            cell.professor.tag = 600//friend
+                            cell.friend.tag = 600//friend
                                 
                             return cell
         }
@@ -175,13 +177,15 @@ class AssistTableViewController: UIViewController,UITableViewDelegate,UITableVie
             
             var cell:assistChosePostsTableViewCell = tableView.dequeueReusableCellWithIdentifier("assistChosePostsCell", forIndexPath: indexPath) as! assistChosePostsTableViewCell
             
+            cell.assistQmarkBtn.addTarget(self, action:Selector("chosePosts:"), forControlEvents:UIControlEvents.TouchUpInside)
             
+            cell.assistQsentenceBtn.addTarget(self, action:Selector("chosePosts:"), forControlEvents:UIControlEvents.TouchUpInside)
             
             return cell
         }
         
     
-        
+        //普通のセル生成　それ以外。
         
         var emptycell:UITableViewCell = UITableViewCell(style: .Default, reuseIdentifier: "myCell")
         
@@ -189,8 +193,18 @@ class AssistTableViewController: UIViewController,UITableViewDelegate,UITableVie
     }
     
     
-    func insesender(sender:UIButton){
-       print(sender.tag)//tagはIntしか入れられない
+    
+    
+    func editMailContent(sender:UITextView){
+        let mailContentVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("MailContentViewController") as UIViewController
+        
+        presentViewController(mailContentVC, animated: true, completion: nil)
+
+    }
+
+    
+    func insert(sender:UIButton){
+       
         
         var myDefault = NSUserDefaults.standardUserDefaults()
         
@@ -219,14 +233,20 @@ class AssistTableViewController: UIViewController,UITableViewDelegate,UITableVie
         
         myDefault.synchronize()
         
-
- 
-        
         //TODO:ここをassistChoseAdvisorCellの行だけリロードしたい。どうする？
         assistTableView.reloadData()
     
         
     }
+    
+    func chosePosts(sender:UIButton){
+        let ChosePostsVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("ChosePostsViewController") as UIViewController
+        
+        presentViewController(ChosePostsVC, animated: true, completion: nil)
+
+    }
+    
+    
     
 
     
@@ -318,13 +338,49 @@ class AssistTableViewController: UIViewController,UITableViewDelegate,UITableVie
             return 380
         }
         if indexPath.row == 2 {
-            return 350
+            return 180
         }
         
         return 100//ここの意味は？とりあえず全部のケースを網羅する。
     }
     
+
+    @IBAction func saveBtn(sender: UIButton) {
+        
+        //入力必須項目の確認
+        //データを送信する
+        
+        //userDefaultの”selectedText”を空にする
+        var myDefault = NSUserDefaults.standardUserDefaults()
+        myDefault.removeObjectForKey("selectedAdvisor")
+        myDefault.removeObjectForKey("editedText")
+        myDefault.synchronize()
+        
+        
+        assistTableView.reloadData()
+        
+        
+        //assistMailContentを空にする、いらない
+//        assistMailContent.text = ""
+        
+        
+
+        
+    }
     
+    @IBAction func cancelBtn(sender: UIButton) {
+        var myDefault = NSUserDefaults.standardUserDefaults()
+        myDefault.removeObjectForKey("selectedAdvisor")
+        myDefault.removeObjectForKey("editedText")
+        myDefault.synchronize()
+        
+        assistTableView.reloadData()
+        
+        //assistMailContentを空にする、いらない
+        //        assistMailContent.text = ""
+        
+
+    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

@@ -17,6 +17,7 @@
 		0B0094BA1CF708120041B3B5 /* postCustomCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0B0094B91CF708120041B3B5 /* postCustomCell.xib */; };
 		0B0094BE1CF70C440041B3B5 /* posts.txt in Resources */ = {isa = PBXBuildFile; fileRef = 0B0094BD1CF70C440041B3B5 /* posts.txt */; };
 		0B0094C01CF70D760041B3B5 /* homeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B0094BF1CF70D760041B3B5 /* homeTableViewCell.swift */; };
+		0B029EE31D08FB7400A747C9 /* HomeNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B029EE21D08FB7400A747C9 /* HomeNavigationController.swift */; };
 		0B03D2901CF7D58E0050119E /* AddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B03D28F1CF7D58E0050119E /* AddViewController.swift */; };
 		0B03D2921CF7F4FB0050119E /* AddWhereViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B03D2911CF7F4FB0050119E /* AddWhereViewController.swift */; };
 		0B03D2941CF7F6050050119E /* AddWhoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B03D2931CF7F6050050119E /* AddWhoViewController.swift */; };
@@ -38,6 +39,10 @@
 		0B59AD461D07BB9100E740F5 /* assistChoseAdvisorTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B59AD451D07BB9100E740F5 /* assistChoseAdvisorTableViewCell.swift */; };
 		0B59AD481D07C01600E740F5 /* assistChosePostsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0B59AD471D07C01600E740F5 /* assistChosePostsCell.xib */; };
 		0B59AD4A1D07C04400E740F5 /* assistChosePostsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B59AD491D07C04400E740F5 /* assistChosePostsTableViewCell.swift */; };
+		0B5AFA7A1D084CEA001D3DCA /* homeIntroCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0B5AFA791D084CEA001D3DCA /* homeIntroCell.xib */; };
+		0B5AFA7C1D0855FA001D3DCA /* s_ema.png in Resources */ = {isa = PBXBuildFile; fileRef = 0B5AFA7B1D0855FA001D3DCA /* s_ema.png */; };
+		0B5AFA7E1D085651001D3DCA /* homeIntroTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B5AFA7D1D085651001D3DCA /* homeIntroTableViewCell.swift */; };
+		0B5AFA801D085C10001D3DCA /* s_makeruna.png in Resources */ = {isa = PBXBuildFile; fileRef = 0B5AFA7F1D085C10001D3DCA /* s_makeruna.png */; };
 		0B94338B1D0275AA00A93027 /* AssistViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B94338A1D0275AA00A93027 /* AssistViewController.swift */; };
 		0B9DBFE71CFFF1F200B78293 /* AddSoundViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B9DBFE61CFFF1F200B78293 /* AddSoundViewController.swift */; };
 		0B9DF2611D01ADC100B478C7 /* PictureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B9DF2601D01ADC100B478C7 /* PictureViewController.swift */; };
@@ -47,6 +52,8 @@
 		0BC1DB101D0378E100D203C1 /* question.png in Resources */ = {isa = PBXBuildFile; fileRef = 0BC1DB0F1D0378E100D203C1 /* question.png */; };
 		0BC1DB121D037B3B00D203C1 /* s_question.png in Resources */ = {isa = PBXBuildFile; fileRef = 0BC1DB111D037B3B00D203C1 /* s_question.png */; };
 		0BD4F1541D051A28001AA8EC /* MailContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BD4F1531D051A28001AA8EC /* MailContentViewController.swift */; };
+		0BDD5B051D086AC60091DD20 /* ema.png in Resources */ = {isa = PBXBuildFile; fileRef = 0BDD5B041D086AC60091DD20 /* ema.png */; };
+		0BDD5B071D086B170091DD20 /* mokuhyou.png in Resources */ = {isa = PBXBuildFile; fileRef = 0BDD5B061D086B170091DD20 /* mokuhyou.png */; };
 		0BE248981D05A97A002BEC1F /* AddTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BE248971D05A97A002BEC1F /* AddTableViewController.swift */; };
 		0BE2489C1D05AAE1002BEC1F /* dateTimeCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0BE2489B1D05AAE1002BEC1F /* dateTimeCell.xib */; };
 		0BE2489E1D05ABEB002BEC1F /* dateTimeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BE2489D1D05ABEB002BEC1F /* dateTimeTableViewCell.swift */; };
@@ -100,6 +107,7 @@
 		0B0094C31CF71A560041B3B5 /* acahara_app-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "acahara_app-Bridging-Header.h"; sourceTree = "<group>"; };
 		0B0094C61CF71A9B0041B3B5 /* acahara_appTests-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "acahara_appTests-Bridging-Header.h"; sourceTree = "<group>"; };
 		0B0094C71CF71A9B0041B3B5 /* acahara_appUITests-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "acahara_appUITests-Bridging-Header.h"; sourceTree = "<group>"; };
+		0B029EE21D08FB7400A747C9 /* HomeNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeNavigationController.swift; sourceTree = "<group>"; };
 		0B03D28F1CF7D58E0050119E /* AddViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddViewController.swift; sourceTree = "<group>"; };
 		0B03D2911CF7F4FB0050119E /* AddWhereViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddWhereViewController.swift; sourceTree = "<group>"; };
 		0B03D2931CF7F6050050119E /* AddWhoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddWhoViewController.swift; sourceTree = "<group>"; };
@@ -121,6 +129,10 @@
 		0B59AD451D07BB9100E740F5 /* assistChoseAdvisorTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = assistChoseAdvisorTableViewCell.swift; sourceTree = "<group>"; };
 		0B59AD471D07C01600E740F5 /* assistChosePostsCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = assistChosePostsCell.xib; sourceTree = "<group>"; };
 		0B59AD491D07C04400E740F5 /* assistChosePostsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = assistChosePostsTableViewCell.swift; sourceTree = "<group>"; };
+		0B5AFA791D084CEA001D3DCA /* homeIntroCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = homeIntroCell.xib; sourceTree = "<group>"; };
+		0B5AFA7B1D0855FA001D3DCA /* s_ema.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = s_ema.png; sourceTree = "<group>"; };
+		0B5AFA7D1D085651001D3DCA /* homeIntroTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = homeIntroTableViewCell.swift; sourceTree = "<group>"; };
+		0B5AFA7F1D085C10001D3DCA /* s_makeruna.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = s_makeruna.png; sourceTree = "<group>"; };
 		0B94338A1D0275AA00A93027 /* AssistViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AssistViewController.swift; sourceTree = "<group>"; };
 		0B9DBFE61CFFF1F200B78293 /* AddSoundViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddSoundViewController.swift; sourceTree = "<group>"; };
 		0B9DF2601D01ADC100B478C7 /* PictureViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PictureViewController.swift; sourceTree = "<group>"; };
@@ -130,6 +142,8 @@
 		0BC1DB0F1D0378E100D203C1 /* question.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = question.png; sourceTree = "<group>"; };
 		0BC1DB111D037B3B00D203C1 /* s_question.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = s_question.png; sourceTree = "<group>"; };
 		0BD4F1531D051A28001AA8EC /* MailContentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MailContentViewController.swift; sourceTree = "<group>"; };
+		0BDD5B041D086AC60091DD20 /* ema.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ema.png; sourceTree = "<group>"; };
+		0BDD5B061D086B170091DD20 /* mokuhyou.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mokuhyou.png; sourceTree = "<group>"; };
 		0BE248971D05A97A002BEC1F /* AddTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddTableViewController.swift; sourceTree = "<group>"; };
 		0BE2489B1D05AAE1002BEC1F /* dateTimeCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = dateTimeCell.xib; sourceTree = "<group>"; };
 		0BE2489D1D05ABEB002BEC1F /* dateTimeTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = dateTimeTableViewCell.swift; sourceTree = "<group>"; };
@@ -206,9 +220,6 @@
 		0B0094881CF6FFB90041B3B5 /* acahara_app */ = {
 			isa = PBXGroup;
 			children = (
-				0B0094891CF6FFB90041B3B5 /* AppDelegate.swift */,
-				0B00948B1CF6FFB90041B3B5 /* HomeViewController.swift */,
-				0B0686C61CFBFA58002AB722 /* DetailViewController.swift */,
 				0B0094BF1CF70D760041B3B5 /* homeTableViewCell.swift */,
 				0BE2489D1D05ABEB002BEC1F /* dateTimeTableViewCell.swift */,
 				0BE248A11D05ACEE002BEC1F /* datePickerTableViewCell.swift */,
@@ -217,7 +228,9 @@
 				0B59AD3F1D07B68100E740F5 /* assistInfoDetailTableViewCell.swift */,
 				0B59AD451D07BB9100E740F5 /* assistChoseAdvisorTableViewCell.swift */,
 				0B59AD491D07C04400E740F5 /* assistChosePostsTableViewCell.swift */,
+				0B5AFA7D1D085651001D3DCA /* homeIntroTableViewCell.swift */,
 				0B0094B91CF708120041B3B5 /* postCustomCell.xib */,
+				0B5AFA791D084CEA001D3DCA /* homeIntroCell.xib */,
 				0B59AD391D07B1B000E740F5 /* assistInfoCell.xib */,
 				0B59AD3D1D07B61900E740F5 /* assistInfoDetailCell.xib */,
 				0B59AD431D07BA0F00E740F5 /* assistChoseAdvisorCell.xib */,
@@ -225,20 +238,28 @@
 				0BE2489B1D05AAE1002BEC1F /* dateTimeCell.xib */,
 				0BE2489F1D05AC8D002BEC1F /* datePickerCell.xib */,
 				0BE248A31D05AEE0002BEC1F /* bottomCell.xib */,
-				0B03D28F1CF7D58E0050119E /* AddViewController.swift */,
-				0BE248971D05A97A002BEC1F /* AddTableViewController.swift */,
+				0B0094891CF6FFB90041B3B5 /* AppDelegate.swift */,
+				0B00948B1CF6FFB90041B3B5 /* HomeViewController.swift */,
+				0B029EE21D08FB7400A747C9 /* HomeNavigationController.swift */,
+				0B0686C61CFBFA58002AB722 /* DetailViewController.swift */,
 				0B9DF2601D01ADC100B478C7 /* PictureViewController.swift */,
+				0BE248971D05A97A002BEC1F /* AddTableViewController.swift */,
+				0B03D28F1CF7D58E0050119E /* AddViewController.swift */,
 				0B03D2911CF7F4FB0050119E /* AddWhereViewController.swift */,
 				0B03D2931CF7F6050050119E /* AddWhoViewController.swift */,
 				0BADA6191CFB3B9E001702D7 /* AddDiaryViewController.swift */,
 				0B9DBFE61CFFF1F200B78293 /* AddSoundViewController.swift */,
 				0B00948D1CF6FFB90041B3B5 /* SettingViewController.swift */,
-				0B94338A1D0275AA00A93027 /* AssistViewController.swift */,
 				0B59AD371D07AFED00E740F5 /* AssistTableViewController.swift */,
+				0B94338A1D0275AA00A93027 /* AssistViewController.swift */,
 				0BD4F1531D051A28001AA8EC /* MailContentViewController.swift */,
 				0B09F2481D02C38E006F11D5 /* ChosePostsViewController.swift */,
 				0BADA6161CFB3089001702D7 /* Main.storyboard */,
 				0B0094921CF6FFB90041B3B5 /* Assets.xcassets */,
+				0BDD5B061D086B170091DD20 /* mokuhyou.png */,
+				0BDD5B041D086AC60091DD20 /* ema.png */,
+				0B5AFA7B1D0855FA001D3DCA /* s_ema.png */,
+				0B5AFA7F1D085C10001D3DCA /* s_makeruna.png */,
 				0BC1DB111D037B3B00D203C1 /* s_question.png */,
 				0BC1DB0F1D0378E100D203C1 /* question.png */,
 				0B0538371D03041900D3AF6B /* friend.jpg */,
@@ -421,15 +442,19 @@
 				0B0094BE1CF70C440041B3B5 /* posts.txt in Resources */,
 				0B0094961CF6FFB90041B3B5 /* LaunchScreen.storyboard in Resources */,
 				0B59AD3A1D07B1B000E740F5 /* assistInfoCell.xib in Resources */,
+				0BDD5B071D086B170091DD20 /* mokuhyou.png in Resources */,
 				0B0538341D02FD8B00D3AF6B /* lawyer.jpg in Resources */,
 				0B0538381D03041900D3AF6B /* friend.jpg in Resources */,
 				0BE2489C1D05AAE1002BEC1F /* dateTimeCell.xib in Resources */,
 				0B05382E1D02FD7D00D3AF6B /* assailant.jpg in Resources */,
 				0BC1DB101D0378E100D203C1 /* question.png in Resources */,
+				0B5AFA7A1D084CEA001D3DCA /* homeIntroCell.xib in Resources */,
 				0B59AD3E1D07B61900E740F5 /* assistInfoDetailCell.xib in Resources */,
 				0BFFF9D31CF82D8400CD1D65 /* pic3.JPG in Resources */,
 				0BFFF9D11CF82C8900CD1D65 /* selfee.JPG in Resources */,
+				0B5AFA7C1D0855FA001D3DCA /* s_ema.png in Resources */,
 				0BE248A41D05AEE0002BEC1F /* bottomCell.xib in Resources */,
+				0BDD5B051D086AC60091DD20 /* ema.png in Resources */,
 				0B0094931CF6FFB90041B3B5 /* Assets.xcassets in Resources */,
 				0BC1DB121D037B3B00D203C1 /* s_question.png in Resources */,
 				0B0538301D02FD8300D3AF6B /* professor.jpg in Resources */,
@@ -438,6 +463,7 @@
 				0BA5624F1CFB112600760490 /* bgImage.JPG in Resources */,
 				0B05382C1D02FD7700D3AF6B /* committeee のコピー.jpg in Resources */,
 				0B06302B1D07DDBE00F9E98B /* mailContents.txt in Resources */,
+				0B5AFA801D085C10001D3DCA /* s_makeruna.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -600,6 +626,7 @@
 				0B59AD3C1D07B55A00E740F5 /* assistInfoTableViewCell.swift in Sources */,
 				0B09F2491D02C38E006F11D5 /* ChosePostsViewController.swift in Sources */,
 				0B00948A1CF6FFB90041B3B5 /* AppDelegate.swift in Sources */,
+				0B029EE31D08FB7400A747C9 /* HomeNavigationController.swift in Sources */,
 				0B59AD401D07B68100E740F5 /* assistInfoDetailTableViewCell.swift in Sources */,
 				0BE248A21D05ACEE002BEC1F /* datePickerTableViewCell.swift in Sources */,
 				0B0094C01CF70D760041B3B5 /* homeTableViewCell.swift in Sources */,
@@ -608,6 +635,7 @@
 				0B00948C1CF6FFB90041B3B5 /* HomeViewController.swift in Sources */,
 				0BE248981D05A97A002BEC1F /* AddTableViewController.swift in Sources */,
 				0B59AD381D07AFEE00E740F5 /* AssistTableViewController.swift in Sources */,
+				0B5AFA7E1D085651001D3DCA /* homeIntroTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
