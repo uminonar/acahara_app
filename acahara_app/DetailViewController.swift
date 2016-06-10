@@ -10,6 +10,10 @@ import UIKit
 
 class DetailViewController: UIViewController {
     
+    private var watchImageMode = false
+    private var beforePoint = CGPointMake(0.0, 0.0)
+    private var currentScale:CGFloat = 1.0
+    
     var dtSelectedIndex = -1
 
     var posts:NSMutableArray = []
@@ -29,6 +33,8 @@ class DetailViewController: UIViewController {
         super.viewDidLoad()
 
         detailSelfee.image = UIImage(named: "selfee.JPG")
+        
+       
     }
     
     

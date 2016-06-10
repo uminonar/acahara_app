@@ -12,6 +12,7 @@ class AssistTableViewController: UIViewController,UITableViewDelegate,UITableVie
 
     var expandflag = false
     var rownumber = 3
+    
 
     @IBOutlet weak var assistBars: UIButton!
     
@@ -178,6 +179,13 @@ class AssistTableViewController: UIViewController,UITableViewDelegate,UITableVie
                                 
                             cell.friend.addTarget(self, action:Selector("insert:"), forControlEvents:UIControlEvents.TouchUpInside)
                             cell.friend.tag = 600//friend
+            
+            
+            
+    
+            
+            
+            
                                 
                             return cell
         }

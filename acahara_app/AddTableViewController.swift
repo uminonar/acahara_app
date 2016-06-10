@@ -13,6 +13,9 @@ import Photos
 import AVFoundation
 
 class AddTableViewController: UIViewController,UITableViewDelegate,UITableViewDataSource, UIImagePickerControllerDelegate,UITextFieldDelegate,UINavigationControllerDelegate{
+    
+    
+
   
     @IBOutlet weak var addSaveBtn: UIButton!
     
@@ -228,9 +231,10 @@ class AddTableViewController: UIViewController,UITableViewDelegate,UITableViewDa
                         cell.picCancelBtn.hidden = true
                 }
                 
-                
                 cell.picCancelBtn.addTarget(self, action: "cancelPicture", forControlEvents: .TouchUpInside)
 
+
+                
                 // MARK: Movie表示
                 //Movieが選択された時のURLを取得する -----------------------------
                 var strMovURL = myDefault.stringForKey("selectedMovieURL")
@@ -287,6 +291,9 @@ class AddTableViewController: UIViewController,UITableViewDelegate,UITableViewDa
     
         }
     }
+    
+
+    
     
     func cancelPicture(){
         var myDefault = NSUserDefaults.standardUserDefaults()
