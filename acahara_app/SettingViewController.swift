@@ -15,6 +15,27 @@ class SettingViewController: UIViewController {
     @IBOutlet weak var settingSelgeeC: UIImageView!
     @IBOutlet weak var settingBgImage: UIImageView!
     @IBOutlet weak var settingBgImageC: UIImageView!
+    
+    @IBAction func settingNameField(sender: UITextField) {
+        self.resignFirstResponder()
+    }
+    
+    @IBAction func settingSentEmail(sender: UITextField) {
+        self.resignFirstResponder()
+    }
+    
+    @IBAction func settingContEmail(sender: UITextField) {
+        self.resignFirstResponder()
+    }
+    
+   
+
+
+    
+    
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         settingBgImage.image = UIImage(named: "bgImage.JPG")
@@ -34,7 +55,17 @@ class SettingViewController: UIViewController {
         
     }
 
-   
+    @IBAction func bgImageCBtn(sender: UIButton) {
+        
+        //画像選択をして、それをbgimageと取り替える
+        
+    }
+       @IBAction func selfeeCBtn(sender: UIButton) {
+        
+        //画像選択をして、それをselfeeimageと取り替える
+        
+    }
+
     
     
     override func didReceiveMemoryWarning() {

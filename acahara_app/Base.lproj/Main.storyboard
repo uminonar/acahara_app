@@ -328,7 +328,7 @@
             </objects>
             <point key="canvasLocation" x="4454" y="90"/>
         </scene>
-        <!--Item-->
+        <!--アシスト-->
         <scene sceneID="pX6-Dr-I9k">
             <objects>
                 <viewController storyboardIdentifier="AssistTableVIewController" id="wnK-gz-YAn" customClass="AssistTableViewController" customModule="acahara_app" customModuleProvider="target" sceneMemberID="viewController">
@@ -343,16 +343,6 @@
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="A5B-Y7-Fda">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="65"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LA5-hA-srW">
-                                        <rect key="frame" x="8" y="27" width="75" height="30"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <state key="normal" title="キャンセル">
-                                            <color key="titleColor" red="1" green="0.40000000600000002" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="cancelBtn:" destination="wnK-gz-YAn" eventType="touchUpInside" id="tQQ-qd-mPQ"/>
-                                        </connections>
-                                    </button>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="esE-UM-yil">
                                         <rect key="frame" x="274" y="27" width="30" height="29"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -362,6 +352,10 @@
                                         <connections>
                                             <action selector="saveBtn:" destination="wnK-gz-YAn" eventType="touchUpInside" id="lpa-ta-4BV"/>
                                         </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GVb-IG-Ua9">
+                                        <rect key="frame" x="8" y="21" width="35" height="30"/>
+                                        <state key="normal" title="Button"/>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
@@ -387,15 +381,16 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" id="KJn-MB-4xv"/>
+                    <tabBarItem key="tabBarItem" title="アシスト" image="shand.png" id="KJn-MB-4xv"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
+                        <outlet property="assistBars" destination="GVb-IG-Ua9" id="xeF-xL-j9W"/>
                         <outlet property="assistTableView" destination="vNm-fH-ARN" id="Q34-ds-Utm"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6Pd-ju-pJv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="873" y="-706"/>
+            <point key="canvasLocation" x="895" y="-826"/>
         </scene>
         <!--Add Diary View Controller-->
         <scene sceneID="fUl-bo-QwH">
@@ -483,48 +478,48 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="V6I-Tg-iGb">
-                                <rect key="frame" x="8" y="78" width="40" height="40"/>
+                                <rect key="frame" x="8" y="107" width="40" height="40"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="uminonar" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NMz-DZ-RAs">
-                                <rect key="frame" x="55" y="71" width="75" height="21"/>
+                                <rect key="frame" x="55" y="100" width="75" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="2013/05/15 13:45 頃" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0jv-qg-s4f">
-                                <rect key="frame" x="55" y="86" width="98" height="21"/>
+                                <rect key="frame" x="55" y="115" width="98" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="10"/>
                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="共生館３階ミーティングルーム" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bcv-Uh-T15">
-                                <rect key="frame" x="55" y="101" width="140" height="21"/>
+                                <rect key="frame" x="55" y="130" width="140" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="10"/>
                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="稲陰正彦教授" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U65-q1-zge">
-                                <rect key="frame" x="55" y="116" width="60" height="21"/>
+                                <rect key="frame" x="55" y="145" width="60" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="10"/>
                                 <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="慶應義塾大学大学院メディアデザイン研究科　" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2gj-aF-hkg">
-                                <rect key="frame" x="55" y="131" width="210" height="21"/>
+                                <rect key="frame" x="55" y="160" width="210" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="10"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="2時間前" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="96I-h0-kSy">
-                                <rect key="frame" x="254" y="72" width="61" height="23"/>
+                                <rect key="frame" x="254" y="101" width="61" height="23"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="11"/>
                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Qal-zx-VYg">
-                                <rect key="frame" x="14" y="448" width="290" height="142"/>
+                                <rect key="frame" x="55" y="456" width="249" height="142"/>
                             </imageView>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="xIZ-gX-Gth">
-                                <rect key="frame" x="8" y="160" width="301" height="280"/>
+                                <rect key="frame" x="46" y="192" width="263" height="356"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
@@ -548,7 +543,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gqd-fK-SM2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1640" y="-1456"/>
+            <point key="canvasLocation" x="3510" y="-1901"/>
         </scene>
         <!--Add Where View Controller-->
         <scene sceneID="Kew-QI-ZGB">
@@ -1072,7 +1067,7 @@
             </objects>
             <point key="canvasLocation" x="1473" y="199"/>
         </scene>
-        <!--setting-->
+        <!--設定-->
         <scene sceneID="wg7-f3-ORb">
             <objects>
                 <viewController storyboardIdentifier="SettingViewController" id="8rJ-Kc-sve" customClass="SettingViewController" customModule="acahara_app" customModuleProvider="target" sceneMemberID="viewController">
@@ -1087,7 +1082,7 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lc3-uK-iQS">
                                 <rect key="frame" x="160" y="49" width="0.0" height="0.0"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="bgImage.JPG" translatesAutoresizingMaskIntoConstraints="NO" id="nkK-ah-l7n">
@@ -1102,27 +1097,64 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ROM-kh-YZ8">
                                 <rect key="frame" x="143" y="34" width="33" height="30"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="nickname:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XSi-Xk-A6X">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="user name:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XSi-Xk-A6X">
                                 <rect key="frame" x="68" y="112" width="79" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="uminonar" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="8up-ph-H1m">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="好きな名前を入れてください" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="8up-ph-H1m">
                                 <rect key="frame" x="68" y="132" width="235" height="30"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="settingNameField:" destination="8rJ-Kc-sve" eventType="editingDidEndOnExit" id="RrS-18-bK4"/>
+                                </connections>
                             </textField>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="記録の自動送信さmail address:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wcb-Sd-myZ">
-                                <rect key="frame" x="20" y="181" width="271" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="記録の自動送信先 email:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wcb-Sd-myZ">
+                                <rect key="frame" x="20" y="174" width="271" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bLV-xd-hwt">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="90"/>
+                                <connections>
+                                    <action selector="bgImageCBtn:" destination="8rJ-Kc-sve" eventType="touchUpInside" id="1ps-X6-hEg"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dx2-rQ-NLW">
+                                <rect key="frame" x="14" y="120" width="46" height="42"/>
+                                <connections>
+                                    <action selector="selfeeCBtn:" destination="8rJ-Kc-sve" eventType="touchUpInside" id="JjI-ID-eBr"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="連絡先のemail:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bxf-Bx-WWq">
+                                <rect key="frame" x="20" y="242" width="114" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="連絡先メールを設定してください" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="7Sa-jM-TDa">
+                                <rect key="frame" x="20" y="264" width="283" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="settingContEmail:" destination="8rJ-Kc-sve" eventType="editingDidEndOnExit" id="Nwf-2C-xyl"/>
+                                </connections>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="自動送信先メールを設定してください" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="Gvq-Xf-QJr">
+                                <rect key="frame" x="19" y="196" width="283" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="settingSentEmail:" destination="8rJ-Kc-sve" eventType="editingDidEndOnExit" id="BeI-zn-oHD"/>
+                                </connections>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="setting" image="second" id="cPa-gy-q4n"/>
+                    <tabBarItem key="tabBarItem" title="設定" image="ssetting.png" id="cPa-gy-q4n"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
                         <outlet property="settingBgImage" destination="nkK-ah-l7n" id="Ot5-9x-dML"/>
@@ -1280,7 +1312,7 @@
         <!--Tab Bar Controller-->
         <scene sceneID="DGx-O7-fe8">
             <objects>
-                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="QiM-gj-Thz" sceneMemberID="viewController">
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="QiM-gj-Thz" customClass="TabBarController" customModule="acahara_app" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" id="mfY-Mm-P7U">
                         <autoresizingMask key="autoresizingMask"/>
@@ -1294,13 +1326,13 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oUi-Vr-v48" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-279" y="-73"/>
+            <point key="canvasLocation" x="-30" y="-200"/>
         </scene>
-        <!--Home-->
+        <!--記録-->
         <scene sceneID="ktl-z2-Gpu">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="kmR-6f-bWc" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Home" id="o1I-ZY-DA3"/>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="kmR-6f-bWc" customClass="HomeNavigationController" customModule="acahara_app" customModuleProvider="target" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="記録" image="ssfolder.png" id="o1I-ZY-DA3"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="e23-0V-7wY">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -1325,7 +1357,9 @@
         <image name="professor.jpg" width="60" height="60"/>
         <image name="psycotherapist.jpg" width="60" height="60"/>
         <image name="s_question.png" width="150" height="150"/>
-        <image name="second" width="30" height="30"/>
         <image name="selfee.JPG" width="2448" height="3264"/>
+        <image name="shand.png" width="30" height="30"/>
+        <image name="ssetting.png" width="30" height="30"/>
+        <image name="ssfolder.png" width="28" height="28"/>
     </resources>
 </document>

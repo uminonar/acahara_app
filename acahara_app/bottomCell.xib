@@ -7,20 +7,20 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="397" id="tA9-Qh-LHL" customClass="bottomTableViewCell" customModule="acahara_app" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="320" height="397"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="435" id="tA9-Qh-LHL" customClass="bottomTableViewCell" customModule="acahara_app" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="434"/>
             <autoresizingMask key="autoresizingMask"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="tA9-Qh-LHL" id="MJ7-2I-Doi">
-                <rect key="frame" x="0.0" y="0.0" width="320" height="396"/>
+                <rect key="frame" x="0.0" y="0.0" width="320" height="433"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <textField opaque="NO" clipsSubviews="YES" tag="3000" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="誰が問題ですか？" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="XuH-Y7-MQK">
-                        <rect key="frame" x="8" y="46" width="304" height="30"/>
+                        <rect key="frame" x="8" y="52" width="304" height="30"/>
                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                         <textInputTraits key="textInputTraits"/>
                     </textField>
                     <textField opaque="NO" clipsSubviews="YES" tag="4000" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="どこの大学の何学部/学科ですか？" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="5dg-U3-rqd">
-                        <rect key="frame" x="8" y="84" width="304" height="30"/>
+                        <rect key="frame" x="8" y="92" width="304" height="30"/>
                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                         <textInputTraits key="textInputTraits"/>
                     </textField>
@@ -37,44 +37,54 @@
                         <rect key="frame" x="233" y="277" width="50" height="50"/>
                     </imageView>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="r0m-pm-8tO">
-                        <rect key="frame" x="83" y="363" width="25" height="25"/>
+                        <rect key="frame" x="100" y="400" width="25" height="25"/>
                     </imageView>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="MGi-2v-S9H">
-                        <rect key="frame" x="60" y="368" width="15" height="15"/>
+                        <rect key="frame" x="77" y="405" width="15" height="15"/>
                     </imageView>
                     <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ylr-nQ-SqT">
-                        <rect key="frame" x="244" y="360" width="51" height="31"/>
+                        <rect key="frame" x="251" y="397" width="51" height="31"/>
                     </switch>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="相談に利用予定" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h5i-Vo-nrP">
-                        <rect key="frame" x="141" y="365" width="102" height="21"/>
+                        <rect key="frame" x="146" y="404" width="102" height="21"/>
                         <fontDescription key="fontDescription" type="system" pointSize="13"/>
                         <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3Tz-wh-EVR">
-                        <rect key="frame" x="67" y="265" width="98" height="74"/>
-                    </button>
-                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="orR-DF-BkI">
-                        <rect key="frame" x="190" y="265" width="103" height="74"/>
-                    </button>
-                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CLC-Z6-rcH">
-                        <rect key="frame" x="60" y="362" width="48" height="30"/>
-                    </button>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="QDx-kM-l9c">
-                        <rect key="frame" x="76" y="236" width="217" height="119"/>
-                    </imageView>
                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="大丈夫！しっかり記録していきましょう。具体的にどんなことが起きましたか？" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="37f-P8-Wcl">
-                        <rect key="frame" x="8" y="122" width="304" height="106"/>
+                        <rect key="frame" x="8" y="135" width="304" height="104"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                     </textView>
                     <textField opaque="NO" clipsSubviews="YES" tag="2000" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder=" どこでその問題は起きましたか？" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dRm-FQ-5hX">
-                        <rect key="frame" x="8" y="8" width="304" height="30"/>
+                        <rect key="frame" x="8" y="10" width="304" height="30"/>
                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                         <textInputTraits key="textInputTraits"/>
                     </textField>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="QDx-kM-l9c">
+                        <rect key="frame" x="77" y="252" width="228" height="132"/>
+                    </imageView>
+                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="P8a-QJ-rsb" customClass="AVPlayerView" customModule="acahara_app" customModuleProvider="target">
+                        <rect key="frame" x="83" y="254" width="228" height="130"/>
+                    </view>
+                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="orR-DF-BkI">
+                        <rect key="frame" x="190" y="270" width="103" height="74"/>
+                    </button>
+                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CLC-Z6-rcH">
+                        <rect key="frame" x="77" y="397" width="48" height="30"/>
+                    </button>
+                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rhn-Yj-UJs">
+                        <rect key="frame" x="270" y="252" width="30" height="30"/>
+                        <color key="tintColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
+                        <state key="normal">
+                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        </state>
+                    </button>
+                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3Tz-wh-EVR">
+                        <rect key="frame" x="69" y="265" width="98" height="74"/>
+                    </button>
                 </subviews>
             </tableViewCellContentView>
             <connections>
@@ -91,11 +101,13 @@
                 <outlet property="addWhere" destination="dRm-FQ-5hX" id="P70-HC-UhY"/>
                 <outlet property="addWho" destination="XuH-Y7-MQK" id="73p-YI-89D"/>
                 <outlet property="movieFileBtn" destination="orR-DF-BkI" id="uzQ-dY-SRK"/>
+                <outlet property="movieView" destination="P8a-QJ-rsb" id="Qz9-ht-APv"/>
                 <outlet property="picBase" destination="QDx-kM-l9c" id="e0a-If-adF"/>
+                <outlet property="picCancelBtn" destination="rhn-Yj-UJs" id="TxW-N1-mVO"/>
                 <outlet property="picFileBtn" destination="3Tz-wh-EVR" id="Weg-dx-9y7"/>
                 <outlet property="tapSound" destination="CLC-Z6-rcH" id="HGb-Ci-fdj"/>
             </connections>
-            <point key="canvasLocation" x="-6" y="254.5"/>
+            <point key="canvasLocation" x="-55" y="-73"/>
         </tableViewCell>
     </objects>
 </document>

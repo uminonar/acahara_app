@@ -7,15 +7,21 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="91" id="n05-Zh-gXy" customClass="homeIntroTableViewCell" customModule="acahara_app" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="320" height="80"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="79" id="n05-Zh-gXy" customClass="homeIntroTableViewCell" customModule="acahara_app" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="68"/>
             <autoresizingMask key="autoresizingMask"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="n05-Zh-gXy" id="Tpa-SI-3Uf">
-                <rect key="frame" x="0.0" y="0.0" width="320" height="79"/>
+                <rect key="frame" x="0.0" y="0.0" width="320" height="67"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="気にせず良い論文を書くぞ！" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WFO-vZ-U44">
+                        <rect key="frame" x="91" y="26" width="221" height="21"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="s_ema.png" translatesAutoresizingMaskIntoConstraints="NO" id="qEv-xd-EbR">
-                        <rect key="frame" x="130" y="10" width="61" height="54"/>
+                        <rect key="frame" x="16" y="8" width="56" height="50"/>
                     </imageView>
                 </subviews>
             </tableViewCellContentView>
@@ -23,7 +29,7 @@
             <connections>
                 <outlet property="homeIntroEma" destination="qEv-xd-EbR" id="hLW-At-mdU"/>
             </connections>
-            <point key="canvasLocation" x="222" y="184"/>
+            <point key="canvasLocation" x="222" y="178"/>
         </tableViewCell>
     </objects>
     <resources>

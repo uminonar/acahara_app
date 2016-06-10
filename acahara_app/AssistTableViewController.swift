@@ -13,6 +13,7 @@ class AssistTableViewController: UIViewController,UITableViewDelegate,UITableVie
     var expandflag = false
     var rownumber = 3
 
+    @IBOutlet weak var assistBars: UIButton!
     
     var mailContent = Dictionary<String,String>()
 
@@ -32,6 +33,11 @@ class AssistTableViewController: UIViewController,UITableViewDelegate,UITableVie
         
         //テーブルビューの罫線を消す
         assistTableView.separatorColor = UIColor.clearColor()
+        
+        
+        
+        
+        
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -328,14 +334,14 @@ class AssistTableViewController: UIViewController,UITableViewDelegate,UITableVie
         
         
     }
-    
+    //MARK:ここでcellの高さが決まっている
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat
     {
         if indexPath.row == 0 {
             return 35
         }
         if indexPath.row == 1 {
-            return 380
+            return 430
         }
         if indexPath.row == 2 {
             return 180
@@ -368,19 +374,19 @@ class AssistTableViewController: UIViewController,UITableViewDelegate,UITableVie
         
     }
     
-    @IBAction func cancelBtn(sender: UIButton) {
-        var myDefault = NSUserDefaults.standardUserDefaults()
-        myDefault.removeObjectForKey("selectedAdvisor")
-        myDefault.removeObjectForKey("editedText")
-        myDefault.synchronize()
-        
-        assistTableView.reloadData()
-        
-        //assistMailContentを空にする、いらない
-        //        assistMailContent.text = ""
-        
-
-    }
+//    @IBAction func cancelBtn(sender: UIButton) {
+//        var myDefault = NSUserDefaults.standardUserDefaults()
+//        myDefault.removeObjectForKey("selectedAdvisor")
+//        myDefault.removeObjectForKey("editedText")
+//        myDefault.synchronize()
+//        
+//        assistTableView.reloadData()
+//        
+//        //assistMailContentを空にする、いらない
+//        //        assistMailContent.text = ""
+//        
+//
+//    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

@@ -13,17 +13,23 @@ class HomeNavigationController: UINavigationController,UINavigationControllerDel
     override func viewDidLoad() {
         super.viewDidLoad()
         self.delegate = self
-        
+        //高さを変更する
+        self.navigationBar.frame = CGRectMake(0,0, UIScreen.mainScreen().bounds.size.width, 90)
         
     }
     
     //画面遷移後の呼び出しメソッド
     func navigationController(navigationController: UINavigationController, didShowViewController viewController: UIViewController, animated: Bool) {
         
+        self.navigationBar.frame = CGRectMake(0,0, UIScreen.mainScreen().bounds.size.width, 90)
+        
         //ナビゲーションバーの背景画像を設定する。
         self.navigationBar.setBackgroundImage(UIImage(named: "bgImage.JPG"), forBarMetrics: .Default)
         
-        self.navigationBar.tintColor = UIColor.redColor()
+        self.navigationBar.tintColor = UIColor.whiteColor()
+        
+        
+        
         
         //ナビゲーションバーのシャドウイメージを設定する。
 //        self.navigationBar.shadowImage = UIImage(named: "mokume_test2.png")
