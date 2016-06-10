@@ -13,6 +13,7 @@ class HomeViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
     var selectedIndex = -1
     @IBOutlet weak var homeTableView: UITableView!
 
+    @IBOutlet weak var homeBars: UIButton!
   
     // ボタンを用意
     var addBtn: UIBarButtonItem!
@@ -34,6 +35,14 @@ class HomeViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
         self.navigationItem.rightBarButtonItem = addBtn
         
         //イメージに背景画像を設置
+        
+        let bars = FAKFontAwesome.barsIconWithSize(20)
+        //下記でアイコンの色も変えられます
+        bars.addAttribute(NSForegroundColorAttributeName, value: UIColor.whiteColor())
+        
+        let barsImage = bars.imageWithSize(CGSizeMake(20, 20))
+        
+        homeBars.setImage(barsImage, forState: .Normal)
         
        
 

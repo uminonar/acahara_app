@@ -14,14 +14,14 @@ class HomeNavigationController: UINavigationController,UINavigationControllerDel
         super.viewDidLoad()
         self.delegate = self
         //高さを変更する
-        self.navigationBar.frame = CGRectMake(0,0, UIScreen.mainScreen().bounds.size.width, 90)
+        self.navigationBar.frame = CGRectMake(0,0, UIScreen.mainScreen().bounds.size.width, 65)
         
     }
     
     //画面遷移後の呼び出しメソッド
     func navigationController(navigationController: UINavigationController, didShowViewController viewController: UIViewController, animated: Bool) {
         
-        self.navigationBar.frame = CGRectMake(0,0, UIScreen.mainScreen().bounds.size.width, 90)
+        self.navigationBar.frame = CGRectMake(0,0, UIScreen.mainScreen().bounds.size.width, 65)
         
         //ナビゲーションバーの背景画像を設定する。
         self.navigationBar.setBackgroundImage(UIImage(named: "bgImage.JPG"), forBarMetrics: .Default)

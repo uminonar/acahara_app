@@ -21,7 +21,7 @@
                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                     </textView>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="troubled_s.png" translatesAutoresizingMaskIntoConstraints="NO" id="4SN-yj-KXq">
-                        <rect key="frame" x="122" y="115" width="77" height="80"/>
+                        <rect key="frame" x="131" y="115" width="72" height="70"/>
                     </imageView>
                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="やり方は簡単です！まず、相談したい相手方のタイプを選んでください。そうすると相談内容の雛形が現れます。それを編集してください。次に、相談者に見せたい記録内容を選んでください。あとは送信するだけです。" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Vfr-bB-aLb">
                         <rect key="frame" x="21" y="203" width="283" height="98"/>
@@ -30,7 +30,7 @@
                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                     </textView>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="happy_s.png" translatesAutoresizingMaskIntoConstraints="NO" id="Fq9-RJ-AEC">
-                        <rect key="frame" x="129" y="318" width="74" height="77"/>
+                        <rect key="frame" x="134" y="315" width="69" height="70"/>
                     </imageView>
                 </subviews>
             </tableViewCellContentView>

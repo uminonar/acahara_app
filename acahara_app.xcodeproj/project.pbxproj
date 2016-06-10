@@ -18,6 +18,7 @@
 		0B0094BE1CF70C440041B3B5 /* posts.txt in Resources */ = {isa = PBXBuildFile; fileRef = 0B0094BD1CF70C440041B3B5 /* posts.txt */; };
 		0B0094C01CF70D760041B3B5 /* homeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B0094BF1CF70D760041B3B5 /* homeTableViewCell.swift */; };
 		0B029EE31D08FB7400A747C9 /* HomeNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B029EE21D08FB7400A747C9 /* HomeNavigationController.swift */; };
+		0B030BAA1D0A7E5400C8E08D /* ssgSetting.png in Resources */ = {isa = PBXBuildFile; fileRef = 0B030BA91D0A7E5400C8E08D /* ssgSetting.png */; };
 		0B03D2901CF7D58E0050119E /* AddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B03D28F1CF7D58E0050119E /* AddViewController.swift */; };
 		0B03D2921CF7F4FB0050119E /* AddWhereViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B03D2911CF7F4FB0050119E /* AddWhereViewController.swift */; };
 		0B03D2941CF7F6050050119E /* AddWhoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B03D2931CF7F6050050119E /* AddWhoViewController.swift */; };
@@ -65,7 +66,6 @@
 		0BE248A41D05AEE0002BEC1F /* bottomCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0BE248A31D05AEE0002BEC1F /* bottomCell.xib */; };
 		0BE248A61D05B18E002BEC1F /* bottomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BE248A51D05B18E002BEC1F /* bottomTableViewCell.swift */; };
 		0BFF45CD1D0A637A0016FCB5 /* shand.png in Resources */ = {isa = PBXBuildFile; fileRef = 0BFF45CC1D0A637A0016FCB5 /* shand.png */; };
-		0BFF45D11D0A63850016FCB5 /* ssetting.png in Resources */ = {isa = PBXBuildFile; fileRef = 0BFF45D01D0A63850016FCB5 /* ssetting.png */; };
 		0BFF45D31D0A65D70016FCB5 /* ssfolder.png in Resources */ = {isa = PBXBuildFile; fileRef = 0BFF45D21D0A65D70016FCB5 /* ssfolder.png */; };
 		0BFFF9D11CF82C8900CD1D65 /* selfee.JPG in Resources */ = {isa = PBXBuildFile; fileRef = 0BFFF9D01CF82C8900CD1D65 /* selfee.JPG */; };
 		0BFFF9D31CF82D8400CD1D65 /* pic3.JPG in Resources */ = {isa = PBXBuildFile; fileRef = 0BFFF9D21CF82D8400CD1D65 /* pic3.JPG */; };
@@ -114,6 +114,7 @@
 		0B0094C61CF71A9B0041B3B5 /* acahara_appTests-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "acahara_appTests-Bridging-Header.h"; sourceTree = "<group>"; };
 		0B0094C71CF71A9B0041B3B5 /* acahara_appUITests-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "acahara_appUITests-Bridging-Header.h"; sourceTree = "<group>"; };
 		0B029EE21D08FB7400A747C9 /* HomeNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeNavigationController.swift; sourceTree = "<group>"; };
+		0B030BA91D0A7E5400C8E08D /* ssgSetting.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ssgSetting.png; sourceTree = "<group>"; };
 		0B03D28F1CF7D58E0050119E /* AddViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddViewController.swift; sourceTree = "<group>"; };
 		0B03D2911CF7F4FB0050119E /* AddWhereViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddWhereViewController.swift; sourceTree = "<group>"; };
 		0B03D2931CF7F6050050119E /* AddWhoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddWhoViewController.swift; sourceTree = "<group>"; };
@@ -161,7 +162,6 @@
 		0BE248A31D05AEE0002BEC1F /* bottomCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = bottomCell.xib; sourceTree = "<group>"; };
 		0BE248A51D05B18E002BEC1F /* bottomTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = bottomTableViewCell.swift; sourceTree = "<group>"; };
 		0BFF45CC1D0A637A0016FCB5 /* shand.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = shand.png; sourceTree = "<group>"; };
-		0BFF45D01D0A63850016FCB5 /* ssetting.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ssetting.png; sourceTree = "<group>"; };
 		0BFF45D21D0A65D70016FCB5 /* ssfolder.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ssfolder.png; sourceTree = "<group>"; };
 		0BFFF9D01CF82C8900CD1D65 /* selfee.JPG */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = selfee.JPG; sourceTree = "<group>"; };
 		0BFFF9D21CF82D8400CD1D65 /* pic3.JPG */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = pic3.JPG; sourceTree = "<group>"; };
@@ -269,8 +269,8 @@
 				0B09F2481D02C38E006F11D5 /* ChosePostsViewController.swift */,
 				0BADA6161CFB3089001702D7 /* Main.storyboard */,
 				0B0094921CF6FFB90041B3B5 /* Assets.xcassets */,
+				0B030BA91D0A7E5400C8E08D /* ssgSetting.png */,
 				0BFF45D21D0A65D70016FCB5 /* ssfolder.png */,
-				0BFF45D01D0A63850016FCB5 /* ssetting.png */,
 				0BFF45CC1D0A637A0016FCB5 /* shand.png */,
 				0B772C691D09ACB100086E17 /* troubled_s.png */,
 				0B772C671D09ACAB00086E17 /* happy_s.png */,
@@ -455,6 +455,7 @@
 				0B0538321D02FD8700D3AF6B /* psycotherapist.jpg in Resources */,
 				0B0094BA1CF708120041B3B5 /* postCustomCell.xib in Resources */,
 				0B59AD441D07BA0F00E740F5 /* assistChoseAdvisorCell.xib in Resources */,
+				0B030BAA1D0A7E5400C8E08D /* ssgSetting.png in Resources */,
 				0B59AD481D07C01600E740F5 /* assistChosePostsCell.xib in Resources */,
 				0BE248A01D05AC8D002BEC1F /* datePickerCell.xib in Resources */,
 				0B0094BE1CF70C440041B3B5 /* posts.txt in Resources */,
@@ -476,7 +477,6 @@
 				0BE248A41D05AEE0002BEC1F /* bottomCell.xib in Resources */,
 				0B772C6A1D09ACB100086E17 /* troubled_s.png in Resources */,
 				0BDD5B051D086AC60091DD20 /* ema.png in Resources */,
-				0BFF45D11D0A63850016FCB5 /* ssetting.png in Resources */,
 				0B0094931CF6FFB90041B3B5 /* Assets.xcassets in Resources */,
 				0BC1DB121D037B3B00D203C1 /* s_question.png in Resources */,
 				0B0538301D02FD8300D3AF6B /* professor.jpg in Resources */,

@@ -34,7 +34,13 @@ class AssistTableViewController: UIViewController,UITableViewDelegate,UITableVie
         //テーブルビューの罫線を消す
         assistTableView.separatorColor = UIColor.clearColor()
         
+        let bars = FAKFontAwesome.barsIconWithSize(20)
+        //下記でアイコンの色も変えられます
+        bars.addAttribute(NSForegroundColorAttributeName, value: UIColor.whiteColor())
         
+        let barsImage = bars.imageWithSize(CGSizeMake(20, 20))
+        
+        assistBars.setImage(barsImage, forState: .Normal)
         
         
         
@@ -374,6 +380,7 @@ class AssistTableViewController: UIViewController,UITableViewDelegate,UITableVie
         
     }
     
+//    TODO:キャンセルボタンをどう実装する？決定、取り消し
 //    @IBAction func cancelBtn(sender: UIButton) {
 //        var myDefault = NSUserDefaults.standardUserDefaults()
 //        myDefault.removeObjectForKey("selectedAdvisor")
@@ -387,6 +394,17 @@ class AssistTableViewController: UIViewController,UITableViewDelegate,UITableVie
 //        
 //
 //    }
+    
+    
+    @IBAction func assistBarBtn(sender: UIButton) {
+        
+        //TODO:サイドバーを表示する
+        
+    }
+    
+    
+    
+    
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
