@@ -11,6 +11,18 @@ import UIKit
 
 class ProcessViewController: UIViewController {
 
+    @IBOutlet weak var troubledWoman: UIImageView!
+    
+    
+    
+    
+    
+  
+    
+    
+    @IBOutlet weak var prepare: UIImageView!
+    @IBOutlet weak var advisors: UIImageView!
+    @IBOutlet weak var pen: UIImageView!
 
     @IBOutlet weak var recordCircle: UIView!
     @IBOutlet weak var assistCircle: UIView!

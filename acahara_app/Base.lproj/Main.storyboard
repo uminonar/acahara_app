@@ -1416,6 +1416,43 @@
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="troubledWoman.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="14R-Hv-GM5">
+                                        <rect key="frame" x="0.0" y="627" width="320" height="184"/>
+                                    </imageView>
+                                    <view alpha="0.69999999999999996" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="NfB-rZ-3f3">
+                                        <rect key="frame" x="0.0" y="627" width="320" height="184"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="まずは落ち着いて" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LTv-N4-aFv">
+                                                <rect key="frame" x="92" y="75" width="136" height="21"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="~Step 1~" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TnJ-yl-OeU">
+                                                <rect key="frame" x="127" y="33" width="67" height="21"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <color key="textColor" red="0.0" green="0.50196081400000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="記録をとりましょう！" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pzu-4I-RRe">
+                                                <rect key="frame" x="75" y="114" width="170" height="21"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <color key="backgroundColor" red="1" green="0.856791498947024" blue="0.79167299555235626" alpha="1" colorSpace="calibratedRGB"/>
+                                    </view>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="se9-fh-usK">
+                                        <rect key="frame" x="40" y="1028" width="240" height="128"/>
+                                    </imageView>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uB3-bz-2Nk">
+                                        <rect key="frame" x="14" y="826" width="292" height="194"/>
+                                        <mutableString key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</mutableString>
+                                        <color key="textColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                    </textView>
                                 </subviews>
                                 <color key="backgroundColor" red="1" green="0.40000000600000002" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
                             </scrollView>
@@ -1447,13 +1484,17 @@
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="320" height="10000"/>
                     <connections>
+                        <outlet property="advisors" destination="OBD-Mn-FMf" id="icZ-mu-I0c"/>
                         <outlet property="assistCircle" destination="CB6-Jm-YBA" id="b8c-S7-AqX"/>
+                        <outlet property="pen" destination="MJk-gU-MOD" id="rmb-BD-wZ1"/>
+                        <outlet property="prepare" destination="l1x-KC-XTx" id="aJt-bH-EL2"/>
                         <outlet property="prepareCircle" destination="mbA-sI-r2F" id="2y5-Qq-lcE"/>
                         <outlet property="processBars" destination="VPh-VO-Z8T" id="dD1-Hw-LOf"/>
                         <outlet property="processScrollView" destination="gMY-Hv-Pj9" id="9d5-IG-yw5"/>
                         <outlet property="processView" destination="kcf-Td-50g" id="ljI-TZ-vDm"/>
                         <outlet property="processWrite" destination="XuC-Up-5Xb" id="8zx-Zn-3Xj"/>
                         <outlet property="recordCircle" destination="eWg-1u-TTu" id="RpA-6Q-nHh"/>
+                        <outlet property="troubledWoman" destination="14R-Hv-GM5" id="PHs-rM-Y3C"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="18j-UG-QEd" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1515,5 +1556,6 @@
         <image name="shand.png" width="30" height="30"/>
         <image name="ssfolder.png" width="28" height="28"/>
         <image name="ssgSetting.png" width="30" height="30"/>
+        <image name="troubledWoman.jpg" width="848" height="565"/>
     </resources>
 </document>

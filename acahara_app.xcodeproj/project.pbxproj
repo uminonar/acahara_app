@@ -63,6 +63,9 @@
 		0BD4F1541D051A28001AA8EC /* MailContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BD4F1531D051A28001AA8EC /* MailContentViewController.swift */; };
 		0BDD5B051D086AC60091DD20 /* ema.png in Resources */ = {isa = PBXBuildFile; fileRef = 0BDD5B041D086AC60091DD20 /* ema.png */; };
 		0BDD5B071D086B170091DD20 /* mokuhyou.png in Resources */ = {isa = PBXBuildFile; fileRef = 0BDD5B061D086B170091DD20 /* mokuhyou.png */; };
+		0BE19D8B1D0C89C10014FEF1 /* future.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 0BE19D8A1D0C89C10014FEF1 /* future.jpg */; };
+		0BE19D8D1D0C89C80014FEF1 /* troubledWoman.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 0BE19D8C1D0C89C80014FEF1 /* troubledWoman.jpg */; };
+		0BE19D8F1D0C89CD0014FEF1 /* advisor.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 0BE19D8E1D0C89CD0014FEF1 /* advisor.jpg */; };
 		0BE248981D05A97A002BEC1F /* AddTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BE248971D05A97A002BEC1F /* AddTableViewController.swift */; };
 		0BE2489C1D05AAE1002BEC1F /* dateTimeCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0BE2489B1D05AAE1002BEC1F /* dateTimeCell.xib */; };
 		0BE2489E1D05ABEB002BEC1F /* dateTimeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BE2489D1D05ABEB002BEC1F /* dateTimeTableViewCell.swift */; };
@@ -164,6 +167,9 @@
 		0BD4F1531D051A28001AA8EC /* MailContentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MailContentViewController.swift; sourceTree = "<group>"; };
 		0BDD5B041D086AC60091DD20 /* ema.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ema.png; sourceTree = "<group>"; };
 		0BDD5B061D086B170091DD20 /* mokuhyou.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mokuhyou.png; sourceTree = "<group>"; };
+		0BE19D8A1D0C89C10014FEF1 /* future.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = future.jpg; sourceTree = "<group>"; };
+		0BE19D8C1D0C89C80014FEF1 /* troubledWoman.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = troubledWoman.jpg; sourceTree = "<group>"; };
+		0BE19D8E1D0C89CD0014FEF1 /* advisor.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = advisor.jpg; sourceTree = "<group>"; };
 		0BE248971D05A97A002BEC1F /* AddTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddTableViewController.swift; sourceTree = "<group>"; };
 		0BE2489B1D05AAE1002BEC1F /* dateTimeCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = dateTimeCell.xib; sourceTree = "<group>"; };
 		0BE2489D1D05ABEB002BEC1F /* dateTimeTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = dateTimeTableViewCell.swift; sourceTree = "<group>"; };
@@ -280,6 +286,9 @@
 				0B09F2481D02C38E006F11D5 /* ChosePostsViewController.swift */,
 				0BADA6161CFB3089001702D7 /* Main.storyboard */,
 				0B0094921CF6FFB90041B3B5 /* Assets.xcassets */,
+				0BE19D8E1D0C89CD0014FEF1 /* advisor.jpg */,
+				0BE19D8C1D0C89C80014FEF1 /* troubledWoman.jpg */,
+				0BE19D8A1D0C89C10014FEF1 /* future.jpg */,
 				0B4D52CF1D0C624F0065C0AF /* prepare.png */,
 				0B4D52CD1D0C624A0065C0AF /* advisors.png */,
 				0B4D52CB1D0C62450065C0AF /* pen.png */,
@@ -469,6 +478,7 @@
 			files = (
 				0B0094BA1CF708120041B3B5 /* postCustomCell.xib in Resources */,
 				0B59AD441D07BA0F00E740F5 /* assistChoseAdvisorCell.xib in Resources */,
+				0BE19D8D1D0C89C80014FEF1 /* troubledWoman.jpg in Resources */,
 				0B030BAA1D0A7E5400C8E08D /* ssgSetting.png in Resources */,
 				0B59AD481D07C01600E740F5 /* assistChosePostsCell.xib in Resources */,
 				0BE248A01D05AC8D002BEC1F /* datePickerCell.xib in Resources */,
@@ -487,12 +497,14 @@
 				0BFFF9D11CF82C8900CD1D65 /* selfee.JPG in Resources */,
 				0B033C9B1D0BD98B00165071 /* assailant_n.png in Resources */,
 				0B5AFA7C1D0855FA001D3DCA /* s_ema.png in Resources */,
+				0BE19D8B1D0C89C10014FEF1 /* future.jpg in Resources */,
 				0B033C9D1D0BD99000165071 /* lawyer_n.png in Resources */,
 				0B01319E1D0ADD51008D04F3 /* create_new.png in Resources */,
 				0B4D52CE1D0C624A0065C0AF /* advisors.png in Resources */,
 				0BE248A41D05AEE0002BEC1F /* bottomCell.xib in Resources */,
 				0B772C6A1D09ACB100086E17 /* troubled_s.png in Resources */,
 				0B033C991D0BD98600165071 /* psycotherapist_n.png in Resources */,
+				0BE19D8F1D0C89CD0014FEF1 /* advisor.jpg in Resources */,
 				0BDD5B051D086AC60091DD20 /* ema.png in Resources */,
 				0B0094931CF6FFB90041B3B5 /* Assets.xcassets in Resources */,
 				0BC1DB121D037B3B00D203C1 /* s_question.png in Resources */,
