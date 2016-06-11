@@ -16,6 +16,7 @@ class AddTableViewController: UIViewController,UITableViewDelegate,UITableViewDa
     
     
 
+    @IBOutlet weak var cancelBtn: UIButton!
   
     @IBOutlet weak var addSaveBtn: UIButton!
     
@@ -26,6 +27,7 @@ class AddTableViewController: UIViewController,UITableViewDelegate,UITableViewDa
     
     @IBOutlet weak var addTableView: UITableView!
     
+    @IBOutlet weak var saveBtn: UIButton!
     
     
     override func viewDidLoad() {
@@ -57,6 +59,20 @@ class AddTableViewController: UIViewController,UITableViewDelegate,UITableViewDa
 //        }else{
 //            self.addSaveBtn.hidden = false
 //        }
+        
+        
+        let save = FAKFontAwesome.inboxIconWithSize(25)
+        
+        let saveImage = save.imageWithSize(CGSizeMake(25, 25))
+        
+        saveBtn.setImage(saveImage, forState: .Normal)
+        
+        
+        let times = FAKFontAwesome.timesIconWithSize(25)
+        
+        let timesImage = times.imageWithSize(CGSizeMake(25, 25))
+        
+        cancelBtn.setImage(timesImage, forState: .Normal)
 
     }
     
@@ -567,7 +583,7 @@ class AddTableViewController: UIViewController,UITableViewDelegate,UITableViewDa
         }
         if indexPath.row == 1 {
             if expandflag {
-                return 180
+                return 450
             }else{
                 return 435
             }

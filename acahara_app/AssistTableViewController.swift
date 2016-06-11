@@ -13,6 +13,7 @@ class AssistTableViewController: UIViewController,UITableViewDelegate,UITableVie
     var expandflag = false
     var rownumber = 3
     
+    @IBOutlet weak var sendBtn: UIButton!
 
     @IBOutlet weak var assistBars: UIButton!
     
@@ -42,6 +43,14 @@ class AssistTableViewController: UIViewController,UITableViewDelegate,UITableVie
         let barsImage = bars.imageWithSize(CGSizeMake(20, 20))
         
         assistBars.setImage(barsImage, forState: .Normal)
+        
+        
+        //飛行機、決定送信
+        let send = FAKFontAwesome.paperPlaneIconWithSize(20)
+        bars.addAttribute(NSForegroundColorAttributeName, value: UIColor.redColor())
+        let sendImage = send.imageWithSize(CGSizeMake(20, 20))
+        sendBtn.setImage(sendImage, forState: .Normal)
+        
         
         
         

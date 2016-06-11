@@ -24,12 +24,14 @@ class HomeNavigationController: UINavigationController,UINavigationControllerDel
         self.navigationBar.frame = CGRectMake(0,0, UIScreen.mainScreen().bounds.size.width, 65)
         
         //ナビゲーションバーの背景画像を設定する。
-        self.navigationBar.setBackgroundImage(UIImage(named: "bgImage.JPG"), forBarMetrics: .Default)
+//        self.navigationBar.setBackgroundImage(UIImage(named: "bgImage.JPG"), forBarMetrics: .Default)
         
-        self.navigationBar.tintColor = UIColor.whiteColor()
+        let sakura:UIColor = UIColor(red:1.0,green:0.4,blue:0.4,alpha:1.0)
+//        
+//        self.navigationBar.tintColor = sakura
         
         
-        
+        self.navigationBar.barTintColor = UIColor.groupTableViewBackgroundColor()
         
         //ナビゲーションバーのシャドウイメージを設定する。
 //        self.navigationBar.shadowImage = UIImage(named: "mokume_test2.png")

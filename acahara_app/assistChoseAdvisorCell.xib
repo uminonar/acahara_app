@@ -19,27 +19,27 @@
                     </imageView>
                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wwP-jn-ijT">
                         <rect key="frame" x="37" y="52" width="60" height="60"/>
-                        <state key="normal" image="professor.jpg"/>
+                        <state key="normal" image="professor_n.png"/>
                     </button>
                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="E3T-t9-LyY">
                         <rect key="frame" x="130" y="52" width="60" height="60"/>
-                        <state key="normal" image="assailant.jpg"/>
+                        <state key="normal" image="assailant_n.png"/>
                     </button>
                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="q69-a1-WVA">
                         <rect key="frame" x="224" y="52" width="60" height="60"/>
-                        <state key="normal" image="committeee のコピー.jpg"/>
+                        <state key="normal" image="committee_n.png"/>
                     </button>
                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="B2L-5K-VD7">
                         <rect key="frame" x="37" y="132" width="60" height="60"/>
-                        <state key="normal" image="psycotherapist.jpg"/>
+                        <state key="normal" image="psycotherapist_n.png"/>
                     </button>
                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="m8r-ir-bJl">
                         <rect key="frame" x="130" y="128" width="60" height="67"/>
-                        <state key="normal" image="lawyer.jpg"/>
+                        <state key="normal" image="lawyer_n.png" backgroundImage="lawyer_n.png"/>
                     </button>
                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UBg-Sj-N9W">
                         <rect key="frame" x="224" y="132" width="60" height="60"/>
-                        <state key="normal" image="friend.jpg"/>
+                        <state key="normal" image="friend_new.png"/>
                     </button>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="教授" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fBq-Zp-8SQ">
                         <rect key="frame" x="56" y="111" width="22" height="14"/>
@@ -60,19 +60,19 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="心理療法士" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dRZ-aG-9qY">
-                        <rect key="frame" x="40" y="186" width="55" height="21"/>
+                        <rect key="frame" x="40" y="187" width="55" height="21"/>
                         <fontDescription key="fontDescription" type="system" pointSize="11"/>
                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="弁護士" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Kh-db-87P">
-                        <rect key="frame" x="144" y="190" width="33" height="14"/>
+                        <rect key="frame" x="144" y="191" width="33" height="14"/>
                         <fontDescription key="fontDescription" type="system" pointSize="11"/>
                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="友達" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Y08-7d-bU3">
-                        <rect key="frame" x="237" y="186" width="34" height="21"/>
+                        <rect key="frame" x="237" y="187" width="34" height="21"/>
                         <fontDescription key="fontDescription" type="system" pointSize="11"/>
                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
@@ -112,11 +112,11 @@
         </tableViewCell>
     </objects>
     <resources>
-        <image name="assailant.jpg" width="60" height="60"/>
-        <image name="committeee のコピー.jpg" width="60" height="60"/>
-        <image name="friend.jpg" width="60" height="60"/>
-        <image name="lawyer.jpg" width="60" height="67"/>
-        <image name="professor.jpg" width="60" height="60"/>
-        <image name="psycotherapist.jpg" width="60" height="60"/>
+        <image name="assailant_n.png" width="1148" height="1148"/>
+        <image name="committee_n.png" width="1129" height="1115"/>
+        <image name="friend_new.png" width="1137" height="1137"/>
+        <image name="lawyer_n.png" width="1160" height="1160"/>
+        <image name="professor_n.png" width="1164" height="1164"/>
+        <image name="psycotherapist_n.png" width="1113" height="1113"/>
     </resources>
 </document>

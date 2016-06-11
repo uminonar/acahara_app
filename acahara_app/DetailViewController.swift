@@ -9,10 +9,7 @@
 import UIKit
 
 class DetailViewController: UIViewController {
-    
-    private var watchImageMode = false
-    private var beforePoint = CGPointMake(0.0, 0.0)
-    private var currentScale:CGFloat = 1.0
+
     
     var dtSelectedIndex = -1
 
@@ -53,6 +50,17 @@ class DetailViewController: UIViewController {
         detailWho.text = dic["who"] as! String
         detailUniversity.text = dic["university"] as! String
         detailTextView.text = dic["diary"] as! String
+        
+        detailTextView.font = UIFont.systemFontOfSize(15)
+        
+        
+        
+        let style = NSMutableParagraphStyle()
+        style.lineSpacing = 6
+        let attributes = [NSParagraphStyleAttributeName : style]
+        detailTextView.attributedText = NSAttributedString(string: detailTextView.text,
+                                                           attributes: attributes)
+        
         detailImageView.image = UIImage(named: dic["picture"] as! String)
 
         

@@ -23,6 +23,10 @@ class PictureViewController: UIViewController {
         super.viewDidLoad()
         print(picSelectedIndex)
         
+        self.pictureImageView.contentMode = .ScaleAspectFit
+        
+        self.beforePoint = CGPointMake(0.0, 0.0)
+        self.pictureImageView.transform = CGAffineTransformIdentity
         self.pictureImageView.userInteractionEnabled = true
         
         let pinchGesture = UIPinchGestureRecognizer(target: self, action: "handleGesture:")

@@ -42,7 +42,9 @@ class homeTableViewCell: UITableViewCell {
         ellipsis.addAttribute(NSForegroundColorAttributeName, value: UIColor.lightGrayColor())
         let ellipsisImage = ellipsis.imageWithSize(CGSizeMake(20,20))
         postEllipsis.image = ellipsisImage
-    
+        
+
+                               
     }
 
 

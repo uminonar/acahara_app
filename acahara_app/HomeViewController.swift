@@ -13,7 +13,8 @@ class HomeViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
     var selectedIndex = -1
     @IBOutlet weak var homeTableView: UITableView!
 
-    @IBOutlet weak var homeBars: UIButton!
+    @IBOutlet weak var homeWrite: UIButton!
+
   
     // ボタンを用意
     var addBtn: UIBarButtonItem!
@@ -31,18 +32,20 @@ class HomeViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
 //        self.title = "Home"
         
         // addBtnを設置
-        addBtn = UIBarButtonItem(barButtonSystemItem: .Compose, target: self, action: "onClick")
-        self.navigationItem.rightBarButtonItem = addBtn
-        
-        //イメージに背景画像を設置
-        
-        let bars = FAKFontAwesome.barsIconWithSize(20)
+//        addBtn = UIBarButtonItem(barButtonSystemItem: .Compose, target: self, action: "onClick")
+//        self.navigationItem.rightBarButtonItem = addBtn
+//        
+       
+        let write = FAKFontAwesome.pencilSquareOIconWithSize(25)
         //下記でアイコンの色も変えられます
-        bars.addAttribute(NSForegroundColorAttributeName, value: UIColor.whiteColor())
+        write.addAttribute(NSForegroundColorAttributeName, value: UIColor.whiteColor())
         
-        let barsImage = bars.imageWithSize(CGSizeMake(20, 20))
+        let writeImage = write.imageWithSize(CGSizeMake(25, 25))
         
-        homeBars.setImage(barsImage, forState: .Normal)
+        homeWrite.setImage(writeImage, forState: .Normal)
+
+        
+        
         
        
 
@@ -116,6 +119,18 @@ class HomeViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
         cell.postWho.text = posts[indexPath.row]["who"] as! String
         cell.postUniversity.text = posts[indexPath.row]["university"] as! String
         cell.postDiary.text = posts[indexPath.row]["diary"] as! String
+        
+        cell.postDiary.font = UIFont.systemFontOfSize(15)
+        
+        
+        
+        let style = NSMutableParagraphStyle()
+        style.lineSpacing = 6
+        let attributes = [NSParagraphStyleAttributeName : style]
+        cell.postDiary.attributedText = NSAttributedString(string: cell.postDiary.text,
+                                                      attributes: attributes)
+        
+        
         cell.postImageView.image = UIImage(named:(posts[indexPath.row]["picture"] as! String))
         
         
@@ -123,7 +138,7 @@ class HomeViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
         
         var openFlag:String = posts[indexPath.row]["openFlag"] as! String
         
-        if (openFlag == "0"){
+        if (openFlag == "1"){
             
             //色を使って指定する
             let paleBlue:UIColor = UIColor(red:0.914,green:0.941,blue:0.980,alpha:1.0)
@@ -275,16 +290,26 @@ class HomeViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
 
 
 
-
-
-    // addBtnをタップしたときのアクション
-    func onClick() {
+    @IBAction func tapWrite(sender: UIButton) {
         
         
         let AddTableView = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("AddTableViewController") as UIViewController
         
         presentViewController(AddTableView, animated: true, completion: nil)
+
         
+        
+    }
+
+
+    // addBtnをタップしたときのアクション
+//    func onClick() {
+//        
+//        
+//        let AddTableView = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("AddTableViewController") as UIViewController
+//        
+//        presentViewController(AddTableView, animated: true, completion: nil)
+//        
         //ナビゲーションコントローラによる遷移
         //  let second = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("AddViewController") as UIViewController
 
@@ -295,7 +320,7 @@ class HomeViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
         //        add.hidesBottomBarWhenPushed = true
         //
         //        self.navigationController?.pushViewController(add,animated:true)
-    }
+//    }
 
     
 
