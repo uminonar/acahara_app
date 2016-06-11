@@ -33,6 +33,9 @@
 		0B06302B1D07DDBE00F9E98B /* mailContents.txt in Resources */ = {isa = PBXBuildFile; fileRef = 0B06302A1D07DDBE00F9E98B /* mailContents.txt */; };
 		0B0686C71CFBFA58002AB722 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B0686C61CFBFA58002AB722 /* DetailViewController.swift */; };
 		0B09F2491D02C38E006F11D5 /* ChosePostsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B09F2481D02C38E006F11D5 /* ChosePostsViewController.swift */; };
+		0B4D52CC1D0C62450065C0AF /* pen.png in Resources */ = {isa = PBXBuildFile; fileRef = 0B4D52CB1D0C62450065C0AF /* pen.png */; };
+		0B4D52CE1D0C624A0065C0AF /* advisors.png in Resources */ = {isa = PBXBuildFile; fileRef = 0B4D52CD1D0C624A0065C0AF /* advisors.png */; };
+		0B4D52D01D0C624F0065C0AF /* prepare.png in Resources */ = {isa = PBXBuildFile; fileRef = 0B4D52CF1D0C624F0065C0AF /* prepare.png */; };
 		0B59AD381D07AFEE00E740F5 /* AssistTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B59AD371D07AFED00E740F5 /* AssistTableViewController.swift */; };
 		0B59AD3A1D07B1B000E740F5 /* assistInfoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0B59AD391D07B1B000E740F5 /* assistInfoCell.xib */; };
 		0B59AD3C1D07B55A00E740F5 /* assistInfoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B59AD3B1D07B55A00E740F5 /* assistInfoTableViewCell.swift */; };
@@ -131,6 +134,9 @@
 		0B06302A1D07DDBE00F9E98B /* mailContents.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = mailContents.txt; sourceTree = "<group>"; };
 		0B0686C61CFBFA58002AB722 /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		0B09F2481D02C38E006F11D5 /* ChosePostsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChosePostsViewController.swift; sourceTree = "<group>"; };
+		0B4D52CB1D0C62450065C0AF /* pen.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pen.png; sourceTree = "<group>"; };
+		0B4D52CD1D0C624A0065C0AF /* advisors.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = advisors.png; sourceTree = "<group>"; };
+		0B4D52CF1D0C624F0065C0AF /* prepare.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = prepare.png; sourceTree = "<group>"; };
 		0B59AD371D07AFED00E740F5 /* AssistTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AssistTableViewController.swift; sourceTree = "<group>"; };
 		0B59AD391D07B1B000E740F5 /* assistInfoCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = assistInfoCell.xib; sourceTree = "<group>"; };
 		0B59AD3B1D07B55A00E740F5 /* assistInfoTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = assistInfoTableViewCell.swift; sourceTree = "<group>"; };
@@ -274,6 +280,9 @@
 				0B09F2481D02C38E006F11D5 /* ChosePostsViewController.swift */,
 				0BADA6161CFB3089001702D7 /* Main.storyboard */,
 				0B0094921CF6FFB90041B3B5 /* Assets.xcassets */,
+				0B4D52CF1D0C624F0065C0AF /* prepare.png */,
+				0B4D52CD1D0C624A0065C0AF /* advisors.png */,
+				0B4D52CB1D0C62450065C0AF /* pen.png */,
 				0B033CA01D0BD9A500165071 /* friend_new.png */,
 				0B033C9E1D0BD99500165071 /* committee_n.png */,
 				0B033C9C1D0BD99000165071 /* lawyer_n.png */,
@@ -480,6 +489,7 @@
 				0B5AFA7C1D0855FA001D3DCA /* s_ema.png in Resources */,
 				0B033C9D1D0BD99000165071 /* lawyer_n.png in Resources */,
 				0B01319E1D0ADD51008D04F3 /* create_new.png in Resources */,
+				0B4D52CE1D0C624A0065C0AF /* advisors.png in Resources */,
 				0BE248A41D05AEE0002BEC1F /* bottomCell.xib in Resources */,
 				0B772C6A1D09ACB100086E17 /* troubled_s.png in Resources */,
 				0B033C991D0BD98600165071 /* psycotherapist_n.png in Resources */,
@@ -489,9 +499,11 @@
 				0BADA6181CFB3089001702D7 /* Main.storyboard in Resources */,
 				0B033C9F1D0BD99500165071 /* committee_n.png in Resources */,
 				0BFFF9D51CF82DA400CD1D65 /* pic1.JPG in Resources */,
+				0B4D52CC1D0C62450065C0AF /* pen.png in Resources */,
 				0BA5624F1CFB112600760490 /* bgImage.JPG in Resources */,
 				0B06302B1D07DDBE00F9E98B /* mailContents.txt in Resources */,
 				0B5AFA801D085C10001D3DCA /* s_makeruna.png in Resources */,
+				0B4D52D01D0C624F0065C0AF /* prepare.png in Resources */,
 				0B033CA11D0BD9A500165071 /* friend_new.png in Resources */,
 				0B772C681D09ACAB00086E17 /* happy_s.png in Resources */,
 			);
