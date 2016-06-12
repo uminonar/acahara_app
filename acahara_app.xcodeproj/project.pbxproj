@@ -63,6 +63,8 @@
 		0BD4F1541D051A28001AA8EC /* MailContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BD4F1531D051A28001AA8EC /* MailContentViewController.swift */; };
 		0BDD5B051D086AC60091DD20 /* ema.png in Resources */ = {isa = PBXBuildFile; fileRef = 0BDD5B041D086AC60091DD20 /* ema.png */; };
 		0BDD5B071D086B170091DD20 /* mokuhyou.png in Resources */ = {isa = PBXBuildFile; fileRef = 0BDD5B061D086B170091DD20 /* mokuhyou.png */; };
+		0BE113DD1D0D274F00C1CD65 /* SideMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BE113DC1D0D274F00C1CD65 /* SideMenu.swift */; };
+		0BE113DF1D0D27EB00C1CD65 /* MenuTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BE113DE1D0D27EB00C1CD65 /* MenuTableViewController.swift */; };
 		0BE19D8B1D0C89C10014FEF1 /* future.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 0BE19D8A1D0C89C10014FEF1 /* future.jpg */; };
 		0BE19D8D1D0C89C80014FEF1 /* troubledWoman.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 0BE19D8C1D0C89C80014FEF1 /* troubledWoman.jpg */; };
 		0BE19D8F1D0C89CD0014FEF1 /* advisor.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 0BE19D8E1D0C89CD0014FEF1 /* advisor.jpg */; };
@@ -167,6 +169,8 @@
 		0BD4F1531D051A28001AA8EC /* MailContentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MailContentViewController.swift; sourceTree = "<group>"; };
 		0BDD5B041D086AC60091DD20 /* ema.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ema.png; sourceTree = "<group>"; };
 		0BDD5B061D086B170091DD20 /* mokuhyou.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mokuhyou.png; sourceTree = "<group>"; };
+		0BE113DC1D0D274F00C1CD65 /* SideMenu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SideMenu.swift; sourceTree = "<group>"; };
+		0BE113DE1D0D27EB00C1CD65 /* MenuTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuTableViewController.swift; sourceTree = "<group>"; };
 		0BE19D8A1D0C89C10014FEF1 /* future.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = future.jpg; sourceTree = "<group>"; };
 		0BE19D8C1D0C89C80014FEF1 /* troubledWoman.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = troubledWoman.jpg; sourceTree = "<group>"; };
 		0BE19D8E1D0C89CD0014FEF1 /* advisor.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = advisor.jpg; sourceTree = "<group>"; };
@@ -268,6 +272,8 @@
 				0BE248A31D05AEE0002BEC1F /* bottomCell.xib */,
 				0B0094891CF6FFB90041B3B5 /* AppDelegate.swift */,
 				0B00948B1CF6FFB90041B3B5 /* HomeViewController.swift */,
+				0BE113DC1D0D274F00C1CD65 /* SideMenu.swift */,
+				0BE113DE1D0D27EB00C1CD65 /* MenuTableViewController.swift */,
 				0B030BAB1D0AC68700C8E08D /* ProcessViewController.swift */,
 				0B029EE21D08FB7400A747C9 /* HomeNavigationController.swift */,
 				0B772C6B1D09B53C00086E17 /* TabBarController.swift */,
@@ -668,6 +674,7 @@
 				0B03D2941CF7F6050050119E /* AddWhoViewController.swift in Sources */,
 				0B772C6C1D09B53C00086E17 /* TabBarController.swift in Sources */,
 				0B9DF2611D01ADC100B478C7 /* PictureViewController.swift in Sources */,
+				0BE113DD1D0D274F00C1CD65 /* SideMenu.swift in Sources */,
 				0BE248A61D05B18E002BEC1F /* bottomTableViewCell.swift in Sources */,
 				0BADA61A1CFB3B9E001702D7 /* AddDiaryViewController.swift in Sources */,
 				0B94338B1D0275AA00A93027 /* AssistViewController.swift in Sources */,
@@ -691,6 +698,7 @@
 				0B00948C1CF6FFB90041B3B5 /* HomeViewController.swift in Sources */,
 				0BE248981D05A97A002BEC1F /* AddTableViewController.swift in Sources */,
 				0B59AD381D07AFEE00E740F5 /* AssistTableViewController.swift in Sources */,
+				0BE113DF1D0D27EB00C1CD65 /* MenuTableViewController.swift in Sources */,
 				0B5AFA7E1D085651001D3DCA /* homeIntroTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -14,6 +14,8 @@ class HomeViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
     @IBOutlet weak var homeTableView: UITableView!
 
     @IBOutlet weak var homeWrite: UIButton!
+    
+
 
   
     // ボタンを用意
@@ -22,6 +24,11 @@ class HomeViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
     var posts:NSMutableArray = []
     
     //var temp:NSMutableArray
+    
+    
+    
+    
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -43,13 +50,14 @@ class HomeViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
         let writeImage = write.imageWithSize(CGSizeMake(25, 25))
         
         homeWrite.setImage(writeImage, forState: .Normal)
-
         
-        
-        
-       
 
     }
+    
+    
+
+    
+    
     
     override func viewWillAppear(animated: Bool) {
         
@@ -89,6 +97,12 @@ class HomeViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
             posts.addObject(data as! NSMutableDictionary)
         }
     }
+    
+    
+    
+    
+    
+    
     
     //行数決定
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

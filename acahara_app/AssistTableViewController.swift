@@ -8,8 +8,9 @@
 
 import UIKit
 
-class AssistTableViewController: UIViewController,UITableViewDelegate,UITableViewDataSource, UIImagePickerControllerDelegate,UITextFieldDelegate {
+class AssistTableViewController: UIViewController,UITableViewDelegate,UITableViewDataSource, UIImagePickerControllerDelegate,UITextFieldDelegate,SideMenuDelegate {
 
+    var sideMenu : SideMenu?
     var expandflag = false
     var rownumber = 3
     
@@ -52,8 +53,22 @@ class AssistTableViewController: UIViewController,UITableViewDelegate,UITableVie
         sendBtn.setImage(sendImage, forState: .Normal)
         
         
+        //MARK:サイドメニューの項目をここで決定
+        sideMenu = SideMenu(sourceView: self.view, menuData: ["使い方", "設定", "利用規約"])
+        sideMenu!.delegate = self
         
         
+    }
+    
+    
+    //サイドメニューの項目が選択された時、SideMenu.swiftの中にあるtoggleMenu()を実行
+    func sideMenuDidSelectItemAtIndex(index: Int) {
+        sideMenu?.toggleMenu()
+    }
+    
+    //トグルボタンがタップされた時も、SideMenu.swiftの中にあるtoggleMenu()を実行
+    @IBAction func toggleSideMenu(sender: AnyObject) {
+        sideMenu?.toggleMenu()
     }
     
     override func viewWillAppear(animated: Bool) {

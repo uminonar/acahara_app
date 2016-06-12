@@ -9,16 +9,11 @@
 import UIKit
 
 
-class ProcessViewController: UIViewController {
+class ProcessViewController: UIViewController,SideMenuDelegate {
+    
+    var sideMenu : SideMenu?
 
     @IBOutlet weak var troubledWoman: UIImageView!
-    
-    
-    
-    
-    
-  
-    
     
     @IBOutlet weak var prepare: UIImageView!
     @IBOutlet weak var advisors: UIImageView!
@@ -28,13 +23,14 @@ class ProcessViewController: UIViewController {
     @IBOutlet weak var assistCircle: UIView!
     @IBOutlet weak var prepareCircle: UIView!
  
-    
-    
-    
     @IBOutlet var processScrollView: UIScrollView!
     @IBOutlet weak var processView: UIView!
     @IBOutlet weak var processWrite: UIButton!
     @IBOutlet weak var processBars: UIButton!
+    
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -66,6 +62,20 @@ class ProcessViewController: UIViewController {
         prepareCircle.layer.cornerRadius = 40;
         prepareCircle.clipsToBounds = true;
         
+        
+        //MARK:ここでサイドメニューの目次項目を調整できる！
+        sideMenu = SideMenu(sourceView: self.view, menuData: ["使い方", "設定", "利用規約"])
+        sideMenu!.delegate = self
+        
+    }
+    
+    //サイドメニューが選択されたら、SideMenu.swiftの中にあるtoggleMenu()を実行
+    func sideMenuDidSelectItemAtIndex(index: Int) {
+        sideMenu?.toggleMenu()
+    }
+    //トグルがタップされたら、SideMenu.swiftの中にあるtoggleMenu()を実行
+    @IBAction func toggleSideMenu(sender: AnyObject) {
+        sideMenu?.toggleMenu()
     }
     
     
