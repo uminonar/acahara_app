@@ -12,7 +12,9 @@ class AddDiaryViewController: UIViewController, UITextViewDelegate {
 
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var diaryTextView: UITextView!
+    @IBOutlet weak var cancelBtn: UIButton!
 
+    @IBOutlet weak var saveBtn: UIButton!
     
     //起動画面サイズの取得
     let myBoundsize:CGSize = UIScreen.mainScreen().bounds.size
@@ -54,8 +56,23 @@ class AddDiaryViewController: UIViewController, UITextViewDelegate {
         diaryTextView.inputAccessoryView = accessoryView
         
 
+        let times = FAKFontAwesome.timesIconWithSize(25)
+        
+        let timesImage = times.imageWithSize(CGSizeMake(25, 25))
+        
+        cancelBtn.setImage(timesImage, forState: .Normal)
         
         
+        let inbox = FAKFontAwesome.inboxIconWithSize(25)
+        
+        let sakura:UIColor = UIColor(red:1.0,green:0.4,blue:0.4,alpha:1.0)
+        
+        inbox.addAttribute(NSForegroundColorAttributeName, value: sakura)
+
+        
+        let boxImage = inbox.imageWithSize(CGSizeMake(25, 25))
+        
+        saveBtn.setImage(boxImage, forState: .Normal)
         
     }
     

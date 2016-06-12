@@ -13,8 +13,11 @@ class SettingViewController: UIViewController {
 
     @IBOutlet weak var settingSelfee: UIImageView!
     @IBOutlet weak var settingSelgeeC: UIImageView!
-    @IBOutlet weak var settingBgImage: UIImageView!
-    @IBOutlet weak var settingBgImageC: UIImageView!
+
+    @IBOutlet weak var saveBtn: UIButton!
+
+    @IBOutlet weak var cancelBtn: UIButton!
+
     
     @IBAction func settingNameField(sender: UITextField) {
         self.resignFirstResponder()
@@ -24,6 +27,9 @@ class SettingViewController: UIViewController {
         self.resignFirstResponder()
     }
     
+    @IBAction func confirmSentEmail(sender: UITextField) {
+         self.resignFirstResponder()
+    }
     @IBAction func settingContEmail(sender: UITextField) {
         self.resignFirstResponder()
     }
@@ -38,19 +44,26 @@ class SettingViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        settingBgImage.image = UIImage(named: "bgImage.JPG")
-        settingSelfee.image = UIImage(named:"selfee.JPG")
-
         
-        let camera = FAKFontAwesome.cameraIconWithSize(30)
-       camera.addAttribute(NSForegroundColorAttributeName, value: UIColor.lightTextColor())
-        let bgCameraImg = camera.imageWithSize(CGSizeMake(30, 30))
-        settingBgImageC.image = bgCameraImg
+        settingSelfee.image = UIImage(named:"selfee.JPG")
         
         let selCamera = FAKFontAwesome.cameraIconWithSize(16)
         selCamera.addAttribute(NSForegroundColorAttributeName, value: UIColor.lightTextColor())
         let selCameraImg = selCamera.imageWithSize(CGSizeMake(16, 16))
         settingSelgeeC.image = selCameraImg
+        
+        let save = FAKFontAwesome.hddOIconWithSize(25)
+        
+        let saveImage = save.imageWithSize(CGSizeMake(25, 25))
+        
+        saveBtn.setImage(saveImage, forState: .Normal)
+
+        let times = FAKFontAwesome.timesIconWithSize(25)
+        
+        let timesImage = times.imageWithSize(CGSizeMake(25, 25))
+        
+        cancelBtn.setImage(timesImage, forState: .Normal)
+        
         
         
     }

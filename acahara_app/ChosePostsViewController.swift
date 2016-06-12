@@ -13,6 +13,10 @@ class ChosePostsViewController: UIViewController,UITableViewDelegate,UITableView
     @IBOutlet weak var choseTableView: UITableView!
     var posts:NSMutableArray = []
     
+    @IBOutlet weak var cancelBtn: UIButton!
+    
+    @IBOutlet weak var addBtn: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -20,6 +24,24 @@ class ChosePostsViewController: UIViewController,UITableViewDelegate,UITableView
         choseTableView.setEditing(true, animated: true)
         
         choseTableView.registerNib(UINib(nibName: "postCustomCell", bundle: nil), forCellReuseIdentifier: "postCustomCell")
+        
+        let times = FAKFontAwesome.timesIconWithSize(25)
+        
+        let timesImage = times.imageWithSize(CGSizeMake(25, 25))
+        
+        cancelBtn.setImage(timesImage, forState: .Normal)
+        
+        
+        let plus = FAKFontAwesome.plusIconWithSize(25)
+        let sakura:UIColor = UIColor(red:1.0,green:0.4,blue:0.4,alpha:1.0)
+        
+        plus.addAttribute(NSForegroundColorAttributeName, value: sakura)
+        
+        let plusImage = plus.imageWithSize(CGSizeMake(25, 25))
+        
+        addBtn.setImage(plusImage, forState: .Normal)
+
+        
     }
     
     override func viewWillAppear(animated: Bool) {

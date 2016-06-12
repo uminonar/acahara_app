@@ -61,7 +61,7 @@ class AddTableViewController: UIViewController,UITableViewDelegate,UITableViewDa
 //        }
         
         
-        let save = FAKFontAwesome.inboxIconWithSize(25)
+        let save = FAKFontAwesome.hddOIconWithSize(25)
         
         let saveImage = save.imageWithSize(CGSizeMake(25, 25))
         

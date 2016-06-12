@@ -12,6 +12,7 @@ class AddWhoViewController: UIViewController,UITableViewDataSource,UITableViewDe
 {
     
 
+    @IBOutlet weak var cancelBtn: UIButton!
     
     @IBOutlet weak var nameTextField: UITextField!
     
@@ -19,10 +20,7 @@ class AddWhoViewController: UIViewController,UITableViewDataSource,UITableViewDe
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        
-
-        
+    
         var myDefault = NSUserDefaults.standardUserDefaults()
         
         
@@ -35,6 +33,16 @@ class AddWhoViewController: UIViewController,UITableViewDataSource,UITableViewDe
             nameList = myDefault.objectForKey("nameList") as! Array
             }
             print(nameList)
+        
+        let times = FAKFontAwesome.timesIconWithSize(25)
+        
+        let timesImage = times.imageWithSize(CGSizeMake(25, 25))
+        
+        cancelBtn.setImage(timesImage, forState: .Normal)
+        
+        
+        
+        
         }
 
     

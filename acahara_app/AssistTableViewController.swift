@@ -48,7 +48,8 @@ class AssistTableViewController: UIViewController,UITableViewDelegate,UITableVie
         
         //飛行機、決定送信
         let send = FAKFontAwesome.paperPlaneIconWithSize(20)
-        bars.addAttribute(NSForegroundColorAttributeName, value: UIColor.redColor())
+        
+        send.addAttribute(NSForegroundColorAttributeName, value: UIColor.redColor())
         let sendImage = send.imageWithSize(CGSizeMake(20, 20))
         sendBtn.setImage(sendImage, forState: .Normal)
         
@@ -185,7 +186,7 @@ class AssistTableViewController: UIViewController,UITableViewDelegate,UITableVie
             
             
                             //各Advisorのボタンがタップされた時の処理
-                            //：をつけることで、sender情報を使える
+                            //：をつけることで、sender情報を使える tagは数字しか送れないので注意！
                             cell.professor.addTarget(self, action:Selector("insert:"), forControlEvents:UIControlEvents.TouchUpInside)
                             cell.professor.tag = 100//professor
             
@@ -203,12 +204,7 @@ class AssistTableViewController: UIViewController,UITableViewDelegate,UITableVie
                                 
                             cell.friend.addTarget(self, action:Selector("insert:"), forControlEvents:UIControlEvents.TouchUpInside)
                             cell.friend.tag = 600//friend
-            
-            
-            
-    
-            
-            
+
             
                                 
                             return cell

@@ -13,6 +13,7 @@ class AddWhereViewController: UIViewController,UITableViewDelegate,UITableViewDa
 
     @IBOutlet weak var placeTextField: UITextField!
 
+    @IBOutlet weak var cancelBtn: UIButton!
 
     
     var placeList = ["日吉協生館３階ミーティングルーム","日吉協生館委員長室","荻窪自宅"]
@@ -20,6 +21,13 @@ class AddWhereViewController: UIViewController,UITableViewDelegate,UITableViewDa
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let times = FAKFontAwesome.timesIconWithSize(25)
+        
+        let timesImage = times.imageWithSize(CGSizeMake(25, 25))
+        
+        cancelBtn.setImage(timesImage, forState: .Normal)
+        
     }
     
     override func viewWillAppear(animated: Bool) {
