@@ -19,14 +19,11 @@ class bottomTableViewCell: UITableViewCell {
     @IBOutlet weak var addDiary: UITextView!
     @IBOutlet weak var addUniversity: UITextField!
 
-    @IBOutlet weak var addPicPlus: UIImageView!
-    @IBOutlet weak var addPicFile: UIImageView!
-    @IBOutlet weak var addMoviePlus: UIImageView!
-    @IBOutlet weak var addMovieFile: UIImageView!
-    @IBOutlet weak var addMicPlus: UIImageView!
+    @IBOutlet weak var addCameraImage: UIImageView!
+    @IBOutlet weak var addVideoImage: UIImageView!
+   
     @IBOutlet weak var addMicPhone: UIImageView!
     @IBOutlet weak var addImportance: UILabel!
-    
     @IBOutlet weak var picBase: UIImageView!
     
     override func awakeFromNib() {
@@ -41,34 +38,25 @@ class bottomTableViewCell: UITableViewCell {
         // 枠の角を丸くする。
         addDiary.layer.cornerRadius = 8
         
-        let plus = FAKFontAwesome.plusIconWithSize(15)
-        plus.addAttribute(NSForegroundColorAttributeName, value: UIColor.lightGrayColor())
-        let plusImage = plus.imageWithSize(CGSizeMake(15, 15))
-        addMicPlus.image = plusImage
+
+   
         
-        let mike = FAKFontAwesome.microphoneIconWithSize(25)
+        let mike = FAKFontAwesome.microphoneIconWithSize(50)
         mike.addAttribute(NSForegroundColorAttributeName, value: UIColor.lightGrayColor())
-        let mikeImg = mike.imageWithSize(CGSizeMake(25, 25))
+        let mikeImg = mike.imageWithSize(CGSizeMake(50, 50))
         addMicPhone.image = mikeImg
         
-        let plus2 = FAKFontAwesome.plusIconWithSize(25)
-        plus2.addAttribute(NSForegroundColorAttributeName, value: UIColor.lightGrayColor())
-        let plus2Img = plus2.imageWithSize(CGSizeMake(25, 25))
-        addPicPlus.image = plus2Img
         
-        let addImage = FAKFontAwesome.fileImageOIconWithSize(50)
+        let addImage = FAKFontAwesome.cameraIconWithSize(50)
         addImage.addAttribute(NSForegroundColorAttributeName, value: UIColor.lightGrayColor())
         let addI = addImage.imageWithSize(CGSizeMake(50, 50))
-        addPicFile.image = addI
+        addCameraImage.image = addI
         
-        let plus3 = FAKFontAwesome.plusIconWithSize(25)
-        let plus3Img = plus3.imageWithSize(CGSizeMake(25, 25))
-        addMoviePlus.image = plus2Img
         
-        let addMo = FAKFontAwesome.fileMovieOIconWithSize(50)
+        let addMo = FAKFontAwesome.videoCameraIconWithSize(50)
         addMo.addAttribute(NSForegroundColorAttributeName, value: UIColor.lightGrayColor())
         let addM = addMo.imageWithSize(CGSizeMake(50, 50))
-        addMovieFile.image = addM
+        addVideoImage.image = addM
         
         let times = FAKFontAwesome.timesIconWithSize(20)
         //下記でアイコンの色も変えられます

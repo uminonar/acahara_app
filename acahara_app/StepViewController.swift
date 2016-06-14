@@ -29,8 +29,6 @@ class StepViewController: UIViewController {
 //        let toggleImage = toggle.imageWithSize(CGSizeMake(25, 25))
 //        toggleBtn.setImage(toggleImage, forState: .Normal)
         
-        navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Left", style: .Plain, target: self, action: #selector(SSASideMenu.presentLeftMenuViewController))
-
         
     }
     
@@ -41,7 +39,7 @@ class StepViewController: UIViewController {
                 let addImage = add.imageWithSize(CGSizeMake(25, 25))
         
                 //sideBarを入れるとき、ここでやはりエラーが出た　ここをコメントアウトしてNavigationControllerを上から置いてみた
-//                addBtn.setImage(addImage, forState: .Normal)
+                addBtn.setImage(addImage, forState: .Normal)
 
     }
     

@@ -43,12 +43,12 @@ class AddTableViewController: UIViewController,UITableViewDelegate,UITableViewDa
         addTableView.separatorColor = UIColor.clearColor()
         
         //記入必須項目が未記入のうちは保存ボタンはhiddenにしておく
-        var myDefault = NSUserDefaults.standardUserDefaults()
-        var sWhen = myDefault.stringForKey("selectedDT")
-        var sWhere = myDefault.stringForKey("selectedPlace")
-        var sWho = myDefault.stringForKey("selectedName")
-        var sUni = myDefault.stringForKey("uniStr")
-        var sDiary = myDefault.stringForKey("diary")
+//        var myDefault = NSUserDefaults.standardUserDefaults()
+//        var sWhen = myDefault.stringForKey("selectedDT")
+//        var sWhere = myDefault.stringForKey("selectedPlace")
+//        var sWho = myDefault.stringForKey("selectedName")
+//        var sUni = myDefault.stringForKey("uniStr")
+//        var sDiary = myDefault.stringForKey("diary")
         
         
         

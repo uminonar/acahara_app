@@ -1372,7 +1372,7 @@
             </objects>
             <point key="canvasLocation" x="1655" y="744"/>
         </scene>
-        <!--Step View Controller-->
+        <!--流れ-->
         <scene sceneID="2va-Qp-O6z">
             <objects>
                 <viewController id="dXL-4X-WG2" customClass="StepViewController" customModule="acahara_app" customModuleProvider="target" sceneMemberID="viewController">
@@ -1422,6 +1422,7 @@
                             <constraint firstItem="Y4H-vT-rYS" firstAttribute="height" secondItem="YvZ-8c-c7I" secondAttribute="height" id="tHU-hY-HtP"/>
                         </constraints>
                     </view>
+                    <tabBarItem key="tabBarItem" title="流れ" image="ssgSetting.png" id="Ebb-yy-4lw"/>
                     <navigationItem key="navigationItem" id="K01-TR-e1s">
                         <barButtonItem key="rightBarButtonItem" style="plain" id="fmi-VZ-DaJ">
                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="dYm-oa-lj7">
@@ -1443,7 +1444,6 @@
         <!--Tab Bar Controller-->
         <scene sceneID="DGx-O7-fe8">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="oUi-Vr-v48" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="QiM-gj-Thz" customClass="TabBarController" customModule="acahara_app" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" id="mfY-Mm-P7U">
@@ -1451,13 +1451,14 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </tabBar>
                     <connections>
-                        <segue destination="V23-6Y-tPb" kind="relationship" relationship="viewControllers" id="289-Ov-Trj"/>
+                        <segue destination="dXL-4X-WG2" kind="relationship" relationship="viewControllers" id="Rgh-HB-4bM"/>
                         <segue destination="kmR-6f-bWc" kind="relationship" relationship="viewControllers" id="wzE-7e-22c"/>
                         <segue destination="wnK-gz-YAn" kind="relationship" relationship="viewControllers" id="abP-MM-ywm"/>
                     </connections>
                 </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="oUi-Vr-v48" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="418" y="90"/>
+            <point key="canvasLocation" x="662" y="-458"/>
         </scene>
         <!--記録-->
         <scene sceneID="ktl-z2-Gpu">
@@ -1477,44 +1478,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ThS-8K-nvF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="644" y="637"/>
-        </scene>
-        <!--流れ-->
-        <scene sceneID="kyT-Y7-Qcj">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="V23-6Y-tPb" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="流れ" image="ssgSetting.png" id="i1c-Ap-v8M"/>
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="ZIj-ay-bsB">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="dXL-4X-WG2" kind="relationship" relationship="rootViewController" id="1bY-Ns-PXP"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="mcZ-qf-eB6" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-534" y="-972"/>
-        </scene>
-        <!--設定-->
-        <scene sceneID="Rj6-oG-8rX">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="XTR-kQ-9bc" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="設定" image="ssgSetting.png" id="cPa-gy-q4n"/>
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="mcU-v0-VEJ">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="8rJ-Kc-sve" kind="relationship" relationship="rootViewController" id="wdn-X7-7Ng"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="IRU-Y1-zuw" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1031" y="-1934"/>
         </scene>
     </scenes>
     <resources>
