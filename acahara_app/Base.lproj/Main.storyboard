@@ -379,7 +379,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="相談" image="shand.png" id="KJn-MB-4xv"/>
+                    <tabBarItem key="tabBarItem" title="相談" image="Meeting-25.png" id="KJn-MB-4xv"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
                         <outlet property="assistTableView" destination="vNm-fH-ARN" id="Q34-ds-Utm"/>
@@ -1387,8 +1387,8 @@
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2N5-ma-CgV">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="519"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Y4H-vT-rYS">
-                                        <rect key="frame" x="0.0" y="127" width="320" height="4500"/>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Y4H-vT-rYS">
+                                        <rect key="frame" x="0.0" y="127" width="320" height="568"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="456" id="Nht-jv-2NO"/>
@@ -1402,6 +1402,12 @@
                                             </mask>
                                         </variation>
                                     </view>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="K40-G4-liT">
+                                        <rect key="frame" x="268" y="28" width="30" height="30"/>
+                                        <connections>
+                                            <action selector="stepAddBtn:" destination="dXL-4X-WG2" eventType="touchUpInside" id="OzB-Ol-spy"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <constraints>
                                     <constraint firstItem="Y4H-vT-rYS" firstAttribute="top" secondItem="2N5-ma-CgV" secondAttribute="top" constant="127" id="B25-bc-Zfr"/>
@@ -1422,24 +1428,16 @@
                             <constraint firstItem="Y4H-vT-rYS" firstAttribute="height" secondItem="YvZ-8c-c7I" secondAttribute="height" id="tHU-hY-HtP"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="流れ" image="ssgSetting.png" id="Ebb-yy-4lw"/>
-                    <navigationItem key="navigationItem" id="K01-TR-e1s">
-                        <barButtonItem key="rightBarButtonItem" style="plain" id="fmi-VZ-DaJ">
-                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="dYm-oa-lj7">
-                                <rect key="frame" x="274" y="7" width="30" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </button>
-                        </barButtonItem>
-                    </navigationItem>
+                    <tabBarItem key="tabBarItem" title="流れ" image="Module-25.png" id="Ebb-yy-4lw"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
-                        <outlet property="addBtn" destination="dYm-oa-lj7" id="b0K-hP-VVp"/>
+                        <outlet property="addBtn" destination="K40-G4-liT" id="l6K-kU-vD1"/>
                         <outlet property="baseView" destination="YvZ-8c-c7I" id="XSg-bf-ZrD"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Rm4-m0-DoF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="278" y="-972"/>
+            <point key="canvasLocation" x="266" y="-880"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="DGx-O7-fe8">
@@ -1464,7 +1462,7 @@
         <scene sceneID="ktl-z2-Gpu">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="kmR-6f-bWc" customClass="HomeNavigationController" customModule="acahara_app" customModuleProvider="target" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="記録" image="ssfolder.png" id="o1I-ZY-DA3"/>
+                    <tabBarItem key="tabBarItem" title="記録" image="Open Folder-25.png" id="o1I-ZY-DA3"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="e23-0V-7wY">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -1481,6 +1479,9 @@
         </scene>
     </scenes>
     <resources>
+        <image name="Meeting-25.png" width="25" height="25"/>
+        <image name="Module-25.png" width="25" height="25"/>
+        <image name="Open Folder-25.png" width="25" height="25"/>
         <image name="assailant.jpg" width="60" height="60"/>
         <image name="committeee のコピー.jpg" width="60" height="60"/>
         <image name="friend.jpg" width="60" height="60"/>
@@ -1489,8 +1490,5 @@
         <image name="psycotherapist.jpg" width="60" height="60"/>
         <image name="s_question.png" width="150" height="150"/>
         <image name="selfee.JPG" width="2448" height="3264"/>
-        <image name="shand.png" width="30" height="30"/>
-        <image name="ssfolder.png" width="28" height="28"/>
-        <image name="ssgSetting.png" width="30" height="30"/>
     </resources>
 </document>

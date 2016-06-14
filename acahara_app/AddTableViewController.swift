@@ -607,6 +607,7 @@ class AddTableViewController: UIViewController,UITableViewDelegate,UITableViewDa
         myDefault.removeObjectForKey("selectedMovieURL")
         myDefault.removeObjectForKey("selectedPhotoURL")
         myDefault.setObject("true", forKey: "cancel")
+        myDefault.removeObjectForKey("stepAdd")
         
         myDefault.synchronize()
         
@@ -645,6 +646,8 @@ class AddTableViewController: UIViewController,UITableViewDelegate,UITableViewDa
         
         //userDefaultにデータを書き込んで保存したことを書き込む
         myDefault.setObject("true", forKey: "saveSuccess")
+        
+        
         
         //即反映させる
         myDefault.synchronize()

@@ -29,19 +29,41 @@ class StepViewController: UIViewController {
 //        let toggleImage = toggle.imageWithSize(CGSizeMake(25, 25))
 //        toggleBtn.setImage(toggleImage, forState: .Normal)
         
+        let add = FAKFontAwesome.editIconWithSize(25)
+        add.addAttribute(NSForegroundColorAttributeName, value: UIColor.redColor())
+        let addImage = add.imageWithSize(CGSizeMake(25, 25))
+        
+        addBtn.setImage(addImage, forState: .Normal)
+
+        
         
     }
     
+    
     override func viewWillAppear(animated: Bool) {
+        var myDefault = NSUserDefaults.standardUserDefaults()
+        var stepAdd = myDefault.stringForKey("stepAdd")
         
-                let add = FAKFontAwesome.editIconWithSize(25)
-                add.addAttribute(NSForegroundColorAttributeName, value: UIColor.redColor())
-                let addImage = add.imageWithSize(CGSizeMake(25, 25))
-        
-                //sideBarを入れるとき、ここでやはりエラーが出た　ここをコメントアウトしてNavigationControllerを上から置いてみた
-                addBtn.setImage(addImage, forState: .Normal)
-
+        if stepAdd != nil{
+            
+        }
     }
+    
+    @IBAction func stepAddBtn(sender: UIButton) {
+        
+        var myDefault = NSUserDefaults.standardUserDefaults()
+        
+        myDefault.setObject("1", forKey: "stepAdd")
+        
+        myDefault.synchronize()
+        
+        
+        
+        let AddTableView = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("AddTableViewController") as UIViewController
+        
+        presentViewController(AddTableView, animated: true, completion: nil)
+    }
+
     
 
     override func didReceiveMemoryWarning() {

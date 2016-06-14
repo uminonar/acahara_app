@@ -29,6 +29,10 @@
 		0B03D2901CF7D58E0050119E /* AddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B03D28F1CF7D58E0050119E /* AddViewController.swift */; };
 		0B03D2921CF7F4FB0050119E /* AddWhereViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B03D2911CF7F4FB0050119E /* AddWhereViewController.swift */; };
 		0B03D2941CF7F6050050119E /* AddWhoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B03D2931CF7F6050050119E /* AddWhoViewController.swift */; };
+		0B04BED61D1074EB000264CC /* Delete-50.png in Resources */ = {isa = PBXBuildFile; fileRef = 0B04BED51D1074EB000264CC /* Delete-50.png */; };
+		0B04BEE01D10769A000264CC /* Meeting-25.png in Resources */ = {isa = PBXBuildFile; fileRef = 0B04BEDF1D10769A000264CC /* Meeting-25.png */; };
+		0B04BEE21D1076CC000264CC /* Open Folder-25.png in Resources */ = {isa = PBXBuildFile; fileRef = 0B04BEE11D1076CC000264CC /* Open Folder-25.png */; };
+		0B04BEE41D107710000264CC /* Module-25.png in Resources */ = {isa = PBXBuildFile; fileRef = 0B04BEE31D107710000264CC /* Module-25.png */; };
 		0B06302B1D07DDBE00F9E98B /* mailContents.txt in Resources */ = {isa = PBXBuildFile; fileRef = 0B06302A1D07DDBE00F9E98B /* mailContents.txt */; };
 		0B0686C71CFBFA58002AB722 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B0686C61CFBFA58002AB722 /* DetailViewController.swift */; };
 		0B09F2491D02C38E006F11D5 /* ChosePostsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B09F2481D02C38E006F11D5 /* ChosePostsViewController.swift */; };
@@ -135,6 +139,10 @@
 		0B03D28F1CF7D58E0050119E /* AddViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddViewController.swift; sourceTree = "<group>"; };
 		0B03D2911CF7F4FB0050119E /* AddWhereViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddWhereViewController.swift; sourceTree = "<group>"; };
 		0B03D2931CF7F6050050119E /* AddWhoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddWhoViewController.swift; sourceTree = "<group>"; };
+		0B04BED51D1074EB000264CC /* Delete-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Delete-50.png"; sourceTree = "<group>"; };
+		0B04BEDF1D10769A000264CC /* Meeting-25.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Meeting-25.png"; sourceTree = "<group>"; };
+		0B04BEE11D1076CC000264CC /* Open Folder-25.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Open Folder-25.png"; sourceTree = "<group>"; };
+		0B04BEE31D107710000264CC /* Module-25.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Module-25.png"; sourceTree = "<group>"; };
 		0B06302A1D07DDBE00F9E98B /* mailContents.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = mailContents.txt; sourceTree = "<group>"; };
 		0B0686C61CFBFA58002AB722 /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		0B09F2481D02C38E006F11D5 /* ChosePostsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChosePostsViewController.swift; sourceTree = "<group>"; };
@@ -291,6 +299,10 @@
 				0BADA6161CFB3089001702D7 /* Main.storyboard */,
 				0B73CE6B1D0D998D007658EF /* SSASideMenu */,
 				0B0094921CF6FFB90041B3B5 /* Assets.xcassets */,
+				0B04BEE31D107710000264CC /* Module-25.png */,
+				0B04BEE11D1076CC000264CC /* Open Folder-25.png */,
+				0B04BEDF1D10769A000264CC /* Meeting-25.png */,
+				0B04BED51D1074EB000264CC /* Delete-50.png */,
 				0B73CE6E1D0DA1F9007658EF /* Background.jpg */,
 				0BE19D8E1D0C89CD0014FEF1 /* advisor.jpg */,
 				0BE19D8C1D0C89C80014FEF1 /* troubledWoman.jpg */,
@@ -492,6 +504,7 @@
 			files = (
 				0B0094BA1CF708120041B3B5 /* postCustomCell.xib in Resources */,
 				0B73CE6F1D0DA1F9007658EF /* Background.jpg in Resources */,
+				0B04BED61D1074EB000264CC /* Delete-50.png in Resources */,
 				0B59AD441D07BA0F00E740F5 /* assistChoseAdvisorCell.xib in Resources */,
 				0BE19D8D1D0C89C80014FEF1 /* troubledWoman.jpg in Resources */,
 				0B030BAA1D0A7E5400C8E08D /* ssgSetting.png in Resources */,
@@ -499,6 +512,7 @@
 				0BE248A01D05AC8D002BEC1F /* datePickerCell.xib in Resources */,
 				0B0094BE1CF70C440041B3B5 /* posts.txt in Resources */,
 				0B0094961CF6FFB90041B3B5 /* LaunchScreen.storyboard in Resources */,
+				0B04BEE41D107710000264CC /* Module-25.png in Resources */,
 				0BFF45CD1D0A637A0016FCB5 /* shand.png in Resources */,
 				0B59AD3A1D07B1B000E740F5 /* assistInfoCell.xib in Resources */,
 				0BDD5B071D086B170091DD20 /* mokuhyou.png in Resources */,
@@ -511,6 +525,7 @@
 				0BFFF9D31CF82D8400CD1D65 /* pic3.JPG in Resources */,
 				0BFFF9D11CF82C8900CD1D65 /* selfee.JPG in Resources */,
 				0B033C9B1D0BD98B00165071 /* assailant_n.png in Resources */,
+				0B04BEE21D1076CC000264CC /* Open Folder-25.png in Resources */,
 				0B5AFA7C1D0855FA001D3DCA /* s_ema.png in Resources */,
 				0BE19D8B1D0C89C10014FEF1 /* future.jpg in Resources */,
 				0B033C9D1D0BD99000165071 /* lawyer_n.png in Resources */,
@@ -532,6 +547,7 @@
 				0B5AFA801D085C10001D3DCA /* s_makeruna.png in Resources */,
 				0B4D52D01D0C624F0065C0AF /* prepare.png in Resources */,
 				0B033CA11D0BD9A500165071 /* friend_new.png in Resources */,
+				0B04BEE01D10769A000264CC /* Meeting-25.png in Resources */,
 				0B772C681D09ACAB00086E17 /* happy_s.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
