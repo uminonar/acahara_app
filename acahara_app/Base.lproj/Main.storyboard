@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--Add View Controller-->
@@ -401,7 +402,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bes-ce-3eS">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bes-ce-3eS">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="60"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="出来事" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Mg-rr-YFF">
@@ -434,10 +435,10 @@
                                 </subviews>
                                 <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
                             </view>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xDz-hH-Jmx">
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xDz-hH-Jmx">
                                 <rect key="frame" x="0.0" y="62" width="318" height="506"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="atW-Vt-I4o">
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="atW-Vt-I4o">
                                         <rect key="frame" x="0.0" y="-5" width="318" height="511"/>
                                         <subviews>
                                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="VXV-D6-5sd">
@@ -447,11 +448,31 @@
                                             </textView>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="511" id="kbu-zk-ZVJ"/>
+                                        </constraints>
                                     </view>
                                 </subviews>
+                                <constraints>
+                                    <constraint firstItem="atW-Vt-I4o" firstAttribute="centerX" secondItem="xDz-hH-Jmx" secondAttribute="centerX" id="CAc-Sc-OEO"/>
+                                    <constraint firstItem="atW-Vt-I4o" firstAttribute="leading" secondItem="xDz-hH-Jmx" secondAttribute="leading" id="CWZ-Q1-MFk"/>
+                                    <constraint firstAttribute="trailing" secondItem="atW-Vt-I4o" secondAttribute="trailing" id="Pku-oP-Vbv"/>
+                                    <constraint firstItem="atW-Vt-I4o" firstAttribute="top" secondItem="xDz-hH-Jmx" secondAttribute="top" constant="-5" id="Qn2-iK-cCR"/>
+                                    <constraint firstAttribute="bottom" secondItem="atW-Vt-I4o" secondAttribute="bottom" id="T9z-Hm-VG5"/>
+                                </constraints>
                             </scrollView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="xDz-hH-Jmx" firstAttribute="top" secondItem="qua-v5-mrS" secondAttribute="top" constant="62" id="4P0-kz-WkA"/>
+                            <constraint firstItem="xDz-hH-Jmx" firstAttribute="bottom" secondItem="eXd-FP-udf" secondAttribute="top" id="Ddd-fY-q4V"/>
+                            <constraint firstItem="xDz-hH-Jmx" firstAttribute="leading" secondItem="qua-v5-mrS" secondAttribute="leading" id="EeY-2O-4pe"/>
+                            <constraint firstItem="bes-ce-3eS" firstAttribute="top" secondItem="qua-v5-mrS" secondAttribute="top" id="YIe-U9-MR8"/>
+                            <constraint firstAttribute="trailing" secondItem="bes-ce-3eS" secondAttribute="trailing" id="bkL-wd-P7t"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="xDz-hH-Jmx" secondAttribute="trailing" constant="-14" id="iWw-Ex-CV3"/>
+                            <constraint firstItem="xDz-hH-Jmx" firstAttribute="top" secondItem="bes-ce-3eS" secondAttribute="bottom" constant="2" id="lfh-0U-Vjk"/>
+                            <constraint firstItem="xDz-hH-Jmx" firstAttribute="leading" secondItem="bes-ce-3eS" secondAttribute="leading" id="z9U-FX-QU4"/>
+                        </constraints>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
@@ -989,7 +1010,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="RFY-a4-LYv">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RFY-a4-LYv">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="65"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SYu-I7-mR0">
@@ -1053,6 +1074,7 @@
                         <constraints>
                             <constraint firstItem="S3L-6w-baK" firstAttribute="leading" secondItem="RFY-a4-LYv" secondAttribute="leading" id="23X-p5-5XJ"/>
                             <constraint firstItem="S3L-6w-baK" firstAttribute="bottom" secondItem="6Sy-fU-L4c" secondAttribute="top" id="2ff-70-2Ke"/>
+                            <constraint firstItem="RFY-a4-LYv" firstAttribute="top" secondItem="Zgx-1F-Egr" secondAttribute="top" id="2xF-e1-4nG"/>
                             <constraint firstAttribute="trailing" secondItem="S3L-6w-baK" secondAttribute="trailing" id="3bP-aJ-2KG"/>
                             <constraint firstItem="S3L-6w-baK" firstAttribute="leading" secondItem="Zgx-1F-Egr" secondAttribute="leading" id="8R4-uP-4lq"/>
                             <constraint firstItem="S3L-6w-baK" firstAttribute="trailing" secondItem="RFY-a4-LYv" secondAttribute="trailing" id="Psi-sn-NAK"/>
@@ -1362,38 +1384,52 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Jq5-Jf-DQi">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JRC-bd-qlR">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="65"/>
                                 <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                             </view>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jq9-5g-R1u">
-                                <rect key="frame" x="0.0" y="65" width="320" height="503"/>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6cF-kS-qXg">
+                                <rect key="frame" x="0.0" y="62" width="320" height="457"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1bh-sp-fFR">
-                                        <rect key="frame" x="0.0" y="0.0" width="320" height="503"/>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="n2m-MZ-FK9">
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="457"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="4500" id="w2C-lZ-8Hl"/>
+                                            <constraint firstAttribute="height" constant="457" id="MfG-AM-JxO"/>
                                         </constraints>
                                     </view>
                                 </subviews>
+                                <constraints>
+                                    <constraint firstItem="n2m-MZ-FK9" firstAttribute="centerY" secondItem="6cF-kS-qXg" secondAttribute="centerY" id="1eb-XP-Njq"/>
+                                    <constraint firstAttribute="bottom" secondItem="n2m-MZ-FK9" secondAttribute="bottom" id="D6t-Qc-AYh"/>
+                                    <constraint firstItem="n2m-MZ-FK9" firstAttribute="top" secondItem="6cF-kS-qXg" secondAttribute="top" id="P2G-oX-OrY"/>
+                                    <constraint firstAttribute="trailing" secondItem="n2m-MZ-FK9" secondAttribute="trailing" id="XYP-lp-LtB"/>
+                                    <constraint firstItem="n2m-MZ-FK9" firstAttribute="centerX" secondItem="6cF-kS-qXg" secondAttribute="centerX" id="foJ-pt-32Q"/>
+                                    <constraint firstItem="n2m-MZ-FK9" firstAttribute="leading" secondItem="6cF-kS-qXg" secondAttribute="leading" id="yvH-Qm-fv6"/>
+                                </constraints>
                             </scrollView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="Jq5-Jf-DQi" firstAttribute="top" secondItem="YvZ-8c-c7I" secondAttribute="top" id="Fjn-dC-18o"/>
-                            <constraint firstItem="Jq5-Jf-DQi" firstAttribute="height" secondItem="YvZ-8c-c7I" secondAttribute="height" id="IXs-ju-4aS"/>
-                            <constraint firstItem="Jq5-Jf-DQi" firstAttribute="leading" secondItem="YvZ-8c-c7I" secondAttribute="leading" id="L7R-Dp-GDn"/>
-                            <constraint firstItem="jq9-5g-R1u" firstAttribute="top" secondItem="Jq5-Jf-DQi" secondAttribute="bottom" id="VJW-Ir-N02"/>
-                            <constraint firstItem="Jth-Dt-qQT" firstAttribute="top" secondItem="jq9-5g-R1u" secondAttribute="bottom" id="Z4p-GN-dF4"/>
-                            <constraint firstAttribute="trailing" secondItem="jq9-5g-R1u" secondAttribute="trailing" id="d3g-Ry-hhe"/>
-                            <constraint firstAttribute="trailing" secondItem="Jq5-Jf-DQi" secondAttribute="trailing" id="eNh-du-zea"/>
-                            <constraint firstItem="Jq5-Jf-DQi" firstAttribute="width" secondItem="YvZ-8c-c7I" secondAttribute="width" id="k6l-J0-QUT"/>
-                            <constraint firstItem="jq9-5g-R1u" firstAttribute="leading" secondItem="YvZ-8c-c7I" secondAttribute="leading" id="tG1-Vc-CPD"/>
+                            <constraint firstItem="JRC-bd-qlR" firstAttribute="top" secondItem="YvZ-8c-c7I" secondAttribute="top" id="BxN-aO-lNr"/>
+                            <constraint firstItem="Jth-Dt-qQT" firstAttribute="top" secondItem="JRC-bd-qlR" secondAttribute="bottom" constant="454" id="EBy-2H-Ndh"/>
+                            <constraint firstItem="6cF-kS-qXg" firstAttribute="leading" secondItem="JRC-bd-qlR" secondAttribute="leading" id="Qa9-w2-rBc"/>
+                            <constraint firstItem="n2m-MZ-FK9" firstAttribute="width" secondItem="YvZ-8c-c7I" secondAttribute="width" id="Wj8-DH-8k3"/>
+                            <constraint firstItem="6cF-kS-qXg" firstAttribute="leading" secondItem="YvZ-8c-c7I" secondAttribute="leading" id="aPE-k5-UUz"/>
+                            <constraint firstItem="6cF-kS-qXg" firstAttribute="top" secondItem="N1P-05-TLa" secondAttribute="bottom" constant="42" id="adx-Mb-idc"/>
+                            <constraint firstItem="Jth-Dt-qQT" firstAttribute="top" secondItem="6cF-kS-qXg" secondAttribute="bottom" id="kIg-Uj-uzH"/>
+                            <constraint firstItem="6cF-kS-qXg" firstAttribute="trailing" secondItem="JRC-bd-qlR" secondAttribute="trailing" id="koT-hZ-PWC"/>
+                            <constraint firstAttribute="trailing" secondItem="6cF-kS-qXg" secondAttribute="trailing" id="vSh-Yi-3W0"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="流れ" image="ssgSetting.png" id="i1c-Ap-v8M"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <connections>
+                        <outlet property="baseView" destination="YvZ-8c-c7I" id="XSg-bf-ZrD"/>
+                        <outlet property="contentView" destination="n2m-MZ-FK9" id="pKX-au-Bwv"/>
+                        <outlet property="headerView" destination="JRC-bd-qlR" id="uqf-0R-h6H"/>
+                        <outlet property="scrollView" destination="6cF-kS-qXg" id="gXQ-b6-NS1"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Rm4-m0-DoF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

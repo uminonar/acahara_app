@@ -13,8 +13,12 @@ class StepViewController: UIViewController {
     @IBOutlet weak var toggleBtn: UIButton!
     @IBOutlet weak var addBtn: UIButton!
 
+    @IBOutlet var baseView: UIView!
+    @IBOutlet weak var headerView: UIView!
     
+    @IBOutlet weak var scrollView: UIScrollView!
 
+    @IBOutlet weak var contentView: UIView!
     
     
     override func viewDidLoad() {
