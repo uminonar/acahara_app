@@ -389,46 +389,6 @@
             </objects>
             <point key="canvasLocation" x="-25" y="873"/>
         </scene>
-        <!--流れ-->
-        <scene sceneID="vgn-Ee-btG">
-            <objects>
-                <viewController id="APg-7l-vCa" customClass="StepViewController" customModule="acahara_app" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="JMD-W7-Dty"/>
-                        <viewControllerLayoutGuide type="bottom" id="3tZ-yj-COP"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="CMS-4B-MkF">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Xiu-tw-pTr">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                                <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fsF-w2-ll4">
-                                        <rect key="frame" x="142" y="259" width="46" height="30"/>
-                                        <state key="normal" title="Button"/>
-                                    </button>
-                                </subviews>
-                                <color key="backgroundColor" red="1" green="0.40000000600000002" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
-                            </scrollView>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="fsF-w2-ll4" firstAttribute="centerY" secondItem="CMS-4B-MkF" secondAttribute="centerY" id="9jn-hz-CgN"/>
-                            <constraint firstItem="Xiu-tw-pTr" firstAttribute="centerY" secondItem="CMS-4B-MkF" secondAttribute="centerY" id="QPD-O9-grr"/>
-                            <constraint firstItem="Xiu-tw-pTr" firstAttribute="height" secondItem="CMS-4B-MkF" secondAttribute="height" id="WXv-MV-f0H"/>
-                            <constraint firstItem="Xiu-tw-pTr" firstAttribute="centerX" secondItem="CMS-4B-MkF" secondAttribute="centerX" id="maI-Xv-gnv"/>
-                            <constraint firstItem="Xiu-tw-pTr" firstAttribute="width" secondItem="CMS-4B-MkF" secondAttribute="width" id="ndC-hr-Nwo"/>
-                            <constraint firstItem="fsF-w2-ll4" firstAttribute="centerX" secondItem="CMS-4B-MkF" secondAttribute="centerX" id="oaa-oI-3yy"/>
-                        </constraints>
-                    </view>
-                    <tabBarItem key="tabBarItem" title="流れ" image="ssgSetting.png" id="nbU-Ju-tn6"/>
-                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="ou6-Yg-Ah9" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-529" y="-522"/>
-        </scene>
         <!--Add Diary View Controller-->
         <scene sceneID="fUl-bo-QwH">
             <objects>
@@ -1390,9 +1350,59 @@
             </objects>
             <point key="canvasLocation" x="1655" y="744"/>
         </scene>
+        <!--流れ-->
+        <scene sceneID="2va-Qp-O6z">
+            <objects>
+                <viewController id="dXL-4X-WG2" customClass="StepViewController" customModule="acahara_app" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="N1P-05-TLa"/>
+                        <viewControllerLayoutGuide type="bottom" id="Jth-Dt-qQT"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="YvZ-8c-c7I">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Jq5-Jf-DQi">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="65"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                            </view>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jq9-5g-R1u">
+                                <rect key="frame" x="0.0" y="65" width="320" height="503"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1bh-sp-fFR">
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="503"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="4500" id="w2C-lZ-8Hl"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                            </scrollView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Jq5-Jf-DQi" firstAttribute="top" secondItem="YvZ-8c-c7I" secondAttribute="top" id="Fjn-dC-18o"/>
+                            <constraint firstItem="Jq5-Jf-DQi" firstAttribute="height" secondItem="YvZ-8c-c7I" secondAttribute="height" id="IXs-ju-4aS"/>
+                            <constraint firstItem="Jq5-Jf-DQi" firstAttribute="leading" secondItem="YvZ-8c-c7I" secondAttribute="leading" id="L7R-Dp-GDn"/>
+                            <constraint firstItem="jq9-5g-R1u" firstAttribute="top" secondItem="Jq5-Jf-DQi" secondAttribute="bottom" id="VJW-Ir-N02"/>
+                            <constraint firstItem="Jth-Dt-qQT" firstAttribute="top" secondItem="jq9-5g-R1u" secondAttribute="bottom" id="Z4p-GN-dF4"/>
+                            <constraint firstAttribute="trailing" secondItem="jq9-5g-R1u" secondAttribute="trailing" id="d3g-Ry-hhe"/>
+                            <constraint firstAttribute="trailing" secondItem="Jq5-Jf-DQi" secondAttribute="trailing" id="eNh-du-zea"/>
+                            <constraint firstItem="Jq5-Jf-DQi" firstAttribute="width" secondItem="YvZ-8c-c7I" secondAttribute="width" id="k6l-J0-QUT"/>
+                            <constraint firstItem="jq9-5g-R1u" firstAttribute="leading" secondItem="YvZ-8c-c7I" secondAttribute="leading" id="tG1-Vc-CPD"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="流れ" image="ssgSetting.png" id="i1c-Ap-v8M"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Rm4-m0-DoF" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-534" y="-972"/>
+        </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="DGx-O7-fe8">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="oUi-Vr-v48" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="QiM-gj-Thz" customClass="TabBarController" customModule="acahara_app" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" id="mfY-Mm-P7U">
@@ -1400,14 +1410,13 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </tabBar>
                     <connections>
-                        <segue destination="APg-7l-vCa" kind="relationship" relationship="viewControllers" id="nS4-qN-8IH"/>
+                        <segue destination="dXL-4X-WG2" kind="relationship" relationship="viewControllers" id="289-Ov-Trj"/>
                         <segue destination="kmR-6f-bWc" kind="relationship" relationship="viewControllers" id="wzE-7e-22c"/>
                         <segue destination="wnK-gz-YAn" kind="relationship" relationship="viewControllers" id="abP-MM-ywm"/>
                     </connections>
                 </tabBarController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="oUi-Vr-v48" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="158" y="-208"/>
+            <point key="canvasLocation" x="590" y="-256"/>
         </scene>
         <!--記録-->
         <scene sceneID="ktl-z2-Gpu">
