@@ -55,6 +55,7 @@
 		0B772C6C1D09B53C00086E17 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B772C6B1D09B53C00086E17 /* TabBarController.swift */; };
 		0B94338B1D0275AA00A93027 /* AssistViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B94338A1D0275AA00A93027 /* AssistViewController.swift */; };
 		0B97FE171D0E58600000E700 /* StepViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B97FE161D0E58600000E700 /* StepViewController.swift */; };
+		0B982EFA1D101BBA00BC6D5A /* LeftMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B982EF91D101BBA00BC6D5A /* LeftMenuViewController.swift */; };
 		0B9DBFE71CFFF1F200B78293 /* AddSoundViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B9DBFE61CFFF1F200B78293 /* AddSoundViewController.swift */; };
 		0B9DF2611D01ADC100B478C7 /* PictureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B9DF2601D01ADC100B478C7 /* PictureViewController.swift */; };
 		0BA5624F1CFB112600760490 /* bgImage.JPG in Resources */ = {isa = PBXBuildFile; fileRef = 0BA5624E1CFB112600760490 /* bgImage.JPG */; };
@@ -161,6 +162,7 @@
 		0B772C6B1D09B53C00086E17 /* TabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		0B94338A1D0275AA00A93027 /* AssistViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AssistViewController.swift; sourceTree = "<group>"; };
 		0B97FE161D0E58600000E700 /* StepViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StepViewController.swift; sourceTree = "<group>"; };
+		0B982EF91D101BBA00BC6D5A /* LeftMenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LeftMenuViewController.swift; sourceTree = "<group>"; };
 		0B9DBFE61CFFF1F200B78293 /* AddSoundViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddSoundViewController.swift; sourceTree = "<group>"; };
 		0B9DF2601D01ADC100B478C7 /* PictureViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PictureViewController.swift; sourceTree = "<group>"; };
 		0BA5624E1CFB112600760490 /* bgImage.JPG */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = bgImage.JPG; sourceTree = "<group>"; };
@@ -273,6 +275,7 @@
 				0B0094891CF6FFB90041B3B5 /* AppDelegate.swift */,
 				0B00948B1CF6FFB90041B3B5 /* HomeViewController.swift */,
 				0B97FE161D0E58600000E700 /* StepViewController.swift */,
+				0B982EF91D101BBA00BC6D5A /* LeftMenuViewController.swift */,
 				0B029EE21D08FB7400A747C9 /* HomeNavigationController.swift */,
 				0B772C6B1D09B53C00086E17 /* TabBarController.swift */,
 				0B0686C61CFBFA58002AB722 /* DetailViewController.swift */,
@@ -696,6 +699,7 @@
 				0BD4F1541D051A28001AA8EC /* MailContentViewController.swift in Sources */,
 				0B59AD461D07BB9100E740F5 /* assistChoseAdvisorTableViewCell.swift in Sources */,
 				0B59AD3C1D07B55A00E740F5 /* assistInfoTableViewCell.swift in Sources */,
+				0B982EFA1D101BBA00BC6D5A /* LeftMenuViewController.swift in Sources */,
 				0B09F2491D02C38E006F11D5 /* ChosePostsViewController.swift in Sources */,
 				0B00948A1CF6FFB90041B3B5 /* AppDelegate.swift in Sources */,
 				0B029EE31D08FB7400A747C9 /* HomeNavigationController.swift in Sources */,

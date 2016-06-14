@@ -19,7 +19,7 @@ class StepViewController: UIViewController {
     @IBOutlet weak var scrollView: UIScrollView!
 
     @IBOutlet weak var contentView: UIView!
-    
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,12 +29,20 @@ class StepViewController: UIViewController {
 //        let toggleImage = toggle.imageWithSize(CGSizeMake(25, 25))
 //        toggleBtn.setImage(toggleImage, forState: .Normal)
         
+        navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Left", style: .Plain, target: self, action: #selector(SSASideMenu.presentLeftMenuViewController))
+
         
-//        let add = FAKFontAwesome.editIconWithSize(25)
-//        add.addAttribute(NSForegroundColorAttributeName, value: UIColor.redColor())
-//        let addImage = add.imageWithSize(CGSizeMake(25, 25))
-//        addBtn.setImage(addImage, forState: .Normal)
+    }
+    
+    override func viewWillAppear(animated: Bool) {
         
+                let add = FAKFontAwesome.editIconWithSize(25)
+                add.addAttribute(NSForegroundColorAttributeName, value: UIColor.redColor())
+                let addImage = add.imageWithSize(CGSizeMake(25, 25))
+        
+                //sideBarを入れるとき、ここでやはりエラーが出た　ここをコメントアウトしてNavigationControllerを上から置いてみた
+//                addBtn.setImage(addImage, forState: .Normal)
+
     }
     
 
