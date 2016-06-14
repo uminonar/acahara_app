@@ -131,7 +131,7 @@ class AddWhereViewController: UIViewController,UITableViewDelegate,UITableViewDa
           
             //ユーザーデフォルトに保存
             //ユーザーデフォルトを用意する
-            var myDefault = NSUserDefaults.standardUserDefaults()
+            let myDefault = NSUserDefaults.standardUserDefaults()
             
             //データを書き込んで
             myDefault.setObject(placeList, forKey: "placeList")

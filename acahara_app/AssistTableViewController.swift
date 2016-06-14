@@ -8,15 +8,14 @@
 
 import UIKit
 
-class AssistTableViewController: UIViewController,UITableViewDelegate,UITableViewDataSource, UIImagePickerControllerDelegate,UITextFieldDelegate,SideMenuDelegate {
+class AssistTableViewController: UIViewController,UITableViewDelegate,UITableViewDataSource, UIImagePickerControllerDelegate,UITextFieldDelegate {
 
-    var sideMenu : SideMenu?
     var expandflag = false
     var rownumber = 3
     
     @IBOutlet weak var sendBtn: UIButton!
 
-    @IBOutlet weak var assistBars: UIButton!
+
     
     var mailContent = Dictionary<String,String>()
 
@@ -37,13 +36,7 @@ class AssistTableViewController: UIViewController,UITableViewDelegate,UITableVie
         //テーブルビューの罫線を消す
         assistTableView.separatorColor = UIColor.clearColor()
         
-        let bars = FAKFontAwesome.barsIconWithSize(20)
-        //下記でアイコンの色も変えられます
-        bars.addAttribute(NSForegroundColorAttributeName, value: UIColor.whiteColor())
-        
-        let barsImage = bars.imageWithSize(CGSizeMake(20, 20))
-        
-        assistBars.setImage(barsImage, forState: .Normal)
+       
         
         
         //飛行機、決定送信
@@ -53,24 +46,12 @@ class AssistTableViewController: UIViewController,UITableViewDelegate,UITableVie
         let sendImage = send.imageWithSize(CGSizeMake(20, 20))
         sendBtn.setImage(sendImage, forState: .Normal)
         
-        
-        //MARK:サイドメニューの項目をここで決定
-        sideMenu = SideMenu(sourceView: self.view, menuData: ["使い方", "設定", "利用規約"])
-        sideMenu!.delegate = self
-        
+
         
     }
     
     
-    //サイドメニューの項目が選択された時、SideMenu.swiftの中にあるtoggleMenu()を実行
-    func sideMenuDidSelectItemAtIndex(index: Int) {
-        sideMenu?.toggleMenu()
-    }
-    
-    //トグルボタンがタップされた時も、SideMenu.swiftの中にあるtoggleMenu()を実行
-    @IBAction func toggleSideMenu(sender: AnyObject) {
-        sideMenu?.toggleMenu()
-    }
+
     
     override func viewWillAppear(animated: Bool) {
         let path = NSBundle.mainBundle().pathForResource("mailContents", ofType: "txt")
@@ -424,14 +405,7 @@ class AssistTableViewController: UIViewController,UITableViewDelegate,UITableVie
 //    }
     
     
-    @IBAction func assistBarBtn(sender: UIButton) {
-        
-        //TODO:サイドバーを表示する
-        
-    }
-    
-    
-    
+     
     
 
     override func didReceiveMemoryWarning() {

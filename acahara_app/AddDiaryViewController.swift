@@ -79,7 +79,9 @@ class AddDiaryViewController: UIViewController, UITextViewDelegate {
     func onClickCloseButton(sender: UIButton) {
         diaryTextView.resignFirstResponder()
         
-        diaryTextView.frame = CGRectMake(0, 20, 320, 700)
+        //Mark:ここを修正
+        //diaryTextView.frame = CGRectMake(0, 20, 320, 700)
+        diaryTextView.frame = CGRectMake(0,20, diaryTextView.bounds.width,myBoundsize.height-85)
         
     }
     
@@ -92,6 +94,10 @@ class AddDiaryViewController: UIViewController, UITextViewDelegate {
         if( diary != nil){
             print(diary)
             diaryTextView.text = diary
+            
+            //MARK:先頭にカーソルを合わせる
+            diaryTextView.selectedRange = NSMakeRange(0, 0)
+            
         }
         
         NSNotificationCenter.defaultCenter().addObserver(self,
@@ -123,8 +129,19 @@ class AddDiaryViewController: UIViewController, UITextViewDelegate {
                 restoreScrollViewSize()
                 
                 let convertedKeyboardFrame = scrollView.convertRect(keyboardFrame, fromView: nil)
-                let offsetY: CGFloat = CGRectGetMaxY(diaryTextView.frame) - CGRectGetMinY(convertedKeyboardFrame)
+                var offsetY: CGFloat = CGRectGetMaxY(diaryTextView.frame) - CGRectGetMinY(convertedKeyboardFrame)
+                
+                //MARK:追加
+                diaryTextView.frame = CGRectMake(18,20, diaryTextView.bounds.width, myBoundsize.height - convertedKeyboardFrame.height-65)
+                
+                
+                
+                
                 if offsetY < 0 { return }
+                //Mark:計算結果を使わずにここで決め打ちしてしまう方が安定
+                offsetY = 10.0
+                
+                
                 updateScrollViewSize(offsetY, duration: animationDuration)
             }
         }

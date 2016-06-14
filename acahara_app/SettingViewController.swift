@@ -11,6 +11,8 @@ import UIKit
 class SettingViewController: UIViewController {
 
 
+    @IBOutlet weak var settingBars: UIButton!
+    
     @IBOutlet weak var settingSelfee: UIImageView!
     @IBOutlet weak var settingSelgeeC: UIImageView!
 
@@ -64,7 +66,15 @@ class SettingViewController: UIViewController {
         
         cancelBtn.setImage(timesImage, forState: .Normal)
         
+        let bars = FAKFontAwesome.barsIconWithSize(20)
+        //下記でアイコンの色も変えられます
+//        bars.addAttribute(NSForegroundColorAttributeName, value: UIColor.whiteColor())
         
+        let barsImage = bars.imageWithSize(CGSizeMake(20, 20))
+        
+        settingBars.setImage(barsImage, forState: .Normal)
+        
+         navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Left", style: .Plain, target: self, action: #selector(SSASideMenu.presentLeftMenuViewController))
         
     }
 
