@@ -48,8 +48,15 @@ class StepViewController: UIViewController {
         
         if stepAdd != nil{
             //"stepAdd"を空にして
+            var appDomain:String = NSBundle.mainBundle().bundleIdentifier!
+            
+            myDefault.removeObjectForKey("stepAdd")
+            
             //タブで記録のページAddTableVCへ切り替え
             //そちらで記録成功が普通に表示される
+//            上記のタブ切り替えの方法だと、デリゲートメソッドがコールバックされない?
+        
+            self.navigationController!.tabBarController!.selectedIndex = 1;
         }
     }
     
