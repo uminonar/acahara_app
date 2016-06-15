@@ -29,6 +29,8 @@ class StepViewController: UIViewController {
         let toggleImage = toggle.imageWithSize(CGSizeMake(25, 25))
         toggleBtn.setImage(toggleImage, forState: .Normal)
         
+        toggleBtn.addTarget(SSASideMenu(), action: Selector("presentLeftMenuViewController"), forControlEvents: UIControlEvents.TouchUpInside)
+        
         let add = FAKFontAwesome.editIconWithSize(25)
         add.addAttribute(NSForegroundColorAttributeName, value: UIColor.redColor())
         let addImage = add.imageWithSize(CGSizeMake(25, 25))
@@ -66,12 +68,6 @@ class StepViewController: UIViewController {
         presentViewController(AddTableView, animated: true, completion: nil)
     }
 
-    @IBAction func tapSideBar(sender: UIButton) {
-        
-        //ここどう記述？
-        //target: self, action: #selector(SSASideMenu.presentLeftMenuViewController))
-        
-    }
 
     
 

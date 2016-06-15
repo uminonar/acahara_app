@@ -1371,6 +1371,25 @@
             </objects>
             <point key="canvasLocation" x="1655" y="744"/>
         </scene>
+        <!--Left Menu View Controller-->
+        <scene sceneID="HGa-G8-e8x">
+            <objects>
+                <viewController storyboardIdentifier="LeftMenuViewController" id="MKd-EO-BNG" customClass="LeftMenuViewController" customModule="acahara_app" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="aGS-qo-6p2"/>
+                        <viewControllerLayoutGuide type="bottom" id="PLb-yD-QVK"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="otk-Lh-KAK">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="aWA-U2-nhn" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-129" y="-680"/>
+        </scene>
         <!--流れ-->
         <scene sceneID="2va-Qp-O6z">
             <objects>
@@ -1390,7 +1409,7 @@
                                         <rect key="frame" x="0.0" y="127" width="320" height="568"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="456" id="Nht-jv-2NO"/>
+                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="3000" id="Nht-jv-2NO"/>
                                             <constraint firstAttribute="height" relation="lessThanOrEqual" constant="456" id="emd-PY-g0H"/>
                                             <constraint firstAttribute="height" constant="456" id="slL-sI-YKt"/>
                                         </constraints>
@@ -1440,7 +1459,6 @@
                     <connections>
                         <outlet property="addBtn" destination="K40-G4-liT" id="l6K-kU-vD1"/>
                         <outlet property="baseView" destination="YvZ-8c-c7I" id="XSg-bf-ZrD"/>
-                        <outlet property="toggleBtn" destination="KDn-ip-9bV" id="KUS-FB-9Ib"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Rm4-m0-DoF" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1450,7 +1468,7 @@
         <!--Tab Bar Controller-->
         <scene sceneID="DGx-O7-fe8">
             <objects>
-                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="QiM-gj-Thz" customClass="TabBarController" customModule="acahara_app" customModuleProvider="target" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="TabBarController" automaticallyAdjustsScrollViewInsets="NO" id="QiM-gj-Thz" customClass="TabBarController" customModule="acahara_app" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" id="mfY-Mm-P7U">
                         <autoresizingMask key="autoresizingMask"/>
@@ -1464,7 +1482,7 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oUi-Vr-v48" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="662" y="-458"/>
+            <point key="canvasLocation" x="1110" y="-882"/>
         </scene>
         <!--記録-->
         <scene sceneID="ktl-z2-Gpu">

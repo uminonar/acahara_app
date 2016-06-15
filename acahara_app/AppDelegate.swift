@@ -17,7 +17,30 @@ class AppDelegate: UIResponder, UIApplicationDelegate,SSASideMenuDelegate  {
         
         window = UIWindow(frame: UIScreen.mainScreen().bounds)
         
+        var storyboard = UIStoryboard(name: "Main", bundle: nil)
+        
         //MARK : Setup SSASideMenu
+        
+        var myTabBarController = storyboard.instantiateViewControllerWithIdentifier("TabBarController") as! TabBarController
+        
+        
+        var stepView = storyboard.instantiateViewControllerWithIdentifier("StepViewController") as! StepViewController
+        
+        var assistView = storyboard.instantiateViewControllerWithIdentifier("AssistTableViewController") as! AssistTableViewController
+        
+        var homeNavView = storyboard.instantiateViewControllerWithIdentifier("HomeNavigationController") as! HomeNavigationController
+        
+        var LeftMenuView = storyboard.instantiateViewControllerWithIdentifier("LeftMenuViewController") as! LeftMenuViewController
+        
+        stepView.tabBarItem = UITabBarItem(title: "流れ", image: UIImage(named: "Module-25.png"), tag: 1)//アイコン
+        homeNavView.tabBarItem = UITabBarItem(title: "記録", image: UIImage(named: "Open Folder-25.png"), tag: 2)
+        assistView.tabBarItem = UITabBarItem(title: "相談", image: UIImage(named: "Meeting-25.png"), tag: 3)
+        
+
+        
+        myTabBarController.setViewControllers([stepView,homeNavView,assistView], animated: false)
+//        ここ変更。。var myTabBarController = storyboard.instantiateViewControllerWithIdentifier("TabBarController") as! TabBarController
+        
         
         let sideMenu = SSASideMenu(contentViewController: UINavigationController(rootViewController: StepViewController()), leftMenuViewController: LeftMenuViewController())
         sideMenu.backgroundImage = UIImage(named: "Background.jpg")
