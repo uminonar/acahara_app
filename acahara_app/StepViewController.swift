@@ -24,10 +24,10 @@ class StepViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-//        let toggle = FAKFontAwesome.barsIconWithSize(25)
-//        toggle.addAttribute(NSForegroundColorAttributeName, value: UIColor.redColor())
-//        let toggleImage = toggle.imageWithSize(CGSizeMake(25, 25))
-//        toggleBtn.setImage(toggleImage, forState: .Normal)
+        let toggle = FAKFontAwesome.barsIconWithSize(25)
+        toggle.addAttribute(NSForegroundColorAttributeName, value: UIColor.redColor())
+        let toggleImage = toggle.imageWithSize(CGSizeMake(25, 25))
+        toggleBtn.setImage(toggleImage, forState: .Normal)
         
         let add = FAKFontAwesome.editIconWithSize(25)
         add.addAttribute(NSForegroundColorAttributeName, value: UIColor.redColor())
@@ -45,7 +45,9 @@ class StepViewController: UIViewController {
         var stepAdd = myDefault.stringForKey("stepAdd")
         
         if stepAdd != nil{
-            
+            //"stepAdd"を空にして
+            //タブで記録のページAddTableVCへ切り替え
+            //そちらで記録成功が普通に表示される
         }
     }
     
@@ -62,6 +64,13 @@ class StepViewController: UIViewController {
         let AddTableView = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("AddTableViewController") as UIViewController
         
         presentViewController(AddTableView, animated: true, completion: nil)
+    }
+
+    @IBAction func tapSideBar(sender: UIButton) {
+        
+        //ここどう記述？
+        //target: self, action: #selector(SSASideMenu.presentLeftMenuViewController))
+        
     }
 
     

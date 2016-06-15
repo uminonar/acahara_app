@@ -18,7 +18,7 @@ class SettingViewController: UIViewController {
 
     @IBOutlet weak var saveBtn: UIButton!
 
-    @IBOutlet weak var cancelBtn: UIButton!
+
 
     
     @IBAction func settingNameField(sender: UITextField) {
@@ -60,11 +60,11 @@ class SettingViewController: UIViewController {
         
         saveBtn.setImage(saveImage, forState: .Normal)
 
-        let times = FAKFontAwesome.timesIconWithSize(25)
-        
-        let timesImage = times.imageWithSize(CGSizeMake(25, 25))
-        
-        cancelBtn.setImage(timesImage, forState: .Normal)
+//        let times = FAKFontAwesome.timesIconWithSize(25)
+//        
+//        let timesImage = times.imageWithSize(CGSizeMake(25, 25))
+//        
+//        cancelBtn.setImage(timesImage, forState: .Normal)
         
         let bars = FAKFontAwesome.barsIconWithSize(20)
         //下記でアイコンの色も変えられます
@@ -90,6 +90,11 @@ class SettingViewController: UIViewController {
         
     }
 
+    @IBAction func tapSideBar(sender: UIButton) {
+        
+//        target: self, action: #selector(SSASideMenu.presentLeftMenuViewController)
+        
+    }
     
     
     override func didReceiveMemoryWarning() {

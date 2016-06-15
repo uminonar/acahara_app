@@ -66,6 +66,7 @@
 		0BADA61A1CFB3B9E001702D7 /* AddDiaryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BADA6191CFB3B9E001702D7 /* AddDiaryViewController.swift */; };
 		0BC1DB101D0378E100D203C1 /* question.png in Resources */ = {isa = PBXBuildFile; fileRef = 0BC1DB0F1D0378E100D203C1 /* question.png */; };
 		0BC1DB121D037B3B00D203C1 /* s_question.png in Resources */ = {isa = PBXBuildFile; fileRef = 0BC1DB111D037B3B00D203C1 /* s_question.png */; };
+		0BD2B6881D111C820032F502 /* LeftMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BD2B6871D111C820032F502 /* LeftMenuViewController.swift */; };
 		0BD4F1541D051A28001AA8EC /* MailContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BD4F1531D051A28001AA8EC /* MailContentViewController.swift */; };
 		0BDD5B051D086AC60091DD20 /* ema.png in Resources */ = {isa = PBXBuildFile; fileRef = 0BDD5B041D086AC60091DD20 /* ema.png */; };
 		0BDD5B071D086B170091DD20 /* mokuhyou.png in Resources */ = {isa = PBXBuildFile; fileRef = 0BDD5B061D086B170091DD20 /* mokuhyou.png */; };
@@ -176,6 +177,7 @@
 		0BADA6191CFB3B9E001702D7 /* AddDiaryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddDiaryViewController.swift; sourceTree = "<group>"; };
 		0BC1DB0F1D0378E100D203C1 /* question.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = question.png; sourceTree = "<group>"; };
 		0BC1DB111D037B3B00D203C1 /* s_question.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = s_question.png; sourceTree = "<group>"; };
+		0BD2B6871D111C820032F502 /* LeftMenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LeftMenuViewController.swift; sourceTree = "<group>"; };
 		0BD4F1531D051A28001AA8EC /* MailContentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MailContentViewController.swift; sourceTree = "<group>"; };
 		0BDD5B041D086AC60091DD20 /* ema.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ema.png; sourceTree = "<group>"; };
 		0BDD5B061D086B170091DD20 /* mokuhyou.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mokuhyou.png; sourceTree = "<group>"; };
@@ -280,6 +282,7 @@
 				0BE248A31D05AEE0002BEC1F /* bottomCell.xib */,
 				0B0094891CF6FFB90041B3B5 /* AppDelegate.swift */,
 				0B00948B1CF6FFB90041B3B5 /* HomeViewController.swift */,
+				0BD2B6871D111C820032F502 /* LeftMenuViewController.swift */,
 				0B97FE161D0E58600000E700 /* StepViewController.swift */,
 				0B00948D1CF6FFB90041B3B5 /* SettingViewController.swift */,
 				0B029EE21D08FB7400A747C9 /* HomeNavigationController.swift */,
@@ -712,6 +715,7 @@
 				0BD4F1541D051A28001AA8EC /* MailContentViewController.swift in Sources */,
 				0B59AD461D07BB9100E740F5 /* assistChoseAdvisorTableViewCell.swift in Sources */,
 				0B59AD3C1D07B55A00E740F5 /* assistInfoTableViewCell.swift in Sources */,
+				0BD2B6881D111C820032F502 /* LeftMenuViewController.swift in Sources */,
 				0B09F2491D02C38E006F11D5 /* ChosePostsViewController.swift in Sources */,
 				0B00948A1CF6FFB90041B3B5 /* AppDelegate.swift in Sources */,
 				0B029EE31D08FB7400A747C9 /* HomeNavigationController.swift in Sources */,

@@ -1173,12 +1173,12 @@
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hR9-Tl-ahG">
                                         <rect key="frame" x="277" y="29" width="25" height="25"/>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LqH-w6-evJ">
-                                        <rect key="frame" x="8" y="30" width="25" height="25"/>
-                                    </button>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rgd-pE-Yvi">
-                                        <rect key="frame" x="6" y="27" width="30" height="30"/>
+                                        <rect key="frame" x="8" y="21" width="30" height="30"/>
                                         <color key="tintColor" red="1" green="0.40000000600000002" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                        <connections>
+                                            <action selector="tapSideBar:" destination="8rJ-Kc-sve" eventType="touchUpInside" id="r0e-PH-Be4"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
@@ -1204,7 +1204,6 @@
                     <navigationItem key="navigationItem" id="Aht-8V-kzo"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
-                        <outlet property="cancelBtn" destination="LqH-w6-evJ" id="sFW-Do-TAF"/>
                         <outlet property="saveBtn" destination="hR9-Tl-ahG" id="twb-5s-hsI"/>
                         <outlet property="settingBars" destination="rgd-pE-Yvi" id="Ouo-RS-VRP"/>
                         <outlet property="settingSelfee" destination="0hE-ht-h1Q" id="5jh-Gh-Fn2"/>
@@ -1213,7 +1212,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Nw-L8-lE0" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1843" y="-1934"/>
+            <point key="canvasLocation" x="1852" y="-1934"/>
         </scene>
         <!--Picture View Controller-->
         <scene sceneID="2LX-EH-4EC">
@@ -1404,8 +1403,16 @@
                                     </view>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="K40-G4-liT">
                                         <rect key="frame" x="268" y="28" width="30" height="30"/>
+                                        <color key="tintColor" red="1" green="0.40000000600000002" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
                                         <connections>
                                             <action selector="stepAddBtn:" destination="dXL-4X-WG2" eventType="touchUpInside" id="OzB-Ol-spy"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KDn-ip-9bV">
+                                        <rect key="frame" x="15" y="28" width="30" height="30"/>
+                                        <color key="tintColor" red="1" green="0.40000000600000002" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                        <connections>
+                                            <action selector="tapSideBar:" destination="dXL-4X-WG2" eventType="touchUpInside" id="0Ty-dQ-SL8"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -1433,11 +1440,12 @@
                     <connections>
                         <outlet property="addBtn" destination="K40-G4-liT" id="l6K-kU-vD1"/>
                         <outlet property="baseView" destination="YvZ-8c-c7I" id="XSg-bf-ZrD"/>
+                        <outlet property="toggleBtn" destination="KDn-ip-9bV" id="KUS-FB-9Ib"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Rm4-m0-DoF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="266" y="-880"/>
+            <point key="canvasLocation" x="315" y="-877"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="DGx-O7-fe8">
