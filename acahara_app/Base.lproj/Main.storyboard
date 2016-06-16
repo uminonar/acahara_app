@@ -332,7 +332,7 @@
         <!--相談-->
         <scene sceneID="pX6-Dr-I9k">
             <objects>
-                <viewController storyboardIdentifier="AssistTableVIewController" id="wnK-gz-YAn" customClass="AssistTableViewController" customModule="acahara_app" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="AssistTableViewController" id="wnK-gz-YAn" customClass="AssistTableViewController" customModule="acahara_app" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="JGz-pt-TtC"/>
                         <viewControllerLayoutGuide type="bottom" id="3Lx-Km-k8K"/>

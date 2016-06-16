@@ -56,7 +56,7 @@ class StepViewController: UIViewController {
             //そちらで記録成功が普通に表示される
 //            上記のタブ切り替えの方法だと、デリゲートメソッドがコールバックされない?
         
-            self.navigationController!.tabBarController!.selectedIndex = 1;
+            self.tabBarController!.selectedIndex = 1;
         }
     }
     
