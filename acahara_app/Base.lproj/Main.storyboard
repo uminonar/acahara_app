@@ -1393,7 +1393,7 @@
         <!--流れ-->
         <scene sceneID="2va-Qp-O6z">
             <objects>
-                <viewController id="dXL-4X-WG2" customClass="StepViewController" customModule="acahara_app" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="StepViewController" id="dXL-4X-WG2" customClass="StepViewController" customModule="acahara_app" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="N1P-05-TLa"/>
                         <viewControllerLayoutGuide type="bottom" id="Jth-Dt-qQT"/>
@@ -1487,7 +1487,7 @@
         <!--記録-->
         <scene sceneID="ktl-z2-Gpu">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="kmR-6f-bWc" customClass="HomeNavigationController" customModule="acahara_app" customModuleProvider="target" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="HomeNavigationController" automaticallyAdjustsScrollViewInsets="NO" id="kmR-6f-bWc" customClass="HomeNavigationController" customModule="acahara_app" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="記録" image="Open Folder-25.png" id="o1I-ZY-DA3"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="e23-0V-7wY">
@@ -1501,7 +1501,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ThS-8K-nvF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="644" y="637"/>
+            <point key="canvasLocation" x="1036" y="225"/>
         </scene>
     </scenes>
     <resources>
