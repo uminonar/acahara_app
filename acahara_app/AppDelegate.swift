@@ -44,7 +44,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate,SSASideMenuDelegate  {
         
 //        let sideMenu = SSASideMenu(contentViewController: UINavigationController(rootViewController: StepViewController()), leftMenuViewController: LeftMenuViewController())ここを下記のように変更
         let sideMenu = SSASideMenu(contentViewController: myTabBarController, leftMenuViewController: LeftMenuView)
-        sideMenu.backgroundImage = UIImage(named: "Background.jpg")
+        sideMenu.backgroundImage = UIImage(named: "wall.jpg")
         sideMenu.configure(SSASideMenu.MenuViewEffect(fade: true, scale: true, scaleBackground: false))
         sideMenu.configure(SSASideMenu.ContentViewEffect(alpha: 1.0, scale: 0.7))
         sideMenu.configure(SSASideMenu.ContentViewShadow(enabled: true, color: UIColor.blackColor(), opacity: 0.6, radius: 6.0))
