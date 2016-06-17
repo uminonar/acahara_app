@@ -1459,6 +1459,7 @@
                     <connections>
                         <outlet property="addBtn" destination="K40-G4-liT" id="l6K-kU-vD1"/>
                         <outlet property="baseView" destination="YvZ-8c-c7I" id="XSg-bf-ZrD"/>
+                        <outlet property="toggleBtn" destination="KDn-ip-9bV" id="Rmf-bd-U1K"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Rm4-m0-DoF" userLabel="First Responder" sceneMemberID="firstResponder"/>
