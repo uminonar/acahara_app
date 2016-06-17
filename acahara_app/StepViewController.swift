@@ -30,7 +30,7 @@ class StepViewController: UIViewController {
         toggleBtn.setImage(toggleImage, forState: .Normal)
         
         toggleBtn.addTarget(SSASideMenu(), action: Selector("presentLeftMenuViewController"), forControlEvents: UIControlEvents.TouchUpInside)
-        
+
         let add = FAKFontAwesome.editIconWithSize(25)
         add.addAttribute(NSForegroundColorAttributeName, value: UIColor.redColor())
         let addImage = add.imageWithSize(CGSizeMake(25, 25))
