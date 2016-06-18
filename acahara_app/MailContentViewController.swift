@@ -67,11 +67,16 @@ class MailContentViewController: UIViewController, UITextViewDelegate{
             
             mailTextView.inputAccessoryView = accessoryView
         
-            let times = FAKFontAwesome.timesIconWithSize(25)
             
-            let timesImage = times.imageWithSize(CGSizeMake(25, 25))
             
-            cancelBtn.setImage(timesImage, forState: .Normal)
+            
+            
+            
+//            let times = FAKFontAwesome.timesIconWithSize(25)
+//            
+//            let timesImage = times.imageWithSize(CGSizeMake(25, 25))
+//            
+//            cancelBtn.setImage(timesImage, forState: .Normal)
             
             
             let inbox = FAKFontAwesome.inboxIconWithSize(25)

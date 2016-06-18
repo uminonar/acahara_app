@@ -41,12 +41,11 @@ class AssistTableViewController: UIViewController,UITableViewDelegate,UITableVie
         
         //飛行機、決定送信
         let send = FAKFontAwesome.paperPlaneIconWithSize(20)
-        
-        send.addAttribute(NSForegroundColorAttributeName, value: UIColor.redColor())
+        let sakura:UIColor = UIColor(red:1.0,green:0.4,blue:0.4,alpha:1.0)
+        send.addAttribute(NSForegroundColorAttributeName, value: UIColor.whiteColor())
         let sendImage = send.imageWithSize(CGSizeMake(20, 20))
         sendBtn.setImage(sendImage, forState: .Normal)
         
-
         
     }
     

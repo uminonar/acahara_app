@@ -65,12 +65,12 @@ extension LeftMenuViewController: UITableViewDelegate, UITableViewDataSource {
         
         let cell = tableView.dequeueReusableCellWithIdentifier("cell", forIndexPath: indexPath)
         
-        let titles: [String] = ["Home", "Calendar", "Profile", "Settings", "Log Out"]
+        let titles: [String] = ["設定", "使い方", "利用規約", "コンタクト", "ログアウト"]
         
-        let images: [String] = ["IconHome", "IconCalendar", "IconProfile", "IconSettings", "IconEmpty"]
+        let images: [String] = ["IconSettings", "IconCalendar", "IconProfile", "IconSettings", "IconEmpty"]
         
         cell.backgroundColor = UIColor.clearColor()
-        cell.textLabel?.font = UIFont(name: "HelveticaNeue", size: 21)
+        cell.textLabel?.font = UIFont(name: "HelveticaNeue", size: 19)
         cell.textLabel?.textColor = UIColor.whiteColor()
         cell.textLabel?.text  = titles[indexPath.row]
         cell.selectionStyle = .None

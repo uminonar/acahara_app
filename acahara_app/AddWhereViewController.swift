@@ -22,11 +22,7 @@ class AddWhereViewController: UIViewController,UITableViewDelegate,UITableViewDa
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let times = FAKFontAwesome.timesIconWithSize(25)
-        
-        let timesImage = times.imageWithSize(CGSizeMake(25, 25))
-        
-        cancelBtn.setImage(timesImage, forState: .Normal)
+
         
     }
     

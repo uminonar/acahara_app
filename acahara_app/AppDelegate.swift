@@ -32,13 +32,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate,SSASideMenuDelegate  {
         
         var LeftMenuView = storyboard.instantiateViewControllerWithIdentifier("LeftMenuViewController") as! LeftMenuViewController
         
-        stepView.tabBarItem = UITabBarItem(title: "流れ", image: UIImage(named: "Module-25.png"), tag: 1)//アイコン
-        homeNavView.tabBarItem = UITabBarItem(title: "記録", image: UIImage(named: "Open Folder-25.png"), tag: 2)
-        assistView.tabBarItem = UITabBarItem(title: "相談", image: UIImage(named: "Meeting-25.png"), tag: 3)
+        var prepareView = storyboard.instantiateViewControllerWithIdentifier("PrepareViewController") as! PrepareViewController
         
+//MARK:タブが増やせない、なぜ？
+        
+        stepView.tabBarItem = UITabBarItem(title: "流れ", image: UIImage(named: "sInfo.png"), tag: 1)//アイコン
+        homeNavView.tabBarItem = UITabBarItem(title: "記録", image: UIImage(named: "sPen.png"), tag: 2)
+        assistView.tabBarItem = UITabBarItem(title: "相談", image: UIImage(named: "sAdvisors.png"), tag: 4)
+        
+        prepareView.tabBarItem = UITabBarItem(title: "準備", image: UIImage(named: "sPrepare.png"), tag: 3)
 
         
-        myTabBarController.setViewControllers([stepView,homeNavView,assistView], animated: false)
+        myTabBarController.setViewControllers([stepView,homeNavView,prepareView,assistView], animated: false)
 //        ここ変更。。var myTabBarController = storyboard.instantiateViewControllerWithIdentifier("TabBarController") as! TabBarController
         
         

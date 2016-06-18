@@ -68,11 +68,11 @@ class AddTableViewController: UIViewController,UITableViewDelegate,UITableViewDa
         saveBtn.setImage(saveImage, forState: .Normal)
         
         
-        let times = FAKFontAwesome.timesIconWithSize(25)
-        
-        let timesImage = times.imageWithSize(CGSizeMake(25, 25))
-        
-        cancelBtn.setImage(timesImage, forState: .Normal)
+//        let times = FAKFontAwesome.timesIconWithSize(25)
+//        
+//        let timesImage = times.imageWithSize(CGSizeMake(25, 25))
+//        
+//        cancelBtn.setImage(timesImage, forState: .Normal)
 
     }
     

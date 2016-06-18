@@ -25,21 +25,21 @@ class ChosePostsViewController: UIViewController,UITableViewDelegate,UITableView
         
         choseTableView.registerNib(UINib(nibName: "postCustomCell", bundle: nil), forCellReuseIdentifier: "postCustomCell")
         
-        let times = FAKFontAwesome.timesIconWithSize(25)
+//        let times = FAKFontAwesome.timesIconWithSize(25)
+//        
+//        let timesImage = times.imageWithSize(CGSizeMake(25, 25))
+//        
+//        cancelBtn.setImage(timesImage, forState: .Normal)
+//        
         
-        let timesImage = times.imageWithSize(CGSizeMake(25, 25))
-        
-        cancelBtn.setImage(timesImage, forState: .Normal)
-        
-        
-        let plus = FAKFontAwesome.plusIconWithSize(25)
-        let sakura:UIColor = UIColor(red:1.0,green:0.4,blue:0.4,alpha:1.0)
-        
-        plus.addAttribute(NSForegroundColorAttributeName, value: sakura)
-        
-        let plusImage = plus.imageWithSize(CGSizeMake(25, 25))
-        
-        addBtn.setImage(plusImage, forState: .Normal)
+//        let plus = FAKFontAwesome.plusIconWithSize(25)
+//        let sakura:UIColor = UIColor(red:1.0,green:0.4,blue:0.4,alpha:1.0)
+//        
+//        plus.addAttribute(NSForegroundColorAttributeName, value: sakura)
+//        
+//        let plusImage = plus.imageWithSize(CGSizeMake(25, 25))
+//        
+//        addBtn.setImage(plusImage, forState: .Normal)
 
         
     }

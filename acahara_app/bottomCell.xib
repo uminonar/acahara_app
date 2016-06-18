@@ -37,13 +37,13 @@
                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                     </textView>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gOf-pR-dYo">
-                        <rect key="frame" x="135" y="277" width="50" height="50"/>
+                        <rect key="frame" x="135" y="277" width="35" height="35"/>
                     </imageView>
                     <imageView userInteractionEnabled="NO" alpha="0.90000000000000002" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="M26-JL-5cp">
-                        <rect key="frame" x="243" y="277" width="50" height="50"/>
+                        <rect key="frame" x="243" y="277" width="35" height="35"/>
                     </imageView>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="r0m-pm-8tO">
-                        <rect key="frame" x="31" y="277" width="50" height="50"/>
+                        <rect key="frame" x="31" y="277" width="35" height="35"/>
                     </imageView>
                     <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ylr-nQ-SqT">
                         <rect key="frame" x="251" y="397" width="51" height="31"/>
@@ -73,7 +73,7 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="QDx-kM-l9c">
-                        <rect key="frame" x="98" y="246" width="195" height="143"/>
+                        <rect key="frame" x="8" y="246" width="304" height="143"/>
                     </imageView>
                     <button opaque="NO" alpha="0.5" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3Tz-wh-EVR">
                         <rect key="frame" x="112" y="255" width="98" height="105"/>
@@ -95,7 +95,7 @@
                         </state>
                     </button>
                     <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="P8a-QJ-rsb" customClass="AVPlayerView" customModule="acahara_app" customModuleProvider="target">
-                        <rect key="frame" x="98" y="247" width="195" height="143"/>
+                        <rect key="frame" x="10" y="247" width="302" height="143"/>
                     </view>
                 </subviews>
             </tableViewCellContentView>

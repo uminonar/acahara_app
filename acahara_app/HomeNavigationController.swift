@@ -28,10 +28,10 @@ class HomeNavigationController: UINavigationController,UINavigationControllerDel
         
         let sakura:UIColor = UIColor(red:1.0,green:0.4,blue:0.4,alpha:1.0)
 //        
-//        self.navigationBar.tintColor = sakura
+        self.navigationBar.tintColor = UIColor.whiteColor()
         
         
-        self.navigationBar.barTintColor = UIColor.groupTableViewBackgroundColor()
+        self.navigationBar.barTintColor = sakura
         
         //ナビゲーションバーのシャドウイメージを設定する。
 //        self.navigationBar.shadowImage = UIImage(named: "mokume_test2.png")

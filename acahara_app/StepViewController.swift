@@ -15,10 +15,14 @@ class StepViewController: UIViewController {
 
     @IBOutlet var baseView: UIView!
     @IBOutlet weak var headerView: UIView!
-    
     @IBOutlet weak var scrollView: UIScrollView!
-
     @IBOutlet weak var contentView: UIView!
+    
+ 
+    
+    
+
+
 
     
     override func viewDidLoad() {
@@ -29,13 +33,14 @@ class StepViewController: UIViewController {
         let toggleImage = toggle.imageWithSize(CGSizeMake(25, 25))
         toggleBtn.setImage(toggleImage, forState: .Normal)
         
-        toggleBtn.addTarget(SSASideMenu(), action: Selector("presentLeftMenuViewController"), forControlEvents: UIControlEvents.TouchUpInside)
+        self.toggleBtn.addTarget(SSASideMenu(), action: Selector("presentLeftMenuViewController"), forControlEvents: UIControlEvents.TouchUpInside)
 
         let add = FAKFontAwesome.editIconWithSize(25)
         add.addAttribute(NSForegroundColorAttributeName, value: UIColor.redColor())
         let addImage = add.imageWithSize(CGSizeMake(25, 25))
         
-        addBtn.setImage(addImage, forState: .Normal)
+        self.addBtn.setImage(addImage, forState: .Normal)
+        
 
         
         
