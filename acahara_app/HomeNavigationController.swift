@@ -26,7 +26,7 @@ class HomeNavigationController: UINavigationController,UINavigationControllerDel
         //ナビゲーションバーの背景画像を設定する。
 //        self.navigationBar.setBackgroundImage(UIImage(named: "bgImage.JPG"), forBarMetrics: .Default)
         
-        let sakura:UIColor = UIColor(red:1.0,green:0.4,blue:0.4,alpha:1.0)
+        let sakura:UIColor = UIColor(red:1.0,green:0.3,blue:0.3,alpha:1.0)
 //        
         self.navigationBar.tintColor = UIColor.whiteColor()
         

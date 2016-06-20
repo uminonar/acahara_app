@@ -10,9 +10,13 @@ import UIKit
 
 class StepViewController: UIViewController {
 
-    @IBOutlet weak var toggleBtn: UIButton!
+    @IBOutlet weak var menu: UIImageView!
+    @IBOutlet weak var menuCoverBtn: UIButton!
+   
+
 
     @IBOutlet weak var addBtn: UIImageView!
+    @IBOutlet weak var addCoverBtn: UIButton!
 
     @IBOutlet var baseView: UIView!
 
@@ -21,6 +25,7 @@ class StepViewController: UIViewController {
     @IBOutlet weak var contentView: UIView!
     
     
+    @IBOutlet var menuTap: UITapGestureRecognizer!
 
 
 
@@ -28,14 +33,21 @@ class StepViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        let toggle = FAKFontAwesome.barsIconWithSize(25)
-        toggle.addAttribute(NSForegroundColorAttributeName, value: UIColor.redColor())
-        let toggleImage = toggle.imageWithSize(CGSizeMake(25, 25))
+//        let toggle = FAKFontAwesome.barsIconWithSize(25)
+//        toggle.addAttribute(NSForegroundColorAttributeName, value: UIColor.redColor())
+//        let toggleImage = toggle.imageWithSize(CGSizeMake(25, 25))
+//        
+//        toggleBtn.setImage(toggleImage, forState: .Normal)
+//        
+//        self.toggleBtn.addTarget(SSASideMenu(), action: Selector("presentLeftMenuViewController"), forControlEvents: UIControlEvents.TouchUpInside)
+//
+    
+    self.menuCoverBtn.addTarget(SSASideMenu(), action: Selector("presentLeftMenuViewController"), forControlEvents: UIControlEvents.TouchUpInside)
         
-        toggleBtn.setImage(toggleImage, forState: .Normal)
-        
-        self.toggleBtn.addTarget(SSASideMenu(), action: Selector("presentLeftMenuViewController"), forControlEvents: UIControlEvents.TouchUpInside)
+    
 
+//        menuTap.addTarget(SSASideMenu(), action: Selector("presentLeftMenuViewController:"))
+        
 
         //ここで黒からtintで色を変えている
         addBtn.image = UIImage(named:"create")?.imageWithRenderingMode(.AlwaysTemplate)
@@ -44,8 +56,13 @@ class StepViewController: UIViewController {
 //        soudan.image = UIImage(named:"troubledWoman.jpg")
         
         
+        menu.image = UIImage(named:"menu")?.imageWithRenderingMode(.AlwaysTemplate)
+        
+        menu.tintColor = UIColor.whiteColor()
+        
     }
     
+
     
     override func viewWillAppear(animated: Bool) {
         var myDefault = NSUserDefaults.standardUserDefaults()
@@ -65,7 +82,8 @@ class StepViewController: UIViewController {
         }
     }
     
-    @IBAction func stepAddBtn(sender: UIButton) {
+
+    @IBAction func addCoverBtn(sender: UIButton) {
         
         var myDefault = NSUserDefaults.standardUserDefaults()
         

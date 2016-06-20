@@ -11,7 +11,9 @@ import UIKit
 class SettingViewController: UIViewController {
 
 
-    @IBOutlet weak var settingBars: UIButton!
+
+    @IBOutlet weak var settingMenu: UIImageView!
+    @IBOutlet weak var menuCoverBtn: UIButton!
     
     @IBOutlet weak var settingSelfee: UIImageView!
     @IBOutlet weak var settingSelgeeC: UIImageView!
@@ -66,18 +68,26 @@ class SettingViewController: UIViewController {
 //        
 //        cancelBtn.setImage(timesImage, forState: .Normal)
         
-        let bars = FAKFontAwesome.barsIconWithSize(20)
-        //下記でアイコンの色も変えられます
-//        bars.addAttribute(NSForegroundColorAttributeName, value: UIColor.whiteColor())
-        
-        let barsImage = bars.imageWithSize(CGSizeMake(20, 20))
-        
-        settingBars.setImage(barsImage, forState: .Normal)
-        
-        self.settingBars.addTarget(SSASideMenu(), action: Selector("presentLeftMenuViewController"), forControlEvents: UIControlEvents.TouchUpInside)
+//        let bars = FAKFontAwesome.barsIconWithSize(20)
+//        //下記でアイコンの色も変えられます
+////        bars.addAttribute(NSForegroundColorAttributeName, value: UIColor.whiteColor())
+//        
+//        let barsImage = bars.imageWithSize(CGSizeMake(20, 20))
+//        
+//        settingBars.setImage(barsImage, forState: .Normal)
+//        
+//        self.settingBars.addTarget(SSASideMenu(), action: Selector("presentLeftMenuViewController"), forControlEvents: UIControlEvents.TouchUpInside)
         
         //sideBar向け
          navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Left", style: .Plain, target: self, action: #selector(SSASideMenu.presentLeftMenuViewController))
+        
+        settingMenu.image = UIImage(named:"menu")?.imageWithRenderingMode(.AlwaysTemplate)
+
+        let sakura:UIColor = UIColor(red:1.0,green:0.3,blue:0.3,alpha:1.0)
+        
+         settingMenu.tintColor = sakura
+        
+        self.menuCoverBtn.addTarget(SSASideMenu(), action: Selector("presentLeftMenuViewController"), forControlEvents: UIControlEvents.TouchUpInside)
         
     }
 
@@ -92,11 +102,9 @@ class SettingViewController: UIViewController {
         
     }
 
-    @IBAction func tapSideBar(sender: UIButton) {
-        
-//        target: self, action: #selector(SSASideMenu.presentLeftMenuViewController)
-        
-    }
+
+    
+    
     
     
     override func didReceiveMemoryWarning() {

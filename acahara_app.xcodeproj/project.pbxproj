@@ -33,6 +33,7 @@
 		0B06302B1D07DDBE00F9E98B /* mailContents.txt in Resources */ = {isa = PBXBuildFile; fileRef = 0B06302A1D07DDBE00F9E98B /* mailContents.txt */; };
 		0B0686C71CFBFA58002AB722 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B0686C61CFBFA58002AB722 /* DetailViewController.swift */; };
 		0B09F2491D02C38E006F11D5 /* ChosePostsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B09F2481D02C38E006F11D5 /* ChosePostsViewController.swift */; };
+		0B467DE51D17BF0D000C6DC1 /* Menu-25.png in Resources */ = {isa = PBXBuildFile; fileRef = 0B467DE41D17BF0D000C6DC1 /* Menu-25.png */; };
 		0B4D52CE1D0C624A0065C0AF /* advisors.png in Resources */ = {isa = PBXBuildFile; fileRef = 0B4D52CD1D0C624A0065C0AF /* advisors.png */; };
 		0B4D52D01D0C624F0065C0AF /* prepare.png in Resources */ = {isa = PBXBuildFile; fileRef = 0B4D52CF1D0C624F0065C0AF /* prepare.png */; };
 		0B59AD381D07AFEE00E740F5 /* AssistTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B59AD371D07AFED00E740F5 /* AssistTableViewController.swift */; };
@@ -148,6 +149,7 @@
 		0B06302A1D07DDBE00F9E98B /* mailContents.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = mailContents.txt; sourceTree = "<group>"; };
 		0B0686C61CFBFA58002AB722 /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		0B09F2481D02C38E006F11D5 /* ChosePostsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChosePostsViewController.swift; sourceTree = "<group>"; };
+		0B467DE41D17BF0D000C6DC1 /* Menu-25.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Menu-25.png"; sourceTree = "<group>"; };
 		0B4D52CD1D0C624A0065C0AF /* advisors.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = advisors.png; sourceTree = "<group>"; };
 		0B4D52CF1D0C624F0065C0AF /* prepare.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = prepare.png; sourceTree = "<group>"; };
 		0B59AD371D07AFED00E740F5 /* AssistTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AssistTableViewController.swift; sourceTree = "<group>"; };
@@ -310,6 +312,7 @@
 				0BADA6161CFB3089001702D7 /* Main.storyboard */,
 				0B73CE6B1D0D998D007658EF /* SSASideMenu */,
 				0B0094921CF6FFB90041B3B5 /* Assets.xcassets */,
+				0B467DE41D17BF0D000C6DC1 /* Menu-25.png */,
 				0BB408D51D15144200D26AB7 /* inbox.png */,
 				0BB408D31D15123600D26AB7 /* times.png */,
 				0BB408CD1D150B3500D26AB7 /* sPrepare.png */,
@@ -532,6 +535,7 @@
 				0B0094961CF6FFB90041B3B5 /* LaunchScreen.storyboard in Resources */,
 				0BFF45CD1D0A637A0016FCB5 /* shand.png in Resources */,
 				0B59AD3A1D07B1B000E740F5 /* assistInfoCell.xib in Resources */,
+				0B467DE51D17BF0D000C6DC1 /* Menu-25.png in Resources */,
 				0BDD5B071D086B170091DD20 /* mokuhyou.png in Resources */,
 				0BE2489C1D05AAE1002BEC1F /* dateTimeCell.xib in Resources */,
 				0B033C971D0BD98100165071 /* professor_n.png in Resources */,

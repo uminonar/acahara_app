@@ -13,8 +13,6 @@ class HomeViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
     var selectedIndex = -1
     @IBOutlet weak var homeTableView: UITableView!
 
- 
-    
 
 
   
@@ -134,7 +132,10 @@ class HomeViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
         cell.postUniversity.text = posts[indexPath.row]["university"] as! String
         cell.postDiary.text = posts[indexPath.row]["diary"] as! String
         
-        cell.postDiary.font = UIFont.systemFontOfSize(15)
+        cell.postWho.font = UIFont.systemFontOfSize(12)
+        cell.postDiary.font = UIFont.systemFontOfSize(18)
+        cell.postUniversity.font = UIFont.systemFontOfSize(12)
+        
         
         
         //行間の設定
