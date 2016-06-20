@@ -33,7 +33,6 @@
 		0B06302B1D07DDBE00F9E98B /* mailContents.txt in Resources */ = {isa = PBXBuildFile; fileRef = 0B06302A1D07DDBE00F9E98B /* mailContents.txt */; };
 		0B0686C71CFBFA58002AB722 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B0686C61CFBFA58002AB722 /* DetailViewController.swift */; };
 		0B09F2491D02C38E006F11D5 /* ChosePostsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B09F2481D02C38E006F11D5 /* ChosePostsViewController.swift */; };
-		0B4D52CC1D0C62450065C0AF /* pen.png in Resources */ = {isa = PBXBuildFile; fileRef = 0B4D52CB1D0C62450065C0AF /* pen.png */; };
 		0B4D52CE1D0C624A0065C0AF /* advisors.png in Resources */ = {isa = PBXBuildFile; fileRef = 0B4D52CD1D0C624A0065C0AF /* advisors.png */; };
 		0B4D52D01D0C624F0065C0AF /* prepare.png in Resources */ = {isa = PBXBuildFile; fileRef = 0B4D52CF1D0C624F0065C0AF /* prepare.png */; };
 		0B59AD381D07AFEE00E740F5 /* AssistTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B59AD371D07AFED00E740F5 /* AssistTableViewController.swift */; };
@@ -67,7 +66,6 @@
 		0BB408C81D1506A500D26AB7 /* Sent-20.png in Resources */ = {isa = PBXBuildFile; fileRef = 0BB408C71D1506A500D26AB7 /* Sent-20.png */; };
 		0BB408CC1D15085800D26AB7 /* sInfo.png in Resources */ = {isa = PBXBuildFile; fileRef = 0BB408CB1D15085800D26AB7 /* sInfo.png */; };
 		0BB408CE1D150B3500D26AB7 /* sPrepare.png in Resources */ = {isa = PBXBuildFile; fileRef = 0BB408CD1D150B3500D26AB7 /* sPrepare.png */; };
-		0BB408D21D150BC400D26AB7 /* PrepareViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BB408D11D150BC400D26AB7 /* PrepareViewController.swift */; };
 		0BB408D41D15123600D26AB7 /* times.png in Resources */ = {isa = PBXBuildFile; fileRef = 0BB408D31D15123600D26AB7 /* times.png */; };
 		0BB408D61D15144200D26AB7 /* inbox.png in Resources */ = {isa = PBXBuildFile; fileRef = 0BB408D51D15144200D26AB7 /* inbox.png */; };
 		0BC1DB101D0378E100D203C1 /* question.png in Resources */ = {isa = PBXBuildFile; fileRef = 0BC1DB0F1D0378E100D203C1 /* question.png */; };
@@ -150,7 +148,6 @@
 		0B06302A1D07DDBE00F9E98B /* mailContents.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = mailContents.txt; sourceTree = "<group>"; };
 		0B0686C61CFBFA58002AB722 /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		0B09F2481D02C38E006F11D5 /* ChosePostsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChosePostsViewController.swift; sourceTree = "<group>"; };
-		0B4D52CB1D0C62450065C0AF /* pen.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pen.png; sourceTree = "<group>"; };
 		0B4D52CD1D0C624A0065C0AF /* advisors.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = advisors.png; sourceTree = "<group>"; };
 		0B4D52CF1D0C624F0065C0AF /* prepare.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = prepare.png; sourceTree = "<group>"; };
 		0B59AD371D07AFED00E740F5 /* AssistTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AssistTableViewController.swift; sourceTree = "<group>"; };
@@ -184,7 +181,6 @@
 		0BB408C71D1506A500D26AB7 /* Sent-20.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Sent-20.png"; sourceTree = "<group>"; };
 		0BB408CB1D15085800D26AB7 /* sInfo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sInfo.png; sourceTree = "<group>"; };
 		0BB408CD1D150B3500D26AB7 /* sPrepare.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sPrepare.png; sourceTree = "<group>"; };
-		0BB408D11D150BC400D26AB7 /* PrepareViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PrepareViewController.swift; sourceTree = "<group>"; };
 		0BB408D31D15123600D26AB7 /* times.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = times.png; sourceTree = "<group>"; };
 		0BB408D51D15144200D26AB7 /* inbox.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = inbox.png; sourceTree = "<group>"; };
 		0BC1DB0F1D0378E100D203C1 /* question.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = question.png; sourceTree = "<group>"; };
@@ -311,7 +307,6 @@
 				0B94338A1D0275AA00A93027 /* AssistViewController.swift */,
 				0BD4F1531D051A28001AA8EC /* MailContentViewController.swift */,
 				0B09F2481D02C38E006F11D5 /* ChosePostsViewController.swift */,
-				0BB408D11D150BC400D26AB7 /* PrepareViewController.swift */,
 				0BADA6161CFB3089001702D7 /* Main.storyboard */,
 				0B73CE6B1D0D998D007658EF /* SSASideMenu */,
 				0B0094921CF6FFB90041B3B5 /* Assets.xcassets */,
@@ -330,7 +325,6 @@
 				0BE19D8A1D0C89C10014FEF1 /* future.jpg */,
 				0B4D52CF1D0C624F0065C0AF /* prepare.png */,
 				0B4D52CD1D0C624A0065C0AF /* advisors.png */,
-				0B4D52CB1D0C62450065C0AF /* pen.png */,
 				0B033CA01D0BD9A500165071 /* friend_new.png */,
 				0B033C9E1D0BD99500165071 /* committee_n.png */,
 				0B033C9C1D0BD99000165071 /* lawyer_n.png */,
@@ -568,7 +562,6 @@
 				0BB408D41D15123600D26AB7 /* times.png in Resources */,
 				0B033C9F1D0BD99500165071 /* committee_n.png in Resources */,
 				0BFFF9D51CF82DA400CD1D65 /* pic1.JPG in Resources */,
-				0B4D52CC1D0C62450065C0AF /* pen.png in Resources */,
 				0BA5624F1CFB112600760490 /* bgImage.JPG in Resources */,
 				0B06302B1D07DDBE00F9E98B /* mailContents.txt in Resources */,
 				0B5AFA801D085C10001D3DCA /* s_makeruna.png in Resources */,
@@ -728,7 +721,6 @@
 				0B73CE6D1D0D998D007658EF /* SSASideMenu.swift in Sources */,
 				0BE248A61D05B18E002BEC1F /* bottomTableViewCell.swift in Sources */,
 				0BADA61A1CFB3B9E001702D7 /* AddDiaryViewController.swift in Sources */,
-				0BB408D21D150BC400D26AB7 /* PrepareViewController.swift in Sources */,
 				0B94338B1D0275AA00A93027 /* AssistViewController.swift in Sources */,
 				0B9DBFE71CFFF1F200B78293 /* AddSoundViewController.swift in Sources */,
 				0B03D2901CF7D58E0050119E /* AddViewController.swift in Sources */,

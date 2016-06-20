@@ -11,14 +11,14 @@ import UIKit
 class StepViewController: UIViewController {
 
     @IBOutlet weak var toggleBtn: UIButton!
-    @IBOutlet weak var addBtn: UIButton!
+
+    @IBOutlet weak var addBtn: UIImageView!
 
     @IBOutlet var baseView: UIView!
+
     @IBOutlet weak var headerView: UIView!
-    @IBOutlet weak var scrollView: UIScrollView!
-    @IBOutlet weak var contentView: UIView!
-    
  
+    @IBOutlet weak var contentView: UIView!
     
     
 
@@ -31,17 +31,17 @@ class StepViewController: UIViewController {
         let toggle = FAKFontAwesome.barsIconWithSize(25)
         toggle.addAttribute(NSForegroundColorAttributeName, value: UIColor.redColor())
         let toggleImage = toggle.imageWithSize(CGSizeMake(25, 25))
+        
         toggleBtn.setImage(toggleImage, forState: .Normal)
         
         self.toggleBtn.addTarget(SSASideMenu(), action: Selector("presentLeftMenuViewController"), forControlEvents: UIControlEvents.TouchUpInside)
 
-        let add = FAKFontAwesome.editIconWithSize(25)
-        add.addAttribute(NSForegroundColorAttributeName, value: UIColor.redColor())
-        let addImage = add.imageWithSize(CGSizeMake(25, 25))
-        
-        self.addBtn.setImage(addImage, forState: .Normal)
-        
 
+        //ここで黒からtintで色を変えている
+        addBtn.image = UIImage(named:"create")?.imageWithRenderingMode(.AlwaysTemplate)
+        
+        addBtn.tintColor = UIColor.whiteColor()
+//        soudan.image = UIImage(named:"troubledWoman.jpg")
         
         
     }

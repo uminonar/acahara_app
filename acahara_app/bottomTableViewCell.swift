@@ -22,7 +22,7 @@ class bottomTableViewCell: UITableViewCell {
     @IBOutlet weak var addCameraImage: UIImageView!
     @IBOutlet weak var addVideoImage: UIImageView!
    
-    @IBOutlet weak var addMicPhone: UIImageView!
+
     @IBOutlet weak var addImportance: UILabel!
     @IBOutlet weak var picBase: UIImageView!
     
@@ -38,13 +38,12 @@ class bottomTableViewCell: UITableViewCell {
         // 枠の角を丸くする。
         addDiary.layer.cornerRadius = 8
         
+        
+        
 
    
         
-        let mike = FAKFontAwesome.microphoneIconWithSize(50)
-        mike.addAttribute(NSForegroundColorAttributeName, value: UIColor.lightGrayColor())
-        let mikeImg = mike.imageWithSize(CGSizeMake(50, 50))
-        addMicPhone.image = mikeImg
+
         
         
         let addImage = FAKFontAwesome.cameraIconWithSize(50)
@@ -71,7 +70,7 @@ class bottomTableViewCell: UITableViewCell {
     @IBOutlet weak var addSwitch: UISwitch!
     @IBOutlet weak var picFileBtn: UIButton!
     @IBOutlet weak var movieFileBtn: UIButton!
-    @IBOutlet weak var tapSound: UIButton!
+  
 
     override func setSelected(selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)

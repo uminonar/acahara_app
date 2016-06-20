@@ -37,13 +37,10 @@
                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                     </textView>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gOf-pR-dYo">
-                        <rect key="frame" x="135" y="277" width="35" height="35"/>
+                        <rect key="frame" x="81" y="277" width="35" height="35"/>
                     </imageView>
                     <imageView userInteractionEnabled="NO" alpha="0.90000000000000002" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="M26-JL-5cp">
-                        <rect key="frame" x="243" y="277" width="35" height="35"/>
-                    </imageView>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="r0m-pm-8tO">
-                        <rect key="frame" x="31" y="277" width="35" height="35"/>
+                        <rect key="frame" x="220" y="277" width="35" height="35"/>
                     </imageView>
                     <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ylr-nQ-SqT">
                         <rect key="frame" x="251" y="397" width="51" height="31"/>
@@ -55,36 +52,29 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Photo Image" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jkl-VJ-phg">
-                        <rect key="frame" x="112" y="331" width="97" height="21"/>
+                        <rect key="frame" x="50" y="331" width="97" height="21"/>
                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                         <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Movie Image" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="liA-97-3oj">
-                        <rect key="frame" x="220" y="331" width="97" height="21"/>
+                        <rect key="frame" x="189" y="331" width="97" height="21"/>
                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                         <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Microphone" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GdS-li-V49">
-                        <rect key="frame" x="10" y="331" width="92" height="21"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                        <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                        <nil key="highlightedColor"/>
-                    </label>
+                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="P8a-QJ-rsb" customClass="AVPlayerView" customModule="acahara_app" customModuleProvider="target">
+                        <rect key="frame" x="8" y="250" width="302" height="143"/>
+                    </view>
                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="QDx-kM-l9c">
-                        <rect key="frame" x="8" y="246" width="304" height="143"/>
+                        <rect key="frame" x="10" y="250" width="304" height="143"/>
                     </imageView>
                     <button opaque="NO" alpha="0.5" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3Tz-wh-EVR">
-                        <rect key="frame" x="112" y="255" width="98" height="105"/>
+                        <rect key="frame" x="49" y="269" width="98" height="105"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </button>
                     <button opaque="NO" alpha="0.5" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="orR-DF-BkI">
-                        <rect key="frame" x="218" y="251" width="89" height="109"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </button>
-                    <button opaque="NO" alpha="0.5" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CLC-Z6-rcH">
-                        <rect key="frame" x="8" y="255" width="88" height="106"/>
+                        <rect key="frame" x="182" y="265" width="104" height="109"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </button>
                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rhn-Yj-UJs">
@@ -94,16 +84,12 @@
                             <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         </state>
                     </button>
-                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="P8a-QJ-rsb" customClass="AVPlayerView" customModule="acahara_app" customModuleProvider="target">
-                        <rect key="frame" x="10" y="247" width="302" height="143"/>
-                    </view>
                 </subviews>
             </tableViewCellContentView>
             <connections>
                 <outlet property="addCameraImage" destination="gOf-pR-dYo" id="SDs-6L-z4w"/>
                 <outlet property="addDiary" destination="37f-P8-Wcl" id="zYR-Fx-QhH"/>
                 <outlet property="addImportance" destination="h5i-Vo-nrP" id="50Y-zX-xpE"/>
-                <outlet property="addMicPhone" destination="r0m-pm-8tO" id="Igj-Fx-gaY"/>
                 <outlet property="addSwitch" destination="ylr-nQ-SqT" id="wRX-0b-DJe"/>
                 <outlet property="addUniversity" destination="5dg-U3-rqd" id="xME-cR-ghu"/>
                 <outlet property="addVideoImage" destination="M26-JL-5cp" id="jEn-uH-MbI"/>
@@ -114,7 +100,6 @@
                 <outlet property="picBase" destination="QDx-kM-l9c" id="e0a-If-adF"/>
                 <outlet property="picCancelBtn" destination="rhn-Yj-UJs" id="TxW-N1-mVO"/>
                 <outlet property="picFileBtn" destination="3Tz-wh-EVR" id="Weg-dx-9y7"/>
-                <outlet property="tapSound" destination="CLC-Z6-rcH" id="HGb-Ci-fdj"/>
             </connections>
             <point key="canvasLocation" x="-55" y="-73"/>
         </tableViewCell>

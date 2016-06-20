@@ -18,7 +18,7 @@ class homeTableViewCell: UITableViewCell {
     @IBOutlet weak var postWho: UILabel!
     @IBOutlet weak var postUniversity: UILabel!
     @IBOutlet weak var postDiary: UITextView!
-    @IBOutlet weak var postVolume: UIImageView!
+
     @IBOutlet weak var postImageView: UIImageView!
     @IBOutlet weak var postMoreBtn: UIButton!
     @IBOutlet weak var postEllipsis: UIImageView!
@@ -33,10 +33,10 @@ class homeTableViewCell: UITableViewCell {
         super.awakeFromNib()
         
         postPortrait.image = UIImage(named:"selfee.JPG")
-        
-        let volume = FAKFontAwesome.volumeUpIconWithSize(18)
-        let volumeImage = volume.imageWithSize(CGSizeMake(18, 18))
-        postVolume.image = volumeImage
+//
+//        let volume = FAKFontAwesome.volumeUpIconWithSize(18)
+//        let volumeImage = volume.imageWithSize(CGSizeMake(18, 18))
+//        postVolume.image = volumeImage
         
         let ellipsis = FAKFontAwesome.ellipsisHIconWithSize(20)
         ellipsis.addAttribute(NSForegroundColorAttributeName, value: UIColor.lightGrayColor())

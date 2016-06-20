@@ -34,12 +34,6 @@
                         <fontDescription key="fontDescription" type="system" pointSize="10"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="58分" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wid-xO-76S">
-                        <rect key="frame" x="257" y="3" width="57" height="23"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="10"/>
-                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
-                        <nil key="highlightedColor"/>
-                    </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="共生館３階ミーティングルーム" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="w5U-vt-3Wp">
                         <rect key="frame" x="59" y="32" width="140" height="21"/>
                         <fontDescription key="fontDescription" type="system" pointSize="10"/>
@@ -79,12 +73,15 @@
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="uminonar" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iJu-xy-mzR">
                         <rect key="frame" x="59" y="3" width="72" height="21"/>
                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tFR-Jy-Pvl">
-                        <rect key="frame" x="267" y="31" width="18" height="18"/>
-                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="58分" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wid-xO-76S">
+                        <rect key="frame" x="263" y="8" width="57" height="23"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                        <nil key="highlightedColor"/>
+                    </label>
                 </subviews>
             </tableViewCellContentView>
             <connections>
@@ -99,7 +96,6 @@
                 <outlet property="postPortrait" destination="NSx-69-h6F" id="6ke-XL-HAg"/>
                 <outlet property="postTextViewBtn" destination="BfP-h3-VJ1" id="ZN0-0m-sMe"/>
                 <outlet property="postUniversity" destination="PIm-cJ-6qp" id="CEG-8p-rdW"/>
-                <outlet property="postVolume" destination="tFR-Jy-Pvl" id="IXb-hG-fNc"/>
                 <outlet property="postWhen" destination="0LG-Wa-maj" id="GHJ-JS-shH"/>
                 <outlet property="postWhere" destination="w5U-vt-3Wp" id="aho-9p-4Gc"/>
                 <outlet property="postWho" destination="3Uk-Nr-QHO" id="S0c-ci-PkC"/>

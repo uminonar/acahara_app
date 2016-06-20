@@ -74,6 +74,8 @@ class SettingViewController: UIViewController {
         
         settingBars.setImage(barsImage, forState: .Normal)
         
+        self.settingBars.addTarget(SSASideMenu(), action: Selector("presentLeftMenuViewController"), forControlEvents: UIControlEvents.TouchUpInside)
+        
         //sideBar向け
          navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Left", style: .Plain, target: self, action: #selector(SSASideMenu.presentLeftMenuViewController))
         

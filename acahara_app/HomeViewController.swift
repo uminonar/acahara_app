@@ -13,7 +13,7 @@ class HomeViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
     var selectedIndex = -1
     @IBOutlet weak var homeTableView: UITableView!
 
-    @IBOutlet weak var homeWrite: UIButton!
+ 
     
 
 
@@ -42,15 +42,15 @@ class HomeViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
 //        addBtn = UIBarButtonItem(barButtonSystemItem: .Compose, target: self, action: "onClick")
 //        self.navigationItem.rightBarButtonItem = addBtn
 //        
-       
-        let write = FAKFontAwesome.pencilSquareOIconWithSize(25)
-        //下記でアイコンの色も変えられます
-        write.addAttribute(NSForegroundColorAttributeName, value: UIColor.whiteColor())
-        
-        let writeImage = write.imageWithSize(CGSizeMake(25, 25))
-        
-        homeWrite.setImage(writeImage, forState: .Normal)
-        
+//       
+//        let write = FAKFontAwesome.pencilSquareOIconWithSize(25)
+//        //下記でアイコンの色も変えられます
+//        write.addAttribute(NSForegroundColorAttributeName, value: UIColor.whiteColor())
+//        
+//        let writeImage = write.imageWithSize(CGSizeMake(25, 25))
+//        
+//        homeWrite.setImage(writeImage, forState: .Normal)
+//        
 
     }
     
@@ -137,7 +137,7 @@ class HomeViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
         cell.postDiary.font = UIFont.systemFontOfSize(15)
         
         
-        
+        //行間の設定
         let style = NSMutableParagraphStyle()
         style.lineSpacing = 6
         let attributes = [NSParagraphStyleAttributeName : style]

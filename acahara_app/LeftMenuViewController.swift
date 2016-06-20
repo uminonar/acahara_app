@@ -65,7 +65,7 @@ extension LeftMenuViewController: UITableViewDelegate, UITableViewDataSource {
         
         let cell = tableView.dequeueReusableCellWithIdentifier("cell", forIndexPath: indexPath)
         
-        let titles: [String] = ["設定", "使い方", "利用規約", "コンタクト", "ログアウト"]
+        let titles: [String] = ["ホーム","設定", "使い方", "利用規約", "コンタクト", "ログアウト"]
         
         let images: [String] = ["IconSettings", "IconCalendar", "IconProfile", "IconSettings", "IconEmpty"]
         
@@ -84,15 +84,49 @@ extension LeftMenuViewController: UITableViewDelegate, UITableViewDataSource {
         
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
         
+        var storyboard = UIStoryboard(name: "Main", bundle: nil)
+        
         switch indexPath.row {
         case 0:
             
-            sideMenuViewController?.contentViewController = UINavigationController(rootViewController: StepViewController())
+            //sideMenuViewController?.contentViewController = UINavigationController(rootViewController: StepViewController())
+            
+            
+            //MARK : Setup SSASideMenu
+            
+            var myTabBarController = storyboard.instantiateViewControllerWithIdentifier("TabBarController") as! TabBarController
+            
+            
+            var stepView = storyboard.instantiateViewControllerWithIdentifier("StepViewController") as! StepViewController
+            
+            var assistView = storyboard.instantiateViewControllerWithIdentifier("AssistTableViewController") as! AssistTableViewController
+            
+            var homeNavView = storyboard.instantiateViewControllerWithIdentifier("HomeNavigationController") as! HomeNavigationController
+            
+            var LeftMenuView = storyboard.instantiateViewControllerWithIdentifier("LeftMenuViewController") as! LeftMenuViewController
+            
+            
+            
+            //MARK:タブが増やせない、なぜ？
+            
+            stepView.tabBarItem = UITabBarItem(title: "流れ", image: UIImage(named: "sInfo.png"), tag: 1)//アイコン
+            homeNavView.tabBarItem = UITabBarItem(title: "記録", image: UIImage(named: "sPen.png"), tag: 2)
+            assistView.tabBarItem = UITabBarItem(title: "相談", image: UIImage(named: "sAdvisors.png"), tag: 3)
+            
+
+            
+            
+            myTabBarController.setViewControllers([stepView,homeNavView,assistView], animated: false)
+            
+            sideMenuViewController?.contentViewController = myTabBarController
+            
             sideMenuViewController?.hideMenuViewController()
             break
         case 1:
             
-            sideMenuViewController?.contentViewController = UINavigationController(rootViewController: SettingViewController())
+            var settingView = storyboard.instantiateViewControllerWithIdentifier("SettingViewController") as! SettingViewController
+            
+            sideMenuViewController?.contentViewController =  settingView
             sideMenuViewController?.hideMenuViewController()
             break
         default:
