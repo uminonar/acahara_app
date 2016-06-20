@@ -13,7 +13,8 @@ class AssistTableViewController: UIViewController,UITableViewDelegate,UITableVie
     var expandflag = false
     var rownumber = 3
     
-    @IBOutlet weak var sendBtn: UIButton!
+    @IBOutlet weak var send: UIImageView!
+
 
 
     
@@ -40,11 +41,16 @@ class AssistTableViewController: UIViewController,UITableViewDelegate,UITableVie
         
         
         //飛行機、決定送信
-        let send = FAKFontAwesome.paperPlaneIconWithSize(20)
-        let sakura:UIColor = UIColor(red:1.0,green:0.4,blue:0.4,alpha:1.0)
-        send.addAttribute(NSForegroundColorAttributeName, value: UIColor.whiteColor())
-        let sendImage = send.imageWithSize(CGSizeMake(20, 20))
-        sendBtn.setImage(sendImage, forState: .Normal)
+//        let send = FAKFontAwesome.paperPlaneIconWithSize(20)
+//        let sakura:UIColor = UIColor(red:1.0,green:0.4,blue:0.4,alpha:1.0)
+//        send.addAttribute(NSForegroundColorAttributeName, value: UIColor.whiteColor())
+//        let sendImage = send.imageWithSize(CGSizeMake(20, 20))
+//        sendBtn.setImage(sendImage, forState: .Normal)
+//        
+        send.image = UIImage(named:"send")?.imageWithRenderingMode(.AlwaysTemplate)
+        
+        send.tintColor = UIColor.whiteColor()
+
         
         
     }

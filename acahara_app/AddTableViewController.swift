@@ -289,8 +289,7 @@ class AddTableViewController: UIViewController,UITableViewDelegate,UITableViewDa
                 
                 
                 cell.movieFileBtn.addTarget(self, action: "movieFileBtn", forControlEvents: .TouchUpInside)
-                
-                cell.tapSound.addTarget(self, action: "tapSound", forControlEvents: .TouchUpInside)
+
                 
                 var picBaseImage = myDefault.stringForKey("pic")
                 

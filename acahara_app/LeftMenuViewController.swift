@@ -109,9 +109,9 @@ extension LeftMenuViewController: UITableViewDelegate, UITableViewDataSource {
             
             //MARK:タブが増やせない、なぜ？
             
-            stepView.tabBarItem = UITabBarItem(title: "流れ", image: UIImage(named: "sInfo.png"), tag: 1)//アイコン
-            homeNavView.tabBarItem = UITabBarItem(title: "記録", image: UIImage(named: "sPen.png"), tag: 2)
-            assistView.tabBarItem = UITabBarItem(title: "相談", image: UIImage(named: "sAdvisors.png"), tag: 3)
+            stepView.tabBarItem = UITabBarItem(title: "ホーム", image: UIImage(named: "home"), tag: 1)//アイコン
+            homeNavView.tabBarItem = UITabBarItem(title: "記録", image: UIImage(named: "openFolder"), tag: 2)
+            assistView.tabBarItem = UITabBarItem(title: "相談", image: UIImage(named: "contact"), tag: 3)
             
 
             
