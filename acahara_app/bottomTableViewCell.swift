@@ -33,7 +33,11 @@ class bottomTableViewCell: UITableViewCell {
         addDiary.layer.borderWidth = 0.5
         
         // 枠の色を設定する。
-        addDiary.layer.borderColor = UIColor.lightGrayColor().CGColor
+        //addDiary.layer.borderColor = UIColor.lightGrayColor().CGColor
+        
+        let silver:UIColor = UIColor(red:0.8,green:0.8,blue:0.8,alpha:1.0)
+
+        addDiary.layer.borderColor = silver.CGColor
         
         // 枠の角を丸くする。
         addDiary.layer.cornerRadius = 8

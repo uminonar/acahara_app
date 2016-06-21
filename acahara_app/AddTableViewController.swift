@@ -179,9 +179,10 @@ class AddTableViewController: UIViewController,UITableViewDelegate,UITableViewDa
                 if((diaryText != nil) && (diaryText != "")){
                     print(diaryText)
                     cell.addDiary.text = diaryText
+                    
                     cell.addDiary.textColor = UIColor.blackColor()
                 }else{
-                    cell.addDiary.text = "大丈夫！しっかり記録していきましょう。。\n具体的にどんなことがありましたか？"
+                    cell.addDiary.text = "大丈夫！しっかり記録しましょう。\n具体的にどんなことがありましたか？"
                     
                     
                     //行間設定
@@ -194,7 +195,14 @@ class AddTableViewController: UIViewController,UITableViewDelegate,UITableViewDa
                     cell.addDiary.font = UIFont.systemFontOfSize(15)
                     
                     //テキストの色指定
-                    cell.addDiary.textColor = UIColor.lightGrayColor()
+                    
+                    // cell.addDiary.textColor = UIColor.lightGrayColor()
+                    
+                    
+                    let silver:UIColor = UIColor(red:0.78,green:0.78,blue:0.78,alpha:1.0)
+                    
+                    cell.addDiary.textColor = silver
+                    
                     
                     
                 }

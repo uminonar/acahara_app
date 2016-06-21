@@ -22,8 +22,9 @@ class StepViewController: UIViewController {
 
     @IBOutlet weak var headerView: UIView!
  
-    @IBOutlet weak var contentView: UIView!
+
     
+    @IBOutlet weak var scrollView: UIScrollView!
     
     @IBOutlet var menuTap: UITapGestureRecognizer!
 
@@ -59,6 +60,11 @@ class StepViewController: UIViewController {
         menu.image = UIImage(named:"menu")?.imageWithRenderingMode(.AlwaysTemplate)
         
         menu.tintColor = UIColor.whiteColor()
+        
+        
+        scrollView.contentSize.height = 3000
+        
+        
         
     }
     
