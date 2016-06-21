@@ -304,10 +304,8 @@ class HomeViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
     
 
 
-
-    @IBAction func tapWrite(sender: UIButton) {
-        
-        
+    @IBAction func addBtn(sender: UIBarButtonItem) {
+           
         let AddTableView = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("AddTableViewController") as UIViewController
         
         presentViewController(AddTableView, animated: true, completion: nil)

@@ -25,10 +25,10 @@ class assistChoseAdvisorTableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         
-        let comments = FAKFontAwesome.commentsOIconWithSize(15)
-        let commentsImage = comments.imageWithSize(CGSizeMake(15, 15))
-        assistComments.image = commentsImage
-        
+//        let comments = FAKFontAwesome.commentsOIconWithSize(20)
+//        let commentsImage = comments.imageWithSize(CGSizeMake(20, 20))
+//        assistComments.image = commentsImage
+//        
         // assistMailContentのTextViewに枠をつける。
         assistMailContent.layer.borderWidth = 0.5
         

@@ -89,19 +89,20 @@ class AssistTableViewController: UIViewController,UITableViewDelegate,UITableVie
             
             if expandflag{
                 
-                let info = FAKFontAwesome.infoIconWithSize(15)
-                info.addAttribute(NSForegroundColorAttributeName, value: UIColor.blueColor())
-                let infoImage = info.imageWithSize(CGSizeMake(15, 15))
-                cell.assistInfo.image = infoImage
+                cell.assistInfo.image = UIImage(named: "info")?.imageWithRenderingMode(.AlwaysTemplate)
+                
+                cell.assistInfo.tintColor = UIColor.blueColor()
+
                 
                 cell.assistInfoS.textColor = UIColor.blueColor()
 
             }else{
                 
-                let info = FAKFontAwesome.infoIconWithSize(15)
-                info.addAttribute(NSForegroundColorAttributeName, value: UIColor.blackColor())
-                let infoImage = info.imageWithSize(CGSizeMake(15, 15))
-                cell.assistInfo.image = infoImage
+                
+                cell.assistInfo.image = UIImage(named: "info")?.imageWithRenderingMode(.AlwaysTemplate)
+                
+                cell.assistInfo.tintColor = UIColor.blackColor()
+
 
 
                 
@@ -203,7 +204,7 @@ class AssistTableViewController: UIViewController,UITableViewDelegate,UITableVie
             
             var cell:assistChosePostsTableViewCell = tableView.dequeueReusableCellWithIdentifier("assistChosePostsCell", forIndexPath: indexPath) as! assistChosePostsTableViewCell
             
-            cell.assistQmarkBtn.addTarget(self, action:Selector("chosePosts:"), forControlEvents:UIControlEvents.TouchUpInside)
+            cell.chosePostsBtn.addTarget(self, action:Selector("chosePosts:"), forControlEvents:UIControlEvents.TouchUpInside)
             
             cell.assistQsentenceBtn.addTarget(self, action:Selector("chosePosts:"), forControlEvents:UIControlEvents.TouchUpInside)
             

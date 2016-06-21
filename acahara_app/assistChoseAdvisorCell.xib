@@ -3,6 +3,9 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Alignment constraints to the first baseline" minToolsVersion="6.0"/>
+        <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
@@ -14,89 +17,169 @@
                 <rect key="frame" x="0.0" y="0.0" width="320" height="429"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="aD5-Gn-NYx">
-                        <rect key="frame" x="8" y="15" width="15" height="15"/>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="worried" translatesAutoresizingMaskIntoConstraints="NO" id="aD5-Gn-NYx">
+                        <rect key="frame" x="11" y="9" width="20" height="20"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="20" id="xLf-JF-LqE"/>
+                        </constraints>
                     </imageView>
-                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wwP-jn-ijT">
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wwP-jn-ijT">
                         <rect key="frame" x="37" y="52" width="60" height="60"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="60" id="bYJ-H7-O2T"/>
+                            <constraint firstAttribute="height" constant="60" id="v9z-Cb-ISi"/>
+                        </constraints>
                         <state key="normal" image="professor_n.png"/>
                     </button>
-                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="E3T-t9-LyY">
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="E3T-t9-LyY">
                         <rect key="frame" x="130" y="52" width="60" height="60"/>
                         <state key="normal" image="assailant_n.png"/>
                     </button>
-                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="q69-a1-WVA">
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="q69-a1-WVA">
                         <rect key="frame" x="224" y="52" width="60" height="60"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="60" id="0Or-M4-IWq"/>
+                            <constraint firstAttribute="height" constant="60" id="hHs-gt-0XO"/>
+                        </constraints>
                         <state key="normal" image="committee_n.png"/>
                     </button>
-                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="B2L-5K-VD7">
-                        <rect key="frame" x="37" y="132" width="60" height="60"/>
-                        <state key="normal" image="psycotherapist_n.png"/>
-                    </button>
-                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="m8r-ir-bJl">
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="m8r-ir-bJl">
                         <rect key="frame" x="130" y="128" width="60" height="67"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="67" id="eSh-kF-Sf6"/>
+                            <constraint firstAttribute="width" constant="60" id="kd6-lc-fsH"/>
+                        </constraints>
                         <state key="normal" image="lawyer_n.png" backgroundImage="lawyer_n.png"/>
                     </button>
-                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UBg-Sj-N9W">
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UBg-Sj-N9W">
                         <rect key="frame" x="224" y="132" width="60" height="60"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="60" id="Fay-qR-el0"/>
+                            <constraint firstAttribute="width" constant="60" id="wKl-9a-xRA"/>
+                        </constraints>
                         <state key="normal" image="friend_new.png"/>
                     </button>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="教授" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fBq-Zp-8SQ">
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="教授" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fBq-Zp-8SQ">
                         <rect key="frame" x="56" y="111" width="22" height="14"/>
                         <fontDescription key="fontDescription" type="system" pointSize="11"/>
                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="加害者" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f3W-hN-hUo">
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="加害者" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f3W-hN-hUo">
                         <rect key="frame" x="144" y="111" width="33" height="14"/>
                         <fontDescription key="fontDescription" type="system" pointSize="11"/>
                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="防止委員会" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lw9-NX-Kvl">
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="防止委員会" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lw9-NX-Kvl">
                         <rect key="frame" x="229" y="107" width="55" height="21"/>
                         <fontDescription key="fontDescription" type="system" pointSize="11"/>
                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="心理療法士" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dRZ-aG-9qY">
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="心理療法士" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dRZ-aG-9qY">
                         <rect key="frame" x="40" y="187" width="55" height="21"/>
                         <fontDescription key="fontDescription" type="system" pointSize="11"/>
                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="弁護士" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Kh-db-87P">
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="弁護士" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Kh-db-87P">
                         <rect key="frame" x="144" y="191" width="33" height="14"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="14" id="V8a-i0-zWp"/>
+                        </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="11"/>
                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="友達" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Y08-7d-bU3">
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="友達" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Y08-7d-bU3">
                         <rect key="frame" x="237" y="187" width="34" height="21"/>
                         <fontDescription key="fontDescription" type="system" pointSize="11"/>
                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nba-bu-Le0">
+                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nba-bu-Le0">
                         <rect key="frame" x="33" y="247" width="273" height="174"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                         <fontDescription key="fontDescription" type="system" pointSize="13"/>
                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                     </textView>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="相談相手を選んでください。" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1TN-bi-z85">
-                        <rect key="frame" x="37" y="12" width="247" height="21"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                        <nil key="highlightedColor"/>
-                    </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="相談内容（編集可能）" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n84-6R-UfZ">
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="相談内容（編集可能）" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n84-6R-UfZ">
                         <rect key="frame" x="37" y="226" width="170" height="21"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="170" id="fDB-tB-Ao5"/>
+                        </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="13"/>
                         <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="相談相手を選んでください。" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1TN-bi-z85">
+                        <rect key="frame" x="40" y="9" width="247" height="21"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="B2L-5K-VD7">
+                        <rect key="frame" x="37" y="132" width="60" height="60"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="60" id="Ap3-5G-n8h"/>
+                            <constraint firstAttribute="width" constant="60" id="cEb-kC-HLg"/>
+                        </constraints>
+                        <state key="normal" image="psycotherapist_n.png"/>
+                    </button>
                 </subviews>
+                <constraints>
+                    <constraint firstItem="Y08-7d-bU3" firstAttribute="top" secondItem="Lw9-NX-Kvl" secondAttribute="bottom" constant="59" id="0v5-Vs-jLM"/>
+                    <constraint firstItem="fBq-Zp-8SQ" firstAttribute="baseline" secondItem="f3W-hN-hUo" secondAttribute="firstBaseline" id="3Jy-fj-QIF"/>
+                    <constraint firstItem="E3T-t9-LyY" firstAttribute="trailing" secondItem="m8r-ir-bJl" secondAttribute="trailing" id="5GE-kc-pLi"/>
+                    <constraint firstItem="wwP-jn-ijT" firstAttribute="top" secondItem="E3T-t9-LyY" secondAttribute="top" id="7YG-dB-MQR"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="1TN-bi-z85" secondAttribute="trailing" constant="25" id="8H7-c7-M6s"/>
+                    <constraint firstItem="1TN-bi-z85" firstAttribute="leading" secondItem="dRZ-aG-9qY" secondAttribute="leading" id="8r7-u3-1CB"/>
+                    <constraint firstItem="aD5-Gn-NYx" firstAttribute="centerY" secondItem="1TN-bi-z85" secondAttribute="centerY" id="BcL-6n-AYf"/>
+                    <constraint firstItem="wwP-jn-ijT" firstAttribute="leading" secondItem="xXM-R6-hCX" secondAttribute="leadingMargin" constant="29" id="CPi-m6-rWB"/>
+                    <constraint firstItem="nba-bu-Le0" firstAttribute="bottom" secondItem="xXM-R6-hCX" secondAttribute="bottomMargin" id="ESx-J6-KST"/>
+                    <constraint firstItem="B2L-5K-VD7" firstAttribute="leading" secondItem="n84-6R-UfZ" secondAttribute="leading" id="FLh-X4-L5f"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="q69-a1-WVA" secondAttribute="trailing" constant="28" id="GIq-RB-yfy"/>
+                    <constraint firstItem="wwP-jn-ijT" firstAttribute="top" secondItem="1TN-bi-z85" secondAttribute="bottom" constant="22" id="HUu-YU-zyW"/>
+                    <constraint firstItem="B2L-5K-VD7" firstAttribute="centerX" secondItem="dRZ-aG-9qY" secondAttribute="centerX" id="ICE-Ih-vRb"/>
+                    <constraint firstItem="dRZ-aG-9qY" firstAttribute="firstBaseline" secondItem="Y08-7d-bU3" secondAttribute="firstBaseline" id="LQT-So-aYE"/>
+                    <constraint firstItem="UBg-Sj-N9W" firstAttribute="top" secondItem="Lw9-NX-Kvl" secondAttribute="bottom" constant="4" id="NHe-vD-Xp2"/>
+                    <constraint firstItem="E3T-t9-LyY" firstAttribute="centerX" secondItem="f3W-hN-hUo" secondAttribute="centerX" id="PWc-El-Jqp"/>
+                    <constraint firstItem="q69-a1-WVA" firstAttribute="leading" secondItem="UBg-Sj-N9W" secondAttribute="leading" id="Qla-RG-EIM"/>
+                    <constraint firstItem="aD5-Gn-NYx" firstAttribute="top" secondItem="1TN-bi-z85" secondAttribute="top" id="SMb-sD-Tb2"/>
+                    <constraint firstItem="B2L-5K-VD7" firstAttribute="top" secondItem="UBg-Sj-N9W" secondAttribute="top" id="Uqf-we-BcA"/>
+                    <constraint firstItem="wwP-jn-ijT" firstAttribute="trailing" secondItem="B2L-5K-VD7" secondAttribute="trailing" id="Ve5-SF-L3b"/>
+                    <constraint firstItem="Lw9-NX-Kvl" firstAttribute="trailing" secondItem="UBg-Sj-N9W" secondAttribute="trailing" id="Wci-Wd-yA7"/>
+                    <constraint firstItem="E3T-t9-LyY" firstAttribute="centerX" secondItem="xXM-R6-hCX" secondAttribute="centerX" id="WvH-hf-5sQ"/>
+                    <constraint firstItem="m8r-ir-bJl" firstAttribute="top" secondItem="f3W-hN-hUo" secondAttribute="bottom" constant="3" id="Xok-8V-fYr"/>
+                    <constraint firstItem="B2L-5K-VD7" firstAttribute="bottom" secondItem="UBg-Sj-N9W" secondAttribute="bottom" id="Xts-IM-n6F"/>
+                    <constraint firstItem="1TN-bi-z85" firstAttribute="leading" secondItem="aD5-Gn-NYx" secondAttribute="trailing" constant="9" id="Z1B-P7-Y40"/>
+                    <constraint firstItem="UBg-Sj-N9W" firstAttribute="centerX" secondItem="Y08-7d-bU3" secondAttribute="centerX" id="ZIg-Tn-GOu"/>
+                    <constraint firstItem="n84-6R-UfZ" firstAttribute="top" secondItem="dRZ-aG-9qY" secondAttribute="bottom" constant="18" id="Za6-nC-F8Q"/>
+                    <constraint firstItem="E3T-t9-LyY" firstAttribute="top" secondItem="q69-a1-WVA" secondAttribute="top" id="ZmN-Q1-Wrx"/>
+                    <constraint firstItem="n84-6R-UfZ" firstAttribute="top" secondItem="1Kh-db-87P" secondAttribute="bottom" constant="21" id="c1T-6y-mjB"/>
+                    <constraint firstItem="n84-6R-UfZ" firstAttribute="top" secondItem="m8r-ir-bJl" secondAttribute="bottom" constant="31" id="cGM-b4-1Nj"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="nba-bu-Le0" secondAttribute="trailing" constant="6" id="cfe-Jm-DGs"/>
+                    <constraint firstItem="f3W-hN-hUo" firstAttribute="centerY" secondItem="Lw9-NX-Kvl" secondAttribute="centerY" id="crP-TW-sy7"/>
+                    <constraint firstItem="aD5-Gn-NYx" firstAttribute="top" secondItem="xXM-R6-hCX" secondAttribute="topMargin" constant="1" id="d5Q-1R-Z1C"/>
+                    <constraint firstItem="dRZ-aG-9qY" firstAttribute="baseline" secondItem="Y08-7d-bU3" secondAttribute="baseline" id="hPQ-Iv-qNn"/>
+                    <constraint firstItem="nba-bu-Le0" firstAttribute="top" secondItem="Y08-7d-bU3" secondAttribute="bottom" constant="39" id="iSA-CM-Uti"/>
+                    <constraint firstItem="wwP-jn-ijT" firstAttribute="centerX" secondItem="fBq-Zp-8SQ" secondAttribute="centerX" id="kcK-0e-Tw1"/>
+                    <constraint firstItem="fBq-Zp-8SQ" firstAttribute="baseline" secondItem="f3W-hN-hUo" secondAttribute="baseline" id="lki-j8-qJD"/>
+                    <constraint firstItem="wwP-jn-ijT" firstAttribute="leading" secondItem="B2L-5K-VD7" secondAttribute="leading" id="llI-N3-dfh"/>
+                    <constraint firstItem="m8r-ir-bJl" firstAttribute="top" secondItem="E3T-t9-LyY" secondAttribute="bottom" constant="16" id="oaP-pP-Vp9"/>
+                    <constraint firstItem="B2L-5K-VD7" firstAttribute="top" secondItem="fBq-Zp-8SQ" secondAttribute="bottom" constant="7" id="ptx-3G-JvJ"/>
+                    <constraint firstItem="f3W-hN-hUo" firstAttribute="leading" secondItem="1Kh-db-87P" secondAttribute="leading" id="r4P-ap-t4c"/>
+                    <constraint firstItem="q69-a1-WVA" firstAttribute="trailing" secondItem="Lw9-NX-Kvl" secondAttribute="trailing" id="rAC-L4-vzH"/>
+                    <constraint firstItem="E3T-t9-LyY" firstAttribute="bottom" secondItem="q69-a1-WVA" secondAttribute="bottom" id="rzT-4a-Qnn"/>
+                    <constraint firstItem="nba-bu-Le0" firstAttribute="leading" secondItem="xXM-R6-hCX" secondAttribute="leadingMargin" constant="25" id="tRa-IZ-m6X"/>
+                    <constraint firstItem="wwP-jn-ijT" firstAttribute="bottom" secondItem="E3T-t9-LyY" secondAttribute="bottom" id="tcQ-0H-mkD"/>
+                    <constraint firstItem="nba-bu-Le0" firstAttribute="top" secondItem="n84-6R-UfZ" secondAttribute="bottom" id="u6b-wU-zxH"/>
+                    <constraint firstItem="aD5-Gn-NYx" firstAttribute="leading" secondItem="xXM-R6-hCX" secondAttribute="leadingMargin" constant="3" id="uzD-zq-StT"/>
+                    <constraint firstItem="Lw9-NX-Kvl" firstAttribute="top" secondItem="1TN-bi-z85" secondAttribute="bottom" constant="77" id="xVu-e6-uIW"/>
+                    <constraint firstItem="E3T-t9-LyY" firstAttribute="leading" secondItem="m8r-ir-bJl" secondAttribute="leading" id="xd8-Jb-SaJ"/>
+                </constraints>
             </tableViewCellContentView>
             <connections>
                 <outlet property="assailant" destination="E3T-t9-LyY" id="9ye-X7-kEb"/>
@@ -118,5 +201,6 @@
         <image name="lawyer_n.png" width="1160" height="1160"/>
         <image name="professor_n.png" width="1164" height="1164"/>
         <image name="psycotherapist_n.png" width="1113" height="1113"/>
+        <image name="worried" width="50" height="50"/>
     </resources>
 </document>

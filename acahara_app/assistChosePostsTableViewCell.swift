@@ -12,14 +12,15 @@ class assistChosePostsTableViewCell: UITableViewCell {
     @IBOutlet weak var assistEye: UIImageView!
 
     @IBOutlet weak var assistQsentenceBtn: UIButton!
-    @IBOutlet weak var assistQmarkBtn: UIButton!
+
+    @IBOutlet weak var chosePostsBtn: UIButton!
     
     override func awakeFromNib() {
         super.awakeFromNib()
         
-        let eye = FAKFontAwesome.eyeIconWithSize(15)
-        let eyeImage = eye.imageWithSize(CGSizeMake(15, 15))
-        assistEye.image = eyeImage
+//        let eye = FAKFontAwesome.eyeIconWithSize(15)
+//        let eyeImage = eye.imageWithSize(CGSizeMake(15, 15))
+//        assistEye.image = eyeImage
     }
 
     override func setSelected(selected: Bool, animated: Bool) {

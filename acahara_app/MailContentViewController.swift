@@ -48,14 +48,14 @@ class MailContentViewController: UIViewController, UITextViewDelegate{
             //決定ボタンのついたラベルをキーボードの上に設置
             var accessoryView = UIView(frame: CGRectMake(0, 178, 320, 30))
             
-            accessoryView.backgroundColor = UIColor.lightGrayColor()
+            accessoryView.backgroundColor = UIColor.groupTableViewBackgroundColor()
             
             
             
             var closeButton = UIButton(frame: CGRectMake(myBoundsize.width-50, 5, 40, 20))
             
             
-            closeButton.setTitle("決定", forState: UIControlState.Normal)
+            closeButton.setTitle("Done", forState: UIControlState.Normal)
             //決定のフォントサイズを小さくする
             closeButton.titleLabel?.font = UIFont.systemFontOfSize(15)
             closeButton.setTitleColor(UIColor.whiteColor(),
@@ -103,10 +103,9 @@ class MailContentViewController: UIViewController, UITextViewDelegate{
         
         mailTextView.resignFirstResponder()
         
-        mailTextView.frame = CGRectMake(10, 20, 310, 480)
+        mailTextView.frame = CGRectMake(0, 20, mailTextView.bounds.width, myBoundsize.height-85)
         
-        //UITextViewの先頭にカーソルを合わせる
-        mailTextView.selectedRange = NSMakeRange(0,0)
+
         
        // mailTextView.frame = CGRectMake(0, 20, 320, 700)
         
@@ -133,6 +132,9 @@ class MailContentViewController: UIViewController, UITextViewDelegate{
                                                          name: UIKeyboardWillHideNotification,
                                                          object: nil)
         
+        //UITextViewの先頭にカーソルを合わせる 効かなかった？
+        mailTextView.selectedRange = NSMakeRange(0,0)
+        
         
     }
     
@@ -154,8 +156,10 @@ class MailContentViewController: UIViewController, UITextViewDelegate{
                 
                 let convertedKeyboardFrame = scrollView.convertRect(keyboardFrame, fromView: nil)
                 let offsetY: CGFloat = CGRectGetMaxY(mailTextView.frame) - CGRectGetMinY(convertedKeyboardFrame)
-                if offsetY < 0 { return }
-                updateScrollViewSize(offsetY, duration: animationDuration)
+//                if offsetY < 0 { return }
+//                updateScrollViewSize(offsetY, duration: animationDuration)
+                
+                mailTextView.frame = CGRectMake(18,20, mailTextView.bounds.width, myBoundsize.height - convertedKeyboardFrame.height-65)
             }
         }
     }

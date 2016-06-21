@@ -10,17 +10,13 @@ import UIKit
 
 class assistInfoTableViewCell: UITableViewCell {
 
+
     @IBOutlet weak var assistInfo: UIImageView!
 
     @IBOutlet weak var assistInfoS: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        
-        let info = FAKFontAwesome.infoIconWithSize(15)
-        let infoImage = info.imageWithSize(CGSizeMake(15, 15))
-        assistInfo.image = infoImage
-        
         
         
         

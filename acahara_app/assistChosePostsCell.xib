@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
@@ -14,31 +15,52 @@
                 <rect key="frame" x="0.0" y="0.0" width="320" height="179"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="yMc-dv-bVY">
-                        <rect key="frame" x="8" y="8" width="15" height="15"/>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="askQ" translatesAutoresizingMaskIntoConstraints="NO" id="yMc-dv-bVY">
+                        <rect key="frame" x="8" y="8" width="20" height="20"/>
                     </imageView>
-                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7Tf-r8-qVS">
-                        <rect key="frame" x="24" y="1" width="225" height="30"/>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="addList" translatesAutoresizingMaskIntoConstraints="NO" id="1IO-7e-Vhv">
+                        <rect key="frame" x="110" y="55" width="100" height="100"/>
+                    </imageView>
+                    <view alpha="0.80000000000000004" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0ov-qQ-eSm">
+                        <rect key="frame" x="79" y="44" width="163" height="121"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7Wg-OX-CJU">
+                                <rect key="frame" x="-79" y="-44" width="30" height="30"/>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7Tf-r8-qVS">
+                        <rect key="frame" x="36" y="4" width="195" height="28"/>
                         <fontDescription key="fontDescription" type="system" pointSize="13"/>
                         <state key="normal" title="伝えたい記録を選んでください。">
                             <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         </state>
                     </button>
-                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ey7-Sp-6LO">
-                        <rect key="frame" x="107" y="39" width="107" height="95"/>
-                        <state key="normal" image="s_question.png"/>
-                    </button>
                 </subviews>
+                <constraints>
+                    <constraint firstItem="0ov-qQ-eSm" firstAttribute="centerX" secondItem="1IO-7e-Vhv" secondAttribute="centerX" id="4k1-XS-Ajr"/>
+                    <constraint firstItem="7Tf-r8-qVS" firstAttribute="leading" secondItem="yMc-dv-bVY" secondAttribute="trailing" constant="8" symbolic="YES" id="Btu-0F-Tnr"/>
+                    <constraint firstItem="yMc-dv-bVY" firstAttribute="top" secondItem="CFZ-jj-ob3" secondAttribute="topMargin" id="CSe-a0-vKv"/>
+                    <constraint firstItem="0ov-qQ-eSm" firstAttribute="top" secondItem="7Tf-r8-qVS" secondAttribute="bottom" constant="12" id="HtE-tu-0kD"/>
+                    <constraint firstItem="yMc-dv-bVY" firstAttribute="centerY" secondItem="7Tf-r8-qVS" secondAttribute="centerY" id="IPT-ku-JO0"/>
+                    <constraint firstItem="0ov-qQ-eSm" firstAttribute="centerY" secondItem="1IO-7e-Vhv" secondAttribute="centerY" id="dRb-8E-8AB"/>
+                    <constraint firstItem="0ov-qQ-eSm" firstAttribute="leading" secondItem="CFZ-jj-ob3" secondAttribute="leadingMargin" constant="71" id="h8l-GE-EhQ"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="0ov-qQ-eSm" secondAttribute="bottom" constant="6" id="hfv-hz-oGU"/>
+                    <constraint firstItem="yMc-dv-bVY" firstAttribute="leading" secondItem="CFZ-jj-ob3" secondAttribute="leadingMargin" id="nR6-yU-qd5"/>
+                    <constraint firstItem="0ov-qQ-eSm" firstAttribute="centerX" secondItem="CFZ-jj-ob3" secondAttribute="centerX" id="vba-Id-hkX"/>
+                </constraints>
             </tableViewCellContentView>
             <connections>
                 <outlet property="assistEye" destination="yMc-dv-bVY" id="boe-b1-k0T"/>
-                <outlet property="assistQmarkBtn" destination="Ey7-Sp-6LO" id="wCG-ds-SOX"/>
                 <outlet property="assistQsentenceBtn" destination="7Tf-r8-qVS" id="c9E-xD-U4B"/>
+                <outlet property="chosePostsBtn" destination="7Wg-OX-CJU" id="vOV-Nt-o8I"/>
             </connections>
             <point key="canvasLocation" x="215" y="216"/>
         </tableViewCell>
     </objects>
     <resources>
-        <image name="s_question.png" width="150" height="150"/>
+        <image name="addList" width="100" height="100"/>
+        <image name="askQ" width="20" height="20"/>
     </resources>
 </document>

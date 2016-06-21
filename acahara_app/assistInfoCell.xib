@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
@@ -14,21 +15,37 @@
                 <rect key="frame" x="0.0" y="0.0" width="320" height="41"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0Yb-Vb-dxU">
-                        <rect key="frame" x="8" y="16" width="15" height="15"/>
-                    </imageView>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="相談アシストサービスについて" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="H3I-Bv-s5k">
-                        <rect key="frame" x="36" y="13" width="219" height="21"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="相談アシストサービスについて" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="H3I-Bv-s5k">
+                        <rect key="frame" x="36" y="10" width="219" height="21"/>
                         <fontDescription key="fontDescription" type="system" pointSize="13"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="info" translatesAutoresizingMaskIntoConstraints="NO" id="0Yb-Vb-dxU">
+                        <rect key="frame" x="8" y="12" width="18" height="18"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="18" id="mcF-h7-QC2"/>
+                            <constraint firstAttribute="height" constant="18" id="xLh-t1-C5M"/>
+                        </constraints>
+                    </imageView>
                 </subviews>
+                <constraints>
+                    <constraint firstItem="0Yb-Vb-dxU" firstAttribute="top" secondItem="e82-yu-QmL" secondAttribute="topMargin" constant="4" id="J1X-8G-6PQ"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="H3I-Bv-s5k" secondAttribute="trailing" constant="57" id="Qa7-e7-jIS"/>
+                    <constraint firstItem="0Yb-Vb-dxU" firstAttribute="centerY" secondItem="e82-yu-QmL" secondAttribute="centerY" id="Ztn-rK-B0b"/>
+                    <constraint firstItem="0Yb-Vb-dxU" firstAttribute="centerY" secondItem="H3I-Bv-s5k" secondAttribute="centerY" id="b1w-Ov-zVd"/>
+                    <constraint firstItem="H3I-Bv-s5k" firstAttribute="leading" secondItem="0Yb-Vb-dxU" secondAttribute="trailing" constant="10" id="gKT-Sn-CX3"/>
+                    <constraint firstItem="H3I-Bv-s5k" firstAttribute="top" secondItem="e82-yu-QmL" secondAttribute="topMargin" constant="2" id="jX6-95-qYr"/>
+                    <constraint firstItem="0Yb-Vb-dxU" firstAttribute="leading" secondItem="e82-yu-QmL" secondAttribute="leadingMargin" id="xjx-YC-lCx"/>
+                </constraints>
             </tableViewCellContentView>
             <connections>
-                <outlet property="assistInfo" destination="0Yb-Vb-dxU" id="PTy-Za-PdB"/>
+                <outlet property="assistInfo" destination="0Yb-Vb-dxU" id="Kyh-8c-XC2"/>
                 <outlet property="assistInfoS" destination="H3I-Bv-s5k" id="Wqh-LL-76T"/>
             </connections>
             <point key="canvasLocation" x="-68" y="147"/>
         </tableViewCell>
     </objects>
+    <resources>
+        <image name="info" width="20" height="20"/>
+    </resources>
 </document>
