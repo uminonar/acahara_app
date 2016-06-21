@@ -232,19 +232,25 @@ class AddTableViewController: UIViewController,UITableViewDelegate,UITableViewDa
                     
                     var url = NSURL(string: strURL as! String!)
                     let fetchResult: PHFetchResult = PHAsset.fetchAssetsWithALAssetURLs([url!], options: nil)
-                    let asset: PHAsset = fetchResult.firstObject as! PHAsset
+                    
+                    if fetchResult.firstObject != nil{
+                    
+                        let asset: PHAsset = fetchResult.firstObject as! PHAsset
                     
                     
-                    print("pixelWidth:\(asset.pixelWidth)");
-                    print("pixelHeight:\(asset.pixelHeight)");
+                        print("pixelWidth:\(asset.pixelWidth)");
+                        print("pixelHeight:\(asset.pixelHeight)");
                     
-                    let manager: PHImageManager = PHImageManager()
-                    manager.requestImageForAsset(asset,targetSize: CGSizeMake(5, 500),contentMode: .AspectFill,options: nil) { (image, info) -> Void in
+                        let manager: PHImageManager = PHImageManager()
+                        manager.requestImageForAsset(asset,targetSize: CGSizeMake(5, 500),contentMode: .AspectFill,options: nil) { (image, info) -> Void in
                         
-                        cell.picBase.image = image
+                            cell.picBase.image = image
                  
-                        cell.picCancelBtn.hidden = false
+                            cell.picCancelBtn.hidden = false
+                        }
+                    
                     }
+                    
                     
                 }else{
                     

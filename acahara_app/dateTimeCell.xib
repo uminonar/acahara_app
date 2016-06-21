@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
@@ -14,10 +15,13 @@
                 <rect key="frame" x="0.0" y="0.0" width="320" height="67"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vyZ-sF-BcW">
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="vyZ-sF-BcW">
                         <rect key="frame" x="16" y="12" width="40" height="40"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="40" id="elF-2j-9Dp"/>
+                        </constraints>
                     </imageView>
-                    <textField opaque="NO" clipsSubviews="YES" tag="1000" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="その問題はいつ起きましたか？" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="PzU-aM-Jsh">
+                    <textField opaque="NO" clipsSubviews="YES" tag="1000" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="その問題はいつ起きましたか？" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="PzU-aM-Jsh">
                         <rect key="frame" x="64" y="25" width="248" height="30"/>
                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                         <textInputTraits key="textInputTraits"/>
@@ -25,13 +29,27 @@
                             <outlet property="delegate" destination="W3i-YR-ZO7" id="Hbh-r3-iC4"/>
                         </connections>
                     </textField>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="uminonar" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="naP-7J-oqS">
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="uminonar" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="naP-7J-oqS">
                         <rect key="frame" x="64" y="4" width="68" height="21"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="21" id="Il8-Yo-p7g"/>
+                            <constraint firstAttribute="width" constant="68" id="dMH-I2-Rna"/>
+                        </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
                 </subviews>
+                <constraints>
+                    <constraint firstAttribute="bottomMargin" secondItem="vyZ-sF-BcW" secondAttribute="bottom" constant="7" id="H3n-je-KI5"/>
+                    <constraint firstItem="naP-7J-oqS" firstAttribute="leading" secondItem="vyZ-sF-BcW" secondAttribute="trailing" constant="8" symbolic="YES" id="RJ2-gR-Lu7"/>
+                    <constraint firstItem="naP-7J-oqS" firstAttribute="leading" secondItem="PzU-aM-Jsh" secondAttribute="leading" id="SAL-z4-rxN"/>
+                    <constraint firstItem="vyZ-sF-BcW" firstAttribute="leading" secondItem="W3i-YR-ZO7" secondAttribute="leadingMargin" constant="8" id="Toe-xx-igA"/>
+                    <constraint firstItem="PzU-aM-Jsh" firstAttribute="trailing" secondItem="W3i-YR-ZO7" secondAttribute="trailingMargin" id="Vk9-qt-5ne"/>
+                    <constraint firstItem="PzU-aM-Jsh" firstAttribute="top" secondItem="naP-7J-oqS" secondAttribute="bottom" id="XNQ-3G-yPc"/>
+                    <constraint firstItem="naP-7J-oqS" firstAttribute="top" secondItem="W3i-YR-ZO7" secondAttribute="topMargin" constant="-4" id="e0d-9R-WFP"/>
+                    <constraint firstItem="vyZ-sF-BcW" firstAttribute="top" secondItem="W3i-YR-ZO7" secondAttribute="topMargin" constant="4" id="euR-KQ-0Kd"/>
+                </constraints>
             </tableViewCellContentView>
             <connections>
                 <outlet property="addName" destination="naP-7J-oqS" id="3Y4-3q-vOS"/>

@@ -14,7 +14,7 @@
                 <rect key="frame" x="0.0" y="0.0" width="320" height="249"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <datePicker contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="bhA-So-2ad">
+                    <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="bhA-So-2ad">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="216"/>
                         <date key="date" timeIntervalSinceReferenceDate="486911144.351677">
                             <!--2016-06-06 13:05:44 +0000-->
@@ -22,6 +22,10 @@
                         <locale key="locale" localeIdentifier="ja_JP"/>
                     </datePicker>
                 </subviews>
+                <constraints>
+                    <constraint firstItem="bhA-So-2ad" firstAttribute="leading" secondItem="Ea3-2H-jSU" secondAttribute="leading" id="EZV-fd-I1B"/>
+                    <constraint firstItem="bhA-So-2ad" firstAttribute="top" secondItem="Ea3-2H-jSU" secondAttribute="top" id="Rfn-2O-VOB"/>
+                </constraints>
             </tableViewCellContentView>
             <connections>
                 <outlet property="addDatePicker" destination="bhA-So-2ad" id="BJV-e7-giQ"/>

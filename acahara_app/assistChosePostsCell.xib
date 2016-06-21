@@ -31,24 +31,24 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7Tf-r8-qVS">
-                        <rect key="frame" x="36" y="4" width="195" height="28"/>
+                        <rect key="frame" x="36" y="4" width="273" height="28"/>
                         <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                        <state key="normal" title="伝えたい記録を選んでください。">
+                        <state key="normal" title="相談する時に見せたい記録を選んでください。">
                             <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         </state>
                     </button>
                 </subviews>
                 <constraints>
-                    <constraint firstItem="0ov-qQ-eSm" firstAttribute="centerX" secondItem="1IO-7e-Vhv" secondAttribute="centerX" id="4k1-XS-Ajr"/>
-                    <constraint firstItem="7Tf-r8-qVS" firstAttribute="leading" secondItem="yMc-dv-bVY" secondAttribute="trailing" constant="8" symbolic="YES" id="Btu-0F-Tnr"/>
-                    <constraint firstItem="yMc-dv-bVY" firstAttribute="top" secondItem="CFZ-jj-ob3" secondAttribute="topMargin" id="CSe-a0-vKv"/>
-                    <constraint firstItem="0ov-qQ-eSm" firstAttribute="top" secondItem="7Tf-r8-qVS" secondAttribute="bottom" constant="12" id="HtE-tu-0kD"/>
-                    <constraint firstItem="yMc-dv-bVY" firstAttribute="centerY" secondItem="7Tf-r8-qVS" secondAttribute="centerY" id="IPT-ku-JO0"/>
-                    <constraint firstItem="0ov-qQ-eSm" firstAttribute="centerY" secondItem="1IO-7e-Vhv" secondAttribute="centerY" id="dRb-8E-8AB"/>
-                    <constraint firstItem="0ov-qQ-eSm" firstAttribute="leading" secondItem="CFZ-jj-ob3" secondAttribute="leadingMargin" constant="71" id="h8l-GE-EhQ"/>
-                    <constraint firstAttribute="bottomMargin" secondItem="0ov-qQ-eSm" secondAttribute="bottom" constant="6" id="hfv-hz-oGU"/>
-                    <constraint firstItem="yMc-dv-bVY" firstAttribute="leading" secondItem="CFZ-jj-ob3" secondAttribute="leadingMargin" id="nR6-yU-qd5"/>
-                    <constraint firstItem="0ov-qQ-eSm" firstAttribute="centerX" secondItem="CFZ-jj-ob3" secondAttribute="centerX" id="vba-Id-hkX"/>
+                    <constraint firstItem="yMc-dv-bVY" firstAttribute="top" secondItem="CFZ-jj-ob3" secondAttribute="topMargin" id="A6c-Kg-hbJ"/>
+                    <constraint firstItem="yMc-dv-bVY" firstAttribute="leading" secondItem="CFZ-jj-ob3" secondAttribute="leadingMargin" id="BTK-tP-s1Z"/>
+                    <constraint firstItem="0ov-qQ-eSm" firstAttribute="centerX" secondItem="CFZ-jj-ob3" secondAttribute="centerX" id="KKq-6w-OfQ"/>
+                    <constraint firstItem="7Tf-r8-qVS" firstAttribute="leading" secondItem="yMc-dv-bVY" secondAttribute="trailing" constant="8" symbolic="YES" id="KRR-H8-b7D"/>
+                    <constraint firstItem="0ov-qQ-eSm" firstAttribute="centerX" secondItem="1IO-7e-Vhv" secondAttribute="centerX" id="WTz-Wh-f3s"/>
+                    <constraint firstItem="0ov-qQ-eSm" firstAttribute="centerY" secondItem="1IO-7e-Vhv" secondAttribute="centerY" id="XWb-KC-HxG"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="0ov-qQ-eSm" secondAttribute="bottom" constant="6" id="Y1B-rH-gSZ"/>
+                    <constraint firstItem="yMc-dv-bVY" firstAttribute="centerY" secondItem="7Tf-r8-qVS" secondAttribute="centerY" id="iOF-ge-8DA"/>
+                    <constraint firstItem="0ov-qQ-eSm" firstAttribute="top" secondItem="7Tf-r8-qVS" secondAttribute="bottom" constant="12" id="mCd-G4-0LI"/>
+                    <constraint firstItem="0ov-qQ-eSm" firstAttribute="leading" secondItem="CFZ-jj-ob3" secondAttribute="leadingMargin" constant="71" id="n7c-Zh-Gub"/>
                 </constraints>
             </tableViewCellContentView>
             <connections>
