@@ -182,8 +182,23 @@ class AddTableViewController: UIViewController,UITableViewDelegate,UITableViewDa
                     cell.addDiary.textColor = UIColor.blackColor()
                 }else{
                     cell.addDiary.text = "大丈夫！しっかり記録していきましょう。。\n具体的にどんなことがありましたか？"
+                    
+                    
+                    //行間設定
+                    let style = NSMutableParagraphStyle()
+                    style.lineSpacing = 6
+                    let attributes = [NSParagraphStyleAttributeName : style]
+                    cell.addDiary.attributedText = NSAttributedString(string: cell.addDiary.text,
+                                                                       attributes: attributes)
+                    //フォントサイズの指定
+                    cell.addDiary.font = UIFont.systemFontOfSize(15)
+                    
+                    //テキストの色指定
                     cell.addDiary.textColor = UIColor.lightGrayColor()
+                    
+                    
                 }
+                
 
                 //.xibファイルのボタンなどがタップされ時の処理
                 

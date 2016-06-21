@@ -58,7 +58,7 @@ class MailContentViewController: UIViewController, UITextViewDelegate{
             closeButton.setTitle("Done", forState: UIControlState.Normal)
             //決定のフォントサイズを小さくする
             closeButton.titleLabel?.font = UIFont.systemFontOfSize(15)
-            closeButton.setTitleColor(UIColor.whiteColor(),
+            closeButton.setTitleColor(UIColor.darkGrayColor(),
                                       forState: UIControlState.Normal)
             closeButton.contentHorizontalAlignment = UIControlContentHorizontalAlignment.Right
             closeButton.addTarget(self, action: "onClickCloseButton:", forControlEvents: .TouchUpInside)
@@ -81,7 +81,7 @@ class MailContentViewController: UIViewController, UITextViewDelegate{
             
             let inbox = FAKFontAwesome.inboxIconWithSize(25)
             
-            let sakura:UIColor = UIColor(red:1.0,green:0.4,blue:0.4,alpha:1.0)
+            let sakura:UIColor = UIColor(red:1.0,green:0.3,blue:0.3,alpha:1.0)
             
             inbox.addAttribute(NSForegroundColorAttributeName, value: sakura)
             

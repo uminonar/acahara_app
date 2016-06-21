@@ -132,18 +132,20 @@ class HomeViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
         cell.postUniversity.text = posts[indexPath.row]["university"] as! String
         cell.postDiary.text = posts[indexPath.row]["diary"] as! String
         
+        //フォントサイズの調整
+   
+        //cell.postDiary.font = UIFont(name: "System", size: 40)
         cell.postWho.font = UIFont.systemFontOfSize(12)
-        cell.postDiary.font = UIFont.systemFontOfSize(18)
         cell.postUniversity.font = UIFont.systemFontOfSize(12)
         
-        
-        
-        //行間の設定
+        //行間の設定 ここで大きさがリセットされているから、リセット後にサイズを指定しないといけない
         let style = NSMutableParagraphStyle()
-        style.lineSpacing = 6
+        style.lineSpacing = 5
         let attributes = [NSParagraphStyleAttributeName : style]
         cell.postDiary.attributedText = NSAttributedString(string: cell.postDiary.text,
                                                       attributes: attributes)
+        cell.postDiary.font = UIFont.systemFontOfSize(15)
+        
         
         
         cell.postImageView.image = UIImage(named:(posts[indexPath.row]["picture"] as! String))

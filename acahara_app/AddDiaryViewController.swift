@@ -9,6 +9,8 @@
 import UIKit
 
 class AddDiaryViewController: UIViewController, UITextViewDelegate {
+    
+    @IBOutlet weak var header: UIView!
 
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var diaryTextView: UITextView!

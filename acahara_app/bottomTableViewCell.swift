@@ -38,11 +38,6 @@ class bottomTableViewCell: UITableViewCell {
         // 枠の角を丸くする。
         addDiary.layer.cornerRadius = 8
         
-        
-        
-
-   
-        
 
         
         
