@@ -31,9 +31,9 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7Tf-r8-qVS">
-                        <rect key="frame" x="36" y="4" width="273" height="28"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                        <state key="normal" title="相談する時に見せたい記録を選んでください。">
+                        <rect key="frame" x="35" y="3" width="240" height="30"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                        <state key="normal" title="相談したい記録を選んでください。">
                             <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         </state>
                     </button>
@@ -41,13 +41,13 @@
                 <constraints>
                     <constraint firstItem="yMc-dv-bVY" firstAttribute="top" secondItem="CFZ-jj-ob3" secondAttribute="topMargin" id="A6c-Kg-hbJ"/>
                     <constraint firstItem="yMc-dv-bVY" firstAttribute="leading" secondItem="CFZ-jj-ob3" secondAttribute="leadingMargin" id="BTK-tP-s1Z"/>
+                    <constraint firstItem="1IO-7e-Vhv" firstAttribute="top" secondItem="7Tf-r8-qVS" secondAttribute="bottom" constant="22" id="HI2-bc-IiF"/>
                     <constraint firstItem="0ov-qQ-eSm" firstAttribute="centerX" secondItem="CFZ-jj-ob3" secondAttribute="centerX" id="KKq-6w-OfQ"/>
-                    <constraint firstItem="7Tf-r8-qVS" firstAttribute="leading" secondItem="yMc-dv-bVY" secondAttribute="trailing" constant="8" symbolic="YES" id="KRR-H8-b7D"/>
+                    <constraint firstItem="7Tf-r8-qVS" firstAttribute="leading" secondItem="yMc-dv-bVY" secondAttribute="trailing" constant="7" id="OFs-p5-zj8"/>
+                    <constraint firstItem="0ov-qQ-eSm" firstAttribute="top" secondItem="7Tf-r8-qVS" secondAttribute="bottom" constant="11" id="UZ6-QE-pZo"/>
                     <constraint firstItem="0ov-qQ-eSm" firstAttribute="centerX" secondItem="1IO-7e-Vhv" secondAttribute="centerX" id="WTz-Wh-f3s"/>
                     <constraint firstItem="0ov-qQ-eSm" firstAttribute="centerY" secondItem="1IO-7e-Vhv" secondAttribute="centerY" id="XWb-KC-HxG"/>
                     <constraint firstAttribute="bottomMargin" secondItem="0ov-qQ-eSm" secondAttribute="bottom" constant="6" id="Y1B-rH-gSZ"/>
-                    <constraint firstItem="yMc-dv-bVY" firstAttribute="centerY" secondItem="7Tf-r8-qVS" secondAttribute="centerY" id="iOF-ge-8DA"/>
-                    <constraint firstItem="0ov-qQ-eSm" firstAttribute="top" secondItem="7Tf-r8-qVS" secondAttribute="bottom" constant="12" id="mCd-G4-0LI"/>
                     <constraint firstItem="0ov-qQ-eSm" firstAttribute="leading" secondItem="CFZ-jj-ob3" secondAttribute="leadingMargin" constant="71" id="n7c-Zh-Gub"/>
                 </constraints>
             </tableViewCellContentView>
@@ -56,7 +56,7 @@
                 <outlet property="assistQsentenceBtn" destination="7Tf-r8-qVS" id="c9E-xD-U4B"/>
                 <outlet property="chosePostsBtn" destination="7Wg-OX-CJU" id="vOV-Nt-o8I"/>
             </connections>
-            <point key="canvasLocation" x="215" y="216"/>
+            <point key="canvasLocation" x="64" y="185"/>
         </tableViewCell>
     </objects>
     <resources>

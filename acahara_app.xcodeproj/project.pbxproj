@@ -166,7 +166,7 @@
 		0B5AFA7F1D085C10001D3DCA /* s_makeruna.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = s_makeruna.png; sourceTree = "<group>"; };
 		0B73CE6C1D0D998D007658EF /* SSASideMenu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SSASideMenu.swift; sourceTree = "<group>"; };
 		0B73CE6E1D0DA1F9007658EF /* Background.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Background.jpg; sourceTree = "<group>"; };
-		0B772C671D09ACAB00086E17 /* happy_s.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = happy_s.png; sourceTree = "<group>"; };
+		0B772C671D09ACAB00086E17 /* happy_s.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = happy_s.png; path = ../acahara_app/happy_s.png; sourceTree = "<group>"; };
 		0B772C691D09ACB100086E17 /* troubled_s.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = troubled_s.png; sourceTree = "<group>"; };
 		0B772C6B1D09B53C00086E17 /* TabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		0B94338A1D0275AA00A93027 /* AssistViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AssistViewController.swift; sourceTree = "<group>"; };
@@ -189,7 +189,7 @@
 		0BD2B6871D111C820032F502 /* LeftMenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LeftMenuViewController.swift; sourceTree = "<group>"; };
 		0BD4F1531D051A28001AA8EC /* MailContentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MailContentViewController.swift; sourceTree = "<group>"; };
 		0BDD5B041D086AC60091DD20 /* ema.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ema.png; sourceTree = "<group>"; };
-		0BDD5B061D086B170091DD20 /* mokuhyou.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mokuhyou.png; sourceTree = "<group>"; };
+		0BDD5B061D086B170091DD20 /* mokuhyou.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = mokuhyou.png; path = ../acahara_app/mokuhyou.png; sourceTree = "<group>"; };
 		0BE19D8A1D0C89C10014FEF1 /* future.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = future.jpg; sourceTree = "<group>"; };
 		0BE19D8E1D0C89CD0014FEF1 /* advisor.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = advisor.jpg; sourceTree = "<group>"; };
 		0BE248971D05A97A002BEC1F /* AddTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddTableViewController.swift; sourceTree = "<group>"; };
@@ -336,13 +336,11 @@
 				0BFF45D21D0A65D70016FCB5 /* ssfolder.png */,
 				0BFF45CC1D0A637A0016FCB5 /* shand.png */,
 				0B772C691D09ACB100086E17 /* troubled_s.png */,
-				0B772C671D09ACAB00086E17 /* happy_s.png */,
-				0BDD5B061D086B170091DD20 /* mokuhyou.png */,
 				0BDD5B041D086AC60091DD20 /* ema.png */,
 				0B5AFA7B1D0855FA001D3DCA /* s_ema.png */,
-				0B5AFA7F1D085C10001D3DCA /* s_makeruna.png */,
 				0BC1DB111D037B3B00D203C1 /* s_question.png */,
 				0BC1DB0F1D0378E100D203C1 /* question.png */,
+				0B5AFA7F1D085C10001D3DCA /* s_makeruna.png */,
 				0BA5624E1CFB112600760490 /* bgImage.JPG */,
 				0BFFF9D41CF82DA400CD1D65 /* pic1.JPG */,
 				0BFFF9D21CF82D8400CD1D65 /* pic3.JPG */,
@@ -369,6 +367,8 @@
 			children = (
 				0B0094AB1CF6FFB90041B3B5 /* acahara_appUITests.swift */,
 				0B0094AD1CF6FFB90041B3B5 /* Info.plist */,
+				0B772C671D09ACAB00086E17 /* happy_s.png */,
+				0BDD5B061D086B170091DD20 /* mokuhyou.png */,
 			);
 			path = acahara_appUITests;
 			sourceTree = "<group>";

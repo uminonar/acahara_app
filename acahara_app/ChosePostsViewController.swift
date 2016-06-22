@@ -15,7 +15,8 @@ class ChosePostsViewController: UIViewController,UITableViewDelegate,UITableView
     
     @IBOutlet weak var cancelBtn: UIButton!
     
-    @IBOutlet weak var pasteBtn: UIImageView!
+    @IBOutlet weak var checkBtn: UIImageView!
+
 
     
     override func viewDidLoad() {
@@ -42,10 +43,10 @@ class ChosePostsViewController: UIViewController,UITableViewDelegate,UITableView
 //        
 //        addBtn.setImage(plusImage, forState: .Normal)
         
-        pasteBtn.image = UIImage(named:"paste")?.imageWithRenderingMode(.AlwaysTemplate)
+        checkBtn.image = UIImage(named:"check")?.imageWithRenderingMode(.AlwaysTemplate)
         
         let sakura:UIColor = UIColor(red:1.0,green:0.3,blue:0.3,alpha:1.0)
-        pasteBtn.tintColor = sakura
+        checkBtn.tintColor = sakura
 
         
     }

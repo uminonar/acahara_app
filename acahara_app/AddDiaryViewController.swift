@@ -16,7 +16,9 @@ class AddDiaryViewController: UIViewController, UITextViewDelegate {
     @IBOutlet weak var diaryTextView: UITextView!
     @IBOutlet weak var cancelBtn: UIButton!
 
-    @IBOutlet weak var saveBtn: UIButton!
+    @IBOutlet weak var saveBtn: UIImageView!
+  
+
     
     //起動画面サイズの取得
     let myBoundsize:CGSize = UIScreen.mainScreen().bounds.size
@@ -36,13 +38,13 @@ class AddDiaryViewController: UIViewController, UITextViewDelegate {
 //                myDefault.removePersistentDomainForName(appDomain)
         
         //決定ボタンのついたラベルをキーボードの上に設置
-        var accessoryView = UIView(frame: CGRectMake(0, 178, 320, 30))
+        var accessoryView = UIView(frame: CGRectMake(0, 178, 320, 35))
         
         accessoryView.backgroundColor = UIColor.groupTableViewBackgroundColor()
         
         
         
-        var closeButton = UIButton(frame: CGRectMake(myBoundsize.width-50, 5, 40, 20))
+        var closeButton = UIButton(frame: CGRectMake(myBoundsize.width-50, 8, 40, 20))
         
        
         closeButton.setTitle("Done", forState: UIControlState.Normal)
@@ -60,16 +62,24 @@ class AddDiaryViewController: UIViewController, UITextViewDelegate {
         
 
         
-        let inbox = FAKFontAwesome.inboxIconWithSize(25)
+//        let inbox = FAKFontAwesome.inboxIconWithSize(25)
+//        
+//        let sakura:UIColor = UIColor(red:1.0,green:0.4,blue:0.4,alpha:1.0)
+//        
+//        inbox.addAttribute(NSForegroundColorAttributeName, value: sakura)
+//
+//        
+//        let boxImage = inbox.imageWithSize(CGSizeMake(25, 25))
+//        
+//        saveBtn.setImage(boxImage, forState: .Normal)
         
-        let sakura:UIColor = UIColor(red:1.0,green:0.4,blue:0.4,alpha:1.0)
+        saveBtn.image = UIImage(named:"check")?.imageWithRenderingMode(.AlwaysTemplate)
         
-        inbox.addAttribute(NSForegroundColorAttributeName, value: sakura)
+        let sakura:UIColor = UIColor(red:1.0,green:0.3,blue:0.3,alpha:1.0)
+        saveBtn.tintColor = sakura
 
         
-        let boxImage = inbox.imageWithSize(CGSizeMake(25, 25))
         
-        saveBtn.setImage(boxImage, forState: .Normal)
         
     }
     

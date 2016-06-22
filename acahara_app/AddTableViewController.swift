@@ -16,9 +16,10 @@ class AddTableViewController: UIViewController,UITableViewDelegate,UITableViewDa
     
     
 
+    @IBOutlet weak var saveBtn: UIImageView!
     @IBOutlet weak var cancelBtn: UIButton!
   
-    @IBOutlet weak var addSaveBtn: UIButton!
+
     
     var expandflag = false
     var rownumber = 2
@@ -27,7 +28,7 @@ class AddTableViewController: UIViewController,UITableViewDelegate,UITableViewDa
     
     @IBOutlet weak var addTableView: UITableView!
     
-    @IBOutlet weak var saveBtn: UIButton!
+
     
     
     override func viewDidLoad() {
@@ -61,18 +62,17 @@ class AddTableViewController: UIViewController,UITableViewDelegate,UITableViewDa
 //        }
         
         
-        let save = FAKFontAwesome.hddOIconWithSize(25)
-        
-        let saveImage = save.imageWithSize(CGSizeMake(25, 25))
-        
-        saveBtn.setImage(saveImage, forState: .Normal)
-        
-        
 //        let times = FAKFontAwesome.timesIconWithSize(25)
 //        
 //        let timesImage = times.imageWithSize(CGSizeMake(25, 25))
 //        
 //        cancelBtn.setImage(timesImage, forState: .Normal)
+        
+        saveBtn.image = UIImage(named:"dataBase")?.imageWithRenderingMode(.AlwaysTemplate)
+        
+        let sakura:UIColor = UIColor(red:1.0,green:0.3,blue:0.3,alpha:1.0)
+        saveBtn.tintColor = sakura
+        
 
     }
     

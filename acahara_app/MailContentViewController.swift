@@ -12,7 +12,8 @@ class MailContentViewController: UIViewController, UITextViewDelegate{
     
     var personT = ["professor":"教授","assailant":"加害者","committee":"委員会","psycotherapist":"心理療法士","lawyer":"弁護士","friend":"友達"]
 
-    @IBOutlet weak var saveBtn: UIButton!
+
+    @IBOutlet weak var checkBtn: UIImageView!
     @IBOutlet weak var personType: UILabel!
     @IBOutlet weak var cancelBtn: UIButton!
     
@@ -46,13 +47,13 @@ class MailContentViewController: UIViewController, UITextViewDelegate{
             //                myDefault.removePersistentDomainForName(appDomain)
             
             //決定ボタンのついたラベルをキーボードの上に設置
-            var accessoryView = UIView(frame: CGRectMake(0, 178, 320, 30))
+            var accessoryView = UIView(frame: CGRectMake(0, 178, 320, 35))
             
             accessoryView.backgroundColor = UIColor.groupTableViewBackgroundColor()
             
             
             
-            var closeButton = UIButton(frame: CGRectMake(myBoundsize.width-50, 5, 40, 20))
+            var closeButton = UIButton(frame: CGRectMake(myBoundsize.width-50, 8, 40, 20))
             
             
             closeButton.setTitle("Done", forState: UIControlState.Normal)
@@ -79,18 +80,22 @@ class MailContentViewController: UIViewController, UITextViewDelegate{
 //            cancelBtn.setImage(timesImage, forState: .Normal)
             
             
-            let inbox = FAKFontAwesome.inboxIconWithSize(25)
+//            let inbox = FAKFontAwesome.inboxIconWithSize(25)
+//            
+//            let sakura:UIColor = UIColor(red:1.0,green:0.3,blue:0.3,alpha:1.0)
+//            
+//            inbox.addAttribute(NSForegroundColorAttributeName, value: sakura)
+//            
+//            
+//            let boxImage = inbox.imageWithSize(CGSizeMake(25, 25))
+//            
+//            saveBtn.setImage(boxImage, forState: .Normal)
+
+            checkBtn.image = UIImage(named:"check")?.imageWithRenderingMode(.AlwaysTemplate)
             
             let sakura:UIColor = UIColor(red:1.0,green:0.3,blue:0.3,alpha:1.0)
-            
-            inbox.addAttribute(NSForegroundColorAttributeName, value: sakura)
-            
-            
-            let boxImage = inbox.imageWithSize(CGSizeMake(25, 25))
-            
-            saveBtn.setImage(boxImage, forState: .Normal)
+            checkBtn.tintColor = sakura
 
-            
             
             
             
