@@ -33,6 +33,7 @@
 		0B06302B1D07DDBE00F9E98B /* mailContents.txt in Resources */ = {isa = PBXBuildFile; fileRef = 0B06302A1D07DDBE00F9E98B /* mailContents.txt */; };
 		0B0686C71CFBFA58002AB722 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B0686C61CFBFA58002AB722 /* DetailViewController.swift */; };
 		0B09F2491D02C38E006F11D5 /* ChosePostsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B09F2481D02C38E006F11D5 /* ChosePostsViewController.swift */; };
+		0B0BC3F91D1982BE0009ED07 /* troubledWoman のコピー.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 0B0BC3F81D1982BE0009ED07 /* troubledWoman のコピー.jpg */; };
 		0B467DE51D17BF0D000C6DC1 /* Menu-25.png in Resources */ = {isa = PBXBuildFile; fileRef = 0B467DE41D17BF0D000C6DC1 /* Menu-25.png */; };
 		0B4D52CE1D0C624A0065C0AF /* advisors.png in Resources */ = {isa = PBXBuildFile; fileRef = 0B4D52CD1D0C624A0065C0AF /* advisors.png */; };
 		0B4D52D01D0C624F0065C0AF /* prepare.png in Resources */ = {isa = PBXBuildFile; fileRef = 0B4D52CF1D0C624F0065C0AF /* prepare.png */; };
@@ -75,7 +76,6 @@
 		0BDD5B051D086AC60091DD20 /* ema.png in Resources */ = {isa = PBXBuildFile; fileRef = 0BDD5B041D086AC60091DD20 /* ema.png */; };
 		0BDD5B071D086B170091DD20 /* mokuhyou.png in Resources */ = {isa = PBXBuildFile; fileRef = 0BDD5B061D086B170091DD20 /* mokuhyou.png */; };
 		0BE19D8B1D0C89C10014FEF1 /* future.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 0BE19D8A1D0C89C10014FEF1 /* future.jpg */; };
-		0BE19D8D1D0C89C80014FEF1 /* troubledWoman.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 0BE19D8C1D0C89C80014FEF1 /* troubledWoman.jpg */; };
 		0BE19D8F1D0C89CD0014FEF1 /* advisor.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 0BE19D8E1D0C89CD0014FEF1 /* advisor.jpg */; };
 		0BE248981D05A97A002BEC1F /* AddTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BE248971D05A97A002BEC1F /* AddTableViewController.swift */; };
 		0BE2489C1D05AAE1002BEC1F /* dateTimeCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0BE2489B1D05AAE1002BEC1F /* dateTimeCell.xib */; };
@@ -148,6 +148,7 @@
 		0B06302A1D07DDBE00F9E98B /* mailContents.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = mailContents.txt; sourceTree = "<group>"; };
 		0B0686C61CFBFA58002AB722 /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		0B09F2481D02C38E006F11D5 /* ChosePostsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChosePostsViewController.swift; sourceTree = "<group>"; };
+		0B0BC3F81D1982BE0009ED07 /* troubledWoman のコピー.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "troubledWoman のコピー.jpg"; sourceTree = "<group>"; };
 		0B467DE41D17BF0D000C6DC1 /* Menu-25.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Menu-25.png"; sourceTree = "<group>"; };
 		0B4D52CD1D0C624A0065C0AF /* advisors.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = advisors.png; sourceTree = "<group>"; };
 		0B4D52CF1D0C624F0065C0AF /* prepare.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = prepare.png; sourceTree = "<group>"; };
@@ -190,7 +191,6 @@
 		0BDD5B041D086AC60091DD20 /* ema.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ema.png; sourceTree = "<group>"; };
 		0BDD5B061D086B170091DD20 /* mokuhyou.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mokuhyou.png; sourceTree = "<group>"; };
 		0BE19D8A1D0C89C10014FEF1 /* future.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = future.jpg; sourceTree = "<group>"; };
-		0BE19D8C1D0C89C80014FEF1 /* troubledWoman.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = troubledWoman.jpg; sourceTree = "<group>"; };
 		0BE19D8E1D0C89CD0014FEF1 /* advisor.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = advisor.jpg; sourceTree = "<group>"; };
 		0BE248971D05A97A002BEC1F /* AddTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddTableViewController.swift; sourceTree = "<group>"; };
 		0BE2489B1D05AAE1002BEC1F /* dateTimeCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = dateTimeCell.xib; sourceTree = "<group>"; };
@@ -309,6 +309,7 @@
 				0BADA6161CFB3089001702D7 /* Main.storyboard */,
 				0B73CE6B1D0D998D007658EF /* SSASideMenu */,
 				0B0094921CF6FFB90041B3B5 /* Assets.xcassets */,
+				0B0BC3F81D1982BE0009ED07 /* troubledWoman のコピー.jpg */,
 				0B467DE41D17BF0D000C6DC1 /* Menu-25.png */,
 				0BB408D51D15144200D26AB7 /* inbox.png */,
 				0BB408D31D15123600D26AB7 /* times.png */,
@@ -321,7 +322,6 @@
 				0B04BED51D1074EB000264CC /* Delete-50.png */,
 				0B73CE6E1D0DA1F9007658EF /* Background.jpg */,
 				0BE19D8E1D0C89CD0014FEF1 /* advisor.jpg */,
-				0BE19D8C1D0C89C80014FEF1 /* troubledWoman.jpg */,
 				0BE19D8A1D0C89C10014FEF1 /* future.jpg */,
 				0B4D52CF1D0C624F0065C0AF /* prepare.png */,
 				0B4D52CD1D0C624A0065C0AF /* advisors.png */,
@@ -524,8 +524,8 @@
 				0BB408CC1D15085800D26AB7 /* sInfo.png in Resources */,
 				0B04BED61D1074EB000264CC /* Delete-50.png in Resources */,
 				0B59AD441D07BA0F00E740F5 /* assistChoseAdvisorCell.xib in Resources */,
-				0BE19D8D1D0C89C80014FEF1 /* troubledWoman.jpg in Resources */,
 				0B030BAA1D0A7E5400C8E08D /* ssgSetting.png in Resources */,
+				0B0BC3F91D1982BE0009ED07 /* troubledWoman のコピー.jpg in Resources */,
 				0B59AD481D07C01600E740F5 /* assistChosePostsCell.xib in Resources */,
 				0BE248A01D05AC8D002BEC1F /* datePickerCell.xib in Resources */,
 				0B0094BE1CF70C440041B3B5 /* posts.txt in Resources */,

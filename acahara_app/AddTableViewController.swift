@@ -616,7 +616,7 @@ class AddTableViewController: UIViewController,UITableViewDelegate,UITableViewDa
         }
         if indexPath.row == 1 {
             if expandflag {
-                return 450
+                return 550
             }else{
                 return 435
             }
