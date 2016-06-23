@@ -16,6 +16,9 @@ class HomeNavigationController: UINavigationController,UINavigationControllerDel
         //高さを変更する
         self.navigationBar.frame = CGRectMake(0,0, UIScreen.mainScreen().bounds.size.width, 65)
         
+        UINavigationBar.appearance().titleTextAttributes = [NSForegroundColorAttributeName:UIColor.whiteColor()
+        ]
+        
     }
     
     //画面遷移後の呼び出しメソッド
@@ -30,6 +33,10 @@ class HomeNavigationController: UINavigationController,UINavigationControllerDel
 //        
         self.navigationBar.tintColor = UIColor.whiteColor()
         
+        
+        
+    
+
         
         self.navigationBar.barTintColor = sakura
         

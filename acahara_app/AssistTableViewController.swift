@@ -89,7 +89,7 @@ class AssistTableViewController: UIViewController,UITableViewDelegate,UITableVie
             
             if expandflag{
                 
-                cell.assistInfo.image = UIImage(named: "info")?.imageWithRenderingMode(.AlwaysTemplate)
+                cell.assistInfo.image = UIImage(named: "upTriangle")?.imageWithRenderingMode(.AlwaysTemplate)
                 
                 cell.assistInfo.tintColor = UIColor.blueColor()
 
@@ -99,7 +99,7 @@ class AssistTableViewController: UIViewController,UITableViewDelegate,UITableVie
             }else{
                 
                 
-                cell.assistInfo.image = UIImage(named: "info")?.imageWithRenderingMode(.AlwaysTemplate)
+                cell.assistInfo.image = UIImage(named: "downTriangle")?.imageWithRenderingMode(.AlwaysTemplate)
                 
                 cell.assistInfo.tintColor = UIColor.blackColor()
 

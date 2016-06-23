@@ -12,30 +12,67 @@ class SettingViewController: UIViewController {
 
 
 
+    @IBOutlet weak var saveBtn: UIImageView!
     @IBOutlet weak var settingMenu: UIImageView!
     @IBOutlet weak var menuCoverBtn: UIButton!
     
     @IBOutlet weak var settingSelfee: UIImageView!
     @IBOutlet weak var settingSelgeeC: UIImageView!
 
-    @IBOutlet weak var saveBtn: UIButton!
-
+    @IBOutlet weak var nameField: UITextField!
+    @IBOutlet weak var emailField: UITextField!
+    @IBOutlet weak var confirmEmailField: UITextField!
+    @IBOutlet weak var contactEmailField: UITextField!
 
 
     
     @IBAction func settingNameField(sender: UITextField) {
         self.resignFirstResponder()
+        
+        //ユーザーデフォルトに保存
+        //ユーザーデフォルトを用意する
+        let myDefault = NSUserDefaults.standardUserDefaults()
+        
+        //データを書き込んで
+        myDefault.setObject(sender.text, forKey: "setName")
+
+        //即反映させる
+        myDefault.synchronize()
     }
     
     @IBAction func settingSentEmail(sender: UITextField) {
         self.resignFirstResponder()
+        
+        let myDefault = NSUserDefaults.standardUserDefaults()
+        
+        //データを書き込んで
+        myDefault.setObject(sender.text, forKey: "setEmail")
+        
+        //即反映させる
+        myDefault.synchronize()
     }
     
     @IBAction func confirmSentEmail(sender: UITextField) {
          self.resignFirstResponder()
+        
+        let myDefault = NSUserDefaults.standardUserDefaults()
+        
+        //データを書き込んで
+        myDefault.setObject(sender.text, forKey: "setConfEmail")
+        
+        //即反映させる
+        myDefault.synchronize()
     }
     @IBAction func settingContEmail(sender: UITextField) {
         self.resignFirstResponder()
+        
+        let myDefault = NSUserDefaults.standardUserDefaults()
+        
+        //データを書き込んで
+        myDefault.setObject(sender.text, forKey: "setContEmail")
+        
+        //即反映させる
+        myDefault.synchronize()
     }
     
    
@@ -60,7 +97,11 @@ class SettingViewController: UIViewController {
         
         let saveImage = save.imageWithSize(CGSizeMake(25, 25))
         
-        saveBtn.setImage(saveImage, forState: .Normal)
+        saveBtn.image = UIImage(named:"dataBase")?.imageWithRenderingMode(.AlwaysTemplate)
+        
+        let sakura:UIColor = UIColor(red:1.0,green:0.3,blue:0.3,alpha:1.0)
+        saveBtn.tintColor = sakura
+
 
 //        let times = FAKFontAwesome.timesIconWithSize(25)
 //        
@@ -83,12 +124,42 @@ class SettingViewController: UIViewController {
         
         settingMenu.image = UIImage(named:"menu")?.imageWithRenderingMode(.AlwaysTemplate)
 
-        let sakura:UIColor = UIColor(red:1.0,green:0.3,blue:0.3,alpha:1.0)
+        
         
          settingMenu.tintColor = sakura
         
         self.menuCoverBtn.addTarget(SSASideMenu(), action: Selector("presentLeftMenuViewController"), forControlEvents: UIControlEvents.TouchUpInside)
         
+        
+        
+        //既に設定されている内容があれば各フォームに記入
+        
+        var myDefault = NSUserDefaults.standardUserDefaults()
+        
+        var setName = myDefault.stringForKey("setName")
+        if ( setName != nil){
+            nameField.text = setName
+            nameField.textColor = UIColor.darkGrayColor()
+        }
+        
+        var email = myDefault.stringForKey("setEmail")
+        if ( email != nil){
+            emailField.text = email
+            nameField.textColor = UIColor.darkGrayColor()
+        }
+        
+        var confEmail = myDefault.stringForKey("setConfEmail")
+        if ( confEmail != nil){
+            confirmEmailField.text = confEmail
+            nameField.textColor = UIColor.darkGrayColor()
+        }
+        
+        var contactEmail = myDefault.stringForKey("setContEmail")
+        if ( contactEmail != nil){
+            contactEmailField.text = contactEmail
+            nameField.textColor = UIColor.darkGrayColor()
+        }
+    
     }
 
     @IBAction func bgImageCBtn(sender: UIButton) {
