@@ -27,6 +27,9 @@ class ChosePostsViewController: UIViewController,UITableViewDelegate,UITableView
         
         choseTableView.registerNib(UINib(nibName: "postCustomCell", bundle: nil), forCellReuseIdentifier: "postCustomCell")
         
+        choseTableView.registerNib(UINib(nibName: "choseCustomCell", bundle: nil), forCellReuseIdentifier: "choseCustomCell")
+        
+        
 //        let times = FAKFontAwesome.timesIconWithSize(25)
 //        
 //        let timesImage = times.imageWithSize(CGSizeMake(25, 25))

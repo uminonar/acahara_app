@@ -13,6 +13,8 @@ class AssistTableViewController: UIViewController,UITableViewDelegate,UITableVie
     var expandflag = false
     var rownumber = 3
     
+    var posts:NSMutableArray = []
+    
     @IBOutlet weak var send: UIImageView!
 
 
@@ -33,6 +35,8 @@ class AssistTableViewController: UIViewController,UITableViewDelegate,UITableVie
         assistTableView.registerNib(UINib(nibName: "assistChoseAdvisorCell", bundle: nil), forCellReuseIdentifier: "assistChoseAdvisorCell")
         
         assistTableView.registerNib(UINib(nibName: "assistChosePostsCell", bundle: nil), forCellReuseIdentifier: "assistChosePostsCell")
+        
+        assistTableView.registerNib(UINib(nibName: "choseCustomCell", bundle: nil), forCellReuseIdentifier: "choseCustomCell")
         
         //テーブルビューの罫線を消す
         assistTableView.separatorColor = UIColor.clearColor()
@@ -66,6 +70,25 @@ class AssistTableViewController: UIViewController,UITableViewDelegate,UITableVie
         for (key, data) in jsonDictionary {
             mailContent[key as! String] = data as! String
         }
+        
+        
+        
+        
+        //選択する記録を表示するためのデータを取得してpostsに収める
+        let pathpost = NSBundle.mainBundle().pathForResource("posts", ofType: "txt")
+        let jsondatapost = NSData(contentsOfFile: pathpost!)
+        let jsonArray = (try! NSJSONSerialization.JSONObjectWithData(jsondatapost!, options: [])) as! NSArray
+        
+        for data in jsonArray{
+            
+            //openFlag=0のものだけここのpostsには収めたい。どうする？
+            var openFlag = data["openFlag"] as! String
+            if (openFlag == "0"){
+                
+                posts.addObject(data as! NSMutableDictionary)
+            }
+        }
+
     
     }
     
@@ -73,7 +96,7 @@ class AssistTableViewController: UIViewController,UITableViewDelegate,UITableVie
     
     //行数決定
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return rownumber
+        return rownumber + posts.count
     }
     
     //表示内容を決定
@@ -90,22 +113,13 @@ class AssistTableViewController: UIViewController,UITableViewDelegate,UITableVie
             if expandflag{
                 
                 cell.assistInfo.image = UIImage(named: "upTriangle")?.imageWithRenderingMode(.AlwaysTemplate)
-                
                 cell.assistInfo.tintColor = UIColor.blueColor()
-
-                
                 cell.assistInfoS.textColor = UIColor.blueColor()
 
             }else{
                 
-                
                 cell.assistInfo.image = UIImage(named: "downTriangle")?.imageWithRenderingMode(.AlwaysTemplate)
-                
                 cell.assistInfo.tintColor = UIColor.blackColor()
-
-
-
-                
                 cell.assistInfoS.textColor = UIColor.blackColor()
             }
 
@@ -204,20 +218,37 @@ class AssistTableViewController: UIViewController,UITableViewDelegate,UITableVie
             
             var cell:assistChosePostsTableViewCell = tableView.dequeueReusableCellWithIdentifier("assistChosePostsCell", forIndexPath: indexPath) as! assistChosePostsTableViewCell
             
-            cell.chosePostsBtn.addTarget(self, action:Selector("chosePosts:"), forControlEvents:UIControlEvents.TouchUpInside)
-            
-            cell.assistQsentenceBtn.addTarget(self, action:Selector("chosePosts:"), forControlEvents:UIControlEvents.TouchUpInside)
+          
+//
+//            cell.assistQsentenceBtn.addTarget(self, action:Selector("chosePosts:"), forControlEvents:UIControlEvents.TouchUpInside)
             
             return cell
         }
-        
     
-        //普通のセル生成　それ以外。
+            
+        var cell:choseCustomCell = tableView.dequeueReusableCellWithIdentifier("choseCustomCell", forIndexPath: indexPath) as! choseCustomCell
         
-        var emptycell:UITableViewCell = UITableViewCell(style: .Default, reuseIdentifier: "myCell")
+        cell.postPortrait.image = UIImage(named: "selfee.JPG")
+        cell.postName.text = "uminonar"
         
-        return emptycell
-    }
+        var postindex = indexPath.row-3
+        
+        
+
+        cell.postCreated.text = posts[postindex]["created"] as! String
+        
+        var dateTime = posts[indexPath.row]["when"] as! String
+        cell.postWhen.text = dateTime+" 頃"
+        cell.postWhere.text = posts[indexPath.row]["where"] as! String
+        cell.postWho.text = posts[indexPath.row]["who"] as! String
+        cell.postUniversity.text = posts[indexPath.row]["university"] as! String
+        cell.postDiary.text = posts[indexPath.row]["diary"] as! String
+        cell.postImageView.image = UIImage(named:(posts[indexPath.row]["picture"] as! String))
+
+        
+        return cell
+        
+        }
     
     
     
@@ -358,17 +389,21 @@ class AssistTableViewController: UIViewController,UITableViewDelegate,UITableVie
     //MARK:ここでcellの高さが決まっている
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat
     {
+        var adjustrow_no = indexPath.row
+        
+        
+        
         if indexPath.row == 0 {
-            return 35
+            return 40
         }
         if indexPath.row == 1 {
-            return 430
+            return 450
         }
         if indexPath.row == 2 {
-            return 180
+            return 35
         }
         
-        return 100//ここの意味は？とりあえず全部のケースを網羅する。
+        return 280//ここの意味は？とりあえず全部のケースを網羅する。
     }
     
 

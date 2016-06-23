@@ -61,6 +61,8 @@
 		0BA5624F1CFB112600760490 /* bgImage.JPG in Resources */ = {isa = PBXBuildFile; fileRef = 0BA5624E1CFB112600760490 /* bgImage.JPG */; };
 		0BADA6181CFB3089001702D7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0BADA6161CFB3089001702D7 /* Main.storyboard */; };
 		0BADA61A1CFB3B9E001702D7 /* AddDiaryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BADA6191CFB3B9E001702D7 /* AddDiaryViewController.swift */; };
+		0BB232C41D1BB1B200F996AA /* choseCustomCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0BB232C31D1BB1B200F996AA /* choseCustomCell.xib */; };
+		0BB232C61D1BB22C00F996AA /* choseCustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BB232C51D1BB22C00F996AA /* choseCustomCell.swift */; };
 		0BB408B61D13E72B00D26AB7 /* wall.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 0BB408B51D13E72B00D26AB7 /* wall.jpg */; };
 		0BB408C41D14FE9C00D26AB7 /* sAdvisors.png in Resources */ = {isa = PBXBuildFile; fileRef = 0BB408C31D14FE9C00D26AB7 /* sAdvisors.png */; };
 		0BB408C61D14FF3E00D26AB7 /* sPen.png in Resources */ = {isa = PBXBuildFile; fileRef = 0BB408C51D14FF3E00D26AB7 /* sPen.png */; };
@@ -176,6 +178,8 @@
 		0BA5624E1CFB112600760490 /* bgImage.JPG */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = bgImage.JPG; sourceTree = "<group>"; };
 		0BADA6171CFB3089001702D7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		0BADA6191CFB3B9E001702D7 /* AddDiaryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddDiaryViewController.swift; sourceTree = "<group>"; };
+		0BB232C31D1BB1B200F996AA /* choseCustomCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = choseCustomCell.xib; sourceTree = "<group>"; };
+		0BB232C51D1BB22C00F996AA /* choseCustomCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = choseCustomCell.swift; sourceTree = "<group>"; };
 		0BB408B51D13E72B00D26AB7 /* wall.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = wall.jpg; sourceTree = "<group>"; };
 		0BB408C31D14FE9C00D26AB7 /* sAdvisors.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sAdvisors.png; sourceTree = "<group>"; };
 		0BB408C51D14FF3E00D26AB7 /* sPen.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sPen.png; sourceTree = "<group>"; };
@@ -279,6 +283,9 @@
 				0B59AD451D07BB9100E740F5 /* assistChoseAdvisorTableViewCell.swift */,
 				0B59AD491D07C04400E740F5 /* assistChosePostsTableViewCell.swift */,
 				0B5AFA7D1D085651001D3DCA /* homeIntroTableViewCell.swift */,
+				0BB232C51D1BB22C00F996AA /* choseCustomCell.swift */,
+				0B59AD371D07AFED00E740F5 /* AssistTableViewController.swift */,
+				0BB232C31D1BB1B200F996AA /* choseCustomCell.xib */,
 				0B0094B91CF708120041B3B5 /* postCustomCell.xib */,
 				0B59AD391D07B1B000E740F5 /* assistInfoCell.xib */,
 				0B59AD3D1D07B61900E740F5 /* assistInfoDetailCell.xib */,
@@ -302,10 +309,9 @@
 				0B03D2931CF7F6050050119E /* AddWhoViewController.swift */,
 				0BADA6191CFB3B9E001702D7 /* AddDiaryViewController.swift */,
 				0B9DBFE61CFFF1F200B78293 /* AddSoundViewController.swift */,
-				0B59AD371D07AFED00E740F5 /* AssistTableViewController.swift */,
 				0B94338A1D0275AA00A93027 /* AssistViewController.swift */,
-				0BD4F1531D051A28001AA8EC /* MailContentViewController.swift */,
 				0B09F2481D02C38E006F11D5 /* ChosePostsViewController.swift */,
+				0BD4F1531D051A28001AA8EC /* MailContentViewController.swift */,
 				0BADA6161CFB3089001702D7 /* Main.storyboard */,
 				0B73CE6B1D0D998D007658EF /* SSASideMenu */,
 				0B0094921CF6FFB90041B3B5 /* Assets.xcassets */,
@@ -538,6 +544,7 @@
 				0B033C971D0BD98100165071 /* professor_n.png in Resources */,
 				0BFF45D31D0A65D70016FCB5 /* ssfolder.png in Resources */,
 				0BB408C61D14FF3E00D26AB7 /* sPen.png in Resources */,
+				0BB232C41D1BB1B200F996AA /* choseCustomCell.xib in Resources */,
 				0BC1DB101D0378E100D203C1 /* question.png in Resources */,
 				0BB408C81D1506A500D26AB7 /* Sent-20.png in Resources */,
 				0B59AD3E1D07B61900E740F5 /* assistInfoDetailCell.xib in Resources */,
@@ -720,6 +727,7 @@
 				0B9DF2611D01ADC100B478C7 /* PictureViewController.swift in Sources */,
 				0B73CE6D1D0D998D007658EF /* SSASideMenu.swift in Sources */,
 				0BE248A61D05B18E002BEC1F /* bottomTableViewCell.swift in Sources */,
+				0BB232C61D1BB22C00F996AA /* choseCustomCell.swift in Sources */,
 				0BADA61A1CFB3B9E001702D7 /* AddDiaryViewController.swift in Sources */,
 				0B94338B1D0275AA00A93027 /* AssistViewController.swift in Sources */,
 				0B9DBFE71CFFF1F200B78293 /* AddSoundViewController.swift in Sources */,

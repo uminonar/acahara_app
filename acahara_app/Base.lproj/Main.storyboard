@@ -369,10 +369,18 @@
                                             <constraint firstAttribute="height" constant="25" id="Z42-2v-cj9"/>
                                         </constraints>
                                     </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="相談アシスト" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8bQ-cc-77Q">
+                                        <rect key="frame" x="115" y="30" width="102" height="21"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
                                 <color key="backgroundColor" red="1" green="0.40000000600000002" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstItem="oGs-Hw-Qk6" firstAttribute="top" secondItem="A5B-Y7-Fda" secondAttribute="top" constant="32" id="7PN-tr-YIb"/>
+                                    <constraint firstItem="8bQ-cc-77Q" firstAttribute="centerX" secondItem="A5B-Y7-Fda" secondAttribute="centerX" constant="6" id="D1t-de-tcO"/>
+                                    <constraint firstItem="8bQ-cc-77Q" firstAttribute="centerY" secondItem="A5B-Y7-Fda" secondAttribute="centerY" constant="8" id="S1k-na-4pc"/>
                                     <constraint firstAttribute="trailing" secondItem="oGs-Hw-Qk6" secondAttribute="trailing" constant="18" id="YRd-bH-qAm"/>
                                     <constraint firstAttribute="height" constant="65" id="uYk-cb-BEO"/>
                                 </constraints>
@@ -406,7 +414,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6Pd-ju-pJv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2499" y="-314"/>
+            <point key="canvasLocation" x="2359" y="-408"/>
         </scene>
         <!--Add Diary View Controller-->
         <scene sceneID="fUl-bo-QwH">
@@ -1145,12 +1153,6 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RFY-a4-LYv">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="65"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="心理療法士向け" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hcp-mW-hm1">
-                                        <rect key="frame" x="108" y="29" width="105" height="26"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SYu-I7-mR0">
                                         <rect key="frame" x="8" y="30" width="20" height="20"/>
                                         <constraints>
@@ -1182,19 +1184,24 @@
                                             <action selector="saveBtn:" destination="Afw-ic-o1L" eventType="touchUpInside" id="8dv-Re-Iiy"/>
                                         </connections>
                                     </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="心理療法士向け" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hcp-mW-hm1">
+                                        <rect key="frame" x="101" y="32" width="119" height="21"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
                                 <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstItem="Jyh-d5-4gq" firstAttribute="top" secondItem="RFY-a4-LYv" secondAttribute="top" constant="27" id="0BI-AN-Fcs"/>
-                                    <constraint firstItem="hcp-mW-hm1" firstAttribute="bottom" secondItem="Kam-30-FoF" secondAttribute="bottom" id="9t0-WU-4uz"/>
+                                    <constraint firstItem="hcp-mW-hm1" firstAttribute="centerX" secondItem="RFY-a4-LYv" secondAttribute="centerX" id="8BU-OG-gaG"/>
                                     <constraint firstItem="SYu-I7-mR0" firstAttribute="leading" secondItem="RFY-a4-LYv" secondAttribute="leading" constant="8" id="BxZ-oM-gVy"/>
                                     <constraint firstAttribute="trailing" secondItem="Kam-30-FoF" secondAttribute="trailing" constant="18" id="DXp-Ej-8Up"/>
                                     <constraint firstItem="SYu-I7-mR0" firstAttribute="leading" secondItem="RFY-a4-LYv" secondAttribute="leadingMargin" id="E8q-5F-Ova"/>
+                                    <constraint firstItem="hcp-mW-hm1" firstAttribute="centerY" secondItem="RFY-a4-LYv" secondAttribute="centerY" constant="9.5" id="PiJ-WO-n0b"/>
                                     <constraint firstItem="Kam-30-FoF" firstAttribute="top" secondItem="RFY-a4-LYv" secondAttribute="top" constant="30" id="Sqo-Cg-DyJ"/>
                                     <constraint firstAttribute="trailing" secondItem="Jyh-d5-4gq" secondAttribute="trailing" constant="16" id="XvE-OR-L8g"/>
                                     <constraint firstItem="SYu-I7-mR0" firstAttribute="top" secondItem="RFY-a4-LYv" secondAttribute="top" constant="30" id="eoH-Sh-w5d"/>
-                                    <constraint firstItem="hcp-mW-hm1" firstAttribute="centerX" secondItem="RFY-a4-LYv" secondAttribute="centerX" id="x7B-Nj-6Ju"/>
-                                    <constraint firstItem="hcp-mW-hm1" firstAttribute="centerY" secondItem="Kam-30-FoF" secondAttribute="centerY" id="zGw-32-zOg"/>
                                 </constraints>
                             </view>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S3L-6w-baK">
@@ -1239,6 +1246,7 @@
                     <connections>
                         <outlet property="cancelBtn" destination="SYu-I7-mR0" id="cca-0g-3uM"/>
                         <outlet property="checkBtn" destination="Kam-30-FoF" id="fDO-sL-9BF"/>
+                        <outlet property="headerView" destination="RFY-a4-LYv" id="vVt-Vo-eZh"/>
                         <outlet property="mailTextView" destination="kfI-fs-IJG" id="pge-nY-zO0"/>
                         <outlet property="personType" destination="hcp-mW-hm1" id="Jab-z6-y2x"/>
                         <outlet property="scrollView" destination="S3L-6w-baK" id="Xpe-53-iSf"/>
@@ -1246,7 +1254,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Tcc-E4-cRe" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2807" y="-646"/>
+            <point key="canvasLocation" x="2901" y="-682"/>
         </scene>
         <!--Setting View Controller-->
         <scene sceneID="wg7-f3-ORb">
@@ -1760,7 +1768,7 @@
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="90n-em-k0H">
                                         <rect key="frame" x="102" y="28" width="116" height="30"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                         <state key="normal" title="アカハラ対策">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>

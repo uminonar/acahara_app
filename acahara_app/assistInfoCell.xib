@@ -7,28 +7,28 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="42" id="2OE-Ug-Mog" customClass="assistInfoTableViewCell" customModule="acahara_app" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="320" height="42"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="40" id="2OE-Ug-Mog" customClass="assistInfoTableViewCell" customModule="acahara_app" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="40"/>
             <autoresizingMask key="autoresizingMask"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="2OE-Ug-Mog" id="e82-yu-QmL">
-                <rect key="frame" x="0.0" y="0.0" width="320" height="41"/>
+                <rect key="frame" x="0.0" y="0.0" width="320" height="39"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="相談アシストについて" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="H3I-Bv-s5k">
+                        <rect key="frame" x="31" y="9" width="245" height="21"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                        <nil key="highlightedColor"/>
+                    </label>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="downTriangle" translatesAutoresizingMaskIntoConstraints="NO" id="0Yb-Vb-dxU">
                         <rect key="frame" x="8" y="12" width="15" height="15"/>
                     </imageView>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="相談アシストサービスについて" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="H3I-Bv-s5k">
-                        <rect key="frame" x="31" y="10" width="202" height="21"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                        <nil key="highlightedColor"/>
-                    </label>
                 </subviews>
             </tableViewCellContentView>
             <connections>
                 <outlet property="assistInfo" destination="0Yb-Vb-dxU" id="Kyh-8c-XC2"/>
                 <outlet property="assistInfoS" destination="H3I-Bv-s5k" id="Wqh-LL-76T"/>
             </connections>
-            <point key="canvasLocation" x="-88" y="30"/>
+            <point key="canvasLocation" x="-88" y="29"/>
         </tableViewCell>
     </objects>
     <resources>

@@ -3,64 +3,32 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="188" id="oex-q6-Uha" customClass="assistChosePostsTableViewCell" customModule="acahara_app" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="320" height="180"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="43" id="oex-q6-Uha" customClass="assistChosePostsTableViewCell" customModule="acahara_app" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="35"/>
             <autoresizingMask key="autoresizingMask"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="oex-q6-Uha" id="CFZ-jj-ob3">
-                <rect key="frame" x="0.0" y="0.0" width="320" height="179"/>
+                <rect key="frame" x="0.0" y="0.0" width="320" height="34"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="askQ" translatesAutoresizingMaskIntoConstraints="NO" id="yMc-dv-bVY">
-                        <rect key="frame" x="8" y="8" width="20" height="20"/>
-                    </imageView>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="addList" translatesAutoresizingMaskIntoConstraints="NO" id="1IO-7e-Vhv">
-                        <rect key="frame" x="110" y="55" width="100" height="100"/>
-                    </imageView>
-                    <view alpha="0.80000000000000004" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0ov-qQ-eSm">
-                        <rect key="frame" x="79" y="44" width="163" height="121"/>
+                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="73G-0V-Rsb">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="35"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7Wg-OX-CJU">
-                                <rect key="frame" x="-79" y="-44" width="30" height="30"/>
-                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="見せたい記録を選んでください。" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rbx-yu-rYe">
+                                <rect key="frame" x="30" y="8" width="266" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.98521037069999995" green="1" blue="0.7799435978" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
-                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7Tf-r8-qVS">
-                        <rect key="frame" x="35" y="3" width="240" height="30"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                        <state key="normal" title="相談したい記録を選んでください。">
-                            <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                        </state>
-                    </button>
                 </subviews>
-                <constraints>
-                    <constraint firstItem="yMc-dv-bVY" firstAttribute="top" secondItem="CFZ-jj-ob3" secondAttribute="topMargin" id="A6c-Kg-hbJ"/>
-                    <constraint firstItem="yMc-dv-bVY" firstAttribute="leading" secondItem="CFZ-jj-ob3" secondAttribute="leadingMargin" id="BTK-tP-s1Z"/>
-                    <constraint firstItem="1IO-7e-Vhv" firstAttribute="top" secondItem="7Tf-r8-qVS" secondAttribute="bottom" constant="22" id="HI2-bc-IiF"/>
-                    <constraint firstItem="0ov-qQ-eSm" firstAttribute="centerX" secondItem="CFZ-jj-ob3" secondAttribute="centerX" id="KKq-6w-OfQ"/>
-                    <constraint firstItem="7Tf-r8-qVS" firstAttribute="leading" secondItem="yMc-dv-bVY" secondAttribute="trailing" constant="7" id="OFs-p5-zj8"/>
-                    <constraint firstItem="0ov-qQ-eSm" firstAttribute="top" secondItem="7Tf-r8-qVS" secondAttribute="bottom" constant="11" id="UZ6-QE-pZo"/>
-                    <constraint firstItem="0ov-qQ-eSm" firstAttribute="centerX" secondItem="1IO-7e-Vhv" secondAttribute="centerX" id="WTz-Wh-f3s"/>
-                    <constraint firstItem="0ov-qQ-eSm" firstAttribute="centerY" secondItem="1IO-7e-Vhv" secondAttribute="centerY" id="XWb-KC-HxG"/>
-                    <constraint firstAttribute="bottomMargin" secondItem="0ov-qQ-eSm" secondAttribute="bottom" constant="6" id="Y1B-rH-gSZ"/>
-                    <constraint firstItem="0ov-qQ-eSm" firstAttribute="leading" secondItem="CFZ-jj-ob3" secondAttribute="leadingMargin" constant="71" id="n7c-Zh-Gub"/>
-                </constraints>
             </tableViewCellContentView>
-            <connections>
-                <outlet property="assistEye" destination="yMc-dv-bVY" id="boe-b1-k0T"/>
-                <outlet property="assistQsentenceBtn" destination="7Tf-r8-qVS" id="c9E-xD-U4B"/>
-                <outlet property="chosePostsBtn" destination="7Wg-OX-CJU" id="vOV-Nt-o8I"/>
-            </connections>
-            <point key="canvasLocation" x="64" y="185"/>
+            <point key="canvasLocation" x="117" y="109.5"/>
         </tableViewCell>
     </objects>
-    <resources>
-        <image name="addList" width="100" height="100"/>
-        <image name="askQ" width="20" height="20"/>
-    </resources>
 </document>

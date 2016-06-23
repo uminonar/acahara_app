@@ -13,6 +13,7 @@ class MailContentViewController: UIViewController, UITextViewDelegate{
     var personT = ["professor":"教授","assailant":"加害者","committee":"委員会","psycotherapist":"心理療法士","lawyer":"弁護士","friend":"友達"]
 
 
+    @IBOutlet weak var headerView: UIView!
     @IBOutlet weak var checkBtn: UIImageView!
     @IBOutlet weak var personType: UILabel!
     @IBOutlet weak var cancelBtn: UIButton!
@@ -25,7 +26,10 @@ class MailContentViewController: UIViewController, UITextViewDelegate{
     override func viewDidLoad() {
         super.viewDidLoad()
         
-       
+        let paleGreen:UIColor = UIColor(red: 0.914, green: 0.980, blue: 0.950, alpha: 1.0)
+        
+        headerView.backgroundColor = paleGreen
+        
         
         var myDefault = NSUserDefaults.standardUserDefaults()
         
@@ -48,6 +52,8 @@ class MailContentViewController: UIViewController, UITextViewDelegate{
             
             //決定ボタンのついたラベルをキーボードの上に設置
             var accessoryView = UIView(frame: CGRectMake(0, 178, 320, 35))
+            
+            let paleGreen:UIColor = UIColor(red: 0.914, green: 0.980, blue: 0.950, alpha: 1.0)
             
             accessoryView.backgroundColor = UIColor.groupTableViewBackgroundColor()
             
