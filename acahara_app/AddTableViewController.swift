@@ -70,8 +70,8 @@ class AddTableViewController: UIViewController,UITableViewDelegate,UITableViewDa
         
         saveBtn.image = UIImage(named:"dataBase")?.imageWithRenderingMode(.AlwaysTemplate)
         
-        let sakura:UIColor = UIColor(red:1.0,green:0.3,blue:0.3,alpha:1.0)
-        saveBtn.tintColor = sakura
+//        let sakura:UIColor = UIColor(red:1.0,green:0.3,blue:0.3,alpha:1.0)
+        saveBtn.tintColor = UIColor.whiteColor()
         
 
     }
