@@ -68,6 +68,7 @@ class AssistTableViewController: UIViewController,UITableViewDelegate,UITableVie
         let jsonDictionary = (try! NSJSONSerialization.JSONObjectWithData(jsondata!,options:[])) as! NSDictionary
         
         for (key, data) in jsonDictionary {
+            
             mailContent[key as! String] = data as! String
         }
         
@@ -85,7 +86,11 @@ class AssistTableViewController: UIViewController,UITableViewDelegate,UITableVie
             var openFlag = data["openFlag"] as! String
             if (openFlag == "0"){
                 
-                posts.addObject(data as! NSMutableDictionary)
+                
+                var postEach:NSMutableDictionary = data.mutableCopy() as! NSMutableDictionary
+                postEach["selectedFlag"] = false
+                
+                posts.addObject(postEach)
             }
         }
 
@@ -263,19 +268,13 @@ class AssistTableViewController: UIViewController,UITableViewDelegate,UITableVie
         cell.postImageView.image = UIImage(named:(posts[postindex]["picture"] as! String))
         
         cell.coverBtn.addTarget(self, action: "selected:", forControlEvents: .TouchUpInside)
-        cell.coverBtn.tag = indexPath.row  //ここ対応させる？
+        cell.coverBtn.tag = postindex
+        
+        var selectedFlag = posts[postindex]["selectedFlag"] as! Bool
         
         
-        //タップ選択された時に、赤いチェックボタンをつけ、背景色をペールグリーンにしたい
-        var myDefault = NSUserDefaults.standardUserDefaults()
-        //このやり方だと目的は達成できない。フラグで。でも左辺を:Intとして右辺をas! Intとするとエラーは出なくなる。
-        var indexNum:Int = myDefault.objectForKey("indexNum") as! Int
-        
-        
-        
-        //MARK: 何がダメなのかわからない ->
-       if (indexNum  == indexPath.row){
-        
+        if selectedFlag{
+            
             cell.circle.image = UIImage(named: "checkedFilled")?.imageWithRenderingMode(.AlwaysTemplate)
             cell.circle.tintColor = UIColor.redColor()
         
@@ -284,26 +283,47 @@ class AssistTableViewController: UIViewController,UITableViewDelegate,UITableVie
 //            let palePink:UIColor = UIColor(red: 0.990, green: 0.93, blue: 0.88, alpha:0.8)
         
             cell.backgroundColor = paleGreen
-       }
+            
+        }else{
+            
+            cell.circle.image = UIImage(named: "circle")
+            cell.backgroundColor = UIColor.whiteColor()
+ 
+        }
 
-        
-        
-        
         return cell
         
         }
     
+    
+    
+    
+    
+    
     func selected(sender: UIButton) {
         
-        var myDefault = NSUserDefaults.standardUserDefaults()
-        myDefault.setInteger(sender.tag, forKey: "indexNum")
+        var selectedFlag = posts[sender.tag]["selectedFlag"] as! Bool
         
-        myDefault.synchronize()
-        
-        //TODO:ここをassistChoseAdvisorCellの行だけリロードしたい。どうする？
+        if selectedFlag{
+            
+            var postDic = posts[sender.tag].mutableCopy() as! NSMutableDictionary
+            postDic["selectedFlag"] = false
+            
+            
+            posts[sender.tag] = postDic
+            
+        }else{
+            
+            var postDic = posts[sender.tag].mutableCopy() as! NSMutableDictionary
+            postDic["selectedFlag"] = true
+            
+            
+            posts[sender.tag] = postDic
+            
+        }
+
         assistTableView.reloadData()
 
-        
     }
 
     
