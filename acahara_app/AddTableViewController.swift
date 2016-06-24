@@ -107,7 +107,18 @@ class AddTableViewController: UIViewController,UITableViewDelegate,UITableViewDa
             //userDefaultから取り出されたdatePickerの日時をセット
             
             if dateStr == nil{
-                cell.addWhen.text = ""
+                
+                if expandflag{
+                    let df = NSDateFormatter()
+                    df.dateFormat = "yyyy/MM/dd HH:mm"
+                    var today = NSDate()
+                    var todayStr = df.stringFromDate(today)
+                    cell.addWhen.text = todayStr + " 頃"
+                }else{
+                   cell.addWhen.text = ""
+                }
+                
+                
             }else{
                 
                 cell.addWhen.text = dateStr!+" 頃"
@@ -130,6 +141,7 @@ class AddTableViewController: UIViewController,UITableViewDelegate,UITableViewDa
 
         }else{
             if expandflag {
+
                 
                 var cell:datePickerTableViewCell = tableView.dequeueReusableCellWithIdentifier("datePickerCell", forIndexPath: indexPath) as! datePickerTableViewCell
                 

@@ -28,7 +28,7 @@ class MailContentViewController: UIViewController, UITextViewDelegate{
         
         let paleGreen:UIColor = UIColor(red: 0.914, green: 0.980, blue: 0.950, alpha: 1.0)
         
-        headerView.backgroundColor = paleGreen
+//        headerView.backgroundColor = paleGreen
         
         
         var myDefault = NSUserDefaults.standardUserDefaults()

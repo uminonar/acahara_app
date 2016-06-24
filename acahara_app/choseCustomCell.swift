@@ -23,12 +23,10 @@ class choseCustomCell: UITableViewCell {
 
     @IBOutlet weak var postImageView: UIImageView!
     @IBOutlet weak var postMoreBtn: UIButton!
-    @IBOutlet weak var postEllipsis: UIImageView!
-    @IBOutlet weak var postEllipsisBtn: UIButton!
 
-    
-    @IBOutlet weak var postImageViewBtn: UIButton!
     @IBOutlet weak var postTextViewBtn: UIButton!
+
+    @IBOutlet weak var coverBtn: UIButton!
 
     
     override func awakeFromNib() {

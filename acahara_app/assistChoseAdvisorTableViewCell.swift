@@ -11,7 +11,11 @@ import UIKit
 class assistChoseAdvisorTableViewCell: UITableViewCell {
     
     
-    @IBOutlet weak var assistComments: UIImageView!
+ 
+
+    @IBOutlet weak var sentTo: UILabel!
+
+    @IBOutlet weak var titleBar: UIView!
     
     @IBOutlet weak var professor: UIButton!
     @IBOutlet weak var assailant: UIButton!
@@ -32,12 +36,16 @@ class assistChoseAdvisorTableViewCell: UITableViewCell {
         // assistMailContentのTextViewに枠をつける。
         assistMailContent.layer.borderWidth = 0.5
         
-        // 枠の色を設定する。
+//        // 枠の色を設定する。
         assistMailContent.layer.borderColor = UIColor.lightGrayColor().CGColor
         
         // 枠の角を丸くする。
         assistMailContent.layer.cornerRadius = 8
         
+//        let palePink:UIColor = UIColor(red: 0.990, green: 0.93, blue: 0.88, alpha:0.8)
+//        
+//        titleBar.backgroundColor = palePink
+//        
     }
 
     override func setSelected(selected: Bool, animated: Bool) {

@@ -39,8 +39,8 @@ class AssistTableViewController: UIViewController,UITableViewDelegate,UITableVie
         assistTableView.registerNib(UINib(nibName: "choseCustomCell", bundle: nil), forCellReuseIdentifier: "choseCustomCell")
         
         //テーブルビューの罫線を消す
-        assistTableView.separatorColor = UIColor.clearColor()
-        
+//        assistTableView.separatorColor = UIColor.clearColor()
+        assistTableView.separatorInset = UIEdgeInsetsZero
        
         
         
@@ -124,7 +124,8 @@ class AssistTableViewController: UIViewController,UITableViewDelegate,UITableVie
             }
 
             
-            
+            let HiddenSeparatorInset: UIEdgeInsets = UIEdgeInsetsMake(0, CGFloat(UInt16.max), 0, 0)
+            cell.separatorInset = HiddenSeparatorInset
             return cell
             
         }
@@ -137,7 +138,8 @@ class AssistTableViewController: UIViewController,UITableViewDelegate,UITableVie
                 
             var cell:assistInfoDetailTableViewCell = tableView.dequeueReusableCellWithIdentifier("assistInfoDetailCell", forIndexPath: indexPath) as! assistInfoDetailTableViewCell
                 
-                
+                let HiddenSeparatorInset: UIEdgeInsets = UIEdgeInsetsMake(0, CGFloat(UInt16.max), 0, 0)
+                cell.separatorInset = HiddenSeparatorInset
             return cell
 
             }
@@ -207,7 +209,10 @@ class AssistTableViewController: UIViewController,UITableViewDelegate,UITableVie
                             cell.friend.tag = 600//friend
 
             
-                                
+            let HiddenSeparatorInset: UIEdgeInsets = UIEdgeInsetsMake(0, CGFloat(UInt16.max), 0, 0)
+            cell.separatorInset = HiddenSeparatorInset
+            
+            
                             return cell
         }
         
@@ -219,8 +224,11 @@ class AssistTableViewController: UIViewController,UITableViewDelegate,UITableVie
             var cell:assistChosePostsTableViewCell = tableView.dequeueReusableCellWithIdentifier("assistChosePostsCell", forIndexPath: indexPath) as! assistChosePostsTableViewCell
             
           
-//
-//            cell.assistQsentenceBtn.addTarget(self, action:Selector("chosePosts:"), forControlEvents:UIControlEvents.TouchUpInside)
+
+
+            
+            let HiddenSeparatorInset: UIEdgeInsets = UIEdgeInsetsMake(0, CGFloat(UInt16.max), 0, 0)
+            cell.separatorInset = HiddenSeparatorInset
             
             return cell
         }
@@ -228,29 +236,76 @@ class AssistTableViewController: UIViewController,UITableViewDelegate,UITableVie
             
         var cell:choseCustomCell = tableView.dequeueReusableCellWithIdentifier("choseCustomCell", forIndexPath: indexPath) as! choseCustomCell
         
+        cell.layoutMargins = UIEdgeInsetsZero
+        
         cell.postPortrait.image = UIImage(named: "selfee.JPG")
         cell.postName.text = "uminonar"
         
-        var postindex = indexPath.row-3
-        
-        
+        var postindex = adjustrow_no-3
 
         cell.postCreated.text = posts[postindex]["created"] as! String
         
-        var dateTime = posts[indexPath.row]["when"] as! String
+        var dateTime = posts[postindex]["when"] as! String
         cell.postWhen.text = dateTime+" 頃"
-        cell.postWhere.text = posts[indexPath.row]["where"] as! String
-        cell.postWho.text = posts[indexPath.row]["who"] as! String
-        cell.postUniversity.text = posts[indexPath.row]["university"] as! String
-        cell.postDiary.text = posts[indexPath.row]["diary"] as! String
-        cell.postImageView.image = UIImage(named:(posts[indexPath.row]["picture"] as! String))
+        cell.postWhere.text = posts[postindex]["where"] as! String
+        cell.postWho.text = posts[postindex]["who"] as! String
+        cell.postUniversity.text = posts[postindex]["university"] as! String
+        
+        
+        cell.postDiary.text = posts[postindex]["diary"] as! String
+        let style = NSMutableParagraphStyle()
+        style.lineSpacing = 5
+        let attributes = [NSParagraphStyleAttributeName : style]
+        cell.postDiary.attributedText = NSAttributedString(string: cell.postDiary.text,
+                                                           attributes: attributes)
+        cell.postDiary.font = UIFont.systemFontOfSize(13)
 
+        cell.postImageView.image = UIImage(named:(posts[postindex]["picture"] as! String))
+        
+        cell.coverBtn.addTarget(self, action: "selected:", forControlEvents: .TouchUpInside)
+        cell.coverBtn.tag = indexPath.row  //ここ対応させる？
+        
+        
+        //タップ選択された時に、赤いチェックボタンをつけ、背景色をペールグリーンにしたい
+        var myDefault = NSUserDefaults.standardUserDefaults()
+        //このやり方だと目的は達成できない。フラグで。でも左辺を:Intとして右辺をas! Intとするとエラーは出なくなる。
+        var indexNum:Int = myDefault.objectForKey("indexNum") as! Int
+        
+        
+        
+        //MARK: 何がダメなのかわからない ->
+       if (indexNum  == indexPath.row){
+        
+            cell.circle.image = UIImage(named: "checkedFilled")?.imageWithRenderingMode(.AlwaysTemplate)
+            cell.circle.tintColor = UIColor.redColor()
+        
+            let paleGreen:UIColor = UIColor(red: 0.914, green: 0.980, blue: 0.950, alpha: 0.6)
+        
+//            let palePink:UIColor = UIColor(red: 0.990, green: 0.93, blue: 0.88, alpha:0.8)
+        
+            cell.backgroundColor = paleGreen
+       }
+
+        
+        
         
         return cell
         
         }
     
-    
+    func selected(sender: UIButton) {
+        
+        var myDefault = NSUserDefaults.standardUserDefaults()
+        myDefault.setInteger(sender.tag, forKey: "indexNum")
+        
+        myDefault.synchronize()
+        
+        //TODO:ここをassistChoseAdvisorCellの行だけリロードしたい。どうする？
+        assistTableView.reloadData()
+
+        
+    }
+
     
     
     func editMailContent(sender:UITextView){
