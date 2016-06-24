@@ -375,13 +375,21 @@
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d2A-KE-ogO">
+                                        <rect key="frame" x="84" y="8" width="152" height="57"/>
+                                        <connections>
+                                            <action selector="titleCoverBtn:" destination="wnK-gz-YAn" eventType="touchUpInside" id="jV5-je-bmm"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" red="1" green="0.40000000600000002" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstItem="oGs-Hw-Qk6" firstAttribute="top" secondItem="A5B-Y7-Fda" secondAttribute="top" constant="32" id="7PN-tr-YIb"/>
                                     <constraint firstItem="8bQ-cc-77Q" firstAttribute="centerX" secondItem="A5B-Y7-Fda" secondAttribute="centerX" constant="6" id="D1t-de-tcO"/>
                                     <constraint firstItem="8bQ-cc-77Q" firstAttribute="centerY" secondItem="A5B-Y7-Fda" secondAttribute="centerY" constant="8" id="S1k-na-4pc"/>
+                                    <constraint firstItem="d2A-KE-ogO" firstAttribute="centerX" secondItem="A5B-Y7-Fda" secondAttribute="centerX" id="VSu-xo-0aC"/>
                                     <constraint firstAttribute="trailing" secondItem="oGs-Hw-Qk6" secondAttribute="trailing" constant="18" id="YRd-bH-qAm"/>
+                                    <constraint firstItem="d2A-KE-ogO" firstAttribute="centerY" secondItem="A5B-Y7-Fda" secondAttribute="centerY" constant="4" id="fwN-3q-g2g"/>
                                     <constraint firstAttribute="height" constant="65" id="uYk-cb-BEO"/>
                                 </constraints>
                             </view>

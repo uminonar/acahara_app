@@ -212,6 +212,12 @@ class AssistTableViewController: UIViewController,UITableViewDelegate,UITableVie
                                 
                             cell.friend.addTarget(self, action:Selector("insert:"), forControlEvents:UIControlEvents.TouchUpInside)
                             cell.friend.tag = 600//friend
+            
+                            var personT = ["professor":"教授","assailant":"加害者","committee":"委員会","psycotherapist":"心理療法士","lawyer":"弁護士","friend":"友達"]
+            
+                            var pType  = myDefault.stringForKey("selectedAdvisor")
+        
+                            cell.sentTo.text = personT[pType!]! + " 宛"
 
             
             let HiddenSeparatorInset: UIEdgeInsets = UIEdgeInsetsMake(0, CGFloat(UInt16.max), 0, 0)
@@ -264,6 +270,13 @@ class AssistTableViewController: UIViewController,UITableViewDelegate,UITableVie
         cell.postDiary.attributedText = NSAttributedString(string: cell.postDiary.text,
                                                            attributes: attributes)
         cell.postDiary.font = UIFont.systemFontOfSize(13)
+        
+        let myTap = UITapGestureRecognizer(target: self, action: "tapGesture:")
+    
+        cell.postDiary.addGestureRecognizer(myTap)
+        cell.postDiary.tag = postindex
+        
+
 
         cell.postImageView.image = UIImage(named:(posts[postindex]["picture"] as! String))
         
@@ -295,7 +308,35 @@ class AssistTableViewController: UIViewController,UITableViewDelegate,UITableVie
         
         }
     
-    
+    func tapGesture(sender: UITapGestureRecognizer) {
+        
+        var tag:Int = sender.view?.tag as! Int!
+        print(tag)
+        
+        var selectedFlag = posts[tag]["selectedFlag"] as! Bool
+        
+        if selectedFlag{
+            
+            var postDic = posts[tag].mutableCopy() as! NSMutableDictionary
+            postDic["selectedFlag"] = false
+            
+            
+            posts[tag] = postDic
+            
+        }else{
+            
+            var postDic = posts[tag].mutableCopy() as! NSMutableDictionary
+            postDic["selectedFlag"] = true
+            
+        
+            posts[tag] = postDic
+            
+            
+        }
+        
+        assistTableView.reloadData()
+        
+    }
     
     
     
@@ -521,6 +562,12 @@ class AssistTableViewController: UIViewController,UITableViewDelegate,UITableVie
 //    }
     
     
+    @IBAction func titleCoverBtn(sender: UIButton) {
+        var height:CGFloat = 0.0
+        assistTableView.setContentOffset(CGPointMake(0, height), animated: false)
+
+        
+    }
      
     
 

@@ -127,7 +127,7 @@
                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                     </textView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="心理療法士  宛" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rtr-ba-e2D">
-                        <rect key="frame" x="40" y="230" width="86" height="16"/>
+                        <rect key="frame" x="40" y="223" width="86" height="16"/>
                         <fontDescription key="fontDescription" type="system" pointSize="13"/>
                         <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                         <nil key="highlightedColor"/>
@@ -143,9 +143,9 @@
                     <constraint firstItem="1Kh-db-87P" firstAttribute="leading" secondItem="dRZ-aG-9qY" secondAttribute="trailing" constant="49" id="4Jo-uN-Qdd"/>
                     <constraint firstItem="dRZ-aG-9qY" firstAttribute="baseline" secondItem="Y08-7d-bU3" secondAttribute="firstBaseline" id="5R1-2E-Z6q"/>
                     <constraint firstItem="B2L-5K-VD7" firstAttribute="centerX" secondItem="dRZ-aG-9qY" secondAttribute="centerX" id="6lC-uJ-6N6"/>
-                    <constraint firstItem="Rtr-ba-e2D" firstAttribute="top" secondItem="dRZ-aG-9qY" secondAttribute="bottom" constant="22" id="6z3-0L-BjR"/>
+                    <constraint firstItem="Rtr-ba-e2D" firstAttribute="top" secondItem="dRZ-aG-9qY" secondAttribute="bottom" constant="15" id="6z3-0L-BjR"/>
                     <constraint firstItem="m8r-ir-bJl" firstAttribute="top" secondItem="E3T-t9-LyY" secondAttribute="bottom" constant="16" id="7HG-5e-a5A"/>
-                    <constraint firstItem="nba-bu-Le0" firstAttribute="top" secondItem="Rtr-ba-e2D" secondAttribute="bottom" constant="1" id="9X9-kw-t59"/>
+                    <constraint firstItem="nba-bu-Le0" firstAttribute="top" secondItem="Rtr-ba-e2D" secondAttribute="bottom" constant="8" id="9X9-kw-t59"/>
                     <constraint firstItem="Lw9-NX-Kvl" firstAttribute="trailing" secondItem="UBg-Sj-N9W" secondAttribute="trailing" id="BJv-Q7-Ngo"/>
                     <constraint firstItem="fBq-Zp-8SQ" firstAttribute="centerX" secondItem="B2L-5K-VD7" secondAttribute="centerX" id="CBY-yj-8J9"/>
                     <constraint firstItem="wwP-jn-ijT" firstAttribute="trailing" secondItem="B2L-5K-VD7" secondAttribute="trailing" id="Cor-kd-b9C"/>
