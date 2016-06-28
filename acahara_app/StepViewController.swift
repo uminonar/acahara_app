@@ -170,11 +170,11 @@ class StepViewController: UIViewController {
     
     
     @IBAction func soudanCoverBtn(sender: UIButton) {
-        var height:CGFloat = 1297.0
+        var height:CGFloat = 1396.0
         scrollView.setContentOffset(CGPointMake(0, height), animated: true)
     }
     @IBAction func sonaeCoverBtn(sender: UIButton) {
-        var height:CGFloat = 2091.0
+        var height:CGFloat = 2343.0
         scrollView.setContentOffset(CGPointMake(0, height), animated: true)
     }
 
@@ -184,7 +184,29 @@ class StepViewController: UIViewController {
         
     }
     
+    @IBAction func kirokuSBtn(sender: UIButton) {
+        let AddTableView = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("AddTableViewController") as UIViewController
+        
+        presentViewController(AddTableView, animated: true, completion: nil)
 
+        
+    }
+    @IBAction func kirokuBtn(sender: UIButton) {
+        let AddTableView = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("AddTableViewController") as UIViewController
+        
+        presentViewController(AddTableView, animated: true, completion: nil)
+
+        
+    }
+
+    @IBAction func soudanSBtn(sender: UIButton) {
+        self.tabBarController!.selectedIndex = 2;
+    }
+    
+    @IBAction func soudanBtn(sender: UIButton) {
+        self.tabBarController!.selectedIndex = 2;
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

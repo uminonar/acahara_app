@@ -7,8 +7,15 @@
 //
 
 import UIKit
+import MobileCoreServices
+import AssetsLibrary
+import Photos
+import AVFoundation
 
-class AddDiaryViewController: UIViewController, UITextViewDelegate {
+
+
+
+class AddDiaryViewController: UIViewController, UITextViewDelegate,UIImagePickerControllerDelegate, {
     
     @IBOutlet weak var header: UIView!
 
@@ -31,6 +38,17 @@ class AddDiaryViewController: UIViewController, UITextViewDelegate {
         //最初からカーソルが反転してキーボードが表示される処理
         diaryTextView.becomeFirstResponder()
         
+       //行間の設定 ここで大きさがリセットされているから、リセット後にサイズを指定しないといけない
+        
+        let style = NSMutableParagraphStyle()
+        style.lineSpacing = 20
+        let attributes = [NSParagraphStyleAttributeName : style]
+        diaryTextView.attributedText = NSAttributedString(string: diaryTextView.text,
+                                                          attributes: attributes)
+
+        //フォントサイズの指定
+        diaryTextView.font = UIFont.systemFontOfSize(17)
+        
 //履歴全件削除の設定 1回使ったらコメントアウト
 //        var myDefault = NSUserDefaults.standardUserDefaults()
 //        
@@ -38,24 +56,69 @@ class AddDiaryViewController: UIViewController, UITextViewDelegate {
 //                myDefault.removePersistentDomainForName(appDomain)
         
         //決定ボタンのついたラベルをキーボードの上に設置
-        var accessoryView = UIView(frame: CGRectMake(0, 178, 320, 35))
+        var accessoryView = UIView(frame: CGRectMake(0, 178, 320, 40))
         
         accessoryView.backgroundColor = UIColor.groupTableViewBackgroundColor()
         
         
         
-        var closeButton = UIButton(frame: CGRectMake(myBoundsize.width-50, 8, 40, 20))
+        var closeCoverButton = UIButton(frame: CGRectMake(myBoundsize.width-40, 8, 25, 25))
+        
+        var closeImage = UIImageView(frame: CGRectMake(myBoundsize.width-40, 8, 25, 25))
+        
+        var photoImage = UIImageView(frame: CGRectMake(myBoundsize.width-300, 8, 25, 25))
+        
+        var photoCoverBtn = UIButton(frame: CGRectMake(myBoundsize.width-300,8,25,25))
+        
+        
+        
+        var filmImage = UIImageView(frame: CGRectMake(myBoundsize.width-250,8,25,25))
+        
+        var filmCoverBtn = UIButton(frame: CGRectMake(myBoundsize.width-250,8,25,25))
+       
+
+        
+        
+        
+        
+        photoImage.image = UIImage(named:"photoImage")?.imageWithRenderingMode(.AlwaysTemplate)
+        
+        let sakura2:UIColor = UIColor(red:1.0,green:0.3,blue:0.3,alpha:1.0)
+        
+        photoImage.tintColor = sakura2
+        
+        
+        filmImage.image = UIImage(named:"film")?.imageWithRenderingMode(.AlwaysTemplate)
         
        
-        closeButton.setTitle("Done", forState: UIControlState.Normal)
+        filmImage.tintColor = sakura2
+        
+        
+        
+        closeImage.image = UIImage(named:"arrowDown")?.imageWithRenderingMode(.AlwaysTemplate)
+  
+        closeImage.tintColor = sakura2
+        
+        
         //決定のフォントサイズを小さくする
         
-        closeButton.titleLabel?.font = UIFont.systemFontOfSize(15)
-        closeButton.setTitleColor(UIColor.darkGrayColor(),
-        forState: UIControlState.Normal)
-        closeButton.contentHorizontalAlignment = UIControlContentHorizontalAlignment.Right
-        closeButton.addTarget(self, action: "onClickCloseButton:", forControlEvents: .TouchUpInside)
-        accessoryView.addSubview(closeButton)
+        
+        closeCoverButton.addTarget(self, action: "onClickCloseButton:", forControlEvents: .TouchUpInside)
+        photoCoverBtn.addTarget(self, action: "onClickPhotoButton:", forControlEvents: .TouchUpInside)
+        filmCoverBtn.addTarget(self, action: "onClickFilmButton:", forControlEvents: .TouchUpInside)
+        
+        
+        
+        
+        
+        
+        
+        accessoryView.addSubview(closeImage)
+        accessoryView.addSubview(closeCoverButton)
+        accessoryView.addSubview(photoImage)
+        accessoryView.addSubview(photoCoverBtn)
+        accessoryView.addSubview(filmImage)
+        accessoryView.addSubview(filmCoverBtn)
         
 
         diaryTextView.inputAccessoryView = accessoryView
@@ -89,6 +152,42 @@ class AddDiaryViewController: UIViewController, UITextViewDelegate {
         //Mark:ここを修正
         //diaryTextView.frame = CGRectMake(0, 20, 320, 700)
         diaryTextView.frame = CGRectMake(0,20, diaryTextView.bounds.width,myBoundsize.height-85)
+        
+    }
+    
+    func onClickPhotoButton(sender: UIButton){
+        
+        //pictureFileがタップされた時、カメラロールが現れ、選択された写真がaddImageViewに収められる
+        var photoPick = UIImagePickerController()
+        
+        photoPick.delegate = self
+        
+        photoPick.sourceType = .PhotoLibrary
+        self.presentViewController(photoPick, animated: true, completion: nil)
+        
+        
+        var url = NSURL(string: strURL as! String!)
+        let fetchResult: PHFetchResult = PHAsset.fetchAssetsWithALAssetURLs([url!], options: nil)
+        
+        if fetchResult.firstObject != nil{
+            
+            let asset: PHAsset = fetchResult.firstObject as! PHAsset
+            
+            
+            print("pixelWidth:\(asset.pixelWidth)");
+            print("pixelHeight:\(asset.pixelHeight)");
+            
+            let manager: PHImageManager = PHImageManager()
+            manager.requestImageForAsset(asset,targetSize: CGSizeMake(5, 500),contentMode: .AspectFill,options: nil) { (image, info) -> Void in
+                
+                cell.picBase.image = image
+                
+                cell.picCancelBtn.hidden = false
+    }
+
+    func onClickFilmButton(sender: UIButton){
+        
+        
         
     }
     

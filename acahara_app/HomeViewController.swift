@@ -144,9 +144,9 @@ class HomeViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
         let attributes = [NSParagraphStyleAttributeName : style]
         cell.postDiary.attributedText = NSAttributedString(string: cell.postDiary.text,
                                                       attributes: attributes)
+        
         cell.postDiary.font = UIFont.systemFontOfSize(15)
-        
-        
+   
         
         cell.postImageView.image = UIImage(named:(posts[indexPath.row]["picture"] as! String))
         

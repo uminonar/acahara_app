@@ -270,7 +270,7 @@ class AddTableViewController: UIViewController,UITableViewDelegate,UITableViewDa
                 
                 
                
-//                cell.picFileBtn.addTarget(self, action:Selector("setPicFileBtn:"),forControlEvents:.TouchUpInside)
+                cell.photoFileBtn.addTarget(self, action:Selector("setPicFileBtn:"),forControlEvents:.TouchUpInside)
                 
                 
                 // MARK: 写真表示
