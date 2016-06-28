@@ -117,13 +117,13 @@ class AssistTableViewController: UIViewController,UITableViewDelegate,UITableVie
             
             if expandflag{
                 
-                cell.assistInfo.image = UIImage(named: "upTriangle")?.imageWithRenderingMode(.AlwaysTemplate)
+                cell.assistInfo.image = UIImage(named: "info")?.imageWithRenderingMode(.AlwaysTemplate)
                 cell.assistInfo.tintColor = UIColor.blueColor()
                 cell.assistInfoS.textColor = UIColor.blueColor()
 
             }else{
                 
-                cell.assistInfo.image = UIImage(named: "downTriangle")?.imageWithRenderingMode(.AlwaysTemplate)
+                cell.assistInfo.image = UIImage(named: "info")?.imageWithRenderingMode(.AlwaysTemplate)
                 cell.assistInfo.tintColor = UIColor.blackColor()
                 cell.assistInfoS.textColor = UIColor.blackColor()
             }
@@ -512,15 +512,40 @@ class AssistTableViewController: UIViewController,UITableViewDelegate,UITableVie
         if indexPath.row == 0 {
             return 40
         }
+        
         if indexPath.row == 1 {
-            return 450
-        }
-        if indexPath.row == 2 {
-            return 35
+            
+            if expandflag{
+                return 450
+            }else{
+            
+                return 482
+            }
         }
         
-        return 280//ここの意味は？とりあえず全部のケースを網羅する。
+        if indexPath.row == 2 {
+            
+            if expandflag{
+                return 482
+            }else{
+
+                return 35
+            }
+        }
+        
+        if indexPath.row == 3 {
+            
+            if expandflag{
+                return 35
+            }else{
+        
+                return 280
+            }
+        }else{
+            return 280
+        }
     }
+ 
     
 
     @IBAction func saveBtn(sender: UIButton) {

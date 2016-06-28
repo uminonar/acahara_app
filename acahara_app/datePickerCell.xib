@@ -27,7 +27,8 @@
                         <rect key="frame" x="217" y="220" width="20" height="20"/>
                     </imageView>
                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GxU-to-gcI">
-                        <rect key="frame" x="272" y="219" width="30" height="30"/>
+                        <rect key="frame" x="257" y="219" width="45" height="30"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <state key="normal" title="決定">
                             <color key="titleColor" red="1" green="0.40000000600000002" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
                         </state>

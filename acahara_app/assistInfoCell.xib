@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
@@ -14,15 +15,26 @@
                 <rect key="frame" x="0.0" y="0.0" width="320" height="39"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="相談サポートについて" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="H3I-Bv-s5k">
-                        <rect key="frame" x="31" y="9" width="245" height="21"/>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="info" translatesAutoresizingMaskIntoConstraints="NO" id="0Yb-Vb-dxU">
+                        <rect key="frame" x="8" y="10" width="20" height="20"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="20" id="aAJ-0p-mH3"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="相談サポートについて" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="H3I-Bv-s5k">
+                        <rect key="frame" x="36" y="9" width="245" height="21"/>
                         <fontDescription key="fontDescription" type="system" pointSize="13"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="downTriangle" translatesAutoresizingMaskIntoConstraints="NO" id="0Yb-Vb-dxU">
-                        <rect key="frame" x="8" y="12" width="15" height="15"/>
-                    </imageView>
                 </subviews>
+                <constraints>
+                    <constraint firstItem="0Yb-Vb-dxU" firstAttribute="centerY" secondItem="e82-yu-QmL" secondAttribute="centerY" id="7yj-xY-rqQ"/>
+                    <constraint firstItem="0Yb-Vb-dxU" firstAttribute="leading" secondItem="e82-yu-QmL" secondAttribute="leadingMargin" id="I7h-CK-S1C"/>
+                    <constraint firstItem="0Yb-Vb-dxU" firstAttribute="centerY" secondItem="H3I-Bv-s5k" secondAttribute="centerY" id="JtZ-uH-btC"/>
+                    <constraint firstItem="H3I-Bv-s5k" firstAttribute="leading" secondItem="0Yb-Vb-dxU" secondAttribute="trailing" constant="8" symbolic="YES" id="PA5-bd-CJ2"/>
+                    <constraint firstItem="0Yb-Vb-dxU" firstAttribute="bottom" secondItem="H3I-Bv-s5k" secondAttribute="bottom" id="ldM-zW-UHX"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="H3I-Bv-s5k" secondAttribute="trailing" constant="31" id="qHh-2e-rta"/>
+                </constraints>
             </tableViewCellContentView>
             <connections>
                 <outlet property="assistInfo" destination="0Yb-Vb-dxU" id="Kyh-8c-XC2"/>
@@ -32,6 +44,6 @@
         </tableViewCell>
     </objects>
     <resources>
-        <image name="downTriangle" width="50" height="50"/>
+        <image name="info" width="20" height="20"/>
     </resources>
 </document>

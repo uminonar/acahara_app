@@ -64,6 +64,8 @@ class AddWhoViewController: UIViewController,UITableViewDataSource,UITableViewDe
             //文字色をグレーにする
         
             cell.textLabel?.textColor = UIColor.grayColor()
+            
+            cell.textLabel?.font = UIFont.systemFontOfSize(17)
         
         
             var name = nameList[indexPath.row] as! String
@@ -72,6 +74,7 @@ class AddWhoViewController: UIViewController,UITableViewDataSource,UITableViewDe
         
             return cell
         }
+    
     
     //    行を選択した時の処理
         func tableView (tableView:UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
