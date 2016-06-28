@@ -10,7 +10,10 @@ import UIKit
 
 class bottomTableViewCell: UITableViewCell {
 
-  
+    @IBOutlet weak var movieFileBtn: UIButton!
+
+    @IBOutlet weak var photoFileBtn: UIButton!
+
 
     @IBOutlet weak var movieView: UIView!
     @IBOutlet weak var picCancelBtn: UIButton!
@@ -19,12 +22,19 @@ class bottomTableViewCell: UITableViewCell {
     @IBOutlet weak var addDiary: UITextView!
     @IBOutlet weak var addUniversity: UITextField!
 
-    @IBOutlet weak var addCameraImage: UIImageView!
-    @IBOutlet weak var addVideoImage: UIImageView!
-   
+    @IBOutlet weak var addPhoto: UIImageView!
 
-    @IBOutlet weak var addImportance: UILabel!
+    @IBOutlet weak var addMovie: UIImageView!
+   
+    @IBOutlet weak var photoImageBase: UIView!
+
+    @IBOutlet weak var movieImageBase: UIView!
+ 
     @IBOutlet weak var picBase: UIImageView!
+    
+    @IBOutlet weak var plus: UIImageView!
+    
+    @IBOutlet weak var plus2: UIImageView!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -42,19 +52,42 @@ class bottomTableViewCell: UITableViewCell {
         // 枠の角を丸くする。
         addDiary.layer.cornerRadius = 8
         
+        
+        addPhoto.image = UIImage(named:"photoImage")?.imageWithRenderingMode(.AlwaysTemplate)
+        addPhoto.tintColor = UIColor.lightGrayColor()
+        
+        addMovie.image = UIImage(named:"movieImage")?.imageWithRenderingMode(.AlwaysTemplate)
+        
+        addMovie.tintColor = UIColor.lightGrayColor()
+        
+        plus.image = UIImage(named:"plus")?.imageWithRenderingMode(.AlwaysTemplate)
+        plus.tintColor = UIColor.lightGrayColor()
+        
+        plus2.image = UIImage(named:"plus")?.imageWithRenderingMode(.AlwaysTemplate)
+        plus2.tintColor = UIColor.lightGrayColor()
 
         
+//        
+//        let layer1: CAShapeLayer = CAShapeLayer()
+//        layer1.frame = photoImageBase.bounds
+//        layer1.strokeColor = UIColor.lightGrayColor().CGColor
+//        layer1.fillColor = nil
+//        layer1.lineWidth = 2.0
+//        layer1.lineDashPattern = [2, 3] // 線(=3)とスペース(=3)の長さを設定します。
+//        layer1.path = UIBezierPath(rect: layer1.frame).CGPath
+//        photoImageBase.layer.addSublayer(layer1)
+//        
+//        
+//        let layer2: CAShapeLayer = CAShapeLayer()
+//        layer2.frame = movieImageBase.bounds
+//        layer2.strokeColor = UIColor.lightGrayColor().CGColor
+//        layer2.fillColor = nil
+//        layer2.lineWidth = 2.0
+//        layer2.lineDashPattern = [2, 3] // 線(=3)とスペース(=3)の長さを設定します。
+//        layer2.path = UIBezierPath(rect: layer2.frame).CGPath
+//        movieImageBase.layer.addSublayer(layer2)
         
-        let addImage = FAKFontAwesome.cameraIconWithSize(50)
-        addImage.addAttribute(NSForegroundColorAttributeName, value: UIColor.lightGrayColor())
-        let addI = addImage.imageWithSize(CGSizeMake(50, 50))
-        addCameraImage.image = addI
         
-        
-        let addMo = FAKFontAwesome.videoCameraIconWithSize(50)
-        addMo.addAttribute(NSForegroundColorAttributeName, value: UIColor.lightGrayColor())
-        let addM = addMo.imageWithSize(CGSizeMake(50, 50))
-        addVideoImage.image = addM
         
         let times = FAKFontAwesome.timesIconWithSize(20)
         //下記でアイコンの色も変えられます
@@ -63,12 +96,14 @@ class bottomTableViewCell: UITableViewCell {
         let timesImage = times.imageWithSize(CGSizeMake(20, 20))
         
         picCancelBtn.setImage(timesImage, forState: .Normal)
+        
+        
+        
     }
 
 
-    @IBOutlet weak var addSwitch: UISwitch!
-    @IBOutlet weak var picFileBtn: UIButton!
-    @IBOutlet weak var movieFileBtn: UIButton!
+
+
   
 
     override func setSelected(selected: Bool, animated: Bool) {

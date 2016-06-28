@@ -23,6 +23,7 @@ class AddWhoViewController: UIViewController,UITableViewDataSource,UITableViewDe
     
         var myDefault = NSUserDefaults.standardUserDefaults()
         
+        nameTextField.becomeFirstResponder()
         
 //        履歴全件削除の設定 1回使ったらコメントアウト
 //        var appDomain:String = NSBundle.mainBundle().bundleIdentifier!
@@ -154,7 +155,7 @@ class AddWhoViewController: UIViewController,UITableViewDataSource,UITableViewDe
     
     @IBAction func cancelBtn(sender: UIButton) {
         
-        self.resignFirstResponder()
+        nameTextField.resignFirstResponder()
         self.dismissViewControllerAnimated(true, completion: nil)
     }
     

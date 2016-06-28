@@ -15,6 +15,8 @@ class dateTimeTableViewCell: UITableViewCell,UITextFieldDelegate {
     @IBOutlet weak var addName: UILabel!
     @IBOutlet weak var addWhen: UITextField!
     @IBOutlet weak var addSelfee: UIImageView!
+    @IBOutlet weak var addImportance: UILabel!
+    @IBOutlet weak var addSwitch: UISwitch!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -35,9 +37,14 @@ class dateTimeTableViewCell: UITableViewCell,UITextFieldDelegate {
         asta.addAttribute(NSForegroundColorAttributeName, value: palePink)
         let astaImage = asta.imageWithSize(CGSizeMake(10,10))
         
+    
         
         
-
+        
+        
+        
+        
+        
     }
 
     override func setSelected(selected: Bool, animated: Bool) {

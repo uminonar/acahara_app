@@ -198,7 +198,7 @@
 		0BE19D8E1D0C89CD0014FEF1 /* advisor.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = advisor.jpg; sourceTree = "<group>"; };
 		0BE248971D05A97A002BEC1F /* AddTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddTableViewController.swift; sourceTree = "<group>"; };
 		0BE2489B1D05AAE1002BEC1F /* dateTimeCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = dateTimeCell.xib; sourceTree = "<group>"; };
-		0BE2489D1D05ABEB002BEC1F /* dateTimeTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = dateTimeTableViewCell.swift; sourceTree = "<group>"; };
+		0BE2489D1D05ABEB002BEC1F /* dateTimeTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = dateTimeTableViewCell.swift; sourceTree = "<group>"; usesTabs = 0; };
 		0BE2489F1D05AC8D002BEC1F /* datePickerCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = datePickerCell.xib; sourceTree = "<group>"; };
 		0BE248A11D05ACEE002BEC1F /* datePickerTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = datePickerTableViewCell.swift; sourceTree = "<group>"; };
 		0BE248A31D05AEE0002BEC1F /* bottomCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = bottomCell.xib; sourceTree = "<group>"; };
@@ -284,7 +284,6 @@
 				0B59AD491D07C04400E740F5 /* assistChosePostsTableViewCell.swift */,
 				0B5AFA7D1D085651001D3DCA /* homeIntroTableViewCell.swift */,
 				0BB232C51D1BB22C00F996AA /* choseCustomCell.swift */,
-				0B59AD371D07AFED00E740F5 /* AssistTableViewController.swift */,
 				0BB232C31D1BB1B200F996AA /* choseCustomCell.xib */,
 				0B0094B91CF708120041B3B5 /* postCustomCell.xib */,
 				0B59AD391D07B1B000E740F5 /* assistInfoCell.xib */,
@@ -292,6 +291,7 @@
 				0B59AD431D07BA0F00E740F5 /* assistChoseAdvisorCell.xib */,
 				0B59AD471D07C01600E740F5 /* assistChosePostsCell.xib */,
 				0BE2489B1D05AAE1002BEC1F /* dateTimeCell.xib */,
+				0BE248971D05A97A002BEC1F /* AddTableViewController.swift */,
 				0BE2489F1D05AC8D002BEC1F /* datePickerCell.xib */,
 				0BE248A31D05AEE0002BEC1F /* bottomCell.xib */,
 				0B0094891CF6FFB90041B3B5 /* AppDelegate.swift */,
@@ -303,15 +303,15 @@
 				0B772C6B1D09B53C00086E17 /* TabBarController.swift */,
 				0B0686C61CFBFA58002AB722 /* DetailViewController.swift */,
 				0B9DF2601D01ADC100B478C7 /* PictureViewController.swift */,
-				0BE248971D05A97A002BEC1F /* AddTableViewController.swift */,
 				0B03D28F1CF7D58E0050119E /* AddViewController.swift */,
 				0B03D2911CF7F4FB0050119E /* AddWhereViewController.swift */,
 				0B03D2931CF7F6050050119E /* AddWhoViewController.swift */,
 				0BADA6191CFB3B9E001702D7 /* AddDiaryViewController.swift */,
 				0B9DBFE61CFFF1F200B78293 /* AddSoundViewController.swift */,
+				0B59AD371D07AFED00E740F5 /* AssistTableViewController.swift */,
 				0B94338A1D0275AA00A93027 /* AssistViewController.swift */,
-				0B09F2481D02C38E006F11D5 /* ChosePostsViewController.swift */,
 				0BD4F1531D051A28001AA8EC /* MailContentViewController.swift */,
+				0B09F2481D02C38E006F11D5 /* ChosePostsViewController.swift */,
 				0BADA6161CFB3089001702D7 /* Main.storyboard */,
 				0B73CE6B1D0D998D007658EF /* SSASideMenu */,
 				0B0094921CF6FFB90041B3B5 /* Assets.xcassets */,

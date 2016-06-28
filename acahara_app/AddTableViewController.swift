@@ -70,8 +70,10 @@ class AddTableViewController: UIViewController,UITableViewDelegate,UITableViewDa
         
         saveBtn.image = UIImage(named:"dataBase")?.imageWithRenderingMode(.AlwaysTemplate)
         
-        let sakura:UIColor = UIColor(red:1.0,green:0.3,blue:0.3,alpha:1.0)
-        saveBtn.tintColor = sakura
+//        let sakura:UIColor = UIColor(red:1.0,green:0.3,blue:0.3,alpha:1.0)
+        saveBtn.tintColor = UIColor.whiteColor()
+        
+    
         
 
     }
@@ -113,7 +115,7 @@ class AddTableViewController: UIViewController,UITableViewDelegate,UITableViewDa
                     df.dateFormat = "yyyy/MM/dd HH:mm"
                     var today = NSDate()
                     var todayStr = df.stringFromDate(today)
-                    cell.addWhen.text = todayStr + " 頃"
+                    cell.addWhen.text = todayStr + "   頃"
                 }else{
                    cell.addWhen.text = ""
                 }
@@ -121,7 +123,7 @@ class AddTableViewController: UIViewController,UITableViewDelegate,UITableViewDa
                 
             }else{
                 
-                cell.addWhen.text = dateStr!+" 頃"
+                cell.addWhen.text = dateStr!+"   頃"
             }
             
             if expandflag{
@@ -134,18 +136,35 @@ class AddTableViewController: UIViewController,UITableViewDelegate,UITableViewDa
             
             cell.addName.text = "uminonar"
             
-            cell.addWhen.delegate = self//なぜここでいる？
+            cell.addWhen.delegate = self //なぜここでいる？
+            
+            
+            // SwitchのOn/Off切り替わりの際に、呼ばれるイベントを設定する.
+            cell.addSwitch.addTarget(self, action: "changeSwitch:", forControlEvents: UIControlEvents.ValueChanged)
+            
+            var changedSwitch = myDefault.stringForKey("switch")
+            
+            if ( changedSwitch != nil ){
+                cell.addImportance.text = "相談に利用予定"
+                cell.addSwitch.on = true
+            }else{
+                cell.addImportance.text = "念のため記録"
+                cell.addSwitch.on = false
+            }
             
 
             return cell
 
         }else{
+            
             if expandflag {
 
                 
                 var cell:datePickerTableViewCell = tableView.dequeueReusableCellWithIdentifier("datePickerCell", forIndexPath: indexPath) as! datePickerTableViewCell
                 
                 cell.addDatePicker.addTarget(self, action: "changedDT:", forControlEvents:UIControlEvents.ValueChanged)
+                
+                cell.decideBtn.addTarget(self, action: "decideBtn:", forControlEvents:UIControlEvents.TouchUpInside)
                 
                 return cell
                 
@@ -165,7 +184,7 @@ class AddTableViewController: UIViewController,UITableViewDelegate,UITableViewDa
                 
                 if ( uniStr != nil){
                     cell.addUniversity.text = uniStr
-                }
+                    cell.addUniversity.textColor = UIColor.darkGrayColor()                }
                 
                 //場所、データを呼び出して文字列が入っていたら表示する
                 var selectedPlace = myDefault.stringForKey("selectedPlace")
@@ -194,7 +213,7 @@ class AddTableViewController: UIViewController,UITableViewDelegate,UITableViewDa
                     
                     cell.addDiary.textColor = UIColor.blackColor()
                 }else{
-                    cell.addDiary.text = "大丈夫！しっかり記録しましょう。\n具体的にどんなことがありましたか？"
+                    cell.addDiary.text = ""
                     
                     
                     //行間設定
@@ -243,20 +262,8 @@ class AddTableViewController: UIViewController,UITableViewDelegate,UITableViewDa
                 
                 
                 
-                // SwitchのOn/Off切り替わりの際に、呼ばれるイベントを設定する.
-                cell.addSwitch.addTarget(self, action: "changeSwitch:", forControlEvents: UIControlEvents.ValueChanged)
-                
-                var changedSwitch = myDefault.stringForKey("switch")
-                
-                if ( changedSwitch != nil ){
-                    cell.addImportance.text = "相談に利用予定"
-                    cell.addSwitch.on = true
-                }else{
-                    cell.addImportance.text = "念のため記録"
-                    cell.addSwitch.on = false
-                }
-                
-                cell.picFileBtn.addTarget(self, action:Selector("setPicFileBtn:"),forControlEvents:.TouchUpInside)
+               
+//                cell.picFileBtn.addTarget(self, action:Selector("setPicFileBtn:"),forControlEvents:.TouchUpInside)
                 
                 
                 // MARK: 写真表示
@@ -437,6 +444,8 @@ class AddTableViewController: UIViewController,UITableViewDelegate,UITableViewDa
         presentViewController(AddDiaryVC, animated: true, completion: nil)
     }
     
+    
+    
     func changeSwitch(sender: UISwitch){
         //addSwitchが変化したら
         if sender.on == true { //== trueはなくても良い
@@ -457,7 +466,7 @@ class AddTableViewController: UIViewController,UITableViewDelegate,UITableViewDa
         }
         
         // 対象行だけ更新
-        let row = NSIndexPath(forRow: 1, inSection: 0)
+        let row = NSIndexPath(forRow: 0, inSection: 0)
         addTableView.reloadRowsAtIndexPaths([row], withRowAnimation: UITableViewRowAnimation.Fade)
         
     }
@@ -522,8 +531,8 @@ class AddTableViewController: UIViewController,UITableViewDelegate,UITableViewDa
         myDefault.synchronize()
         
         self.dismissViewControllerAnimated(true, completion: nil)
-            
-     
+        
+        
     }
     
 
@@ -624,18 +633,19 @@ class AddTableViewController: UIViewController,UITableViewDelegate,UITableViewDa
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat
     {
         if indexPath.row == 0 {
-            return 55
+            return 140
+            
         }
         if indexPath.row == 1 {
             if expandflag {
                 return 550
             }else{
-                return 435
+                return 550
             }
         }
         
         
-        return 80.0//ここの意味は？
+        return 550.0//ここの意味は？
     }
     
 
@@ -739,6 +749,13 @@ class AddTableViewController: UIViewController,UITableViewDelegate,UITableViewDa
             return true
         }
     }
+    
+    func decideBtn(sender:UIButton){
+        let row = NSIndexPath(forRow: 0, inSection: 0)
+        expandflag = !expandflag
+        self.toContract(addTableView, indexPath: row)
+    }
+    
 
     //addUniversityのテキストフィールドは、returnタップ時にユーザーデフォルトに収め、キーボーードも立ち上げたいので他のテキストフィールドとは処理を分けている
     func textFieldShouldEndEditing(textField: UITextField) -> Bool {
@@ -758,6 +775,8 @@ class AddTableViewController: UIViewController,UITableViewDelegate,UITableViewDa
         return true
         
     }
+
+ 
 
  
     override func didReceiveMemoryWarning() {
@@ -788,9 +807,26 @@ class AVPlayerView : UIView{
     override init(frame: CGRect) {
         super.init(frame: frame)
     }
-    
+
     override class func layerClass() -> AnyClass{
         return AVPlayerLayer.self
     }
     
 }
+
+//// CustomTextField Class
+//class CustomTextField: UITextField {
+//    
+////    var cell:dateTimeTableViewCell = tableView.dequeueReusableCellWithIdentifier("dateTimeCell", forIndexPath: indexPath) as! dateTimeTableViewCell
+////    
+////     var cell:bottomTableViewCell = tableView.dequeueReusableCellWithIdentifier("bottomCell", forIndexPath: indexPath) as! bottomTableViewCell
+//    
+//    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
+//        // タップ時のカラー
+//        self.backgroundColor = UIColor.groupTableViewBackgroundColor()
+//    }
+//    
+//    override func touchesEnded(touches: Set<UITouch>, withEvent event: UIEvent?) {
+//        self.backgroundColor = UIColor.whiteColor()
+//    }
+//}

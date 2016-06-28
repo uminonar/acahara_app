@@ -12,9 +12,15 @@ class datePickerTableViewCell: UITableViewCell {
 
     @IBOutlet weak var addDatePicker: UIDatePicker!
    
+    @IBOutlet weak var cancelBtn: UIImageView!
+
+    @IBOutlet weak var decideBtn: UIButton!
+    
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         
+        cancelBtn.image = UIImage(named:"")
       
     }
     

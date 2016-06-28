@@ -14,6 +14,7 @@ class StepViewController: UIViewController {
     @IBOutlet weak var menuCoverBtn: UIButton!
    
 
+
     @IBOutlet var baseView: UIView!
     @IBOutlet weak var headerView: UIView!
     @IBOutlet weak var scrollView: UIScrollView!
@@ -63,8 +64,8 @@ class StepViewController: UIViewController {
         
         menu.tintColor = UIColor.whiteColor()
         
-        
-        scrollView.contentSize.height = 3000
+        65
+        scrollView.contentSize.height = 3300
         
         kiroku.image = UIImage(named:"create")
         
@@ -179,7 +180,7 @@ class StepViewController: UIViewController {
 
     @IBAction func acaBtn(sender: UIButton) {
         var height:CGFloat = 0.0
-        scrollView.setContentOffset(CGPointMake(0, height), animated: false)
+        scrollView.setContentOffset(CGPointMake(0, height), animated: true)
         
     }
     

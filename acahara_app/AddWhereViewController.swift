@@ -21,7 +21,7 @@ class AddWhereViewController: UIViewController,UITableViewDelegate,UITableViewDa
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+         placeTextField.becomeFirstResponder()
 
         
     }
@@ -148,7 +148,7 @@ class AddWhereViewController: UIViewController,UITableViewDelegate,UITableViewDa
     
     @IBAction func cancelBtn(sender: UIButton) {
         
-        self.resignFirstResponder()
+        placeTextField.resignFirstResponder()
         self.dismissViewControllerAnimated(true, completion: nil)
     } 
     
