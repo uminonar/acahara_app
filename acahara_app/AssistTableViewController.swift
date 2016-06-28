@@ -216,8 +216,25 @@ class AssistTableViewController: UIViewController,UITableViewDelegate,UITableVie
                             var personT = ["professor":"教授","assailant":"加害者","committee":"委員会","psycotherapist":"心理療法士","lawyer":"弁護士","friend":"友達"]
             
                             var pType  = myDefault.stringForKey("selectedAdvisor")
+            
+                            if pType != nil{
+                                
+                                cell.sentTo.text = personT[pType!]! + " 宛"
+                                
+                            }else{
+                                
+                                cell.sentTo.text = ""
+                                cell.assistMailContent.text = "まず相談相手のタイプを選択してください。その後でこの画面をタップして相談内容を編集してください。"
+                                
+                                let silver:UIColor = UIColor(red:0.8,green:0.8,blue:0.8,alpha:1.0)
+                                cell.assistMailContent.textColor = silver
+                                
+                                cell.assistMailContent.editable = false
+                                cell.assistMailContent.selectable = false
+                       
+                            }
         
-                            cell.sentTo.text = personT[pType!]! + " 宛"
+            
 
             
             let HiddenSeparatorInset: UIEdgeInsets = UIEdgeInsetsMake(0, CGFloat(UInt16.max), 0, 0)
