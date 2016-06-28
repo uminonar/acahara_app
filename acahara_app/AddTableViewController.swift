@@ -115,6 +115,13 @@ class AddTableViewController: UIViewController,UITableViewDelegate,UITableViewDa
                     df.dateFormat = "yyyy/MM/dd HH:mm"
                     var today = NSDate()
                     var todayStr = df.stringFromDate(today)
+                    
+                    
+                    //現在日付をユーザーデフォルトにこの段階で入れておいてあげる。そうすると上書きされるけど、デートピッカーを動かさない場合にも空にならない。
+                    var myDefault = NSUserDefaults.standardUserDefaults()
+                    myDefault.setObject(todayStr, forKey: "selectedDT")
+                    myDefault.synchronize()
+                    
                     cell.addWhen.text = todayStr + "   頃"
                 }else{
                    cell.addWhen.text = ""
@@ -754,6 +761,9 @@ class AddTableViewController: UIViewController,UITableViewDelegate,UITableViewDa
         let row = NSIndexPath(forRow: 0, inSection: 0)
         expandflag = !expandflag
         self.toContract(addTableView, indexPath: row)
+        
+
+        
     }
     
 
