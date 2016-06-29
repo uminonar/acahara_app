@@ -13,6 +13,7 @@ class MailContentViewController: UIViewController, UITextViewDelegate{
     var personT = ["professor":"教授","assailant":"加害者","committee":"委員会","psycotherapist":"心理療法士","lawyer":"弁護士","friend":"友達"]
 
 
+    @IBOutlet var advisorsView: UIView!
     @IBOutlet weak var headerView: UIView!
     @IBOutlet weak var checkBtn: UIImageView!
     @IBOutlet weak var personType: UILabel!
@@ -51,28 +52,34 @@ class MailContentViewController: UIViewController, UITextViewDelegate{
             //                myDefault.removePersistentDomainForName(appDomain)
             
             //決定ボタンのついたラベルをキーボードの上に設置
-            var accessoryView = UIView(frame: CGRectMake(0, 178, 320, 35))
-            
-            let paleGreen:UIColor = UIColor(red: 0.914, green: 0.980, blue: 0.950, alpha: 1.0)
+            var accessoryView = UIView(frame: CGRectMake(0, 178, 320, 40))
             
             accessoryView.backgroundColor = UIColor.groupTableViewBackgroundColor()
             
             
             
-            var closeButton = UIButton(frame: CGRectMake(myBoundsize.width-50, 8, 40, 20))
+            var closeCoverButton = UIButton(frame: CGRectMake(myBoundsize.width-40, 8, 25, 25))
+            
+            var closeImage = UIImageView(frame: CGRectMake(myBoundsize.width-40, 8, 25, 25))
             
             
-            closeButton.setTitle("Done", forState: UIControlState.Normal)
-            //決定のフォントサイズを小さくする
-            closeButton.titleLabel?.font = UIFont.systemFontOfSize(15)
-            closeButton.setTitleColor(UIColor.darkGrayColor(),
-                                      forState: UIControlState.Normal)
-            closeButton.contentHorizontalAlignment = UIControlContentHorizontalAlignment.Right
-            closeButton.addTarget(self, action: "onClickCloseButton:", forControlEvents: .TouchUpInside)
-            accessoryView.addSubview(closeButton)
+            closeImage.image = UIImage(named:"arrowDown")?.imageWithRenderingMode(.AlwaysTemplate)
             
+            let sakura2:UIColor = UIColor(red:1.0,green:0.3,blue:0.3,alpha:1.0)
+            closeImage.tintColor = sakura2
+            
+            
+            
+            closeCoverButton.addTarget(self, action: "onClickCloseButton:", forControlEvents: .TouchUpInside)
+
+            
+            accessoryView.addSubview(closeImage)
+            accessoryView.addSubview(closeCoverButton)
             
             mailTextView.inputAccessoryView = accessoryView
+            
+            
+          
         
             
             
