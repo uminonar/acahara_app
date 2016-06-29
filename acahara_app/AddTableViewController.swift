@@ -40,6 +40,10 @@ class AddTableViewController: UIViewController,UITableViewDelegate,UITableViewDa
         
         addTableView.registerNib(UINib(nibName: "bottomCell", bundle: nil), forCellReuseIdentifier: "bottomCell")
         
+        addTableView.registerNib(UINib(nibName: "photoCell", bundle: nil), forCellReuseIdentifier: "photoCell")
+        
+        addTableView.registerNib(UINib(nibName: "movieCell", bundle: nil), forCellReuseIdentifier: "movieCell")
+        
         //テーブルビューの罫線を消す
         addTableView.separatorColor = UIColor.clearColor()
         
@@ -87,7 +91,21 @@ class AddTableViewController: UIViewController,UITableViewDelegate,UITableViewDa
     
     //行数決定
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return rownumber
+        
+        var myDefault = NSUserDefaults.standardUserDefaults()
+            var strURL = myDefault.stringForKey("selectedPhotoURL")
+            //movieの場合
+        if strURL != nil{
+            
+            return rownumber + 1
+            //movieの場合さらにタス
+            
+            
+        }else{
+            return rownumber
+        }
+        
+        
     }
 
     //表示内容を決定
@@ -96,6 +114,7 @@ class AddTableViewController: UIViewController,UITableViewDelegate,UITableViewDa
         //var cell: UITableViewCell?
     
         var myDefault = NSUserDefaults.standardUserDefaults()
+        
         
         if indexPath.row == 0{
             
@@ -131,14 +150,14 @@ class AddTableViewController: UIViewController,UITableViewDelegate,UITableViewDa
             }else{
                 
                 cell.addWhen.text = dateStr!+"   頃"
-            }
+                }
             
-            if expandflag{
-                cell.addWhen.textColor = UIColor.redColor()
+                if expandflag{
+                    cell.addWhen.textColor = UIColor.redColor()
               
-            }else{
-                cell.addWhen.textColor = UIColor.blackColor()
-            }
+                }else{
+                    cell.addWhen.textColor = UIColor.blackColor()
+                }
             
             
             cell.addName.text = "uminonar"
@@ -159,12 +178,19 @@ class AddTableViewController: UIViewController,UITableViewDelegate,UITableViewDa
                 cell.addSwitch.on = false
             }
             
-
-            return cell
-
-        }else{
             
-            if expandflag {
+            return cell
+            
+
+        }
+        
+       
+        
+        var adjustrow_no = indexPath.row
+        
+        if expandflag{
+            if indexPath.row == 1{
+
 
                 
                 var cell:datePickerTableViewCell = tableView.dequeueReusableCellWithIdentifier("datePickerCell", forIndexPath: indexPath) as! datePickerTableViewCell
@@ -175,7 +201,13 @@ class AddTableViewController: UIViewController,UITableViewDelegate,UITableViewDa
                 
                 return cell
                 
-            }else{
+            }
+            
+                adjustrow_no--
+            
+        }
+        
+        if adjustrow_no == 1{
                 
                 var cell:bottomTableViewCell = tableView.dequeueReusableCellWithIdentifier("bottomCell", forIndexPath: indexPath) as! bottomTableViewCell
                 
@@ -266,105 +298,178 @@ class AddTableViewController: UIViewController,UITableViewDelegate,UITableViewDa
                 cell.addDiary.addGestureRecognizer(tap)
                 
                 
+                return cell
+            }
+            
                 
-                
-                
-               
-                cell.photoFileBtn.addTarget(self, action:Selector("setPicFileBtn:"),forControlEvents:.TouchUpInside)
-                
-                
-                // MARK: 写真表示
-                //写真が選択された時のURLを取得する -----------------------------
+            if adjustrow_no == 2{
+                var myDefault = NSUserDefaults.standardUserDefaults()
                 var strURL = myDefault.stringForKey("selectedPhotoURL")
-                
+                //movieの場合
                 if strURL != nil{
+
+                    var cell:photoTableViewCell = tableView.dequeueReusableCellWithIdentifier("photoCell", forIndexPath: indexPath) as! photoTableViewCell
+                    
                     
                     var url = NSURL(string: strURL as! String!)
                     let fetchResult: PHFetchResult = PHAsset.fetchAssetsWithALAssetURLs([url!], options: nil)
                     
                     if fetchResult.firstObject != nil{
-                    
-                        let asset: PHAsset = fetchResult.firstObject as! PHAsset
-                    
-                    
-                        print("pixelWidth:\(asset.pixelWidth)");
-                        print("pixelHeight:\(asset.pixelHeight)");
-                    
-                        let manager: PHImageManager = PHImageManager()
-                        manager.requestImageForAsset(asset,targetSize: CGSizeMake(5, 500),contentMode: .AspectFill,options: nil) { (image, info) -> Void in
                         
-                            cell.picBase.image = image
-                 
-                            cell.picCancelBtn.hidden = false
-                        }
-                    
+                            let asset: PHAsset = fetchResult.firstObject as! PHAsset
+                        
+                        
+                            print("pixelWidth:\(asset.pixelWidth)");
+                            print("pixelHeight:\(asset.pixelHeight)");
+                        
+                            let manager: PHImageManager = PHImageManager()
+                            manager.requestImageForAsset(asset,targetSize: CGSizeMake(5, 500),contentMode: .AspectFill,options: nil) { (image, info) -> Void in
+                            
+                                cell.formPhoto.image = image
+                            
+//                              cell.picCancelBtn.hidden = false
+                            }
                     }
-                    
-                    
+
+                    return cell
+
                 }else{
+                    var cell:movieTableViewCell = tableView.dequeueReusableCellWithIdentifier("movieCell", forIndexPath: indexPath) as! movieTableViewCell
                     
-                        cell.picBase.image = nil
-                        cell.picCancelBtn.hidden = true
+                    var myDefault = NSUserDefaults.standardUserDefaults()
+                    
+                    
+ 
                 }
                 
-                cell.picCancelBtn.addTarget(self, action: "cancelPicture", forControlEvents: .TouchUpInside)
+            }
+                
+            if adjustrow_no == 3{
+                
+//                var cell:movieTableViewCell = tableView.dequeueReusableCellWithIdentifier("movieCell", forIndexPath: indexPath) as! movieTableViewCell
+//                
+//                var myDefault = NSUserDefaults.standardUserDefaults()
+//                var strMovURL = myDefault.stringForKey("selectedMovieURL")
+//                
+//                var url = NSURL(string: strMovURL as! String!)
+//                
+//                var playerItem = AVPlayerItem(URL: url!)
+//                
+//                var videoPlayer : AVPlayer! = AVPlayer(playerItem: playerItem)
+//                
+//                //UIViewのレイヤーをAVPlayerLayerにする。普通のviewをカスタマイズしてる
+//                let layer = cell.movieView.layer as! AVPlayerLayer
+//                layer.videoGravity = AVLayerVideoGravityResizeAspect
+//                layer.player = videoPlayer
+//                
+//                
+//                //TODO:この再生ボタンを実装すべし！
+//                //この一行で再生する、ここにボタンを置いて、押したら、この一行が効くようにすれば良い。
+//                //layer.player?.play()
+//
+//                return cell
 
+                var cell:movieTableViewCell = createTableViewCell3(tableView,indexPath: indexPath)
+                return cell
+                
+        }
+    
+                
+                
+                // MARK: 写真表示
+                //写真が選択された時のURLを取得する -----------------------------
+//                var strURL = myDefault.stringForKey("selectedPhotoURL")
+//                
+//                if strURL != nil{
+//                    
+//                    var url = NSURL(string: strURL as! String!)
+//                    let fetchResult: PHFetchResult = PHAsset.fetchAssetsWithALAssetURLs([url!], options: nil)
+//                    
+//                    if fetchResult.firstObject != nil{
+//                    
+//                        let asset: PHAsset = fetchResult.firstObject as! PHAsset
+//                    
+//                    
+//                        print("pixelWidth:\(asset.pixelWidth)");
+//                        print("pixelHeight:\(asset.pixelHeight)");
+//                    
+//                        let manager: PHImageManager = PHImageManager()
+//                        manager.requestImageForAsset(asset,targetSize: CGSizeMake(5, 500),contentMode: .AspectFill,options: nil) { (image, info) -> Void in
+//                        
+//                            cell.picBase.image = image
+//                 
+//                            cell.picCancelBtn.hidden = false
+//                        }
+//                    
+//                    }
+//                    
+//                    
+//                }else{
+//                    
+//                        cell.picBase.image = nil
+//                        cell.picCancelBtn.hidden = true
+//                }
+//                
+//                cell.picCancelBtn.addTarget(self, action: "cancelPicture", forControlEvents: .TouchUpInside)
+//
 
                 
                 // MARK: Movie表示
-                //Movieが選択された時のURLを取得する -----------------------------
-                var strMovURL = myDefault.stringForKey("selectedMovieURL")
-                
-                if strMovURL != nil{
-                    
-                     var url = NSURL(string: strMovURL as! String!)
-                    
-                    var playerItem = AVPlayerItem(URL: url!)
-                    
-                    var videoPlayer : AVPlayer! = AVPlayer(playerItem: playerItem)
-                    
-                    //UIViewのレイヤーをAVPlayerLayerにする。普通のviewをカスタマイズしてる
-                    let layer = cell.movieView.layer as! AVPlayerLayer
-                    layer.videoGravity = AVLayerVideoGravityResizeAspect
-                    layer.player = videoPlayer
-                    
-                    
-                    //TODO:この再生ボタンを実装すべし！
-                    //この一行で再生する、ここにボタンを置いて、押したら、この一行が効くようにすれば良い。
-                    //layer.player?.play()
-                    
-                    
-                    cell.movieView.hidden = false
-         
-                    
-                }else{
-                    
-                }
-                
-                
-                
-                cell.movieFileBtn.addTarget(self, action: "movieFileBtn", forControlEvents: .TouchUpInside)
-
-                
-                var picBaseImage = myDefault.stringForKey("pic")
-                
-                if ( picBaseImage != nil ){
-                    //TODO:ここはこれじゃダメ？
-//                    cell.picBase.image = picBaseImage
-
-                
-                    return cell
-                
-            
-                }
-                
-                
-                return cell
-
+//                //Movieが選択された時のURLを取得する -----------------------------
+//                var strMovURL = myDefault.stringForKey("selectedMovieURL")
+//                
+//                if strMovURL != nil{
+//                    
+//                     var url = NSURL(string: strMovURL as! String!)
+//                    
+//                    var playerItem = AVPlayerItem(URL: url!)
+//                    
+//                    var videoPlayer : AVPlayer! = AVPlayer(playerItem: playerItem)
+//                    
+//                    //UIViewのレイヤーをAVPlayerLayerにする。普通のviewをカスタマイズしてる
+//                    let layer = cell.movieView.layer as! AVPlayerLayer
+//                    layer.videoGravity = AVLayerVideoGravityResizeAspect
+//                    layer.player = videoPlayer
+//                    
+//                    
+//                    //TODO:この再生ボタンを実装すべし！
+//                    //この一行で再生する、ここにボタンを置いて、押したら、この一行が効くようにすれば良い。
+//                    //layer.player?.play()
+//                    
+//                    
+//                    cell.movieView.hidden = false
+//         
+//                    
+//                }else{
+//                    
+//                }
+//                
+//                
+//                
+//
+//                
+//                var picBaseImage = myDefault.stringForKey("pic")
+//                
+//                if ( picBaseImage != nil ){
+//                    //TODO:ここはこれじゃダメ？
+////                    cell.picBase.image = picBaseImage
+//
+//                
+//                    return cell
+//                
+//            
+//                }
+//                
+//                
+//                return cell
+//
+//        
+//            }
+//    
         
-            }
-    
-        }
+        
+         var cell:photoTableViewCell = tableView.dequeueReusableCellWithIdentifier("photoCell", forIndexPath: indexPath) as! photoTableViewCell
+        return cell
     }
     
 
@@ -375,6 +480,7 @@ class AddTableViewController: UIViewController,UITableViewDelegate,UITableViewDa
         var appDomain:String = NSBundle.mainBundle().bundleIdentifier!
         myDefault.removeObjectForKey("selectedPhotoURL")
         
+        //TODO:ここ行数を調整して！どうする？
         let row = NSIndexPath(forRow: 1, inSection: 0)
         addTableView.reloadRowsAtIndexPaths([row], withRowAnimation: UITableViewRowAnimation.Fade)
 
@@ -382,10 +488,35 @@ class AddTableViewController: UIViewController,UITableViewDelegate,UITableViewDa
         
     }
     
+    func createTableViewCell3(tableView: UITableView,indexPath: NSIndexPath) -> movieTableViewCell{
     
+        var cell:movieTableViewCell = tableView.dequeueReusableCellWithIdentifier("movieCell", forIndexPath: indexPath) as! movieTableViewCell
+        
+        var myDefault = NSUserDefaults.standardUserDefaults()
+        var strMovURL = myDefault.stringForKey("selectedMovieURL")
+        
+        var url = NSURL(string: strMovURL as! String!)
+        
+        var playerItem = AVPlayerItem(URL: url!)
+        
+        var videoPlayer : AVPlayer! = AVPlayer(playerItem: playerItem)
+        
+        //UIViewのレイヤーをAVPlayerLayerにする。普通のviewをカスタマイズしてる
+        let layer = cell.movieView.layer as! AVPlayerLayer
+        layer.videoGravity = AVLayerVideoGravityResizeAspect
+        layer.player = videoPlayer
+        
+        
+        //TODO:この再生ボタンを実装すべし！
+        //この一行で再生する、ここにボタンを置いて、押したら、この一行が効くようにすれば良い。
+        //layer.player?.play()
+        
+        return cell
+    
+    }
     
     func changedDT(sender:UIDatePicker){
-            
+        
         let df = NSDateFormatter()
         df.dateFormat = "yyyy/MM/dd HH:mm"
         sender.maximumDate = NSDate()
@@ -454,10 +585,11 @@ class AddTableViewController: UIViewController,UITableViewDelegate,UITableViewDa
     
     
     func changeSwitch(sender: UISwitch){
+        var myDefault = NSUserDefaults.standardUserDefaults()
+
         //addSwitchが変化したら
         if sender.on == true { //== trueはなくても良い
-            var myDefault = NSUserDefaults.standardUserDefaults()
-            myDefault.setObject(true, forKey: "switch")
+                        myDefault.setObject(true, forKey: "switch")
             myDefault.synchronize()
         
             openFlag = 0
@@ -476,55 +608,55 @@ class AddTableViewController: UIViewController,UITableViewDelegate,UITableViewDa
         let row = NSIndexPath(forRow: 0, inSection: 0)
         addTableView.reloadRowsAtIndexPaths([row], withRowAnimation: UITableViewRowAnimation.Fade)
         
-    }
+
     
-    
-    func setPicFileBtn(sender:UIImageView){
-        //pictureFileがタップされた時、カメラロールが現れ、選択された写真がaddImageViewに収められる
-            var photoPick = UIImagePickerController()
-        
-            photoPick.delegate = self
-        
-            photoPick.sourceType = .PhotoLibrary
-            self.presentViewController(photoPick, animated: true, completion: nil)
-    }
-        
-    
-    func imagePickerController(imagePicker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {
-        
-        
-        
-        // ユーザーデフォルトを用意する
-        var myDefault = NSUserDefaults.standardUserDefaults()
-
-        
-        let strTypeMovie:String = kUTTypeMovie as! String
-        
-        if info[UIImagePickerControllerMediaType] as! String == strTypeMovie{
-            //動画
-            var url:NSURL = info[UIImagePickerControllerMediaURL] as! NSURL
-            
-            var strURL:String = url.description//こうすると文字列型に変換できる
-            
-           
-            
-            // データを書き込んで
-            myDefault.setObject(strURL, forKey: "selectedMovieURL")
-
-            
-            
-            
-        }else{
-            let assetURL:AnyObject = info[UIImagePickerControllerReferenceURL]!
-            
-            var strURL:String = assetURL.description
-
-        
-            // データを書き込んで
-            myDefault.setObject(strURL, forKey: "selectedPhotoURL")
-
-        }
-        
+//    
+//    func setPicFileBtn(sender:UIImageView){
+//        //pictureFileがタップされた時、カメラロールが現れ、選択された写真がaddImageViewに収められる
+//            var photoPick = UIImagePickerController()
+//        
+//            photoPick.delegate = self
+//        
+//            photoPick.sourceType = .PhotoLibrary
+//            self.presentViewController(photoPick, animated: true, completion: nil)
+//    }
+//        
+//    
+//    func imagePickerController(imagePicker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {
+//        
+//        
+//        
+//        // ユーザーデフォルトを用意する
+//        var myDefault = NSUserDefaults.standardUserDefaults()
+//
+//        
+//        let strTypeMovie:String = kUTTypeMovie as! String
+//        
+//        if info[UIImagePickerControllerMediaType] as! String == strTypeMovie{
+//            //動画
+//            var url:NSURL = info[UIImagePickerControllerMediaURL] as! NSURL
+//            
+//            var strURL:String = url.description//こうすると文字列型に変換できる
+//            
+//           
+//            
+//            // データを書き込んで
+//            myDefault.setObject(strURL, forKey: "selectedMovieURL")
+//
+//            
+//            
+//            
+//        }else{
+//            let assetURL:AnyObject = info[UIImagePickerControllerReferenceURL]!
+//            
+//            var strURL:String = assetURL.description
+//
+//        
+//            // データを書き込んで
+//            myDefault.setObject(strURL, forKey: "selectedPhotoURL")
+//
+//        }
+//        
         
         
         
@@ -541,26 +673,28 @@ class AddTableViewController: UIViewController,UITableViewDelegate,UITableViewDa
         
         
     }
-    
+
+
 
 
     
-    func movieFileBtn(){
-        var movPick = UIImagePickerController()
-        movPick.delegate = self
-        movPick.sourceType = UIImagePickerControllerSourceType.PhotoLibrary
-        movPick.mediaTypes = [kUTTypeMovie as String]
-        movPick.allowsEditing = false
-        movPick.delegate = self
-        self.presentViewController(movPick, animated: true, completion: nil)
-    }
-    
-    func tapSound(){
-        let AddSound = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("AddSoundViewController") as UIViewController
-        
-        presentViewController(AddSound, animated: true, completion: nil)
-
-    }
+//    func movieFileBtn(){
+//        var movPick = UIImagePickerController()
+//        movPick.delegate = self
+//        movPick.sourceType = UIImagePickerControllerSourceType.PhotoLibrary
+//        movPick.mediaTypes = [kUTTypeMovie as String]
+//        movPick.allowsEditing = false
+//        movPick.delegate = self
+//        self.presentViewController(movPick, animated: true, completion: nil)
+//    }
+            
+//MARK:次回の実装
+//    func tapSound(){
+//        let AddSound = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("AddSoundViewController") as UIViewController
+//        
+//        presentViewController(AddSound, animated: true, completion: nil)
+//
+//    }
     
 
     // delegate didSelectRow
@@ -645,14 +779,17 @@ class AddTableViewController: UIViewController,UITableViewDelegate,UITableViewDa
         }
         if indexPath.row == 1 {
             if expandflag {
-                return 550
+                return 250
             }else{
-                return 550
+                return 470
             }
+        
+            
+        
         }
         
         
-        return 550.0//ここの意味は？
+        return 150.0//ここの意味は？
     }
     
 
@@ -743,6 +880,8 @@ class AddTableViewController: UIViewController,UITableViewDelegate,UITableViewDa
         
         // setWhere
         if textField.tag == 2000{
+            
+            
             self.setWhere(textField)
             return false
         }

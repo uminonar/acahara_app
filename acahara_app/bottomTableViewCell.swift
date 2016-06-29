@@ -22,19 +22,19 @@ class bottomTableViewCell: UITableViewCell {
     @IBOutlet weak var addDiary: UITextView!
     @IBOutlet weak var addUniversity: UITextField!
 
-    @IBOutlet weak var addPhoto: UIImageView!
-
-    @IBOutlet weak var addMovie: UIImageView!
-   
-    @IBOutlet weak var photoImageBase: UIView!
-
-    @IBOutlet weak var movieImageBase: UIView!
- 
-    @IBOutlet weak var picBase: UIImageView!
-    
-    @IBOutlet weak var plus: UIImageView!
-    
-    @IBOutlet weak var plus2: UIImageView!
+//    @IBOutlet weak var addPhoto: UIImageView!
+//
+//    @IBOutlet weak var addMovie: UIImageView!
+//   
+//    @IBOutlet weak var photoImageBase: UIView!
+//
+//    @IBOutlet weak var movieImageBase: UIView!
+// 
+//    @IBOutlet weak var picBase: UIImageView!
+//    
+//    @IBOutlet weak var plus: UIImageView!
+//    
+//    @IBOutlet weak var plus2: UIImageView!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -53,18 +53,18 @@ class bottomTableViewCell: UITableViewCell {
         addDiary.layer.cornerRadius = 8
         
         
-        addPhoto.image = UIImage(named:"photoImage")?.imageWithRenderingMode(.AlwaysTemplate)
-        addPhoto.tintColor = UIColor.lightGrayColor()
-        
-        addMovie.image = UIImage(named:"movieImage")?.imageWithRenderingMode(.AlwaysTemplate)
-        
-        addMovie.tintColor = UIColor.lightGrayColor()
-        
-        plus.image = UIImage(named:"plus")?.imageWithRenderingMode(.AlwaysTemplate)
-        plus.tintColor = UIColor.lightGrayColor()
-        
-        plus2.image = UIImage(named:"plus")?.imageWithRenderingMode(.AlwaysTemplate)
-        plus2.tintColor = UIColor.lightGrayColor()
+//        addPhoto.image = UIImage(named:"photoImage")?.imageWithRenderingMode(.AlwaysTemplate)
+//        addPhoto.tintColor = UIColor.lightGrayColor()
+//        
+//        addMovie.image = UIImage(named:"movieImage")?.imageWithRenderingMode(.AlwaysTemplate)
+//        
+//        addMovie.tintColor = UIColor.lightGrayColor()
+//        
+//        plus.image = UIImage(named:"plus")?.imageWithRenderingMode(.AlwaysTemplate)
+//        plus.tintColor = UIColor.lightGrayColor()
+//        
+//        plus2.image = UIImage(named:"plus")?.imageWithRenderingMode(.AlwaysTemplate)
+//        plus2.tintColor = UIColor.lightGrayColor()
 
         
 //        

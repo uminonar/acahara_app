@@ -15,7 +15,7 @@ import AVFoundation
 
 
 
-class AddDiaryViewController: UIViewController, UITextViewDelegate,UIImagePickerControllerDelegate, {
+class AddDiaryViewController: UIViewController, UITextViewDelegate,UIImagePickerControllerDelegate,UINavigationControllerDelegate{
     
     @IBOutlet weak var header: UIView!
 
@@ -40,14 +40,15 @@ class AddDiaryViewController: UIViewController, UITextViewDelegate,UIImagePicker
         
        //行間の設定 ここで大きさがリセットされているから、リセット後にサイズを指定しないといけない
         
+        
+        //フォントサイズの指定
+        diaryTextView.font = UIFont.systemFontOfSize(17)
         let style = NSMutableParagraphStyle()
         style.lineSpacing = 20
         let attributes = [NSParagraphStyleAttributeName : style]
         diaryTextView.attributedText = NSAttributedString(string: diaryTextView.text,
                                                           attributes: attributes)
 
-        //フォントサイズの指定
-        diaryTextView.font = UIFont.systemFontOfSize(17)
         
 //履歴全件削除の設定 1回使ったらコメントアウト
 //        var myDefault = NSUserDefaults.standardUserDefaults()
@@ -66,15 +67,15 @@ class AddDiaryViewController: UIViewController, UITextViewDelegate,UIImagePicker
         
         var closeImage = UIImageView(frame: CGRectMake(myBoundsize.width-40, 8, 25, 25))
         
-        var photoImage = UIImageView(frame: CGRectMake(myBoundsize.width-300, 8, 25, 25))
+        var photoImage = UIImageView(frame: CGRectMake(20, 8, 25, 25))
         
-        var photoCoverBtn = UIButton(frame: CGRectMake(myBoundsize.width-300,8,25,25))
+        var photoCoverBtn = UIButton(frame: CGRectMake(20,8,25,25))
         
         
         
-        var filmImage = UIImageView(frame: CGRectMake(myBoundsize.width-250,8,25,25))
+        var filmImage = UIImageView(frame: CGRectMake(75,8,25,25))
         
-        var filmCoverBtn = UIButton(frame: CGRectMake(myBoundsize.width-250,8,25,25))
+        var filmCoverBtn = UIButton(frame: CGRectMake(75,8,25,25))
        
 
         
@@ -99,19 +100,13 @@ class AddDiaryViewController: UIViewController, UITextViewDelegate,UIImagePicker
   
         closeImage.tintColor = sakura2
         
-        
-        //決定のフォントサイズを小さくする
-        
+
         
         closeCoverButton.addTarget(self, action: "onClickCloseButton:", forControlEvents: .TouchUpInside)
         photoCoverBtn.addTarget(self, action: "onClickPhotoButton:", forControlEvents: .TouchUpInside)
         filmCoverBtn.addTarget(self, action: "onClickFilmButton:", forControlEvents: .TouchUpInside)
         
-        
-        
-        
-        
-        
+
         
         accessoryView.addSubview(closeImage)
         accessoryView.addSubview(closeCoverButton)
@@ -155,41 +150,79 @@ class AddDiaryViewController: UIViewController, UITextViewDelegate,UIImagePicker
         
     }
     
+    //photoCoverBtnがタップされた時
     func onClickPhotoButton(sender: UIButton){
         
-        //pictureFileがタップされた時、カメラロールが現れ、選択された写真がaddImageViewに収められる
+        
         var photoPick = UIImagePickerController()
-        
-        photoPick.delegate = self
-        
-        photoPick.sourceType = .PhotoLibrary
-        self.presentViewController(photoPick, animated: true, completion: nil)
-        
-        
-        var url = NSURL(string: strURL as! String!)
-        let fetchResult: PHFetchResult = PHAsset.fetchAssetsWithALAssetURLs([url!], options: nil)
-        
-        if fetchResult.firstObject != nil{
             
-            let asset: PHAsset = fetchResult.firstObject as! PHAsset
+            photoPick.delegate = self
             
-            
-            print("pixelWidth:\(asset.pixelWidth)");
-            print("pixelHeight:\(asset.pixelHeight)");
-            
-            let manager: PHImageManager = PHImageManager()
-            manager.requestImageForAsset(asset,targetSize: CGSizeMake(5, 500),contentMode: .AspectFill,options: nil) { (image, info) -> Void in
-                
-                cell.picBase.image = image
-                
-                cell.picCancelBtn.hidden = false
-    }
-
+            photoPick.sourceType = .PhotoLibrary
+            self.presentViewController(photoPick, animated: true, completion: nil)
+        }
+    
+    //movieCoverBtnがタップされた時
     func onClickFilmButton(sender: UIButton){
         
+        var movPick = UIImagePickerController()
+                movPick.delegate = self
+                movPick.sourceType = UIImagePickerControllerSourceType.PhotoLibrary
+                movPick.mediaTypes = [kUTTypeMovie as String]
+                movPick.allowsEditing = false
+                movPick.delegate = self
+                self.presentViewController(movPick, animated: true, completion: nil)
         
         
     }
+    
+        
+    func imagePickerController(imagePicker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {
+            
+            
+            
+            // ユーザーデフォルトを用意する
+        var myDefault = NSUserDefaults.standardUserDefaults()
+            
+            
+        let strTypeMovie:String = kUTTypeMovie as! String
+            
+            if info[UIImagePickerControllerMediaType] as! String == strTypeMovie{
+                //動画
+                var url:NSURL = info[UIImagePickerControllerMediaURL] as! NSURL
+                
+                var strURL:String = url.description//こうすると文字列型に変換できる
+                
+                
+                
+                // データを書き込んで
+                myDefault.setObject(strURL, forKey: "selectedMovieURL")
+                
+                
+                
+                
+            }else{
+                let assetURL:AnyObject = info[UIImagePickerControllerReferenceURL]!
+                
+                var strURL:String = assetURL.description
+                
+                
+                // データを書き込んで
+                myDefault.setObject(strURL, forKey: "selectedPhotoURL")
+                
+            }
+            // 即反映させる
+            myDefault.synchronize()
+        
+            self.dismissViewControllerAnimated(true, completion: nil)
+        
+    }
+    
+    
+    //ユーザーデフォルトに"photo"というキーでurlをstringセットする
+    //記録フォームの画面で、”photo”がnilでなかったらセルをif文で一段を追加
+    //こちらでは空のファイルイメージだけバーの上の方に置く
+ 
     
     
     override func viewWillAppear(animated: Bool) {

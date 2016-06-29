@@ -18,6 +18,10 @@
 		0B0094BE1CF70C440041B3B5 /* posts.txt in Resources */ = {isa = PBXBuildFile; fileRef = 0B0094BD1CF70C440041B3B5 /* posts.txt */; };
 		0B0094C01CF70D760041B3B5 /* homeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B0094BF1CF70D760041B3B5 /* homeTableViewCell.swift */; };
 		0B01319E1D0ADD51008D04F3 /* create_new.png in Resources */ = {isa = PBXBuildFile; fileRef = 0B01319D1D0ADD51008D04F3 /* create_new.png */; };
+		0B0194931D23606D006F6E89 /* photoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0B0194921D23606D006F6E89 /* photoCell.xib */; };
+		0B0194951D2360C2006F6E89 /* photoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B0194941D2360C2006F6E89 /* photoTableViewCell.swift */; };
+		0B0194971D23614F006F6E89 /* movieCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0B0194961D23614F006F6E89 /* movieCell.xib */; };
+		0B0194991D23619C006F6E89 /* movieTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B0194981D23619C006F6E89 /* movieTableViewCell.swift */; };
 		0B029EE31D08FB7400A747C9 /* HomeNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B029EE21D08FB7400A747C9 /* HomeNavigationController.swift */; };
 		0B030BAA1D0A7E5400C8E08D /* ssgSetting.png in Resources */ = {isa = PBXBuildFile; fileRef = 0B030BA91D0A7E5400C8E08D /* ssgSetting.png */; };
 		0B033C971D0BD98100165071 /* professor_n.png in Resources */ = {isa = PBXBuildFile; fileRef = 0B033C961D0BD98100165071 /* professor_n.png */; };
@@ -135,6 +139,10 @@
 		0B0094C61CF71A9B0041B3B5 /* acahara_appTests-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "acahara_appTests-Bridging-Header.h"; sourceTree = "<group>"; };
 		0B0094C71CF71A9B0041B3B5 /* acahara_appUITests-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "acahara_appUITests-Bridging-Header.h"; sourceTree = "<group>"; };
 		0B01319D1D0ADD51008D04F3 /* create_new.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = create_new.png; sourceTree = "<group>"; };
+		0B0194921D23606D006F6E89 /* photoCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = photoCell.xib; sourceTree = "<group>"; };
+		0B0194941D2360C2006F6E89 /* photoTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = photoTableViewCell.swift; sourceTree = "<group>"; };
+		0B0194961D23614F006F6E89 /* movieCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = movieCell.xib; sourceTree = "<group>"; };
+		0B0194981D23619C006F6E89 /* movieTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = movieTableViewCell.swift; sourceTree = "<group>"; };
 		0B029EE21D08FB7400A747C9 /* HomeNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeNavigationController.swift; sourceTree = "<group>"; };
 		0B030BA91D0A7E5400C8E08D /* ssgSetting.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ssgSetting.png; sourceTree = "<group>"; };
 		0B033C961D0BD98100165071 /* professor_n.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = professor_n.png; sourceTree = "<group>"; };
@@ -284,14 +292,17 @@
 				0B59AD491D07C04400E740F5 /* assistChosePostsTableViewCell.swift */,
 				0B5AFA7D1D085651001D3DCA /* homeIntroTableViewCell.swift */,
 				0BB232C51D1BB22C00F996AA /* choseCustomCell.swift */,
+				0B0194941D2360C2006F6E89 /* photoTableViewCell.swift */,
+				0B0194981D23619C006F6E89 /* movieTableViewCell.swift */,
 				0BB232C31D1BB1B200F996AA /* choseCustomCell.xib */,
+				0B0194921D23606D006F6E89 /* photoCell.xib */,
+				0B0194961D23614F006F6E89 /* movieCell.xib */,
 				0B0094B91CF708120041B3B5 /* postCustomCell.xib */,
 				0B59AD391D07B1B000E740F5 /* assistInfoCell.xib */,
 				0B59AD3D1D07B61900E740F5 /* assistInfoDetailCell.xib */,
 				0B59AD431D07BA0F00E740F5 /* assistChoseAdvisorCell.xib */,
 				0B59AD471D07C01600E740F5 /* assistChosePostsCell.xib */,
 				0BE2489B1D05AAE1002BEC1F /* dateTimeCell.xib */,
-				0BE248971D05A97A002BEC1F /* AddTableViewController.swift */,
 				0BE2489F1D05AC8D002BEC1F /* datePickerCell.xib */,
 				0BE248A31D05AEE0002BEC1F /* bottomCell.xib */,
 				0B0094891CF6FFB90041B3B5 /* AppDelegate.swift */,
@@ -299,10 +310,11 @@
 				0BD2B6871D111C820032F502 /* LeftMenuViewController.swift */,
 				0B97FE161D0E58600000E700 /* StepViewController.swift */,
 				0B00948D1CF6FFB90041B3B5 /* SettingViewController.swift */,
-				0B029EE21D08FB7400A747C9 /* HomeNavigationController.swift */,
 				0B772C6B1D09B53C00086E17 /* TabBarController.swift */,
 				0B0686C61CFBFA58002AB722 /* DetailViewController.swift */,
 				0B9DF2601D01ADC100B478C7 /* PictureViewController.swift */,
+				0B029EE21D08FB7400A747C9 /* HomeNavigationController.swift */,
+				0BE248971D05A97A002BEC1F /* AddTableViewController.swift */,
 				0B03D28F1CF7D58E0050119E /* AddViewController.swift */,
 				0B03D2911CF7F4FB0050119E /* AddWhereViewController.swift */,
 				0B03D2931CF7F6050050119E /* AddWhoViewController.swift */,
@@ -560,12 +572,14 @@
 				0BB408C41D14FE9C00D26AB7 /* sAdvisors.png in Resources */,
 				0BE248A41D05AEE0002BEC1F /* bottomCell.xib in Resources */,
 				0B772C6A1D09ACB100086E17 /* troubled_s.png in Resources */,
+				0B0194931D23606D006F6E89 /* photoCell.xib in Resources */,
 				0B033C991D0BD98600165071 /* psycotherapist_n.png in Resources */,
 				0BE19D8F1D0C89CD0014FEF1 /* advisor.jpg in Resources */,
 				0BDD5B051D086AC60091DD20 /* ema.png in Resources */,
 				0B0094931CF6FFB90041B3B5 /* Assets.xcassets in Resources */,
 				0BC1DB121D037B3B00D203C1 /* s_question.png in Resources */,
 				0BADA6181CFB3089001702D7 /* Main.storyboard in Resources */,
+				0B0194971D23614F006F6E89 /* movieCell.xib in Resources */,
 				0BB408D41D15123600D26AB7 /* times.png in Resources */,
 				0B033C9F1D0BD99500165071 /* committee_n.png in Resources */,
 				0BFFF9D51CF82DA400CD1D65 /* pic1.JPG in Resources */,
@@ -744,12 +758,14 @@
 				0B00948A1CF6FFB90041B3B5 /* AppDelegate.swift in Sources */,
 				0B029EE31D08FB7400A747C9 /* HomeNavigationController.swift in Sources */,
 				0B59AD401D07B68100E740F5 /* assistInfoDetailTableViewCell.swift in Sources */,
+				0B0194991D23619C006F6E89 /* movieTableViewCell.swift in Sources */,
 				0BE248A21D05ACEE002BEC1F /* datePickerTableViewCell.swift in Sources */,
 				0B0094C01CF70D760041B3B5 /* homeTableViewCell.swift in Sources */,
 				0B0686C71CFBFA58002AB722 /* DetailViewController.swift in Sources */,
 				0B03D2921CF7F4FB0050119E /* AddWhereViewController.swift in Sources */,
 				0B00948C1CF6FFB90041B3B5 /* HomeViewController.swift in Sources */,
 				0BE248981D05A97A002BEC1F /* AddTableViewController.swift in Sources */,
+				0B0194951D2360C2006F6E89 /* photoTableViewCell.swift in Sources */,
 				0B59AD381D07AFEE00E740F5 /* AssistTableViewController.swift in Sources */,
 				0B5AFA7E1D085651001D3DCA /* homeIntroTableViewCell.swift in Sources */,
 			);

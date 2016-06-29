@@ -115,6 +115,9 @@
                             </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="0.96883127733195207" blue="0.7893086580610531" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="35" id="Zy2-WK-gQS"/>
+                        </constraints>
                     </view>
                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="まず、相談相手を選択して下さい。\n\n文章の雛形が現れます。\n\nこの画面をタップすると編集が可能になります。" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nba-bu-Le0">
                         <rect key="frame" x="32" y="247" width="273" height="188"/>
