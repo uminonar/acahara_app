@@ -382,11 +382,30 @@
                                             <action selector="titleCoverBtn:" destination="wnK-gz-YAn" eventType="touchUpInside" id="jV5-je-bmm"/>
                                         </connections>
                                     </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="G99-DR-7u5">
+                                        <rect key="frame" x="274" y="26" width="30" height="30"/>
+                                        <connections>
+                                            <action selector="sendCoverBtn:" destination="wnK-gz-YAn" eventType="touchUpInside" id="zCe-Uy-FgZ"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gu5-0C-0Dy">
+                                        <rect key="frame" x="8" y="30" width="20" height="20"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="20" id="9q1-Ld-aRL"/>
+                                            <constraint firstAttribute="width" constant="20" id="caf-9L-XWP"/>
+                                        </constraints>
+                                        <state key="normal" image="times.png"/>
+                                        <connections>
+                                            <action selector="cancelBtn:" destination="wnK-gz-YAn" eventType="touchUpInside" id="txZ-Xx-Hwu"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" red="1" green="0.40000000600000002" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstItem="oGs-Hw-Qk6" firstAttribute="top" secondItem="A5B-Y7-Fda" secondAttribute="top" constant="32" id="7PN-tr-YIb"/>
                                     <constraint firstItem="8bQ-cc-77Q" firstAttribute="centerX" secondItem="A5B-Y7-Fda" secondAttribute="centerX" constant="6" id="D1t-de-tcO"/>
+                                    <constraint firstItem="gu5-0C-0Dy" firstAttribute="leading" secondItem="A5B-Y7-Fda" secondAttribute="leading" constant="8" id="H5S-TK-Odv"/>
+                                    <constraint firstItem="gu5-0C-0Dy" firstAttribute="top" secondItem="A5B-Y7-Fda" secondAttribute="top" constant="30" id="RCA-Ux-7ML"/>
                                     <constraint firstItem="8bQ-cc-77Q" firstAttribute="centerY" secondItem="A5B-Y7-Fda" secondAttribute="centerY" constant="8" id="S1k-na-4pc"/>
                                     <constraint firstItem="d2A-KE-ogO" firstAttribute="centerX" secondItem="A5B-Y7-Fda" secondAttribute="centerX" id="VSu-xo-0aC"/>
                                     <constraint firstAttribute="trailing" secondItem="oGs-Hw-Qk6" secondAttribute="trailing" constant="18" id="YRd-bH-qAm"/>
@@ -423,7 +442,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6Pd-ju-pJv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2359" y="-408"/>
+            <point key="canvasLocation" x="2394" y="-414"/>
         </scene>
         <!--Add Diary View Controller-->
         <scene sceneID="fUl-bo-QwH">

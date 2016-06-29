@@ -224,11 +224,22 @@ class AssistTableViewController: UIViewController,UITableViewDelegate,UITableVie
                             }else{
                                 
                                 cell.sentTo.text = ""
-                                cell.assistMailContent.text = "まず相談相手のタイプを選択してください。その後でこの画面をタップして相談内容を編集してください。"
+                                cell.assistMailContent.text = "まず相談相手のタイプを選んでください。\nその後で画面をタップして相談内容を編集してください。"
                                 
                                 let silver:UIColor = UIColor(red:0.8,green:0.8,blue:0.8,alpha:1.0)
                                 cell.assistMailContent.textColor = silver
                                 
+                                let style = NSMutableParagraphStyle()
+                                style.lineSpacing = 6
+                                let attributes = [NSParagraphStyleAttributeName : style]
+                                cell.assistMailContent.attributedText = NSAttributedString(string: cell.assistMailContent.text,
+                                                                                  attributes: attributes)
+                                //フォントサイズの指定
+                                cell.assistMailContent.font = UIFont.systemFontOfSize(13)
+                                
+                                
+                                cell.assistMailContent.textColor = silver
+
                                 cell.assistMailContent.editable = false
                                 cell.assistMailContent.selectable = false
                        
@@ -565,7 +576,10 @@ class AssistTableViewController: UIViewController,UITableViewDelegate,UITableVie
  
     
 
-    @IBAction func saveBtn(sender: UIButton) {
+  
+
+    @IBAction func sendCoverBtn(sender: UIButton) {
+    
         
         //入力必須項目の確認
         //データを送信する
@@ -574,6 +588,7 @@ class AssistTableViewController: UIViewController,UITableViewDelegate,UITableVie
         var myDefault = NSUserDefaults.standardUserDefaults()
         myDefault.removeObjectForKey("selectedAdvisor")
         myDefault.removeObjectForKey("editedText")
+        myDefault.removeObjectForKey("selectedAdvisor")
         myDefault.synchronize()
         
         
@@ -611,6 +626,19 @@ class AssistTableViewController: UIViewController,UITableViewDelegate,UITableVie
         
     }
      
+    @IBAction func cancelBtn(sender: UIButton) {
+        
+        var myDefault = NSUserDefaults.standardUserDefaults()
+        myDefault.removeObjectForKey("selectedAdvisor")
+        myDefault.removeObjectForKey("editedText")
+        myDefault.removeObjectForKey("selectedAdvisor")
+        myDefault.synchronize()
+        
+        
+        assistTableView.reloadData()
+
+        
+    }
     
 
     override func didReceiveMemoryWarning() {
