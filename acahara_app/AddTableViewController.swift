@@ -93,20 +93,27 @@ class AddTableViewController: UIViewController,UITableViewDelegate,UITableViewDa
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
         var myDefault = NSUserDefaults.standardUserDefaults()
-            var strURL = myDefault.stringForKey("selectedPhotoURL")
-            //movieの場合
+        var strURL = myDefault.stringForKey("selectedPhotoURL")
+        var strMURL = myDefault.stringForKey("selectedMovieURL")
+        
+        
         if strURL != nil{
             
-            return rownumber + 1
-            //movieの場合さらにタス
+            rownumber++
+            return rownumber
             
+        }else if strMURL != nil{
             
+            rownumber++
+            return rownumber
         }else{
+
             return rownumber
         }
-        
-        
     }
+    
+        
+  
 
     //表示内容を決定
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
@@ -340,6 +347,23 @@ class AddTableViewController: UIViewController,UITableViewDelegate,UITableViewDa
                     var cell:movieTableViewCell = tableView.dequeueReusableCellWithIdentifier("movieCell", forIndexPath: indexPath) as! movieTableViewCell
                     
                     var myDefault = NSUserDefaults.standardUserDefaults()
+                    var strMovURL = myDefault.stringForKey("selectedMovieURL")
+                    
+                    var url = NSURL(string: strMovURL as! String!)
+                    
+                    var playerItem = AVPlayerItem(URL: url!)
+                    
+                    var videoPlayer : AVPlayer! = AVPlayer(playerItem: playerItem)
+                    
+                    //UIViewのレイヤーをAVPlayerLayerにする。普通のviewをカスタマイズしてる
+                    let layer = cell.movieView.layer as! AVPlayerLayer
+                    layer.videoGravity = AVLayerVideoGravityResizeAspect
+                    layer.player = videoPlayer
+                    
+                    
+                    //TODO:この再生ボタンを実装すべし！
+                    //この一行で再生する、ここにボタンを置いて、押したら、この一行が効くようにすれば良い。
+                    //layer.player?.play()
                     
                     return cell
  
@@ -349,31 +373,29 @@ class AddTableViewController: UIViewController,UITableViewDelegate,UITableViewDa
                 
             if adjustrow_no == 3{
                 
-//                var cell:movieTableViewCell = tableView.dequeueReusableCellWithIdentifier("movieCell", forIndexPath: indexPath) as! movieTableViewCell
-//                
-//                var myDefault = NSUserDefaults.standardUserDefaults()
-//                var strMovURL = myDefault.stringForKey("selectedMovieURL")
-//                
-//                var url = NSURL(string: strMovURL as! String!)
-//                
-//                var playerItem = AVPlayerItem(URL: url!)
-//                
-//                var videoPlayer : AVPlayer! = AVPlayer(playerItem: playerItem)
-//                
-//                //UIViewのレイヤーをAVPlayerLayerにする。普通のviewをカスタマイズしてる
-//                let layer = cell.movieView.layer as! AVPlayerLayer
-//                layer.videoGravity = AVLayerVideoGravityResizeAspect
-//                layer.player = videoPlayer
-//                
-//                
-//                //TODO:この再生ボタンを実装すべし！
-//                //この一行で再生する、ここにボタンを置いて、押したら、この一行が効くようにすれば良い。
-//                //layer.player?.play()
-//
-//                return cell
+                var cell:movieTableViewCell = tableView.dequeueReusableCellWithIdentifier("movieCell", forIndexPath: indexPath) as! movieTableViewCell
+                
+                var myDefault = NSUserDefaults.standardUserDefaults()
+                var strMovURL = myDefault.stringForKey("selectedMovieURL")
+                
+                var url = NSURL(string: strMovURL as! String!)
+                
+                var playerItem = AVPlayerItem(URL: url!)
+                
+                var videoPlayer : AVPlayer! = AVPlayer(playerItem: playerItem)
+                
+                //UIViewのレイヤーをAVPlayerLayerにする。普通のviewをカスタマイズしてる
+                let layer = cell.movieView.layer as! AVPlayerLayer
+                layer.videoGravity = AVLayerVideoGravityResizeAspect
+                layer.player = videoPlayer
+                
+                
+                //TODO:この再生ボタンを実装すべし！
+                //この一行で再生する、ここにボタンを置いて、押したら、この一行が効くようにすれば良い。
+                //layer.player?.play()
 
-                var cell:movieTableViewCell = createTableViewCell3(tableView,indexPath: indexPath)
                 return cell
+
                 
         }
     
@@ -611,7 +633,7 @@ class AddTableViewController: UIViewController,UITableViewDelegate,UITableViewDa
         let row = NSIndexPath(forRow: 0, inSection: 0)
         addTableView.reloadRowsAtIndexPaths([row], withRowAnimation: UITableViewRowAnimation.Fade)
         
-
+    }
     
 //    
 //    func setPicFileBtn(sender:UIImageView){
@@ -663,12 +685,12 @@ class AddTableViewController: UIViewController,UITableViewDelegate,UITableViewDa
 
         
         // 即反映させる
-        myDefault.synchronize()
+//        myDefault.synchronize()
+//        
+//        self.dismissViewControllerAnimated(true, completion: nil)
         
-        self.dismissViewControllerAnimated(true, completion: nil)
         
-        
-    }
+    
 
 
 

@@ -220,7 +220,8 @@ class AssistTableViewController: UIViewController,UITableViewDelegate,UITableVie
                             if pType != nil{
                                 
                                 cell.sentTo.text = personT[pType!]! + " 宛"
-                                
+                                cell.assistMailContent.userInteractionEnabled = true
+
                             }else{
                                 
                                 cell.sentTo.text = ""
@@ -242,6 +243,7 @@ class AssistTableViewController: UIViewController,UITableViewDelegate,UITableVie
 
                                 cell.assistMailContent.editable = false
                                 cell.assistMailContent.selectable = false
+                                cell.assistMailContent.userInteractionEnabled = false
                        
                             }
         
@@ -262,8 +264,10 @@ class AssistTableViewController: UIViewController,UITableViewDelegate,UITableVie
             
             var cell:assistChosePostsTableViewCell = tableView.dequeueReusableCellWithIdentifier("assistChosePostsCell", forIndexPath: indexPath) as! assistChosePostsTableViewCell
             
+            var postindex = adjustrow_no-3
           
-
+            cell.allSelectBtn.addTarget(self, action: Selector("selectAllPosts:"), forControlEvents:UIControlEvents.TouchUpInside)
+            cell.allSelectBtn.tag = postindex
 
             
             let HiddenSeparatorInset: UIEdgeInsets = UIEdgeInsetsMake(0, CGFloat(UInt16.max), 0, 0)
@@ -272,7 +276,7 @@ class AssistTableViewController: UIViewController,UITableViewDelegate,UITableVie
             return cell
         }
     
-            
+
         var cell:choseCustomCell = tableView.dequeueReusableCellWithIdentifier("choseCustomCell", forIndexPath: indexPath) as! choseCustomCell
         
         cell.layoutMargins = UIEdgeInsetsZero
@@ -311,8 +315,19 @@ class AssistTableViewController: UIViewController,UITableViewDelegate,UITableVie
         cell.coverBtn.addTarget(self, action: "selected:", forControlEvents: .TouchUpInside)
         cell.coverBtn.tag = postindex
         
-        var selectedFlag = posts[postindex]["selectedFlag"] as! Bool
         
+        //全選択ボタンが押されたら
+        var myDefault = NSUserDefaults.standardUserDefaults()
+        var selectA = myDefault.stringForKey("selectAllPosts")
+        
+        if selectA != nil {
+            var selectedFlag = posts[postindex]["selectedFlag"] as! Bool
+            
+            
+        }
+
+        var selectedFlag = posts[postindex]["selectedFlag"] as! Bool
+
         
         if selectedFlag{
             
@@ -331,6 +346,8 @@ class AssistTableViewController: UIViewController,UITableViewDelegate,UITableVie
             cell.backgroundColor = UIColor.whiteColor()
  
         }
+        
+       
 
         return cell
         
@@ -393,6 +410,36 @@ class AssistTableViewController: UIViewController,UITableViewDelegate,UITableVie
 
         assistTableView.reloadData()
 
+    }
+    
+    func selectAllPosts(sender: UIButton) {
+        
+        var selectedFlag = posts[sender.tag]["selectedFlag"] as! Bool
+        
+        var postindexNum = sender.tag
+        
+        
+            
+        var postDic = posts[sender.tag].mutableCopy() as! NSMutableDictionary
+        postDic["selectedFlag"] = true
+        
+        
+            
+        for i in 0..<postindexNum{
+        posts[i] = postDic
+        }
+        
+       
+        
+        var myDefault = NSUserDefaults.standardUserDefaults()
+        myDefault.setObject(true, forKey: "selectAllPosts")
+        myDefault.synchronize()
+        
+        
+        assistTableView.reloadData()
+
+      
+        
     }
 
     
