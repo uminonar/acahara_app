@@ -127,6 +127,9 @@ class AddTableViewController: UIViewController,UITableViewDelegate,UITableViewDa
             
             //userDefaultから取り出されたdatePickerの日時をセット
             
+           
+            
+            
             if dateStr == nil{
                 
                 if expandflag{
@@ -305,7 +308,7 @@ class AddTableViewController: UIViewController,UITableViewDelegate,UITableViewDa
             if adjustrow_no == 2{
                 var myDefault = NSUserDefaults.standardUserDefaults()
                 var strURL = myDefault.stringForKey("selectedPhotoURL")
-                //movieの場合
+                
                 if strURL != nil{
 
                     var cell:photoTableViewCell = tableView.dequeueReusableCellWithIdentifier("photoCell", forIndexPath: indexPath) as! photoTableViewCell
@@ -338,7 +341,7 @@ class AddTableViewController: UIViewController,UITableViewDelegate,UITableViewDa
                     
                     var myDefault = NSUserDefaults.standardUserDefaults()
                     
-                    
+                    return cell
  
                 }
                 
@@ -657,14 +660,7 @@ class AddTableViewController: UIViewController,UITableViewDelegate,UITableViewDa
 //
 //        }
 //        
-        
-        
-        
-        
-        
-        
 
-        
         
         // 即反映させる
         myDefault.synchronize()
@@ -783,13 +779,25 @@ class AddTableViewController: UIViewController,UITableViewDelegate,UITableViewDa
             }else{
                 return 470
             }
-        
-            
-        
         }
         
+        if indexPath.row == 2 {
+            if expandflag {
+                return 470
+            }else{
+                return 180
+            }
+        }
+        if indexPath.row == 3 {
+            if expandflag {
+                return 180
+            }else{
+                return 180
+            }
+        }
+    
         
-        return 150.0//ここの意味は？
+        return 180.0//ここの意味は？
     }
     
 
@@ -909,11 +917,16 @@ class AddTableViewController: UIViewController,UITableViewDelegate,UITableViewDa
     //addUniversityのテキストフィールドは、returnタップ時にユーザーデフォルトに収め、キーボーードも立ち上げたいので他のテキストフィールドとは処理を分けている
     func textFieldShouldEndEditing(textField: UITextField) -> Bool {
         if textField.tag == 4000{
+            
+            //スクロール位置を指定
+            addTableView.contentOffset = CGPointMake(0,300);
+            
             //ユーザーデフォルトを用意する
             var myDefault = NSUserDefaults.standardUserDefaults()
             
             //データを書き込んで
-            myDefault.setObject(textField.text, forKey: "uniStr")
+            myDefault.setObject(textField.text, forKey:
+                "uniStr")
             
             //即反映させる
             myDefault.synchronize()
@@ -925,7 +938,11 @@ class AddTableViewController: UIViewController,UITableViewDelegate,UITableViewDa
         
     }
 
- 
+    // セルの選択を禁止する
+    func tableView(tableView: UITableView, willSelectRowAtIndexPath indexPath: NSIndexPath) -> NSIndexPath? {
+        return nil;
+    }
+    
 
  
     override func didReceiveMemoryWarning() {

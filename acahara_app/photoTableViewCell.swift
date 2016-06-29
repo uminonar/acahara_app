@@ -13,7 +13,16 @@ class photoTableViewCell: UITableViewCell {
     @IBOutlet weak var formPhoto: UIImageView!
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        
+        
+        
+        let sakuraPale:UIColor = UIColor(red:1.0,green:0.953,blue:0.910,alpha:1.0)
+        
+        self.backgroundColor = sakuraPale
+        
+        
+        
+        
     }
 
     override func setSelected(selected: Bool, animated: Bool) {

@@ -10,13 +10,7 @@ import UIKit
 
 class bottomTableViewCell: UITableViewCell {
 
-    @IBOutlet weak var movieFileBtn: UIButton!
 
-    @IBOutlet weak var photoFileBtn: UIButton!
-
-
-    @IBOutlet weak var movieView: UIView!
-    @IBOutlet weak var picCancelBtn: UIButton!
     @IBOutlet weak var addWhere: UITextField!
     @IBOutlet weak var addWho: UITextField!
     @IBOutlet weak var addDiary: UITextView!
@@ -88,14 +82,14 @@ class bottomTableViewCell: UITableViewCell {
 //        movieImageBase.layer.addSublayer(layer2)
         
         
-        
-        let times = FAKFontAwesome.timesIconWithSize(20)
-        //下記でアイコンの色も変えられます
-        times.addAttribute(NSForegroundColorAttributeName, value: UIColor.whiteColor())
-        
-        let timesImage = times.imageWithSize(CGSizeMake(20, 20))
-        
-        picCancelBtn.setImage(timesImage, forState: .Normal)
+//        
+//        let times = FAKFontAwesome.timesIconWithSize(20)
+//        //下記でアイコンの色も変えられます
+//        times.addAttribute(NSForegroundColorAttributeName, value: UIColor.whiteColor())
+//        
+//        let timesImage = times.imageWithSize(CGSizeMake(20, 20))
+//        
+//        picCancelBtn.setImage(timesImage, forState: .Normal)
         
         
         
