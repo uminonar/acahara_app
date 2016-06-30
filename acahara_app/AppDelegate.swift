@@ -10,6 +10,10 @@ import UIKit
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate,SSASideMenuDelegate  {
+    
+    var photoURL = ""
+    var movieURL = ""
+ 
 
     var window: UIWindow?
 

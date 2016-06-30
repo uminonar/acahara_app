@@ -24,7 +24,6 @@ class AddDiaryViewController: UIViewController, UITextViewDelegate,UIImagePicker
     @IBOutlet weak var cancelBtn: UIButton!
 
     @IBOutlet weak var saveBtn: UIImageView!
-  
 
     
     //起動画面サイズの取得

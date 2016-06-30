@@ -27,6 +27,12 @@ class AddTableViewController: UIViewController,UITableViewDelegate,UITableViewDa
     
     var rownumberFlag = false
     
+//    let AddDiaryVC = UIStoryboard(name: "Main",bundle: nil).instantiateViewControllerWithIdentifier("AddDiaryViewController") as UIViewController
+    
+    var myAp = UIApplication.sharedApplication()
+    .delegate as! AppDelegate
+    
+    
     @IBOutlet weak var addTableView: UITableView!
     
 
@@ -87,35 +93,33 @@ class AddTableViewController: UIViewController,UITableViewDelegate,UITableViewDa
     override func viewWillAppear(animated: Bool) {
         //ここは何の意味があるの？
         print("再表示")
+
         addTableView.reloadData()
-        rownumberFlag == true
+        
     }
     
     //行数決定
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        
-        if rownumberFlag == false {
-        
+
             var myDefault = NSUserDefaults.standardUserDefaults()
             var strURL = myDefault.stringForKey("selectedPhotoURL")
             var strMURL = myDefault.stringForKey("selectedMovieURL")
-            
-            
-            if strURL != nil{
+
+            if (strURL != nil && self.myAp.photoURL == "") {
                 
-                rownumber++
+                self.rownumber++
+                
+                self.myAp.photoURL = strURL!
             }
             
-            if strMURL != nil{
+            if (strMURL != nil && self.myAp.movieURL == ""){
                 
                 rownumber++
                 
+                self.myAp.movieURL = strMURL!
             }
-            
-            rownumberFlag = true
         
-        
-        }
+       
         
         
         return rownumber
