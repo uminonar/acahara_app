@@ -10,6 +10,7 @@ import UIKit
 
 class movieTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var playBtn: UIImageView!
     @IBOutlet weak var movieView: UIView!
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -18,6 +19,12 @@ class movieTableViewCell: UITableViewCell {
         let sakuraPale:UIColor = UIColor(red:1.0,green:0.953,blue:0.910,alpha:1.0)
         
         self.backgroundColor = sakuraPale
+        
+        playBtn.image = UIImage(named:"playBtn")?.imageWithRenderingMode(.AlwaysTemplate)
+        
+        let lucentWhite :UIColor = UIColor(red:1.0,green:1.0,blue:1.0,alpha:0.5)
+        
+        playBtn.tintColor = lucentWhite
 
         
     }

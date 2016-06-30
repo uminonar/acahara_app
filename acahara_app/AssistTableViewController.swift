@@ -676,6 +676,27 @@ class AssistTableViewController: UIViewController,UITableViewDelegate,UITableVie
     
         
         //入力必須項目の確認
+  
+        
+        
+        
+    
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
         //データを送信する
         
         //userDefaultの”selectedText”を空にする

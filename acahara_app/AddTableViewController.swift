@@ -96,7 +96,43 @@ class AddTableViewController: UIViewController,UITableViewDelegate,UITableViewDa
 
         addTableView.reloadData()
         
+        //キーボードの制御
+        let notificationCenter = NSNotificationCenter.defaultCenter()
+        notificationCenter.addObserver(self, selector: "handleKeyboardWillShowNotification:", name: UIKeyboardWillShowNotification, object: nil)
+        notificationCenter.addObserver(self, selector: "handleKeyboardWillHideNotification:", name: UIKeyboardWillHideNotification, object: nil)
+        
     }
+    
+    //キーボードの制御
+//    func handleKeyboardWillShowNotification(notification: NSNotification) {
+//        var userInfo = notification.userInfo!
+//        var keyboardScreenEndFrame = (userInfo[UIKeyboardFrameEndUserInfoKey] as! NSValue).CGRectValue()
+//        var boundSize: CGSize = UIScreen.mainScreen().bounds.size
+//        var textFieldLimit = addTextFiled.frame.origin.y + addTextFiled.frame.height + 8.0
+//        var keyboardLimit = boundSize.height - keyboardScreenEndFrame.size.height
+//        
+//        if textFieldLimit >= keyboardLimit {
+//            tableView.contentOffset.y = textFieldLimit - keyboardLimit
+//        }
+//    }
+//    
+//    func handleKeyboardWillHideNotification(notification: NSNotification) {
+//        addtableView.contentOffset.y = 0
+//    }
+//    
+//    func textFieldShouldBeginEditing(textField: UITextField) -> Bool {
+//        addTextField = textField
+//        return true
+//    }
+//    
+//    func textFieldShouldReturn(textField: UITextField) -> Bool {
+//        textField.resignFirstResponder()
+//        
+//        return true
+//    }
+    
+
+    
     
     //行数決定
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -142,14 +178,24 @@ class AddTableViewController: UIViewController,UITableViewDelegate,UITableViewDa
             //cellを生成？
             var cell:dateTimeTableViewCell = tableView.dequeueReusableCellWithIdentifier("dateTimeCell", forIndexPath: indexPath) as! dateTimeTableViewCell
             
+            
+            var dateSaveAlert = myDefault.stringForKey("dateSaveAlert")
+            if dateSaveAlert != nil {
+                
+                let honeyDew :UIColor = UIColor(red:0.863,green:0.976,blue:0.643,alpha:1.0)
+
+                cell.addWhen.backgroundColor = honeyDew
+            }
+            
+
+            
+            
             //datePickerの値をuserDefaultから取り出す
             
             var dateStr = myDefault.stringForKey("selectedDT")
             
             //userDefaultから取り出されたdatePickerの日時をセット
-            
-           
-            
+
             
             if dateStr == nil{
                 
@@ -233,100 +279,146 @@ class AddTableViewController: UIViewController,UITableViewDelegate,UITableViewDa
         
         if adjustrow_no == 1{
                 
-                var cell:bottomTableViewCell = tableView.dequeueReusableCellWithIdentifier("bottomCell", forIndexPath: indexPath) as! bottomTableViewCell
+            var cell:bottomTableViewCell = tableView.dequeueReusableCellWithIdentifier("bottomCell", forIndexPath: indexPath) as! bottomTableViewCell
                 
                 cell.addWhere.delegate = self
                 cell.addWho.delegate = self
                 cell.addUniversity.delegate = self
                 
-                //ユーザーデフォルトから保存されたデータを取り出す
-                var myDefault = NSUserDefaults.standardUserDefaults()
+            //ユーザーデフォルトから保存されたデータを取り出す
+            var myDefault = NSUserDefaults.standardUserDefaults()
+            
+            //大学、データを呼び出して文字列が入っていたら、表示する
+            var uniStr = myDefault.stringForKey("uniStr")
+            
+            if ( uniStr != nil){
+                cell.addUniversity.text = uniStr
+                cell.addUniversity.textColor = UIColor.darkGrayColor()}
+            
+            
+            var uniSaveAlert = myDefault.stringForKey("uniSaveAlert")
+            
+            if uniSaveAlert != nil {
                 
-                //大学、データを呼び出して文字列が入っていたら、表示する
-                var uniStr = myDefault.stringForKey("uniStr")
+                let honeyDew :UIColor = UIColor(red:0.863,green:0.976,blue:0.643,alpha:1.0)
                 
-                if ( uniStr != nil){
-                    cell.addUniversity.text = uniStr
-                    cell.addUniversity.textColor = UIColor.darkGrayColor()                }
-                
-                //場所、データを呼び出して文字列が入っていたら表示する
-                var selectedPlace = myDefault.stringForKey("selectedPlace")
-                
-                if( selectedPlace != nil){
-                    print(selectedPlace)
-                    cell.addWhere.text = selectedPlace
-                    
-                }
+                cell.addUniversity.backgroundColor = honeyDew
+            }
+
                 
             
-                //名前、データを呼び出して文字列が入っていたら表示する
-                var selectedName = myDefault.stringForKey("selectedName")
+            
+            
+            //場所、データを呼び出して文字列が入っていたら表示する
+            var selectedPlace = myDefault.stringForKey("selectedPlace")
+            
+            if( selectedPlace != nil){
+                print(selectedPlace)
+                cell.addWhere.text = selectedPlace
                 
-                if( selectedName != nil){
-                    print(selectedName)
-                    cell.addWho.text = selectedName
-                }
-                
-                //Diaryデータを呼び出して文字列が入っていたら表示する
-                var diaryText =
-                    myDefault.stringForKey("diary")
-                if((diaryText != nil) && (diaryText != "")){
-                    print(diaryText)
-                    cell.addDiary.text = diaryText
-                    
-                    cell.addDiary.textColor = UIColor.blackColor()
-                }else{
-                    cell.addDiary.text = "test\ntest2"
-                    
-                    
-                    //行間設定
-                    let style = NSMutableParagraphStyle()
-                    style.lineSpacing = 6
-                    let attributes = [NSParagraphStyleAttributeName : style]
-                    cell.addDiary.attributedText = NSAttributedString(string: cell.addDiary.text,
-                                                                       attributes: attributes)
-                    //フォントサイズの指定
-                    cell.addDiary.font = UIFont.systemFontOfSize(15)
-                    
-                    //テキストの色指定
-                    
-                    // cell.addDiary.textColor = UIColor.lightGrayColor()
-                    
-                    
-                    let silver:UIColor = UIColor(red:0.78,green:0.78,blue:0.78,alpha:1.0)
-                    
-                    cell.addDiary.textColor = silver
-                    
-                    cell.addDiary.text = ""
-                    
-                    
-                }
-                
-
-                //.xibファイルのボタンなどがタップされ時の処理
-                
-                //postEllipsisBtn等の後に：をつけることで、sender情報を使える
-                cell.addWhere.addTarget(self, action:Selector("setWhere:"), forControlEvents:UIControlEvents.EditingDidBegin)
-                
-                cell.addWho.addTarget(self, action: Selector("setWho:"), forControlEvents:UIControlEvents.EditingDidBegin)
-                
-                cell.addUniversity.addTarget(self, action: "setUniversity:", forControlEvents: UIControlEvents.EditingDidEndOnExit)//EditingDidEnd?違いは,カーソル離れたとき
-                
-                //TODO:何がダメ？
-//                cell.addUniversity.tag = sender.text  tagじゃなく(sender.UITextFeield)で。。
-                
-                
-                
-                // Add tap gesture recognizer to Text View
-                let tap = UITapGestureRecognizer(target: self, action: "setDiary")
-//                tap.delegate = self
-                cell.addDiary.addGestureRecognizer(tap)
-                
-                
-                return cell
             }
             
+          
+            var placeSaveAlert = myDefault.stringForKey("placeSaveAlert")
+            
+            if placeSaveAlert != nil {
                 
+                let honeyDew :UIColor = UIColor(red:0.863,green:0.976,blue:0.643,alpha:1.0)
+                
+                cell.addWhere.backgroundColor = honeyDew
+            }
+            
+            
+            
+            //名前、データを呼び出して文字列が入っていたら表示する
+            var selectedName = myDefault.stringForKey("selectedName")
+            
+            if( selectedName != nil){
+                print(selectedName)
+                cell.addWho.text = selectedName
+            }
+            
+            var nameSaveAlert = myDefault.stringForKey("nameSaveAlert")
+            
+            if nameSaveAlert != nil {
+                
+                let honeyDew :UIColor = UIColor(red:0.863,green:0.976,blue:0.643,alpha:1.0)
+                
+                cell.addWho.backgroundColor = honeyDew
+            }
+
+            
+            
+            //Diaryデータを呼び出して文字列が入っていたら表示する
+            var diaryText =
+                myDefault.stringForKey("diary")
+            if((diaryText != nil) && (diaryText != "")){
+                print(diaryText)
+                cell.addDiary.text = diaryText
+                
+                cell.addDiary.textColor = UIColor.blackColor()
+            }else{
+                cell.addDiary.text = "test\ntest2"
+                
+                
+                //行間設定
+                let style = NSMutableParagraphStyle()
+                style.lineSpacing = 6
+                let attributes = [NSParagraphStyleAttributeName : style]
+                cell.addDiary.attributedText = NSAttributedString(string: cell.addDiary.text,
+                                                                  attributes: attributes)
+                //フォントサイズの指定
+                cell.addDiary.font = UIFont.systemFontOfSize(15)
+                
+                //テキストの色指定
+                
+                // cell.addDiary.textColor = UIColor.lightGrayColor()
+                
+                
+                let silver:UIColor = UIColor(red:0.78,green:0.78,blue:0.78,alpha:1.0)
+                
+                cell.addDiary.textColor = silver
+                
+                cell.addDiary.text = ""
+                
+                
+            }
+            
+            var diarySaveAlert = myDefault.stringForKey("diarySaveAlert")
+            
+            if diarySaveAlert != nil {
+                
+                let honeyDew :UIColor = UIColor(red:0.863,green:0.976,blue:0.643,alpha:1.0)
+                
+                cell.addWho.backgroundColor = honeyDew
+            }
+
+            
+
+            //.xibファイルのボタンなどがタップされ時の処理
+            
+            //postEllipsisBtn等の後に：をつけることで、sender情報を使える
+            cell.addWhere.addTarget(self, action:Selector("setWhere:"), forControlEvents:UIControlEvents.EditingDidBegin)
+            
+            cell.addWho.addTarget(self, action: Selector("setWho:"), forControlEvents:UIControlEvents.EditingDidBegin)
+            
+            cell.addUniversity.addTarget(self, action: "setUniversity:", forControlEvents: UIControlEvents.EditingDidEndOnExit)//EditingDidEnd?違いは,カーソル離れたとき
+            
+            //TODO:何がダメ？
+            //                cell.addUniversity.tag = sender.text  tagじゃなく(sender.UITextFeield)で。。
+            
+            
+                
+            // Add tap gesture recognizer to Text View
+            let tap = UITapGestureRecognizer(target: self, action: "setDiary")
+            //                tap.delegate = self
+            cell.addDiary.addGestureRecognizer(tap)
+            
+            
+            return cell
+        }
+        
+        
             if adjustrow_no == 2{
                 var myDefault = NSUserDefaults.standardUserDefaults()
                 var strURL = myDefault.stringForKey("selectedPhotoURL")
@@ -871,47 +963,102 @@ class AddTableViewController: UIViewController,UITableViewDelegate,UITableViewDa
     @IBAction func saveBtn(sender: UIButton) {
         
         
-        //必須項目が記入済みか、チェックする
+        //必須項目が記入済みか、チェックする ユーザーデフォルトに無い場合は未記入
         //未記入があったら、記入してくださいのアラート
         
         //全て記入済みだったら、
         //データをサーバーに渡す処理
         //UserDefaultのdiaryキーのところを空にする
         
-        //テキストフィールドに記入するためにユーザーデフォルトに入れていた直前１件の履歴削除
         var myDefault = NSUserDefaults.standardUserDefaults()
+        
+        var selectedData = myDefault.stringForKey("selectedDT")
+        if selectedData == nil && selectedData == ""{
+             var myDefault = NSUserDefaults.standardUserDefaults()
+             myDefault.setObject(true, forKey: "dateSaveAlert")
+        }
+        
+        var selectedPlace = myDefault.stringForKey("selectedPlace")
+        if selectedPlace == nil && selectedPlace == ""{
+            var myDefault = NSUserDefaults.standardUserDefaults()
+            myDefault.setObject(true, forKey: "placeSaveAlert")
+        }
 
-        var appDomain:String = NSBundle.mainBundle().bundleIdentifier!
+        var selectedName = myDefault.stringForKey("selectedName")
+        if selectedName == nil && selectedName == ""{
+            var myDefault = NSUserDefaults.standardUserDefaults()
+            myDefault.setObject(true, forKey: "nameSaveAlert")
+        }
         
-        myDefault.removeObjectForKey("selectedDT")
-        myDefault.removeObjectForKey("selectedPlace")
-        myDefault.removeObjectForKey("selectedName")
-//        myDefault.removeObjectForKey("uniStr")
-        myDefault.removeObjectForKey("diary")
-        myDefault.removeObjectForKey("selectedMovieURL")
-        myDefault.removeObjectForKey("selectedPhotoURL")
+        var uniStr = myDefault.stringForKey("uniStr")
+        if uniStr == nil && uniStr == ""{
+            var myDefault = NSUserDefaults.standardUserDefaults()
+            myDefault.setObject(true, forKey: "uniSaveAlert")
+        }
         
-        //userDefaultにデータを書き込んで保存したことを書き込む
-        myDefault.setObject("true", forKey: "saveSuccess")
+        var diary = myDefault.stringForKey("diary")
+        if diary == nil && diary == ""{
+            var myDefault = NSUserDefaults.standardUserDefaults()
+            myDefault.setObject(true, forKey: "diarySaveAlert")
+        }
         
         
+        var dateS = myDefault.stringForKey("dateSaveAlert")
+        var placeS = myDefault.stringForKey("placeSaveAlert")
+        var nameS = myDefault.stringForKey("nameSaveAlert")
+        var uniS = myDefault.stringForKey("uniSaveAlert")
+        var diaryS = myDefault.stringForKey("diarySaveAlert")
         
-        //即反映させる
-        myDefault.synchronize()
-        
-        self.myAp.photoURL = ""
-        self.myAp.movieURL = ""
-        
-        //前ページに遷移する　モーダル画面じゃなくので、dismissじゃないバージョン　後学のため残す
-        //navigationController?.popViewControllerAnimated(true)
+        if (dateS == "true" || placeS == "true" || nameS == "true" || uniS == "true" || diaryS == "true"){
+            
+            var alertController = UIAlertController(
+                title: "必須項目が未記入です",
+                message: "記入してください",
+                preferredStyle: .Alert)
+            
+            alertController.addAction(UIAlertAction(title: "OK", style: .Default, handler:nil))
+           
+            
+        }else{
+            //保存されるデータをユーザーデフォルトから削除
+            var appDomain:String = NSBundle.mainBundle().bundleIdentifier!
+            
+            myDefault.removeObjectForKey("selectedDT")
+            myDefault.removeObjectForKey("selectedPlace")
+            myDefault.removeObjectForKey("selectedName")
+            //        myDefault.removeObjectForKey("uniStr")
+            myDefault.removeObjectForKey("diary")
+            myDefault.removeObjectForKey("selectedMovieURL")
+            myDefault.removeObjectForKey("selectedPhotoURL")
+            
+            //userDefaultにデータを書き込んで保存したことを書き込む
+            myDefault.setObject("true", forKey: "saveSuccess")
+            
+            
+            
+            //即反映させる
+            myDefault.synchronize()
+            
+            self.myAp.photoURL = ""
+            self.myAp.movieURL = ""
+            
+            //前ページに遷移する　モーダル画面じゃなくので、dismissじゃないバージョン　後学のため残す
+            //navigationController?.popViewControllerAnimated(true)
+            
+            self.dismissViewControllerAnimated(true, completion: nil)
 
-        self.dismissViewControllerAnimated(true, completion: nil)
-        
+            
+            
+            
+        }
+      
+
     }
     
     
     func textFieldShouldBeginEditing(textField: UITextField) -> Bool{
-    
+
+        
         if textField.tag == 1000{
             let row = NSIndexPath(forRow: 0, inSection: 0)
             
@@ -960,6 +1107,9 @@ class AddTableViewController: UIViewController,UITableViewDelegate,UITableViewDa
     //addUniversityのテキストフィールドは、returnタップ時にユーザーデフォルトに収め、キーボーードも立ち上げたいので他のテキストフィールドとは処理を分けている
     func textFieldShouldEndEditing(textField: UITextField) -> Bool {
         if textField.tag == 4000{
+            
+            //キーボード制御に利用
+            textField.delegate = self
             
             //スクロール位置を指定
             addTableView.contentOffset = CGPointMake(0,300);

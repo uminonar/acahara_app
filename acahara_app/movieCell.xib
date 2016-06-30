@@ -17,6 +17,11 @@
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GPv-bO-ELi" customClass="AVPlayerView" customModule="acahara_app" customModuleProvider="target">
                         <rect key="frame" x="60" y="8" width="240" height="128"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="playBtn" translatesAutoresizingMaskIntoConstraints="NO" id="1yd-FC-aO0">
+                                <rect key="frame" x="95" y="39" width="50" height="50"/>
+                            </imageView>
+                        </subviews>
                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                 </subviews>
@@ -29,8 +34,12 @@
             </tableViewCellContentView>
             <connections>
                 <outlet property="movieView" destination="GPv-bO-ELi" id="cwb-fp-gWh"/>
+                <outlet property="playBtn" destination="1yd-FC-aO0" id="Lw2-w5-pXl"/>
             </connections>
-            <point key="canvasLocation" x="321" y="250"/>
+            <point key="canvasLocation" x="218" y="247"/>
         </tableViewCell>
     </objects>
+    <resources>
+        <image name="playBtn" width="25" height="25"/>
+    </resources>
 </document>

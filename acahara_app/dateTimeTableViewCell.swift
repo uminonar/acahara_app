@@ -44,7 +44,6 @@ class dateTimeTableViewCell: UITableViewCell,UITextFieldDelegate {
         
         
         
-        
     }
 
     override func setSelected(selected: Bool, animated: Bool) {
