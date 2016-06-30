@@ -93,6 +93,9 @@ class AssistTableViewController: UIViewController,UITableViewDelegate,UITableVie
                 posts.addObject(postEach)
             }
         }
+        
+        
+        assistTableView.reloadData()
 
     
     }
@@ -160,26 +163,33 @@ class AssistTableViewController: UIViewController,UITableViewDelegate,UITableVie
             var cell:assistChoseAdvisorTableViewCell = tableView.dequeueReusableCellWithIdentifier("assistChoseAdvisorCell", forIndexPath: indexPath) as! assistChoseAdvisorTableViewCell
             
 //                           これいる？ cell.assistMailContent.delegate = self
+            var myDefault = NSUserDefaults.standardUserDefaults()
+            var advisor = myDefault.stringForKey("selectedAdvisor")
+            if(advisor != nil){
+
+                var mContent = mailContent[advisor!] as! String?
+                cell.assistMailContent.text = mContent
+                
+                myDefault.setObject(mContent, forKey: "selectedText")
+                myDefault.synchronize()
+                
+                
+            }else{
+                cell.assistMailContent.text = ""
+            }
             
-        
             
-                           var myDefault = NSUserDefaults.standardUserDefaults()
-                            var editedText = myDefault.objectForKey("mailContent")
+            var editedText = myDefault.objectForKey("mailContent")
                                 if(editedText != nil){
-                                cell.assistMailContent.text = editedText as! String
-                                }
+            cell.assistMailContent.text = editedText as! String
+                          
+            }
             
                             //TODO:編集ページで保存されたらeditedTextを更新する処理をして
                             //TODO:キャンセルと保存の時に必ずnilに戻して
 
             
-                            var advisor = myDefault.stringForKey("selectedAdvisor")
-                                if(advisor != nil){
-                                    var mContent = mailContent[advisor!] as! String?
-                                    cell.assistMailContent.text = mContent
-                                }else{
-                                    cell.assistMailContent.text = ""
-                            }
+            
             
             
             
@@ -241,8 +251,6 @@ class AssistTableViewController: UIViewController,UITableViewDelegate,UITableVie
                                 
                                 cell.assistMailContent.textColor = silver
 
-                                cell.assistMailContent.editable = false
-                                cell.assistMailContent.selectable = false
                                 cell.assistMailContent.userInteractionEnabled = false
                        
                             }
@@ -414,19 +422,18 @@ class AssistTableViewController: UIViewController,UITableViewDelegate,UITableVie
     
     func selectAllPosts(sender: UIButton) {
         
-        var selectedFlag = posts[sender.tag]["selectedFlag"] as! Bool
+        //var selectedFlag = posts[sender.tag]["selectedFlag"] as! Bool
         
-        var postindexNum = sender.tag
-        
-        
-            
-        var postDic = posts[sender.tag].mutableCopy() as! NSMutableDictionary
-        postDic["selectedFlag"] = true
+        //var postindexNum = sender.tag
         
         
             
-        for i in 0..<postindexNum{
-        posts[i] = postDic
+        for i in 0..<posts.count{
+            
+            var postDic = posts[i].mutableCopy() as! NSMutableDictionary
+            postDic["selectedFlag"] = true
+            
+            posts[i] = postDic
         }
         
        
@@ -456,6 +463,11 @@ class AssistTableViewController: UIViewController,UITableViewDelegate,UITableVie
        
         
         var myDefault = NSUserDefaults.standardUserDefaults()
+        
+        myDefault.removeObjectForKey("mailContent")
+        
+        
+        
         
         if sender.tag == 100{
             myDefault.setObject("professor", forKey: "selectedAdvisor")

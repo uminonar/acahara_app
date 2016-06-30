@@ -35,19 +35,15 @@ class AddDiaryViewController: UIViewController, UITextViewDelegate,UIImagePicker
         
         diaryTextView.delegate = self
         
+        
+        
         //最初からカーソルが反転してキーボードが表示される処理
         diaryTextView.becomeFirstResponder()
         
        //行間の設定 ここで大きさがリセットされているから、リセット後にサイズを指定しないといけない
         
         
-        //フォントサイズの指定
-        diaryTextView.font = UIFont.systemFontOfSize(17)
-        let style = NSMutableParagraphStyle()
-        style.lineSpacing = 20
-        let attributes = [NSParagraphStyleAttributeName : style]
-        diaryTextView.attributedText = NSAttributedString(string: diaryTextView.text,
-                                                          attributes: attributes)
+       
 
         
 //履歴全件削除の設定 1回使ったらコメントアウト
@@ -234,9 +230,34 @@ class AddDiaryViewController: UIViewController, UITextViewDelegate,UIImagePicker
             print(diary)
             diaryTextView.text = diary
             
+            //フォントサイズの指定
+            
+            let style = NSMutableParagraphStyle()
+            style.lineSpacing = 6
+            let attributes = [NSParagraphStyleAttributeName : style]
+            diaryTextView.attributedText = NSAttributedString(string: diaryTextView.text,
+                                                              attributes: attributes)
+            diaryTextView.font = UIFont.systemFontOfSize(17)
+            
             //MARK:先頭にカーソルを合わせる
             diaryTextView.selectedRange = NSMakeRange(0, 0)
             
+        }else{
+            //何も記載されてない場合
+            
+        
+            diaryTextView.text = "test\ntest2"
+            
+            //フォントサイズの指定
+            
+            let style = NSMutableParagraphStyle()
+            style.lineSpacing = 5
+            let attributes = [NSParagraphStyleAttributeName : style]
+            diaryTextView.attributedText = NSAttributedString(string: diaryTextView.text,
+                                                              attributes: attributes)
+            diaryTextView.font = UIFont.systemFontOfSize(17)
+            
+            diaryTextView.text = ""
         }
         
         NSNotificationCenter.defaultCenter().addObserver(self,

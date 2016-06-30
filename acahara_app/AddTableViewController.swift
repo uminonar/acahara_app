@@ -14,7 +14,6 @@ import AVFoundation
 
 class AddTableViewController: UIViewController,UITableViewDelegate,UITableViewDataSource, UIImagePickerControllerDelegate,UITextFieldDelegate,UINavigationControllerDelegate{
     
-    
 
     @IBOutlet weak var saveBtn: UIImageView!
     @IBOutlet weak var cancelBtn: UIButton!
@@ -25,6 +24,8 @@ class AddTableViewController: UIViewController,UITableViewDelegate,UITableViewDa
     var rownumber = 2
     
     var openFlag = 0
+    
+    var rownumberFlag = false
     
     @IBOutlet weak var addTableView: UITableView!
     
@@ -87,31 +88,40 @@ class AddTableViewController: UIViewController,UITableViewDelegate,UITableViewDa
         //ここは何の意味があるの？
         print("再表示")
         addTableView.reloadData()
+        rownumberFlag == true
     }
     
     //行数決定
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        var myDefault = NSUserDefaults.standardUserDefaults()
-        var strURL = myDefault.stringForKey("selectedPhotoURL")
-        var strMURL = myDefault.stringForKey("selectedMovieURL")
+        if rownumberFlag == false {
+        
+            var myDefault = NSUserDefaults.standardUserDefaults()
+            var strURL = myDefault.stringForKey("selectedPhotoURL")
+            var strMURL = myDefault.stringForKey("selectedMovieURL")
+            
+            
+            if strURL != nil{
+                
+                rownumber++
+            }
+            
+            if strMURL != nil{
+                
+                rownumber++
+                
+            }
+            
+            rownumberFlag = true
         
         
-        if strURL != nil{
-            
-            rownumber++
-            return rownumber
-            
-        }else if strMURL != nil{
-            
-            rownumber++
-            return rownumber
-        }else{
-
-            return rownumber
         }
+        
+        
+        return rownumber
     }
-    
+
+
         
   
 
@@ -262,7 +272,7 @@ class AddTableViewController: UIViewController,UITableViewDelegate,UITableViewDa
                     
                     cell.addDiary.textColor = UIColor.blackColor()
                 }else{
-                    cell.addDiary.text = ""
+                    cell.addDiary.text = "test\ntest2"
                     
                     
                     //行間設定
@@ -283,6 +293,7 @@ class AddTableViewController: UIViewController,UITableViewDelegate,UITableViewDa
                     
                     cell.addDiary.textColor = silver
                     
+                    cell.addDiary.text = ""
                     
                     
                 }
@@ -500,18 +511,18 @@ class AddTableViewController: UIViewController,UITableViewDelegate,UITableViewDa
 
     
     
-    func cancelPicture(){
-        var myDefault = NSUserDefaults.standardUserDefaults()
-        var appDomain:String = NSBundle.mainBundle().bundleIdentifier!
-        myDefault.removeObjectForKey("selectedPhotoURL")
-        
-        //TODO:ここ行数を調整して！どうする？
-        let row = NSIndexPath(forRow: 1, inSection: 0)
-        addTableView.reloadRowsAtIndexPaths([row], withRowAnimation: UITableViewRowAnimation.Fade)
-
-        
-        
-    }
+//    func cancelPicture(){
+//        var myDefault = NSUserDefaults.standardUserDefaults()
+//        var appDomain:String = NSBundle.mainBundle().bundleIdentifier!
+//        myDefault.removeObjectForKey("selectedPhotoURL")
+//        
+//        //TODO:ここ行数を調整して！どうする？
+//        let row = NSIndexPath(forRow: 1, inSection: 0)
+//        addTableView.reloadRowsAtIndexPaths([row], withRowAnimation: UITableViewRowAnimation.Fade)
+//
+//        
+//        
+//    }
     
     func createTableViewCell3(tableView: UITableView,indexPath: NSIndexPath) -> movieTableViewCell{
     
@@ -1001,6 +1012,7 @@ class AVPlayerView : UIView{
     }
     
 }
+
 
 //// CustomTextField Class
 //class CustomTextField: UITextField {
