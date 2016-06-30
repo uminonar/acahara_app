@@ -855,6 +855,9 @@ class AddTableViewController: UIViewController,UITableViewDelegate,UITableViewDa
         
         myDefault.synchronize()
         
+        self.myAp.photoURL = ""
+        self.myAp.movieURL = ""
+        
         //ここはどうする？ reload()
 //        addWhen.text=""
 //        addWhere.text=""
@@ -895,6 +898,9 @@ class AddTableViewController: UIViewController,UITableViewDelegate,UITableViewDa
         
         //即反映させる
         myDefault.synchronize()
+        
+        self.myAp.photoURL = ""
+        self.myAp.movieURL = ""
         
         //前ページに遷移する　モーダル画面じゃなくので、dismissじゃないバージョン　後学のため残す
         //navigationController?.popViewControllerAnimated(true)

@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0B001C4C1D250B3D00424B03 /* makeURLCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0B001C4B1D250B3D00424B03 /* makeURLCell.xib */; };
+		0B001C4E1D250C1900424B03 /* makeURLTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B001C4D1D250C1900424B03 /* makeURLTableViewCell.swift */; };
 		0B00948A1CF6FFB90041B3B5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B0094891CF6FFB90041B3B5 /* AppDelegate.swift */; };
 		0B00948C1CF6FFB90041B3B5 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B00948B1CF6FFB90041B3B5 /* HomeViewController.swift */; };
 		0B00948E1CF6FFB90041B3B5 /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B00948D1CF6FFB90041B3B5 /* SettingViewController.swift */; };
@@ -119,6 +121,8 @@
 
 /* Begin PBXFileReference section */
 		00DB18DBECA6510ACAAC1FF7 /* libPods-acahara_app.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-acahara_app.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		0B001C4B1D250B3D00424B03 /* makeURLCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = makeURLCell.xib; sourceTree = "<group>"; };
+		0B001C4D1D250C1900424B03 /* makeURLTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = makeURLTableViewCell.swift; sourceTree = "<group>"; };
 		0B0094861CF6FFB90041B3B5 /* acahara_app.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = acahara_app.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0B0094891CF6FFB90041B3B5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0B00948B1CF6FFB90041B3B5 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
@@ -294,7 +298,9 @@
 				0BB232C51D1BB22C00F996AA /* choseCustomCell.swift */,
 				0B0194941D2360C2006F6E89 /* photoTableViewCell.swift */,
 				0B0194981D23619C006F6E89 /* movieTableViewCell.swift */,
+				0B001C4D1D250C1900424B03 /* makeURLTableViewCell.swift */,
 				0BB232C31D1BB1B200F996AA /* choseCustomCell.xib */,
+				0B001C4B1D250B3D00424B03 /* makeURLCell.xib */,
 				0B0194921D23606D006F6E89 /* photoCell.xib */,
 				0B0194961D23614F006F6E89 /* movieCell.xib */,
 				0B0094B91CF708120041B3B5 /* postCustomCell.xib */,
@@ -566,6 +572,7 @@
 				0B5AFA7C1D0855FA001D3DCA /* s_ema.png in Resources */,
 				0BE19D8B1D0C89C10014FEF1 /* future.jpg in Resources */,
 				0B033C9D1D0BD99000165071 /* lawyer_n.png in Resources */,
+				0B001C4C1D250B3D00424B03 /* makeURLCell.xib in Resources */,
 				0B01319E1D0ADD51008D04F3 /* create_new.png in Resources */,
 				0B4D52CE1D0C624A0065C0AF /* advisors.png in Resources */,
 				0BB408B61D13E72B00D26AB7 /* wall.jpg in Resources */,
@@ -755,6 +762,7 @@
 				0B59AD3C1D07B55A00E740F5 /* assistInfoTableViewCell.swift in Sources */,
 				0BD2B6881D111C820032F502 /* LeftMenuViewController.swift in Sources */,
 				0B09F2491D02C38E006F11D5 /* ChosePostsViewController.swift in Sources */,
+				0B001C4E1D250C1900424B03 /* makeURLTableViewCell.swift in Sources */,
 				0B00948A1CF6FFB90041B3B5 /* AppDelegate.swift in Sources */,
 				0B029EE31D08FB7400A747C9 /* HomeNavigationController.swift in Sources */,
 				0B59AD401D07B68100E740F5 /* assistInfoDetailTableViewCell.swift in Sources */,

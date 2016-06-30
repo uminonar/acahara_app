@@ -38,6 +38,8 @@ class AssistTableViewController: UIViewController,UITableViewDelegate,UITableVie
         
         assistTableView.registerNib(UINib(nibName: "choseCustomCell", bundle: nil), forCellReuseIdentifier: "choseCustomCell")
         
+        assistTableView.registerNib(UINib(nibName: "makeURLCell", bundle: nil), forCellReuseIdentifier: "makeURLCell")
+        
         //テーブルビューの罫線を消す
 //        assistTableView.separatorColor = UIColor.clearColor()
         assistTableView.separatorInset = UIEdgeInsetsZero
@@ -54,24 +56,6 @@ class AssistTableViewController: UIViewController,UITableViewDelegate,UITableVie
         send.image = UIImage(named:"send")?.imageWithRenderingMode(.AlwaysTemplate)
         
         send.tintColor = UIColor.whiteColor()
-
-        
-        
-    }
-    
-    
-
-    
-    override func viewWillAppear(animated: Bool) {
-        let path = NSBundle.mainBundle().pathForResource("mailContents", ofType: "txt")
-        let jsondata = NSData(contentsOfFile: path!)
-        let jsonDictionary = (try! NSJSONSerialization.JSONObjectWithData(jsondata!,options:[])) as! NSDictionary
-        
-        for (key, data) in jsonDictionary {
-            
-            mailContent[key as! String] = data as! String
-        }
-        
         
         
         
@@ -95,6 +79,25 @@ class AssistTableViewController: UIViewController,UITableViewDelegate,UITableVie
         }
         
         
+        //mailContentsを取得
+        let path = NSBundle.mainBundle().pathForResource("mailContents", ofType: "txt")
+        let jsondata = NSData(contentsOfFile: path!)
+        let jsonDictionary = (try! NSJSONSerialization.JSONObjectWithData(jsondata!,options:[])) as! NSDictionary
+        
+        for (key, data) in jsonDictionary {
+            
+            mailContent[key as! String] = data as! String
+        }
+
+        
+        
+    }
+    
+    
+
+    
+    override func viewWillAppear(animated: Bool) {
+ 
         assistTableView.reloadData()
 
     
@@ -104,7 +107,7 @@ class AssistTableViewController: UIViewController,UITableViewDelegate,UITableVie
     
     //行数決定
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return rownumber + posts.count
+        return rownumber + posts.count + 1
     }
     
     //表示内容を決定
@@ -235,7 +238,7 @@ class AssistTableViewController: UIViewController,UITableViewDelegate,UITableVie
                             }else{
                                 
                                 cell.sentTo.text = ""
-                                cell.assistMailContent.text = "まず相談相手のタイプを選んでください。\nその後で画面をタップして相談内容を編集してください。"
+                                cell.assistMailContent.text = "相談相手のタイプを選んでください。それから画面をタップして相談内容を編集してください。"
                                 
                                 let silver:UIColor = UIColor(red:0.8,green:0.8,blue:0.8,alpha:1.0)
                                 cell.assistMailContent.textColor = silver
@@ -246,7 +249,7 @@ class AssistTableViewController: UIViewController,UITableViewDelegate,UITableVie
                                 cell.assistMailContent.attributedText = NSAttributedString(string: cell.assistMailContent.text,
                                                                                   attributes: attributes)
                                 //フォントサイズの指定
-                                cell.assistMailContent.font = UIFont.systemFontOfSize(13)
+                                cell.assistMailContent.font = UIFont.systemFontOfSize(15)
                                 
                                 
                                 cell.assistMailContent.textColor = silver
@@ -272,94 +275,112 @@ class AssistTableViewController: UIViewController,UITableViewDelegate,UITableVie
             
             var cell:assistChosePostsTableViewCell = tableView.dequeueReusableCellWithIdentifier("assistChosePostsCell", forIndexPath: indexPath) as! assistChosePostsTableViewCell
             
-            var postindex = adjustrow_no-3
+        
           
             cell.allSelectBtn.addTarget(self, action: Selector("selectAllPosts:"), forControlEvents:UIControlEvents.TouchUpInside)
-            cell.allSelectBtn.tag = postindex
-
+           
             
             let HiddenSeparatorInset: UIEdgeInsets = UIEdgeInsetsMake(0, CGFloat(UInt16.max), 0, 0)
             cell.separatorInset = HiddenSeparatorInset
             
             return cell
         }
-    
-
-        var cell:choseCustomCell = tableView.dequeueReusableCellWithIdentifier("choseCustomCell", forIndexPath: indexPath) as! choseCustomCell
-        
-        cell.layoutMargins = UIEdgeInsetsZero
-        
-        cell.postPortrait.image = UIImage(named: "selfee.JPG")
-        cell.postName.text = "uminonar"
-        
-        var postindex = adjustrow_no-3
-
-        cell.postCreated.text = posts[postindex]["created"] as! String
-        
-        var dateTime = posts[postindex]["when"] as! String
-        cell.postWhen.text = dateTime+" 頃"
-        cell.postWhere.text = posts[postindex]["where"] as! String
-        cell.postWho.text = posts[postindex]["who"] as! String
-        cell.postUniversity.text = posts[postindex]["university"] as! String
-        
-        
-        cell.postDiary.text = posts[postindex]["diary"] as! String
-        let style = NSMutableParagraphStyle()
-        style.lineSpacing = 5
-        let attributes = [NSParagraphStyleAttributeName : style]
-        cell.postDiary.attributedText = NSAttributedString(string: cell.postDiary.text,
-                                                           attributes: attributes)
-        cell.postDiary.font = UIFont.systemFontOfSize(13)
-        
-        let myTap = UITapGestureRecognizer(target: self, action: "tapGesture:")
-    
-        cell.postDiary.addGestureRecognizer(myTap)
-        cell.postDiary.tag = postindex
-        
-
-
-        cell.postImageView.image = UIImage(named:(posts[postindex]["picture"] as! String))
-        
-        cell.coverBtn.addTarget(self, action: "selected:", forControlEvents: .TouchUpInside)
-        cell.coverBtn.tag = postindex
-        
-        
-        //全選択ボタンが押されたら
-        var myDefault = NSUserDefaults.standardUserDefaults()
-        var selectA = myDefault.stringForKey("selectAllPosts")
-        
-        if selectA != nil {
-            var selectedFlag = posts[postindex]["selectedFlag"] as! Bool
+        for i in 0..<posts.count{
+            if adjustrow_no == 3 + i {
+                var cell:choseCustomCell = tableView.dequeueReusableCellWithIdentifier("choseCustomCell", forIndexPath: indexPath) as! choseCustomCell
+                
+                cell.layoutMargins = UIEdgeInsetsZero
+                
+                cell.postPortrait.image = UIImage(named: "selfee.JPG")
+                cell.postName.text = "uminonar"
+                
+                var postindex = adjustrow_no-3
+                
+                cell.postCreated.text = posts[postindex]["created"] as! String
+                
+                var dateTime = posts[postindex]["when"] as! String
+                cell.postWhen.text = dateTime+" 頃"
+                cell.postWhere.text = posts[postindex]["where"] as! String
+                cell.postWho.text = posts[postindex]["who"] as! String
+                cell.postUniversity.text = posts[postindex]["university"] as! String
+                
+                
+                cell.postDiary.text = posts[postindex]["diary"] as! String
+                let style = NSMutableParagraphStyle()
+                style.lineSpacing = 5
+                let attributes = [NSParagraphStyleAttributeName : style]
+                cell.postDiary.attributedText = NSAttributedString(string: cell.postDiary.text,
+                                                                   attributes: attributes)
+                cell.postDiary.font = UIFont.systemFontOfSize(13)
+                
+                let myTap = UITapGestureRecognizer(target: self, action: "tapGesture:")
+                
+                cell.postDiary.addGestureRecognizer(myTap)
+                cell.postDiary.tag = postindex
+                
+                
+                
+                cell.postImageView.image = UIImage(named:(posts[postindex]["picture"] as! String))
+                
+                cell.coverBtn.addTarget(self, action: "selected:", forControlEvents: .TouchUpInside)
+                cell.coverBtn.tag = postindex
+                
+                
+                //全選択ボタンが押されたら
+                var myDefault = NSUserDefaults.standardUserDefaults()
+                var selectA = myDefault.stringForKey("selectAllPosts")
+                
+                if selectA != nil {
+                    var selectedFlag = posts[postindex]["selectedFlag"] as! Bool
+                    
+                    
+                }
+                
+                var selectedFlag = posts[postindex]["selectedFlag"] as! Bool
+                
+                
+                if selectedFlag{
+                    
+                    cell.circle.image = UIImage(named: "checkedFilled")?.imageWithRenderingMode(.AlwaysTemplate)
+                    cell.circle.tintColor = UIColor.redColor()
+                    
+                    let paleGreen:UIColor = UIColor(red: 0.914, green: 0.980, blue: 0.950, alpha: 0.6)
+                    
+                    //            let palePink:UIColor = UIColor(red: 0.990, green: 0.93, blue: 0.88, alpha:0.8)
+                    
+                    cell.backgroundColor = paleGreen
+                    
+                }else{
+                    
+                    cell.circle.image = UIImage(named: "circle")
+                    cell.backgroundColor = UIColor.whiteColor()
+                    
+                }
+                
+                
+                
+                return cell
+            }
+        }
+            
+        if adjustrow_no == 3 + posts.count + 1 {
+            
+            var cell:makeURLTableViewCell = tableView.dequeueReusableCellWithIdentifier("makeURLCell", forIndexPath: indexPath) as! makeURLTableViewCell
+            
+            return cell
+            
             
             
         }
-
-        var selectedFlag = posts[postindex]["selectedFlag"] as! Bool
-
         
-        if selectedFlag{
-            
-            cell.circle.image = UIImage(named: "checkedFilled")?.imageWithRenderingMode(.AlwaysTemplate)
-            cell.circle.tintColor = UIColor.redColor()
         
-            let paleGreen:UIColor = UIColor(red: 0.914, green: 0.980, blue: 0.950, alpha: 0.6)
-        
-//            let palePink:UIColor = UIColor(red: 0.990, green: 0.93, blue: 0.88, alpha:0.8)
-        
-            cell.backgroundColor = paleGreen
-            
-        }else{
-            
-            cell.circle.image = UIImage(named: "circle")
-            cell.backgroundColor = UIColor.whiteColor()
- 
-        }
-        
-       
-
+        //ここは何でも良い。使われないけどcellを指定してreturn書かないとエラーが出る。例外処理。
+         var cell:assistInfoDetailTableViewCell = tableView.dequeueReusableCellWithIdentifier("assistInfoDetailCell", forIndexPath: indexPath) as! assistInfoDetailTableViewCell
         return cell
+    }
+    
         
-        }
+        
     
     func tapGesture(sender: UITapGestureRecognizer) {
         
@@ -628,14 +649,28 @@ class AssistTableViewController: UIViewController,UITableViewDelegate,UITableVie
         
                 return 280
             }
-        }else{
-            return 280
         }
+        
+        for i in 0..<posts.count{
+            if indexPath.row ==  3 + i {
+                
+                    return 280
+                }
+        }
+        
+        
+        
+        if indexPath.row == posts.count + 4 {
+            
+            return 100
+            
+            
+        }
+        
+        return 1
     }
- 
-    
-
   
+
 
     @IBAction func sendCoverBtn(sender: UIButton) {
     
@@ -690,7 +725,8 @@ class AssistTableViewController: UIViewController,UITableViewDelegate,UITableVie
         var myDefault = NSUserDefaults.standardUserDefaults()
         myDefault.removeObjectForKey("selectedAdvisor")
         myDefault.removeObjectForKey("editedText")
-        myDefault.removeObjectForKey("selectedAdvisor")
+        myDefault.removeObjectForKey("mailContent")
+        
         myDefault.synchronize()
         
         
