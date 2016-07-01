@@ -51,7 +51,7 @@ class AddDiaryViewController: UIViewController, UITextViewDelegate,UIImagePicker
 //        var appDomain:String = NSBundle.mainBundle().bundleIdentifier!
 //                myDefault.removePersistentDomainForName(appDomain)
         
-        //決定ボタンのついたラベルをキーボードの上に設置
+        //決定ボタンや写真、動画を選択するイメージのついたラベルをキーボードの上に設置
         var accessoryView = UIView(frame: CGRectMake(0, 178, 320, 40))
         
         accessoryView.backgroundColor = UIColor.groupTableViewBackgroundColor()
@@ -126,6 +126,7 @@ class AddDiaryViewController: UIViewController, UITextViewDelegate,UIImagePicker
 //        
 //        saveBtn.setImage(boxImage, forState: .Normal)
         
+        //保存ボタンのイメージを設置して色変更
         saveBtn.image = UIImage(named:"check")?.imageWithRenderingMode(.AlwaysTemplate)
         
         let sakura:UIColor = UIColor(red:1.0,green:0.3,blue:0.3,alpha:1.0)
@@ -136,16 +137,18 @@ class AddDiaryViewController: UIViewController, UITextViewDelegate,UIImagePicker
         
     }
     
+    
+    //キーボードの上にあるバーの下矢印アイコンをタップしたらキーボードを下げ、全文表示する処理
     func onClickCloseButton(sender: UIButton) {
         diaryTextView.resignFirstResponder()
         
-        //Mark:ここを修正
+        //Mark:ここを修正 記入時とフレームの位置を合わせる、カクンとさせない
         //diaryTextView.frame = CGRectMake(0, 20, 320, 700)
-        diaryTextView.frame = CGRectMake(0,20, diaryTextView.bounds.width,myBoundsize.height-85)
+        diaryTextView.frame = CGRectMake(10,20, diaryTextView.bounds.width,myBoundsize.height-85)
         
     }
     
-    //photoCoverBtnがタップされた時
+    //photoCoverBtnがタップされた時、写真を選択できる一覧を表示
     func onClickPhotoButton(sender: UIButton){
         
         
@@ -157,7 +160,7 @@ class AddDiaryViewController: UIViewController, UITextViewDelegate,UIImagePicker
             self.presentViewController(photoPick, animated: true, completion: nil)
         }
     
-    //movieCoverBtnがタップされた時
+    //movieCoverBtnがタップされた時、動画を選択できる一覧を表示
     func onClickFilmButton(sender: UIButton){
         
         var movPick = UIImagePickerController()
@@ -171,12 +174,12 @@ class AddDiaryViewController: UIViewController, UITextViewDelegate,UIImagePicker
         
     }
     
-        
+    //写真や画像をリストから選択した時の処理。ユーザーデフォルトに選択したデータへのパスをセット
     func imagePickerController(imagePicker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {
             
             
             
-            // ユーザーデフォルトを用意する
+        // ユーザーデフォルトを用意する
         var myDefault = NSUserDefaults.standardUserDefaults()
             
             
@@ -208,15 +211,14 @@ class AddDiaryViewController: UIViewController, UITextViewDelegate,UIImagePicker
             }
             // 即反映させる
             myDefault.synchronize()
-        
+            //　選択画面を落とす
             self.dismissViewControllerAnimated(true, completion: nil)
         
     }
     
     
-    //ユーザーデフォルトに"photo"というキーでurlをstringセットする
-    //記録フォームの画面で、”photo”がnilでなかったらセルをif文で一段を追加
-    //こちらでは空のファイルイメージだけバーの上の方に置く
+
+    //TODO:こちらでは空のファイルイメージだけバーの上の方に置く
  
     
     
@@ -250,7 +252,7 @@ class AddDiaryViewController: UIViewController, UITextViewDelegate,UIImagePicker
             //フォントサイズの指定
             
             let style = NSMutableParagraphStyle()
-            style.lineSpacing = 5
+            style.lineSpacing = 6
             let attributes = [NSParagraphStyleAttributeName : style]
             diaryTextView.attributedText = NSAttributedString(string: diaryTextView.text,
                                                               attributes: attributes)
@@ -259,6 +261,8 @@ class AddDiaryViewController: UIViewController, UITextViewDelegate,UIImagePicker
             diaryTextView.text = ""
         }
         
+        
+        //キーボードがテキストに被らないようにする下処理、キーボードの動きを感知？
         NSNotificationCenter.defaultCenter().addObserver(self,
                                                          selector: "keyboardWillBeShown:",
                                                          name: UIKeyboardWillShowNotification,
@@ -274,6 +278,8 @@ class AddDiaryViewController: UIViewController, UITextViewDelegate,UIImagePicker
     override func viewWillDisappear(animated: Bool) {
         super.viewWillDisappear(animated)
         
+        
+        //キーボードがテキストに被らないようにする処理
         NSNotificationCenter.defaultCenter().removeObserver(self,
                                                             name: UIKeyboardWillShowNotification,
                                                             object: nil)

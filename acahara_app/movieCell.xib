@@ -18,11 +18,17 @@
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GPv-bO-ELi" customClass="AVPlayerView" customModule="acahara_app" customModuleProvider="target">
                         <rect key="frame" x="60" y="8" width="240" height="128"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="playBtn" translatesAutoresizingMaskIntoConstraints="NO" id="1yd-FC-aO0">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="playBtn" translatesAutoresizingMaskIntoConstraints="NO" id="1yd-FC-aO0">
                                 <rect key="frame" x="95" y="39" width="50" height="50"/>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="1yd-FC-aO0" firstAttribute="top" secondItem="GPv-bO-ELi" secondAttribute="top" constant="39" id="6RV-c0-EIy"/>
+                            <constraint firstItem="1yd-FC-aO0" firstAttribute="leading" secondItem="GPv-bO-ELi" secondAttribute="leading" constant="95" id="BiE-l8-Pz2"/>
+                            <constraint firstItem="1yd-FC-aO0" firstAttribute="centerY" secondItem="GPv-bO-ELi" secondAttribute="centerY" id="tRg-jK-GYx"/>
+                            <constraint firstItem="1yd-FC-aO0" firstAttribute="centerX" secondItem="GPv-bO-ELi" secondAttribute="centerX" id="xrO-ex-QV4"/>
+                        </constraints>
                     </view>
                 </subviews>
                 <constraints>
