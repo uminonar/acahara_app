@@ -363,7 +363,7 @@ class AssistTableViewController: UIViewController,UITableViewDelegate,UITableVie
             }
         }
             
-        if adjustrow_no == 3 + posts.count + 1 {
+        if adjustrow_no == 3 + posts.count {
             
             var cell:makeURLTableViewCell = tableView.dequeueReusableCellWithIdentifier("makeURLCell", forIndexPath: indexPath) as! makeURLTableViewCell
             
@@ -660,7 +660,7 @@ class AssistTableViewController: UIViewController,UITableViewDelegate,UITableVie
         
         
         
-        if indexPath.row == posts.count + 4 {
+        if indexPath.row == 3 + posts.count {
             
             return 100
             

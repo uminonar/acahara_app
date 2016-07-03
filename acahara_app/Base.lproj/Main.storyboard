@@ -513,16 +513,24 @@
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="atW-Vt-I4o">
                                         <rect key="frame" x="0.0" y="-5" width="318" height="511"/>
+                                        <subviews>
+                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="VXV-D6-5sd">
+                                                <rect key="frame" x="8" y="8" width="302" height="503"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="503" id="UwC-Tp-omp"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                            </textView>
+                                        </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="511" id="kbu-zk-ZVJ"/>
+                                            <constraint firstItem="VXV-D6-5sd" firstAttribute="top" secondItem="atW-Vt-I4o" secondAttribute="top" constant="8" id="prY-TY-GGj"/>
+                                            <constraint firstItem="VXV-D6-5sd" firstAttribute="leading" secondItem="atW-Vt-I4o" secondAttribute="leading" constant="8" id="q9F-t7-XxH"/>
+                                            <constraint firstAttribute="trailing" secondItem="VXV-D6-5sd" secondAttribute="trailing" constant="8" id="tyH-Zr-T4a"/>
                                         </constraints>
                                     </view>
-                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="VXV-D6-5sd">
-                                        <rect key="frame" x="8" y="0.0" width="302" height="217"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                                    </textView>
                                 </subviews>
                                 <constraints>
                                     <constraint firstItem="atW-Vt-I4o" firstAttribute="centerX" secondItem="xDz-hH-Jmx" secondAttribute="centerX" id="CAc-Sc-OEO"/>
@@ -562,7 +570,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yaU-BX-4kL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4034" y="1187"/>
+            <point key="canvasLocation" x="4070" y="977"/>
         </scene>
         <!--Detail View Controller-->
         <scene sceneID="gUV-zK-K1c">
@@ -1233,23 +1241,31 @@
                                 <rect key="frame" x="0.0" y="66" width="320" height="502"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pDk-p8-ftv">
-                                        <rect key="frame" x="0.0" y="0.0" width="320" height="502"/>
+                                        <rect key="frame" x="0.0" y="-5" width="320" height="502"/>
                                         <subviews>
-                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="kfI-fs-IJG">
-                                                <rect key="frame" x="8" y="0.0" width="312" height="217"/>
+                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="kfI-fs-IJG">
+                                                <rect key="frame" x="8" y="8" width="302" height="324"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="324" id="US0-hL-1aC"/>
+                                                </constraints>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                             </textView>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="kfI-fs-IJG" secondAttribute="trailing" constant="10" id="YAJ-Bf-OGb"/>
+                                            <constraint firstItem="kfI-fs-IJG" firstAttribute="top" secondItem="pDk-p8-ftv" secondAttribute="topMargin" id="reE-cy-rJx"/>
+                                            <constraint firstItem="kfI-fs-IJG" firstAttribute="leading" secondItem="pDk-p8-ftv" secondAttribute="leadingMargin" id="sJ9-e6-iIp"/>
+                                        </constraints>
                                     </view>
                                 </subviews>
                                 <constraints>
                                     <constraint firstItem="pDk-p8-ftv" firstAttribute="leading" secondItem="S3L-6w-baK" secondAttribute="leading" id="GaY-P6-m9u"/>
-                                    <constraint firstAttribute="bottom" secondItem="pDk-p8-ftv" secondAttribute="bottom" id="XFM-s6-7sA"/>
-                                    <constraint firstItem="pDk-p8-ftv" firstAttribute="centerY" secondItem="S3L-6w-baK" secondAttribute="centerY" id="hnK-a4-oBs"/>
-                                    <constraint firstItem="pDk-p8-ftv" firstAttribute="top" secondItem="S3L-6w-baK" secondAttribute="top" id="hsx-so-7B5"/>
+                                    <constraint firstAttribute="bottom" secondItem="pDk-p8-ftv" secondAttribute="bottom" constant="5" id="XFM-s6-7sA"/>
+                                    <constraint firstItem="pDk-p8-ftv" firstAttribute="centerY" secondItem="S3L-6w-baK" secondAttribute="centerY" constant="-5" id="hnK-a4-oBs"/>
+                                    <constraint firstItem="pDk-p8-ftv" firstAttribute="top" secondItem="S3L-6w-baK" secondAttribute="top" constant="-5" id="hsx-so-7B5"/>
                                     <constraint firstItem="pDk-p8-ftv" firstAttribute="centerX" secondItem="S3L-6w-baK" secondAttribute="centerX" id="iPI-5I-Px5"/>
                                     <constraint firstAttribute="trailing" secondItem="pDk-p8-ftv" secondAttribute="trailing" id="zq8-gN-WdE"/>
                                 </constraints>

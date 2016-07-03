@@ -84,6 +84,8 @@ class AddWhereViewController: UIViewController,UITableViewDelegate,UITableViewDa
             //即反映させる
             myDefault.synchronize()
             
+            self.view.endEditing(true)
+            
             self.dismissViewControllerAnimated(true, completion: nil)
             
         }

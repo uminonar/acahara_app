@@ -27,6 +27,10 @@ class AddTableViewController: UIViewController,UITableViewDelegate,UITableViewDa
     
     var rownumberFlag = false
     
+    var cellHeights = []
+    
+    var firstTime = true
+    
 //    let AddDiaryVC = UIStoryboard(name: "Main",bundle: nil).instantiateViewControllerWithIdentifier("AddDiaryViewController") as UIViewController
     
     var myAp = UIApplication.sharedApplication()
@@ -104,22 +108,25 @@ class AddTableViewController: UIViewController,UITableViewDelegate,UITableViewDa
     }
     
     //キーボードの制御
-//    func handleKeyboardWillShowNotification(notification: NSNotification) {
-//        var userInfo = notification.userInfo!
-//        var keyboardScreenEndFrame = (userInfo[UIKeyboardFrameEndUserInfoKey] as! NSValue).CGRectValue()
-//        var boundSize: CGSize = UIScreen.mainScreen().bounds.size
-//        var textFieldLimit = addTextFiled.frame.origin.y + addTextFiled.frame.height + 8.0
-//        var keyboardLimit = boundSize.height - keyboardScreenEndFrame.size.height
-//        
-//        if textFieldLimit >= keyboardLimit {
-//            tableView.contentOffset.y = textFieldLimit - keyboardLimit
-//        }
-//    }
-//    
-//    func handleKeyboardWillHideNotification(notification: NSNotification) {
-//        addtableView.contentOffset.y = 0
-//    }
-//    
+    func handleKeyboardWillShowNotification(notification: NSNotification) {
+        var userInfo = notification.userInfo!
+        var keyboardScreenEndFrame = (userInfo[UIKeyboardFrameEndUserInfoKey] as! NSValue).CGRectValue()
+        var boundSize: CGSize = UIScreen.mainScreen().bounds.size
+        let addUnivTextFieldBottomHeight: CGFloat = 191+40
+        let dateTimeCellHeight: CGFloat = 140
+        let datePickerCellHeight: CGFloat = expandflag ? 250 : 0
+        let textFieldLimit = dateTimeCellHeight + datePickerCellHeight + addUnivTextFieldBottomHeight
+        var keyboardLimit = boundSize.height - keyboardScreenEndFrame.size.height - 80
+        
+        if textFieldLimit >= keyboardLimit {
+            addTableView.contentOffset.y = textFieldLimit - keyboardLimit
+        }
+    }
+    
+    func handleKeyboardWillHideNotification(notification: NSNotification) {
+        addTableView.contentOffset.y = 0
+    }
+//
 //    func textFieldShouldBeginEditing(textField: UITextField) -> Bool {
 //        addTextField = textField
 //        return true
@@ -177,27 +184,16 @@ class AddTableViewController: UIViewController,UITableViewDelegate,UITableViewDa
             
             //cellを生成？
             var cell:dateTimeTableViewCell = tableView.dequeueReusableCellWithIdentifier("dateTimeCell", forIndexPath: indexPath) as! dateTimeTableViewCell
-            
-            
-            var dateSaveAlert = myDefault.stringForKey("dateSaveAlert")
-            if dateSaveAlert != nil {
-                
-                let honeyDew :UIColor = UIColor(red:0.863,green:0.976,blue:0.643,alpha:1.0)
 
-                cell.addWhen.backgroundColor = honeyDew
-            }
-            
-
-            
             
             //datePickerの値をuserDefaultから取り出す
             
-            var dateStr = myDefault.stringForKey("selectedDT")
-            
+            var selectedDT = myDefault.stringForKey("selectedDT")
+  
             //userDefaultから取り出されたdatePickerの日時をセット
 
             
-            if dateStr == nil{
+            if selectedDT == nil{
                 
                 if expandflag{
                     let df = NSDateFormatter()
@@ -219,7 +215,7 @@ class AddTableViewController: UIViewController,UITableViewDelegate,UITableViewDa
                 
             }else{
                 
-                cell.addWhen.text = dateStr!+"   頃"
+                cell.addWhen.text = selectedDT! + "   頃"
                 }
             
                 if expandflag{
@@ -228,6 +224,17 @@ class AddTableViewController: UIViewController,UITableViewDelegate,UITableViewDa
                 }else{
                     cell.addWhen.textColor = UIColor.blackColor()
                 }
+        
+
+            let dateExist = selectedDT != nil && selectedDT != "" ? true : false
+
+            
+            if !dateExist && !firstTime {
+                
+                let honeyDew :UIColor = UIColor(red:0.863,green:0.976,blue:0.643,alpha:1.0)
+                
+                cell.addWhen.backgroundColor = honeyDew
+            }
             
             
             cell.addName.text = "uminonar"
@@ -247,6 +254,8 @@ class AddTableViewController: UIViewController,UITableViewDelegate,UITableViewDa
                 cell.addImportance.text = "念のため記録"
                 cell.addSwitch.on = false
             }
+            
+            
             
             
             return cell
@@ -296,9 +305,10 @@ class AddTableViewController: UIViewController,UITableViewDelegate,UITableViewDa
                 cell.addUniversity.textColor = UIColor.darkGrayColor()}
             
             
-            var uniSaveAlert = myDefault.stringForKey("uniSaveAlert")
+//            var uniSaveAlert = myDefault.stringForKey("uniSaveAlert")
+            let uniExist = uniStr != nil && uniStr != "" ? true : false
             
-            if uniSaveAlert != nil {
+            if !uniExist && !firstTime {
                 
                 let honeyDew :UIColor = UIColor(red:0.863,green:0.976,blue:0.643,alpha:1.0)
                 
@@ -319,9 +329,10 @@ class AddTableViewController: UIViewController,UITableViewDelegate,UITableViewDa
             }
             
           
-            var placeSaveAlert = myDefault.stringForKey("placeSaveAlert")
+//            var placeSaveAlert = myDefault.stringForKey("placeSaveAlert")
+            let placeExist = selectedPlace != nil && selectedPlace != "" ? true : false
             
-            if placeSaveAlert != nil {
+            if !placeExist && !firstTime {
                 
                 let honeyDew :UIColor = UIColor(red:0.863,green:0.976,blue:0.643,alpha:1.0)
                 
@@ -338,15 +349,24 @@ class AddTableViewController: UIViewController,UITableViewDelegate,UITableViewDa
                 cell.addWho.text = selectedName
             }
             
-            var nameSaveAlert = myDefault.stringForKey("nameSaveAlert")
+//            var nameSaveAlert = myDefault.stringForKey("nameSaveAlert")
+//            
+////            if nameSaveAlert != nil {
+//
+//                let honeyDew :UIColor = UIColor(red:0.863,green:0.976,blue:0.643,alpha:1.0)
+//                
+//                cell.addWho.backgroundColor = honeyDew
+//            }
             
-            if nameSaveAlert != nil {
+            let nameExist = selectedName != nil && selectedPlace != "" ? true : false
+            
+            if !nameExist && !firstTime {
                 
                 let honeyDew :UIColor = UIColor(red:0.863,green:0.976,blue:0.643,alpha:1.0)
                 
                 cell.addWho.backgroundColor = honeyDew
             }
-
+//
             
             
             //Diaryデータを呼び出して文字列が入っていたら表示する
@@ -384,15 +404,22 @@ class AddTableViewController: UIViewController,UITableViewDelegate,UITableViewDa
                 
             }
             
-            var diarySaveAlert = myDefault.stringForKey("diarySaveAlert")
+//            var diarySaveAlert = myDefault.stringForKey("diarySaveAlert")
+//            
+//            if diarySaveAlert != nil {
+//                
+//                let honeyDew :UIColor = UIColor(red:0.863,green:0.976,blue:0.643,alpha:1.0)
+//                
+//                cell.addWho.backgroundColor = honeyDew
+//            }
+            let diaryExist = diaryText != nil && diaryText != "" ? true : false
             
-            if diarySaveAlert != nil {
+            if !diaryExist && !firstTime {
                 
                 let honeyDew :UIColor = UIColor(red:0.863,green:0.976,blue:0.643,alpha:1.0)
                 
-                cell.addWho.backgroundColor = honeyDew
+                cell.addDiary.backgroundColor = honeyDew
             }
-
             
 
             //.xibファイルのボタンなどがタップされ時の処理
@@ -679,7 +706,7 @@ class AddTableViewController: UIViewController,UITableViewDelegate,UITableViewDa
 
     func setWho(sender:UITextField){
         
-        self.resignFirstResponder()
+//        self.resignFirstResponder()
 
         let AddWho = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("AddWhoViewController") as UIViewController
         
@@ -962,6 +989,8 @@ class AddTableViewController: UIViewController,UITableViewDelegate,UITableViewDa
 
     @IBAction func saveBtn(sender: UIButton) {
         
+        firstTime = false
+        
         
         //必須項目が記入済みか、チェックする ユーザーデフォルトに無い場合は未記入
         //未記入があったら、記入してくださいのアラート
@@ -971,53 +1000,64 @@ class AddTableViewController: UIViewController,UITableViewDelegate,UITableViewDa
         //UserDefaultのdiaryキーのところを空にする
         
         var myDefault = NSUserDefaults.standardUserDefaults()
-        
+
         var selectedData = myDefault.stringForKey("selectedDT")
-        if selectedData == nil && selectedData == ""{
-             var myDefault = NSUserDefaults.standardUserDefaults()
-             myDefault.setObject(true, forKey: "dateSaveAlert")
-        }
+//        if selectedData == nil && selectedData == ""{
+//             var myDefault = NSUserDefaults.standardUserDefaults()
+//             myDefault.setObject(true, forKey: "dateSaveAlert")
+//        }
         
         var selectedPlace = myDefault.stringForKey("selectedPlace")
-        if selectedPlace == nil && selectedPlace == ""{
-            var myDefault = NSUserDefaults.standardUserDefaults()
-            myDefault.setObject(true, forKey: "placeSaveAlert")
-        }
+//        if selectedPlace == nil && selectedPlace == ""{
+//            var myDefault = NSUserDefaults.standardUserDefaults()
+//            myDefault.setObject(true, forKey: "placeSaveAlert")
+//        }
 
         var selectedName = myDefault.stringForKey("selectedName")
-        if selectedName == nil && selectedName == ""{
-            var myDefault = NSUserDefaults.standardUserDefaults()
-            myDefault.setObject(true, forKey: "nameSaveAlert")
-        }
-        
+//        if selectedName == nil && selectedName == ""{
+//            var myDefault = NSUserDefaults.standardUserDefaults()
+//            myDefault.setObject(true, forKey: "nameSaveAlert")
+//        }
+//        
         var uniStr = myDefault.stringForKey("uniStr")
-        if uniStr == nil && uniStr == ""{
-            var myDefault = NSUserDefaults.standardUserDefaults()
-            myDefault.setObject(true, forKey: "uniSaveAlert")
-        }
+//        if uniStr == nil && uniStr == ""{
+//            var myDefault = NSUserDefaults.standardUserDefaults()
+//            myDefault.setObject(true, forKey: "uniSaveAlert")
+//        }
         
         var diary = myDefault.stringForKey("diary")
-        if diary == nil && diary == ""{
-            var myDefault = NSUserDefaults.standardUserDefaults()
-            myDefault.setObject(true, forKey: "diarySaveAlert")
-        }
+//        if diary == nil && diary == ""{
+//            var myDefault = NSUserDefaults.standardUserDefaults()
+//            myDefault.setObject(true, forKey: "diarySaveAlert")
+//        }
         
         
-        var dateS = myDefault.stringForKey("dateSaveAlert")
-        var placeS = myDefault.stringForKey("placeSaveAlert")
-        var nameS = myDefault.stringForKey("nameSaveAlert")
-        var uniS = myDefault.stringForKey("uniSaveAlert")
-        var diaryS = myDefault.stringForKey("diarySaveAlert")
+//        var dateS = myDefault.stringForKey("dateSaveAlert")
+//        var placeS = myDefault.stringForKey("placeSaveAlert")
+//        var nameS = myDefault.stringForKey("nameSaveAlert")
+//        var uniS = myDefault.stringForKey("uniSaveAlert")
+//        var diaryS = myDefault.stringForKey("diarySaveAlert")
         
-        if (dateS == "true" || placeS == "true" || nameS == "true" || uniS == "true" || diaryS == "true"){
-            
+        self.addTableView.reloadData()
+        
+        let dateExsist = selectedData != nil && selectedData != "" ? true : false
+        let placeExist = selectedPlace != nil && selectedPlace != "" ? true : false
+        let nameExist = selectedName != nil && selectedName != "" ? true : false
+        let univExist = uniStr != nil && uniStr != "" ? true : false
+        let diaryExist = diary != nil && diary != "" ? true : false
+        
+        if (!dateExsist || !placeExist || !nameExist || !univExist || !diaryExist) {
+//
+//        if (dateS == "true" || placeS == "true" || nameS == "true" || uniS == "true" || diaryS == "true"){
+//
             var alertController = UIAlertController(
-                title: "必須項目が未記入です",
-                message: "記入してください",
+                title: "必須項目を記入してください",
+                message: "",
                 preferredStyle: .Alert)
             
             alertController.addAction(UIAlertAction(title: "OK", style: .Default, handler:nil))
-           
+            presentViewController(alertController, animated: true, completion: nil)
+
             
         }else{
             //保存されるデータをユーザーデフォルトから削除
@@ -1046,10 +1086,6 @@ class AddTableViewController: UIViewController,UITableViewDelegate,UITableViewDa
             //navigationController?.popViewControllerAnimated(true)
             
             self.dismissViewControllerAnimated(true, completion: nil)
-
-            
-            
-            
         }
       
 
@@ -1111,8 +1147,8 @@ class AddTableViewController: UIViewController,UITableViewDelegate,UITableViewDa
             //キーボード制御に利用
             textField.delegate = self
             
-            //スクロール位置を指定
-            addTableView.contentOffset = CGPointMake(0,300);
+//            //スクロール位置を指定
+//            addTableView.contentOffset = CGPointMake(0,300);
             
             //ユーザーデフォルトを用意する
             var myDefault = NSUserDefaults.standardUserDefaults()

@@ -22,7 +22,7 @@ class movieTableViewCell: UITableViewCell {
         
         playBtn.image = UIImage(named:"playBtn")?.imageWithRenderingMode(.AlwaysTemplate)
         
-        let lucentWhite :UIColor = UIColor(red:1.0,green:1.0,blue:1.0,alpha:0.5)
+        let lucentWhite :UIColor = UIColor(red:0.0,green:0.0,blue:0.0,alpha:0.7)
         
         playBtn.tintColor = lucentWhite
 

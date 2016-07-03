@@ -13,7 +13,7 @@ class MailContentViewController: UIViewController, UITextViewDelegate{
     var personT = ["professor":"教授","assailant":"加害者","committee":"委員会","psycotherapist":"心理療法士","lawyer":"弁護士","friend":"友達"]
 
 
-    @IBOutlet var advisorsView: UIView!
+//    @IBOutlet var advisorsView: UIView!
     @IBOutlet weak var headerView: UIView!
     @IBOutlet weak var checkBtn: UIImageView!
     @IBOutlet weak var personType: UILabel!
@@ -173,17 +173,25 @@ class MailContentViewController: UIViewController, UITextViewDelegate{
                 restoreScrollViewSize()
                 
                 let convertedKeyboardFrame = scrollView.convertRect(keyboardFrame, fromView: nil)
-                let offsetY: CGFloat = CGRectGetMaxY(mailTextView.frame) - CGRectGetMinY(convertedKeyboardFrame)
-//                if offsetY < 0 { return }
-//                updateScrollViewSize(offsetY, duration: animationDuration)
+                var offsetY: CGFloat = CGRectGetMaxY(mailTextView.frame) - CGRectGetMinY(convertedKeyboardFrame)
                 
-                mailTextView.frame = CGRectMake(18,20, mailTextView.bounds.width, myBoundsize.height - convertedKeyboardFrame.height-65)
+                mailTextView.frame = CGRectMake(8,8, mailTextView.bounds.width, myBoundsize.height - convertedKeyboardFrame.height-65)
+                
+                if offsetY < 0 { return }
+                //Mark:計算結果を使わずにここで決め打ちしてしまう方が安定
+                offsetY = 10.0
+                
+
+                updateScrollViewSize(offsetY, duration: animationDuration)
+                
+                print(scrollView.frame)
             }
         }
     }
     
     func keyboardWillBeHidden(notification: NSNotification) {
         restoreScrollViewSize()
+        print(scrollView.frame)
     }
     
     // MARK: - UITextFieldDelegate//ここがリターンじゃなくボタンの設定も？//ここが効かない,テキストフィールドなので　doneボタンを付ける

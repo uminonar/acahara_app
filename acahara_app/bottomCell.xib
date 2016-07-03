@@ -39,7 +39,7 @@
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <textInputTraits key="textInputTraits"/>
                     </textField>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="問題の人物：" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NEn-cK-gCM">
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="人物：" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NEn-cK-gCM">
                         <rect key="frame" x="15" y="83" width="102" height="21"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="102" id="3ix-bq-iHQ"/>
@@ -110,7 +110,7 @@
                 <outlet property="addWhere" destination="dRm-FQ-5hX" id="P70-HC-UhY"/>
                 <outlet property="addWho" destination="XuH-Y7-MQK" id="73p-YI-89D"/>
             </connections>
-            <point key="canvasLocation" x="96" y="-174"/>
+            <point key="canvasLocation" x="294" y="-160"/>
         </tableViewCell>
     </objects>
 </document>

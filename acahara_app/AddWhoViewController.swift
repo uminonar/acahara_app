@@ -90,6 +90,8 @@ class AddWhoViewController: UIViewController,UITableViewDataSource,UITableViewDe
         
             //即反映させる
                 myDefault.synchronize()
+            
+            self.view.endEditing(true)
         
             self.dismissViewControllerAnimated(true, completion: nil)
         

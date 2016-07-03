@@ -32,12 +32,32 @@ class AddDiaryViewController: UIViewController, UITextViewDelegate,UIImagePicker
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        print(scrollView.frame)
+        print("test")
+//        diaryTextView.backgroundColor = UIColor.greenColor()
+//        let testView: UIView = UIView()
+//        testView.backgroundColor = UIColor.greenColor()
+//        testView.frame = CGRectMake(0, 62, 318, 506)
+//        self.view.addSubview(testView)
+        
         diaryTextView.delegate = self
         
         
         
-        //最初からカーソルが反転してキーボードが表示される処理
-        diaryTextView.becomeFirstResponder()
+        //もしあらかじめテキストが記述されていなければ、カーソルが反転してキーボードが表示される処理
+        //もしテキストがあれば編集箇所を選んでカーソルを当てられる方が親切だから
+        
+        var myDefault = NSUserDefaults.standardUserDefaults()
+        var diaryText = myDefault.stringForKey("diary")
+        if diaryText != nil && diaryText != "" {
+        
+             diaryTextView.resignFirstResponder()
+      
+        }else{
+             diaryTextView.becomeFirstResponder()
+        }
+    
+       
         
        //行間の設定 ここで大きさがリセットされているから、リセット後にサイズを指定しないといけない
         
@@ -140,11 +160,15 @@ class AddDiaryViewController: UIViewController, UITextViewDelegate,UIImagePicker
     
     //キーボードの上にあるバーの下矢印アイコンをタップしたらキーボードを下げ、全文表示する処理
     func onClickCloseButton(sender: UIButton) {
+        
         diaryTextView.resignFirstResponder()
+        
         
         //Mark:ここを修正 記入時とフレームの位置を合わせる、カクンとさせない
         //diaryTextView.frame = CGRectMake(0, 20, 320, 700)
-        diaryTextView.frame = CGRectMake(10,20, diaryTextView.bounds.width,myBoundsize.height-85)
+        diaryTextView.frame = CGRectMake(10,20, diaryTextView.bounds.width,myBoundsize.height-20)
+        
+        scrollView.setContentOffset(CGPointMake(0,20), animated: true)
         
     }
     
@@ -228,8 +252,8 @@ class AddDiaryViewController: UIViewController, UITextViewDelegate,UIImagePicker
         var diary = myDefault.stringForKey("diary")
         
         if( diary != nil){
-            print(diary)
             diaryTextView.text = diary
+            
             
             //フォントサイズの指定
             
@@ -240,8 +264,6 @@ class AddDiaryViewController: UIViewController, UITextViewDelegate,UIImagePicker
                                                               attributes: attributes)
             diaryTextView.font = UIFont.systemFontOfSize(17)
             
-            //MARK:先頭にカーソルを合わせる
-            diaryTextView.selectedRange = NSMakeRange(0, 0)
             
         }else{
             //何も記載されてない場合
@@ -257,8 +279,12 @@ class AddDiaryViewController: UIViewController, UITextViewDelegate,UIImagePicker
             diaryTextView.attributedText = NSAttributedString(string: diaryTextView.text,
                                                               attributes: attributes)
             diaryTextView.font = UIFont.systemFontOfSize(17)
-            
             diaryTextView.text = ""
+            
+            //MARK:先頭にカーソルを合わせる
+//            diaryTextView.selectedRange = NSMakeRange(0, 0)
+            
+
         }
         
         
@@ -271,7 +297,7 @@ class AddDiaryViewController: UIViewController, UITextViewDelegate,UIImagePicker
                                                          selector: "keyboardWillBeHidden:",
                                                          name: UIKeyboardWillHideNotification,
                                                          object: nil)
-
+        
         
     }
     
@@ -286,6 +312,8 @@ class AddDiaryViewController: UIViewController, UITextViewDelegate,UIImagePicker
         NSNotificationCenter.defaultCenter().removeObserver(self,
                                                             name: UIKeyboardWillHideNotification,
                                                             object: nil)
+        
+        
     }
 
     func keyboardWillBeShown(notification: NSNotification) {
@@ -297,10 +325,7 @@ class AddDiaryViewController: UIViewController, UITextViewDelegate,UIImagePicker
                 var offsetY: CGFloat = CGRectGetMaxY(diaryTextView.frame) - CGRectGetMinY(convertedKeyboardFrame)
                 
                 //MARK:追加
-                diaryTextView.frame = CGRectMake(18,20, diaryTextView.bounds.width, myBoundsize.height - convertedKeyboardFrame.height-65)
-                
-                
-                
+                diaryTextView.frame = CGRectMake(8,8, diaryTextView.bounds.width, myBoundsize.height - convertedKeyboardFrame.height-65)
                 
                 if offsetY < 0 { return }
                 //Mark:計算結果を使わずにここで決め打ちしてしまう方が安定
@@ -310,6 +335,7 @@ class AddDiaryViewController: UIViewController, UITextViewDelegate,UIImagePicker
                 updateScrollViewSize(offsetY, duration: animationDuration)
             }
         }
+        
     }
     
     func keyboardWillBeHidden(notification: NSNotification) {
