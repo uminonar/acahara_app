@@ -14,7 +14,7 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = 'EAA61BFF8757603520FF9BF078CDA01E'
+               BlueprintIdentifier = '35EFA0795D882A309699A8EAEB352765'
                BlueprintName = 'Pods-acahara_app'
                ReferencedContainer = 'container:Pods.xcodeproj'
                BuildableName = 'libPods-acahara_app.a'>

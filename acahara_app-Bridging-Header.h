@@ -7,3 +7,4 @@
 #import <FontAwesomeKit/FAKZocial.h>
 #import <FontAwesomeKit/FAKIonIcons.h>
 
+#import <QBImagePickerController/QBImagePickerController.h>

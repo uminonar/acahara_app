@@ -1060,6 +1060,8 @@ class AddTableViewController: UIViewController,UITableViewDelegate,UITableViewDa
 
             
         }else{
+            firstTime = true
+            
             //保存されるデータをユーザーデフォルトから削除
             var appDomain:String = NSBundle.mainBundle().bundleIdentifier!
             

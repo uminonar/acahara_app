@@ -10,10 +10,15 @@ import UIKit
 
 class makeURLTableViewCell: UITableViewCell {
 
-//    @IBOutlet weak var urlImage: UIImageView!
     
+    @IBOutlet weak var urlMakeBtn: UIButton!
     override func awakeFromNib() {
         super.awakeFromNib()
+        
+        
+        
+        urlMakeBtn.layer.masksToBounds = true;
+        urlMakeBtn.layer.cornerRadius = 5.0;
         
 //        urlImage.image = UIImage(named:"addLink")?.imageWithRenderingMode(.AlwaysTemplate)
 //        

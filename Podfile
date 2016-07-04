@@ -5,6 +5,7 @@
 
 target 'acahara_app' do
 pod 'FontAwesomeKit', '~> 2.1.0'
+pod "QBImagePickerController"
 
 end
 

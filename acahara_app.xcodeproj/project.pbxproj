@@ -65,6 +65,7 @@
 		0B9DBFE71CFFF1F200B78293 /* AddSoundViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B9DBFE61CFFF1F200B78293 /* AddSoundViewController.swift */; };
 		0B9DF2611D01ADC100B478C7 /* PictureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B9DF2601D01ADC100B478C7 /* PictureViewController.swift */; };
 		0BA5624F1CFB112600760490 /* bgImage.JPG in Resources */ = {isa = PBXBuildFile; fileRef = 0BA5624E1CFB112600760490 /* bgImage.JPG */; };
+		0BAD28201D2A074B00A1DCE2 /* SelectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BAD281F1D2A074B00A1DCE2 /* SelectViewController.swift */; };
 		0BADA6181CFB3089001702D7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0BADA6161CFB3089001702D7 /* Main.storyboard */; };
 		0BADA61A1CFB3B9E001702D7 /* AddDiaryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BADA6191CFB3B9E001702D7 /* AddDiaryViewController.swift */; };
 		0BB232C41D1BB1B200F996AA /* choseCustomCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0BB232C31D1BB1B200F996AA /* choseCustomCell.xib */; };
@@ -188,6 +189,7 @@
 		0B9DBFE61CFFF1F200B78293 /* AddSoundViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddSoundViewController.swift; sourceTree = "<group>"; };
 		0B9DF2601D01ADC100B478C7 /* PictureViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PictureViewController.swift; sourceTree = "<group>"; };
 		0BA5624E1CFB112600760490 /* bgImage.JPG */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = bgImage.JPG; sourceTree = "<group>"; };
+		0BAD281F1D2A074B00A1DCE2 /* SelectViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectViewController.swift; sourceTree = "<group>"; };
 		0BADA6171CFB3089001702D7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		0BADA6191CFB3B9E001702D7 /* AddDiaryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddDiaryViewController.swift; sourceTree = "<group>"; };
 		0BB232C31D1BB1B200F996AA /* choseCustomCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = choseCustomCell.xib; sourceTree = "<group>"; };
@@ -312,6 +314,7 @@
 				0BE2489F1D05AC8D002BEC1F /* datePickerCell.xib */,
 				0BE248A31D05AEE0002BEC1F /* bottomCell.xib */,
 				0B0094891CF6FFB90041B3B5 /* AppDelegate.swift */,
+				0BAD281F1D2A074B00A1DCE2 /* SelectViewController.swift */,
 				0B00948B1CF6FFB90041B3B5 /* HomeViewController.swift */,
 				0BD2B6871D111C820032F502 /* LeftMenuViewController.swift */,
 				0B97FE161D0E58600000E700 /* StepViewController.swift */,
@@ -743,6 +746,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0BAD28201D2A074B00A1DCE2 /* SelectViewController.swift in Sources */,
 				0B03D2941CF7F6050050119E /* AddWhoViewController.swift in Sources */,
 				0B772C6C1D09B53C00086E17 /* TabBarController.swift in Sources */,
 				0B9DF2611D01ADC100B478C7 /* PictureViewController.swift in Sources */,

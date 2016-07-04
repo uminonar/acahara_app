@@ -13,7 +13,7 @@
 		<string>ja</string>
 	</array>
 	<key>CFBundleName</key>
-	<string>$(アカハラ対策)</string>
+	<string>アカハラ対策</string>
 	<key>CFBundlePackageType</key>
 	<string>APPL</string>
 	<key>CFBundleShortVersionString</key>

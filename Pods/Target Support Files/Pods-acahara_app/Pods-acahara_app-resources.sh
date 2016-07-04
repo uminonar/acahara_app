@@ -84,12 +84,14 @@ if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_resource "FontAwesomeKit/FontAwesomeKit/foundation-icons.ttf"
   install_resource "FontAwesomeKit/FontAwesomeKit/ionicons.ttf"
   install_resource "FontAwesomeKit/FontAwesomeKit/zocial-regular-webfont.ttf"
+  install_resource "$PODS_CONFIGURATION_BUILD_DIR/QBImagePickerController/QBImagePicker.bundle"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
   install_resource "FontAwesomeKit/FontAwesomeKit/FontAwesome.otf"
   install_resource "FontAwesomeKit/FontAwesomeKit/foundation-icons.ttf"
   install_resource "FontAwesomeKit/FontAwesomeKit/ionicons.ttf"
   install_resource "FontAwesomeKit/FontAwesomeKit/zocial-regular-webfont.ttf"
+  install_resource "$PODS_CONFIGURATION_BUILD_DIR/QBImagePickerController/QBImagePicker.bundle"
 fi
 
 mkdir -p "${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}"
