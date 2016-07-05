@@ -71,10 +71,10 @@
                         <rect key="frame" x="244" y="416" width="30" height="30"/>
                     </button>
                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" semanticContentAttribute="spatial" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="SZ2-qy-98t">
-                        <rect key="frame" x="59" y="289" width="245" height="124"/>
+                        <rect key="frame" x="59" y="289" width="245" height="125"/>
                         <gestureRecognizers/>
                         <constraints>
-                            <constraint firstAttribute="height" constant="124" id="BUP-bB-dzP"/>
+                            <constraint firstAttribute="height" constant="125" id="BUP-bB-dzP"/>
                         </constraints>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="uminonar" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iJu-xy-mzR">
@@ -133,7 +133,7 @@
                     <constraint firstItem="Wid-xO-76S" firstAttribute="top" secondItem="Sqn-lS-unF" secondAttribute="top" constant="12" id="VFF-DU-pMk"/>
                     <constraint firstItem="SZ2-qy-98t" firstAttribute="top" secondItem="BfP-h3-VJ1" secondAttribute="bottom" constant="19" id="Wbg-s4-cpI"/>
                     <constraint firstItem="BfP-h3-VJ1" firstAttribute="leading" secondItem="Sqn-lS-unF" secondAttribute="leading" constant="43" id="XVR-O4-mIg"/>
-                    <constraint firstItem="kux-Ns-X2J" firstAttribute="top" secondItem="SZ2-qy-98t" secondAttribute="bottom" constant="3" id="XcK-c7-EEw"/>
+                    <constraint firstItem="kux-Ns-X2J" firstAttribute="top" secondItem="SZ2-qy-98t" secondAttribute="bottom" constant="2" id="XcK-c7-EEw"/>
                     <constraint firstItem="3Uk-Nr-QHO" firstAttribute="trailing" secondItem="PIm-cJ-6qp" secondAttribute="trailing" id="YHE-6Z-NTH"/>
                     <constraint firstItem="w5U-vt-3Wp" firstAttribute="trailing" secondItem="3Uk-Nr-QHO" secondAttribute="trailing" id="ZHF-Gi-Q02"/>
                     <constraint firstItem="SZ2-qy-98t" firstAttribute="trailing" secondItem="BfP-h3-VJ1" secondAttribute="trailing" id="c0S-lZ-AOf"/>
@@ -156,7 +156,7 @@
                     <constraint firstItem="SZ2-qy-98t" firstAttribute="leading" secondItem="Sqn-lS-unF" secondAttribute="leadingMargin" constant="51" id="wLh-dX-Fgx"/>
                     <constraint firstItem="SZ2-qy-98t" firstAttribute="leading" secondItem="2Oj-o0-0Dr" secondAttribute="leading" id="weE-If-Q2Q"/>
                     <constraint firstItem="2Oj-o0-0Dr" firstAttribute="top" secondItem="A6F-vO-HpP" secondAttribute="bottom" constant="43" id="xFp-mk-g7o"/>
-                    <constraint firstItem="Y0w-qH-RI3" firstAttribute="top" secondItem="SZ2-qy-98t" secondAttribute="bottom" constant="8" symbolic="YES" id="xKJ-4K-yoA"/>
+                    <constraint firstItem="Y0w-qH-RI3" firstAttribute="top" secondItem="SZ2-qy-98t" secondAttribute="bottom" constant="7" id="xKJ-4K-yoA"/>
                     <constraint firstItem="SZ2-qy-98t" firstAttribute="top" secondItem="egZ-g6-PIm" secondAttribute="bottom" constant="24" id="zSd-fj-Ch4"/>
                 </constraints>
                 <variation key="default">

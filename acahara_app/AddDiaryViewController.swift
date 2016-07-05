@@ -12,10 +12,11 @@ import AssetsLibrary
 import Photos
 import AVFoundation
 
+var imagecount = 0
 
 
 
-class AddDiaryViewController: UIViewController, UITextViewDelegate,UIImagePickerControllerDelegate,UINavigationControllerDelegate{
+class AddDiaryViewController: UIViewController, UITextViewDelegate,UIImagePickerControllerDelegate,UINavigationControllerDelegate,QBImagePickerControllerDelegate {
     
     @IBOutlet weak var header: UIView!
 
@@ -24,6 +25,9 @@ class AddDiaryViewController: UIViewController, UITextViewDelegate,UIImagePicker
     @IBOutlet weak var cancelBtn: UIButton!
 
     @IBOutlet weak var saveBtn: UIImageView!
+    
+    var selectedPhoto:[String] = []
+    var selectedMovie:[String] = []
 
     
     //起動画面サイズの取得
@@ -174,14 +178,22 @@ class AddDiaryViewController: UIViewController, UITextViewDelegate,UIImagePicker
     
     //photoCoverBtnがタップされた時、写真を選択できる一覧を表示
     func onClickPhotoButton(sender: UIButton){
+ 
+        let picker = QBImagePickerController()
+        picker.delegate = self
         
+        picker.allowsMultipleSelection = true;
+        //        picker.minimumNumberOfSelection = 1;
+        //        picker.maximumNumberOfSelection = 1;
         
-        var photoPick = UIImagePickerController()
-            
-            photoPick.delegate = self
-            
-            photoPick.sourceType = .PhotoLibrary
-            self.presentViewController(photoPick, animated: true, completion: nil)
+        picker.assetCollectionSubtypes = [
+            PHAssetCollectionSubtype.SmartAlbumUserLibrary.rawValue,
+            PHAssetCollectionSubtype.AlbumMyPhotoStream.rawValue
+        ];
+        
+        presentViewController(picker, animated: true, completion: nil)
+
+    
         }
     
     //movieCoverBtnがタップされた時、動画を選択できる一覧を表示
@@ -198,47 +210,103 @@ class AddDiaryViewController: UIViewController, UITextViewDelegate,UIImagePicker
         
     }
     
-    //写真や画像をリストから選択した時の処理。ユーザーデフォルトに選択したデータへのパスをセット
-    func imagePickerController(imagePicker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {
-            
-            
-            
-        // ユーザーデフォルトを用意する
-        var myDefault = NSUserDefaults.standardUserDefaults()
-            
-            
-        let strTypeMovie:String = kUTTypeMovie as! String
-            
-            if info[UIImagePickerControllerMediaType] as! String == strTypeMovie{
-                //動画
-                var url:NSURL = info[UIImagePickerControllerMediaURL] as! NSURL
-                
-                var strURL:String = url.description//こうすると文字列型に変換できる
-                
-                
-                
-                // データを書き込んで
-                myDefault.setObject(strURL, forKey: "selectedMovieURL")
-                
-                
-                
-                
-            }else{
-                let assetURL:AnyObject = info[UIImagePickerControllerReferenceURL]!
-                
-                var strURL:String = assetURL.description
-                
-                
-                // データを書き込んで
-                myDefault.setObject(strURL, forKey: "selectedPhotoURL")
-                
-            }
-            // 即反映させる
-            myDefault.synchronize()
-            //　選択画面を落とす
-            self.dismissViewControllerAnimated(true, completion: nil)
+    
+    func qb_imagePickerController(imagePickerController: QBImagePickerController, didFinishPickingAssets assets: [AnyObject]) {
         
+        imagecount = 0
+        var photoURLArray:[String] = []
+        
+        for asset in assets {
+            var asset_each = asset as! PHAsset
+            imagecount++
+            
+            //URL取得の場合
+            print(asset_each.description)
+
+            photoURLArray.append(asset_each.description)
+            
+            //画像表示の場合
+//            let manager: PHImageManager = PHImageManager()
+//            manager.requestImageForAsset(asset as! PHAsset,targetSize: CGSizeMake(200, 200),contentMode: .AspectFit,options: nil) { (image, info) -> Void in
+//                
+//                switch self.imagecount {
+//                case 1:
+//                    self.imageView1.image = image
+//                    break
+//                case 2:
+//                    self.imageView2.image = image
+//                    break
+//                case 3:
+//                    self.imageView3.image = image
+//                    break
+//                case 4:
+//                    self.imageView4.image = image
+//                    break
+//                default:
+//                    break
+//                }
+//                
+//            }
+        }
+        
+        
+        //UserDefaultに配列を保存
+        
+        var myDefalut = NSUserDefaults.standardUserDefaults()
+        myDefalut.setObject(photoURLArray, forKey: "photoURLArray")
+        
+        
+        dismissViewControllerAnimated(true, completion: nil)
+    
     }
+    
+    
+    //写真や画像をリストから選択した時の処理。ユーザーデフォルトに選択したデータへのパスをセット
+//    func imagePickerController(imagePicker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {
+//            
+//            
+//            
+//        // ユーザーデフォルトを用意する
+//        var myDefault = NSUserDefaults.standardUserDefaults()
+//            
+//            
+//        let strTypeMovie:String = kUTTypeMovie as! String
+//            
+//            if info[UIImagePickerControllerMediaType] as! String == strTypeMovie{
+//                //動画
+//                var url:NSURL = info[UIImagePickerControllerMediaURL] as! NSURL
+//                
+//                var strURL:String = url.description//こうすると文字列型に変換できる
+//                
+//
+//                
+//                //ここで配列にappendする
+//                
+//                selectedPhoto.append(strURL)
+//                
+//                // データを書き込んで
+//                myDefault.setObject(strURL, forKey: "selectedMovieList")
+//                
+//                
+//                
+//                
+//            }else{
+//                let assetURL:AnyObject = info[UIImagePickerControllerReferenceURL]!
+//                
+//                var strURL:String = assetURL.description
+//                
+//                
+//                // データを書き込んで
+//                myDefault.setObject(strURL, forKey: "selectedPhotoList")
+//                
+//            }
+//        
+//            // 即反映させる
+//            myDefault.synchronize()
+//            //　選択画面を落とす
+//            self.dismissViewControllerAnimated(true, completion: nil)
+//        
+//    }
     
     
 

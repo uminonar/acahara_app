@@ -18,7 +18,7 @@ class AddTableViewController: UIViewController,UITableViewDelegate,UITableViewDa
     @IBOutlet weak var saveBtn: UIImageView!
     @IBOutlet weak var cancelBtn: UIButton!
   
-
+  
     
     var expandflag = false
     var rownumber = 2
@@ -33,7 +33,7 @@ class AddTableViewController: UIViewController,UITableViewDelegate,UITableViewDa
     
 //    let AddDiaryVC = UIStoryboard(name: "Main",bundle: nil).instantiateViewControllerWithIdentifier("AddDiaryViewController") as UIViewController
     
-    var myAp = UIApplication.sharedApplication()
+    var myApp = UIApplication.sharedApplication()
     .delegate as! AppDelegate
     
     
@@ -145,21 +145,22 @@ class AddTableViewController: UIViewController,UITableViewDelegate,UITableViewDa
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
 
             var myDefault = NSUserDefaults.standardUserDefaults()
-            var strURL = myDefault.stringForKey("selectedPhotoURL")
-            var strMURL = myDefault.stringForKey("selectedMovieURL")
+            var photoURLArray = myDefault.objectForKey("photoURLArray")
+            var strMURL = myDefault.objectForKey("selectedMovieURL")
 
-            if (strURL != nil && self.myAp.photoURL == "") {
+            if (photoURLArray!.count != 0 && self.myApp.photoURLArray.count == 0) {
                 
                 self.rownumber++
                 
-                self.myAp.photoURL = strURL!
+                self.myApp.photoURLArray = photoURLArray! as! NSArray as! [String]
+                
             }
             
-            if (strMURL != nil && self.myAp.movieURL == ""){
+            if (strMURL != nil && self.myApp.movieURL == ""){
                 
                 rownumber++
                 
-                self.myAp.movieURL = strMURL!
+                self.myApp.movieURL = strMURL! as! String
             }
         
        
@@ -448,14 +449,26 @@ class AddTableViewController: UIViewController,UITableViewDelegate,UITableViewDa
         
             if adjustrow_no == 2{
                 var myDefault = NSUserDefaults.standardUserDefaults()
-                var strURL = myDefault.stringForKey("selectedPhotoURL")
+                var photoURLArray = myDefault.objectForKey("photoURLArray") as! NSArray
                 
-                if strURL != nil{
-
+                
+                
+                
+               // if strURL != nil{
+                if photoURLArray.count > 0 {
                     var cell:photoTableViewCell = tableView.dequeueReusableCellWithIdentifier("photoCell", forIndexPath: indexPath) as! photoTableViewCell
                     
                     
-                    var url = NSURL(string: strURL as! String!)
+                  //   var photoView = selectedPhotoList[indexPath.row] as! String
+                    
+                    
+                    
+                    for strURL in photoURLArray{
+                        print(strURL)
+
+                    
+                       
+                    var url = NSURL(string: strURL as! String )
                     let fetchResult: PHFetchResult = PHAsset.fetchAssetsWithALAssetURLs([url!], options: nil)
                     
                     if fetchResult.firstObject != nil{
@@ -472,7 +485,8 @@ class AddTableViewController: UIViewController,UITableViewDelegate,UITableViewDa
                                 cell.formPhoto.image = image
                             
 //                              cell.picCancelBtn.hidden = false
-                            }
+                        }
+                        }
                     }
 
                     return cell
@@ -481,7 +495,7 @@ class AddTableViewController: UIViewController,UITableViewDelegate,UITableViewDa
                     var cell:movieTableViewCell = tableView.dequeueReusableCellWithIdentifier("movieCell", forIndexPath: indexPath) as! movieTableViewCell
                     
                     var myDefault = NSUserDefaults.standardUserDefaults()
-                    var strMovURL = myDefault.stringForKey("selectedMovieURL")
+                    var strMovURL = myDefault.stringForKey("selectedMovieList")
                     
                     var url = NSURL(string: strMovURL as! String!)
                     
@@ -510,7 +524,7 @@ class AddTableViewController: UIViewController,UITableViewDelegate,UITableViewDa
                 var cell:movieTableViewCell = tableView.dequeueReusableCellWithIdentifier("movieCell", forIndexPath: indexPath) as! movieTableViewCell
                 
                 var myDefault = NSUserDefaults.standardUserDefaults()
-                var strMovURL = myDefault.stringForKey("selectedMovieURL")
+                var strMovURL = myDefault.stringForKey("selectedMovieList")
                 
                 var url = NSURL(string: strMovURL as! String!)
                 
@@ -625,7 +639,7 @@ class AddTableViewController: UIViewController,UITableViewDelegate,UITableViewDa
 //        
 //            }
 //    
-        
+        //なんでも良いので入れる　ここが６で反映されてしまっている？
         
          var cell:photoTableViewCell = tableView.dequeueReusableCellWithIdentifier("photoCell", forIndexPath: indexPath) as! photoTableViewCell
         return cell
@@ -974,8 +988,8 @@ class AddTableViewController: UIViewController,UITableViewDelegate,UITableViewDa
         
         myDefault.synchronize()
         
-        self.myAp.photoURL = ""
-        self.myAp.movieURL = ""
+        self.myApp.photoURLArray = []
+        self.myApp.movieURL = ""
         
         //ここはどうする？ reload()
 //        addWhen.text=""
@@ -1081,8 +1095,8 @@ class AddTableViewController: UIViewController,UITableViewDelegate,UITableViewDa
             //即反映させる
             myDefault.synchronize()
             
-            self.myAp.photoURL = ""
-            self.myAp.movieURL = ""
+            self.myApp.photoURLArray = []
+            self.myApp.movieURL = ""
             
             //前ページに遷移する　モーダル画面じゃなくので、dismissじゃないバージョン　後学のため残す
             //navigationController?.popViewControllerAnimated(true)
@@ -1153,7 +1167,7 @@ class AddTableViewController: UIViewController,UITableViewDelegate,UITableViewDa
 //            addTableView.contentOffset = CGPointMake(0,300);
             
             //ユーザーデフォルトを用意する
-            var myDefault = NSUserDefaults.standardUserDefaults()
+            let myDefault = NSUserDefaults.standardUserDefaults()
             
             //データを書き込んで
             myDefault.setObject(textField.text, forKey:
