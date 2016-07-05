@@ -468,7 +468,7 @@ class AddTableViewController: UIViewController,UITableViewDelegate,UITableViewDa
 
                     
                        
-                    var url = NSURL(string: strURL as! String )
+                    var url = NSURL(string: strURL as! String)
                     let fetchResult: PHFetchResult = PHAsset.fetchAssetsWithALAssetURLs([url!], options: nil)
                     
                     if fetchResult.firstObject != nil{
