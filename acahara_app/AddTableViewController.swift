@@ -17,9 +17,9 @@ class AddTableViewController: UIViewController,UITableViewDelegate,UITableViewDa
 
     @IBOutlet weak var saveBtn: UIImageView!
     @IBOutlet weak var cancelBtn: UIButton!
-  
-  
     
+  
+    var countNum = 0
     var expandflag = false
     var rownumber = 2
     
@@ -148,11 +148,11 @@ class AddTableViewController: UIViewController,UITableViewDelegate,UITableViewDa
             var photoURLArray = myDefault.objectForKey("photoURLArray")
             var strMURL = myDefault.objectForKey("selectedMovieURL")
 
-            if (photoURLArray!.count != 0 && self.myApp.photoURLArray.count == 0) {
+            if (photoURLArray != nil && self.myApp.photoURLArray == false) {
                 
                 self.rownumber++
                 
-                self.myApp.photoURLArray = photoURLArray! as! NSArray as! [String]
+                self.myApp.photoURLArray = true
                 
             }
             
@@ -452,44 +452,78 @@ class AddTableViewController: UIViewController,UITableViewDelegate,UITableViewDa
                 var photoURLArray = myDefault.objectForKey("photoURLArray") as! NSArray
                 
                 
-                
+               
+
                 
                // if strURL != nil{
                 if photoURLArray.count > 0 {
                     var cell:photoTableViewCell = tableView.dequeueReusableCellWithIdentifier("photoCell", forIndexPath: indexPath) as! photoTableViewCell
                     
                     
-                  //   var photoView = selectedPhotoList[indexPath.row] as! String
+                    var arrayNum = photoURLArray.count
                     
+                    //スクロールが走る表示全体サイズを指定。写真の150幅に、20の余白で170
+                    let scrViewWidth:CGFloat = CGFloat(170 * arrayNum )
+                    cell.scrView.contentSize = CGSizeMake(scrViewWidth, 150)
+
                     
-                    
+//                    countNum = 0
                     for strURL in photoURLArray{
                         print(strURL)
-
-                    
-                       
-                    var url = NSURL(string: strURL as! String)
-                    let fetchResult: PHFetchResult = PHAsset.fetchAssetsWithALAssetURLs([url!], options: nil)
-                    
-                    if fetchResult.firstObject != nil{
+   
+                        var url = NSURL(string: strURL as! String)
                         
+                        let fetchResult: PHFetchResult = PHAsset.fetchAssetsWithALAssetURLs([url!], options: nil)
+                        
+                        if fetchResult.firstObject != nil{
+                            
                             let asset: PHAsset = fetchResult.firstObject as! PHAsset
-                        
-                        
+                            
+                            
                             print("pixelWidth:\(asset.pixelWidth)");
                             print("pixelHeight:\(asset.pixelHeight)");
-                        
+                            
                             let manager: PHImageManager = PHImageManager()
-                            manager.requestImageForAsset(asset,targetSize: CGSizeMake(5, 500),contentMode: .AspectFill,options: nil) { (image, info) -> Void in
-                            
-                                cell.formPhoto.image = image
-                            
-//                              cell.picCancelBtn.hidden = false
+                            manager.requestImageForAsset(asset,targetSize: CGSizeMake(5, 500),contentMode: .AspectFit,options: nil) { (image, info) -> Void in
+                                
+                                //imageViewのaspectFitをつける必要がある？このままで良いかも
+                                var imageView = UIImageView()
+                                //各写真イメージのX座標開始位置をpositionXとする。150幅に、20の余白で170
+                                var positionX:CGFloat = CGFloat(170 * self.countNum)
+                                //写真の位置サイズ指定
+                                imageView.frame = CGRectMake(positionX, 0, 150, 150)
+                                imageView.image = image
+                                cell.scrView.addSubview(imageView)
+                                
+                                //写真をキャンセルするボタンイメージを各写真に設置する
+                                var picCancelImage = UIImageView()
+                                
+                                picCancelImage.frame = CGRectMake(positionX+125,0,25,25)
+                                picCancelImage.image = UIImage(named:"cancel-red")
+                                cell.scrView.addSubview(picCancelImage)
+                                
+                                //キャンセルボタンの位置に透明ボタンを被せて配置する
+                                var picCancelBtn = UIButton()
+                                picCancelBtn.setTitle("", forState: .Normal)
+                                picCancelBtn.frame = CGRectMake(positionX+125, 0, 25, 25)
+                                picCancelBtn.addTarget(self, action: "tapCancel:", forControlEvents:.TouchUpInside)
+                                cell.scrView.addSubview(picCancelBtn)
+                                
+                                
+//                                self.countNum++
+                                
+                                
+                                //                              cell.picCancelBtn.hidden = false
+                            }
                         }
-                        }
+   
                     }
+                    
+                    
 
                     return cell
+                    
+                    
 
                 }else{
                     var cell:movieTableViewCell = tableView.dequeueReusableCellWithIdentifier("movieCell", forIndexPath: indexPath) as! movieTableViewCell
@@ -988,7 +1022,7 @@ class AddTableViewController: UIViewController,UITableViewDelegate,UITableViewDa
         
         myDefault.synchronize()
         
-        self.myApp.photoURLArray = []
+        self.myApp.photoURLArray = false
         self.myApp.movieURL = ""
         
         //ここはどうする？ reload()
@@ -1095,7 +1129,7 @@ class AddTableViewController: UIViewController,UITableViewDelegate,UITableViewDa
             //即反映させる
             myDefault.synchronize()
             
-            self.myApp.photoURLArray = []
+            self.myApp.photoURLArray = false
             self.myApp.movieURL = ""
             
             //前ページに遷移する　モーダル画面じゃなくので、dismissじゃないバージョン　後学のため残す
@@ -1186,6 +1220,39 @@ class AddTableViewController: UIViewController,UITableViewDelegate,UITableViewDa
     // セルの選択を禁止する
     func tableView(tableView: UITableView, willSelectRowAtIndexPath indexPath: NSIndexPath) -> NSIndexPath? {
         return nil;
+    }
+    
+    
+    //写真のキャンセルボタンがタップされた時に、その写真を消す処理
+    func tapCancel(sender:UIButton){
+        
+        print("cancel")
+        
+        var xPosition = sender.frame.origin.x
+        
+        var picPostionX = xPosition - 125
+        
+        var numOfPic = picPostionX/170
+        
+        var myDefault = NSUserDefaults.standardUserDefaults()
+        var photoURLArray = myDefault.objectForKey("photoURLArray") as! NSArray
+        var copiedPhotoURLArray:[NSArray] = photoURLArray as! [NSArray]
+        var photoArray = NSMutableArray(array: copiedPhotoURLArray) as! NSMutableArray
+        
+        photoArray.removeObjectAtIndex(Int(numOfPic)) as! NSMutableArray
+        
+        print(photoURLArray)
+        
+        
+        myDefault.setObject(photoArray, forKey: "photoURLArray")
+        
+        
+        //ここわからないから全体をリロードひとまずする
+//        let row = NSIndexPath(forRow: 3, inSection: 0)
+//        addTableView.reloadRowsAtIndexPaths([row], withRowAnimation: UITableViewRowAnimation.Fade)
+        addTableView.reloadData()
+ 
+        
     }
     
 

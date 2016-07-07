@@ -226,7 +226,7 @@ class AssistTableViewController: UIViewController,UITableViewDelegate,UITableVie
                             cell.friend.addTarget(self, action:Selector("insert:"), forControlEvents:UIControlEvents.TouchUpInside)
                             cell.friend.tag = 600//friend
             
-                            var personT = ["professor":"教授","assailant":"加害者","committee":"委員会","psycotherapist":"心理療法士","lawyer":"弁護士","friend":"友達"]
+                            var personT = ["professor":"教授","assailant":"当事者","committee":"委員会","psycotherapist":"心理療法士","lawyer":"弁護士","friend":"友達"]
             
                             var pType  = myDefault.stringForKey("selectedAdvisor")
             
@@ -375,7 +375,9 @@ class AssistTableViewController: UIViewController,UITableViewDelegate,UITableVie
         
         
         //ここは何でも良い。使われないけどcellを指定してreturn書かないとエラーが出る。例外処理。
-         var cell:assistInfoDetailTableViewCell = tableView.dequeueReusableCellWithIdentifier("assistInfoDetailCell", forIndexPath: indexPath) as! assistInfoDetailTableViewCell
+        var cell:makeURLTableViewCell = tableView.dequeueReusableCellWithIdentifier("makeURLCell", forIndexPath: indexPath) as! makeURLTableViewCell
+        
+        
         return cell
     }
     
@@ -624,7 +626,7 @@ class AssistTableViewController: UIViewController,UITableViewDelegate,UITableVie
         if indexPath.row == 1 {
             
             if expandflag{
-                return 450
+                return 540
             }else{
             
                 return 482
@@ -659,7 +661,7 @@ class AssistTableViewController: UIViewController,UITableViewDelegate,UITableVie
         }
         
         
-        
+      
         if indexPath.row == 3 + posts.count {
             
             return 200
@@ -667,7 +669,9 @@ class AssistTableViewController: UIViewController,UITableViewDelegate,UITableVie
             
         }
         
-        return 1
+    
+        
+        return 200
     }
   
 

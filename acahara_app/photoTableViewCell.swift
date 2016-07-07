@@ -9,18 +9,24 @@
 import UIKit
 
 class photoTableViewCell: UITableViewCell {
+    
+    //起動画面サイズの取得
+    let myBoundsize:CGSize = UIScreen.mainScreen().bounds.size
 
-    @IBOutlet weak var formPhoto: UIImageView!
+    //UIScrollViewを作成します
+    let scrView = UIScrollView()
+    
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         
         
-        //UIScrollViewを作成します
-        let scrView = UIScrollView()
+        
         
         
         //表示位置,100は初期値       
-        scrView.frame = CGRectMake(20, 50, 100, 125)
+        scrView.frame = CGRectMake(15, 20, myBoundsize.width-30, 150)
+//        scrView.backgroundColor = UIColor.grayColor()
         
         
         

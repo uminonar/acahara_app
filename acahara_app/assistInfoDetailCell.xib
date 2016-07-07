@@ -8,61 +8,77 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="450" id="1hM-lo-4YG" customClass="assistInfoDetailTableViewCell" customModule="acahara_app" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="320" height="430"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="540" id="1hM-lo-4YG" customClass="assistInfoDetailTableViewCell" customModule="acahara_app" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="540"/>
             <autoresizingMask key="autoresizingMask"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="1hM-lo-4YG" id="nnM-PE-PGe">
-                <rect key="frame" x="0.0" y="0.0" width="320" height="429"/>
+                <rect key="frame" x="0.0" y="0.0" width="320" height="539"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="「...もう駄目だ。」と思ったらこのサービスを利用してください。アカハラ被害を記録した後で誰かに相談するとき、被害者が何度も繰り返し説明を強いられ、追体験しないで済むように作られました。" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3iB-f3-M99">
-                        <rect key="frame" x="21" y="13" width="291" height="94"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstAttribute="height" constant="94" id="XBU-pz-3su"/>
-                        </constraints>
-                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                    </textView>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="troubled_s.png" translatesAutoresizingMaskIntoConstraints="NO" id="4SN-yj-KXq">
-                        <rect key="frame" x="131" y="115" width="72" height="70"/>
-                        <constraints>
-                            <constraint firstAttribute="width" constant="72" id="Kwy-z2-tJY"/>
-                            <constraint firstAttribute="height" constant="70" id="jks-ZH-z58"/>
-                        </constraints>
-                    </imageView>
-                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="やり方は簡単です！まず、相談したい相手方のタイプを選んでください。そうすると相談内容の雛形が現れます。それを編集してください。次に、相談者に見せたい記録内容を選んでください。あとは送信するだけです。" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Vfr-bB-aLb">
-                        <rect key="frame" x="21" y="203" width="283" height="98"/>
+                    <textView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" editable="NO" text="「...もう駄目だ。」と思ったらこのサービスを利用してください。アカハラ被害を記録した後で誰かに相談するとき、被害者が何度も繰り返し説明を強いられ、追体験しないで済むように作られました。" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3iB-f3-M99">
+                        <rect key="frame" x="13" y="15" width="291" height="100"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <fontDescription key="fontDescription" type="system" pointSize="13"/>
                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                     </textView>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="happy_s.png" translatesAutoresizingMaskIntoConstraints="NO" id="Fq9-RJ-AEC">
-                        <rect key="frame" x="134" y="315" width="69" height="70"/>
+                        <rect key="frame" x="128" y="326" width="69" height="70"/>
                         <constraints>
-                            <constraint firstAttribute="width" constant="69" id="5pB-Yt-yyK"/>
-                            <constraint firstAttribute="height" constant="70" id="7NU-FY-zXd"/>
+                            <constraint firstAttribute="height" constant="70" id="5Xy-cc-9nP"/>
+                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="70" id="FqS-KH-pUp"/>
+                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="69" id="Qsk-HK-7dE"/>
+                            <constraint firstAttribute="width" constant="69" id="kmg-Bp-Aoc"/>
                         </constraints>
                     </imageView>
+                    <textView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" text="そうすると相談相手に見せたい「記録一覧」を含んだ、「特別な相談サイト」が作られます。一般公開はされていません。メール送信ボタンをタップすると、相談相手にあなたのメールアドレスからメールが送信されます。" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="hvP-Wo-aK5">
+                        <rect key="frame" x="21" y="419" width="283" height="94"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="94" id="fbO-tk-Zu7"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                    </textView>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="troubled_s.png" translatesAutoresizingMaskIntoConstraints="NO" id="4SN-yj-KXq">
+                        <rect key="frame" x="126" y="123" width="72" height="70"/>
+                        <constraints>
+                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="72" id="5uv-8K-9sp"/>
+                            <constraint firstAttribute="height" constant="70" id="LGb-YU-WxH"/>
+                            <constraint firstAttribute="width" constant="72" id="W6s-Gn-VtH"/>
+                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="70" id="gPi-Ly-8bM"/>
+                        </constraints>
+                    </imageView>
+                    <textView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" text="やり方は簡単です！まず、相談相手のタイプを選んでください。相談内容の雛形が現れるので、それを編集してください。次に、相談者に見せたい投稿記録を一覧から選び、一番下の「相談サイトを作成する」をタップしてください。" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Vfr-bB-aLb">
+                        <rect key="frame" x="21" y="215" width="283" height="110"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                    </textView>
                 </subviews>
                 <constraints>
-                    <constraint firstItem="Vfr-bB-aLb" firstAttribute="top" secondItem="4SN-yj-KXq" secondAttribute="bottom" constant="18" id="8tP-o8-oXs"/>
-                    <constraint firstItem="4SN-yj-KXq" firstAttribute="top" secondItem="3iB-f3-M99" secondAttribute="bottom" constant="8" symbolic="YES" id="96I-OR-j7o"/>
-                    <constraint firstItem="Fq9-RJ-AEC" firstAttribute="top" secondItem="Vfr-bB-aLb" secondAttribute="bottom" constant="14" id="CKL-60-cq2"/>
-                    <constraint firstItem="4SN-yj-KXq" firstAttribute="trailing" secondItem="Fq9-RJ-AEC" secondAttribute="trailing" id="GMw-k5-4Nc"/>
-                    <constraint firstItem="3iB-f3-M99" firstAttribute="top" secondItem="nnM-PE-PGe" secondAttribute="topMargin" constant="5" id="GmC-PA-ltO"/>
-                    <constraint firstItem="3iB-f3-M99" firstAttribute="leading" secondItem="nnM-PE-PGe" secondAttribute="leadingMargin" constant="13" id="QNU-tJ-9uB"/>
-                    <constraint firstAttribute="bottomMargin" secondItem="Fq9-RJ-AEC" secondAttribute="bottom" constant="36" id="Vuk-QQ-4Gr"/>
-                    <constraint firstItem="3iB-f3-M99" firstAttribute="trailing" secondItem="nnM-PE-PGe" secondAttribute="trailingMargin" id="WIL-hc-yNV"/>
-                    <constraint firstItem="3iB-f3-M99" firstAttribute="leading" secondItem="Vfr-bB-aLb" secondAttribute="leading" id="bpE-qu-AVT"/>
-                    <constraint firstItem="3iB-f3-M99" firstAttribute="centerX" secondItem="4SN-yj-KXq" secondAttribute="centerX" id="zd0-gh-xCg"/>
-                    <constraint firstAttribute="trailingMargin" secondItem="Vfr-bB-aLb" secondAttribute="trailing" constant="8" id="zjT-FN-3LE"/>
+                    <constraint firstItem="3iB-f3-M99" firstAttribute="leading" secondItem="nnM-PE-PGe" secondAttribute="leadingMargin" constant="5" id="1AN-QG-ZsL"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="3iB-f3-M99" secondAttribute="trailing" constant="8" id="1Ve-iD-fgq"/>
+                    <constraint firstItem="Vfr-bB-aLb" firstAttribute="leading" secondItem="nnM-PE-PGe" secondAttribute="leadingMargin" constant="13" id="KzO-Cz-6Ig"/>
+                    <constraint firstItem="Vfr-bB-aLb" firstAttribute="top" secondItem="4SN-yj-KXq" secondAttribute="bottom" constant="22" id="OwH-bf-dYZ"/>
+                    <constraint firstItem="Vfr-bB-aLb" firstAttribute="centerX" secondItem="Fq9-RJ-AEC" secondAttribute="centerX" id="QDR-HR-0FY"/>
+                    <constraint firstItem="Fq9-RJ-AEC" firstAttribute="top" secondItem="Vfr-bB-aLb" secondAttribute="bottom" constant="1" id="S7L-nU-NZl"/>
+                    <constraint firstItem="Vfr-bB-aLb" firstAttribute="leading" secondItem="hvP-Wo-aK5" secondAttribute="leading" id="Th7-7U-Max"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="hvP-Wo-aK5" secondAttribute="bottom" constant="18" id="VIg-H2-LX1"/>
+                    <constraint firstItem="Vfr-bB-aLb" firstAttribute="centerY" secondItem="nnM-PE-PGe" secondAttribute="centerY" id="bgv-Ul-Rok"/>
+                    <constraint firstItem="3iB-f3-M99" firstAttribute="trailing" secondItem="Vfr-bB-aLb" secondAttribute="trailing" id="fOF-xD-K4n"/>
+                    <constraint firstItem="4SN-yj-KXq" firstAttribute="top" secondItem="3iB-f3-M99" secondAttribute="bottom" constant="8" symbolic="YES" id="kzo-Tn-A3G"/>
+                    <constraint firstItem="Vfr-bB-aLb" firstAttribute="trailing" secondItem="hvP-Wo-aK5" secondAttribute="trailing" id="qPa-0M-GAu"/>
+                    <constraint firstItem="hvP-Wo-aK5" firstAttribute="top" secondItem="Fq9-RJ-AEC" secondAttribute="bottom" constant="23" id="tG6-dx-zHo"/>
+                    <constraint firstItem="3iB-f3-M99" firstAttribute="top" secondItem="nnM-PE-PGe" secondAttribute="topMargin" constant="7" id="vGa-TC-XjQ"/>
+                    <constraint firstItem="4SN-yj-KXq" firstAttribute="centerX" secondItem="Vfr-bB-aLb" secondAttribute="centerX" id="yJo-yK-q4S"/>
                 </constraints>
             </tableViewCellContentView>
             <connections>
-                <outlet property="assistInfoDetail" destination="3iB-f3-M99" id="bzh-52-cSF"/>
+                <outlet property="infoSentence1" destination="3iB-f3-M99" id="b7L-dy-CVf"/>
+                <outlet property="infoSentence2" destination="Vfr-bB-aLb" id="klv-6k-wrh"/>
+                <outlet property="infoSentence3" destination="hvP-Wo-aK5" id="5il-Ih-CGh"/>
             </connections>
-            <point key="canvasLocation" x="196" y="312"/>
+            <point key="canvasLocation" x="196" y="367"/>
         </tableViewCell>
     </objects>
     <resources>

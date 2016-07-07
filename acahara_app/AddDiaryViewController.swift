@@ -214,16 +214,31 @@ class AddDiaryViewController: UIViewController, UITextViewDelegate,UIImagePicker
     func qb_imagePickerController(imagePickerController: QBImagePickerController, didFinishPickingAssets assets: [AnyObject]) {
         
         imagecount = 0
-        var photoURLArray:[String] = []
+        var photoURLArray = NSMutableArray()
         
         for asset in assets {
             var asset_each = asset as! PHAsset
             imagecount++
             
             //URL取得の場合
-            print(asset_each.description)
-
-            photoURLArray.append(asset_each.description)
+//            print(asset_each.description)
+//
+//            photoURLArray.append(asset_each.description)
+            
+            //配列にして入れる関数 asset_each.descriptionをpoした場合に、ある情報を３つの配列に分ける。
+            let urlArray = asset_each.description.componentsSeparatedByString("/")
+            
+            let urlArray2 = urlArray[0].componentsSeparatedByString(" ")
+            
+//            photoURLArray.append("assets-library://asset/asset.JPG?id="+urlArray2[2]+"&ext=JPG")
+           
+            let assetURL = "assets-library://asset/asset.JPG?id="+urlArray2[2]+"&ext=JPG"
+            print(assetURL)
+            
+            
+//            photoURLArray.addObject(assetURL) as! NSMutableArray これはエラーが出てできなかった arrayで入れても、AddTableVC側でObjectForKeyで引き出すとき、as! NSArrayをつけないとエラーが出た。そのため下記ではそのようにあらかじめ指定。
+            photoURLArray.addObject(assetURL) as! NSArray
+           
             
             //画像表示の場合
 //            let manager: PHImageManager = PHImageManager()

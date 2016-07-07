@@ -11,7 +11,7 @@ import UIKit
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate,SSASideMenuDelegate  {
     
-    var photoURLArray:[String] = []
+    var photoURLArray = false
     var movieURL = ""
  
 
