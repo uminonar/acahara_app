@@ -29,6 +29,7 @@ class DetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+
         detailSelfee.image = UIImage(named: "selfee.JPG")
         
        
@@ -50,17 +51,14 @@ class DetailViewController: UIViewController {
         detailWho.text = dic["who"] as! String
         detailUniversity.text = dic["university"] as! String
         detailTextView.text = dic["diary"] as! String
-        
-        detailTextView.font = UIFont.systemFontOfSize(15)
-        
-        
+ 
         
         let style = NSMutableParagraphStyle()
-        style.lineSpacing = 6
+        style.lineSpacing = 5
         let attributes = [NSParagraphStyleAttributeName : style]
         detailTextView.attributedText = NSAttributedString(string: detailTextView.text,
                                                            attributes: attributes)
-        
+        detailTextView.font = UIFont.systemFontOfSize(15)
         detailImageView.image = UIImage(named: dic["picture"] as! String)
 
         

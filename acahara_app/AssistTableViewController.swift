@@ -664,14 +664,14 @@ class AssistTableViewController: UIViewController,UITableViewDelegate,UITableVie
       
         if indexPath.row == 3 + posts.count {
             
-            return 200
+            return 100
             
             
         }
         
     
         
-        return 200
+        return 100
     }
   
 
