@@ -449,10 +449,7 @@ class AddTableViewController: UIViewController,UITableViewDelegate,UITableViewDa
         
             if adjustrow_no == 2{
                 var myDefault = NSUserDefaults.standardUserDefaults()
-                var photoURLArray = myDefault.objectForKey("photoURLArray") as! NSArray
-                
-                
-               
+                var photoURLArray = myDefault.objectForKey("photoURLArray") as! NSMutableArray
 
                 
                // if strURL != nil{
@@ -1016,7 +1013,7 @@ class AddTableViewController: UIViewController,UITableViewDelegate,UITableViewDa
 //        myDefault.removeObjectForKey("uniStr")
         myDefault.removeObjectForKey("diary")
         myDefault.removeObjectForKey("selectedMovieURL")
-        myDefault.removeObjectForKey("selectedPhotoURL")
+        
         myDefault.setObject("true", forKey: "cancel")
         myDefault.removeObjectForKey("stepAdd")
         

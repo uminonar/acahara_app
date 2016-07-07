@@ -182,7 +182,11 @@ class AddDiaryViewController: UIViewController, UITextViewDelegate,UIImagePicker
         let picker = QBImagePickerController()
         picker.delegate = self
         
-        picker.allowsMultipleSelection = true;
+        
+        //ここを写真だけ選択可能にしたい。falseにしても変わらない。どうすれば？
+        picker.allowsMultipleSelection = true
+        
+        
         //        picker.minimumNumberOfSelection = 1;
         //        picker.maximumNumberOfSelection = 1;
         
@@ -216,6 +220,9 @@ class AddDiaryViewController: UIViewController, UITextViewDelegate,UIImagePicker
         imagecount = 0
         var photoURLArray = NSMutableArray()
         
+        //保存前に再検索にきた時のために一度ここで空にしておきたい
+        photoURLArray.removeAllObjects()
+        
         for asset in assets {
             var asset_each = asset as! PHAsset
             imagecount++
@@ -236,9 +243,10 @@ class AddDiaryViewController: UIViewController, UITextViewDelegate,UIImagePicker
             print(assetURL)
             
             
-//            photoURLArray.addObject(assetURL) as! NSMutableArray これはエラーが出てできなかった arrayで入れても、AddTableVC側でObjectForKeyで引き出すとき、as! NSArrayをつけないとエラーが出た。そのため下記ではそのようにあらかじめ指定。
-            photoURLArray.addObject(assetURL) as! NSArray
-           
+            photoURLArray.addObject(assetURL) as! NSMutableArray
+            
+            
+  
             
             //画像表示の場合
 //            let manager: PHImageManager = PHImageManager()
