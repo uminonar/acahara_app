@@ -17,16 +17,17 @@ class homeTableViewCell: UITableViewCell {
     @IBOutlet weak var postWhere: UILabel!
     @IBOutlet weak var postWho: UILabel!
     @IBOutlet weak var postUniversity: UILabel!
-    @IBOutlet weak var postDiary: UITextView!
+
 
     @IBOutlet weak var postImageView: UIImageView!
     @IBOutlet weak var postMoreBtn: UIButton!
     @IBOutlet weak var postEllipsis: UIImageView!
     @IBOutlet weak var postEllipsisBtn: UIButton!
 
+    @IBOutlet weak var diaryLabel: UILabel!
     
     @IBOutlet weak var postImageViewBtn: UIButton!
-    @IBOutlet weak var postTextViewBtn: UIButton!
+
 
     
     override func awakeFromNib() {

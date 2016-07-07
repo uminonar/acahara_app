@@ -90,7 +90,7 @@ class ChosePostsViewController: UIViewController,UITableViewDelegate,UITableView
         cell.postWhere.text = posts[indexPath.row]["where"] as! String
         cell.postWho.text = posts[indexPath.row]["who"] as! String
         cell.postUniversity.text = posts[indexPath.row]["university"] as! String
-        cell.postDiary.text = posts[indexPath.row]["diary"] as! String
+        cell.diaryLabel.text = posts[indexPath.row]["diary"] as! String
         cell.postImageView.image = UIImage(named:(posts[indexPath.row]["picture"] as! String))
         
         //どうやったら.xibのイメージを非表示にできる？nilで行ける？

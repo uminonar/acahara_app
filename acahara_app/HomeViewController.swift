@@ -31,6 +31,11 @@ class HomeViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        //セルの高さを可変にする設定、テキストの長さ、写真の有無で可変にしたい
+        homeTableView.estimatedRowHeight = 90
+        homeTableView.rowHeight = UITableViewAutomaticDimension
+        
+        
         homeTableView.registerNib(UINib(nibName: "postCustomCell", bundle: nil), forCellReuseIdentifier: "postCustomCell")
 //        homeTableView.registerNib(UINib(nibName: "homeIntroCell", bundle: nil), forCellReuseIdentifier: "homeIntroCell")
         
@@ -130,7 +135,22 @@ class HomeViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
         cell.postWhere.text = posts[indexPath.row]["where"] as! String
         cell.postWho.text = posts[indexPath.row]["who"] as! String
         cell.postUniversity.text = posts[indexPath.row]["university"] as! String
-        cell.postDiary.text = posts[indexPath.row]["diary"] as! String
+        
+        
+        var diary = posts[indexPath.row]["diary"] as! String
+        var charCount = diary.characters.count
+        
+        if (charCount >= 106){
+            var abstractDiary =  (diary as NSString).substringToIndex(106)
+            cell.diaryLabel.text = abstractDiary + "..."
+        }else{
+            cell.diaryLabel.text = diary
+        }
+        
+        //冒頭から106取ってくる設定
+//        var abstractDiary = (diary as NSString).substringToIndex(106)
+        
+        
         
         //フォントサイズの調整
    
@@ -142,10 +162,10 @@ class HomeViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
         let style = NSMutableParagraphStyle()
         style.lineSpacing = 5
         let attributes = [NSParagraphStyleAttributeName : style]
-        cell.postDiary.attributedText = NSAttributedString(string: cell.postDiary.text,
+        cell.diaryLabel.attributedText = NSAttributedString(string: cell.diaryLabel.text!,
                                                       attributes: attributes)
         
-        cell.postDiary.font = UIFont.systemFontOfSize(15)
+        cell.diaryLabel.font = UIFont.systemFontOfSize(15)
    
         
         cell.postImageView.image = UIImage(named:(posts[indexPath.row]["picture"] as! String))
@@ -161,11 +181,11 @@ class HomeViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
             let paleBlue:UIColor = UIColor(red:0.914,green:0.941,blue:0.980,alpha:1.0)
 
             cell.backgroundColor = paleBlue
-            cell.postDiary.backgroundColor = paleBlue
+            cell.diaryLabel.backgroundColor = paleBlue
         
         }else{
             cell.backgroundColor = UIColor.whiteColor()
-            cell.postDiary.backgroundColor = UIColor.whiteColor()
+            cell.diaryLabel.backgroundColor = UIColor.whiteColor()
             
         }
         
@@ -179,8 +199,8 @@ class HomeViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
         cell.postMoreBtn.addTarget(self, action:"showMore:",forControlEvents:.TouchUpInside)
         cell.postMoreBtn.tag = indexPath.row
         
-        cell.postTextViewBtn.addTarget(self, action:"showMore:",forControlEvents: .TouchUpInside)
-        cell.postTextViewBtn.tag = indexPath.row
+//        cell.postTextViewBtn.addTarget(self, action:"showMore:",forControlEvents: .TouchUpInside)
+//        cell.postTextViewBtn.tag = indexPath.row
         
         cell.postImageViewBtn.addTarget(self, action: "showPicture:", forControlEvents: .TouchUpInside)
         cell.postImageViewBtn.tag = indexPath.row

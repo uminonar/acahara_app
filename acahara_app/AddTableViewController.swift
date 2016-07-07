@@ -88,8 +88,10 @@ class AddTableViewController: UIViewController,UITableViewDelegate,UITableViewDa
 //        let sakura:UIColor = UIColor(red:1.0,green:0.3,blue:0.3,alpha:1.0)
         saveBtn.tintColor = UIColor.whiteColor()
         
-    
-        
+        let sakuraPale:UIColor = UIColor(red:1.0,green:0.953,blue:0.910,alpha:1.0)
+
+        self.view.backgroundColor = sakuraPale
+
 
     }
     

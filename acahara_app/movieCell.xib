@@ -43,7 +43,7 @@
                 <outlet property="movieView" destination="GPv-bO-ELi" id="cwb-fp-gWh"/>
                 <outlet property="playBtn" destination="1yd-FC-aO0" id="Lw2-w5-pXl"/>
             </connections>
-            <point key="canvasLocation" x="210" y="223"/>
+            <point key="canvasLocation" x="311" y="159"/>
         </tableViewCell>
     </objects>
     <resources>

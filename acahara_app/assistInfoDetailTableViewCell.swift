@@ -34,7 +34,7 @@ class assistInfoDetailTableViewCell: UITableViewCell {
         let attributes2 = [NSParagraphStyleAttributeName : style2]
         infoSentence2.attributedText = NSAttributedString(string: infoSentence1.text,attributes: attributes2)
         infoSentence2.font = UIFont.systemFontOfSize(13.5)
-        infoSentence2.text = "やり方は簡単です！まず、相談相手のタイプを選んでください。相談内容の雛形が現れるので、それを編集してください。次に、相談者に見せたい投稿記録を一覧から選び、一番下の「相談サイトを作成する」をタップしてください。"
+        infoSentence2.text = "やり方は簡単です！まず、相談相手のタイプを選んでください。相談内容の雛形が現れるので、それを編集してください。次に、相談者に見せたい投稿記録を一覧から選び、一番下の「記録一欄サイトを作成する」をタップしてください。"
         
         
         let style3 = NSMutableParagraphStyle()
@@ -42,7 +42,7 @@ class assistInfoDetailTableViewCell: UITableViewCell {
         let attributes3 = [NSParagraphStyleAttributeName : style3]
         infoSentence3.attributedText = NSAttributedString(string: infoSentence1.text,attributes: attributes3)
         infoSentence3.font = UIFont.systemFontOfSize(13.5)
-        infoSentence3.text = "そうすると相談相手に見せたい「記録一覧」を含んだ、あなたと相談者のための「特別なサイト」が作られます。一般公開はされていません。今後そのサイトで相談のやり取りができ、事後確認がし易くなります。"
+        infoSentence3.text = "そうすると相談相手に見せたい「記録一覧」を含んだ「特別なサイト」が作られます。一般公開はされていません。あとはメール送信ボタンをタップすれば、記録一覧サイトのURLを含んだ相談内容が、あなたのメールアカウントから相手方に送信されます。"
         
         
         

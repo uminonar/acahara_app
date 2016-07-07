@@ -1602,6 +1602,8 @@
                                         <constraints>
                                             <constraint firstAttribute="width" constant="30" id="FVW-NA-lr2"/>
                                             <constraint firstAttribute="height" constant="30" id="M3m-De-jyX"/>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="30" id="N7O-P3-oY2"/>
+                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="30" id="rMN-ra-YqM"/>
                                         </constraints>
                                         <connections>
                                             <action selector="saveBtn:" destination="hdK-iu-PPf" eventType="touchUpInside" id="EmU-YN-DSV"/>
@@ -1717,7 +1719,7 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="記録一覧" id="tLV-ZJ-ofu">
-                        <barButtonItem key="rightBarButtonItem" image="create" id="HxF-YT-for">
+                        <barButtonItem key="rightBarButtonItem" image="create" width="30" id="HxF-YT-for">
                             <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <connections>
                                 <action selector="addBtn:" destination="kag-Be-bqJ" id="csc-2B-8cG"/>
@@ -1732,7 +1734,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GQ9-Ta-OaL" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <tapGestureRecognizer id="dQf-OF-Zog"/>
             </objects>
-            <point key="canvasLocation" x="1668" y="1323"/>
+            <point key="canvasLocation" x="1525" y="1132"/>
         </scene>
         <!--Select View Controller-->
         <scene sceneID="15K-v7-8J4">

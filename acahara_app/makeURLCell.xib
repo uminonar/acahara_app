@@ -18,12 +18,13 @@
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lw0-fZ-E6b">
                         <rect key="frame" x="59" y="81" width="202" height="38"/>
                         <color key="backgroundColor" red="0.12450673984642091" green="0.45566598812191428" blue="0.91568509615384619" alpha="1" colorSpace="calibratedRGB"/>
-                        <state key="normal" title="相談サイトを作成する">
+                        <state key="normal" title="記録一覧サイトを作成する">
                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <color key="titleShadowColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                         </state>
                     </button>
                 </subviews>
+                <color key="backgroundColor" red="1" green="0.96883127729999996" blue="0.78930865809999995" alpha="1" colorSpace="calibratedRGB"/>
                 <constraints>
                     <constraint firstItem="Lw0-fZ-E6b" firstAttribute="top" secondItem="EVD-Lg-SKN" secondAttribute="topMargin" constant="73" id="EYS-aL-nqc"/>
                     <constraint firstItem="Lw0-fZ-E6b" firstAttribute="leading" secondItem="EVD-Lg-SKN" secondAttribute="leadingMargin" constant="51" id="HoO-aB-iw8"/>
