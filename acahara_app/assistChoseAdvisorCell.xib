@@ -39,12 +39,6 @@
                         </constraints>
                         <state key="normal" image="friend_new.png"/>
                     </button>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="相談できる教授" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fBq-Zp-8SQ">
-                        <rect key="frame" x="122" y="111" width="77" height="14"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="11"/>
-                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                        <nil key="highlightedColor"/>
-                    </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="当事者" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f3W-hN-hUo">
                         <rect key="frame" x="144" y="194" width="33" height="21"/>
                         <fontDescription key="fontDescription" type="system" pointSize="11"/>
@@ -127,10 +121,16 @@
                         </constraints>
                         <state key="normal" image="assailant_n.png"/>
                     </button>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="相談できる教授" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fBq-Zp-8SQ">
+                        <rect key="frame" x="117" y="111" width="87" height="14"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
                 </subviews>
                 <constraints>
                     <constraint firstItem="f3W-hN-hUo" firstAttribute="centerX" secondItem="xXM-R6-hCX" secondAttribute="centerX" id="0FL-LK-1yc"/>
-                    <constraint firstItem="Y08-7d-bU3" firstAttribute="leading" secondItem="fBq-Zp-8SQ" secondAttribute="trailing" constant="36" id="1YE-PP-tFe"/>
+                    <constraint firstItem="Y08-7d-bU3" firstAttribute="leading" secondItem="fBq-Zp-8SQ" secondAttribute="trailing" constant="31" id="1YE-PP-tFe"/>
                     <constraint firstItem="nba-bu-Le0" firstAttribute="leading" secondItem="xXM-R6-hCX" secondAttribute="leadingMargin" constant="24" id="1wD-vg-UbP"/>
                     <constraint firstItem="B2L-5K-VD7" firstAttribute="centerX" secondItem="dRZ-aG-9qY" secondAttribute="centerX" id="2Jy-Ho-UCk"/>
                     <constraint firstItem="m8r-ir-bJl" firstAttribute="leading" secondItem="xXM-R6-hCX" secondAttribute="leading" constant="37" id="3Tn-eq-yDM"/>

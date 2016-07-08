@@ -285,6 +285,7 @@ class AssistTableViewController: UIViewController,UITableViewDelegate,UITableVie
             
             return cell
         }
+        
         for i in 0..<posts.count{
             if adjustrow_no == 3 + i {
                 var cell:choseCustomCell = tableView.dequeueReusableCellWithIdentifier("choseCustomCell", forIndexPath: indexPath) as! choseCustomCell
@@ -305,7 +306,11 @@ class AssistTableViewController: UIViewController,UITableViewDelegate,UITableVie
                 cell.postUniversity.text = posts[postindex]["university"] as! String
                 
                 
-                cell.postDiary.text = posts[postindex]["diary"] as! String
+                
+                
+                var diary = posts[postindex]["diary"] as! String
+                cell.postDiary.text = diary
+
                 let style = NSMutableParagraphStyle()
                 style.lineSpacing = 5
                 let attributes = [NSParagraphStyleAttributeName : style]
