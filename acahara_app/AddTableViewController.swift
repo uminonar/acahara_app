@@ -150,7 +150,7 @@ class AddTableViewController: UIViewController,UITableViewDelegate,UITableViewDa
             var photoURLArray = myDefault.objectForKey("photoURLArray")
             var strMURL = myDefault.objectForKey("selectedMovieURL")
 
-            if (photoURLArray != nil && self.myApp.photoURLArray == false) {
+            if (photoURLArray != nil && self.myApp.photoURLArray == false && photoURLArray!.count > 0) {
                 
                 self.rownumber++
                 
@@ -466,7 +466,7 @@ class AddTableViewController: UIViewController,UITableViewDelegate,UITableViewDa
                     cell.scrView.contentSize = CGSizeMake(scrViewWidth, 150)
 
                     
-//                    countNum = 0
+                    countNum = 0
                     for strURL in photoURLArray{
                         print(strURL)
    
@@ -487,8 +487,10 @@ class AddTableViewController: UIViewController,UITableViewDelegate,UITableViewDa
                                 
                                 //imageViewのaspectFitをつける必要がある？このままで良いかも
                                 var imageView = UIImageView()
+                                
                                 //各写真イメージのX座標開始位置をpositionXとする。150幅に、20の余白で170
                                 var positionX:CGFloat = CGFloat(170 * self.countNum)
+                                
                                 //写真の位置サイズ指定
                                 imageView.frame = CGRectMake(positionX, 0, 150, 150)
                                 imageView.image = image
@@ -509,7 +511,7 @@ class AddTableViewController: UIViewController,UITableViewDelegate,UITableViewDa
                                 cell.scrView.addSubview(picCancelBtn)
                                 
                                 
-//                                self.countNum++
+                                self.countNum++
                                 
                                 
                                 //                              cell.picCancelBtn.hidden = false
@@ -530,6 +532,7 @@ class AddTableViewController: UIViewController,UITableViewDelegate,UITableViewDa
                     var myDefault = NSUserDefaults.standardUserDefaults()
                     var strMovURL = myDefault.stringForKey("selectedMovieList")
                     
+       
                     var url = NSURL(string: strMovURL as! String!)
                     
                     var playerItem = AVPlayerItem(URL: url!)
@@ -1235,15 +1238,18 @@ class AddTableViewController: UIViewController,UITableViewDelegate,UITableViewDa
         
         var myDefault = NSUserDefaults.standardUserDefaults()
         var photoURLArray = myDefault.objectForKey("photoURLArray") as! NSArray
-        var copiedPhotoURLArray:[NSArray] = photoURLArray as! [NSArray]
-        var photoArray = NSMutableArray(array: copiedPhotoURLArray) as! NSMutableArray
+//        var copiedPhotoURLArray:[NSArray] = photoURLArray as! [NSArray]
+//        var photoArray = NSMutableArray(array: copiedPhotoURLArray) as! NSMutableArray
+//        
+        var photoArray:NSMutableArray = photoURLArray.mutableCopy() as! NSMutableArray
         
-        photoArray.removeObjectAtIndex(Int(numOfPic)) as! NSMutableArray
+        photoArray.removeObjectAtIndex(Int(numOfPic))
         
-        print(photoURLArray)
+        print(photoArray)
         
         
         myDefault.setObject(photoArray, forKey: "photoURLArray")
+        myDefault.synchronize()
         
         
         //ここわからないから全体をリロードひとまずする

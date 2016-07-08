@@ -15,6 +15,8 @@ class DetailViewController: UIViewController {
 
     var posts:NSMutableArray = []
     
+    @IBOutlet weak var diaryLabel: UILabel!
+    
     @IBOutlet weak var detailSelfee: UIImageView!
     @IBOutlet weak var detailName: UILabel!
     @IBOutlet weak var detailWhen: UILabel!
@@ -22,7 +24,7 @@ class DetailViewController: UIViewController {
     @IBOutlet weak var detailWho: UILabel!
     @IBOutlet weak var detailUniversity: UILabel!
     @IBOutlet weak var detailCreated: UILabel!
-    @IBOutlet weak var detailTextView: UITextView!
+
     @IBOutlet weak var detailImageView: UIImageView!
 
     
@@ -50,15 +52,15 @@ class DetailViewController: UIViewController {
         detailWhere.text = dic["where"] as! String
         detailWho.text = dic["who"] as! String
         detailUniversity.text = dic["university"] as! String
-        detailTextView.text = dic["diary"] as! String
+        diaryLabel.text = dic["diary"] as! String
  
         
         let style = NSMutableParagraphStyle()
         style.lineSpacing = 5
         let attributes = [NSParagraphStyleAttributeName : style]
-        detailTextView.attributedText = NSAttributedString(string: detailTextView.text,
+        diaryLabel.attributedText = NSAttributedString(string: diaryLabel.text!,
                                                            attributes: attributes)
-        detailTextView.font = UIFont.systemFontOfSize(15)
+        diaryLabel.font = UIFont.systemFontOfSize(15)
         detailImageView.image = UIImage(named: dic["picture"] as! String)
 
         

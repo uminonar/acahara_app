@@ -184,7 +184,7 @@ class AddDiaryViewController: UIViewController, UITextViewDelegate,UIImagePicker
         
         
         //ここを写真だけ選択可能にしたい。falseにしても変わらない。どうすれば？
-        picker.allowsMultipleSelection = true
+        picker.allowsMultipleSelection = true;
         
         
         //        picker.minimumNumberOfSelection = 1;
@@ -194,6 +194,11 @@ class AddDiaryViewController: UIViewController, UITextViewDelegate,UIImagePicker
             PHAssetCollectionSubtype.SmartAlbumUserLibrary.rawValue,
             PHAssetCollectionSubtype.AlbumMyPhotoStream.rawValue
         ];
+        
+        
+        //MARK: 写真のみ選択 ImageをVideoで動画選択
+        
+        picker.mediaType = QBImagePickerMediaType.Image
         
         presentViewController(picker, animated: true, completion: nil)
 
@@ -218,10 +223,10 @@ class AddDiaryViewController: UIViewController, UITextViewDelegate,UIImagePicker
     func qb_imagePickerController(imagePickerController: QBImagePickerController, didFinishPickingAssets assets: [AnyObject]) {
         
         imagecount = 0
-        var photoURLArray = NSMutableArray()
+        var photoURLArray:NSMutableArray = []
         
         //保存前に再検索にきた時のために一度ここで空にしておきたい
-        photoURLArray.removeAllObjects()
+//        photoURLArray.removeAllObjects()
         
         for asset in assets {
             var asset_each = asset as! PHAsset
@@ -243,9 +248,9 @@ class AddDiaryViewController: UIViewController, UITextViewDelegate,UIImagePicker
             print(assetURL)
             
             
-            photoURLArray.addObject(assetURL) as! NSMutableArray
+           // photoURLArray.addObject(assetURL) as! NSMutableArray
             
-            
+            photoURLArray.addObject(assetURL)
   
             
             //画像表示の場合
@@ -275,8 +280,11 @@ class AddDiaryViewController: UIViewController, UITextViewDelegate,UIImagePicker
         
         //UserDefaultに配列を保存
         
-        var myDefalut = NSUserDefaults.standardUserDefaults()
-        myDefalut.setObject(photoURLArray, forKey: "photoURLArray")
+        var myDefault = NSUserDefaults.standardUserDefaults()
+        myDefault.setObject(photoURLArray, forKey: "photoURLArray")
+        myDefault.synchronize()
+
+        
         
         
         dismissViewControllerAnimated(true, completion: nil)
