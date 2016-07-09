@@ -107,7 +107,7 @@ extension LeftMenuViewController: UITableViewDelegate, UITableViewDataSource {
             
             
             
-            //MARK:タブが増やせない、なぜ？
+       
             
             stepView.tabBarItem = UITabBarItem(title: "ホーム", image: UIImage(named: "home"), tag: 1)//アイコン
             homeNavView.tabBarItem = UITabBarItem(title: "記録", image: UIImage(named: "openFolder"), tag: 2)
@@ -122,6 +122,7 @@ extension LeftMenuViewController: UITableViewDelegate, UITableViewDataSource {
             
             sideMenuViewController?.hideMenuViewController()
             break
+            
         case 1:
             
             var settingView = storyboard.instantiateViewControllerWithIdentifier("SettingViewController") as! SettingViewController
@@ -129,6 +130,33 @@ extension LeftMenuViewController: UITableViewDelegate, UITableViewDataSource {
             sideMenuViewController?.contentViewController =  settingView
             sideMenuViewController?.hideMenuViewController()
             break
+        
+        case 2:
+            
+            var howToUseView = storyboard.instantiateViewControllerWithIdentifier("HowToUseViewController") as! HowToUseViewController
+            
+            sideMenuViewController?.contentViewController =  howToUseView
+            sideMenuViewController?.hideMenuViewController()
+            break
+        
+        case 3:
+            
+            var TOUView = storyboard.instantiateViewControllerWithIdentifier("TOUViewController") as! TOUViewController
+            
+            sideMenuViewController?.contentViewController =  TOUView
+            sideMenuViewController?.hideMenuViewController()
+            break
+
+        case 4:
+            
+            var contactView = storyboard.instantiateViewControllerWithIdentifier("ContactViewController") as! ContactViewController
+            
+            sideMenuViewController?.contentViewController =  contactView
+            sideMenuViewController?.hideMenuViewController()
+            break
+
+
+        
         default:
             break
         }

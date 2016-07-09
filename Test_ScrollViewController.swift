@@ -1,21 +1,19 @@
 //
-//  TestViewController.swift
-//  acahara_app
+//  Test_ScrollViewController.swift
+//  
 //
 //  Created by RIho OKubo on 2016/07/09.
-//  Copyright © 2016年 RIho OKubo. All rights reserved.
+//
 //
 
 import UIKit
 
-class TestViewController: UIViewController {
+class Test_ScrollViewController: UIViewController {
 
-    @IBOutlet weak var scrollView: UIScrollView!
-    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        scrollView.contentSize.height = 1000
+        // Do any additional setup after loading the view.
     }
 
     override func didReceiveMemoryWarning() {

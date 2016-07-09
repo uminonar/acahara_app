@@ -126,7 +126,7 @@ class SettingViewController: UIViewController {
 
         
         
-         settingMenu.tintColor = sakura
+        settingMenu.tintColor = sakura
         
         self.menuCoverBtn.addTarget(SSASideMenu(), action: Selector("presentLeftMenuViewController"), forControlEvents: UIControlEvents.TouchUpInside)
         

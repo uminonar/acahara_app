@@ -38,6 +38,9 @@
 		0B04BED61D1074EB000264CC /* Delete-50.png in Resources */ = {isa = PBXBuildFile; fileRef = 0B04BED51D1074EB000264CC /* Delete-50.png */; };
 		0B06302B1D07DDBE00F9E98B /* mailContents.txt in Resources */ = {isa = PBXBuildFile; fileRef = 0B06302A1D07DDBE00F9E98B /* mailContents.txt */; };
 		0B0686C71CFBFA58002AB722 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B0686C61CFBFA58002AB722 /* DetailViewController.swift */; };
+		0B09CC4F1D2FE2B800427D7D /* TOUViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B09CC4E1D2FE2B800427D7D /* TOUViewController.swift */; };
+		0B09CC511D2FED7700427D7D /* HowToUseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B09CC501D2FED7700427D7D /* HowToUseViewController.swift */; };
+		0B09CC531D2FF00F00427D7D /* ContactViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B09CC521D2FF00F00427D7D /* ContactViewController.swift */; };
 		0B09F2491D02C38E006F11D5 /* ChosePostsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B09F2481D02C38E006F11D5 /* ChosePostsViewController.swift */; };
 		0B0BC3F91D1982BE0009ED07 /* troubledWoman のコピー.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 0B0BC3F81D1982BE0009ED07 /* troubledWoman のコピー.jpg */; };
 		0B467DE51D17BF0D000C6DC1 /* Menu-25.png in Resources */ = {isa = PBXBuildFile; fileRef = 0B467DE41D17BF0D000C6DC1 /* Menu-25.png */; };
@@ -162,6 +165,9 @@
 		0B04BED51D1074EB000264CC /* Delete-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Delete-50.png"; sourceTree = "<group>"; };
 		0B06302A1D07DDBE00F9E98B /* mailContents.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = mailContents.txt; sourceTree = "<group>"; };
 		0B0686C61CFBFA58002AB722 /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		0B09CC4E1D2FE2B800427D7D /* TOUViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TOUViewController.swift; sourceTree = "<group>"; };
+		0B09CC501D2FED7700427D7D /* HowToUseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HowToUseViewController.swift; sourceTree = "<group>"; };
+		0B09CC521D2FF00F00427D7D /* ContactViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactViewController.swift; sourceTree = "<group>"; };
 		0B09F2481D02C38E006F11D5 /* ChosePostsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChosePostsViewController.swift; sourceTree = "<group>"; };
 		0B0BC3F81D1982BE0009ED07 /* troubledWoman のコピー.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "troubledWoman のコピー.jpg"; sourceTree = "<group>"; };
 		0B467DE41D17BF0D000C6DC1 /* Menu-25.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Menu-25.png"; sourceTree = "<group>"; };
@@ -318,7 +324,6 @@
 				0B00948B1CF6FFB90041B3B5 /* HomeViewController.swift */,
 				0BD2B6871D111C820032F502 /* LeftMenuViewController.swift */,
 				0B97FE161D0E58600000E700 /* StepViewController.swift */,
-				0B00948D1CF6FFB90041B3B5 /* SettingViewController.swift */,
 				0B772C6B1D09B53C00086E17 /* TabBarController.swift */,
 				0B0686C61CFBFA58002AB722 /* DetailViewController.swift */,
 				0B9DF2601D01ADC100B478C7 /* PictureViewController.swift */,
@@ -329,14 +334,18 @@
 				0B03D2931CF7F6050050119E /* AddWhoViewController.swift */,
 				0BADA6191CFB3B9E001702D7 /* AddDiaryViewController.swift */,
 				0B9DBFE61CFFF1F200B78293 /* AddSoundViewController.swift */,
-				0BB408CD1D150B3500D26AB7 /* sPrepare.png */,
 				0B59AD371D07AFED00E740F5 /* AssistTableViewController.swift */,
 				0B94338A1D0275AA00A93027 /* AssistViewController.swift */,
 				0BD4F1531D051A28001AA8EC /* MailContentViewController.swift */,
 				0B09F2481D02C38E006F11D5 /* ChosePostsViewController.swift */,
+				0B00948D1CF6FFB90041B3B5 /* SettingViewController.swift */,
+				0B09CC4E1D2FE2B800427D7D /* TOUViewController.swift */,
+				0B09CC501D2FED7700427D7D /* HowToUseViewController.swift */,
+				0B09CC521D2FF00F00427D7D /* ContactViewController.swift */,
 				0BADA6161CFB3089001702D7 /* Main.storyboard */,
 				0B73CE6B1D0D998D007658EF /* SSASideMenu */,
 				0B0094921CF6FFB90041B3B5 /* Assets.xcassets */,
+				0BB408CD1D150B3500D26AB7 /* sPrepare.png */,
 				0B0BC3F81D1982BE0009ED07 /* troubledWoman のコピー.jpg */,
 				0B467DE41D17BF0D000C6DC1 /* Menu-25.png */,
 				0BB408D51D15144200D26AB7 /* inbox.png */,
@@ -758,6 +767,7 @@
 				0B9DBFE71CFFF1F200B78293 /* AddSoundViewController.swift in Sources */,
 				0B03D2901CF7D58E0050119E /* AddViewController.swift in Sources */,
 				0B59AD4A1D07C04400E740F5 /* assistChosePostsTableViewCell.swift in Sources */,
+				0B09CC511D2FED7700427D7D /* HowToUseViewController.swift in Sources */,
 				0B97FE171D0E58600000E700 /* StepViewController.swift in Sources */,
 				0BE2489E1D05ABEB002BEC1F /* dateTimeTableViewCell.swift in Sources */,
 				0B00948E1CF6FFB90041B3B5 /* SettingViewController.swift in Sources */,
@@ -776,9 +786,11 @@
 				0B0686C71CFBFA58002AB722 /* DetailViewController.swift in Sources */,
 				0B03D2921CF7F4FB0050119E /* AddWhereViewController.swift in Sources */,
 				0B00948C1CF6FFB90041B3B5 /* HomeViewController.swift in Sources */,
+				0B09CC531D2FF00F00427D7D /* ContactViewController.swift in Sources */,
 				0BE248981D05A97A002BEC1F /* AddTableViewController.swift in Sources */,
 				0B0194951D2360C2006F6E89 /* photoTableViewCell.swift in Sources */,
 				0B59AD381D07AFEE00E740F5 /* AssistTableViewController.swift in Sources */,
+				0B09CC4F1D2FE2B800427D7D /* TOUViewController.swift in Sources */,
 				0B5AFA7E1D085651001D3DCA /* homeIntroTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
