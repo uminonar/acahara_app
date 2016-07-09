@@ -18,6 +18,7 @@ class homeTableViewCell: UITableViewCell {
     @IBOutlet weak var postWho: UILabel!
     @IBOutlet weak var postUniversity: UILabel!
 
+    @IBOutlet weak var labelCoverBtn: UIButton!
 
     @IBOutlet weak var postImageView: UIImageView!
     @IBOutlet weak var postMoreBtn: UIButton!

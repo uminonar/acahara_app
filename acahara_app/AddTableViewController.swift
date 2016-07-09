@@ -463,6 +463,15 @@ class AddTableViewController: UIViewController,UITableViewDelegate,UITableViewDa
                     
                     //スクロールが走る表示全体サイズを指定。写真の150幅に、20の余白で170
                     let scrViewWidth:CGFloat = CGFloat(170 * arrayNum )
+                    
+                    //スクロールビューから追加したビューを一旦削除
+                    var subviews = cell.scrView.subviews
+                    for subview in subviews{
+                        subview.removeFromSuperview()
+                    }
+                    
+                    
+                    
                     cell.scrView.contentSize = CGSizeMake(scrViewWidth, 150)
 
                     
@@ -1246,6 +1255,12 @@ class AddTableViewController: UIViewController,UITableViewDelegate,UITableViewDa
         photoArray.removeObjectAtIndex(Int(numOfPic))
         
         print(photoArray)
+        
+        //選択している画像がゼロになったらセルを一段減らす必要がある
+        if photoArray.count == 0 {
+            rownumber--
+            myApp.photoURLArray = false
+        }
         
         
         myDefault.setObject(photoArray, forKey: "photoURLArray")

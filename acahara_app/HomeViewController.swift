@@ -166,9 +166,24 @@ class HomeViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
                                                       attributes: attributes)
         
         cell.diaryLabel.font = UIFont.systemFontOfSize(15)
-   
         
+        // Add tap gesture recognizer to Text View
+
+        
+        cell.labelCoverBtn.addTarget(self, action:"showMore:", forControlEvents:.TouchUpInside)
+        cell.labelCoverBtn.tag = indexPath.row
+
         cell.postImageView.image = UIImage(named:(posts[indexPath.row]["picture"] as! String))
+        
+        if (posts[indexPath.row]["picture"] as! String == ""){
+//            cell.postImageView.hidden = false
+            cell.postImageView.frame.size.height = 0
+            cell.postImageView.frame.size.width = 0
+            
+        }
+        
+        
+        
         
         
         //postsのopenFlag==1のセルだけ下のようにしたい
@@ -262,8 +277,6 @@ class HomeViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
         let detailVC = UIStoryboard(name: "Main",bundle: nil).instantiateViewControllerWithIdentifier("DetailViewController") as! DetailViewController
         
         detailVC.dtSelectedIndex = sender.tag
-        
-        
         
         navigationController?.pushViewController(detailVC, animated: true)
     }
