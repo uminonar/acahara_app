@@ -54,6 +54,15 @@ class HomeViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
 //        
 //        homeWrite.setImage(writeImage, forState: .Normal)
 //        
+        
+        let path = NSBundle.mainBundle().pathForResource("posts", ofType: "txt")
+        let jsondata = NSData(contentsOfFile: path!)
+        
+        let jsonArray = (try! NSJSONSerialization.JSONObjectWithData(jsondata!, options: [])) as! NSArray
+        
+        for data in jsonArray{
+            posts.addObject(data as! NSMutableDictionary)
+        }
 
     }
     
@@ -88,17 +97,8 @@ class HomeViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
 //      self.homeTableView.reloadData()//これ何の意味？
             }
         }
-            
-        
-        
-        let path = NSBundle.mainBundle().pathForResource("posts", ofType: "txt")
-        let jsondata = NSData(contentsOfFile: path!)
-        
-        let jsonArray = (try! NSJSONSerialization.JSONObjectWithData(jsondata!, options: [])) as! NSArray
-        
-        for data in jsonArray{
-            posts.addObject(data as! NSMutableDictionary)
-        }
+
+
     }
     
     
