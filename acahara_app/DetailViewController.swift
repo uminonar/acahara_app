@@ -30,8 +30,10 @@ class DetailViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-
+        
+        //diaryLabelの高さを動的可変にするためLinesをゼロにしてこちらにこれを書き込む
+        diaryLabel.sizeToFit()
+        
         detailSelfee.image = UIImage(named: "selfee.JPG")
         
        
