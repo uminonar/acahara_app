@@ -33,7 +33,7 @@ class HomeViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
         super.viewDidLoad()
         
         //セルの高さを可変にする設定、テキストの長さ、写真の有無で可変にしたい
-        homeTableView.estimatedRowHeight = 90
+        homeTableView.estimatedRowHeight = 323
         homeTableView.rowHeight = UITableViewAutomaticDimension
         
         
@@ -63,6 +63,7 @@ class HomeViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
         
         for data in jsonArray{
             posts.addObject(data as! NSMutableDictionary)
+            
         }
 
     }
@@ -181,7 +182,11 @@ class HomeViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
         var pic5 = posts[indexPath.row]["picture5"] as! String
         
         var picArray = [pic1,pic2,pic3,pic4,pic5]
+        
         var selectedPictures = [] as! NSMutableArray
+        
+        
+        //空でない写真を配列selectedPicturesにセット
         for selectedPic in picArray{
             
             if selectedPic != ""{
@@ -212,6 +217,7 @@ class HomeViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
         }
         
         
+        //写真を表示する
         countNum = 0
         for strURL in selectedPictures{
             print(strURL)
@@ -241,6 +247,16 @@ class HomeViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
                     imageView.frame = CGRectMake(positionX, 0, 125, 125)
                     imageView.image = image
                     cell.scrView.addSubview(imageView)
+                    
+                    //写真を選択するための透明ボタンを設置する
+                    var picChoseBtn = UIButton()
+                    picChoseBtn.setTitle("", forState: .Normal)
+                    picChoseBtn.frame = CGRectMake(positionX, 0, 125, 125)
+                    picChoseBtn.addTarget(self, action: "showPicture:", forControlEvents:.TouchUpInside)
+                    cell.scrView.addSubview(picChoseBtn)
+                    
+                    picChoseBtn.tag = indexPath.row
+
 
                     self.countNum++
                 }
@@ -293,18 +309,8 @@ class HomeViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
         
 //        cell.postTextViewBtn.addTarget(self, action:"showMore:",forControlEvents: .TouchUpInside)
 //        cell.postTextViewBtn.tag = indexPath.row
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        cell.postImageViewBtn.addTarget(self, action: "showPicture:", forControlEvents: .TouchUpInside)
-        cell.postImageViewBtn.tag = indexPath.row
 
+        
         return cell
         
     }
@@ -367,13 +373,20 @@ class HomeViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
     }
     
     //postImageViewBtnをタップするとpictureVCに遷移する
-        func showPicture(sender: UIButton){
+    func showPicture(sender: UIButton){
+        
+        var xPosition = sender.frame.origin.x
+        
+        //配列selectedPicturesの何番目の写真が選択されたか
+        var numOfPic = xPosition/140 as! Int
+        
+
+        let pictureVC = UIStoryboard(name: "Main",bundle: nil).instantiateViewControllerWithIdentifier("PictureViewController") as! PictureViewController
     
-            let pictureVC = UIStoryboard(name: "Main",bundle: nil).instantiateViewControllerWithIdentifier("PictureViewController") as! PictureViewController
-    
-            pictureVC.picSelectedIndex = sender.tag
+        pictureVC.picSelectedIndex = sender.tag
+        pictureVC.numOfSelectedPicture = numOfPic
             
-            navigationController?.pushViewController(pictureVC, animated: true)
+        navigationController?.pushViewController(pictureVC, animated: true)
 
     
         }

@@ -11,6 +11,7 @@ import UIKit
 class PictureViewController: UIViewController {
     
     var picSelectedIndex = -1
+    var numOfSelectedPicture = -1
     
     private var watchImageMode = true
     private var beforePoint = CGPointMake(0.0, 0.0)
@@ -44,8 +45,10 @@ class PictureViewController: UIViewController {
         let jsonArray = (try! NSJSONSerialization.JSONObjectWithData(jsondata!, options: [])) as! NSArray
         
         let dic = jsonArray[picSelectedIndex]
+        
+        var selectedPicture = "picture" + String(numOfSelectedPicture) 
 
-        pictureImageView.image = UIImage(named: dic["picture"] as! String)
+        pictureImageView.image = UIImage(named: dic["selectedPicture"] as! String)
     }
     
     func handleGesture(gesture: UIGestureRecognizer){
