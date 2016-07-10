@@ -549,9 +549,9 @@ class AddTableViewController: UIViewController,UITableViewDelegate,UITableViewDa
                     var videoPlayer : AVPlayer! = AVPlayer(playerItem: playerItem)
                     
                     //UIViewのレイヤーをAVPlayerLayerにする。普通のviewをカスタマイズしてる
-                    let layer = cell.movieView.layer as! AVPlayerLayer
-                    layer.videoGravity = AVLayerVideoGravityResizeAspect
-                    layer.player = videoPlayer
+//                    let layer = cell.movieView.layer as! AVPlayerLayer
+//                    layer.videoGravity = AVLayerVideoGravityResizeAspect
+//                    layer.player = videoPlayer
                     
                     
                     //TODO:この再生ボタンを実装すべし！
@@ -578,9 +578,9 @@ class AddTableViewController: UIViewController,UITableViewDelegate,UITableViewDa
                 var videoPlayer : AVPlayer! = AVPlayer(playerItem: playerItem)
                 
                 //UIViewのレイヤーをAVPlayerLayerにする。普通のviewをカスタマイズしてる
-                let layer = cell.movieView.layer as! AVPlayerLayer
-                layer.videoGravity = AVLayerVideoGravityResizeAspect
-                layer.player = videoPlayer
+//                let layer = cell.movieView.layer as! AVPlayerLayer
+//                layer.videoGravity = AVLayerVideoGravityResizeAspect
+//                layer.player = videoPlayer
                 
                 
                 //TODO:この再生ボタンを実装すべし！
@@ -720,9 +720,9 @@ class AddTableViewController: UIViewController,UITableViewDelegate,UITableViewDa
         var videoPlayer : AVPlayer! = AVPlayer(playerItem: playerItem)
         
         //UIViewのレイヤーをAVPlayerLayerにする。普通のviewをカスタマイズしてる
-        let layer = cell.movieView.layer as! AVPlayerLayer
-        layer.videoGravity = AVLayerVideoGravityResizeAspect
-        layer.player = videoPlayer
+//        let layer = cell.movieView.layer as! AVPlayerLayer
+//        layer.videoGravity = AVLayerVideoGravityResizeAspect
+//        layer.player = videoPlayer
         
         
         //TODO:この再生ボタンを実装すべし！

@@ -21,7 +21,8 @@ class ChosePostsViewController: UIViewController,UITableViewDelegate,UITableView
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+      
         choseTableView.allowsMultipleSelectionDuringEditing = true
         choseTableView.setEditing(true, animated: true)
         
@@ -91,7 +92,12 @@ class ChosePostsViewController: UIViewController,UITableViewDelegate,UITableView
         cell.postWho.text = posts[indexPath.row]["who"] as! String
         cell.postUniversity.text = posts[indexPath.row]["university"] as! String
         cell.diaryLabel.text = posts[indexPath.row]["diary"] as! String
-        cell.postImageView.image = UIImage(named:(posts[indexPath.row]["picture"] as! String))
+        
+        
+        
+        
+        
+//        cell.postImageView.image = UIImage(named:(posts[indexPath.row]["picture1"] as! String))
         
         //どうやったら.xibのイメージを非表示にできる？nilで行ける？
         cell.postEllipsis.image=nil

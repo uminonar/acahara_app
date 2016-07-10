@@ -18,12 +18,14 @@ class TOUViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        
+          scrollView.contentSize.height = 2000
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         
-        scrollView.contentSize.height = 2000
+      
         
 //        let sakura:UIColor = UIColor(red:1.0,green:0.3,blue:0.3,alpha:1.0)
 //

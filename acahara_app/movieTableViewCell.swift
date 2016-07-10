@@ -10,8 +10,14 @@ import UIKit
 
 class movieTableViewCell: UITableViewCell {
 
-    @IBOutlet weak var playBtn: UIImageView!
-    @IBOutlet weak var movieView: UIView!
+    //起動画面サイズの取得
+    let myBoundsize:CGSize = UIScreen.mainScreen().bounds.size
+    
+    //UIScrollViewを作成します
+    let scrView = UIScrollView()
+    
+    
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         
@@ -20,12 +26,25 @@ class movieTableViewCell: UITableViewCell {
         
         self.backgroundColor = sakuraPale
         
-        playBtn.image = UIImage(named:"playBtn")?.imageWithRenderingMode(.AlwaysTemplate)
+        //表示位置,100は初期値
+        scrView.frame = CGRectMake(15, 20, myBoundsize.width-30, 150)
         
-        let lucentWhite :UIColor = UIColor(red:0.0,green:0.0,blue:0.0,alpha:0.7)
+        //全体サイズ(幅）,各imageViewのサイズと位置はtableView側で設定
         
-        playBtn.tintColor = lucentWhite
+        self.contentView.addSubview(scrView)
+        
+        
+        //scroll画面の初期位置
+        scrView.contentOffset = CGPointMake(0, 0);
 
+        
+        
+//        playBtn.image = UIImage(named:"playBtn")?.imageWithRenderingMode(.AlwaysTemplate)
+//        
+//        let lucentWhite :UIColor = UIColor(red:0.0,green:0.0,blue:0.0,alpha:0.7)
+//        
+//        playBtn.tintColor = lucentWhite
+//
         
     }
 

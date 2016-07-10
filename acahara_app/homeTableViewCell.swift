@@ -20,7 +20,8 @@ class homeTableViewCell: UITableViewCell {
 
     @IBOutlet weak var labelCoverBtn: UIButton!
 
-    @IBOutlet weak var postImageView: UIImageView!
+    @IBOutlet weak var scrView: UIScrollView!
+
     @IBOutlet weak var postMoreBtn: UIButton!
     @IBOutlet weak var postEllipsis: UIImageView!
     @IBOutlet weak var postEllipsisBtn: UIButton!
@@ -33,6 +34,11 @@ class homeTableViewCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        
+        
+        //scroll画面の初期位置
+        scrView.contentOffset = CGPointMake(0, 0);
+        
         
         postPortrait.image = UIImage(named:"selfee.JPG")
 //

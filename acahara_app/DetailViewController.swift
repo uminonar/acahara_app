@@ -10,6 +10,7 @@ import UIKit
 
 class DetailViewController: UIViewController {
 
+    @IBOutlet weak var scrollView: UIScrollView!
     
     var dtSelectedIndex = -1
 
@@ -63,13 +64,15 @@ class DetailViewController: UIViewController {
         diaryLabel.attributedText = NSAttributedString(string: diaryLabel.text!,
                                                            attributes: attributes)
         diaryLabel.font = UIFont.systemFontOfSize(15)
-        detailImageView.image = UIImage(named: dic["picture"] as! String)
+        detailImageView.image = UIImage(named: dic["picture1"] as! String)
 
         
+        //横スクロールしないようにしたい
+//        scrollView.contentOffset.x = scrollView.scrollView.contentOffset
+        
+        
+        
     }
-    
-    
-    
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

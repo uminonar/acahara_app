@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="QiM-gj-Thz">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -722,29 +722,12 @@
                         <outlet property="detailWhere" destination="Bcv-Uh-T15" id="ppP-zN-GNz"/>
                         <outlet property="detailWho" destination="U65-q1-zge" id="129-8H-DfA"/>
                         <outlet property="diaryLabel" destination="leE-RZ-vZl" id="ahZ-32-ADL"/>
+                        <outlet property="scrollView" destination="Nwf-DU-0Gp" id="ASs-sQ-xbP"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gqd-fK-SM2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2166" y="1348"/>
-        </scene>
-        <!--View Controller-->
-        <scene sceneID="gZY-L9-AU1">
-            <objects>
-                <viewController id="TVU-In-TpG" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="gsa-7E-Sfb"/>
-                        <viewControllerLayoutGuide type="bottom" id="C2W-pK-ME1"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="cLo-cS-9w5">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="67n-ii-orS" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2228" y="1911"/>
         </scene>
         <!--Add Where View Controller-->
         <scene sceneID="Kew-QI-ZGB">
@@ -2055,7 +2038,7 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oUi-Vr-v48" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1054" y="-840"/>
+            <point key="canvasLocation" x="1237" y="-962"/>
         </scene>
         <!--ホーム-->
         <scene sceneID="GmT-GC-o6W">

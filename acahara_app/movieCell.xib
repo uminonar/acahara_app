@@ -3,7 +3,6 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
@@ -14,39 +13,8 @@
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="5Z2-Mu-qbB" id="Hf2-aL-jNG">
                 <rect key="frame" x="0.0" y="0.0" width="320" height="179"/>
                 <autoresizingMask key="autoresizingMask"/>
-                <subviews>
-                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GPv-bO-ELi" customClass="AVPlayerView" customModule="acahara_app" customModuleProvider="target">
-                        <rect key="frame" x="60" y="8" width="240" height="128"/>
-                        <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="playBtn" translatesAutoresizingMaskIntoConstraints="NO" id="1yd-FC-aO0">
-                                <rect key="frame" x="95" y="39" width="45" height="45"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="45" id="YsT-Qj-T3R"/>
-                                    <constraint firstAttribute="height" constant="45" id="lWO-8J-Svv"/>
-                                </constraints>
-                            </imageView>
-                        </subviews>
-                        <constraints>
-                            <constraint firstItem="1yd-FC-aO0" firstAttribute="centerY" secondItem="GPv-bO-ELi" secondAttribute="centerY" constant="-2.5" id="3dM-Hg-dAE"/>
-                            <constraint firstItem="1yd-FC-aO0" firstAttribute="centerX" secondItem="GPv-bO-ELi" secondAttribute="centerX" constant="-2.5" id="SbT-mM-XfA"/>
-                        </constraints>
-                    </view>
-                </subviews>
-                <constraints>
-                    <constraint firstItem="GPv-bO-ELi" firstAttribute="top" secondItem="Hf2-aL-jNG" secondAttribute="topMargin" id="3hi-45-Z79"/>
-                    <constraint firstAttribute="trailingMargin" secondItem="GPv-bO-ELi" secondAttribute="trailing" constant="12" id="Sma-Qi-nMe"/>
-                    <constraint firstItem="GPv-bO-ELi" firstAttribute="leading" secondItem="Hf2-aL-jNG" secondAttribute="leadingMargin" constant="52" id="y3M-Gb-nnq"/>
-                    <constraint firstAttribute="bottomMargin" secondItem="GPv-bO-ELi" secondAttribute="bottom" constant="35" id="zzD-cv-mNX"/>
-                </constraints>
             </tableViewCellContentView>
-            <connections>
-                <outlet property="movieView" destination="GPv-bO-ELi" id="cwb-fp-gWh"/>
-                <outlet property="playBtn" destination="1yd-FC-aO0" id="Lw2-w5-pXl"/>
-            </connections>
             <point key="canvasLocation" x="311" y="159"/>
         </tableViewCell>
     </objects>
-    <resources>
-        <image name="playBtn" width="25" height="25"/>
-    </resources>
 </document>

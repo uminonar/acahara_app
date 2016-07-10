@@ -187,8 +187,9 @@ class AddDiaryViewController: UIViewController, UITextViewDelegate,UIImagePicker
         picker.allowsMultipleSelection = true;
         
         
+        //選択可能枚数最大５枚
         //        picker.minimumNumberOfSelection = 1;
-        //        picker.maximumNumberOfSelection = 1;
+        picker.maximumNumberOfSelection = 5;
         
         picker.assetCollectionSubtypes = [
             PHAssetCollectionSubtype.SmartAlbumUserLibrary.rawValue,
@@ -198,7 +199,7 @@ class AddDiaryViewController: UIViewController, UITextViewDelegate,UIImagePicker
         
         //MARK: 写真のみ選択 ImageをVideoで動画選択
         
-        picker.mediaType = QBImagePickerMediaType.Image
+//        picker.mediaType = QBImagePickerMediaType.Image
         
         presentViewController(picker, animated: true, completion: nil)
 
@@ -206,24 +207,42 @@ class AddDiaryViewController: UIViewController, UITextViewDelegate,UIImagePicker
         }
     
     //movieCoverBtnがタップされた時、動画を選択できる一覧を表示
-    func onClickFilmButton(sender: UIButton){
-        
-        var movPick = UIImagePickerController()
-                movPick.delegate = self
-                movPick.sourceType = UIImagePickerControllerSourceType.PhotoLibrary
-                movPick.mediaTypes = [kUTTypeMovie as String]
-                movPick.allowsEditing = false
-                movPick.delegate = self
-                self.presentViewController(movPick, animated: true, completion: nil)
-        
-        
-    }
-    
+//    func onClickFilmButton(sender: UIButton){
+//        
+//        let picker = QBImagePickerController()
+//        picker.delegate = self
+//        
+//        
+//        //ここを写真だけ選択可能にしたい。falseにしても変わらない。どうすれば？
+//        picker.allowsMultipleSelection = true;
+//        
+//        
+//        //        picker.minimumNumberOfSelection = 1;
+//        //        picker.maximumNumberOfSelection = 1;
+//        
+//        picker.assetCollectionSubtypes = [
+//            PHAssetCollectionSubtype.SmartAlbumUserLibrary.rawValue,
+//            PHAssetCollectionSubtype.AlbumMyPhotoStream.rawValue
+//        ];
+//        
+//        
+//        //MARK: 動画のみ選択
+//        
+//        picker.mediaType = QBImagePickerMediaType.Video
+//        
+//        presentViewController(picker, animated: true, completion: nil)
+//
+//        
+//    }
+//    
     
     func qb_imagePickerController(imagePickerController: QBImagePickerController, didFinishPickingAssets assets: [AnyObject]) {
         
+        
+        
         imagecount = 0
         var photoURLArray:NSMutableArray = []
+
         
         //保存前に再検索にきた時のために一度ここで空にしておきたい
 //        photoURLArray.removeAllObjects()

@@ -10,6 +10,7 @@ import UIKit
 
 class HomeViewController: UIViewController,UITableViewDelegate,UITableViewDataSource {
     
+    var countNum = 0
     var selectedIndex = -1
     @IBOutlet weak var homeTableView: UITableView!
 
@@ -173,14 +174,90 @@ class HomeViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
         cell.labelCoverBtn.addTarget(self, action:"showMore:", forControlEvents:.TouchUpInside)
         cell.labelCoverBtn.tag = indexPath.row
 
-        cell.postImageView.image = UIImage(named:(posts[indexPath.row]["picture"] as! String))
+        var pic1 = posts[indexPath.row]["picture1"] as! String
+        var pic2 = posts[indexPath.row]["picture2"] as! String
+        var pic3 = posts[indexPath.row]["picture3"] as! String
+        var pic4 = posts[indexPath.row]["picture4"] as! String
+        var pic5 = posts[indexPath.row]["picture5"] as! String
         
-        if (posts[indexPath.row]["picture"] as! String == ""){
-//            cell.postImageView.hidden = false
-            cell.postImageView.frame.size.height = 0
-            cell.postImageView.frame.size.width = 0
+        var picArray = [pic1,pic2,pic3,pic4,pic5]
+        var selectedPictures = [] as! NSMutableArray
+        for selectedPic in picArray{
+            
+            if selectedPic != ""{
+                selectedPictures.addObject(selectedPic)
+            }
             
         }
+        
+        
+        //選択されている写真の数
+        var picNum = selectedPictures.count
+        
+        if picNum > 0{
+            
+            //選択写真が存在したらスクロールが走る表示全体サイズを指定。写真の125幅に、15の余白で140
+            let scrViewWidth:CGFloat = CGFloat(140 * picNum )
+
+            cell.scrView.contentSize = CGSizeMake(scrViewWidth, 125)
+
+            
+        }else{
+            
+            //選択写真が存在しない場合、画像表示箇所が縮まるように
+            cell.scrView.frame.size.height = 0
+            cell.scrView.frame.size.width = 0
+            cell.postImageViewBtn.frame.size.height = 0
+            cell.postImageViewBtn.frame.size.width = 0
+        }
+        
+        
+        countNum = 0
+        for strURL in selectedPictures{
+            print(strURL)
+            
+            var url = NSURL(string: strURL as! String)
+            
+            let fetchResult: PHFetchResult = PHAsset.fetchAssetsWithALAssetURLs([url!], options: nil)
+            
+            if fetchResult.firstObject != nil{
+                
+                let asset: PHAsset = fetchResult.firstObject as! PHAsset
+                
+                
+                print("pixelWidth:\(asset.pixelWidth)");
+                print("pixelHeight:\(asset.pixelHeight)");
+                
+                let manager: PHImageManager = PHImageManager()
+                manager.requestImageForAsset(asset,targetSize: CGSizeMake(5, 500),contentMode: .AspectFit,options: nil) { (image, info) -> Void in
+                    
+                    //imageViewのaspectFitをつける必要がある？このままで良いかも
+                    var imageView = UIImageView()
+                    
+                    //各写真イメージのX座標開始位置をpositionXとする。125幅に、15の余白で140
+                    var positionX:CGFloat = CGFloat(140 * self.countNum)
+                    
+                    //写真の位置サイズ指定
+                    imageView.frame = CGRectMake(positionX, 0, 125, 125)
+                    imageView.image = image
+                    cell.scrView.addSubview(imageView)
+
+                    self.countNum++
+                }
+            }
+        }
+        
+        
+        
+//        cell.postImageView.image = UIImage(named:(posts[indexPath.row]["picture"] as! String))
+//
+//        if (posts[indexPath.row]["picture"] as! String == ""){
+////            cell.postImageView.hidden = false
+//            cell.postImageView.frame.size.height = 0
+//            cell.postImageView.frame.size.width = 0
+//            
+//            
+//        }
         
         
         
@@ -216,6 +293,14 @@ class HomeViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
         
 //        cell.postTextViewBtn.addTarget(self, action:"showMore:",forControlEvents: .TouchUpInside)
 //        cell.postTextViewBtn.tag = indexPath.row
+        
+        
+        
+        
+        
+        
+        
+        
         
         cell.postImageViewBtn.addTarget(self, action: "showPicture:", forControlEvents: .TouchUpInside)
         cell.postImageViewBtn.tag = indexPath.row
