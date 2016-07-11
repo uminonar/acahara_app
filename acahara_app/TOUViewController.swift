@@ -29,6 +29,8 @@ class TOUViewController: UIViewController {
         menuBtn.image = UIImage(named:"menu")?.imageWithRenderingMode(.AlwaysTemplate)
         menuBtn.tintColor = UIColor.whiteColor()
         self.menuCoverBtn.addTarget(SSASideMenu(), action: Selector("presentLeftMenuViewController"), forControlEvents: UIControlEvents.TouchUpInside)
+//        バックの色変更ができない。６sサイズで下が白で嫌。
+//        self.view.backgroundColor = UIColor.redColor()
 
         
     }

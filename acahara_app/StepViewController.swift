@@ -149,7 +149,7 @@ class StepViewController: UIViewController {
 
 
     @IBAction func kirokuCoverBtn(sender: UIButton) {
-        var height:CGFloat = 553.0
+        var height:CGFloat = 608.0
         scrollView.setContentOffset(CGPointMake(0, height), animated: true)
 
     }

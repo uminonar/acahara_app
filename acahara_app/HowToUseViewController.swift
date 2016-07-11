@@ -10,12 +10,30 @@ import UIKit
 
 class HowToUseViewController: UIViewController {
 
+    @IBOutlet weak var htuImageVIew: UIImageView!
+    
+    @IBOutlet weak var htuMessage: UILabel!
+    
+    var message = ["大丈夫、大丈夫。。。","気にしないで。。","大丈夫？","１人じゃないですよ。。","応援してます。。","ハラスメントは間違ってる！","そんなの許せません！！！","ポジティブに攻めよう！！","抱え込みすぎてない？","世の中バランス、良いこと起きます！","落ち着いて、深呼吸してみて。。"]
+    
 
+    
+    
     @IBOutlet weak var addBtn: UIImageView!
     @IBOutlet weak var htuCoverBtn: UIButton!
     @IBOutlet weak var htuMenu: UIImageView!
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        //乱数を表示
+        var r = Int(arc4random()) % message.count
+        print(r)
+        
+        //メッセージに対応した写真をセット
+        htuImageVIew.image = UIImage(named: "photoTop\(r)")
+        //メッセージをセット
+        htuMessage.text = message[r]
+        
 
         let sakura:UIColor = UIColor(red:1.0,green:0.3,blue:0.3,alpha:1.0)
         
