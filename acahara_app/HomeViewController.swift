@@ -174,7 +174,7 @@ class HomeViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
         
         cell.labelCoverBtn.addTarget(self, action:"showMore:", forControlEvents:.TouchUpInside)
         cell.labelCoverBtn.tag = indexPath.row
-
+        print(posts[0]["picture1"])
         var pic1 = posts[indexPath.row]["picture1"] as! String
         var pic2 = posts[indexPath.row]["picture2"] as! String
         var pic3 = posts[indexPath.row]["picture3"] as! String
@@ -220,6 +220,7 @@ class HomeViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
         //写真を表示する
         countNum = 0
         for strURL in selectedPictures{
+            
             print(strURL)
             
             var url = NSURL(string: strURL as! String)

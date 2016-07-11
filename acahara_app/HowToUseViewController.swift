@@ -16,13 +16,6 @@ class HowToUseViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        
-        
         let sakura:UIColor = UIColor(red:1.0,green:0.3,blue:0.3,alpha:1.0)
         
         //sideBar向け
@@ -32,10 +25,18 @@ class HowToUseViewController: UIViewController {
         
         let sakura3:UIColor = UIColor(red:1.0,green:0.3,blue:0.3,alpha:1.0)
         
-        htuMenu.tintColor = sakura3
+        htuMenu.tintColor = UIColor.whiteColor()
         
         self.htuCoverBtn.addTarget(SSASideMenu(), action: Selector("presentLeftMenuViewController"), forControlEvents: UIControlEvents.TouchUpInside)
 
+        // Do any additional setup after loading the view.
+    }
+
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        
+        
+      
     }
 
     /*

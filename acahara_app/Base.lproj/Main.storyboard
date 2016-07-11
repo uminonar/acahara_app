@@ -570,7 +570,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yaU-BX-4kL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4077" y="777"/>
+            <point key="canvasLocation" x="4021" y="1177"/>
         </scene>
         <!--Detail View Controller-->
         <scene sceneID="gUV-zK-K1c">
@@ -650,6 +650,9 @@
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="leE-RZ-vZl">
                                         <rect key="frame" x="54" y="109" width="249" height="21"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="249" id="lbX-ZJ-6ta"/>
+                                        </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
@@ -678,8 +681,10 @@
                                     <constraint firstItem="NMz-DZ-RAs" firstAttribute="top" secondItem="Nwf-DU-0Gp" secondAttribute="top" constant="5" id="TUy-hK-9tn"/>
                                     <constraint firstItem="0jv-qg-s4f" firstAttribute="leading" secondItem="Bcv-Uh-T15" secondAttribute="leading" id="UZS-tS-4Nd"/>
                                     <constraint firstItem="2gj-aF-hkg" firstAttribute="top" secondItem="96I-h0-kSy" secondAttribute="bottom" constant="36" id="bQx-R9-EYQ"/>
+                                    <constraint firstItem="leE-RZ-vZl" firstAttribute="leading" secondItem="Nwf-DU-0Gp" secondAttribute="leading" constant="54" id="cfk-Sz-6Ix"/>
                                     <constraint firstItem="2gj-aF-hkg" firstAttribute="top" secondItem="Bcv-Uh-T15" secondAttribute="bottom" constant="9" id="ekJ-uO-vpM"/>
                                     <constraint firstItem="U65-q1-zge" firstAttribute="leading" secondItem="2gj-aF-hkg" secondAttribute="leading" id="elD-ns-BFn"/>
+                                    <constraint firstAttribute="trailing" secondItem="leE-RZ-vZl" secondAttribute="trailing" constant="17" id="gS7-ET-YUJ"/>
                                     <constraint firstItem="2gj-aF-hkg" firstAttribute="leading" secondItem="leE-RZ-vZl" secondAttribute="leading" id="gp2-8a-a2J"/>
                                     <constraint firstItem="leE-RZ-vZl" firstAttribute="top" secondItem="2gj-aF-hkg" secondAttribute="bottom" constant="23" id="hvo-Aj-WiA"/>
                                     <constraint firstItem="NMz-DZ-RAs" firstAttribute="leading" secondItem="0jv-qg-s4f" secondAttribute="leading" id="jhI-ac-WZO"/>
@@ -727,7 +732,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gqd-fK-SM2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2166" y="1348"/>
+            <point key="canvasLocation" x="2214" y="1337"/>
         </scene>
         <!--Add Where View Controller-->
         <scene sceneID="Kew-QI-ZGB">
@@ -1372,7 +1377,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Tcc-E4-cRe" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2742" y="-414"/>
+            <point key="canvasLocation" x="2616" y="-448"/>
         </scene>
         <!--Contact View Controller-->
         <scene sceneID="LEn-mi-d4s">
@@ -1392,11 +1397,11 @@
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="コンタクト" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qqD-E7-rSF">
                                         <rect key="frame" x="118" y="30" width="85" height="21"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
-                                <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="1" green="0.40000000600000002" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstItem="qqD-E7-rSF" firstAttribute="centerX" secondItem="pFj-Sc-kYx" secondAttribute="centerX" id="2IC-0W-oTH"/>
                                     <constraint firstItem="qqD-E7-rSF" firstAttribute="centerY" secondItem="pFj-Sc-kYx" secondAttribute="centerY" constant="8" id="AsT-bp-Jgj"/>
@@ -1439,9 +1444,9 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sKw-a8-QVb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1476" y="-1207"/>
+            <point key="canvasLocation" x="-1438" y="-1443"/>
         </scene>
-        <!--How To Use View Controller-->
+        <!--ホーム-->
         <scene sceneID="TmB-fM-yoG">
             <objects>
                 <viewController storyboardIdentifier="HowToUseViewController" id="3Uo-kn-lgv" customClass="HowToUseViewController" customModule="acahara_app" customModuleProvider="target" sceneMemberID="viewController">
@@ -1456,18 +1461,18 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kXY-NH-BeU">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="65"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="使い方" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hLo-MQ-SCc">
-                                        <rect key="frame" x="135" y="30" width="51" height="30"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="アカハラ対策" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hLo-MQ-SCc">
+                                        <rect key="frame" x="109" y="27" width="102" height="30"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
-                                <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="1" green="0.40000000600000002" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstItem="hLo-MQ-SCc" firstAttribute="centerY" secondItem="kXY-NH-BeU" secondAttribute="centerY" constant="12.5" id="Fjx-U7-yaz"/>
-                                    <constraint firstItem="hLo-MQ-SCc" firstAttribute="centerX" secondItem="kXY-NH-BeU" secondAttribute="centerX" id="qw3-Ir-L74"/>
-                                    <constraint firstItem="hLo-MQ-SCc" firstAttribute="top" secondItem="kXY-NH-BeU" secondAttribute="top" constant="30" id="r0Z-cN-a87"/>
+                                    <constraint firstAttribute="height" constant="65" id="EBh-v2-cxD"/>
+                                    <constraint firstItem="hLo-MQ-SCc" firstAttribute="centerX" secondItem="kXY-NH-BeU" secondAttribute="centerX" id="bfa-YL-rIA"/>
+                                    <constraint firstItem="hLo-MQ-SCc" firstAttribute="centerY" secondItem="kXY-NH-BeU" secondAttribute="centerY" constant="9.5" id="py3-Us-dth"/>
                                 </constraints>
                             </view>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Menu-25.png" translatesAutoresizingMaskIntoConstraints="NO" id="AD4-kL-czp">
@@ -1484,13 +1489,17 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="AD4-kL-czp" firstAttribute="top" secondItem="rzz-DU-MTa" secondAttribute="top" constant="30" id="1bu-X8-psM"/>
+                            <constraint firstItem="kXY-NH-BeU" firstAttribute="top" secondItem="rzz-DU-MTa" secondAttribute="top" id="7sH-Yr-CJk"/>
+                            <constraint firstAttribute="trailing" secondItem="kXY-NH-BeU" secondAttribute="trailing" id="Y4Z-eR-45F"/>
                             <constraint firstAttribute="trailing" secondItem="kXY-NH-BeU" secondAttribute="trailing" id="bRd-mY-z1b"/>
                             <constraint firstItem="kXY-NH-BeU" firstAttribute="top" secondItem="rzz-DU-MTa" secondAttribute="top" id="iTh-bX-y8i"/>
-                            <constraint firstItem="npo-29-yog" firstAttribute="top" secondItem="kXY-NH-BeU" secondAttribute="bottom" constant="503" id="jub-it-VOe"/>
+                            <constraint firstItem="npo-29-yog" firstAttribute="top" secondItem="kXY-NH-BeU" secondAttribute="bottom" constant="454" id="jub-it-VOe"/>
+                            <constraint firstItem="kXY-NH-BeU" firstAttribute="leading" secondItem="rzz-DU-MTa" secondAttribute="leading" id="oUp-RA-9vG"/>
                             <constraint firstItem="kXY-NH-BeU" firstAttribute="leading" secondItem="rzz-DU-MTa" secondAttribute="leading" id="oZk-m1-o2a"/>
                             <constraint firstItem="AD4-kL-czp" firstAttribute="leading" secondItem="rzz-DU-MTa" secondAttribute="leading" constant="8" id="y9q-LJ-MwD"/>
                         </constraints>
                     </view>
+                    <tabBarItem key="tabBarItem" title="ホーム" image="home" id="Mfe-0Q-yFw"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
                         <outlet property="htuCoverBtn" destination="bbB-M8-KdP" id="Lan-bC-a13"/>
@@ -1499,7 +1508,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uYN-pu-QO7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1080" y="-1207"/>
+            <point key="canvasLocation" x="580" y="134"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="pgN-Bo-e5D">
@@ -1510,39 +1519,410 @@
                         <viewControllerLayoutGuide type="bottom" id="sDy-ZQ-jXr"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="ua7-jV-vfq">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="2000"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="4500"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Gf2-Gf-NnD">
-                                <rect key="frame" x="0.0" y="65" width="320" height="1935"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5uc-GW-F3F">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="65"/>
                                 <subviews>
-                                    <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="86p-lU-hij">
-                                        <rect key="frame" x="145" y="920" width="30" height="30"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="利用規約" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NwZ-IF-Ylf">
+                                        <rect key="frame" x="126" y="2281" width="68" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Menu-25.png" translatesAutoresizingMaskIntoConstraints="NO" id="bzB-Bk-zb2">
+                                        <rect key="frame" x="8" y="30" width="25" height="25"/>
+                                    </imageView>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="D1W-o9-m3Z">
+                                        <rect key="frame" x="8" y="25" width="30" height="30"/>
                                     </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="利用規約" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="l8A-22-Qfm">
+                                        <rect key="frame" x="126" y="32" width="68" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
+                                <color key="backgroundColor" red="1" green="0.40000000600000002" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstItem="86p-lU-hij" firstAttribute="centerY" secondItem="Gf2-Gf-NnD" secondAttribute="centerY" id="cCi-2b-Tmn"/>
-                                    <constraint firstItem="86p-lU-hij" firstAttribute="centerX" secondItem="Gf2-Gf-NnD" secondAttribute="centerX" id="dUa-IG-u1c"/>
+                                    <constraint firstAttribute="height" constant="65" id="Lty-hU-cGU"/>
+                                </constraints>
+                            </view>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0BS-Kg-bxE">
+                                <rect key="frame" x="0.0" y="64" width="320" height="4436"/>
+                                <subviews>
+                                    <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kcq-PM-gPn">
+                                        <rect key="frame" x="145" y="916" width="30" height="30"/>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="第２条（利用登録）" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="y2B-9G-CK3">
+                                        <rect key="frame" x="17" y="306" width="153" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="85K-IG-EYY">
+                                        <rect key="frame" x="13" y="12" width="299" height="143"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="143" id="5IP-rf-3at"/>
+                                        </constraints>
+                                        <string key="text">この利用規約（以下，「本規約」といいます。）は，このウェブサイト上で提供するサービス（以下，「本サービス」といいます。）の利用条件を定めるものです。登録ユーザーの皆さま（以下，「ユーザー」といいます。）には，本規約に従って，本サービスをご利用いただきます。</string>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                    </textView>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="scaleToFill" editable="NO" text="本規約は，ユーザーと当社との間の本サービスの利用に関わる一切の関係に適用されるものとします。" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f4I-WH-8r7">
+                                        <rect key="frame" x="13" y="210" width="299" height="79"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="79" id="h8t-ql-9uD"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                    </textView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="第１条（適用）" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mZP-NP-3Bs">
+                                        <rect key="frame" x="13" y="181" width="119" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="scaleToFill" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="y8d-YT-qhB">
+                                        <rect key="frame" x="13" y="335" width="299" height="421"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="421" id="FDR-CP-o7Y"/>
+                                        </constraints>
+                                        <string key="text">登録希望者が当社の定める方法によって利用登録を申請し，当社がこれを承認することによって，利用登録が完了するものとします。
+当社は，利用登録の申請者に以下の事由があると判断した場合，利用登録の申請を承認しないことがあり，その理由については一切の開示義務を負わないものとします。
+（1）利用登録の申請に際して虚偽の事項を届け出た場合
+（2）本規約に違反したことがある者からの申請である場合
+（3）未成年者，成年被後見人，被保佐人または被補助人のいずれかであり，法定代理人，後見人，保佐人または補助人の同意等を得ていなかった場合
+（4）反社会的勢力等（暴力団，暴力団員，右翼団体，反社会的勢力，その他これに準ずる者を意味します。）である，または資金提供その他を通じて反社会的勢力等の維持，運営もしくは経営に協力もしくは関与する等反社会的勢力との何らかの交流もしくは関与を行っていると当社が判断した場合
+（5）その他，当社が利用登録を相当でないと判断した場合
+</string>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                    </textView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="第３条" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gR4-gX-Fz1">
+                                        <rect key="frame" x="13" y="773" width="51" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="（ユーザーIDおよびパスワード管理）" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tjU-SU-XKD">
+                                        <rect key="frame" x="16" y="793" width="289" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="scaleToFill" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gc7-c7-5eb">
+                                        <rect key="frame" x="13" y="815" width="299" height="194"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="194" id="r5B-tg-kVU"/>
+                                        </constraints>
+                                        <string key="text">ユーザーは，自己の責任において，本サービスのユーザーIDおよびパスワードを管理するものとします。
+ユーザーは，いかなる場合にも，ユーザーIDおよびパスワードを第三者に譲渡または貸与することはできません。当社は，ユーザーIDとパスワードの組み合わせが登録情報と一致してログインされた場合には，そのユーザーIDを登録しているユーザー自身による利用とみなします。
+</string>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                    </textView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="第４条（禁止事項）" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NeE-66-IXr">
+                                        <rect key="frame" x="13" y="1022" width="153" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="scaleToFill" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QVt-k8-YlJ">
+                                        <rect key="frame" x="13" y="1046" width="299" height="594"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="594" id="LKv-oy-RVC"/>
+                                        </constraints>
+                                        <string key="text">ユーザーは，本サービスの利用にあたり，以下の行為をしてはなりません。
+
+（1）法令または公序良俗に違反する行為
+（2）犯罪行為に関連する行為
+（3）当社のサーバーまたはネットワークの機能を破壊したり，妨害したりする行為
+（4）当社のサービスの運営を妨害するおそれのある行為
+（5）他のユーザーに関する個人情報等を収集または蓄積する行為
+（6）他のユーザーに成りすます行為
+（7）当社のサービスに関連して，反社会的勢力に対して直接または間接に利益を供与する行為
+（8）当社，本サービスの他の利用者または第三者の知的財産権，肖像権，プライバシー，名誉その他の権利または利益を侵害する行為
+（9）過度に暴力的な表現，露骨な性的表現，人種，国籍，信条，性別，社会的身分，門地等による差別につながる表現，自殺，自傷行為，薬物乱用を誘引または助長する表現，その他反社会的な内容を含み他人に不快感を与える表現を，投稿または送信する行為
+（10）営業，宣伝，広告，勧誘，その他営利を目的とする行為（当社の認めたものを除きます。），性行為やわいせつな行為を目的とする行為，面識のない異性との出会いや交際を目的とする行為，他のお客様に対する嫌がらせや誹謗中傷を目的とする行為，その他本サービスが予定している利用目的と異なる目的で本サービスを利用する行為
+（11）宗教活動または宗教団体への勧誘行為
+（12）その他，当社が不適切と判断する行為</string>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                    </textView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="第５条（本サービスの提供の停止等）" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="heS-1Y-Iab">
+                                        <rect key="frame" x="16" y="1660" width="289" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="scaleToFill" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8np-P2-4Sf">
+                                        <rect key="frame" x="13" y="1689" width="299" height="301"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="301" id="Nav-4L-U67"/>
+                                        </constraints>
+                                        <string key="text">以下のいずれかの事由があると判断した場合，ユーザーに事前に通知することなく本サービスの全部または一部の提供を停止または中断することができるものとします。
+（1）本サービスにかかるコンピュータシステムの保守点検または更新を行う場合
+（2）地震，落雷，火災，停電または天災などの不可抗力により，本サービスの提供が困難となった場合
+（3）コンピュータまたは通信回線等が事故により停止した場合
+（4）その他，当社が本サービスの提供が困難と判断した場合
+当社は，本サービスの提供の停止または中断により，ユーザーまたは第三者が被ったいかなる不利益または損害について，理由を問わず一切の責任を負わないものとします。</string>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                    </textView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="第６条（著作権）" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JZv-4g-Svn">
+                                        <rect key="frame" x="13" y="2005" width="136" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="scaleToFill" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ftH-dJ-fRp">
+                                        <rect key="frame" x="13" y="2029" width="299" height="382"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="382" id="Tma-li-BxX"/>
+                                        </constraints>
+                                        <string key="text">ユーザーは，自ら著作権等の必要な知的財産権を有するか，または必要な権利者の許諾を得た文章，画像や映像等の情報のみ，本サービスを利用し，投稿または編集することができるものとします。
+ユーザーが本サービスを利用して投稿または編集した文章，画像，映像等の著作権については，当該ユーザーその他既存の権利者に留保されるものとします。ただし，当社は，本サービスを利用して投稿または編集された文章，画像，映像等を利用できるものとし，ユーザーは，この利用に関して，著作者人格権を行使しないものとします。
+前項本文の定めるものを除き，本サービスおよび本サービスに関連する一切の情報についての著作権およびその他知的財産権はすべて当社または当社にその利用を許諾した権利者に帰属し，ユーザーは無断で複製，譲渡，貸与，翻訳，改変，転載，公衆送信（送信可能化を含みます。），伝送，配布，出版，営業使用等をしてはならないものとします。
+</string>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                    </textView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="第７条（利用制限および登録抹消）" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a8H-ht-7Gb">
+                                        <rect key="frame" x="13" y="2427" width="272" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="scaleToFill" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="veJ-Le-1Bj">
+                                        <rect key="frame" x="13" y="2456" width="299" height="434"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="434" id="qDZ-8A-BOW"/>
+                                        </constraints>
+                                        <string key="text">以下の場合には，事前の通知なく，投稿データを削除し，ユーザーに対して本サービスの全部もしくは一部の利用を制限しまたはユーザーとしての登録を抹消することができるものとします。
+（1）本規約のいずれかの条項に違反した場合
+（2）登録事項に虚偽の事実があることが判明した場合
+（3）破産，民事再生，会社更生または特別清算の手続開始決定等の申立がなされたとき
+（4）1年間以上本サービスの利用がない場合
+（5）当社からの問い合わせその他の回答を求める連絡に対して30日間以上応答がない場合
+（6）第2条第2項各号に該当する場合
+（7）その他，当社が本サービスの利用を適当でないと判断した場合
+前項各号のいずれかに該当した場合，ユーザーは，当然に当社に対する一切の債務について期限の利益を失い，その時点において負担する一切の債務を直ちに一括して弁済しなければなりません。
+当社は，本条に基づき当社が行った行為によりユーザーに生じた損害について，一切の責任を負いません。</string>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                    </textView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="第８条（保証の否認および免責事項）" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pV1-Vy-KlL">
+                                        <rect key="frame" x="13" y="2905" width="289" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="scaleToFill" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="748-4B-dUP">
+                                        <rect key="frame" x="13" y="2934" width="299" height="504"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="504" id="S6R-Rg-RrG"/>
+                                        </constraints>
+                                        <string key="text">本サービスに事実上または法律上の瑕疵（安全性，信頼性，正確性，完全性，有効性，特定の目的への適合性，セキュリティなどに関する欠陥，エラーやバグ，権利侵害などを含みます。）がないことを明示的にも黙示的にも保証しておりません。
+当社は，本サービスに起因してユーザーに生じたあらゆる損害について一切の責任を負いません。ただし，本サービスに関する当社とユーザーとの間の契約（本規約を含みます。）が消費者契約法に定める消費者契約となる場合，この免責規定は適用されません。
+前項ただし書に定める場合であっても，当社は，当社の過失（重過失を除きます。）による債務不履行または不法行為によりユーザーに生じた損害のうち特別な事情から生じた損害（当社またはユーザーが損害発生につき予見し，または予見し得た場合を含みます。）について一切の責任を負いません。また，当社の過失（重過失を除きます。）による債務不履行または不法行為によりユーザーに生じた損害の賠償は，ユーザーから当該損害が発生した月に受領した利用料の額を上限とします。
+当社は，本サービスに関して，ユーザーと他のユーザーまたは第三者との間において生じた取引，連絡または紛争等について一切責任を負いません。</string>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                    </textView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="第９条（サービス内容の変更等）" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZFv-Mw-7Me">
+                                        <rect key="frame" x="13" y="3456" width="255" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="scaleToFill" editable="NO" text="ユーザーに通知することなく，本サービスの内容を変更しまたは本サービスの提供を中止することができるものとし，これによってユーザーに生じた損害について一切の責任を負いません。" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZGE-J9-dFi">
+                                        <rect key="frame" x="13" y="3485" width="299" height="117"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="117" id="PPJ-eQ-hmL"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                    </textView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="第１０条（利用規約の変更）" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DTX-ni-RYU">
+                                        <rect key="frame" x="13" y="3623" width="221" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="scaleToFill" editable="NO" text="必要と判断した場合には，ユーザーに通知することなくいつでも本規約を変更することができるものとします。" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jET-Ec-Zhp">
+                                        <rect key="frame" x="13" y="3652" width="299" height="80"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="80" id="O3i-66-fhl"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                    </textView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="第１１条（通知または連絡）" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8J9-Sa-e3W">
+                                        <rect key="frame" x="13" y="3749" width="221" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="scaleToFill" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="F4t-oY-7nN">
+                                        <rect key="frame" x="13" y="3778" width="299" height="75"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="75" id="Q5o-OP-ewY"/>
+                                        </constraints>
+                                        <string key="text">ユーザーとの間の通知または連絡は，このサービスの提供者の定める方法によって行うものとします。
+
+</string>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                    </textView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="第１２条（権利義務の譲渡の禁止）" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zDb-Kx-h4D">
+                                        <rect key="frame" x="13" y="3873" width="272" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="scaleToFill" editable="NO" text="ユーザーは，当社の書面による事前の承諾なく，利用契約上の地位または本規約に基づく権利もしくは義務を第三者に譲渡し，または担保に供することはできません。" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1dh-m5-z8M">
+                                        <rect key="frame" x="13" y="3902" width="299" height="93"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="93" id="1B1-vx-EPC"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                    </textView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="第１３条（準拠法・裁判管轄）" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g5A-W5-H05">
+                                        <rect key="frame" x="13" y="4010" width="237" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="scaleToFill" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mbm-7d-6e7">
+                                        <rect key="frame" x="13" y="4039" width="299" height="114"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="114" id="SAL-ba-K2L"/>
+                                        </constraints>
+                                        <string key="text">本規約の解釈にあたっては，日本法を準拠法とします。
+本サービスに関して紛争が生じた場合には，当社の本店所在地を管轄する裁判所を専属的合意管轄とします。</string>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                    </textView>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="8J9-Sa-e3W" firstAttribute="top" secondItem="jET-Ec-Zhp" secondAttribute="bottom" constant="17" id="07k-WB-om3"/>
+                                    <constraint firstItem="QVt-k8-YlJ" firstAttribute="top" secondItem="NeE-66-IXr" secondAttribute="bottom" constant="3" id="1Df-W2-4EN"/>
+                                    <constraint firstItem="veJ-Le-1Bj" firstAttribute="trailing" secondItem="748-4B-dUP" secondAttribute="trailing" id="1Qt-Ja-6B0"/>
+                                    <constraint firstItem="veJ-Le-1Bj" firstAttribute="leading" secondItem="pV1-Vy-KlL" secondAttribute="leading" id="2U4-wN-yNx"/>
+                                    <constraint firstItem="NeE-66-IXr" firstAttribute="top" secondItem="kcq-PM-gPn" secondAttribute="bottom" constant="76" id="3Xd-J3-sAH"/>
+                                    <constraint firstItem="JZv-4g-Svn" firstAttribute="leading" secondItem="ftH-dJ-fRp" secondAttribute="leading" id="498-Nn-wCw"/>
+                                    <constraint firstItem="JZv-4g-Svn" firstAttribute="top" secondItem="8np-P2-4Sf" secondAttribute="bottom" constant="15" id="4vA-Ok-HUM"/>
+                                    <constraint firstItem="F4t-oY-7nN" firstAttribute="trailing" secondItem="1dh-m5-z8M" secondAttribute="trailing" id="55J-Ku-CzU"/>
+                                    <constraint firstItem="748-4B-dUP" firstAttribute="trailing" secondItem="ZGE-J9-dFi" secondAttribute="trailing" id="5Zz-q1-rvv"/>
+                                    <constraint firstItem="Mbm-7d-6e7" firstAttribute="top" secondItem="g5A-W5-H05" secondAttribute="bottom" constant="8" symbolic="YES" id="6X5-Bo-Rxl"/>
+                                    <constraint firstItem="85K-IG-EYY" firstAttribute="top" secondItem="0BS-Kg-bxE" secondAttribute="top" constant="12" id="6Zg-mj-opX"/>
+                                    <constraint firstItem="tjU-SU-XKD" firstAttribute="centerX" secondItem="kcq-PM-gPn" secondAttribute="centerX" id="7Vn-JJ-Wvp"/>
+                                    <constraint firstItem="tjU-SU-XKD" firstAttribute="centerX" secondItem="0BS-Kg-bxE" secondAttribute="centerX" id="8ZA-16-tBV"/>
+                                    <constraint firstItem="f4I-WH-8r7" firstAttribute="leading" secondItem="y8d-YT-qhB" secondAttribute="leading" id="9uM-WF-MI1"/>
+                                    <constraint firstItem="gc7-c7-5eb" firstAttribute="leading" secondItem="NeE-66-IXr" secondAttribute="leading" id="Alu-sz-Q21"/>
+                                    <constraint firstItem="a8H-ht-7Gb" firstAttribute="leading" secondItem="veJ-Le-1Bj" secondAttribute="leading" id="AwF-Vp-UPp"/>
+                                    <constraint firstItem="ZGE-J9-dFi" firstAttribute="leading" secondItem="DTX-ni-RYU" secondAttribute="leading" id="BTA-x1-Fjy"/>
+                                    <constraint firstItem="85K-IG-EYY" firstAttribute="trailing" secondItem="f4I-WH-8r7" secondAttribute="trailing" id="C98-92-62c"/>
+                                    <constraint firstItem="DTX-ni-RYU" firstAttribute="leading" secondItem="jET-Ec-Zhp" secondAttribute="leading" id="DgI-HW-VKh"/>
+                                    <constraint firstItem="zDb-Kx-h4D" firstAttribute="leading" secondItem="1dh-m5-z8M" secondAttribute="leading" id="Dym-CV-uD5"/>
+                                    <constraint firstItem="y8d-YT-qhB" firstAttribute="leading" secondItem="gR4-gX-Fz1" secondAttribute="leading" id="FPO-RY-NaN"/>
+                                    <constraint firstItem="F4t-oY-7nN" firstAttribute="leading" secondItem="zDb-Kx-h4D" secondAttribute="leading" id="GSN-yd-2KR"/>
+                                    <constraint firstItem="8J9-Sa-e3W" firstAttribute="leading" secondItem="F4t-oY-7nN" secondAttribute="leading" id="HiB-on-17g"/>
+                                    <constraint firstItem="QVt-k8-YlJ" firstAttribute="trailing" secondItem="8np-P2-4Sf" secondAttribute="trailing" id="IsB-aR-uT7"/>
+                                    <constraint firstItem="y2B-9G-CK3" firstAttribute="top" secondItem="f4I-WH-8r7" secondAttribute="bottom" constant="17" id="JIE-Lu-FBp"/>
+                                    <constraint firstItem="NeE-66-IXr" firstAttribute="top" secondItem="gc7-c7-5eb" secondAttribute="bottom" constant="13" id="K0N-ub-W2l"/>
+                                    <constraint firstItem="8np-P2-4Sf" firstAttribute="leading" secondItem="JZv-4g-Svn" secondAttribute="leading" id="KNt-nd-Nm9"/>
+                                    <constraint firstItem="ZFv-Mw-7Me" firstAttribute="leading" secondItem="ZGE-J9-dFi" secondAttribute="leading" id="KSz-Hg-S3c"/>
+                                    <constraint firstItem="gc7-c7-5eb" firstAttribute="top" secondItem="gR4-gX-Fz1" secondAttribute="bottom" constant="21" id="Kzg-76-kth"/>
+                                    <constraint firstItem="ftH-dJ-fRp" firstAttribute="trailing" secondItem="veJ-Le-1Bj" secondAttribute="trailing" id="MSb-Cz-OhC"/>
+                                    <constraint firstItem="tjU-SU-XKD" firstAttribute="leading" secondItem="heS-1Y-Iab" secondAttribute="leading" id="MuD-PD-LvC"/>
+                                    <constraint firstItem="f4I-WH-8r7" firstAttribute="trailing" secondItem="y8d-YT-qhB" secondAttribute="trailing" id="O0T-0x-Fjr"/>
+                                    <constraint firstItem="zDb-Kx-h4D" firstAttribute="top" secondItem="F4t-oY-7nN" secondAttribute="bottom" constant="20" id="O7D-nG-Eu4"/>
+                                    <constraint firstItem="8np-P2-4Sf" firstAttribute="top" secondItem="heS-1Y-Iab" secondAttribute="bottom" constant="8" symbolic="YES" id="QKq-Qf-etF"/>
+                                    <constraint firstItem="F4t-oY-7nN" firstAttribute="top" secondItem="8J9-Sa-e3W" secondAttribute="bottom" constant="8" symbolic="YES" id="Re7-q4-SWY"/>
+                                    <constraint firstItem="85K-IG-EYY" firstAttribute="trailing" secondItem="0BS-Kg-bxE" secondAttribute="trailingMargin" id="TVc-tk-wAV"/>
+                                    <constraint firstItem="y2B-9G-CK3" firstAttribute="leading" secondItem="0BS-Kg-bxE" secondAttribute="leading" constant="17" id="Tfr-1S-dDh"/>
+                                    <constraint firstItem="748-4B-dUP" firstAttribute="top" secondItem="pV1-Vy-KlL" secondAttribute="bottom" constant="8" symbolic="YES" id="Tr4-nT-NwS"/>
+                                    <constraint firstItem="748-4B-dUP" firstAttribute="leading" secondItem="ZFv-Mw-7Me" secondAttribute="leading" id="UuK-UB-N37"/>
+                                    <constraint firstItem="jET-Ec-Zhp" firstAttribute="leading" secondItem="8J9-Sa-e3W" secondAttribute="leading" id="VHF-Bm-GdT"/>
+                                    <constraint firstItem="1dh-m5-z8M" firstAttribute="top" secondItem="zDb-Kx-h4D" secondAttribute="bottom" constant="8" symbolic="YES" id="Vkd-Kj-cxJ"/>
+                                    <constraint firstItem="DTX-ni-RYU" firstAttribute="top" secondItem="ZGE-J9-dFi" secondAttribute="bottom" constant="21" id="W29-ag-2eD"/>
+                                    <constraint firstItem="jET-Ec-Zhp" firstAttribute="top" secondItem="DTX-ni-RYU" secondAttribute="bottom" constant="8" symbolic="YES" id="WFU-1j-4qu"/>
+                                    <constraint firstItem="pV1-Vy-KlL" firstAttribute="top" secondItem="veJ-Le-1Bj" secondAttribute="bottom" constant="15" id="Wak-bf-ggN"/>
+                                    <constraint firstAttribute="bottom" secondItem="Mbm-7d-6e7" secondAttribute="bottom" constant="283" id="Wju-LH-EVA"/>
+                                    <constraint firstItem="veJ-Le-1Bj" firstAttribute="top" secondItem="a8H-ht-7Gb" secondAttribute="bottom" constant="8" symbolic="YES" id="ZoU-bp-wlI"/>
+                                    <constraint firstItem="NeE-66-IXr" firstAttribute="leading" secondItem="QVt-k8-YlJ" secondAttribute="leading" id="bNx-Yz-S1F"/>
+                                    <constraint firstItem="85K-IG-EYY" firstAttribute="leading" secondItem="0BS-Kg-bxE" secondAttribute="leading" constant="13" id="ciw-lv-DEz"/>
+                                    <constraint firstItem="g5A-W5-H05" firstAttribute="top" secondItem="1dh-m5-z8M" secondAttribute="bottom" constant="15" id="d7W-jt-EoV"/>
+                                    <constraint firstItem="jET-Ec-Zhp" firstAttribute="trailing" secondItem="F4t-oY-7nN" secondAttribute="trailing" id="dC4-vA-mTl"/>
+                                    <constraint firstItem="y8d-YT-qhB" firstAttribute="top" secondItem="y2B-9G-CK3" secondAttribute="bottom" constant="8" symbolic="YES" id="gap-hU-Thr"/>
+                                    <constraint firstItem="f4I-WH-8r7" firstAttribute="top" secondItem="mZP-NP-3Bs" secondAttribute="bottom" constant="8" symbolic="YES" id="ggv-r6-yGp"/>
+                                    <constraint firstItem="ZGE-J9-dFi" firstAttribute="trailing" secondItem="jET-Ec-Zhp" secondAttribute="trailing" id="hA3-Eq-9LI"/>
+                                    <constraint firstItem="ftH-dJ-fRp" firstAttribute="top" secondItem="JZv-4g-Svn" secondAttribute="bottom" constant="3" id="iK8-l9-qWX"/>
+                                    <constraint firstItem="gR4-gX-Fz1" firstAttribute="leading" secondItem="gc7-c7-5eb" secondAttribute="leading" id="is8-r2-a72"/>
+                                    <constraint firstItem="ZFv-Mw-7Me" firstAttribute="top" secondItem="748-4B-dUP" secondAttribute="bottom" constant="18" id="jDa-bp-OO4"/>
+                                    <constraint firstItem="QVt-k8-YlJ" firstAttribute="leading" secondItem="8np-P2-4Sf" secondAttribute="leading" id="k6E-fZ-sEt"/>
+                                    <constraint firstItem="8np-P2-4Sf" firstAttribute="trailing" secondItem="ftH-dJ-fRp" secondAttribute="trailing" id="l6m-9J-KMa"/>
+                                    <constraint firstItem="1dh-m5-z8M" firstAttribute="leading" secondItem="g5A-W5-H05" secondAttribute="leading" id="llJ-Ae-7Lh"/>
+                                    <constraint firstItem="gc7-c7-5eb" firstAttribute="trailing" secondItem="QVt-k8-YlJ" secondAttribute="trailing" id="nne-0s-OiE"/>
+                                    <constraint firstItem="1dh-m5-z8M" firstAttribute="trailing" secondItem="Mbm-7d-6e7" secondAttribute="trailing" id="pTx-F1-afR"/>
+                                    <constraint firstItem="heS-1Y-Iab" firstAttribute="top" secondItem="QVt-k8-YlJ" secondAttribute="bottom" constant="20" id="phZ-zG-PUm"/>
+                                    <constraint firstItem="85K-IG-EYY" firstAttribute="leading" secondItem="mZP-NP-3Bs" secondAttribute="leading" id="pxY-lg-ZBC"/>
+                                    <constraint firstItem="ftH-dJ-fRp" firstAttribute="leading" secondItem="a8H-ht-7Gb" secondAttribute="leading" id="qe7-vp-3iF"/>
+                                    <constraint firstItem="g5A-W5-H05" firstAttribute="leading" secondItem="Mbm-7d-6e7" secondAttribute="leading" id="sJj-kP-dMI"/>
+                                    <constraint firstItem="gc7-c7-5eb" firstAttribute="top" secondItem="tjU-SU-XKD" secondAttribute="bottom" constant="1" id="sWl-fD-eC7"/>
+                                    <constraint firstItem="gR4-gX-Fz1" firstAttribute="top" secondItem="y8d-YT-qhB" secondAttribute="bottom" constant="17" id="siS-Sp-Who"/>
+                                    <constraint firstAttribute="trailing" secondItem="tjU-SU-XKD" secondAttribute="trailing" constant="15" id="svP-Km-RUg"/>
+                                    <constraint firstItem="a8H-ht-7Gb" firstAttribute="top" secondItem="ftH-dJ-fRp" secondAttribute="bottom" constant="16" id="wB9-ca-w6d"/>
+                                    <constraint firstItem="mZP-NP-3Bs" firstAttribute="top" secondItem="85K-IG-EYY" secondAttribute="bottom" constant="26" id="wxc-G7-G3u"/>
+                                    <constraint firstItem="mZP-NP-3Bs" firstAttribute="leading" secondItem="f4I-WH-8r7" secondAttribute="leading" id="zkV-Al-TQT"/>
+                                    <constraint firstItem="ZGE-J9-dFi" firstAttribute="top" secondItem="ZFv-Mw-7Me" secondAttribute="bottom" constant="8" symbolic="YES" id="zkV-ZP-iP3"/>
+                                    <constraint firstItem="y8d-YT-qhB" firstAttribute="trailing" secondItem="gc7-c7-5eb" secondAttribute="trailing" id="znG-Ie-RFd"/>
+                                    <constraint firstItem="pV1-Vy-KlL" firstAttribute="leading" secondItem="748-4B-dUP" secondAttribute="leading" id="zoK-S2-A11"/>
                                 </constraints>
                             </scrollView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="Gf2-Gf-NnD" firstAttribute="centerX" secondItem="ua7-jV-vfq" secondAttribute="centerX" id="Brt-eO-PbQ"/>
-                            <constraint firstItem="Gf2-Gf-NnD" firstAttribute="width" secondItem="ua7-jV-vfq" secondAttribute="width" id="bEu-85-oJQ"/>
-                            <constraint firstItem="Gf2-Gf-NnD" firstAttribute="height" secondItem="ua7-jV-vfq" secondAttribute="height" id="cbW-r2-tY5"/>
-                            <constraint firstItem="Gf2-Gf-NnD" firstAttribute="centerY" secondItem="ua7-jV-vfq" secondAttribute="centerY" id="uFl-T7-9Ae"/>
+                            <constraint firstAttribute="trailing" secondItem="5uc-GW-F3F" secondAttribute="trailing" id="Eah-Co-GbE"/>
+                            <constraint firstItem="0BS-Kg-bxE" firstAttribute="top" secondItem="ua7-jV-vfq" secondAttribute="top" constant="64" id="SbK-91-x9b"/>
+                            <constraint firstItem="0BS-Kg-bxE" firstAttribute="bottom" secondItem="sDy-ZQ-jXr" secondAttribute="top" id="YbC-cc-92c"/>
+                            <constraint firstItem="0BS-Kg-bxE" firstAttribute="leading" secondItem="ua7-jV-vfq" secondAttribute="leading" id="ZEC-xe-HCm"/>
+                            <constraint firstItem="5uc-GW-F3F" firstAttribute="top" secondItem="ua7-jV-vfq" secondAttribute="top" id="exh-AQ-960"/>
+                            <constraint firstAttribute="trailing" secondItem="0BS-Kg-bxE" secondAttribute="trailing" id="o9f-Fl-znZ"/>
+                            <constraint firstItem="5uc-GW-F3F" firstAttribute="leading" secondItem="ua7-jV-vfq" secondAttribute="leading" id="wjF-UL-6ut"/>
                         </constraints>
                     </view>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-                    <size key="freeformSize" width="320" height="2000"/>
+                    <size key="freeformSize" width="320" height="4500"/>
                     <connections>
-                        <outlet property="scrollView" destination="Gf2-Gf-NnD" id="wco-6Z-lcK"/>
+                        <outlet property="headerView" destination="5uc-GW-F3F" id="XTx-Wa-fPy"/>
+                        <outlet property="menuBtn" destination="bzB-Bk-zb2" id="FBU-qb-F9A"/>
+                        <outlet property="menuCoverBtn" destination="D1W-o9-m3Z" id="1uQ-8G-xZx"/>
+                        <outlet property="scrollView" destination="0BS-Kg-bxE" id="D5X-vK-T3i"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="R8C-hm-A4n" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-617" y="-1257"/>
+            <point key="canvasLocation" x="-653" y="503"/>
         </scene>
         <!--Setting View Controller-->
         <scene sceneID="wg7-f3-ORb">
@@ -1634,7 +2014,7 @@
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="設定" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A7T-NG-G3c">
                                         <rect key="frame" x="135" y="33" width="51" height="30"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
-                                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9dB-RN-Xmk">
@@ -1645,11 +2025,11 @@
                                         </constraints>
                                     </button>
                                 </subviews>
-                                <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="1" green="0.40000000600000002" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="ZAm-IQ-EwG" secondAttribute="trailing" constant="18" id="2h6-bL-evQ"/>
                                     <constraint firstItem="A7T-NG-G3c" firstAttribute="centerX" secondItem="rf8-26-6Nu" secondAttribute="centerX" id="OcD-45-nrC"/>
-                                    <constraint firstItem="A7T-NG-G3c" firstAttribute="centerY" secondItem="rf8-26-6Nu" secondAttribute="centerY" constant="30" id="UW5-cj-rfy"/>
+                                    <constraint firstItem="A7T-NG-G3c" firstAttribute="centerY" secondItem="rf8-26-6Nu" secondAttribute="centerY" constant="15.5" id="UW5-cj-rfy"/>
                                     <constraint firstAttribute="height" constant="65" id="UeB-Fy-TWg"/>
                                     <constraint firstItem="9dB-RN-Xmk" firstAttribute="leading" secondItem="rf8-26-6Nu" secondAttribute="leading" constant="8" id="cOX-sT-Ek6"/>
                                     <constraint firstItem="9dB-RN-Xmk" firstAttribute="top" secondItem="rf8-26-6Nu" secondAttribute="top" constant="30" id="ox7-gj-OZf"/>
@@ -1773,7 +2153,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Nw-L8-lE0" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-380" y="-1207"/>
+            <point key="canvasLocation" x="-300" y="-1453"/>
         </scene>
         <!--Picture View Controller-->
         <scene sceneID="2LX-EH-4EC">
@@ -2019,7 +2399,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aWA-U2-nhn" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="35" y="-1043"/>
+            <point key="canvasLocation" x="515" y="-889"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="DGx-O7-fe8">
@@ -2031,14 +2411,14 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </tabBar>
                     <connections>
-                        <segue destination="zbc-HI-g8K" kind="relationship" relationship="viewControllers" id="vt6-dP-tUu"/>
                         <segue destination="kmR-6f-bWc" kind="relationship" relationship="viewControllers" id="wzE-7e-22c"/>
                         <segue destination="wnK-gz-YAn" kind="relationship" relationship="viewControllers" id="abP-MM-ywm"/>
+                        <segue destination="3Uo-kn-lgv" kind="relationship" relationship="viewControllers" id="5fq-XB-Shz"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oUi-Vr-v48" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1237" y="-962"/>
+            <point key="canvasLocation" x="1181" y="-882"/>
         </scene>
         <!--ホーム-->
         <scene sceneID="GmT-GC-o6W">
@@ -2062,10 +2442,10 @@
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4gz-My-S88">
                                         <rect key="frame" x="8" y="27" width="25" height="30"/>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="90n-em-k0H">
-                                        <rect key="frame" x="102" y="30" width="116" height="30"/>
+                                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="90n-em-k0H">
+                                        <rect key="frame" x="102" y="28" width="116" height="33"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
-                                        <state key="normal" title="アカハラ対策">
+                                        <state key="normal" title="基本対策">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
@@ -2474,7 +2854,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gvb-Wd-MsR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-31" y="1615"/>
+            <point key="canvasLocation" x="-1059" y="-87"/>
         </scene>
         <!--記録一覧-->
         <scene sceneID="ktl-z2-Gpu">

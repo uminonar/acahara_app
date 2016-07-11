@@ -10,16 +10,27 @@ import UIKit
 
 class TOUViewController: UIViewController {
 
+    @IBOutlet weak var menuBtn: UIImageView!
+    @IBOutlet weak var headerView: UIView!
     @IBOutlet weak var menuCoverBtn: UIButton!
 
     @IBOutlet weak var scrollView: UIScrollView!
-    @IBOutlet weak var TOUMenu: UIImageView!
+ 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
         
-          scrollView.contentSize.height = 2000
+        scrollView.contentSize.height = 4500
+        
+        //sideBar向け
+        navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Left", style: .Plain, target: self, action: #selector(SSASideMenu.presentLeftMenuViewController))
+        
+        menuBtn.image = UIImage(named:"menu")?.imageWithRenderingMode(.AlwaysTemplate)
+        menuBtn.tintColor = UIColor.whiteColor()
+        self.menuCoverBtn.addTarget(SSASideMenu(), action: Selector("presentLeftMenuViewController"), forControlEvents: UIControlEvents.TouchUpInside)
+
+        
     }
 
     override func didReceiveMemoryWarning() {

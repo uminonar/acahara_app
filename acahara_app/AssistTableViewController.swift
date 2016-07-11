@@ -325,7 +325,7 @@ class AssistTableViewController: UIViewController,UITableViewDelegate,UITableVie
                 
                 
                 
-                cell.postImageView.image = UIImage(named:(posts[postindex]["picture"] as! String))
+                cell.postImageView.image = UIImage(named:(posts[postindex]["picture1"] as! String))
                 
                 cell.coverBtn.addTarget(self, action: "selected:", forControlEvents: .TouchUpInside)
                 cell.coverBtn.tag = postindex

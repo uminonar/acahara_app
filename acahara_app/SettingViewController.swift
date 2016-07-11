@@ -100,7 +100,7 @@ class SettingViewController: UIViewController {
         saveBtn.image = UIImage(named:"dataBase")?.imageWithRenderingMode(.AlwaysTemplate)
         
         let sakura:UIColor = UIColor(red:1.0,green:0.3,blue:0.3,alpha:1.0)
-        saveBtn.tintColor = sakura
+        saveBtn.tintColor = UIColor.whiteColor()
 
 
 //        let times = FAKFontAwesome.timesIconWithSize(25)
@@ -126,11 +126,10 @@ class SettingViewController: UIViewController {
 
         
         
-        settingMenu.tintColor = sakura
+        settingMenu.tintColor = UIColor.whiteColor()
         
         self.menuCoverBtn.addTarget(SSASideMenu(), action: Selector("presentLeftMenuViewController"), forControlEvents: UIControlEvents.TouchUpInside)
-        
-        
+
         
         //既に設定されている内容があれば各フォームに記入
         

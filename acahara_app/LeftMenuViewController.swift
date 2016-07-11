@@ -65,7 +65,7 @@ extension LeftMenuViewController: UITableViewDelegate, UITableViewDataSource {
         
         let cell = tableView.dequeueReusableCellWithIdentifier("cell", forIndexPath: indexPath)
         
-        let titles: [String] = ["ホーム","設定", "使い方", "利用規約", "コンタクト", "ログアウト"]
+        let titles: [String] = ["ホーム","基本対策", "設定", "コンタクト", "利用規約","ログアウト"]
         
         let images: [String] = ["IconSettings", "IconCalendar", "IconProfile", "IconSettings", "IconEmpty"]
         
@@ -97,7 +97,7 @@ extension LeftMenuViewController: UITableViewDelegate, UITableViewDataSource {
             var myTabBarController = storyboard.instantiateViewControllerWithIdentifier("TabBarController") as! TabBarController
             
             
-            var stepView = storyboard.instantiateViewControllerWithIdentifier("StepViewController") as! StepViewController
+            var howToUseView = storyboard.instantiateViewControllerWithIdentifier("HowToUseViewController") as! HowToUseViewController
             
             var assistView = storyboard.instantiateViewControllerWithIdentifier("AssistTableViewController") as! AssistTableViewController
             
@@ -109,52 +109,55 @@ extension LeftMenuViewController: UITableViewDelegate, UITableViewDataSource {
             
        
             
-            stepView.tabBarItem = UITabBarItem(title: "ホーム", image: UIImage(named: "home"), tag: 1)//アイコン
+            howToUseView.tabBarItem = UITabBarItem(title: "ホーム", image: UIImage(named: "home"), tag: 1)//アイコン
             homeNavView.tabBarItem = UITabBarItem(title: "記録", image: UIImage(named: "openFolder"), tag: 2)
             assistView.tabBarItem = UITabBarItem(title: "相談", image: UIImage(named: "contact"), tag: 3)
             
 
             
             
-            myTabBarController.setViewControllers([stepView,homeNavView,assistView], animated: false)
+            myTabBarController.setViewControllers([howToUseView,homeNavView,assistView], animated: false)
             
             sideMenuViewController?.contentViewController = myTabBarController
             
             sideMenuViewController?.hideMenuViewController()
+            
             break
             
         case 1:
+            
+            var stepView = storyboard.instantiateViewControllerWithIdentifier("StepViewController") as! StepViewController
+            
+            sideMenuViewController?.contentViewController =  stepView
+            sideMenuViewController?.hideMenuViewController()
+            break
+            
+        
+        case 2:
             
             var settingView = storyboard.instantiateViewControllerWithIdentifier("SettingViewController") as! SettingViewController
             
             sideMenuViewController?.contentViewController =  settingView
             sideMenuViewController?.hideMenuViewController()
             break
-        
-        case 2:
-            
-            var howToUseView = storyboard.instantiateViewControllerWithIdentifier("HowToUseViewController") as! HowToUseViewController
-            
-            sideMenuViewController?.contentViewController =  howToUseView
-            sideMenuViewController?.hideMenuViewController()
-            break
-        
-        case 3:
-            
-            var TOUView = storyboard.instantiateViewControllerWithIdentifier("TOUViewController") as! TOUViewController
-            
-            sideMenuViewController?.contentViewController =  TOUView
-            sideMenuViewController?.hideMenuViewController()
-            break
 
-        case 4:
+
+        case 3:
             
             var contactView = storyboard.instantiateViewControllerWithIdentifier("ContactViewController") as! ContactViewController
             
             sideMenuViewController?.contentViewController =  contactView
             sideMenuViewController?.hideMenuViewController()
             break
-
+            
+            
+        case 4:
+            
+            var TOUView = storyboard.instantiateViewControllerWithIdentifier("TOUViewController") as! TOUViewController
+            
+            sideMenuViewController?.contentViewController =  TOUView
+            sideMenuViewController?.hideMenuViewController()
+            break
 
         
         default:

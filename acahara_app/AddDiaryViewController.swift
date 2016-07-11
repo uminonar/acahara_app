@@ -13,6 +13,8 @@ import Photos
 import AVFoundation
 
 var imagecount = 0
+var photoFlag = false
+var movieFlag = false
 
 
 
@@ -178,6 +180,9 @@ class AddDiaryViewController: UIViewController, UITextViewDelegate,UIImagePicker
     
     //photoCoverBtnがタップされた時、写真を選択できる一覧を表示
     func onClickPhotoButton(sender: UIButton){
+        
+        var photoFlag = true
+        var movieFlag = false
  
         let picker = QBImagePickerController()
         picker.delegate = self
@@ -189,7 +194,7 @@ class AddDiaryViewController: UIViewController, UITextViewDelegate,UIImagePicker
         
         //選択可能枚数最大５枚
         //        picker.minimumNumberOfSelection = 1;
-        picker.maximumNumberOfSelection = 5;
+        picker.maximumNumberOfSelection = 30;
         
         picker.assetCollectionSubtypes = [
             PHAssetCollectionSubtype.SmartAlbumUserLibrary.rawValue,
@@ -198,21 +203,24 @@ class AddDiaryViewController: UIViewController, UITextViewDelegate,UIImagePicker
         
         
         //MARK: 写真のみ選択 ImageをVideoで動画選択
+        picker.mediaType = QBImagePickerMediaType.Image
         
-//        picker.mediaType = QBImagePickerMediaType.Image
         
         presentViewController(picker, animated: true, completion: nil)
 
     
-        }
+    }
     
     //movieCoverBtnがタップされた時、動画を選択できる一覧を表示
-//    func onClickFilmButton(sender: UIButton){
-//        
-//        let picker = QBImagePickerController()
-//        picker.delegate = self
-//        
-//        
+    func onClickFilmButton(sender: UIButton){
+        //ここをflagで場合分け　必ず片方を逆に
+        var photoFlag = false
+        var movieFlag = true
+        
+        let picker = QBImagePickerController()
+        picker.delegate = self
+        
+//
 //        //ここを写真だけ選択可能にしたい。falseにしても変わらない。どうすれば？
 //        picker.allowsMultipleSelection = true;
 //        
@@ -233,8 +241,8 @@ class AddDiaryViewController: UIViewController, UITextViewDelegate,UIImagePicker
 //        presentViewController(picker, animated: true, completion: nil)
 //
 //        
-//    }
-//    
+    }
+   
     
     func qb_imagePickerController(imagePickerController: QBImagePickerController, didFinishPickingAssets assets: [AnyObject]) {
         
@@ -252,11 +260,11 @@ class AddDiaryViewController: UIViewController, UITextViewDelegate,UIImagePicker
             imagecount++
             
             //URL取得の場合
-//            print(asset_each.description)
+        print(asset_each.description)
 //
-//            photoURLArray.append(asset_each.description)
+//          photoURLArray.append(asset_each.description)
             
-            //配列にして入れる関数 asset_each.descriptionをpoした場合に、ある情報を３つの配列に分ける。
+//          配列にして入れる関数 asset_each.descriptionをpoした場合に、ある情報を３つの配列に分ける。
             let urlArray = asset_each.description.componentsSeparatedByString("/")
             
             let urlArray2 = urlArray[0].componentsSeparatedByString(" ")
@@ -265,6 +273,8 @@ class AddDiaryViewController: UIViewController, UITextViewDelegate,UIImagePicker
            
             let assetURL = "assets-library://asset/asset.JPG?id="+urlArray2[2]+"&ext=JPG"
             print(assetURL)
+            
+
             
             
            // photoURLArray.addObject(assetURL) as! NSMutableArray

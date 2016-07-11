@@ -170,15 +170,20 @@ class StepViewController: UIViewController {
     
     
     @IBAction func soudanCoverBtn(sender: UIButton) {
+        
         var height:CGFloat = 1396.0
         scrollView.setContentOffset(CGPointMake(0, height), animated: true)
+        
     }
     @IBAction func sonaeCoverBtn(sender: UIButton) {
+        
         var height:CGFloat = 2343.0
         scrollView.setContentOffset(CGPointMake(0, height), animated: true)
+        
     }
 
     @IBAction func acaBtn(sender: UIButton) {
+        
         var height:CGFloat = 0.0
         scrollView.setContentOffset(CGPointMake(0, height), animated: true)
         

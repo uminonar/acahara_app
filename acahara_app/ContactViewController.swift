@@ -15,24 +15,24 @@ class ContactViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
-    }
-
-    override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         
-      
+        
         let sakura:UIColor = UIColor(red:1.0,green:0.3,blue:0.3,alpha:1.0)
         
         //sideBar向け
         navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Left", style: .Plain, target: self, action: #selector(SSASideMenu.presentLeftMenuViewController))
         
         contMenuBtn.image = UIImage(named:"menu")?.imageWithRenderingMode(.AlwaysTemplate)
-        contMenuBtn.tintColor = sakura
+        contMenuBtn.tintColor = UIColor.whiteColor()
         
         self.contCoverBtn.addTarget(SSASideMenu(), action: Selector("presentLeftMenuViewController"), forControlEvents: UIControlEvents.TouchUpInside)
         
 
+    }
+
+    override func didReceiveMemoryWarning() {
+        
         
 
     }
