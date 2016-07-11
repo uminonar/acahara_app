@@ -37,7 +37,7 @@ class StepViewController: UIViewController {
     @IBOutlet weak var soudanTextView: UITextView!
     @IBOutlet weak var sonaeTextView: UITextView!
 
-    @IBOutlet weak var addBtn: UIImageView!
+
 
 
     
@@ -90,8 +90,7 @@ class StepViewController: UIViewController {
         let palePink:UIColor = UIColor(red: 0.990, green: 0.93, blue: 0.88, alpha:0.8)
         sonaeBaseView.backgroundColor = palePink
         
-        addBtn.image = UIImage(named:"create")?.imageWithRenderingMode(.AlwaysTemplate)
-        addBtn.tintColor = UIColor.whiteColor()
+
 
         
         
@@ -146,20 +145,7 @@ class StepViewController: UIViewController {
         }
     }
     
-    @IBAction func addBtn(sender: UIButton) {
-        var myDefault = NSUserDefaults.standardUserDefaults()
-        
-        myDefault.setObject("1", forKey: "stepAdd")
-        
-        myDefault.synchronize()
-        
-        
-        
-        let AddTableView = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("AddTableViewController") as UIViewController
-        
-        presentViewController(AddTableView, animated: true, completion: nil)
-        
-    }
+
 
 
     @IBAction func kirokuCoverBtn(sender: UIButton) {

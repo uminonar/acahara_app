@@ -11,6 +11,7 @@ import UIKit
 class HowToUseViewController: UIViewController {
 
 
+    @IBOutlet weak var addBtn: UIImageView!
     @IBOutlet weak var htuCoverBtn: UIButton!
     @IBOutlet weak var htuMenu: UIImageView!
     override func viewDidLoad() {
@@ -30,8 +31,32 @@ class HowToUseViewController: UIViewController {
         self.htuCoverBtn.addTarget(SSASideMenu(), action: Selector("presentLeftMenuViewController"), forControlEvents: UIControlEvents.TouchUpInside)
 
         // Do any additional setup after loading the view.
+        
+        addBtn.image = UIImage(named:"create")?.imageWithRenderingMode(.AlwaysTemplate)
+        addBtn.tintColor = UIColor.whiteColor()
+
     }
 
+    @IBAction func addCoverBtn(sender: UIButton) {
+
+        var myDefault = NSUserDefaults.standardUserDefaults()
+        
+        myDefault.setObject("1", forKey: "stepAdd")
+        
+        myDefault.synchronize()
+        
+        
+        
+        let AddTableView = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("AddTableViewController") as UIViewController
+        
+        presentViewController(AddTableView, animated: true, completion: nil)
+        
+    
+     }
+    
+    
+    
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         
