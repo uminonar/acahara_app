@@ -12,7 +12,7 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate,SSASideMenuDelegate  {
     
     var photoURLArray = false
-    var movieURL = ""
+    var movieURLArray = false
  
 
     var window: UIWindow?

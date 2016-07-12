@@ -180,10 +180,7 @@ class AddDiaryViewController: UIViewController, UITextViewDelegate,UIImagePicker
     
     //photoCoverBtnがタップされた時、写真を選択できる一覧を表示
     func onClickPhotoButton(sender: UIButton){
-        
-        var photoFlag = true
-        var movieFlag = false
- 
+
         let picker = QBImagePickerController()
         picker.delegate = self
         
@@ -193,7 +190,7 @@ class AddDiaryViewController: UIViewController, UITextViewDelegate,UIImagePicker
         
         
         //選択可能枚数最大５枚
-        //        picker.minimumNumberOfSelection = 1;
+        //picker.minimumNumberOfSelection = 1;
         picker.maximumNumberOfSelection = 30;
         
         picker.assetCollectionSubtypes = [
@@ -203,8 +200,7 @@ class AddDiaryViewController: UIViewController, UITextViewDelegate,UIImagePicker
         
         
         //MARK: 写真のみ選択 ImageをVideoで動画選択
-//        picker.mediaType = QBImagePickerMediaType.Image
-        
+        picker.mediaType = QBImagePickerMediaType.Image
         
         presentViewController(picker, animated: true, completion: nil)
 
@@ -213,34 +209,34 @@ class AddDiaryViewController: UIViewController, UITextViewDelegate,UIImagePicker
     
     //movieCoverBtnがタップされた時、動画を選択できる一覧を表示
     func onClickFilmButton(sender: UIButton){
-        //ここをflagで場合分け　必ず片方を逆に
-        var photoFlag = false
-        var movieFlag = true
+
         
         let picker = QBImagePickerController()
         picker.delegate = self
         
-//
-//        //ここを写真だけ選択可能にしたい。falseにしても変わらない。どうすれば？
-//        picker.allowsMultipleSelection = true;
-//        
-//        
-//        //        picker.minimumNumberOfSelection = 1;
-//        //        picker.maximumNumberOfSelection = 1;
-//        
-//        picker.assetCollectionSubtypes = [
-//            PHAssetCollectionSubtype.SmartAlbumUserLibrary.rawValue,
-//            PHAssetCollectionSubtype.AlbumMyPhotoStream.rawValue
-//        ];
-//        
-//        
-//        //MARK: 動画のみ選択
-//        
-//        picker.mediaType = QBImagePickerMediaType.Video
-//        
-//        presentViewController(picker, animated: true, completion: nil)
-//
-//        
+        //複数枚選択を可能にする
+        picker.allowsMultipleSelection = true;
+        
+        
+        //picker.minimumNumberOfSelection = 1;
+        //最大選択枚数５
+        picker.maximumNumberOfSelection = 10;
+        
+        picker.assetCollectionSubtypes = [
+            PHAssetCollectionSubtype.SmartAlbumUserLibrary.rawValue,
+            PHAssetCollectionSubtype.AlbumMyPhotoStream.rawValue
+        ];
+        
+
+        //MARK: 動画のみ選択
+        picker.mediaType = QBImagePickerMediaType.Video
+        
+        presentViewController(picker, animated: true, completion: nil)
+        
+        //ここをflagで場合分け　必ず片方を逆に
+        var photoFlag = false
+        var movieFlag = true
+
     }
    
     
@@ -250,39 +246,77 @@ class AddDiaryViewController: UIViewController, UITextViewDelegate,UIImagePicker
         
         imagecount = 0
         var photoURLArray:NSMutableArray = []
+        var movieURLArray:NSMutableArray = []
 
         
-        //保存前に再検索にきた時のために一度ここで空にしておきたい
+        //保存前に再検索にきた時のために一度ここで空にしておきたい。
+        //ここは配列を空にするだけでは足りなくて、scrViewにaddされている画像を消す必要があった、後で処理している
 //        photoURLArray.removeAllObjects()
+        
+//        if photoFlag {
         
         for asset in assets {
             var asset_each = asset as! PHAsset
             imagecount++
             
             //URL取得の場合
-        print(asset_each.description)
-//
-//          photoURLArray.append(asset_each.description)
+            print(asset_each.description)
             
-//          配列にして入れる関数 asset_each.descriptionをpoした場合に、ある情報を３つの配列に分ける。
-            let urlArray = asset_each.description.componentsSeparatedByString("/")
-            
-            let urlArray2 = urlArray[0].componentsSeparatedByString(" ")
-            
-//            photoURLArray.append("assets-library://asset/asset.JPG?id="+urlArray2[2]+"&ext=JPG")
-           
-            let assetURL = "assets-library://asset/asset.JPG?id="+urlArray2[2]+"&ext=JPG"
-            print(assetURL)
-            
-
+            let divideURL = asset_each.description.componentsSeparatedByString("=")
+            let arrayURL = divideURL[1].componentsSeparatedByString("/")
+            var mediaType = arrayURL[0]
             
             
-           // photoURLArray.addObject(assetURL) as! NSMutableArray
+            //もしも選択されたものが写真タイプだったら
+            if mediaType == "1" {
+                
+                //          配列にして入れる関数 asset_each.descriptionをpoした場合に、ある情報を３つの配列に分ける。
+                let urlArray = asset_each.description.componentsSeparatedByString("/")
+                
+                let urlArray2 = urlArray[0].componentsSeparatedByString(" ")
+                
+                //            photoURLArray.append("assets-library://asset/asset.JPG?id="+urlArray2[2]+"&ext=JPG")
+                
+                let assetURL = "assets-library://asset/asset.JPG?id="+urlArray2[2]+"&ext=JPG"
+                print(assetURL)
+                
+                
+                // photoURLArray.addObject(assetURL) as! NSMutableArray
+                
+                photoURLArray.addObject(assetURL)
+                
+            }
             
-            photoURLArray.addObject(assetURL)
-  
             
-            //画像表示の場合
+            //もしも選択されたものが動画タイプだったら
+            if mediaType == "2" {
+                
+                //          配列にして入れる関数 asset_each.descriptionをpoした場合に、ある情報を３つの配列に分ける。
+                let movieArray = asset_each.description.componentsSeparatedByString("/")
+                
+                let movieArray2 = movieArray[0].componentsSeparatedByString(" ")
+                
+                //            photoURLArray.append("assets-library://asset/asset.JPG?id="+urlArray2[2]+"&ext=JPG")
+                
+                //TODO:ここがJPGをMOVに変えただけではダメ
+                let movieURL = "assets-library://asset/asset.MOV?id="+movieArray2[2]+"&ext=MOV"
+                print(movieURL)
+                
+                
+                movieURLArray.addObject(movieURL)
+                
+            }
+    
+        
+            //UserDefaultに配列を保存
+            var myDefault = NSUserDefaults.standardUserDefaults()
+            myDefault.setObject(photoURLArray, forKey: "photoURLArray")
+            myDefault.setObject(movieURLArray, forKey: "movieURLArray")
+            myDefault.synchronize()
+            
+        }
+        
+        //画像表示の場合
 //            let manager: PHImageManager = PHImageManager()
 //            manager.requestImageForAsset(asset as! PHAsset,targetSize: CGSizeMake(200, 200),contentMode: .AspectFit,options: nil) { (image, info) -> Void in
 //                
@@ -304,18 +338,7 @@ class AddDiaryViewController: UIViewController, UITextViewDelegate,UIImagePicker
 //                }
 //                
 //            }
-        }
-        
-        
-        //UserDefaultに配列を保存
-        
-        var myDefault = NSUserDefaults.standardUserDefaults()
-        myDefault.setObject(photoURLArray, forKey: "photoURLArray")
-        myDefault.synchronize()
 
-        
-        
-        
         dismissViewControllerAnimated(true, completion: nil)
     
     }
@@ -371,6 +394,7 @@ class AddDiaryViewController: UIViewController, UITextViewDelegate,UIImagePicker
     
 
     //TODO:こちらでは空のファイルイメージだけバーの上の方に置く
+ 
  
     
     
