@@ -185,7 +185,7 @@
 		0B5AFA7B1D0855FA001D3DCA /* s_ema.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = s_ema.png; sourceTree = "<group>"; };
 		0B5AFA7D1D085651001D3DCA /* homeIntroTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = homeIntroTableViewCell.swift; sourceTree = "<group>"; };
 		0B5AFA7F1D085C10001D3DCA /* s_makeruna.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = s_makeruna.png; sourceTree = "<group>"; };
-		0B73CE6C1D0D998D007658EF /* SSASideMenu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SSASideMenu.swift; sourceTree = "<group>"; };
+		0B73CE6C1D0D998D007658EF /* SSASideMenu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SSASideMenu.swift; path = SSASideMenu/SSASideMenu.swift; sourceTree = "<group>"; };
 		0B73CE6E1D0DA1F9007658EF /* Background.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Background.jpg; sourceTree = "<group>"; };
 		0B772C671D09ACAB00086E17 /* happy_s.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = happy_s.png; path = ../acahara_app/happy_s.png; sourceTree = "<group>"; };
 		0B772C691D09ACB100086E17 /* troubled_s.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = troubled_s.png; sourceTree = "<group>"; };
@@ -320,19 +320,18 @@
 				0BE2489F1D05AC8D002BEC1F /* datePickerCell.xib */,
 				0BE248A31D05AEE0002BEC1F /* bottomCell.xib */,
 				0B0094891CF6FFB90041B3B5 /* AppDelegate.swift */,
-				0BAD281F1D2A074B00A1DCE2 /* SelectViewController.swift */,
 				0B00948B1CF6FFB90041B3B5 /* HomeViewController.swift */,
 				0BD2B6871D111C820032F502 /* LeftMenuViewController.swift */,
-				0B97FE161D0E58600000E700 /* StepViewController.swift */,
 				0B772C6B1D09B53C00086E17 /* TabBarController.swift */,
+				0B029EE21D08FB7400A747C9 /* HomeNavigationController.swift */,
 				0B0686C61CFBFA58002AB722 /* DetailViewController.swift */,
 				0B9DF2601D01ADC100B478C7 /* PictureViewController.swift */,
-				0B029EE21D08FB7400A747C9 /* HomeNavigationController.swift */,
 				0BE248971D05A97A002BEC1F /* AddTableViewController.swift */,
 				0B03D28F1CF7D58E0050119E /* AddViewController.swift */,
 				0B03D2911CF7F4FB0050119E /* AddWhereViewController.swift */,
 				0B03D2931CF7F6050050119E /* AddWhoViewController.swift */,
 				0BADA6191CFB3B9E001702D7 /* AddDiaryViewController.swift */,
+				0BAD281F1D2A074B00A1DCE2 /* SelectViewController.swift */,
 				0B9DBFE61CFFF1F200B78293 /* AddSoundViewController.swift */,
 				0B59AD371D07AFED00E740F5 /* AssistTableViewController.swift */,
 				0B94338A1D0275AA00A93027 /* AssistViewController.swift */,
@@ -342,8 +341,10 @@
 				0B09CC501D2FED7700427D7D /* HowToUseViewController.swift */,
 				0B09CC521D2FF00F00427D7D /* ContactViewController.swift */,
 				0B09F2481D02C38E006F11D5 /* ChosePostsViewController.swift */,
+				0B97FE161D0E58600000E700 /* StepViewController.swift */,
 				0BADA6161CFB3089001702D7 /* Main.storyboard */,
 				0B73CE6B1D0D998D007658EF /* SSASideMenu */,
+				0B73CE6C1D0D998D007658EF /* SSASideMenu.swift */,
 				0B0094921CF6FFB90041B3B5 /* Assets.xcassets */,
 				0BB408CD1D150B3500D26AB7 /* sPrepare.png */,
 				0B0BC3F81D1982BE0009ED07 /* troubledWoman のコピー.jpg */,
@@ -412,7 +413,6 @@
 		0B73CE6B1D0D998D007658EF /* SSASideMenu */ = {
 			isa = PBXGroup;
 			children = (
-				0B73CE6C1D0D998D007658EF /* SSASideMenu.swift */,
 			);
 			path = SSASideMenu;
 			sourceTree = "<group>";

@@ -182,7 +182,7 @@ class AssistTableViewController: UIViewController,UITableViewDelegate,UITableVie
             }
             
             
-            var editedText = myDefault.objectForKey("mailContent")
+            var editedText = myDefault.objectForKey("editedText")
                                 if(editedText != nil){
             cell.assistMailContent.text = editedText as! String
                           
@@ -191,12 +191,6 @@ class AssistTableViewController: UIViewController,UITableViewDelegate,UITableVie
                             //TODO:編集ページで保存されたらeditedTextを更新する処理をして
                             //TODO:キャンセルと保存の時に必ずnilに戻して
 
-            
-            
-            
-            
-            
-            
             
                             // tap gesture recognizer をassistMailContentのTextViewに設置
                             let tap = UITapGestureRecognizer(target: self, action:"editMailContent:")

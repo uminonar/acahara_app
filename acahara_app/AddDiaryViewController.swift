@@ -203,7 +203,7 @@ class AddDiaryViewController: UIViewController, UITextViewDelegate,UIImagePicker
         
         
         //MARK: 写真のみ選択 ImageをVideoで動画選択
-        picker.mediaType = QBImagePickerMediaType.Image
+//        picker.mediaType = QBImagePickerMediaType.Image
         
         
         presentViewController(picker, animated: true, completion: nil)

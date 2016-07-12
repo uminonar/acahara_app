@@ -141,6 +141,14 @@ class MailContentViewController: UIViewController, UITextViewDelegate{
             mailTextView.text = mailContent
         }
         
+        var editedText = myDefault.stringForKey("editedText")
+        
+        if( editedText != nil){
+            
+            mailTextView.text = editedText
+        }
+
+        
         NSNotificationCenter.defaultCenter().addObserver(self,
                                                          selector: "keyboardWillBeShown:",
                                                          name: UIKeyboardWillShowNotification,
@@ -227,7 +235,7 @@ class MailContentViewController: UIViewController, UITextViewDelegate{
         //ユーザーデフォルトを用意する
         var myDefault = NSUserDefaults.standardUserDefaults()
         //データを書き込んで
-        myDefault.setObject(mailText, forKey: "mailContent")
+        myDefault.setObject(mailText, forKey: "editedText")
         
         //即反映させる
         myDefault.synchronize()

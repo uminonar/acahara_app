@@ -9,6 +9,9 @@
 import UIKit
 
 class HomeNavigationController: UINavigationController,UINavigationControllerDelegate {
+    
+    //起動画面サイズの取得
+    let myBoundsize:CGSize = UIScreen.mainScreen().bounds.size
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -18,6 +21,36 @@ class HomeNavigationController: UINavigationController,UINavigationControllerDel
         
         UINavigationBar.appearance().titleTextAttributes = [NSForegroundColorAttributeName:UIColor.whiteColor()
         ]
+        
+        
+        
+        // addBtnを設置 このやり方だとframeが使えない。UIButtonを使ってからじゃないとNavBarに設置できない
+//        var addBtn = UIBarButtonItem(barButtonSystemItem: .Compose, target: self, action: "onClick")
+//        
+//        self.navigationItem.rightBarButtonItem = addBtn
+        
+        
+        
+        
+        
+        //      let rightButton = UIButton()　これではダメ。
+//        let rightButton = UIButton(type: UIButtonType.System)
+//        
+//        rightButton.frame = CGRectMake(myBoundsize.width-18, 30, 25, 25)
+//        rightButton.setImage(UIImage(named:"create"), forState: UIControlState.Normal)
+//        rightButton.addTarget(self, action: "rightNavItemEditClick:", forControlEvents: UIControlEvents.TouchUpInside)
+//        var rightBarButtonItem: UIBarButtonItem = UIBarButtonItem(customView: rightButton)
+//        self.navigationItem.setRightBarButtonItem(rightBarButtonItem, animated: false)
+//        
+        
+//        rightButton.tintColor = UIColor.whiteColor()
+
+        
+        
+        
+        
+        
+        
         
     }
     
@@ -35,11 +68,13 @@ class HomeNavigationController: UINavigationController,UINavigationControllerDel
         
         
         
+        
+        
     
 
         
         self.navigationBar.barTintColor = sakura
-        
+//        self.navigationBar.items.
         //ナビゲーションバーのシャドウイメージを設定する。
 //        self.navigationBar.shadowImage = UIImage(named: "mokume_test2.png")
         

@@ -10,6 +10,9 @@ import UIKit
 
 class HomeViewController: UIViewController,UITableViewDelegate,UITableViewDataSource {
     
+    //起動画面サイズの取得
+    let myBoundsize:CGSize = UIScreen.mainScreen().bounds.size
+    
     var countNum = 0
     var selectedIndex = -1
     @IBOutlet weak var homeTableView: UITableView!
@@ -18,8 +21,8 @@ class HomeViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
 
   
     // ボタンを用意
-    var addBtn: UIBarButtonItem!
-    
+
+    @IBOutlet weak var addBtn: UIBarButtonItem!
     var posts:NSMutableArray = []
     
     //var temp:NSMutableArray
@@ -36,16 +39,40 @@ class HomeViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
         homeTableView.estimatedRowHeight = 323
         homeTableView.rowHeight = UITableViewAutomaticDimension
         
+        addBtn.tintColor = UIColor.whiteColor()
         
         homeTableView.registerNib(UINib(nibName: "postCustomCell", bundle: nil), forCellReuseIdentifier: "postCustomCell")
 //        homeTableView.registerNib(UINib(nibName: "homeIntroCell", bundle: nil), forCellReuseIdentifier: "homeIntroCell")
+        
+        
+        // addBtnを設置 このやり方だとframeが使えない。UIButtonを使ってからじゃないとNavBarに設置できない
+        //            var addBtn = UIBarButtonItem(barButtonSystemItem: .Compose, target: self, action: "onClick")
+        //            self.navigationItem.rightBarButtonItem = addBtn
+        
+        
+        
+        
+//        //      let rightButton = UIButton()　これではダメ。
+//        let rightButton = UIButton(type: UIButtonType.System)
+//        
+//        rightButton.frame = CGRectMake(myBoundsize.width-18, 30, 25, 25)
+//        rightButton.setImage(UIImage(named:"create"), forState: UIControlState.Normal)
+//        rightButton.addTarget(self, action: "rightNavItemEditClick:", forControlEvents: UIControlEvents.TouchUpInside)
+//        var rightBarButtonItem: UIBarButtonItem = UIBarButtonItem(customView: rightButton)
+//        self.navigationItem.setRightBarButtonItem(rightBarButtonItem, animated: false)
+//        
+//        
+//        rightButton.tintColor = UIColor.whiteColor()
+
+        
+        
         
 //        self.title = "Home"
         
         // addBtnを設置
 //        addBtn = UIBarButtonItem(barButtonSystemItem: .Compose, target: self, action: "onClick")
 //        self.navigationItem.rightBarButtonItem = addBtn
-//        
+
 //       
 //        let write = FAKFontAwesome.pencilSquareOIconWithSize(25)
 //        //下記でアイコンの色も変えられます
@@ -54,7 +81,7 @@ class HomeViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
 //        let writeImage = write.imageWithSize(CGSizeMake(25, 25))
 //        
 //        homeWrite.setImage(writeImage, forState: .Normal)
-//        
+        
         
         let path = NSBundle.mainBundle().pathForResource("posts", ofType: "txt")
         let jsondata = NSData(contentsOfFile: path!)

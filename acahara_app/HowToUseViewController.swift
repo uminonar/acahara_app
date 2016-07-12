@@ -10,6 +10,9 @@ import UIKit
 
 class HowToUseViewController: UIViewController {
 
+    
+
+    
     @IBOutlet weak var htuImageVIew: UIImageView!
     
     @IBOutlet weak var htuMessage: UILabel!
@@ -24,6 +27,9 @@ class HowToUseViewController: UIViewController {
     @IBOutlet weak var htuMenu: UIImageView!
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        
+        
         
         //乱数を表示
         var r = Int(arc4random()) % message.count
@@ -51,8 +57,8 @@ class HowToUseViewController: UIViewController {
         // Do any additional setup after loading the view.
         
         addBtn.image = UIImage(named:"create")?.imageWithRenderingMode(.AlwaysTemplate)
-        addBtn.tintColor = UIColor.whiteColor()
 
+        addBtn.tintColor = UIColor.whiteColor()
     }
 
     @IBAction func addCoverBtn(sender: UIButton) {
