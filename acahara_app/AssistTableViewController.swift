@@ -12,6 +12,7 @@ class AssistTableViewController: UIViewController,UITableViewDelegate,UITableVie
 
     var expandflag = false
     var rownumber = 3
+    var countNum = 0
     
     var posts:NSMutableArray = []
     
@@ -317,9 +318,213 @@ class AssistTableViewController: UIViewController,UITableViewDelegate,UITableVie
                 cell.postDiary.addGestureRecognizer(myTap)
                 cell.postDiary.tag = postindex
                 
+//ここ改造
+//                cell.postImageView.image = UIImage(named:(posts[postindex]["picture"] as! String))
                 
                 
-                cell.postImageView.image = UIImage(named:(posts[postindex]["picture1"] as! String))
+                // 写真データ全件取得
+                var picArray = posts[indexPath.row]["picture"] as! NSMutableArray
+                print("picArrayのカウント = \(picArray.count)")
+  
+                var selectedPictures = [] as! NSMutableArray
+                
+                
+                //空でない写真を配列selectedPicturesにセット
+                for selectedPic in picArray{
+                    
+                    if selectedPic as! String != ""{
+                        selectedPictures.addObject(selectedPic)
+                    }
+                    
+                }
+                
+                
+                //スクロールビューから追加したビューを一旦削除
+                
+                removeAllSubviews(cell.scrView)
+                
+                
+                //選択されている写真の数
+                var picNum = selectedPictures.count
+                
+                if picNum > 0{
+                    print("============ 写真が存在するとき ============")
+                    print(picNum)
+                    //スクロールが走る表示全体サイズを指定。写真の120幅に、10の余白で130
+                    let scrViewWidth:CGFloat = CGFloat(130 * picNum )
+                    
+                    cell.scrView.contentSize = CGSizeMake(scrViewWidth, 120)
+                    
+                    
+                    countNum = 0
+                    for strURL in selectedPictures{
+                        print("画像のassetURL:\(strURL)")
+                        
+                        var url = NSURL(string: strURL as! String)
+                        
+                        let fetchResult: PHFetchResult = PHAsset.fetchAssetsWithALAssetURLs([url!], options: nil)
+                        
+                        if fetchResult.firstObject != nil{
+                            
+                            let asset: PHAsset = fetchResult.firstObject as! PHAsset
+                            
+                            
+                            print("pixelWidth:\(asset.pixelWidth)");
+                            print("pixelHeight:\(asset.pixelHeight)");
+                            
+                            let manager: PHImageManager = PHImageManager()
+                            manager.requestImageForAsset(asset,targetSize: CGSizeMake(5, 500),contentMode: .AspectFit,options: nil) { (image, info) -> Void in
+                                
+                                //imageViewのaspectFitをつける必要がある？このままで良いかも
+                                var imageView = UIImageView()
+                                
+                                //各写真イメージのX座標開始位置をpositionXとする。120幅に、10の余白で130
+                                var positionX:CGFloat = CGFloat(130 * self.countNum)
+                                
+                                //写真の位置サイズ指定
+                                imageView.frame = CGRectMake(positionX, 0, 120, 120)
+                                imageView.image = image
+                                
+                                cell.scrView.addSubview(imageView)
+       
+                                
+                                self.countNum++
+                                
+                                
+                                //                              cell.picCancelBtn.hidden = false
+                            }
+                        }
+                        
+                    }
+                    
+                    
+                    
+                     // problem1
+                    
+                    
+                
+                
+                    var movArray = posts[indexPath.row]["movie"] as! NSMutableArray
+                    print("movArrayのカウント = \(movArray.count)")
+                    var selectedMovies = [] as! NSMutableArray
+                
+                
+                    //空でない動画を配列selectedPicturesにセット
+                    for selectedMov in movArray{
+                        
+                        if selectedMov as! String != ""{
+                            selectedMovies.addObject(selectedMov)
+                        }
+                        
+                    }
+                    
+                    
+                    //スクロールビューから追加したビューを一旦削除
+                    removeAllSubviews(cell.scrView)
+                
+                
+                
+                //選択されている動画の数
+                var movNum = selectedMovies.count
+
+                if picNum == 0 && movNum > 0 {
+                    print("============ 動画が存在するとき ============")
+                    //動画があるならそれを表示
+              
+                    print(movNum)
+                    //スクロールが走る表示全体サイズを指定。写真の120幅に、10の余白で130
+                    let scrViewWidth:CGFloat = CGFloat(130 * picNum )
+                        
+                    cell.scrView.contentSize = CGSizeMake(scrViewWidth, 120)
+                        
+                        
+                    countNum = 0
+                    for strURL in selectedMovies{
+                        print("動画のassetURL:\(strURL)")
+                        
+                        var url = NSURL(string: strURL as! String)
+                        
+                        let fetchResult: PHFetchResult = PHAsset.fetchAssetsWithALAssetURLs([url!], options: nil)
+                        
+                        if fetchResult.firstObject != nil{
+                            
+                            let asset: PHAsset = fetchResult.firstObject as! PHAsset
+                            
+                            
+                            print("pixelWidth:\(asset.pixelWidth)");
+                            print("pixelHeight:\(asset.pixelHeight)");
+                            
+                            let manager: PHImageManager = PHImageManager()
+                            manager.requestImageForAsset(asset,targetSize: CGSizeMake(5, 500),contentMode: .AspectFit,options: nil) { (image, info) -> Void in
+                                
+                                //imageViewのaspectFitをつける必要がある？このままで良いかも
+                                var imageView = UIImageView()
+                                
+                                //各動画イメージのX座標開始位置をpositionXとする。120幅に、10の余白で130
+                                var positionX:CGFloat = CGFloat(130 * self.countNum)
+                                
+                                //写真の位置サイズ指定
+                                imageView.frame = CGRectMake(positionX, 0, 120, 120)
+                                imageView.image = image
+                                
+                                cell.scrView.addSubview(imageView)
+                                
+                                
+                                
+                                //動画サムネイルの上に選択時の透明ボタンを被せて配置する
+                                var movSelectBtn = UIButton()
+                                movSelectBtn.setTitle("", forState: .Normal)
+                                movSelectBtn.frame = CGRectMake(positionX, 0, 120, 120)
+                                movSelectBtn.addTarget(self, action: "showMovie:", forControlEvents:.TouchUpInside)
+                                cell.scrView.addSubview(movSelectBtn)
+                                
+                                movSelectBtn.tag = indexPath.row
+                                
+                                self.countNum++
+                                
+                                
+                                    //                              cell.picCancelBtn.hidden = false
+                                }
+                            }
+                            
+                        }
+                        
+                        return cell // problem2
+                        
+
+                    
+                }
+                    
+                    
+                if picNum == 0 && movNum == 0 {
+             
+                    //写真も動画も存在しない場合、表示箇所が縮まるように
+                    self.removeAllSubviews(cell.scrView)
+                    
+                    cell.scrView.frame.size.height = 0
+                    cell.scrView.frame.size.width = 0
+                    
+                    print(cell.scrView.frame.size.height)
+                    
+                    return cell
+                    
+                }
+                
+
+                
+                }
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
                 
                 cell.coverBtn.addTarget(self, action: "selected:", forControlEvents: .TouchUpInside)
                 cell.coverBtn.tag = postindex
@@ -758,6 +963,22 @@ class AssistTableViewController: UIViewController,UITableViewDelegate,UITableVie
 
         
     }
+    
+    
+    
+    
+    //subViewを親ビューから全て削除
+    func removeAllSubviews(parentView: UIView){
+        var subviews = parentView.subviews
+        for subview in subviews {
+            subview.removeFromSuperview()
+        }
+    }
+
+    
+    
+    
+    
     
 
     override func didReceiveMemoryWarning() {

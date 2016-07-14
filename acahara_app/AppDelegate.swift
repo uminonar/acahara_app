@@ -11,8 +11,10 @@ import UIKit
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate,SSASideMenuDelegate  {
     
+
     var photoURLArray = false
     var movieURLArray = false
+    
  
 
     var window: UIWindow?

@@ -55,6 +55,7 @@
 		0B59AD461D07BB9100E740F5 /* assistChoseAdvisorTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B59AD451D07BB9100E740F5 /* assistChoseAdvisorTableViewCell.swift */; };
 		0B59AD481D07C01600E740F5 /* assistChosePostsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0B59AD471D07C01600E740F5 /* assistChosePostsCell.xib */; };
 		0B59AD4A1D07C04400E740F5 /* assistChosePostsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B59AD491D07C04400E740F5 /* assistChosePostsTableViewCell.swift */; };
+		0B59DE081D35BD23005E8B45 /* MovieViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B59DE071D35BD23005E8B45 /* MovieViewController.swift */; };
 		0B5AFA7C1D0855FA001D3DCA /* s_ema.png in Resources */ = {isa = PBXBuildFile; fileRef = 0B5AFA7B1D0855FA001D3DCA /* s_ema.png */; };
 		0B5AFA7E1D085651001D3DCA /* homeIntroTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B5AFA7D1D085651001D3DCA /* homeIntroTableViewCell.swift */; };
 		0B5AFA801D085C10001D3DCA /* s_makeruna.png in Resources */ = {isa = PBXBuildFile; fileRef = 0B5AFA7F1D085C10001D3DCA /* s_makeruna.png */; };
@@ -182,6 +183,7 @@
 		0B59AD451D07BB9100E740F5 /* assistChoseAdvisorTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = assistChoseAdvisorTableViewCell.swift; sourceTree = "<group>"; };
 		0B59AD471D07C01600E740F5 /* assistChosePostsCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = assistChosePostsCell.xib; sourceTree = "<group>"; };
 		0B59AD491D07C04400E740F5 /* assistChosePostsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = assistChosePostsTableViewCell.swift; sourceTree = "<group>"; };
+		0B59DE071D35BD23005E8B45 /* MovieViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovieViewController.swift; sourceTree = "<group>"; };
 		0B5AFA7B1D0855FA001D3DCA /* s_ema.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = s_ema.png; sourceTree = "<group>"; };
 		0B5AFA7D1D085651001D3DCA /* homeIntroTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = homeIntroTableViewCell.swift; sourceTree = "<group>"; };
 		0B5AFA7F1D085C10001D3DCA /* s_makeruna.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = s_makeruna.png; sourceTree = "<group>"; };
@@ -326,6 +328,7 @@
 				0B029EE21D08FB7400A747C9 /* HomeNavigationController.swift */,
 				0B0686C61CFBFA58002AB722 /* DetailViewController.swift */,
 				0B9DF2601D01ADC100B478C7 /* PictureViewController.swift */,
+				0B59DE071D35BD23005E8B45 /* MovieViewController.swift */,
 				0BE248971D05A97A002BEC1F /* AddTableViewController.swift */,
 				0B03D28F1CF7D58E0050119E /* AddViewController.swift */,
 				0B03D2911CF7F4FB0050119E /* AddWhereViewController.swift */,
@@ -768,6 +771,7 @@
 				0B03D2901CF7D58E0050119E /* AddViewController.swift in Sources */,
 				0B59AD4A1D07C04400E740F5 /* assistChosePostsTableViewCell.swift in Sources */,
 				0B09CC511D2FED7700427D7D /* HowToUseViewController.swift in Sources */,
+				0B59DE081D35BD23005E8B45 /* MovieViewController.swift in Sources */,
 				0B97FE171D0E58600000E700 /* StepViewController.swift in Sources */,
 				0BE2489E1D05ABEB002BEC1F /* dateTimeTableViewCell.swift in Sources */,
 				0B00948E1CF6FFB90041B3B5 /* SettingViewController.swift in Sources */,

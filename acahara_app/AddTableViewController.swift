@@ -454,7 +454,7 @@ class AddTableViewController: UIViewController,UITableViewDelegate,UITableViewDa
         if adjustrow_no == 2{
             var myDefault = NSUserDefaults.standardUserDefaults()
             var photoURLArray = myDefault.objectForKey("photoURLArray") as! NSMutableArray
-//            var movieURLArray = myDefault.objectForKey("movieURLArray") as! NSMutableArray
+            var movieURLArray = myDefault.objectForKey("movieURLArray") as! NSMutableArray
  
             
             // if strURL != nil{
@@ -469,7 +469,12 @@ class AddTableViewController: UIViewController,UITableViewDelegate,UITableViewDa
                 //スクロールが走る表示全体サイズを指定。写真の150幅に、20の余白で170
                 let scrViewWidth:CGFloat = CGFloat(170 * arrayNum )
                 
+                
+                
+                
                 //スクロールビューから追加したビューを一旦削除
+                removeAllSubviews(cell.scrView)
+                
                 var subviews = cell.scrView.subviews
                 for subview in subviews{
                     subview.removeFromSuperview()
@@ -535,13 +540,98 @@ class AddTableViewController: UIViewController,UITableViewDelegate,UITableViewDa
                 }
 
                 return cell
-            }
-        }
+                
+            } else {
+                if movieURLArray.count > 0 {
+                    
+                    var cell:movieTableViewCell = tableView.dequeueReusableCellWithIdentifier("movieCell", forIndexPath: indexPath) as! movieTableViewCell
+                    
+                    
+                    var arrayNum = movieURLArray.count
+                    
+                    //スクロールが走る表示全体サイズを指定。写真の150幅に、20の余白で170
+                    let scrViewWidth:CGFloat = CGFloat(170 * arrayNum )
+                    
+                    cell.scrView.contentSize = CGSizeMake(scrViewWidth, 150)
+                    
+                    //スクロールビューから追加したビューを一旦削除
+                    removeAllSubviews(cell.scrView)
+                    
+//                    var subviews = cell.scrView.subviews
+//                    for subview in subviews{
+//                        subview.removeFromSuperview()
+//                    }
+                    
+
+                    countNum = 0
+                    for strURL in movieURLArray{
+                        print(strURL)
+                        
+                        var url = NSURL(string: strURL as! String)
+                        
+                        let fetchResult: PHFetchResult = PHAsset.fetchAssetsWithALAssetURLs([url!], options: nil)
+                        
+                        if fetchResult.firstObject != nil{
+                            
+                            let asset: PHAsset = fetchResult.firstObject as! PHAsset
+                            
+                            
+                            print("pixelWidth:\(asset.pixelWidth)");
+                            print("pixelHeight:\(asset.pixelHeight)");
+                            
+                            let manager: PHImageManager = PHImageManager()
+                            //ここの５，５００って何？
+                            manager.requestImageForAsset(asset,targetSize: CGSizeMake(5, 500),contentMode: .AspectFit,options: nil) { (image, info) -> Void in
+                                
+                                //imageViewのaspectFitをつける必要がある？このままで良いかも
+                                var imageView = UIImageView()
+                                
+                                //各動画イメージのX座標開始位置をpositionXとする。150幅に、20の余白で170
+                                var positionX:CGFloat = CGFloat(170 * self.countNum)
+                                
+                                //動画像の位置サイズ指定
+                                imageView.frame = CGRectMake(positionX, 0, 150, 150)
+                                imageView.image = image
+                                cell.scrView.addSubview(imageView)
+                                
+                                //動画をキャンセルするボタンイメージを各写真に設置する
+                                var picCancelImage = UIImageView()
+                                
+                                picCancelImage.frame = CGRectMake(positionX+125,0,25,25)
+                                picCancelImage.image = UIImage(named:"cancel-red")
+                                cell.scrView.addSubview(picCancelImage)
+                                
+                                //キャンセルボタンの位置に透明ボタンを被せて配置する
+                                var picCancelBtn = UIButton()
+                                picCancelBtn.setTitle("", forState: .Normal)
+                                picCancelBtn.frame = CGRectMake(positionX+125, 0, 25, 25)
+                                picCancelBtn.addTarget(self, action: "tapCancelMovie:", forControlEvents:.TouchUpInside)
+                                cell.scrView.addSubview(picCancelBtn)
+                                
+                                
+                                self.countNum++
+                                
+                                
+                                //cell.picCancelBtn.hidden = false
+                                
+                            } // manager
+                            
+                        }  //fetchの終わり
+                    }  //forの終わり
+                }  //if movieURLArray.count > 0の終わり
+                
+//                return cell ここでエラーが出る。なぜか？
+                
+            }  //　} else {の終わり
+            
+            
+            
+        }  //　adjustrow_no == 2{の終わり
     
     
 
 //            }else{
-    
+//    
 //                if movieURLArray.count > 0 {
 //                    
 //                    var cell:movieTableViewCell = tableView.dequeueReusableCellWithIdentifier("movieCell", forIndexPath: indexPath) as! movieTableViewCell
@@ -617,7 +707,7 @@ class AddTableViewController: UIViewController,UITableViewDelegate,UITableViewDa
 //                        }
 //                        
 //                    }
-        
+    
                 
 //                var url = NSURL(string: strMovURL as! String!)
 //                
@@ -644,7 +734,11 @@ class AddTableViewController: UIViewController,UITableViewDelegate,UITableViewDa
 
         if adjustrow_no == 3{
             
-                var cell:movieTableViewCell = tableView.dequeueReusableCellWithIdentifier("movieCell", forIndexPath: indexPath) as! movieTableViewCell
+            var cell:movieTableViewCell = tableView.dequeueReusableCellWithIdentifier("movieCell", forIndexPath: indexPath) as! movieTableViewCell
+            
+            var myDefault = NSUserDefaults.standardUserDefaults()
+            var movieURLArray = myDefault.objectForKey("movieURLArray") as! NSMutableArray
+
                 
 //                var myDefault = NSUserDefaults.standardUserDefaults()
 //                var strMovURL = myDefault.stringForKey("selectedMovieList")
@@ -666,28 +760,86 @@ class AddTableViewController: UIViewController,UITableViewDelegate,UITableViewDa
                 //layer.player?.play()
             
             
+            var arrayNum = movieURLArray.count
+            
+            //スクロールが走る表示全体サイズを指定。写真の150幅に、20の余白で170
+            let scrViewWidth:CGFloat = CGFloat(170 * arrayNum )
+            
+            cell.scrView.contentSize = CGSizeMake(scrViewWidth, 150)
+            
+            //スクロールビューから追加したビューを一旦削除
+            removeAllSubviews(cell.scrView)
+            
+            
+            countNum = 0
+            for strURL in movieURLArray{
+                print(strURL)
                 
-            
-            
-            
-            
-            
-            
-            
-
-                return cell
-
+                var url = NSURL(string: strURL as! String)
                 
-        }
+                let fetchResult: PHFetchResult = PHAsset.fetchAssetsWithALAssetURLs([url!], options: nil)
+                
+                if fetchResult.firstObject != nil{
+                    
+                    let asset: PHAsset = fetchResult.firstObject as! PHAsset
+                    
+                    
+                    print("pixelWidth:\(asset.pixelWidth)");
+                    print("pixelHeight:\(asset.pixelHeight)");
+                    
+                    let manager: PHImageManager = PHImageManager()
+                    //ここの５，５００って何？
+                    manager.requestImageForAsset(asset,targetSize: CGSizeMake(5, 500),contentMode: .AspectFit,options: nil) { (image, info) -> Void in
+                        
+                        //imageViewのaspectFitをつける必要がある？このままで良いかも
+                        var imageView = UIImageView()
+                        
+                        //各動画イメージのX座標開始位置をpositionXとする。150幅に、20の余白で170
+                        var positionX:CGFloat = CGFloat(170 * self.countNum)
+                        
+                        //動画像の位置サイズ指定
+                        imageView.frame = CGRectMake(positionX, 0, 150, 150)
+                        imageView.image = image
+                        cell.scrView.addSubview(imageView)
+                        
+                        //動画をキャンセルするボタンイメージを各写真に設置する
+                        var picCancelImage = UIImageView()
+                        
+                        picCancelImage.frame = CGRectMake(positionX+125,0,25,25)
+                        picCancelImage.image = UIImage(named:"cancel-red")
+                        cell.scrView.addSubview(picCancelImage)
+                        
+                        //キャンセルボタンの位置に透明ボタンを被せて配置する
+                        var picCancelBtn = UIButton()
+                        picCancelBtn.setTitle("", forState: .Normal)
+                        picCancelBtn.frame = CGRectMake(positionX+125, 0, 25, 25)
+                        picCancelBtn.addTarget(self, action: "tapCancelMovie:", forControlEvents:.TouchUpInside)
+                        cell.scrView.addSubview(picCancelBtn)
+                        
+                        
+                        self.countNum++
+                        
+                        
+                    }
+                }  //fetchの終わり
+            }  //forの終わり
+//            return cell
+            
+        }  //if adjustrow_no == 3の終わり
+        
+        
+        
+        
+
+
     
-                
-                
+    
                 // MARK: 写真表示
                 //写真が選択された時のURLを取得する -----------------------------
 //                var strURL = myDefault.stringForKey("selectedPhotoURL")
-//                
+//
 //                if strURL != nil{
-//                    
+//
 //                    var url = NSURL(string: strURL as! String!)
 //                    let fetchResult: PHFetchResult = PHAsset.fetchAssetsWithALAssetURLs([url!], options: nil)
 //                    
@@ -806,16 +958,6 @@ class AddTableViewController: UIViewController,UITableViewDelegate,UITableViewDa
         var playerItem = AVPlayerItem(URL: url!)
         
         var videoPlayer : AVPlayer! = AVPlayer(playerItem: playerItem)
-        
-        //UIViewのレイヤーをAVPlayerLayerにする。普通のviewをカスタマイズしてる
-//        let layer = cell.movieView.layer as! AVPlayerLayer
-//        layer.videoGravity = AVLayerVideoGravityResizeAspect
-//        layer.player = videoPlayer
-        
-        
-        //TODO:この再生ボタンを実装すべし！
-        //この一行で再生する、ここにボタンを置いて、押したら、この一行が効くようにすれば良い。
-        //layer.player?.play()
         
         return cell
     
@@ -1363,6 +1505,53 @@ class AddTableViewController: UIViewController,UITableViewDelegate,UITableViewDa
         
     }
     
+    //画像イメージのキャンセルボタンがタップされた時に、その写真を消す処理
+    func tapCancelMovie(sender:UIButton){
+        
+        print("cancel")
+        
+        var xPosition = sender.frame.origin.x
+        
+        var picPostionX = xPosition - 125
+        
+        var numOfPic = picPostionX/170
+        
+        var myDefault = NSUserDefaults.standardUserDefaults()
+        var movieURLArray = myDefault.objectForKey("movieURLArray") as! NSArray
+        //        var copiedPhotoURLArray:[NSArray] = photoURLArray as! [NSArray]
+        //        var photoArray = NSMutableArray(array: copiedPhotoURLArray) as! NSMutableArray
+        //
+        var movieArray:NSMutableArray = movieURLArray.mutableCopy() as! NSMutableArray
+        
+        movieArray.removeObjectAtIndex(Int(numOfPic))
+        
+        print(movieArray)
+        
+        //選択している画像がゼロになったらセルを一段減らす必要がある
+        if movieArray.count == 0 {
+            rownumber--
+            myApp.movieURLArray = false
+        }
+        
+        
+        myDefault.setObject(movieArray, forKey: "movieURLArray")
+        myDefault.synchronize()
+        
+        
+        //ここわからないから全体をリロードひとまずする
+        //        let row = NSIndexPath(forRow: 3, inSection: 0)
+        //        addTableView.reloadRowsAtIndexPaths([row], withRowAnimation: UITableViewRowAnimation.Fade)
+        addTableView.reloadData()
+        
+        
+    }
+    
+    func removeAllSubviews(parentView: UIView){
+        var subviews = parentView.subviews
+        for subview in subviews {
+            subview.removeFromSuperview()
+        }
+    }
 
  
     override func didReceiveMemoryWarning() {
@@ -1383,22 +1572,6 @@ class AddTableViewController: UIViewController,UITableViewDelegate,UITableViewDa
 
 }
 
-// レイヤーをAVPlayerLayerにする為のラッパークラス.
-class AVPlayerView : UIView{
-    
-    required init(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)!
-    }
-    
-    override init(frame: CGRect) {
-        super.init(frame: frame)
-    }
-
-    override class func layerClass() -> AnyClass{
-        return AVPlayerLayer.self
-    }
-    
-}
 
 
 //// CustomTextField Class

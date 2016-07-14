@@ -8,7 +8,7 @@
 
 import UIKit
 import MobileCoreServices
-import AssetsLibrary
+//import AssetsLibrary
 import Photos
 import AVFoundation
 

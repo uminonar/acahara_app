@@ -35,8 +35,10 @@ class HomeViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        
+        
         //セルの高さを可変にする設定、テキストの長さ、写真の有無で可変にしたい
-        homeTableView.estimatedRowHeight = 323
+        homeTableView.estimatedRowHeight = 470
         homeTableView.rowHeight = UITableViewAutomaticDimension
         
         addBtn.tintColor = UIColor.whiteColor()
@@ -89,10 +91,15 @@ class HomeViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
         let jsonArray = (try! NSJSONSerialization.JSONObjectWithData(jsondata!, options: [])) as! NSArray
         
         for data in jsonArray{
+            //ここの形がどうなる？
             posts.addObject(data as! NSMutableDictionary)
             
         }
-
+        
+        
+        
+        
+        
     }
     
     
@@ -201,14 +208,24 @@ class HomeViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
         
         cell.labelCoverBtn.addTarget(self, action:"showMore:", forControlEvents:.TouchUpInside)
         cell.labelCoverBtn.tag = indexPath.row
-        print(posts[0]["picture1"])
-        var pic1 = posts[indexPath.row]["picture1"] as! String
-        var pic2 = posts[indexPath.row]["picture2"] as! String
-        var pic3 = posts[indexPath.row]["picture3"] as! String
-        var pic4 = posts[indexPath.row]["picture4"] as! String
-        var pic5 = posts[indexPath.row]["picture5"] as! String
         
-        var picArray = [pic1,pic2,pic3,pic4,pic5]
+        
+//選択された写真サムネイルを表示するための処理
+        //picture : [url,url,url,"","",""]のとき jsonデータの形がこれだと
+        
+                // 写真データ全件取得
+        var picArray = posts[indexPath.row]["picture"] as! NSMutableArray
+        print("picArrayのカウント = \(picArray.count)")
+        
+        //これで一緒？
+        
+//        var pic1 = posts[indexPath.row]["picture1"] as! String
+//        var pic2 = posts[indexPath.row]["picture2"] as! String
+//        var pic3 = posts[indexPath.row]["picture3"] as! String
+//        var pic4 = posts[indexPath.row]["picture4"] as! String
+//        var pic5 = posts[indexPath.row]["picture5"] as! String
+        
+//        var picArray = [pic1,pic2,pic3,pic4,pic5]
         
         var selectedPictures = [] as! NSMutableArray
         
@@ -216,94 +233,206 @@ class HomeViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
         //空でない写真を配列selectedPicturesにセット
         for selectedPic in picArray{
             
-            if selectedPic != ""{
+            if selectedPic as! String != ""{
                 selectedPictures.addObject(selectedPic)
             }
             
         }
+
+        
+        //スクロールビューから追加したビューを一旦削除
+
+        removeAllSubviews(cell.pictureScrView)
         
         
         //選択されている写真の数
         var picNum = selectedPictures.count
         
         if picNum > 0{
+            print("============ 写真が存在するとき ============")
+            print(picNum)
+            //スクロールが走る表示全体サイズを指定。写真の120幅に、10の余白で130
+            let scrViewWidth:CGFloat = CGFloat(130 * picNum )
+                
+            cell.pictureScrView.contentSize = CGSizeMake(scrViewWidth, 120)
             
-            //選択写真が存在したらスクロールが走る表示全体サイズを指定。写真の125幅に、15の余白で140
-            let scrViewWidth:CGFloat = CGFloat(140 * picNum )
-
-            cell.scrView.contentSize = CGSizeMake(scrViewWidth, 125)
+                
+            countNum = 0
+            for strURL in selectedPictures{
+                print("画像のassetURL:\(strURL)")
+                
+                var url = NSURL(string: strURL as! String)
+                
+                let fetchResult: PHFetchResult = PHAsset.fetchAssetsWithALAssetURLs([url!], options: nil)
+                
+                if fetchResult.firstObject != nil{
+                    
+                    let asset: PHAsset = fetchResult.firstObject as! PHAsset
+                    
+                    
+                    print("pixelWidth:\(asset.pixelWidth)");
+                    print("pixelHeight:\(asset.pixelHeight)");
+                    
+                    let manager: PHImageManager = PHImageManager()
+                    manager.requestImageForAsset(asset,targetSize: CGSizeMake(5, 500),contentMode: .AspectFit,options: nil) { (image, info) -> Void in
+                        
+                        //imageViewのaspectFitをつける必要がある？このままで良いかも
+                        var imageView = UIImageView()
+                        
+                        //各写真イメージのX座標開始位置をpositionXとする。120幅に、10の余白で130
+                        var positionX:CGFloat = CGFloat(130 * self.countNum)
+                        
+                        //写真の位置サイズ指定
+                        imageView.frame = CGRectMake(positionX, 0, 120, 120)
+                        imageView.image = image
+                        
+                        cell.pictureScrView.addSubview(imageView)
+                            
+                
+                            
+                        //写真の上に選択時の透明ボタンを被せて配置する
+                        var picSelectBtn = UIButton()
+                        picSelectBtn.setTitle("", forState: .Normal)
+                        picSelectBtn.frame = CGRectMake(positionX, 0, 120, 120)
+                        picSelectBtn.addTarget(self, action: "showPicture:", forControlEvents:.TouchUpInside)
+                        cell.pictureScrView.addSubview(picSelectBtn)
+                        
+                        picSelectBtn.tag = indexPath.row
+                        
+                        self.countNum++
+                        
+                        
+                            //                              cell.picCancelBtn.hidden = false
+                        }
+                    }
+                    
+                }
+            
+            
+            
+                return cell // problem1
 
             
         }else{
+            print("============ 写真が存在しないとき ============")
             
             //選択写真が存在しない場合、画像表示箇所が縮まるように
-            cell.scrView.frame.size.height = 0
-            cell.scrView.frame.size.width = 0
-            cell.postImageViewBtn.frame.size.height = 0
-            cell.postImageViewBtn.frame.size.width = 0
+            removeAllSubviews(cell.pictureScrView)
+            cell.pictureScrView.frame.size.height = 0
+            cell.pictureScrView.frame.size.width = 0
+            print(cell.pictureScrView.frame.size.height)
+            
+            return cell
+            
         }
         
+
         
-        //写真を表示する
-        countNum = 0
-        for strURL in selectedPictures{
+//選択された動画サムネイルを表示するための処理
+        
+        var movArray = posts[indexPath.row]["movie"] as! NSMutableArray
+         print("movArrayのカウント = \(movArray.count)")
+        
+//        var mov1 = posts[indexPath.row]["movie1"] as! String
+//        var mov2 = posts[indexPath.row]["movie2"] as! String
+//        var mov3 = posts[indexPath.row]["movie3"] as! String
+//        var mov4 = posts[indexPath.row]["movie4"] as! String
+//        var mov5 = posts[indexPath.row]["movie5"] as! String
+//        
+//        var movArray = [mov1,mov2,mov3,mov4,mov5]
+        
+        var selectedMovies = [] as! NSMutableArray
+        
+        
+        //空でない動画を配列selectedPicturesにセット
+        for selectedMov in movArray{
             
-            print(strURL)
-            
-            var url = NSURL(string: strURL as! String)
-            
-            let fetchResult: PHFetchResult = PHAsset.fetchAssetsWithALAssetURLs([url!], options: nil)
-            
-            if fetchResult.firstObject != nil{
-                
-                let asset: PHAsset = fetchResult.firstObject as! PHAsset
-                
-                
-                print("pixelWidth:\(asset.pixelWidth)");
-                print("pixelHeight:\(asset.pixelHeight)");
-                
-                let manager: PHImageManager = PHImageManager()
-                manager.requestImageForAsset(asset,targetSize: CGSizeMake(5, 500),contentMode: .AspectFit,options: nil) { (image, info) -> Void in
-                    
-                    //imageViewのaspectFitをつける必要がある？このままで良いかも
-                    var imageView = UIImageView()
-                    
-                    //各写真イメージのX座標開始位置をpositionXとする。125幅に、15の余白で140
-                    var positionX:CGFloat = CGFloat(140 * self.countNum)
-                    
-                    //写真の位置サイズ指定
-                    imageView.frame = CGRectMake(positionX, 0, 125, 125)
-                    imageView.image = image
-                    cell.scrView.addSubview(imageView)
-                    
-                    //写真を選択するための透明ボタンを設置する
-                    var picChoseBtn = UIButton()
-                    picChoseBtn.setTitle("", forState: .Normal)
-                    picChoseBtn.frame = CGRectMake(positionX, 0, 125, 125)
-                    picChoseBtn.addTarget(self, action: "showPicture:", forControlEvents:.TouchUpInside)
-                    cell.scrView.addSubview(picChoseBtn)
-                    
-                    picChoseBtn.tag = indexPath.row
-
-
-                    self.countNum++
-                }
+            if selectedMov as! String != ""{
+                selectedMovies.addObject(selectedMov)
             }
+            
         }
         
+        //スクロールビューから追加したビューを一旦削除
+        removeAllSubviews(cell.movieScrView)
         
         
-//        cell.postImageView.image = UIImage(named:(posts[indexPath.row]["picture"] as! String))
-//
-//        if (posts[indexPath.row]["picture"] as! String == ""){
-////            cell.postImageView.hidden = false
-//            cell.postImageView.frame.size.height = 0
-//            cell.postImageView.frame.size.width = 0
-//            
-//            
-//        }
         
+        //選択されている動画の数
+        var movNum = selectedMovies.count
         
+        if movNum > 0{
+            print("============ 動画が存在するとき ============")
+            print(movNum)
+            //スクロールが走る表示全体サイズを指定。写真の120幅に、10の余白で130
+            let scrViewWidth:CGFloat = CGFloat(130 * picNum )
+            
+            cell.movieScrView.contentSize = CGSizeMake(scrViewWidth, 120)
+            
+            
+            countNum = 0
+            for strURL in selectedMovies{
+                print("動画のassetURL:\(strURL)")
+                
+                var url = NSURL(string: strURL as! String)
+                
+                let fetchResult: PHFetchResult = PHAsset.fetchAssetsWithALAssetURLs([url!], options: nil)
+                
+                if fetchResult.firstObject != nil{
+                    
+                    let asset: PHAsset = fetchResult.firstObject as! PHAsset
+                    
+                    
+                    print("pixelWidth:\(asset.pixelWidth)");
+                    print("pixelHeight:\(asset.pixelHeight)");
+                    
+                    let manager: PHImageManager = PHImageManager()
+                    manager.requestImageForAsset(asset,targetSize: CGSizeMake(5, 500),contentMode: .AspectFit,options: nil) { (image, info) -> Void in
+                        
+                        //imageViewのaspectFitをつける必要がある？このままで良いかも
+                        var imageView = UIImageView()
+                        
+                        //各動画イメージのX座標開始位置をpositionXとする。120幅に、10の余白で130
+                        var positionX:CGFloat = CGFloat(130 * self.countNum)
+                        
+                        //写真の位置サイズ指定
+                        imageView.frame = CGRectMake(positionX, 0, 120, 120)
+                        imageView.image = image
+                        
+                        cell.movieScrView.addSubview(imageView)
+                        
+                        
+                        
+                        //動画サムネイルの上に選択時の透明ボタンを被せて配置する
+                        var movSelectBtn = UIButton()
+                        movSelectBtn.setTitle("", forState: .Normal)
+                        movSelectBtn.frame = CGRectMake(positionX, 0, 120, 120)
+                        movSelectBtn.addTarget(self, action: "showMovie:", forControlEvents:.TouchUpInside)
+                        cell.movieScrView.addSubview(movSelectBtn)
+                        
+                        movSelectBtn.tag = indexPath.row
+                        
+                        self.countNum++
+                        
+                        
+                        //                              cell.picCancelBtn.hidden = false
+                    }
+                }
+                
+            }
+            
+            return cell // problem2
+            
+            
+        }else{
+            print("============ 動画が存在しないとき ============")
+            //選択写真が存在しない場合、画像表示箇所が縮まるように
+            cell.movieScrView.frame.size.height = 0
+            cell.movieScrView.frame.size.width = 0
+            print(cell.movieScrView.frame.size.height)
+
+            return cell
+        }   // if movNum > 0　の終わり
         
         
         
@@ -337,11 +466,14 @@ class HomeViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
         
 //        cell.postTextViewBtn.addTarget(self, action:"showMore:",forControlEvents: .TouchUpInside)
 //        cell.postTextViewBtn.tag = indexPath.row
-
         
-        return cell
         
-    }
+        //動的にセルの高さを変えたい
+        cell.layoutIfNeeded()
+        
+        return cell //これが発動すれば上のはいらない
+        
+        }
     
     
     //各行の高さを指定する
@@ -400,13 +532,17 @@ class HomeViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
         navigationController?.pushViewController(detailVC, animated: true)
     }
     
-    //postImageViewBtnをタップするとpictureVCに遷移する
+    
+    
+    
+    
+    //picSelectBtnをタップするとpictureVCに遷移する
     func showPicture(sender: UIButton){
         
         var xPosition = sender.frame.origin.x
         
         //配列selectedPicturesの何番目の写真が選択されたか
-        var numOfPic = xPosition/140 as! Int
+        var numOfPic = xPosition/130 as! Int
         
 
         let pictureVC = UIStoryboard(name: "Main",bundle: nil).instantiateViewControllerWithIdentifier("PictureViewController") as! PictureViewController
@@ -419,7 +555,25 @@ class HomeViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
     
         }
     
-   
+    //movSelectBtnをタップするとpictureVCに遷移する
+    func showMovie(sender: UIButton){
+        
+        var xPosition = sender.frame.origin.x
+        
+        //配列selectedPicturesの何番目の動画が選択されたか
+        var numOfMov = xPosition/130 as! Int
+        
+        
+        let movieVC = UIStoryboard(name: "Main",bundle: nil).instantiateViewControllerWithIdentifier("MovieViewController") as! MovieViewController
+        
+        movieVC.movSelectedIndex = sender.tag
+        movieVC.numOfSelectedMovie = numOfMov
+        
+        navigationController?.pushViewController(movieVC, animated: true)
+        
+        
+    }
+
 
     
     
@@ -497,6 +651,13 @@ class HomeViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
 //    }
 
     
+//subViewを親ビューから全て削除
+    func removeAllSubviews(parentView: UIView){
+        var subviews = parentView.subviews
+        for subview in subviews {
+            subview.removeFromSuperview()
+        }
+    }
 
 
     override func didReceiveMemoryWarning() {

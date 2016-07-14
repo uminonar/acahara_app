@@ -101,7 +101,7 @@ class ChosePostsViewController: UIViewController,UITableViewDelegate,UITableView
         
         //どうやったら.xibのイメージを非表示にできる？nilで行ける？
         cell.postEllipsis.image=nil
-        cell.postImageViewBtn.hidden = true
+       
         
         
         return cell

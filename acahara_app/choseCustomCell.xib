@@ -73,30 +73,12 @@
                         </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="11"/>
                     </button>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" semanticContentAttribute="spatial" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="SZ2-qy-98t">
-                        <rect key="frame" x="89" y="216" width="245" height="124"/>
-                        <gestureRecognizers/>
-                        <constraints>
-                            <constraint firstAttribute="height" constant="124" id="lv9-xO-OMA"/>
-                        </constraints>
-                    </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="uminonar" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iJu-xy-mzR">
                         <rect key="frame" x="89" y="8" width="188" height="18"/>
                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="A6F-vO-HpP">
-                        <rect key="frame" x="263" y="190" width="75" height="30"/>
-                        <constraints>
-                            <constraint firstAttribute="width" constant="75" id="7zk-Rh-dTr"/>
-                            <constraint firstAttribute="height" constant="30" id="uik-X3-gs9"/>
-                        </constraints>
-                        <fontDescription key="fontDescription" type="system" pointSize="10"/>
-                        <state key="normal" title="つづきを読む">
-                            <color key="titleColor" red="1" green="0.40000000600000002" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
-                        </state>
-                    </button>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="58分" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wid-xO-76S">
                         <rect key="frame" x="285" y="13" width="57" height="23"/>
                         <constraints>
@@ -115,6 +97,20 @@
                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="HfM-bC-UzV">
+                        <rect key="frame" x="89" y="213" width="235" height="128"/>
+                    </scrollView>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="A6F-vO-HpP">
+                        <rect key="frame" x="261" y="186" width="75" height="30"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="75" id="7zk-Rh-dTr"/>
+                            <constraint firstAttribute="height" constant="30" id="uik-X3-gs9"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                        <state key="normal" title="つづきを読む">
+                            <color key="titleColor" red="1" green="0.40000000600000002" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
+                        </state>
+                    </button>
                 </subviews>
                 <constraints>
                     <constraint firstItem="1Ck-qb-Dh9" firstAttribute="centerY" secondItem="Sqn-lS-unF" secondAttribute="centerY" id="0LS-TY-AjA"/>
@@ -124,7 +120,6 @@
                     <constraint firstItem="1Ck-qb-Dh9" firstAttribute="leading" secondItem="Sqn-lS-unF" secondAttribute="leadingMargin" id="8jN-Ie-Xqm"/>
                     <constraint firstItem="BfP-h3-VJ1" firstAttribute="top" secondItem="PIm-cJ-6qp" secondAttribute="bottom" constant="32" id="ErR-ZW-ZMs"/>
                     <constraint firstItem="NSx-69-h6F" firstAttribute="top" secondItem="Sqn-lS-unF" secondAttribute="topMargin" constant="5" id="FAz-QW-Cag"/>
-                    <constraint firstItem="BfP-h3-VJ1" firstAttribute="trailing" secondItem="SZ2-qy-98t" secondAttribute="trailing" id="Fx2-Ia-bDD"/>
                     <constraint firstItem="BfP-h3-VJ1" firstAttribute="leading" secondItem="1Ck-qb-Dh9" secondAttribute="trailing" constant="40" id="GLZ-Of-5qc"/>
                     <constraint firstAttribute="trailingMargin" secondItem="BfP-h3-VJ1" secondAttribute="trailing" constant="-22" id="GvE-tu-agh"/>
                     <constraint firstItem="0LG-Wa-maj" firstAttribute="leading" secondItem="NSx-69-h6F" secondAttribute="trailing" constant="8" id="Kv5-EI-QaK"/>
@@ -133,21 +128,19 @@
                     <constraint firstAttribute="trailingMargin" secondItem="egZ-g6-PIm" secondAttribute="trailing" constant="-24" id="Ng5-jy-eFO"/>
                     <constraint firstAttribute="trailing" secondItem="Wid-xO-76S" secondAttribute="trailing" constant="-22" id="QBn-Os-i3V"/>
                     <constraint firstAttribute="trailing" secondItem="BfP-h3-VJ1" secondAttribute="trailing" constant="12" id="RQ1-az-N7Z"/>
-                    <constraint firstItem="A6F-vO-HpP" firstAttribute="top" secondItem="Sqn-lS-unF" secondAttribute="top" constant="190" id="SlS-8d-J8V"/>
+                    <constraint firstItem="A6F-vO-HpP" firstAttribute="top" secondItem="Sqn-lS-unF" secondAttribute="top" constant="186" id="SlS-8d-J8V"/>
                     <constraint firstItem="0LG-Wa-maj" firstAttribute="leading" secondItem="NSx-69-h6F" secondAttribute="trailing" constant="8" symbolic="YES" id="UKe-4y-nu5"/>
                     <constraint firstItem="w5U-vt-3Wp" firstAttribute="leading" secondItem="3Uk-Nr-QHO" secondAttribute="leading" id="Uh1-Ja-yJy"/>
                     <constraint firstItem="Wid-xO-76S" firstAttribute="top" secondItem="Sqn-lS-unF" secondAttribute="top" constant="13" id="VFF-DU-pMk"/>
                     <constraint firstItem="3Uk-Nr-QHO" firstAttribute="trailing" secondItem="PIm-cJ-6qp" secondAttribute="trailing" id="YHE-6Z-NTH"/>
                     <constraint firstItem="w5U-vt-3Wp" firstAttribute="trailing" secondItem="3Uk-Nr-QHO" secondAttribute="trailing" id="ZHF-Gi-Q02"/>
-                    <constraint firstAttribute="trailingMargin" secondItem="A6F-vO-HpP" secondAttribute="trailing" constant="-26" id="ZsI-af-Cic"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="A6F-vO-HpP" secondAttribute="trailing" constant="-24" id="ZsI-af-Cic"/>
                     <constraint firstAttribute="trailingMargin" secondItem="3Uk-Nr-QHO" secondAttribute="trailing" constant="-38" id="a4t-VH-B26"/>
                     <constraint firstItem="iJu-xy-mzR" firstAttribute="leading" secondItem="0LG-Wa-maj" secondAttribute="leading" id="dwj-42-4X2"/>
                     <constraint firstItem="w5U-vt-3Wp" firstAttribute="top" secondItem="Sqn-lS-unF" secondAttribute="top" constant="35" id="iTF-9i-zxm"/>
                     <constraint firstItem="PIm-cJ-6qp" firstAttribute="top" secondItem="3Uk-Nr-QHO" secondAttribute="bottom" constant="3" id="qSD-e6-6la"/>
                     <constraint firstItem="0LG-Wa-maj" firstAttribute="top" secondItem="Sqn-lS-unF" secondAttribute="topMargin" constant="11" id="rbD-ef-OQz"/>
                     <constraint firstItem="3Uk-Nr-QHO" firstAttribute="leading" secondItem="0LG-Wa-maj" secondAttribute="leading" id="sn7-yz-T8o"/>
-                    <constraint firstItem="PIm-cJ-6qp" firstAttribute="leading" secondItem="SZ2-qy-98t" secondAttribute="leading" id="tve-ZU-7fV"/>
-                    <constraint firstItem="SZ2-qy-98t" firstAttribute="top" secondItem="BfP-h3-VJ1" secondAttribute="bottom" constant="23" id="uqL-RK-JjR"/>
                     <constraint firstItem="NSx-69-h6F" firstAttribute="leading" secondItem="Sqn-lS-unF" secondAttribute="leadingMargin" constant="33" id="v64-VW-sTu"/>
                     <constraint firstItem="Wid-xO-76S" firstAttribute="leading" secondItem="iJu-xy-mzR" secondAttribute="trailing" constant="8" symbolic="YES" id="vRQ-mg-F9V"/>
                     <constraint firstItem="egZ-g6-PIm" firstAttribute="leading" secondItem="1Ck-qb-Dh9" secondAttribute="trailing" constant="51" id="zGJ-fF-YPZ"/>
@@ -163,7 +156,6 @@
                 <outlet property="coverBtn" destination="rjl-wz-ZVZ" id="PGk-Ys-lBK"/>
                 <outlet property="postCreated" destination="Wid-xO-76S" id="grz-nF-tVp"/>
                 <outlet property="postDiary" destination="egZ-g6-PIm" id="SPD-lh-veJ"/>
-                <outlet property="postImageView" destination="SZ2-qy-98t" id="GYD-yP-L0P"/>
                 <outlet property="postMoreBtn" destination="A6F-vO-HpP" id="QUg-QP-VuG"/>
                 <outlet property="postName" destination="iJu-xy-mzR" id="83l-WK-Nrf"/>
                 <outlet property="postPortrait" destination="NSx-69-h6F" id="6ke-XL-HAg"/>
@@ -172,6 +164,7 @@
                 <outlet property="postWhen" destination="0LG-Wa-maj" id="GHJ-JS-shH"/>
                 <outlet property="postWhere" destination="w5U-vt-3Wp" id="aho-9p-4Gc"/>
                 <outlet property="postWho" destination="3Uk-Nr-QHO" id="S0c-ci-PkC"/>
+                <outlet property="scrView" destination="HfM-bC-UzV" id="nuJ-uj-6TL"/>
             </connections>
             <point key="canvasLocation" x="5" y="28"/>
         </tableViewCell>

@@ -2267,6 +2267,46 @@
             </objects>
             <point key="canvasLocation" x="2564" y="1337"/>
         </scene>
+        <!--Movie View Controller-->
+        <scene sceneID="NTZ-EC-1KV">
+            <objects>
+                <viewController storyboardIdentifier="MovieViewController" id="hPT-3G-3Al" customClass="MovieViewController" customModule="acahara_app" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="JAr-b2-R8s"/>
+                        <viewControllerLayoutGuide type="bottom" id="7J2-v8-fGs"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="b4q-hM-bsH">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="UXL-UM-rYM" customClass="AVPlayerView" customModule="acahara_app" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="150" width="320" height="248"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="playBtn" translatesAutoresizingMaskIntoConstraints="NO" id="Eby-0w-Gf7">
+                                        <rect key="frame" x="131" y="94" width="59" height="59"/>
+                                    </imageView>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xH5-Yf-0uj">
+                                        <rect key="frame" x="53" y="37" width="221" height="164"/>
+                                        <connections>
+                                            <action selector="tapPlay:" destination="hPT-3G-3Al" eventType="touchUpInside" id="dn6-ue-WX4"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <connections>
+                        <outlet property="movieVIew" destination="UXL-UM-rYM" id="cSB-dW-kZF"/>
+                        <outlet property="movieView" destination="UXL-UM-rYM" id="Zfw-4Z-A86"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="TbU-sr-YDr" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2954" y="1337"/>
+        </scene>
         <!--Add Table View Controller-->
         <scene sceneID="DU1-PZ-BXm">
             <objects>
@@ -2440,7 +2480,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GQ9-Ta-OaL" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <tapGestureRecognizer id="dQf-OF-Zog"/>
             </objects>
-            <point key="canvasLocation" x="2049" y="1146"/>
+            <point key="canvasLocation" x="1761" y="1362"/>
         </scene>
         <!--Select View Controller-->
         <scene sceneID="15K-v7-8J4">
@@ -2459,7 +2499,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4vM-ir-TDn" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1854" y="2351"/>
+            <point key="canvasLocation" x="4398" y="1191"/>
         </scene>
         <!--Left Menu View Controller-->
         <scene sceneID="HGa-G8-e8x">
@@ -2951,6 +2991,7 @@
         <image name="lawyer.jpg" width="60" height="67"/>
         <image name="openFolder" width="20" height="20"/>
         <image name="photoTop0" width="300" height="165"/>
+        <image name="playBtn" width="25" height="25"/>
         <image name="professor.jpg" width="60" height="60"/>
         <image name="psycotherapist.jpg" width="60" height="60"/>
         <image name="s_question.png" width="150" height="150"/>
