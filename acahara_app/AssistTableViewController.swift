@@ -320,10 +320,11 @@ class AssistTableViewController: UIViewController,UITableViewDelegate,UITableVie
                 
 //ここ改造
 //                cell.postImageView.image = UIImage(named:(posts[postindex]["picture"] as! String))
-                
+                print("picArrayCount = \(posts.count)")
+                print("indexPath.row = \(indexPath.row)")
                 
                 // 写真データ全件取得
-                var picArray = posts[indexPath.row]["picture"] as! NSMutableArray
+                var picArray = posts[postindex]["picture"] as! NSMutableArray
                 print("picArrayのカウント = \(picArray.count)")
   
                 var selectedPictures = [] as! NSMutableArray
@@ -404,7 +405,7 @@ class AssistTableViewController: UIViewController,UITableViewDelegate,UITableVie
                     
                 
                 
-                    var movArray = posts[indexPath.row]["movie"] as! NSMutableArray
+                    var movArray = posts[postindex]["movie"] as! NSMutableArray
                     print("movArrayのカウント = \(movArray.count)")
                     var selectedMovies = [] as! NSMutableArray
                 

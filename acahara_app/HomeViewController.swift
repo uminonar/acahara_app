@@ -310,7 +310,7 @@ class HomeViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
             
             
             
-                return cell // problem1
+//                return cell // problem1
 
             
         }else{
@@ -322,7 +322,7 @@ class HomeViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
             cell.pictureScrView.frame.size.width = 0
             print(cell.pictureScrView.frame.size.height)
             
-            return cell
+//            return cell
             
         }
         
@@ -421,7 +421,7 @@ class HomeViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
                 
             }
             
-            return cell // problem2
+//            return cell // problem2
             
             
         }else{
@@ -430,10 +430,10 @@ class HomeViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
             cell.movieScrView.frame.size.height = 0
             cell.movieScrView.frame.size.width = 0
             print(cell.movieScrView.frame.size.height)
-
-            return cell
-        }   // if movNum > 0　の終わり
         
+//            return cell
+        }   // if movNum > 0　の終わり
+  
         
         
         //postsのopenFlag==1のセルだけ下のようにしたい

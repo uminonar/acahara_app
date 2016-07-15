@@ -91,6 +91,7 @@
                     </label>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7XL-1I-tju">
                         <rect key="frame" x="59" y="104" width="245" height="30"/>
+                        <color key="backgroundColor" red="1" green="0.40000000600000002" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
                     </button>
                     <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4NZ-Gw-XYa">
                         <rect key="frame" x="59" y="164" width="245" height="120"/>

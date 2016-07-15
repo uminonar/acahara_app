@@ -588,7 +588,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="65"/>
                                 <color key="backgroundColor" red="1" green="0.40000000600000002" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
                             </view>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Nwf-DU-0Gp">
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Nwf-DU-0Gp">
                                 <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="V6I-Tg-iGb">
@@ -657,18 +657,16 @@
                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Qal-zx-VYg">
-                                        <rect key="frame" x="54" y="155" width="249" height="142"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="142" id="yiL-v4-EgQ"/>
-                                        </constraints>
-                                    </imageView>
+                                    <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5Du-FV-NFk">
+                                        <rect key="frame" x="54" y="146" width="245" height="120"/>
+                                    </scrollView>
+                                    <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="MxB-CQ-JQk">
+                                        <rect key="frame" x="54" y="287" width="245" height="120"/>
+                                    </scrollView>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstItem="leE-RZ-vZl" firstAttribute="leading" secondItem="Qal-zx-VYg" secondAttribute="leading" id="4jD-oD-oxb"/>
                                     <constraint firstItem="NMz-DZ-RAs" firstAttribute="leading" secondItem="V6I-Tg-iGb" secondAttribute="trailing" constant="7" id="75k-Ie-w93"/>
                                     <constraint firstItem="U65-q1-zge" firstAttribute="top" secondItem="0jv-qg-s4f" secondAttribute="bottom" constant="9" id="EJZ-m4-BLh"/>
-                                    <constraint firstAttribute="bottom" secondItem="Qal-zx-VYg" secondAttribute="bottom" constant="207" id="HlQ-Vo-Mon"/>
                                     <constraint firstAttribute="trailing" secondItem="2gj-aF-hkg" secondAttribute="trailing" constant="56" id="Hyp-sE-QbQ"/>
                                     <constraint firstAttribute="trailing" secondItem="leE-RZ-vZl" secondAttribute="trailing" constant="17" id="I3C-ax-FjY"/>
                                     <constraint firstItem="0jv-qg-s4f" firstAttribute="top" secondItem="Nwf-DU-0Gp" secondAttribute="top" constant="20" id="K8n-6s-0DV"/>
@@ -676,11 +674,11 @@
                                     <constraint firstItem="Bcv-Uh-T15" firstAttribute="leading" secondItem="U65-q1-zge" secondAttribute="leading" id="MD9-9d-xpq"/>
                                     <constraint firstItem="V6I-Tg-iGb" firstAttribute="leading" secondItem="Nwf-DU-0Gp" secondAttribute="leading" constant="7" id="MWU-Lb-y0f"/>
                                     <constraint firstItem="U65-q1-zge" firstAttribute="leading" secondItem="Nwf-DU-0Gp" secondAttribute="leading" constant="54" id="Nq1-uX-hzV"/>
-                                    <constraint firstItem="leE-RZ-vZl" firstAttribute="trailing" secondItem="Qal-zx-VYg" secondAttribute="trailing" id="SDW-uE-0bk"/>
                                     <constraint firstItem="leE-RZ-vZl" firstAttribute="top" secondItem="U65-q1-zge" secondAttribute="bottom" constant="38" id="SIb-Uu-McL"/>
                                     <constraint firstItem="NMz-DZ-RAs" firstAttribute="top" secondItem="Nwf-DU-0Gp" secondAttribute="top" constant="5" id="TUy-hK-9tn"/>
                                     <constraint firstItem="0jv-qg-s4f" firstAttribute="leading" secondItem="Bcv-Uh-T15" secondAttribute="leading" id="UZS-tS-4Nd"/>
                                     <constraint firstItem="2gj-aF-hkg" firstAttribute="top" secondItem="96I-h0-kSy" secondAttribute="bottom" constant="36" id="bQx-R9-EYQ"/>
+                                    <constraint firstItem="5Du-FV-NFk" firstAttribute="top" secondItem="leE-RZ-vZl" secondAttribute="bottom" constant="16" id="bmm-gq-A9G"/>
                                     <constraint firstItem="leE-RZ-vZl" firstAttribute="leading" secondItem="Nwf-DU-0Gp" secondAttribute="leading" constant="54" id="cfk-Sz-6Ix"/>
                                     <constraint firstItem="2gj-aF-hkg" firstAttribute="top" secondItem="Bcv-Uh-T15" secondAttribute="bottom" constant="9" id="ekJ-uO-vpM"/>
                                     <constraint firstItem="U65-q1-zge" firstAttribute="leading" secondItem="2gj-aF-hkg" secondAttribute="leading" id="elD-ns-BFn"/>
@@ -688,7 +686,6 @@
                                     <constraint firstItem="2gj-aF-hkg" firstAttribute="leading" secondItem="leE-RZ-vZl" secondAttribute="leading" id="gp2-8a-a2J"/>
                                     <constraint firstItem="leE-RZ-vZl" firstAttribute="top" secondItem="2gj-aF-hkg" secondAttribute="bottom" constant="23" id="hvo-Aj-WiA"/>
                                     <constraint firstItem="NMz-DZ-RAs" firstAttribute="leading" secondItem="0jv-qg-s4f" secondAttribute="leading" id="jhI-ac-WZO"/>
-                                    <constraint firstItem="Qal-zx-VYg" firstAttribute="top" secondItem="leE-RZ-vZl" secondAttribute="bottom" constant="25" id="kMn-a5-znZ"/>
                                     <constraint firstItem="96I-h0-kSy" firstAttribute="top" secondItem="Nwf-DU-0Gp" secondAttribute="top" constant="6" id="qJq-az-lJn"/>
                                     <constraint firstItem="Bcv-Uh-T15" firstAttribute="top" secondItem="NMz-DZ-RAs" secondAttribute="bottom" constant="9" id="tHN-4v-na4"/>
                                     <constraint firstAttribute="trailing" secondItem="96I-h0-kSy" secondAttribute="trailing" constant="6" id="uvc-sw-1DV"/>
@@ -719,7 +716,6 @@
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
                         <outlet property="detailCreated" destination="96I-h0-kSy" id="8Gh-8b-29F"/>
-                        <outlet property="detailImageView" destination="Qal-zx-VYg" id="8VW-qS-xmb"/>
                         <outlet property="detailName" destination="NMz-DZ-RAs" id="mxb-Jo-Vxs"/>
                         <outlet property="detailSelfee" destination="V6I-Tg-iGb" id="jWY-Te-yRy"/>
                         <outlet property="detailUniversity" destination="2gj-aF-hkg" id="JfT-P3-OQl"/>
@@ -727,6 +723,8 @@
                         <outlet property="detailWhere" destination="Bcv-Uh-T15" id="ppP-zN-GNz"/>
                         <outlet property="detailWho" destination="U65-q1-zge" id="129-8H-DfA"/>
                         <outlet property="diaryLabel" destination="leE-RZ-vZl" id="ahZ-32-ADL"/>
+                        <outlet property="movieScrView" destination="MxB-CQ-JQk" id="xBy-ZX-RVu"/>
+                        <outlet property="pictureScrView" destination="5Du-FV-NFk" id="4bG-mj-x8w"/>
                         <outlet property="scrollView" destination="Nwf-DU-0Gp" id="ASs-sQ-xbP"/>
                     </connections>
                 </viewController>
