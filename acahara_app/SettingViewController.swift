@@ -14,6 +14,10 @@ import AVFoundation
 
 class SettingViewController: UIViewController,UIImagePickerControllerDelegate,UINavigationControllerDelegate,QBImagePickerControllerDelegate {
 
+    //利用開始時にはすでに各項目が記入されているはずなので、trueの設定をしておく。
+    //変更でsaveBtnが押された時に、未記入やメールアドレス合致を確認して不備があればfalseにする
+
+    
     var myApp = UIApplication.sharedApplication()
         .delegate as! AppDelegate
     
@@ -182,6 +186,7 @@ class SettingViewController: UIViewController,UIImagePickerControllerDelegate,UI
         //即反映させる
         myDefault.synchronize()
     }
+    
     @IBAction func settingContEmail(sender: UITextField) {
         self.resignFirstResponder()
         
@@ -194,10 +199,7 @@ class SettingViewController: UIViewController,UIImagePickerControllerDelegate,UI
         myDefault.synchronize()
     }
     
-   
 
-    
-    
 
     @IBAction func selfeeCBtn(sender: UIButton) {
         
@@ -288,16 +290,77 @@ class SettingViewController: UIViewController,UIImagePickerControllerDelegate,UI
 
     @IBAction func tapSave(sender: UIButton) {
         
+        
         // まずPOSTで送信したい情報をセット
         var myDefault = NSUserDefaults.standardUserDefaults()
         
-        var setName = myDefault.stringForKey("setName")
-        var setEmail = myDefault.stringForKey("setEmail")
-        var confirmEmail = myDefault.stringForKey("setConfEmail")
-        var contactEmail = myDefault.stringForKey("setContEmail")
-        var selfee = myDefault.stringForKey("selfeeURL")
+        var selfeeURL = myDefault.stringForKey("selfeeURL")
         
         
+        var setName = nameField.text
+        var setEmail = emailField.text
+        var confirmEmail = confirmEmailField.text
+        var contactEmail = contactEmailField.text
+   
+
+        //変更の設定が、画面上で未記入がないか、メールアドレスがあっているか確認
+        let nameExsist = setName != nil && setName != "" ? true : false
+        let mailExist = setEmail != nil && setEmail != "" ? true : false
+        let confirmExist = confirmEmail != nil && confirmEmail != "" ? true : false
+        let contactExist = contactEmail != nil && contactEmail != "" ? true : false
+        
+        
+        if (!nameExsist || !mailExist || !confirmExist || !contactExist) {
+            
+            //filled = false このやり方はリロードをかける必要があって、tableVCには向くけどVCだとstoryBDやxibを使うときできない
+            //アニメーションで未記入のテキストフィールドに背景色をかける　下部にfuncを記述　考えすぎ、普通に背景色を変えるfuncで良い
+            
+            if !nameExsist {
+                animateBackgroundColor(nameField)
+            }
+            
+            if !mailExist {
+                animateBackgroundColor(emailField)
+            }
+            
+            if !confirmExist {
+                animateBackgroundColor(confirmEmailField)
+            }
+            
+            if !contactExist {
+                animateBackgroundColor(contactEmailField)
+            }
+
+
+            var alertController = UIAlertController(
+                title: "必須項目を記入してください",
+                message: "",
+                preferredStyle: .Alert)
+            
+            alertController.addAction(UIAlertAction(title: "OK", style: .Default, handler:nil))
+            presentViewController(alertController, animated: true, completion: nil)
+            
+
+            
+            
+        }else if setEmail != confirmEmail!{
+            
+            let honeyDew :UIColor = UIColor(red:0.863,green:0.976,blue:0.643,alpha:1.0)
+            emailField.backgroundColor = honeyDew
+            confirmEmailField.backgroundColor = honeyDew
+            
+            var alertController = UIAlertController(
+                title: "設定メールアドレスと確認メールアドレスが異なります",
+                message: "もう一度、ご記入ください",
+                preferredStyle: .Alert)
+            
+            alertController.addAction(UIAlertAction(title: "OK", style: .Default, handler:nil))
+            presentViewController(alertController, animated: true, completion: nil)
+
+            
+            
+        }else{
+
         
         // dictionaryで送信するJSONデータを生成.
         var myDict:NSMutableDictionary = NSMutableDictionary()
@@ -306,7 +369,7 @@ class SettingViewController: UIViewController,UIImagePickerControllerDelegate,UI
         let sentToEmail = setEmail!.dataUsingEncoding(NSUTF8StringEncoding)
         let confirmMail = confirmEmail!.dataUsingEncoding(NSUTF8StringEncoding)
         let contactMail = contactEmail!.dataUsingEncoding(NSUTF8StringEncoding)
-        let selfeeURL = selfee!.dataUsingEncoding(NSUTF8StringEncoding)
+        let selfeeURL = selfeeURL!.dataUsingEncoding(NSUTF8StringEncoding)
 
         
         
@@ -359,10 +422,33 @@ class SettingViewController: UIViewController,UIImagePickerControllerDelegate,UI
             print(NSString(data: data!, encoding: NSUTF8StringEncoding))
         })
         task.resume()
+        }
     }
     
-
     
+    
+    
+ 
+    func animateBackgroundColor(textField: UITextField) {
+        
+   //テキストフィールドが未記入だったり、メールアドレスが確認メールアドレスと合致しないときに背景色をアニメーションで変更する　下は失敗　でも点滅する面白いアニメーションができる！もっとシンプルに背景色を変えれば良い
+        
+//        let backgroundColorAnimation: CABasicAnimation = CABasicAnimation(keyPath: "backgroundColor")
+//        backgroundColorAnimation.fromValue = UIColor.clearColor().CGColor
+//        let honeyDew :UIColor = UIColor(red:0.863,green:0.976,blue:0.643,alpha:1.0)
+//        backgroundColorAnimation.toValue = honeyDew.CGColor
+//        backgroundColorAnimation.duration = 0.1
+//        backgroundColorAnimation.autoreverses = true
+//        backgroundColorAnimation.repeatCount = FLT_MAX
+//        textField.layer.addAnimation(backgroundColorAnimation, forKey: "BackgroundColor")
+        
+        
+        let honeyDew :UIColor = UIColor(red:0.863,green:0.976,blue:0.643,alpha:1.0)
+
+        textField.backgroundColor = honeyDew
+
+    }
+
     
     
     
