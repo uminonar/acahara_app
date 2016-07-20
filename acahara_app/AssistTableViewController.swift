@@ -60,32 +60,47 @@ class AssistTableViewController: UIViewController,UITableViewDelegate,UITableVie
         
         
         
-        //選択する記録を表示するためのデータを取得してpostsに収める
-        let pathpost = NSBundle.mainBundle().pathForResource("posts", ofType: "txt")
-        let jsondatapost = NSData(contentsOfFile: pathpost!)
-        let jsonArray = (try! NSJSONSerialization.JSONObjectWithData(jsondatapost!, options: [])) as! NSArray
-        
-        for data in jsonArray{
+        var url = NSURL(string: "http://acahara.net/get.post_json.php")
+        var request = NSURLRequest(URL:url!)
+        var jsondata = (try! NSURLConnection.sendSynchronousRequest(request, returningResponse: nil))
+        let jsonDictionary = (try! NSJSONSerialization.JSONObjectWithData(jsondata, options: [])) as! NSDictionary
+        //        for(key, data) in jsonDictionary{
+        //            print("\(key)=\(data)")
+  
+        //これであってる？？？？うーん
+        for data in jsonDictionary{
             
-            //openFlag=0のものだけここのpostsには収めたい。どうする？
-            var openFlag = data["openFlag"] as! String
-            if (openFlag == "0"){
-                
-                
-                var postEach:NSMutableDictionary = data.mutableCopy() as! NSMutableDictionary
-                postEach["selectedFlag"] = false
-                
-                posts.addObject(postEach)
-            }
+            posts.addObject(data as! NSMutableDictionary)
         }
+        
+
+        
+//        //選択する記録を表示するためのデータを取得してpostsに収める
+//        let pathpost = NSBundle.mainBundle().pathForResource("posts", ofType: "txt")
+//        let jsondatapost = NSData(contentsOfFile: pathpost!)
+//        let jsonArray = (try! NSJSONSerialization.JSONObjectWithData(jsondatapost!, options: [])) as! NSArray
+        
+//        for data in jsonArray{
+//            
+//            //openFlag=0のものだけここのpostsには収めたい。どうする？
+//            var openFlag = data["openFlag"] as! String
+//            if (openFlag == "0"){
+//                
+//                
+//                var postEach:NSMutableDictionary = data.mutableCopy() as! NSMutableDictionary
+//                postEach["selectedFlag"] = false
+//                
+//                posts.addObject(postEach)
+//            }
+        
         
         
         //mailContentsを取得
         let path = NSBundle.mainBundle().pathForResource("mailContents", ofType: "txt")
-        let jsondata = NSData(contentsOfFile: path!)
-        let jsonDictionary = (try! NSJSONSerialization.JSONObjectWithData(jsondata!,options:[])) as! NSDictionary
+        let json = NSData(contentsOfFile: path!)
+        let jsonDic = (try! NSJSONSerialization.JSONObjectWithData(json!,options:[])) as! NSDictionary
         
-        for (key, data) in jsonDictionary {
+        for (key, data) in jsonDic {
             
             mailContent[key as! String] = data as! String
         }

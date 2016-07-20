@@ -50,20 +50,33 @@ class DetailViewController: UIViewController {
     
     
     override func viewWillAppear(animated: Bool) {
-        let path = NSBundle.mainBundle().pathForResource("posts", ofType: "txt")
-        let jsondata = NSData(contentsOfFile: path!)
         
-        let jsonArray = (try! NSJSONSerialization.JSONObjectWithData(jsondata!, options: [])) as! NSArray
         
-        let dic = jsonArray[dtSelectedIndex]
+        
+        //ここをAPIに変更 これであってる？
+        
+        
+        var url = NSURL(string: "http://acahara.net/get.post_json.php")
+        var request = NSURLRequest(URL:url!)
+        var jsondata = (try! NSURLConnection.sendSynchronousRequest(request, returningResponse: nil))
+        let jsonDictionary = (try! NSJSONSerialization.JSONObjectWithData(jsondata, options: [])) as! NSDictionary
+        //        for(key, data) in jsonDictionary{
+        //            print("\(key)=\(data)")
+
+//        let path = NSBundle.mainBundle().pathForResource("posts", ofType: "txt")
+//        let jsondata = NSData(contentsOfFile: path!)
+//        
+//        let jsonArray = (try! NSJSONSerialization.JSONObjectWithData(jsondata!, options: [])) as! NSArray
+        
+        let dic = jsonDictionary[dtSelectedIndex]
         
         detailSelfee.image=UIImage(named: "selfee.JPG")
         detailName.text = "uminonar"
-        detailWhen.text = dic["when"] as! String
-        detailWhere.text = dic["where"] as! String
-        detailWho.text = dic["who"] as! String
-        detailUniversity.text = dic["university"] as! String
-        diaryLabel.text = dic["diary"] as! String
+        detailWhen.text = dic!["time"] as! String
+        detailWhere.text = dic!["place"] as! String
+        detailWho.text = dic!["person"] as! String
+        detailUniversity.text = dic!["university"] as! String
+        diaryLabel.text = dic!["description"] as! String
  
         
         let style = NSMutableParagraphStyle()
@@ -76,7 +89,7 @@ class DetailViewController: UIViewController {
 
 //        detailImageView.image = UIImage(named: dic["picture1"] as! String)
         // 写真データ全件取得
-        var picArray = dic["picture"] as! NSMutableArray
+        var picArray = dic!["picture"] as! NSMutableArray
         print("picArrayのカウント = \(picArray.count)")
         
         var selectedPictures = [] as! NSMutableArray
@@ -178,7 +191,7 @@ class DetailViewController: UIViewController {
         
         //選択された動画サムネイルを表示するための処理
         
-        var movArray = dic["movie"] as! NSMutableArray
+        var movArray = dic!["movie"] as! NSMutableArray
         print("movArrayのカウント = \(movArray.count)")
 
         var selectedMovies = [] as! NSMutableArray

@@ -65,16 +65,16 @@ extension LeftMenuViewController: UITableViewDelegate, UITableViewDataSource {
         
         let cell = tableView.dequeueReusableCellWithIdentifier("cell", forIndexPath: indexPath)
         
-        let titles: [String] = ["ホーム","基本対策", "設定", "コンタクト", "利用規約","ログアウト"]
+        let titles: [String] = ["ホーム","設定", "基本対策", "コンタクト", "利用規約","ログアウト"]
         
-        let images: [String] = ["IconSettings", "IconCalendar", "IconProfile", "IconSettings", "IconEmpty"]
+//        let images: [String] = ["IconSettings", "IconCalendar", "IconProfile", "IconSettings", "IconEmpty"]
         
         cell.backgroundColor = UIColor.clearColor()
         cell.textLabel?.font = UIFont(name: "HelveticaNeue", size: 19)
         cell.textLabel?.textColor = UIColor.whiteColor()
         cell.textLabel?.text  = titles[indexPath.row]
         cell.selectionStyle = .None
-        cell.imageView?.image = UIImage(named: images[indexPath.row])
+//        cell.imageView?.image = UIImage(named: images[indexPath.row])
         
         
         return cell
@@ -117,14 +117,27 @@ extension LeftMenuViewController: UITableViewDelegate, UITableViewDataSource {
             
             
             myTabBarController.setViewControllers([howToUseView,homeNavView,assistView], animated: false)
+            //MARK:下記を追加。AppDelegateの同じ箇所５０行目あたりと同様の対処。
+            myTabBarController.selectedIndex = 0
+           
             
             sideMenuViewController?.contentViewController = myTabBarController
             
             sideMenuViewController?.hideMenuViewController()
             
             break
-            
+        
+        
         case 1:
+            
+            var settingView = storyboard.instantiateViewControllerWithIdentifier("SettingViewController") as! SettingViewController
+            
+            sideMenuViewController?.contentViewController =  settingView
+            sideMenuViewController?.hideMenuViewController()
+            break
+
+        
+        case 2:
             
             var stepView = storyboard.instantiateViewControllerWithIdentifier("StepViewController") as! StepViewController
             

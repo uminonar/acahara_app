@@ -17,9 +17,12 @@ class HomeViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
     var selectedIndex = -1
     @IBOutlet weak var homeTableView: UITableView!
 
+    var myApp = UIApplication.sharedApplication()
+        .delegate as! AppDelegate
 
-
-  
+    var json:NSData!
+    
+    
     // ボタンを用意
 
     @IBOutlet weak var addBtn: UIBarButtonItem!
@@ -84,25 +87,44 @@ class HomeViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
 //        
 //        homeWrite.setImage(writeImage, forState: .Normal)
         
+        //ここをAPI取得に切り替える
         
-        let path = NSBundle.mainBundle().pathForResource("posts", ofType: "txt")
-        let jsondata = NSData(contentsOfFile: path!)
+        var url = NSURL(string: "http://acahara.net/get.post_json.php")
+        var request = NSURLRequest(URL:url!)
+        var jsondata = (try! NSURLConnection.sendSynchronousRequest(request, returningResponse: nil))
+        let jsonDictionary = (try! NSJSONSerialization.JSONObjectWithData(jsondata, options: [])) as! NSDictionary
+//        for(key, data) in jsonDictionary{
+//            print("\(key)=\(data)")
         
-        let jsonArray = (try! NSJSONSerialization.JSONObjectWithData(jsondata!, options: [])) as! NSArray
         
-        for data in jsonArray{
-            //ここの形がどうなる？
-            posts.addObject(data as! NSMutableDictionary)
+        
+        //これであってる？？？？うーん
+        for data in jsonDictionary{
             
+            posts.addObject(data as! NSMutableDictionary)
         }
-        
-        
-        
-        
+
+    
+//      let path = NSBundle.mainBundle().pathForResource("posts", ofType: "txt")
+//      let jsondata = NSData(contentsOfFile: path!)
+  
+//        
+//            let jsonArray = (try! NSJSONSerialization.JSONObjectWithData(jsondata!, options: [])) as! NSArray
+//            
+//            //データがちゃんと来ているか、urlに切り替えた場合に確認する
+//            print(jsonArray)
+//            
+//            for data in jsonArray{
+//                //ここの形がどうなる？
+//                posts.addObject(data as! NSMutableDictionary)
+//                
+//            }
+
         
     }
     
     
+
 
     
     
@@ -499,6 +521,8 @@ class HomeViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
         var postEllipsisController = UIAlertController(title: "", message: "", preferredStyle: .ActionSheet)
         postEllipsisController.addAction(UIAlertAction(title: "削除", style: .Default, handler: { action in self.confirm(sender.tag)}))
         
+        
+        
         //openFlagが１の時は「念のため記述」にしたい、０の時は「相談に利用予定」 = posts[indexPath.row][openFlag]どう書く？if、ここに書ける？
         
         var tempStr:String = ""
@@ -578,22 +602,130 @@ class HomeViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
     
     
     func changeMode(tag:Int){
-    var openFlag:String = posts[tag]["openFlag"] as! String
-    
-    var dic:NSMutableDictionary = posts[tag].mutableCopy() as! NSMutableDictionary
-    
+        
+        var openFlag:String = posts[tag]["openFlag"] as! String
+        
+        //NSMutableDictionaryをコピーしてから変更を加えないとエラーが出る
+        var dic:NSMutableDictionary = posts[tag].mutableCopy() as! NSMutableDictionary
+        
+        //サーバーにデータ送信するための準備
+        var url = NSURL(string: "http://localhost/json/change_mode.php")
+        let config = NSURLSessionConfiguration.defaultSessionConfiguration()
+        let session = NSURLSession(configuration: config)
+        
     if (openFlag=="0"){
+        
+        //swiftで表示される辞書配列の情報を上書きする
         dic.setValue("1", forKey: "openFlag")
-    }else{
-        dic.setValue("0", forKey: "openFlag")
+        
+        //サーバー側のデータを変更するためのAPIにアクセスする
 
+        //送りたい２つの情報を集める
+        var id = posts[tag]["id"]!!.dataUsingEncoding(NSUTF8StringEncoding)
+        var openFlag = String(1).dataUsingEncoding(NSUTF8StringEncoding)
+
+        
+        // dictionaryで送信する辞書配列を生成
+        var myDict:NSMutableDictionary = NSMutableDictionary()
+        myDict.setObject("id", forKey: "id")
+        myDict.setObject("openFlag", forKey: "openFlag")
+        
+        // 作成したdictionaryがJSONに変換可能かチェック.
+        if NSJSONSerialization.isValidJSONObject(myDict){
+            
+            // DictionaryからJSON(NSData)へ変換.
+            
+            do {
+                json = try NSJSONSerialization.dataWithJSONObject(myDict, options: NSJSONWritingOptions.PrettyPrinted) as NSData
+                // here "jsonData" is the dictionary encoded in JSON data
+                // 生成したJSONデータの確認.
+                print(NSString(data: json, encoding: NSUTF8StringEncoding)!)
+                
+            } catch let error as NSError {
+                print(error)
+            }
+            catch{
+                print("Unknown Error")
+            }
+        }
+       
+
+        var req1 = NSMutableURLRequest(URL: url!)
+        req1.HTTPMethod = "POST"
+        // jsonのデータを一度文字列にして、キーと合わせる.
+        var myData:NSString = "json=\(NSString(data: json, encoding: NSUTF8StringEncoding)!)"
+        
+        // jsonデータのセット.
+        req1.HTTPBody = myData.dataUsingEncoding(NSUTF8StringEncoding)
+        
+        var task = session.dataTaskWithRequest(req1, completionHandler: {
+            (data, resp, err) in
+            print(resp!.URL!)
+            print(NSString(data: data!, encoding: NSUTF8StringEncoding))
+        })
+        task.resume()
+   
+
+    
+
+    
+    }else{
+        //swiftで表示される辞書配列の情報を上書きする
+        dic.setValue("0", forKey: "openFlag")
+        
+        //サーバー側のデータを変更するためのAPIにアクセスする
+        var id = posts[tag]["id"]!!.dataUsingEncoding(NSUTF8StringEncoding)
+        var openFlag = String(0).dataUsingEncoding(NSUTF8StringEncoding)
+        
+        
+        // dictionaryで送信する辞書配列を生成
+        var myDict:NSMutableDictionary = NSMutableDictionary()
+        myDict.setObject("id", forKey: "id")
+        myDict.setObject("openFlag", forKey: "openFlag")
+        
+        // 作成したdictionaryがJSONに変換可能かチェック.
+        if NSJSONSerialization.isValidJSONObject(myDict){
+            
+            // DictionaryからJSON(NSData)へ変換.
+            
+            do {
+                json = try NSJSONSerialization.dataWithJSONObject(myDict, options: NSJSONWritingOptions.PrettyPrinted) as NSData
+                // here "jsonData" is the dictionary encoded in JSON data
+                // 生成したJSONデータの確認.
+                print(NSString(data: json, encoding: NSUTF8StringEncoding)!)
+                
+            } catch let error as NSError {
+                print(error)
+            }
+            catch{
+                print("Unknown Error")
+            }
+        }
+        
+        
+        var req1 = NSMutableURLRequest(URL: url!)
+        req1.HTTPMethod = "POST"
+        // jsonのデータを一度文字列にして、キーと合わせる.
+        var myData:NSString = "json=\(NSString(data: json, encoding: NSUTF8StringEncoding)!)"
+        
+        // jsonデータのセット.
+        req1.HTTPBody = myData.dataUsingEncoding(NSUTF8StringEncoding)
+        
+        var task = session.dataTaskWithRequest(req1, completionHandler: {
+            (data, resp, err) in
+            print(resp!.URL!)
+            print(NSString(data: data!, encoding: NSUTF8StringEncoding))
+        })
+        task.resume()
+        }
+        
+    
+        //コピーして書き換えた辞書配列データを元のものに上書きする
+        posts[tag] = dic
+        
+        homeTableView.reloadData()
+    
     }
-    
-    posts[tag] = dic
-    
-    homeTableView.reloadData()
-    
-   }
     
     
     //削除が選択された時の、確認アラート
@@ -612,6 +744,26 @@ class HomeViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
     
     func deletePost(tag:Int){
 //        論理削除を記述したいけど、どうやる？以下は物理削除だけれど書き方は？サーバー
+//        ここでAPIに接続
+        
+        var url = NSURL(string: "http://localhost/json/delete.php")
+        let config = NSURLSessionConfiguration.defaultSessionConfiguration()
+        let session = NSURLSession(configuration: config)
+        var req = NSMutableURLRequest(URL: url!)
+        req.HTTPMethod = "POST"
+        
+        //投稿データのidを取得する
+        //このtagでindexPath.rowは渡ってきてる？
+        var id = posts[tag]["id"]
+        req.HTTPBody = "id=\(id)".dataUsingEncoding(NSUTF8StringEncoding)
+        var task = session.dataTaskWithRequest(req, completionHandler: {
+            (data, resp, err) in
+            print(resp!.URL!)
+            print(NSString(data: data!, encoding: NSUTF8StringEncoding))
+        })
+        task.resume()
+        
+        
         posts.removeObjectAtIndex(tag)
         self.homeTableView.reloadData()
     }

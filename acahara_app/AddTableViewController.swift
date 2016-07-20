@@ -14,6 +14,7 @@ import AVFoundation
 
 class AddTableViewController: UIViewController,UITableViewDelegate,UITableViewDataSource, UIImagePickerControllerDelegate,UITextFieldDelegate,UINavigationControllerDelegate{
     
+    var json:NSData!
 
     @IBOutlet weak var saveBtn: UIImageView!
     @IBOutlet weak var cancelBtn: UIButton!
@@ -44,6 +45,8 @@ class AddTableViewController: UIViewController,UITableViewDelegate,UITableViewDa
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.view.backgroundColor = UIColor.redColor()
 
         addTableView.registerNib(UINib(nibName: "dateTimeCell", bundle: nil), forCellReuseIdentifier: "dateTimeCell")
         
@@ -1364,12 +1367,11 @@ class AddTableViewController: UIViewController,UITableViewDelegate,UITableViewDa
             
             //userDefaultにデータを書き込んで保存したことを書き込む
             myDefault.setObject("true", forKey: "saveSuccess")
-            
-            
-            
+
             //即反映させる
             myDefault.synchronize()
             
+            //写真と動画のセルを消すための処理
             self.myApp.photoURLArray = false
             self.myApp.movieURLArray = false
             
@@ -1377,11 +1379,121 @@ class AddTableViewController: UIViewController,UITableViewDelegate,UITableViewDa
             //navigationController?.popViewControllerAnimated(true)
             
             self.dismissViewControllerAnimated(true, completion: nil)
-        }
-      
+            
+            // まずPOSTで送信したい情報をセット
+  
+            var uName = myApp.userName
+            var uID = myApp.userName
+            var selectedDT = myDefault.stringForKey("selectedDT")
+            var selectedPlace = myDefault.stringForKey("selectedPlace")
+            var selectedName = myDefault.stringForKey("selectedName")
+            var diary = myDefault.stringForKey("diary")
+            var selectedUniversity = myDefault.stringForKey("uniStr")
+            var selectedMovieURL = myDefault.stringForKey("selectedMovieURL")
+            var selectedPhotoURL = myDefault.stringForKey("selectedPhotoURL")
+            
+            var createTime = String(NSData()) //これで良い？ダメっぽいけど、、、うーん
+            var openness = String(self.openFlag) //これで本当にオッケー？
+            
+            
+            
+            
+//
+//            $openFlag = $_POST['open_flag'];
+//            $deleteFlag = $_POST['deleteFlag'];
+            
+            //この一連の処理はここでいる？
+            let userID = uID.dataUsingEncoding(NSUTF8StringEncoding)
+            let userName = uName.dataUsingEncoding(NSUTF8StringEncoding)
+            let time = selectedDT!.dataUsingEncoding(NSUTF8StringEncoding)
+            let place = selectedPlace!.dataUsingEncoding(NSUTF8StringEncoding)
+            let person = selectedName!.dataUsingEncoding(NSUTF8StringEncoding)
+            let description = diary!.dataUsingEncoding(NSUTF8StringEncoding)
+            let university = selectedUniversity!.dataUsingEncoding(NSUTF8StringEncoding)
+            let movie = selectedMovieURL!.dataUsingEncoding(NSUTF8StringEncoding)
+            let picture = selectedPhotoURL!.dataUsingEncoding(NSUTF8StringEncoding)
+            let created = createTime.dataUsingEncoding(NSUTF8StringEncoding)
+            let openFlag = openness.dataUsingEncoding(NSUTF8StringEncoding)
 
+            
+            
+            // dictionaryで送信するJSONデータを生成.
+            var myDict:NSMutableDictionary = NSMutableDictionary()
+            
+            myDict.setObject("userID", forKey: "userID")
+            myDict.setObject("userName", forKey: "userName")
+            myDict.setObject("time", forKey: "time")
+            myDict.setObject("place", forKey: "place")
+            myDict.setObject("person", forKey: "person")
+            myDict.setObject("description", forKey: "description")
+            myDict.setObject("university", forKey: "university")
+            myDict.setObject("movie", forKey: "movie")
+            myDict.setObject("picture", forKey: "picture")
+            myDict.setObject("created", forKey: "created")
+            myDict.setObject("openFlag", forKey: "openFlag")
+            
+            
+            // 作成したdictionaryがJSONに変換可能かチェック.
+            if NSJSONSerialization.isValidJSONObject(myDict){
+                
+                // DictionaryからJSON(NSData)へ変換. 
+                
+                do {
+                    json = try NSJSONSerialization.dataWithJSONObject(myDict, options: NSJSONWritingOptions.PrettyPrinted) as NSData
+                    // here "jsonData" is the dictionary encoded in JSON data
+                    // 生成したJSONデータの確認.
+                    print(NSString(data: json, encoding: NSUTF8StringEncoding)!)
+                    
+                } catch let error as NSError {
+                    print(error)
+                }
+            }
+            
+            
+         
+            //                do {
+            //                    let decoded = try NSJSONSerialization.JSONObjectWithData(jsonData, options: []) as? [String:String]
+            //                    // here "decoded" is the dictionary decoded from JSON data
+            //                } catch let error as NSError {
+            //                    print(error)
+            //                }
+
+                
+            // Http通信のリクエスト生成.
+
+            var url = NSURL(string: "http://localhost/json/php_MySQL.php")
+            let config = NSURLSessionConfiguration.defaultSessionConfiguration()
+            let session = NSURLSession(configuration: config)
+            var req = NSMutableURLRequest(URL: url!)
+            req.HTTPMethod = "POST"
+            // jsonのデータを一度文字列にして、キーと合わせる.
+            var myData:NSString = "json=\(NSString(data: json, encoding: NSUTF8StringEncoding)!)"
+            
+            // jsonデータのセット.
+            req.HTTPBody = myData.dataUsingEncoding(NSUTF8StringEncoding)
+
+            var task = session.dataTaskWithRequest(req, completionHandler: {
+                (data, resp, err) in
+                print(resp!.URL!)
+                print(NSString(data: data!, encoding: NSUTF8StringEncoding))
+            })
+            task.resume()
+        }
+                
+        
     }
-    
+
+//            // 古い書き方
+//            var data = NSURLConnection.sendSynchronousRequest(request, returningResponse: nil, error: nil)
+//            var dic = NSJSONSerialization.JSONObjectWithData(data!, options:nil, error: nil) as NSDictionary
+
+            // 新しい書き方
+            
+            
+//            var abc = NSJSONSerialization.JSONObjectWithData(data, options: NSJSONReadingOptions.MutableContainers, error: nil) as! NSDictionary
+//            
+//            var abc = try NSJSONSerialization.JSONObjectWithData(data, options: .MutableContainers) as! NSDictionary
+        
     
     func textFieldShouldBeginEditing(textField: UITextField) -> Bool{
 

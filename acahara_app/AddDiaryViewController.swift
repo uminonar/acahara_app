@@ -60,6 +60,7 @@ class AddDiaryViewController: UIViewController, UITextViewDelegate,UIImagePicker
              diaryTextView.resignFirstResponder()
       
         }else{
+            
              diaryTextView.becomeFirstResponder()
         }
     

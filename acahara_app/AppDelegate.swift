@@ -12,6 +12,9 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate,SSASideMenuDelegate  {
     
 
+    var userName = "Hanako Yamada"//ここをどうして良いかわからないので、ひとまず置いておく
+    var userID = "hogehoge"//ここをどうして良いかわからないので、ひとまず置いておく
+    
     var photoURLArray = false
     var movieURLArray = false
     
@@ -30,7 +33,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate,SSASideMenuDelegate  {
         var myTabBarController = storyboard.instantiateViewControllerWithIdentifier("TabBarController") as! TabBarController
         
         
-        var stepView = storyboard.instantiateViewControllerWithIdentifier("StepViewController") as! StepViewController
+        var howToUseView = storyboard.instantiateViewControllerWithIdentifier("HowToUseViewController") as! HowToUseViewController
         
         var assistView = storyboard.instantiateViewControllerWithIdentifier("AssistTableViewController") as! AssistTableViewController
         
@@ -41,13 +44,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate,SSASideMenuDelegate  {
 
         
 
-        stepView.tabBarItem = UITabBarItem(title: "ホーム", image: UIImage(named: "home"), tag: 1)//アイコン
+        howToUseView.tabBarItem = UITabBarItem(title: "ホーム", image: UIImage(named: "home"), tag: 1)//アイコン
         homeNavView.tabBarItem = UITabBarItem(title: "記録", image: UIImage(named: "openFolder"), tag: 2)
         assistView.tabBarItem = UITabBarItem(title: "相談", image: UIImage(named: "contact"), tag: 3)
 
 
         
-        myTabBarController.setViewControllers([stepView,homeNavView,assistView], animated: false)
+        myTabBarController.setViewControllers([howToUseView,homeNavView,assistView], animated: false)
+        //MARK:ここを平井先生のコメントで追加　下記のselectedIndexが起動時に表示されるVCを指定
+        myTabBarController.selectedIndex=0
 //        ここ変更。。var myTabBarController = storyboard.instantiateViewControllerWithIdentifier("TabBarController") as! TabBarController
         
         
