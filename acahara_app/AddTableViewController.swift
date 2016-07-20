@@ -501,9 +501,9 @@ class AddTableViewController: UIViewController,UITableViewDelegate,UITableViewDa
                         let asset: PHAsset = fetchResult.firstObject as! PHAsset
                         
                         
-                        print("pixelWidth:\(asset.pixelWidth)");
-                        print("pixelHeight:\(asset.pixelHeight)");
-                        
+//                      print("pixelWidth:\(asset.pixelWidth)");
+//                      print("pixelHeight:\(asset.pixelHeight)");
+//                        
                         let manager: PHImageManager = PHImageManager()
                         manager.requestImageForAsset(asset,targetSize: CGSizeMake(5, 500),contentMode: .AspectFit,options: nil) { (image, info) -> Void in
                             
