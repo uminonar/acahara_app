@@ -12,10 +12,14 @@ import MobileCoreServices
 import Photos
 import AVFoundation
 
-class SettingViewController: UIViewController,UIImagePickerControllerDelegate,UINavigationControllerDelegate,QBImagePickerControllerDelegate {
-
-    //利用開始時にはすでに各項目が記入されているはずなので、trueの設定をしておく。
-    //変更でsaveBtnが押された時に、未記入やメールアドレス合致を確認して不備があればfalseにする
+class SettingViewController: UIViewController,UITextFieldDelegate, UIScrollViewDelegate,UIImagePickerControllerDelegate,UINavigationControllerDelegate,QBImagePickerControllerDelegate {
+    
+    //下記の２つの設定はテキストフィールドがキーボードに隠れてしまわないように設定するためのもの
+    let sc = UIScrollView();
+    var txtActiveField = UITextField()
+    
+    var existFlag = 1
+    var emailFlag = 1
 
     
     var myApp = UIApplication.sharedApplication()
@@ -35,9 +39,32 @@ class SettingViewController: UIViewController,UIImagePickerControllerDelegate,UI
     @IBOutlet weak var confirmEmailField: UITextField!
     @IBOutlet weak var contactEmailField: UITextField!
 
+    @IBOutlet weak var userName: UILabel!
+    @IBOutlet weak var sentToEmail: UILabel!
+    @IBOutlet weak var confirmEmail: UILabel!
+    @IBOutlet weak var contactMail: UILabel!
+    
+    @IBOutlet weak var scrView: UIScrollView!
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        
+        //テキストフィールドがキーボードに隠れないようにするための設定
+       
+        scrView.delegate = self;
+        
+        //textfileの位置を指定する
+        scrView.contentSize = CGSize(width: 250,height: 1000)
+     
+        
+        // Delegateを設定する.
+        nameField.delegate = self
+        emailField.delegate = self
+        confirmEmailField.delegate = self
+        contactEmailField.delegate = self
+    
         
         //selfee画像をセットする。デフォルトにあればそちらを、なければ、初期のselfee.JPGをセットする。
     
@@ -69,6 +96,7 @@ class SettingViewController: UIViewController,UIImagePickerControllerDelegate,UI
         }else{
             
             settingSelfee.image = UIImage(named:"selfee.JPG")
+            myDefault.setObject("selfee.JPT", forKey: "selfeeURL")
             
         }
         
@@ -120,25 +148,21 @@ class SettingViewController: UIViewController,UIImagePickerControllerDelegate,UI
         var setName = myDefault.stringForKey("setName")
         if ( setName != nil){
             nameField.text = setName
-            nameField.textColor = UIColor.darkGrayColor()
         }
         
         var email = myDefault.stringForKey("setEmail")
         if ( email != nil){
             emailField.text = email
-            nameField.textColor = UIColor.darkGrayColor()
         }
         
         var confEmail = myDefault.stringForKey("setConfEmail")
         if ( confEmail != nil){
             confirmEmailField.text = confEmail
-            nameField.textColor = UIColor.darkGrayColor()
         }
         
         var contactEmail = myDefault.stringForKey("setContEmail")
         if ( contactEmail != nil){
             contactEmailField.text = contactEmail
-            nameField.textColor = UIColor.darkGrayColor()
         }
         
     }
@@ -198,7 +222,56 @@ class SettingViewController: UIViewController,UIImagePickerControllerDelegate,UI
         //即反映させる
         myDefault.synchronize()
     }
+
+
+    //UITextFieldが編集された直後に呼ばれる.
+    func textFieldShouldBeginEditing(textField: UITextField) -> Bool {
+        
+        txtActiveField = textField
+        //ここで計算をして重なるときだけ重なる文を上げる
+//       scrView.setContentOffset(CGPointMake(0, 250), animated: true)
+        return true
+    }
     
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        resignFirstResponder()
+        return true
+    }
+    
+    func textFieldDidEndEditing(textField: UITextField) {
+//        scrView.setContentOffset(CGPointMake(0, 0), animated: true)
+
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        let notificationCenter = NSNotificationCenter.defaultCenter()
+        notificationCenter.addObserver(self, selector: "handleKeyboardWillShowNotification:", name: UIKeyboardWillShowNotification, object: nil)
+        notificationCenter.addObserver(self, selector: "handleKeyboardWillHideNotification:", name: UIKeyboardWillHideNotification, object: nil)
+    }
+    
+    func handleKeyboardWillShowNotification(notification: NSNotification) {
+        
+        let userInfo = notification.userInfo!
+        let keyboardScreenEndFrame = (userInfo[UIKeyboardFrameEndUserInfoKey] as! NSValue).CGRectValue()
+        let myBoundSize: CGSize = UIScreen.mainScreen().bounds.size
+        var txtLimit = txtActiveField.frame.origin.y + txtActiveField.frame.height + 8.0
+        let kbdLimit = myBoundSize.height - keyboardScreenEndFrame.size.height
+        
+        
+        print("テキストフィールドの下辺：(\(txtLimit))")
+        print("キーボードの上辺：(\(kbdLimit))")
+        
+        if txtLimit >= kbdLimit {
+            scrView.contentOffset.y = txtLimit - kbdLimit + 80 //ヘッダー６５の幅分、ずれるのかな？
+        }
+    }
+    
+    func handleKeyboardWillHideNotification(notification: NSNotification) {
+        scrView.contentOffset.y = 0
+    }
+
 
 
     @IBAction func selfeeCBtn(sender: UIButton) {
@@ -232,10 +305,10 @@ class SettingViewController: UIViewController,UIImagePickerControllerDelegate,UI
     
     func qb_imagePickerController(imagePickerController: QBImagePickerController, didFinishPickingAssets assets: [AnyObject]) {
 
-        var selectedPicture = assets as! PHAsset
+        var selectedPicture = assets
         
         //URL取得の場合
-        print(selectedPicture.description)
+        print("select = \(selectedPicture.description)")
         
         let divideURL = selectedPicture.description.componentsSeparatedByString("=")
         let arrayURL = divideURL[1].componentsSeparatedByString("/")
@@ -280,40 +353,46 @@ class SettingViewController: UIViewController,UIImagePickerControllerDelegate,UI
             myDefault.synchronize()
         
         
-            //選択されたselfee画像をサーバーに送る
-            
+        
+        
+        
+        
+        dismissViewControllerAnimated(true, completion: nil)
+
+        
         }
-    
-    
     
 
 
     @IBAction func tapSave(sender: UIButton) {
+        existFlag = 0
+        emailFlag = 0
+   
         
-        
-        // まずPOSTで送信したい情報をセット
+        // まずPOSTで送信したい情報をgetする
         var myDefault = NSUserDefaults.standardUserDefaults()
         
-        var selfeeURL = myDefault.stringForKey("selfeeURL")
-        
-        
+        var selfeeURL = myDefault.stringForKey("selfeeURL")//nilだった時の処理を後述して
+
         var setName = nameField.text
         var setEmail = emailField.text
         var confirmEmail = confirmEmailField.text
         var contactEmail = contactEmailField.text
    
 
-        //変更の設定が、画面上で未記入がないか、メールアドレスがあっているか確認
+        //未記入がないか、メールアドレスがあっているか確認
         let nameExsist = setName != nil && setName != "" ? true : false
         let mailExist = setEmail != nil && setEmail != "" ? true : false
         let confirmExist = confirmEmail != nil && confirmEmail != "" ? true : false
         let contactExist = contactEmail != nil && contactEmail != "" ? true : false
         
         
-        if (!nameExsist || !mailExist || !confirmExist || !contactExist) {
+        if (!nameExsist || !mailExist || !confirmExist || !contactExist && setEmail == confirmEmail) {
             
             //filled = false このやり方はリロードをかける必要があって、tableVCには向くけどVCだとstoryBDやxibを使うときできない
             //アニメーションで未記入のテキストフィールドに背景色をかける　下部にfuncを記述　考えすぎ、普通に背景色を変えるfuncで良い
+            
+            existFlag = 1
             
             if !nameExsist {
                 animateBackgroundColor(nameField)
@@ -330,38 +409,58 @@ class SettingViewController: UIViewController,UIImagePickerControllerDelegate,UI
             if !contactExist {
                 animateBackgroundColor(contactEmailField)
             }
-
-
-            var alertController = UIAlertController(
-                title: "必須項目を記入してください",
-                message: "",
-                preferredStyle: .Alert)
-            
-            alertController.addAction(UIAlertAction(title: "OK", style: .Default, handler:nil))
-            presentViewController(alertController, animated: true, completion: nil)
             
 
-            
-            
-        }else if setEmail != confirmEmail!{
-            
-            let honeyDew :UIColor = UIColor(red:0.863,green:0.976,blue:0.643,alpha:1.0)
-            emailField.backgroundColor = honeyDew
-            confirmEmailField.backgroundColor = honeyDew
-            
-            var alertController = UIAlertController(
-                title: "設定メールアドレスと確認メールアドレスが異なります",
-                message: "もう一度、ご記入ください",
-                preferredStyle: .Alert)
-            
-            alertController.addAction(UIAlertAction(title: "OK", style: .Default, handler:nil))
-            presentViewController(alertController, animated: true, completion: nil)
+            alertController("必須項目を記入してください",message: "")
 
             
+        }
+    
+    
+        if (nameExsist && mailExist && confirmExist && contactExist && setEmail != confirmEmail!){
             
-        }else{
-
+            emailFlag = 1
+ 
+            let honey :UIColor = UIColor(red:0.996,green:0.980,blue:0.780,alpha:1.0)
+            emailField.backgroundColor =  honey
+            confirmEmailField.backgroundColor = honey
+            
+//            if (!nameExsist || !contactExist){
+//                
+//                var alertController = UIAlertController(
+//                    title: "必須項目を記入してください",
+//                    message: "",
+//                    preferredStyle: .Alert)
+//                
+//                alertController.addAction(UIAlertAction(title: "OK", style: .Default, handler:nil))
+//                presentViewController(alertController, animated: true, completion: nil)
+//                
+//                var onceMoreController = UIAlertController(
+//                    title: "メールアドレスが違います",
+//                    message: "もう一度ご記入ください",
+//                    preferredStyle: .Alert)
+//                
+//                onceMoreController.addAction(UIAlertAction(title: "OK", style: .Default, handler:nil))
+//                presentViewController(alertController, animated: true, completion: nil)
+//            }else{
+            
+            
+            //ここが効かない　どうすれば？
+            
+            alertController("メールアドレスをご確認ください",message: "もう一度ご記入ください")
+            
+        }
         
+        //どうしてここはダメ？
+        if ( existFlag==1 && emailFlag==1 ){
+            
+            alertController("必須項目を記入しメールアドレスをご確認ください", message: "")
+            
+        }
+        
+        if (nameExsist || mailExist || confirmExist || contactExist && setEmail != confirmEmail){
+        
+        //　未記入やアドレス間違いがなく、保存できる場合にデータをサーバーへ送る
         // dictionaryで送信するJSONデータを生成.
         var myDict:NSMutableDictionary = NSMutableDictionary()
         
@@ -369,29 +468,30 @@ class SettingViewController: UIViewController,UIImagePickerControllerDelegate,UI
         let sentToEmail = setEmail!.dataUsingEncoding(NSUTF8StringEncoding)
         let confirmMail = confirmEmail!.dataUsingEncoding(NSUTF8StringEncoding)
         let contactMail = contactEmail!.dataUsingEncoding(NSUTF8StringEncoding)
-        let selfeeURL = selfeeURL!.dataUsingEncoding(NSUTF8StringEncoding)
-
+        let selfURL = selfeeURL!.dataUsingEncoding(NSUTF8StringEncoding)
         
-        
+    
+    
         // 作成したdictionaryがJSONに変換可能かチェック.
-        if NSJSONSerialization.isValidJSONObject(myDict){
+            if NSJSONSerialization.isValidJSONObject(myDict){
             
             // DictionaryからJSON(NSData)へ変換.
             
-            do {
-                json = try NSJSONSerialization.dataWithJSONObject(myDict, options: NSJSONWritingOptions.PrettyPrinted) as NSData
-                // here "jsonData" is the dictionary encoded in JSON data
-                // 生成したJSONデータの確認.
-                print(NSString(data: json, encoding: NSUTF8StringEncoding)!)
-                
-            } catch let error as NSError {
-                print(error)
-            }
-            catch{
-                print("Unknown Error")
-            }
+                do {
+                    json = try NSJSONSerialization.dataWithJSONObject(myDict, options: NSJSONWritingOptions.PrettyPrinted) as NSData
+                    // here "jsonData" is the dictionary encoded in JSON data
+                    // 生成したJSONデータの確認.
+                    print(NSString(data: json, encoding: NSUTF8StringEncoding)!)
+                    
+                } catch let error as NSError {
+                    print(error)
+                }
+                catch{
+                    print("Unknown Error")
+                }
 
         }
+        
         
         
         
@@ -422,8 +522,26 @@ class SettingViewController: UIViewController,UIImagePickerControllerDelegate,UI
             print(NSString(data: data!, encoding: NSUTF8StringEncoding))
         })
         task.resume()
+            
         }
+    }//tapSavedの終わり
+    
+    
+    
+    func alertController(titile:String,message:String){
+        
+        var alertController = UIAlertController(
+            title: title,
+            message: message,
+            preferredStyle: .Alert)
+        
+        alertController.addAction(UIAlertAction(title: "OK", style: .Default, handler:nil))
+        presentViewController(alertController, animated: true, completion: nil)
+
+        
     }
+    
+    
     
     
     
@@ -447,7 +565,7 @@ class SettingViewController: UIViewController,UIImagePickerControllerDelegate,UI
 
         textField.backgroundColor = honeyDew
 
-    }
+    } 
 
     
     
