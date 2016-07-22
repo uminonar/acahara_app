@@ -550,6 +550,11 @@ class AddDiaryViewController: UIViewController, UITextViewDelegate,UIImagePicker
     }
     
     
+    //キャンセルがされた時の処理
+    func qb_imagePickerControllerDidCancel(imagePickerController: QBImagePickerController!) {
+        //モーダル画面を落とす
+        self.dismissViewControllerAnimated(true, completion: nil)
+    }
 
     
     

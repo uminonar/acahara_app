@@ -15,7 +15,7 @@ import AVFoundation
 class SettingViewController: UIViewController,UITextFieldDelegate, UIScrollViewDelegate,UIImagePickerControllerDelegate,UINavigationControllerDelegate,QBImagePickerControllerDelegate {
     
     //下記の２つの設定はテキストフィールドがキーボードに隠れてしまわないように設定するためのもの
-    let sc = UIScrollView();
+   
     var txtActiveField = UITextField()
     
     var existFlag = 1
@@ -54,8 +54,7 @@ class SettingViewController: UIViewController,UITextFieldDelegate, UIScrollViewD
         //テキストフィールドがキーボードに隠れないようにするための設定
        
         scrView.delegate = self;
-        
-        //textfileの位置を指定する
+
         scrView.contentSize = CGSize(width: 250,height: 1000)
      
         
@@ -113,30 +112,12 @@ class SettingViewController: UIViewController,UITextFieldDelegate, UIScrollViewD
         
         let sakura:UIColor = UIColor(red:1.0,green:0.3,blue:0.3,alpha:1.0)
         saveBtn.tintColor = UIColor.whiteColor()
-        
-        
-        //        let times = FAKFontAwesome.timesIconWithSize(25)
-        //
-        //        let timesImage = times.imageWithSize(CGSizeMake(25, 25))
-        //
-        //        cancelBtn.setImage(timesImage, forState: .Normal)
-        
-        //        let bars = FAKFontAwesome.barsIconWithSize(20)
-        //        //下記でアイコンの色も変えられます
-        ////        bars.addAttribute(NSForegroundColorAttributeName, value: UIColor.whiteColor())
-        //
-        //        let barsImage = bars.imageWithSize(CGSizeMake(20, 20))
-        //
-        //        settingBars.setImage(barsImage, forState: .Normal)
-        //
-        //        self.settingBars.addTarget(SSASideMenu(), action: Selector("presentLeftMenuViewController"), forControlEvents: UIControlEvents.TouchUpInside)
+
         
         //sideBar向け
         navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Left", style: .Plain, target: self, action: #selector(SSASideMenu.presentLeftMenuViewController))
         
         settingMenu.image = UIImage(named:"menu")?.imageWithRenderingMode(.AlwaysTemplate)
-        
-        
         
         settingMenu.tintColor = UIColor.whiteColor()
         
@@ -155,94 +136,38 @@ class SettingViewController: UIViewController,UITextFieldDelegate, UIScrollViewD
             emailField.text = email
         }
         
-        var confEmail = myDefault.stringForKey("setConfEmail")
+        var confEmail = myDefault.stringForKey("confirmEmail")
         if ( confEmail != nil){
             confirmEmailField.text = confEmail
         }
         
-        var contactEmail = myDefault.stringForKey("setContEmail")
+        var contactEmail = myDefault.stringForKey("contactEmail")
         if ( contactEmail != nil){
             contactEmailField.text = contactEmail
         }
         
     }
     
-
-    
-    @IBAction func settingNameField(sender: UITextField) {
-        self.resignFirstResponder()
-        
-        //ユーザーデフォルトに保存
-        //ユーザーデフォルトを用意する
-        let myDefault = NSUserDefaults.standardUserDefaults()
-        
-        //データを書き込んで
-        myDefault.setObject(sender.text, forKey: "setName")
-        
-        //appDelegateに書き込まれているuserNameを上書き
-        myApp.userName = sender.text!
-
-
-        //即反映させる
-        myDefault.synchronize()
-    }
-    
-    @IBAction func settingSentEmail(sender: UITextField) {
-        self.resignFirstResponder()
-        
-        let myDefault = NSUserDefaults.standardUserDefaults()
-        
-        //データを書き込んで
-        myDefault.setObject(sender.text, forKey: "setEmail")
-        
-        //即反映させる
-        myDefault.synchronize()
-    }
-    
-    @IBAction func confirmSentEmail(sender: UITextField) {
-         self.resignFirstResponder()
-        
-        let myDefault = NSUserDefaults.standardUserDefaults()
-        
-        //データを書き込んで
-        myDefault.setObject(sender.text, forKey: "setConfEmail")
-        
-        //即反映させる
-        myDefault.synchronize()
-    }
-    
-    @IBAction func settingContEmail(sender: UITextField) {
-        self.resignFirstResponder()
-        
-        let myDefault = NSUserDefaults.standardUserDefaults()
-        
-        //データを書き込んで
-        myDefault.setObject(sender.text, forKey: "setContEmail")
-        
-        //即反映させる
-        myDefault.synchronize()
-    }
-
-
     //UITextFieldが編集された直後に呼ばれる.
     func textFieldShouldBeginEditing(textField: UITextField) -> Bool {
-        
+    
         txtActiveField = textField
-        //ここで計算をして重なるときだけ重なる文を上げる
-//       scrView.setContentOffset(CGPointMake(0, 250), animated: true)
+        
+        //       scrView.setContentOffset(CGPointMake(0, 250), animated: true)
         return true
     }
     
+    //エンターが押された時に呼ばれる
     func textFieldShouldReturn(textField: UITextField) -> Bool {
-        resignFirstResponder()
+        
+        textField.resignFirstResponder()
+        
         return true
     }
     
-    func textFieldDidEndEditing(textField: UITextField) {
-//        scrView.setContentOffset(CGPointMake(0, 0), animated: true)
 
-    }
     
+
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         
@@ -351,29 +276,24 @@ class SettingViewController: UIViewController,UITextFieldDelegate, UIScrollViewD
             myDefault.setObject(assetURL, forKey: "selfeeURL")
   
             myDefault.synchronize()
-        
-        
-        
-        
-        
+ 
         
         dismissViewControllerAnimated(true, completion: nil)
 
         
-        }
+    }
     
 
 
     @IBAction func tapSave(sender: UIButton) {
+        
         existFlag = 0
         emailFlag = 0
    
-        
-        // まずPOSTで送信したい情報をgetする
+        //まず保存したい情報をそれぞれ取得する
         var myDefault = NSUserDefaults.standardUserDefaults()
         
-        var selfeeURL = myDefault.stringForKey("selfeeURL")//nilだった時の処理を後述して
-
+        var selfeeURL = myDefault.stringForKey("selfeeURL")
         var setName = nameField.text
         var setEmail = emailField.text
         var confirmEmail = confirmEmailField.text
@@ -386,8 +306,8 @@ class SettingViewController: UIViewController,UITextFieldDelegate, UIScrollViewD
         let confirmExist = confirmEmail != nil && confirmEmail != "" ? true : false
         let contactExist = contactEmail != nil && contactEmail != "" ? true : false
         
-        
-        if (!nameExsist || !mailExist || !confirmExist || !contactExist && setEmail == confirmEmail) {
+        //メどこかに未記入がある場合
+        if (!nameExsist || !mailExist || !confirmExist || !contactExist ) {
             
             //filled = false このやり方はリロードをかける必要があって、tableVCには向くけどVCだとstoryBDやxibを使うときできない
             //アニメーションで未記入のテキストフィールドに背景色をかける　下部にfuncを記述　考えすぎ、普通に背景色を変えるfuncで良い
@@ -410,73 +330,63 @@ class SettingViewController: UIViewController,UITextFieldDelegate, UIScrollViewD
                 animateBackgroundColor(contactEmailField)
             }
             
-
-            alertController("必須項目を記入してください",message: "")
-
-            
         }
-    
-    
-        if (nameExsist && mailExist && confirmExist && contactExist && setEmail != confirmEmail!){
+     
+        if( mailExist && confirmExist && setEmail != confirmEmail){
             
             emailFlag = 1
- 
+            
             let honey :UIColor = UIColor(red:0.996,green:0.980,blue:0.780,alpha:1.0)
             emailField.backgroundColor =  honey
             confirmEmailField.backgroundColor = honey
             
-//            if (!nameExsist || !contactExist){
-//                
-//                var alertController = UIAlertController(
-//                    title: "必須項目を記入してください",
-//                    message: "",
-//                    preferredStyle: .Alert)
-//                
-//                alertController.addAction(UIAlertAction(title: "OK", style: .Default, handler:nil))
-//                presentViewController(alertController, animated: true, completion: nil)
-//                
-//                var onceMoreController = UIAlertController(
-//                    title: "メールアドレスが違います",
-//                    message: "もう一度ご記入ください",
-//                    preferredStyle: .Alert)
-//                
-//                onceMoreController.addAction(UIAlertAction(title: "OK", style: .Default, handler:nil))
-//                presentViewController(alertController, animated: true, completion: nil)
-//            }else{
-            
-            
-            //ここが効かない　どうすれば？
-            
-            alertController("メールアドレスをご確認ください",message: "もう一度ご記入ください")
-            
         }
         
-        //どうしてここはダメ？
-        if ( existFlag==1 && emailFlag==1 ){
+        if (existFlag == 1 && emailFlag == 0){
             
-            alertController("必須項目を記入しメールアドレスをご確認ください", message: "")
-            
+            alertController("必須項目を記入してください", Message: "")
         }
         
-        if (nameExsist || mailExist || confirmExist || contactExist && setEmail != confirmEmail){
+        if (existFlag == 0 && emailFlag == 1){
+            
+            alertController("メールアドレスをご確認ください", Message: "")
+        }
+
+        if ( existFlag == 1 && emailFlag == 1 ){
+            
+            alertController("必須項目を記入しメールアドレスをご確認ください", Message: "")
+        }
         
-        //　未記入やアドレス間違いがなく、保存できる場合にデータをサーバーへ送る
-        // dictionaryで送信するJSONデータを生成.
-        var myDict:NSMutableDictionary = NSMutableDictionary()
         
-        let userName = setName!.dataUsingEncoding(NSUTF8StringEncoding)
-        let sentToEmail = setEmail!.dataUsingEncoding(NSUTF8StringEncoding)
-        let confirmMail = confirmEmail!.dataUsingEncoding(NSUTF8StringEncoding)
-        let contactMail = contactEmail!.dataUsingEncoding(NSUTF8StringEncoding)
-        let selfURL = selfeeURL!.dataUsingEncoding(NSUTF8StringEncoding)
+        //記入漏れがなく、メールアドレスもあっている場合
+        if ( existFlag == 0 && emailFlag == 0 ){
+            
+            //まずデータをデフォルトにセット
+            myDefault.setObject("setName", forKey: "setName")
+            myDefault.setObject("setEmail", forKey: "setEmail")
+            myDefault.setObject("confirmEmail", forKey: "confirmEmail")
+            myDefault.setObject("contactEmail", forKey: "contactEmail")
         
+            //サーバーに送りたいデータをエンコーディング
+            let userName = setName!.dataUsingEncoding(NSUTF8StringEncoding)
+            let sentToEmail = setEmail!.dataUsingEncoding(NSUTF8StringEncoding)
+            let confirmMail = confirmEmail!.dataUsingEncoding(NSUTF8StringEncoding)
+            let contactMail = contactEmail!.dataUsingEncoding(NSUTF8StringEncoding)
+            let selfURL = selfeeURL!.dataUsingEncoding(NSUTF8StringEncoding)
+            
+            // dictionaryで送信するJSONデータを生成.
+            var myDict:NSMutableDictionary = NSMutableDictionary()
+            
+            myDict.setObject("userName", forKey: "userName")
+            myDict.setObject("sentToEmail", forKey: "sentToEmail")
+            myDict.setObject("contactMail", forKey: "contactMail")
+            myDict.setObject("selfURL", forKey: "selfURL")
+
     
-    
-        // 作成したdictionaryがJSONに変換可能かチェック.
+            // 作成したdictionaryがJSONに変換可能かチェック.
             if NSJSONSerialization.isValidJSONObject(myDict){
             
             // DictionaryからJSON(NSData)へ変換.
-            
                 do {
                     json = try NSJSONSerialization.dataWithJSONObject(myDict, options: NSJSONWritingOptions.PrettyPrinted) as NSData
                     // here "jsonData" is the dictionary encoded in JSON data
@@ -490,26 +400,17 @@ class SettingViewController: UIViewController,UITextFieldDelegate, UIScrollViewD
                     print("Unknown Error")
                 }
 
-        }
-        
-        
-        
-        
-        //                do {
-        //                    let decoded = try NSJSONSerialization.JSONObjectWithData(jsonData, options: []) as? [String:String]
-        //                    // here "decoded" is the dictionary decoded from JSON data
-        //                } catch let error as NSError {
-        //                    print(error)
-        //                }
-        
-        
+            }
+  
+            
         // Http通信のリクエスト生成.
-        
+            
         var url = NSURL(string: "http://acahara-kill-app.sakuca.ne.jp/user.php")
         let config = NSURLSessionConfiguration.defaultSessionConfiguration()
         let session = NSURLSession(configuration: config)
         var req = NSMutableURLRequest(URL: url!)
         req.HTTPMethod = "POST"
+            
         // jsonのデータを一度文字列にして、キーと合わせる.
         var myData:NSString = "json=\(NSString(data: json, encoding: NSUTF8StringEncoding)!)"
         
@@ -528,11 +429,11 @@ class SettingViewController: UIViewController,UITextFieldDelegate, UIScrollViewD
     
     
     
-    func alertController(titile:String,message:String){
+    func alertController(Title:String, Message:String){
         
         var alertController = UIAlertController(
-            title: title,
-            message: message,
+            title: Title,
+            message: Message,
             preferredStyle: .Alert)
         
         alertController.addAction(UIAlertAction(title: "OK", style: .Default, handler:nil))

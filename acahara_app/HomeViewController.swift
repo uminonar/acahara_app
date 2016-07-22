@@ -566,7 +566,16 @@ class HomeViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
         var xPosition = sender.frame.origin.x
         
         //配列selectedPicturesの何番目の写真が選択されたか
-        var numOfPic = xPosition/130 as! Int
+//        var numOfPic = xPosition/130 as! Int
+//        xPositionに0が入っているとエラーになる
+        var numOfPic = -1
+        
+        if xPosition == 0 {
+            numOfPic = 0
+        }else{
+            numOfPic = Int(xPosition/130)
+        }
+        
         
 
         let pictureVC = UIStoryboard(name: "Main",bundle: nil).instantiateViewControllerWithIdentifier("PictureViewController") as! PictureViewController
