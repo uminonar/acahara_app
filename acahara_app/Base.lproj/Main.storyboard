@@ -509,7 +509,7 @@
                                     <constraint firstAttribute="trailing" secondItem="ESl-aE-C5a" secondAttribute="trailing" constant="16" id="ppI-Jz-69V"/>
                                 </constraints>
                             </view>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="2bb-X7-jCw">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="2bb-X7-jCw">
                                 <rect key="frame" x="5" y="80" width="310" height="480"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <mutableString key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</mutableString>
@@ -525,11 +525,18 @@
                             <constraint firstItem="eXd-FP-udf" firstAttribute="top" secondItem="2bb-X7-jCw" secondAttribute="bottom" constant="8" id="GpV-0Y-W9e"/>
                             <constraint firstItem="bes-ce-3eS" firstAttribute="leading" secondItem="qua-v5-mrS" secondAttribute="leading" id="R9u-Eg-Xle"/>
                             <constraint firstItem="bes-ce-3eS" firstAttribute="top" secondItem="qua-v5-mrS" secondAttribute="top" id="YIe-U9-MR8"/>
+                            <constraint firstItem="2bb-X7-jCw" firstAttribute="top" secondItem="bes-ce-3eS" secondAttribute="bottom" constant="8" id="avb-O7-Od6"/>
                             <constraint firstAttribute="trailing" secondItem="bes-ce-3eS" secondAttribute="trailing" id="bkL-wd-P7t"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="85c-j2-NuT"/>
+                            </mask>
+                        </variation>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
+                        <outlet property="bottomLayoutConstraint" destination="GpV-0Y-W9e" id="XzI-no-iYs"/>
                         <outlet property="cancelBtn" destination="DvK-1d-cUl" id="Ih4-KO-JQt"/>
                         <outlet property="diaryTextView" destination="2bb-X7-jCw" id="3z3-qR-W5z"/>
                         <outlet property="header" destination="bes-ce-3eS" id="ta1-KM-Uqf"/>
