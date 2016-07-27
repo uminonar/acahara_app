@@ -7,18 +7,28 @@
 //
 
 import UIKit
+import MessageUI
 
-class AssistTableViewController: UIViewController,UITableViewDelegate,UITableViewDataSource, UIImagePickerControllerDelegate,UITextFieldDelegate {
+class AssistTableViewController: UIViewController,UITableViewDelegate,UITableViewDataSource, UIImagePickerControllerDelegate,UITextFieldDelegate,MFMailComposeViewControllerDelegate {
 
     var expandflag = false
     var rownumber = 3
     var countNum = 0
     
+    //見せたい記録の件数
+    var selectedFlagCount = 0
+    
+    //見せたい記録のidを納める配列を用意
+    var selctedPostsID:NSMutableArray = []
+    
+    //送信するメールに納める本文
+    var message = ""
+    
     var posts:NSMutableArray = []
     
     @IBOutlet weak var send: UIImageView!
 
-
+    var mailViewController = MFMailComposeViewController()
 
     
     var mailContent = Dictionary<String,String>()
@@ -60,20 +70,124 @@ class AssistTableViewController: UIViewController,UITableViewDelegate,UITableVie
         
         
         
-        var url = NSURL(string: "http://acahara.net/get.post_json.php")
+        var url = NSURL(string: "http://acahara.angry.jp/get.post_json.php")
         var request = NSURLRequest(URL:url!)
         var jsondata = (try! NSURLConnection.sendSynchronousRequest(request, returningResponse: nil))
-        let jsonDictionary = (try! NSJSONSerialization.JSONObjectWithData(jsondata, options: [])) as! NSDictionary
+        let jsonArray = (try! NSJSONSerialization.JSONObjectWithData(jsondata, options: [])) as! NSArray
+        print("jsonArray.count = \(jsonArray.count)")
+        
+        for (var i = 0; i < jsonArray.count; i++) {
+            let jsonDict: NSDictionary =  NSDictionary(dictionary: jsonArray[i] as! NSDictionary)
+            print("jsonDict openFlag = \(jsonDict["openFlag"])")
+            
+            // picutureを分割し再度入れなおす処理
+            
+            let intStr = String(jsonDict["openFlag"]!)
+            let openFlag = Int(intStr)
+            
+            if openFlag == 0 { // postsに追加
+                posts.addObject(jsonDict)
+            }
+        }
+        
+        print("posts.count = \(posts.count)")
+        print("posts = \(posts)")
+        
+//        let strID:String! = String(posts[0]["id"]!)
+//        
+//        print(strID)
+//        let intID = Int(strID)
+//        
+//        print("id = \(intID)")
+
+        
+        
+        
+
+        
+        
+        
+        
+//        for (key, data) in jsonDict {
+//            print("key = \(key)")
+//            print("data = \(data)")
+//            print("================")
+//
+//        }
+        
         //        for(key, data) in jsonDictionary{
         //            print("\(key)=\(data)")
   
-        //これであってる？？？？うーん
-        for data in jsonDictionary{
-            
-            posts.addObject(data as! NSMutableDictionary)
-        }
         
+        //これ下記のパターンにはどう入れる？
+//        let sortedKeys = (jsonDict as NSDictionary).keysSortedByValueUsingSelector("compare:")
+//        print("sortedKeys = \(sortedKeys )")
+        
+        
+        
+        
+        
+//        for (key, data) in jsonDict {
+//            print("key = \(key)")
+//            print("data = \(data)")
+//            print("================")
+//            
+//            var openFlag = key["openFlag"] as! Int
+//            if (openFlag == 0){
+//
+//            }
+//            
+//        }
 
+
+            
+//        for key in sortedKeys {
+//            
+//            var openFlag = key["openFlag"] as! String
+//            if (openFlag == "0"){
+//                //ここでデータの代わりにするのはkeyで良い？　良くないと思う。。。
+//                var postEach:NSMutableDictionary = key.mutableCopy() as! NSMutableDictionary
+//                
+//                
+//                if let value = jsonDictionary[key as! String] {
+//                    
+//                    print("key:\(key) value:\(value)")
+//                    
+//                    //MARK: 下記、INT型だというエラーが出てしまう。なぜ？
+//                    posts[key as! String] = value as! String
+//                    
+//                    
+//                }
+//                
+//            }
+//            
+//        }
+     
+////            //openFlag=0のものだけここのpostsには収めたい。どうする？
+//            var openFlag = key["openFlag"] as! String
+//            if (openFlag == "0"){
+//                
+//                //ここでデータの代わりにするのは何？
+//                var postEach:NSMutableDictionary = data.mutableCopy() as! NSMutableDictionary
+//
+////                これは何？
+//                postEach["selectedFlag"] = false
+//                
+//                posts.addObject(postEach)
+//            }
+//        }
+////
+//下記参考に、、、、
+        
+//        let dictionary: [String : String] = ["1":"1の値", "2":"2の値", "3":"3の値"]
+//        let sortedKeys = (dictionary as NSDictionary).keysSortedByValueUsingSelector("compare:")
+//        for key in sortedKeys as [String] {
+//            if let value = dictionary[key] {
+//                println("key:\(key) value:\(value)")
+//            }
+//        }
+//        
+        
         
 //        //選択する記録を表示するためのデータを取得してpostsに収める
 //        let pathpost = NSBundle.mainBundle().pathForResource("posts", ofType: "txt")
@@ -82,7 +196,7 @@ class AssistTableViewController: UIViewController,UITableViewDelegate,UITableVie
         
 //        for data in jsonArray{
 //            
-//            //openFlag=0のものだけここのpostsには収めたい。どうする？
+            //openFlag=0のものだけここのpostsには収めたい。どうする？
 //            var openFlag = data["openFlag"] as! String
 //            if (openFlag == "0"){
 //                
@@ -92,7 +206,7 @@ class AssistTableViewController: UIViewController,UITableViewDelegate,UITableVie
 //                
 //                posts.addObject(postEach)
 //            }
-        
+//        
         
         
         //mailContentsを取得
@@ -200,7 +314,7 @@ class AssistTableViewController: UIViewController,UITableViewDelegate,UITableVie
             
             var editedText = myDefault.objectForKey("editedText")
                                 if(editedText != nil){
-            cell.assistMailContent.text = editedText as! String
+                cell.assistMailContent.text = editedText as! String
                           
             }
             
@@ -309,16 +423,16 @@ class AssistTableViewController: UIViewController,UITableViewDelegate,UITableVie
                 
                 cell.postCreated.text = posts[postindex]["created"] as! String
                 
-                var dateTime = posts[postindex]["when"] as! String
+                var dateTime = posts[postindex]["time"] as! String
                 cell.postWhen.text = dateTime+" 頃"
-                cell.postWhere.text = posts[postindex]["where"] as! String
-                cell.postWho.text = posts[postindex]["who"] as! String
+                cell.postWhere.text = posts[postindex]["place"] as! String
+                cell.postWho.text = posts[postindex]["person"] as! String
                 cell.postUniversity.text = posts[postindex]["university"] as! String
                 
                 
                 
                 
-                var diary = posts[postindex]["diary"] as! String
+                var diary = posts[postindex]["description"] as! String
                 cell.postDiary.text = diary
 
                 let style = NSMutableParagraphStyle()
@@ -514,7 +628,7 @@ class AssistTableViewController: UIViewController,UITableViewDelegate,UITableVie
                     
                 if picNum == 0 && movNum == 0 {
              
-                    //写真も動画も存在しない場合、表示箇所が縮まるように
+                    //写真も動画も存在しない場合、表示箇所が縮まるようにしたい
                     self.removeAllSubviews(cell.scrView)
                     
                     cell.scrView.frame.size.height = 0
@@ -529,37 +643,31 @@ class AssistTableViewController: UIViewController,UITableViewDelegate,UITableVie
 
                 
                 }
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
+
                 
                 
                 cell.coverBtn.addTarget(self, action: "selected:", forControlEvents: .TouchUpInside)
                 cell.coverBtn.tag = postindex
                 
+//                
+//                //全選択ボタンが押されたら
+//                var myDefault = NSUserDefaults.standardUserDefaults()
+//                var selectA = myDefault.stringForKey("selectAllPosts")
+//                
+//                if selectA != nil {
+//                    var selectedFlag = posts[postindex]["selectedFlag"] as! Bool
+//                    
+//
+//                }
+//                
+//                //ここ何で重ねてる？
+
+//                var selectedFlag = posts[postindex]["selectedFlag"]
+                var strFlag = String(posts[postindex]["selectedFlag"]!)
+                var selectedFlag = Int(strFlag)
                 
-                //全選択ボタンが押されたら
-                var myDefault = NSUserDefaults.standardUserDefaults()
-                var selectA = myDefault.stringForKey("selectAllPosts")
                 
-                if selectA != nil {
-                    var selectedFlag = posts[postindex]["selectedFlag"] as! Bool
-                    
-                    
-                }
-                
-                var selectedFlag = posts[postindex]["selectedFlag"] as! Bool
-                
-                
-                if selectedFlag{
+                if selectedFlag == 1 {
                     
                     cell.circle.image = UIImage(named: "checkedFilled")?.imageWithRenderingMode(.AlwaysTemplate)
                     cell.circle.tintColor = UIColor.redColor()
@@ -587,9 +695,10 @@ class AssistTableViewController: UIViewController,UITableViewDelegate,UITableVie
             
             var cell:makeURLTableViewCell = tableView.dequeueReusableCellWithIdentifier("makeURLCell", forIndexPath: indexPath) as! makeURLTableViewCell
             
+            cell.urlMakeBtn.addTarget(self, action: "bottomSend:", forControlEvents: .TouchUpInside)
+            
             return cell
-            
-            
+      
             
         }
         
@@ -601,8 +710,8 @@ class AssistTableViewController: UIViewController,UITableViewDelegate,UITableVie
         return cell
     }
     
-        
-        
+    
+    
     
     func tapGesture(sender: UITapGestureRecognizer) {
         
@@ -639,23 +748,44 @@ class AssistTableViewController: UIViewController,UITableViewDelegate,UITableVie
     
     func selected(sender: UIButton) {
         
-        var selectedFlag = posts[sender.tag]["selectedFlag"] as! Bool
-        
-        if selectedFlag{
+//        var selectedFlag = posts[sender.tag]["selectedFlag"] as! Bool
+        var strFlag = String(posts[sender.tag]["selectedFlag"]!)
+        var selectedFlag = Int(strFlag)
+
+        if selectedFlag == 1{
             
             var postDic = posts[sender.tag].mutableCopy() as! NSMutableDictionary
-            postDic["selectedFlag"] = false
+            print("postDic1 = \(postDic)")
             
+            postDic["selectedFlag"] = 0
+            print("postDic2 = \(postDic)")
             
             posts[sender.tag] = postDic
+            print("posts[sender.tag] = \(posts[sender.tag])")
+            
+//            posts[sender.tag]["selectedFlag"] = 0
+            
+            //選択された投稿の数を調べるグローバル変数を調整
+            selectedFlagCount -= 1
+            //ここネットから引っ張ってくる前にエラーが出るの、なぜ他は出ない？
+            var selectedID = posts[sender.tag]["id"]
+            print("selectedID1 = \(selectedID)")
+//            selctedPostsID.removeObject(selectedID)
             
         }else{
             
             var postDic = posts[sender.tag].mutableCopy() as! NSMutableDictionary
-            postDic["selectedFlag"] = true
-            
+            postDic["selectedFlag"] = 1
             
             posts[sender.tag] = postDic
+            
+            //選択された投稿の数を調べるグローバル変数を調整
+            selectedFlagCount += 1
+            
+         
+            var selectedID = posts[sender.tag]["id"]
+            print("selectedID0 = \(selectedID)")
+//            selctedPostsID.addObject(selectedID)
             
         }
 
@@ -665,18 +795,26 @@ class AssistTableViewController: UIViewController,UITableViewDelegate,UITableVie
     
     func selectAllPosts(sender: UIButton) {
         
-        //var selectedFlag = posts[sender.tag]["selectedFlag"] as! Bool
+        var selectedFlag = posts[sender.tag]["selectedFlag"] as! Bool
         
-        //var postindexNum = sender.tag
+        var postindexNum = sender.tag
+        
+//        選択された投稿の数を調べるグローバル変数を調整
+        selectedFlagCount = posts.count
         
         
-            
+        
+        selctedPostsID = []
         for i in 0..<posts.count{
             
             var postDic = posts[i].mutableCopy() as! NSMutableDictionary
             postDic["selectedFlag"] = true
             
             posts[i] = postDic
+            
+            //ここネットから引っ張ってくる前にエラーが出るの、なぜ他は出ない？
+            var selectedID = posts[i]["id"]
+//            selctedPostsID.addObject(selectedID)
         }
         
        
@@ -896,66 +1034,7 @@ class AssistTableViewController: UIViewController,UITableViewDelegate,UITableVie
   
 
 
-    @IBAction func sendCoverBtn(sender: UIButton) {
-    
-        
-        //入力必須項目の確認
-  
-        
-        
-        
-    
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        //データを送信する
-        
-        //userDefaultの”selectedText”を空にする
-        var myDefault = NSUserDefaults.standardUserDefaults()
-        myDefault.removeObjectForKey("selectedAdvisor")
-        myDefault.removeObjectForKey("editedText")
-        myDefault.removeObjectForKey("selectedAdvisor")
-        myDefault.synchronize()
-        
-        
-        assistTableView.reloadData()
-        
-        
-        //assistMailContentを空にする、いらない
-//        assistMailContent.text = ""
-        
-        
-
-        
-    }
-    
-//    TODO:キャンセルボタンをどう実装する？決定、取り消し
-//    @IBAction func cancelBtn(sender: UIButton) {
-//        var myDefault = NSUserDefaults.standardUserDefaults()
-//        myDefault.removeObjectForKey("selectedAdvisor")
-//        myDefault.removeObjectForKey("editedText")
-//        myDefault.synchronize()
-//        
-//        assistTableView.reloadData()
-//        
-//        //assistMailContentを空にする、いらない
-//        //        assistMailContent.text = ""
-//        
-//
-//    }
+       
     
     
     @IBAction func titleCoverBtn(sender: UIButton) {
@@ -970,7 +1049,7 @@ class AssistTableViewController: UIViewController,UITableViewDelegate,UITableVie
         var myDefault = NSUserDefaults.standardUserDefaults()
         myDefault.removeObjectForKey("selectedAdvisor")
         myDefault.removeObjectForKey("editedText")
-        myDefault.removeObjectForKey("mailContent")
+        myDefault.removeObjectForKey("selectedText")
         
         myDefault.synchronize()
         
@@ -993,10 +1072,131 @@ class AssistTableViewController: UIViewController,UITableViewDelegate,UITableVie
 
     
     
-    
-    
-    
+    //メーラーを立ち上げて送る処理
+    @IBAction func sendBtn(sender: UIButton) {
+        
+         sendFunction()
 
+    }
+    
+    func bottomSend(sender: UIButton){
+        
+        sendFunction()
+        
+    }
+    
+    func sendFunction() {
+
+        
+        var myDefault = NSUserDefaults.standardUserDefaults()
+        
+        //メールの本文を抜き出す
+        var selectedText = myDefault.stringForKey("selectedText")
+        var editedText = myDefault.stringForKey("editedText")
+        
+
+        
+        //本文が存在す
+        if editedText != nil || selectedText != nil && selectedFlagCount >= 1 {
+            if editedText != nil {
+                message = editedText!
+            } else {
+                message = selectedText!
+            }
+            
+            // 下の長い処理
+            
+            //userDefaultの”selectedText”を空にする
+            myDefault.removeObjectForKey("selectedAdvisor")
+            myDefault.removeObjectForKey("editedText")
+            myDefault.removeObjectForKey("selectedText")
+            myDefault.synchronize()
+            
+            
+            //メールを送信できるかチェック
+            if MFMailComposeViewController.canSendMail()==false {
+                print("Email Send Failed")
+                return
+            }
+            
+            //var mailViewController = MFMailComposeViewController()
+            var toRecipients = [""]
+            var CcRecipients = ["cc@1gmail.com","Cc2@1gmail.com"]//ここのccはユーザーが設定している転送アドレス
+            var BccRecipients = ["Bcc@1gmail.com","Bcc2@1gmail.com"]
+            
+            
+            mailViewController.mailComposeDelegate = self
+            mailViewController.setSubject("ご相談")
+            mailViewController.setToRecipients(toRecipients) //Toアドレスの表示
+            mailViewController.setCcRecipients(CcRecipients) //Ccアドレスの表示
+            mailViewController.setBccRecipients(BccRecipients) //Bccアドレスの表示
+            mailViewController.setMessageBody("\(message)+\n\n下記アドレスから記録一覧をご覧いただけます\nacahara-kill-app.sakura.ne.jp", isHTML: false)
+            
+            self.presentViewController(mailViewController, animated: true, completion: nil)
+            
+            
+        }//　if selectedFlagCount >= 1 {　　の終わり
+        
+        //もし
+            if selectedFlagCount == 0 {
+                
+                alertController("見せたい記録を選択してください", Message: "")
+                
+            }
+                
+            if message == "" {
+                
+                alertController("相談相手のタイプを選び文章編集してください", Message: "")
+            }
+            
+    }//sendFunction()の終わり
+        
+
+
+    //メーラーを閉じる処理
+    
+    func mailComposeController(controller: MFMailComposeViewController, didFinishWithResult result: MFMailComposeResult, error: NSError?) {
+        switch result.rawValue {
+        case MFMailComposeResultCancelled.rawValue:
+            print("Email Send Cancelled")
+            break
+        case MFMailComposeResultSaved.rawValue:
+            print("Email Saved as a Draft")
+            break
+        case MFMailComposeResultSent.rawValue:
+            print("Email Sent Successfully")
+            break
+        case MFMailComposeResultFailed.rawValue:
+            print("Email Send Failed")
+            break
+        default:
+            break
+        }
+        
+        self.mailViewController.dismissViewControllerAnimated(true, completion: nil)
+        
+        assistTableView.reloadData()
+        
+
+    }
+ 
+    
+    func alertController(Title:String,Message:String){
+        
+        var alertController = UIAlertController(
+            title: Title,
+            message: Message,
+            preferredStyle: .Alert)
+        
+        alertController.addAction(UIAlertAction(title: "OK", style: .Default, handler:nil))
+        presentViewController(alertController, animated: true, completion: nil)
+
+        
+        
+    }
+    
+    
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

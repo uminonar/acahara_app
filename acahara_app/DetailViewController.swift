@@ -55,28 +55,41 @@ class DetailViewController: UIViewController {
         
         //ここをAPIに変更 これであってる？
         
-        
-        var url = NSURL(string: "http://acahara.net/get.post_json.php")
+        var url = NSURL(string: "http://acahara.angry.jp/get.post_json.php")
         var request = NSURLRequest(URL:url!)
         var jsondata = (try! NSURLConnection.sendSynchronousRequest(request, returningResponse: nil))
-        let jsonDictionary = (try! NSJSONSerialization.JSONObjectWithData(jsondata, options: [])) as! NSDictionary
-        //        for(key, data) in jsonDictionary{
-        //            print("\(key)=\(data)")
-
-//        let path = NSBundle.mainBundle().pathForResource("posts", ofType: "txt")
-//        let jsondata = NSData(contentsOfFile: path!)
-//        
-//        let jsonArray = (try! NSJSONSerialization.JSONObjectWithData(jsondata!, options: [])) as! NSArray
+        let jsonArray = (try! NSJSONSerialization.JSONObjectWithData(jsondata, options: [])) as! NSArray
+        print("jsonArray.count = \(jsonArray.count)")
         
-        let dic = jsonDictionary[dtSelectedIndex]
+//        for (var i = 0; i < jsonArray.count; i++) {
+//            let jsonDict: NSDictionary =  NSDictionary(dictionary: jsonArray[i] as! NSDictionary)
+//            print("jsonDict openFlag = \(jsonDict["openFlag"])")
+//            
+//            // picutureを分割し再度入れなおす処理
+//            
+//            let intStr = String(jsonDict["openFlag"]!)
+//            let openFlag = Int(intStr)
+//            
+//            if openFlag == 0 { // postsに追加
+//                posts.addObject(jsonDict)
+//            }
+//        }
+//        
+//        print("posts.count = \(posts.count)")
+//        print("posts = \(posts)")
+
+        
+        let dic: NSDictionary =  NSDictionary(dictionary: jsonArray[dtSelectedIndex] as! NSDictionary)
+        
+      
         
         detailSelfee.image=UIImage(named: "selfee.JPG")
-        detailName.text = "uminonar"
-        detailWhen.text = dic!["time"] as! String
-        detailWhere.text = dic!["place"] as! String
-        detailWho.text = dic!["person"] as! String
-        detailUniversity.text = dic!["university"] as! String
-        diaryLabel.text = dic!["description"] as! String
+        detailName.text = dic["name"] as! String
+        detailWhen.text = dic["time"] as! String
+        detailWhere.text = dic["place"] as! String
+        detailWho.text = dic["person"] as! String
+        detailUniversity.text = dic["university"] as! String
+        diaryLabel.text = dic["description"] as! String
  
         
         let style = NSMutableParagraphStyle()
@@ -89,7 +102,7 @@ class DetailViewController: UIViewController {
 
 //        detailImageView.image = UIImage(named: dic["picture1"] as! String)
         // 写真データ全件取得
-        var picArray = dic!["picture"] as! NSMutableArray
+        var picArray = dic["picture"] as! NSMutableArray
         print("picArrayのカウント = \(picArray.count)")
         
         var selectedPictures = [] as! NSMutableArray
@@ -156,6 +169,16 @@ class DetailViewController: UIViewController {
                         imageView.frame = CGRectMake(positionX, 0, 120, 120)
                         imageView.image = image
                         
+                        //MARK:一戸追加
+                        let gesture = UITapGestureRecognizer(target:self, action:"didClickImageView:")
+                        
+                        imageView.addGestureRecognizer(gesture)
+                        
+                        imageView.userInteractionEnabled = true
+                        imageView.tag = self.countNum
+                        //MARK:一戸追加終了
+
+                        
                         self.pictureScrView.addSubview(imageView)
                         
                         
@@ -191,7 +214,7 @@ class DetailViewController: UIViewController {
         
         //選択された動画サムネイルを表示するための処理
         
-        var movArray = dic!["movie"] as! NSMutableArray
+        var movArray = dic["movie"] as! NSMutableArray
         print("movArrayのカウント = \(movArray.count)")
 
         var selectedMovies = [] as! NSMutableArray

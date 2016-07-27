@@ -10,8 +10,14 @@ import UIKit
 
 class PictureViewController: UIViewController {
     
+    // 詳細ページの中で何番目の画像が選ばれたか保存するプロパティ
     var picSelectedIndex = -1
     var numOfSelectedPicture = -1
+    
+    // MARK:一戸追加
+    // 記事一覧で何番目の記事が選ばれているか保存するプロパティ
+    var postSelectedIndex = -1
+
     
     private var watchImageMode = true
     private var beforePoint = CGPointMake(0.0, 0.0)
@@ -38,17 +44,51 @@ class PictureViewController: UIViewController {
     
     }
     
+    
+    
+    
     override func viewWillAppear(animated: Bool) {
         let path = NSBundle.mainBundle().pathForResource("posts", ofType: "txt")
         let jsondata = NSData(contentsOfFile: path!)
         
         let jsonArray = (try! NSJSONSerialization.JSONObjectWithData(jsondata!, options: [])) as! NSArray
         
-        let dic = jsonArray[picSelectedIndex]
+//        let dic = jsonArray[picSelectedIndex]
+        let dic = jsonArray[postSelectedIndex] as! NSDictionary
         
-        var selectedPicture = "picture" + String(numOfSelectedPicture) 
+//        var selectedPicture = "picture" + String(numOfSelectedPicture) 
+//
+//        pictureImageView.image = UIImage(named: dic["selectedPicture"] as! String)
+        
+        //選択したpostのassetsURLの配列を取得
+        let picArray = dic["picture"] as! NSArray
+        
+        //assetsURLの取り出し
+        var strUrl = picArray[picSelectedIndex] as! String
+        var url = NSURL(string: strUrl)
+        
+        //imageへ変換　ここで500 500を指定
+        let fetchResult: PHFetchResult = PHAsset.fetchAssetsWithALAssetURLs([url!], options: nil)
+        
+        if fetchResult.firstObject != nil{
+            
+            let asset: PHAsset = fetchResult.firstObject as! PHAsset
+            
+            
+            print("pixelWidth:\(asset.pixelWidth)");
+            print("pixelHeight:\(asset.pixelHeight)");
+            
+            let manager: PHImageManager = PHImageManager()
+            manager.requestImageForAsset(asset,targetSize: CGSizeMake(500, 500),contentMode: .AspectFit,options: nil) { (image, info) -> Void in
+                
+                self.pictureImageView.image = image
+                
+            }
+        }
+        
+        
+        //MARK:一戸変更終了
 
-        pictureImageView.image = UIImage(named: dic["selectedPicture"] as! String)
     }
     
     func handleGesture(gesture: UIGestureRecognizer){

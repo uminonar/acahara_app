@@ -12,6 +12,7 @@ class makeURLTableViewCell: UITableViewCell {
 
     
     @IBOutlet weak var urlMakeBtn: UIButton!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         

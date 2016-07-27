@@ -159,8 +159,23 @@ class SettingViewController: UIViewController,UITextFieldDelegate, UIScrollViewD
     
     //エンターが押された時に呼ばれる
     func textFieldShouldReturn(textField: UITextField) -> Bool {
-        
+        txtActiveField = textField
         textField.resignFirstResponder()
+        
+        if textField.tag == 2000 || textField.tag == 3000 || textField.tag == 4000 {
+            
+            var testEmail =  isValidEmail(textField.text!)
+            if testEmail == false{
+                
+                emailFlag = 1
+                animateBackgroundColor(txtActiveField)
+                
+            }else{
+                emailFlag = 0
+                txtActiveField.backgroundColor = UIColor.whiteColor()
+            }
+
+        }
         
         return true
     }
@@ -336,9 +351,8 @@ class SettingViewController: UIViewController,UITextFieldDelegate, UIScrollViewD
             
             emailFlag = 1
             
-            let honey :UIColor = UIColor(red:0.996,green:0.980,blue:0.780,alpha:1.0)
-            emailField.backgroundColor =  honey
-            confirmEmailField.backgroundColor = honey
+            animateBackgroundColor(emailField)
+            animateBackgroundColor(confirmEmailField)
             
         }
         
@@ -468,7 +482,13 @@ class SettingViewController: UIViewController,UITextFieldDelegate, UIScrollViewD
 
     } 
 
-    
+    func isValidEmail(string: String) -> Bool {
+        print("validate calendar: \(string)")
+        let emailRegEx = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,4}"
+        var emailTest = NSPredicate(format:"SELF MATCHES %@", emailRegEx)
+        let result = emailTest.evaluateWithObject(string)
+        return result
+    }
     
     
 

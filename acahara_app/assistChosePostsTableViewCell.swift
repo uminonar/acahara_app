@@ -13,6 +13,7 @@ class assistChosePostsTableViewCell: UITableViewCell {
     @IBOutlet weak var titleBar: UIView!
     
     @IBOutlet weak var allSelectBtn: UIButton!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         

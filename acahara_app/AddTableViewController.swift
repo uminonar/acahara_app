@@ -1008,7 +1008,6 @@ class AddTableViewController: UIViewController,UITableViewDelegate,UITableViewDa
     
     func setUniversity(sender:UITextField){
 
-        
         //ユーザーデフォルトを用意する
         var myDefault = NSUserDefaults.standardUserDefaults()
         
@@ -1354,23 +1353,6 @@ class AddTableViewController: UIViewController,UITableViewDelegate,UITableViewDa
         }else{
             firstTime = true
             
-            //保存されるデータをユーザーデフォルトから削除
-            var appDomain:String = NSBundle.mainBundle().bundleIdentifier!
-            
-            myDefault.removeObjectForKey("selectedDT")
-            myDefault.removeObjectForKey("selectedPlace")
-            myDefault.removeObjectForKey("selectedName")
-            //        myDefault.removeObjectForKey("uniStr")
-            myDefault.removeObjectForKey("diary")
-            myDefault.removeObjectForKey("selectedMovieURL")
-            myDefault.removeObjectForKey("selectedPhotoURL")
-            
-            //userDefaultにデータを書き込んで保存したことを書き込む
-            myDefault.setObject("true", forKey: "saveSuccess")
-
-            //即反映させる
-            myDefault.synchronize()
-            
             //写真と動画のセルを消すための処理
             self.myApp.photoURLArray = false
             self.myApp.movieURLArray = false
@@ -1410,8 +1392,21 @@ class AddTableViewController: UIViewController,UITableViewDelegate,UITableViewDa
             let person = selectedName!.dataUsingEncoding(NSUTF8StringEncoding)
             let description = diary!.dataUsingEncoding(NSUTF8StringEncoding)
             let university = selectedUniversity!.dataUsingEncoding(NSUTF8StringEncoding)
-            let movie = selectedMovieURL!.dataUsingEncoding(NSUTF8StringEncoding)
-            let picture = selectedPhotoURL!.dataUsingEncoding(NSUTF8StringEncoding)
+            var movie:NSArray
+            if selectedMovieURL == nil{
+                movie = []
+            } else {
+//                movie = selectedMovieURL!.dataUsingEncoding(NSUTF8StringEncoding)
+            }
+            
+            var picture:NSArray
+            if selectedPhotoURL == nil{
+                picture = []
+            } else {
+                //                movie = selectedMovieURL!.dataUsingEncoding(NSUTF8StringEncoding)
+            }
+
+//            let picture = selectedPhotoURL!.dataUsingEncoding(NSUTF8StringEncoding)
             let created = createTime.dataUsingEncoding(NSUTF8StringEncoding)
             let openFlag = openness.dataUsingEncoding(NSUTF8StringEncoding)
 
@@ -1420,6 +1415,8 @@ class AddTableViewController: UIViewController,UITableViewDelegate,UITableViewDa
             // dictionaryで送信するJSONデータを生成.
             var myDict:NSMutableDictionary = NSMutableDictionary()
             
+            
+//            myDict.setObject(, forKey: <#T##NSCopying#>)
             myDict.setObject("userID", forKey: "userID")
             myDict.setObject("userName", forKey: "userName")
             myDict.setObject("time", forKey: "time")
@@ -1461,7 +1458,7 @@ class AddTableViewController: UIViewController,UITableViewDelegate,UITableViewDa
                 
             // Http通信のリクエスト生成.
 
-            var url = NSURL(string: "http://localhost/json/php_MySQL.php")
+            var url = NSURL(string: "http://acahara.angry.jp/post.php")
             let config = NSURLSessionConfiguration.defaultSessionConfiguration()
             let session = NSURLSession(configuration: config)
             var req = NSMutableURLRequest(URL: url!)
@@ -1479,7 +1476,26 @@ class AddTableViewController: UIViewController,UITableViewDelegate,UITableViewDa
             })
             task.resume()
         }
-                
+        
+        
+        
+        //保存されるデータをユーザーデフォルトから削除
+        var appDomain:String = NSBundle.mainBundle().bundleIdentifier!
+        
+        myDefault.removeObjectForKey("selectedDT")
+        myDefault.removeObjectForKey("selectedPlace")
+        myDefault.removeObjectForKey("selectedName")
+        //        myDefault.removeObjectForKey("uniStr")
+        myDefault.removeObjectForKey("diary")
+        myDefault.removeObjectForKey("selectedMovieURL")
+        myDefault.removeObjectForKey("selectedPhotoURL")
+        
+        //userDefaultにデータを書き込んで保存したことを書き込む
+        myDefault.setObject("true", forKey: "saveSuccess")
+        
+        //即反映させる
+        myDefault.synchronize()
+
         
     }
 

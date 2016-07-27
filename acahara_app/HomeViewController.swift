@@ -88,22 +88,28 @@ class HomeViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
 //        homeWrite.setImage(writeImage, forState: .Normal)
         
         //ここをAPI取得に切り替える
-        
-        var url = NSURL(string: "http://acahara.net/get.post_json.php")
+        var url = NSURL(string: "http://acahara.angry.jp/get.post_json.php")
         var request = NSURLRequest(URL:url!)
         var jsondata = (try! NSURLConnection.sendSynchronousRequest(request, returningResponse: nil))
-        let jsonDictionary = (try! NSJSONSerialization.JSONObjectWithData(jsondata, options: [])) as! NSDictionary
-//        for(key, data) in jsonDictionary{
-//            print("\(key)=\(data)")
+        let jsonArray = (try! NSJSONSerialization.JSONObjectWithData(jsondata, options: [])) as! NSArray
+        print("jsonArray.count = \(jsonArray.count)")
         
-        
-        
-        //これであってる？？？？うーん
-        for data in jsonDictionary{
+        for (var i = 0; i < jsonArray.count; i++) {
+            let jsonDict: NSDictionary =  NSDictionary(dictionary: jsonArray[i] as! NSDictionary)
+            print("jsonDict openFlag = \(jsonDict["openFlag"])")
             
-            posts.addObject(data as! NSMutableDictionary)
+            // picutureを分割し再度入れなおす処理
+            
+            let intStr = String(jsonDict["openFlag"]!)
+            let openFlag = Int(intStr)
+            
+            if openFlag == 0 { // postsに追加
+                posts.addObject(jsonDict)
+            }
         }
-
+        
+        print("posts.count = \(posts.count)")
+        print("posts = \(posts)")
     
 //      let path = NSBundle.mainBundle().pathForResource("posts", ofType: "txt")
 //      let jsondata = NSData(contentsOfFile: path!)
@@ -188,14 +194,14 @@ class HomeViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
         var cell = tableView.dequeueReusableCellWithIdentifier("postCustomCell", forIndexPath: indexPath) as! homeTableViewCell
         cell.postCreated.text = posts[indexPath.row]["created"] as! String
         
-        var dateTime = posts[indexPath.row]["when"] as! String
+        var dateTime = posts[indexPath.row]["time"] as! String
         cell.postWhen.text = dateTime+" 頃"
-        cell.postWhere.text = posts[indexPath.row]["where"] as! String
-        cell.postWho.text = posts[indexPath.row]["who"] as! String
+        cell.postWhere.text = posts[indexPath.row]["place"] as! String
+        cell.postWho.text = posts[indexPath.row]["person"] as! String
         cell.postUniversity.text = posts[indexPath.row]["university"] as! String
         
         
-        var diary = posts[indexPath.row]["diary"] as! String
+        var diary = posts[indexPath.row]["description"] as! String
         var charCount = diary.characters.count
         
         if (charCount >= 106){
