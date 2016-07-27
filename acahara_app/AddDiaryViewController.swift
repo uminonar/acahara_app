@@ -20,10 +20,14 @@ var movieFlag = false
 
 class AddDiaryViewController: UIViewController, UITextViewDelegate,UIImagePickerControllerDelegate,UINavigationControllerDelegate,QBImagePickerControllerDelegate {
     
+    
+    @IBOutlet weak var bottomLayoutConstraint: NSLayoutConstraint!
+    
     @IBOutlet weak var header: UIView!
 
-    @IBOutlet weak var scrollView: UIScrollView!
+ 
     @IBOutlet weak var diaryTextView: UITextView!
+
     @IBOutlet weak var cancelBtn: UIButton!
 
     @IBOutlet weak var saveBtn: UIImageView!
@@ -38,8 +42,8 @@ class AddDiaryViewController: UIViewController, UITextViewDelegate,UIImagePicker
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        print(scrollView.frame)
-        print("test")
+//        print(scrollView.frame)
+//        print("test")
 //        diaryTextView.backgroundColor = UIColor.greenColor()
 //        let testView: UIView = UIView()
 //        testView.backgroundColor = UIColor.greenColor()
@@ -171,11 +175,11 @@ class AddDiaryViewController: UIViewController, UITextViewDelegate,UIImagePicker
         diaryTextView.resignFirstResponder()
         
         
-        //Mark:ここを修正 記入時とフレームの位置を合わせる、カクンとさせない
-        //diaryTextView.frame = CGRectMake(0, 20, 320, 700)
-        diaryTextView.frame = CGRectMake(10,20, diaryTextView.bounds.width,myBoundsize.height-20)
-        
-        scrollView.setContentOffset(CGPointMake(0,20), animated: true)
+//        //Mark:ここを修正 記入時とフレームの位置を合わせる、カクンとさせない
+//        //diaryTextView.frame = CGRectMake(0, 20, 320, 700)
+//        diaryTextView.frame = CGRectMake(10,20, diaryTextView.bounds.width,myBoundsize.height-20)
+//        
+//        scrollView.setContentOffset(CGPointMake(0,20), animated: true)
         
     }
     
@@ -443,56 +447,91 @@ class AddDiaryViewController: UIViewController, UITextViewDelegate,UIImagePicker
         
         //キーボードがテキストに被らないようにする下処理、キーボードの動きを感知？
         NSNotificationCenter.defaultCenter().addObserver(self,
-                                                         selector: "keyboardWillBeShown:",
-                                                         name: UIKeyboardWillShowNotification,
+                                                         selector: "keyboardWillChangeFrame:",
+                                                         name: UIKeyboardWillChangeFrameNotification,
                                                          object: nil)
         NSNotificationCenter.defaultCenter().addObserver(self,
                                                          selector: "keyboardWillBeHidden:",
                                                          name: UIKeyboardWillHideNotification,
                                                          object: nil)
-        
-        
+ 
     }
     
     override func viewWillDisappear(animated: Bool) {
         super.viewWillDisappear(animated)
         
+        NSNotificationCenter.defaultCenter().removeObserver(self)
+
         
-        //キーボードがテキストに被らないようにする処理
-        NSNotificationCenter.defaultCenter().removeObserver(self,
-                                                            name: UIKeyboardWillShowNotification,
-                                                            object: nil)
-        NSNotificationCenter.defaultCenter().removeObserver(self,
-                                                            name: UIKeyboardWillHideNotification,
-                                                            object: nil)
-        
-        
+//        //キーボードがテキストに被らないようにする処理
+//        NSNotificationCenter.defaultCenter().removeObserver(self,
+//                                                            name: UIKeyboardWillShowNotification,
+//                                                            object: nil)
+//        NSNotificationCenter.defaultCenter().removeObserver(self,
+//                                                            name: UIKeyboardWillHideNotification,
+//                                                            object: nil)
+//        
+//        
     }
 
-    func keyboardWillBeShown(notification: NSNotification) {
+    func keyboardWillChangeFrame(notification: NSNotification) {
+        
         if let userInfo = notification.userInfo {
-            if let keyboardFrame = userInfo[UIKeyboardFrameEndUserInfoKey]?.CGRectValue, animationDuration = userInfo[UIKeyboardAnimationDurationUserInfoKey]?.doubleValue {
-                restoreScrollViewSize()
-                
-                let convertedKeyboardFrame = scrollView.convertRect(keyboardFrame, fromView: nil)
-                var offsetY: CGFloat = CGRectGetMaxY(diaryTextView.frame) - CGRectGetMinY(convertedKeyboardFrame)
-                
-                //MARK:追加
-                diaryTextView.frame = CGRectMake(8,8, diaryTextView.bounds.width, myBoundsize.height - convertedKeyboardFrame.height-65)
-                
-                if offsetY < 0 { return }
-                //Mark:計算結果を使わずにここで決め打ちしてしまう方が安定
-                offsetY = 10.0
-                
-                
-                updateScrollViewSize(offsetY, duration: animationDuration)
-            }
+            
+            let keyBoardValue : NSValue = userInfo[UIKeyboardFrameEndUserInfoKey]! as! NSValue
+            var keyBoardFrame : CGRect = keyBoardValue.CGRectValue()
+            let duration : NSTimeInterval = userInfo[UIKeyboardAnimationDurationUserInfoKey]! as! NSTimeInterval
+            
+            
+            
+            
+            self.bottomLayoutConstraint.constant = keyBoardFrame.height + 8
+            
+            UIView.animateWithDuration(duration, animations: { () -> Void in
+                self.view.layoutIfNeeded()
+            })
+            
         }
+
+        
+//        if let userInfo = notification.userInfo {
+//            if let keyboardFrame = userInfo[UIKeyboardFrameEndUserInfoKey]?.CGRectValue, animationDuration = userInfo[UIKeyboardAnimationDurationUserInfoKey]?.doubleValue {
+//                restoreScrollViewSize()
+//                
+//                let convertedKeyboardFrame = scrollView.convertRect(keyboardFrame, fromView: nil)
+//                var offsetY: CGFloat = CGRectGetMaxY(diaryTextView.frame) - CGRectGetMinY(convertedKeyboardFrame)
+//                
+//                //MARK:追加
+//                diaryTextView.frame = CGRectMake(8,8, diaryTextView.bounds.width, myBoundsize.height - convertedKeyboardFrame.height-65)
+//                
+//                if offsetY < 0 { return }
+//                //Mark:計算結果を使わずにここで決め打ちしてしまう方が安定
+//                offsetY = 10.0
+//                
+//                
+//                updateScrollViewSize(offsetY, duration: animationDuration)
+//            }
+//        }
         
     }
     
     func keyboardWillBeHidden(notification: NSNotification) {
-        restoreScrollViewSize()
+//        restoreScrollViewSize()
+        
+        if let userInfo = notification.userInfo {
+            
+            let duration : NSTimeInterval = userInfo[UIKeyboardAnimationDurationUserInfoKey]! as! NSTimeInterval
+            
+            //どうしてここ８？
+            self.bottomLayoutConstraint.constant = 8
+            
+            UIView.animateWithDuration(duration, animations: { () -> Void in
+                self.view.layoutIfNeeded()
+            })
+            
+        }
+
+        
     }
 
     // MARK: - UITextFieldDelegate//ここがリターンじゃなくボタンの設定も？//ここが効かない,テキストフィールドなので　doneボタンを付ける
@@ -502,22 +541,22 @@ class AddDiaryViewController: UIViewController, UITextViewDelegate,UIImagePicker
 //    }
     
     
-    func updateScrollViewSize(moveSize: CGFloat, duration: NSTimeInterval) {
-        UIView.beginAnimations("ResizeForKeyboard", context: nil)
-        UIView.setAnimationDuration(duration)
-        
-        let contentInsets = UIEdgeInsetsMake(0, 0, moveSize, 0)
-        scrollView.contentInset = contentInsets
-        scrollView.scrollIndicatorInsets = contentInsets
-        scrollView.contentOffset = CGPointMake(0, moveSize)
-        
-        UIView.commitAnimations()
-    }
-    
-    func restoreScrollViewSize() {
-        scrollView.contentInset = UIEdgeInsetsZero
-        scrollView.scrollIndicatorInsets = UIEdgeInsetsZero
-    }
+//    func updateScrollViewSize(moveSize: CGFloat, duration: NSTimeInterval) {
+//        UIView.beginAnimations("ResizeForKeyboard", context: nil)
+//        UIView.setAnimationDuration(duration)
+//        
+//        let contentInsets = UIEdgeInsetsMake(0, 0, moveSize, 0)
+//        scrollView.contentInset = contentInsets
+//        scrollView.scrollIndicatorInsets = contentInsets
+//        scrollView.contentOffset = CGPointMake(0, moveSize)
+//        
+//        UIView.commitAnimations()
+//    }
+//    
+//    func restoreScrollViewSize() {
+//        scrollView.contentInset = UIEdgeInsetsZero
+//        scrollView.scrollIndicatorInsets = UIEdgeInsetsZero
+//    }
 
 
     @IBAction func saveBtn(sender: UIButton) {

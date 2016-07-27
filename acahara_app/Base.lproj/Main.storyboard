@@ -503,69 +503,37 @@
                                     <constraint firstItem="ESl-aE-C5a" firstAttribute="top" secondItem="bes-ce-3eS" secondAttribute="top" constant="28" id="Rkw-2t-OEA"/>
                                     <constraint firstItem="6Mg-rr-YFF" firstAttribute="centerY" secondItem="bes-ce-3eS" secondAttribute="centerY" constant="6" id="UC8-15-j2P"/>
                                     <constraint firstItem="DvK-1d-cUl" firstAttribute="top" secondItem="bes-ce-3eS" secondAttribute="top" constant="30" id="Wue-At-gWD"/>
+                                    <constraint firstItem="6Mg-rr-YFF" firstAttribute="top" secondItem="ESl-aE-C5a" secondAttribute="top" id="aTS-NM-7bz"/>
                                     <constraint firstItem="6Mg-rr-YFF" firstAttribute="centerX" secondItem="bes-ce-3eS" secondAttribute="centerX" constant="1" id="bha-pg-phD"/>
                                     <constraint firstAttribute="trailing" secondItem="6D9-c5-Whs" secondAttribute="trailing" constant="18" id="jbP-mK-4Ep"/>
                                     <constraint firstAttribute="trailing" secondItem="ESl-aE-C5a" secondAttribute="trailing" constant="16" id="ppI-Jz-69V"/>
                                 </constraints>
                             </view>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xDz-hH-Jmx">
-                                <rect key="frame" x="0.0" y="62" width="318" height="506"/>
-                                <subviews>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="atW-Vt-I4o">
-                                        <rect key="frame" x="0.0" y="-5" width="318" height="511"/>
-                                        <subviews>
-                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="VXV-D6-5sd">
-                                                <rect key="frame" x="8" y="8" width="302" height="503"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="503" id="UwC-Tp-omp"/>
-                                                </constraints>
-                                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                                            </textView>
-                                        </subviews>
-                                        <color key="backgroundColor" red="1" green="0.40000000600000002" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="511" id="kbu-zk-ZVJ"/>
-                                            <constraint firstItem="VXV-D6-5sd" firstAttribute="top" secondItem="atW-Vt-I4o" secondAttribute="top" constant="8" id="prY-TY-GGj"/>
-                                            <constraint firstItem="VXV-D6-5sd" firstAttribute="leading" secondItem="atW-Vt-I4o" secondAttribute="leading" constant="8" id="q9F-t7-XxH"/>
-                                            <constraint firstAttribute="trailing" secondItem="VXV-D6-5sd" secondAttribute="trailing" constant="8" id="tyH-Zr-T4a"/>
-                                        </constraints>
-                                    </view>
-                                </subviews>
-                                <constraints>
-                                    <constraint firstItem="atW-Vt-I4o" firstAttribute="centerX" secondItem="xDz-hH-Jmx" secondAttribute="centerX" id="CAc-Sc-OEO"/>
-                                    <constraint firstItem="atW-Vt-I4o" firstAttribute="leading" secondItem="xDz-hH-Jmx" secondAttribute="leading" id="CWZ-Q1-MFk"/>
-                                    <constraint firstAttribute="trailing" secondItem="atW-Vt-I4o" secondAttribute="trailing" id="Pku-oP-Vbv"/>
-                                    <constraint firstItem="atW-Vt-I4o" firstAttribute="top" secondItem="xDz-hH-Jmx" secondAttribute="top" constant="-5" id="Qn2-iK-cCR"/>
-                                    <constraint firstAttribute="bottom" secondItem="atW-Vt-I4o" secondAttribute="bottom" id="T9z-Hm-VG5"/>
-                                </constraints>
-                            </scrollView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="2bb-X7-jCw">
+                                <rect key="frame" x="5" y="80" width="310" height="480"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <mutableString key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</mutableString>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="xDz-hH-Jmx" firstAttribute="top" secondItem="qua-v5-mrS" secondAttribute="top" constant="62" id="4P0-kz-WkA"/>
-                            <constraint firstItem="xDz-hH-Jmx" firstAttribute="bottom" secondItem="eXd-FP-udf" secondAttribute="top" id="Ddd-fY-q4V"/>
-                            <constraint firstItem="xDz-hH-Jmx" firstAttribute="leading" secondItem="qua-v5-mrS" secondAttribute="leading" id="EeY-2O-4pe"/>
-                            <constraint firstItem="eXd-FP-udf" firstAttribute="top" secondItem="bes-ce-3eS" secondAttribute="bottom" constant="503" id="RHu-p3-IPi"/>
+                            <constraint firstItem="2bb-X7-jCw" firstAttribute="leading" secondItem="qua-v5-mrS" secondAttribute="leading" constant="5" id="1Qh-63-VNL"/>
+                            <constraint firstItem="2bb-X7-jCw" firstAttribute="top" secondItem="bes-ce-3eS" secondAttribute="bottom" constant="15" id="85c-j2-NuT"/>
+                            <constraint firstAttribute="trailing" secondItem="2bb-X7-jCw" secondAttribute="trailing" constant="5" id="DyJ-tX-7WK"/>
+                            <constraint firstItem="eXd-FP-udf" firstAttribute="top" secondItem="2bb-X7-jCw" secondAttribute="bottom" constant="8" id="GpV-0Y-W9e"/>
+                            <constraint firstItem="bes-ce-3eS" firstAttribute="leading" secondItem="qua-v5-mrS" secondAttribute="leading" id="R9u-Eg-Xle"/>
                             <constraint firstItem="bes-ce-3eS" firstAttribute="top" secondItem="qua-v5-mrS" secondAttribute="top" id="YIe-U9-MR8"/>
                             <constraint firstAttribute="trailing" secondItem="bes-ce-3eS" secondAttribute="trailing" id="bkL-wd-P7t"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="xDz-hH-Jmx" secondAttribute="trailing" constant="-14" id="iWw-Ex-CV3"/>
-                            <constraint firstItem="xDz-hH-Jmx" firstAttribute="top" secondItem="bes-ce-3eS" secondAttribute="bottom" constant="2" id="lfh-0U-Vjk"/>
-                            <constraint firstItem="xDz-hH-Jmx" firstAttribute="leading" secondItem="bes-ce-3eS" secondAttribute="leading" id="z9U-FX-QU4"/>
                         </constraints>
-                        <variation key="default">
-                            <mask key="constraints">
-                                <exclude reference="lfh-0U-Vjk"/>
-                            </mask>
-                        </variation>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
                         <outlet property="cancelBtn" destination="DvK-1d-cUl" id="Ih4-KO-JQt"/>
-                        <outlet property="diaryTextView" destination="VXV-D6-5sd" id="Cse-ZS-B4T"/>
+                        <outlet property="diaryTextView" destination="2bb-X7-jCw" id="3z3-qR-W5z"/>
                         <outlet property="header" destination="bes-ce-3eS" id="ta1-KM-Uqf"/>
                         <outlet property="saveBtn" destination="6D9-c5-Whs" id="r5M-FM-dQ0"/>
-                        <outlet property="scrollView" destination="xDz-hH-Jmx" id="hYT-t4-7pH"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yaU-BX-4kL" userLabel="First Responder" sceneMemberID="firstResponder"/>

@@ -718,12 +718,17 @@ class AssistTableViewController: UIViewController,UITableViewDelegate,UITableVie
         var tag:Int = sender.view?.tag as! Int!
         print(tag)
         
-        var selectedFlag = posts[tag]["selectedFlag"] as! Bool
+        var strFlag = String(posts[tag]["selectedFlag"]!)
+        var selectedFlag = Int(strFlag)
         
-        if selectedFlag{
+        
+        
+        
+        
+        if selectedFlag == 0{
             
             var postDic = posts[tag].mutableCopy() as! NSMutableDictionary
-            postDic["selectedFlag"] = false
+            postDic["selectedFlag"] = 1
             
             
             posts[tag] = postDic
@@ -731,7 +736,7 @@ class AssistTableViewController: UIViewController,UITableViewDelegate,UITableVie
         }else{
             
             var postDic = posts[tag].mutableCopy() as! NSMutableDictionary
-            postDic["selectedFlag"] = true
+            postDic["selectedFlag"] = 0
             
         
             posts[tag] = postDic
