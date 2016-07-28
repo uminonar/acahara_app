@@ -456,9 +456,20 @@ class AddTableViewController: UIViewController,UITableViewDelegate,UITableViewDa
         
         if adjustrow_no == 2{
             var myDefault = NSUserDefaults.standardUserDefaults()
-            var photoURLArray = myDefault.objectForKey("photoURLArray") as! NSMutableArray
-            var movieURLArray = myDefault.objectForKey("movieURLArray") as! NSMutableArray
- 
+            var photoURLArray:NSMutableArray
+            if myDefault.objectForKey("photoURLArray") == nil {
+                photoURLArray = []
+            } else {
+                photoURLArray = myDefault.objectForKey("photoURLArray") as! NSMutableArray
+            }
+            
+            var movieURLArray:NSMutableArray
+            if myDefault.objectForKey("photoURLArray") == nil {
+                movieURLArray = []
+            } else {
+                movieURLArray = myDefault.objectForKey("movieURLArray") as! NSMutableArray
+            }
+            
             
             // if strURL != nil{
             
@@ -1365,14 +1376,14 @@ class AddTableViewController: UIViewController,UITableViewDelegate,UITableViewDa
             // まずPOSTで送信したい情報をセット
   
             var uName = myApp.userName
-            var uID = myApp.userName
+            var uID = myApp.userID
             var selectedDT = myDefault.stringForKey("selectedDT")
             var selectedPlace = myDefault.stringForKey("selectedPlace")
             var selectedName = myDefault.stringForKey("selectedName")
             var diary = myDefault.stringForKey("diary")
             var selectedUniversity = myDefault.stringForKey("uniStr")
-            var selectedMovieURL = myDefault.stringForKey("selectedMovieURL")
-            var selectedPhotoURL = myDefault.stringForKey("selectedPhotoURL")
+            var selectedMovieURL = myDefault.objectForKey("movieURLArray")
+            var selectedPhotoURL = myDefault.objectForKey("photoURLArray")
             
             var createTime = String(NSData()) //これで良い？ダメっぽいけど、、、うーん
             var openness = String(self.openFlag) //これで本当にオッケー？
@@ -1384,31 +1395,44 @@ class AddTableViewController: UIViewController,UITableViewDelegate,UITableViewDa
 //            $openFlag = $_POST['open_flag'];
 //            $deleteFlag = $_POST['deleteFlag'];
             
-            //この一連の処理はここでいる？
-            let userID = uID.dataUsingEncoding(NSUTF8StringEncoding)
-            let userName = uName.dataUsingEncoding(NSUTF8StringEncoding)
-            let time = selectedDT!.dataUsingEncoding(NSUTF8StringEncoding)
-            let place = selectedPlace!.dataUsingEncoding(NSUTF8StringEncoding)
-            let person = selectedName!.dataUsingEncoding(NSUTF8StringEncoding)
-            let description = diary!.dataUsingEncoding(NSUTF8StringEncoding)
-            let university = selectedUniversity!.dataUsingEncoding(NSUTF8StringEncoding)
+            //この一連の処理はここでいる？ ダブルでエンコーディングかけると送れなくなる　下で既にやっている
+            let userID = uID
+            let userName = uName
+            let time = selectedDT!
+            let place = selectedPlace!
+            let person = selectedName!
+            let description = diary!
+            let university = selectedUniversity!
             var movie:NSArray
+            var movieStr = ""
             if selectedMovieURL == nil{
                 movie = []
             } else {
-//                movie = selectedMovieURL!.dataUsingEncoding(NSUTF8StringEncoding)
+                movie = selectedMovieURL as! NSArray
+//                let strMovie = movie.joinWithSeparator(",")
+                
+//                let array = [1, 2, 3]
+//                let nums = array.map { "\($0)" }.joinWithSeparator("-")
+//                print(nums)
+                
+                movieStr = movie.map { "\($0)" }.joinWithSeparator(",")
+                print("==========================")
+                print("movieStr = \(movieStr)")
+                
+//
+//                movie = selectedMovieURL!
             }
             
             var picture:NSArray
             if selectedPhotoURL == nil{
                 picture = []
             } else {
-                //                movie = selectedMovieURL!.dataUsingEncoding(NSUTF8StringEncoding)
+//                picture = selectedMovieURL!
             }
 
 //            let picture = selectedPhotoURL!.dataUsingEncoding(NSUTF8StringEncoding)
-            let created = createTime.dataUsingEncoding(NSUTF8StringEncoding)
-            let openFlag = openness.dataUsingEncoding(NSUTF8StringEncoding)
+            let created = createTime
+            let openFlag = openness
 
             
             
@@ -1417,18 +1441,17 @@ class AddTableViewController: UIViewController,UITableViewDelegate,UITableViewDa
             
             
 //            myDict.setObject(, forKey: <#T##NSCopying#>)
-            myDict.setObject("userID", forKey: "userID")
-            myDict.setObject("userName", forKey: "userName")
-            myDict.setObject("time", forKey: "time")
-            myDict.setObject("place", forKey: "place")
-            myDict.setObject("person", forKey: "person")
-            myDict.setObject("description", forKey: "description")
-            myDict.setObject("university", forKey: "university")
-            myDict.setObject("movie", forKey: "movie")
+            myDict.setObject(userID, forKey: "userID")
+            myDict.setObject(userName, forKey: "userName")
+            myDict.setObject(time, forKey: "time")
+            myDict.setObject(place, forKey: "place")
+            myDict.setObject(person, forKey: "person")
+            myDict.setObject(description, forKey: "description")
+            myDict.setObject(university, forKey: "university")
+            myDict.setObject(movieStr, forKey: "movie")
             myDict.setObject("picture", forKey: "picture")
-            myDict.setObject("created", forKey: "created")
-            myDict.setObject("openFlag", forKey: "openFlag")
-            
+            myDict.setObject(created, forKey: "created")
+            myDict.setObject(openFlag, forKey: "openFlag")
             
             // 作成したdictionaryがJSONに変換可能かチェック.
             if NSJSONSerialization.isValidJSONObject(myDict){
@@ -1439,6 +1462,7 @@ class AddTableViewController: UIViewController,UITableViewDelegate,UITableViewDa
                     json = try NSJSONSerialization.dataWithJSONObject(myDict, options: NSJSONWritingOptions.PrettyPrinted) as NSData
                     // here "jsonData" is the dictionary encoded in JSON data
                     // 生成したJSONデータの確認.
+                    print("=========== json ===========")
                     print(NSString(data: json, encoding: NSUTF8StringEncoding)!)
                     
                 } catch let error as NSError {
@@ -1466,13 +1490,21 @@ class AddTableViewController: UIViewController,UITableViewDelegate,UITableViewDa
             // jsonのデータを一度文字列にして、キーと合わせる.
             var myData:NSString = "json=\(NSString(data: json, encoding: NSUTF8StringEncoding)!)"
             
+            print("====================================")
+            print("myData = \(myData)")
+            
             // jsonデータのセット.
             req.HTTPBody = myData.dataUsingEncoding(NSUTF8StringEncoding)
 
             var task = session.dataTaskWithRequest(req, completionHandler: {
                 (data, resp, err) in
+                
                 print(resp!.URL!)
-                print(NSString(data: data!, encoding: NSUTF8StringEncoding))
+                
+                print("data = \(NSString(data: data!, encoding: NSUTF8StringEncoding))")
+//                print("data = \(data)")
+                print("err = \(err)")
+                
             })
             task.resume()
         }
@@ -1487,8 +1519,8 @@ class AddTableViewController: UIViewController,UITableViewDelegate,UITableViewDa
         myDefault.removeObjectForKey("selectedName")
         //        myDefault.removeObjectForKey("uniStr")
         myDefault.removeObjectForKey("diary")
-        myDefault.removeObjectForKey("selectedMovieURL")
-        myDefault.removeObjectForKey("selectedPhotoURL")
+        myDefault.removeObjectForKey("movieURLArray")
+        myDefault.removeObjectForKey("photoURLArray")
         
         //userDefaultにデータを書き込んで保存したことを書き込む
         myDefault.setObject("true", forKey: "saveSuccess")

@@ -13,7 +13,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate,SSASideMenuDelegate  {
     
 
     var userName = "Hanako Yamada"//ここをどうして良いかわからないので、ひとまず置いておく
-    var userID = "hogehoge"//ここをどうして良いかわからないので、ひとまず置いておく
+    var userID = "1" //ここをどうして良いかわからないので、ひとまず置いておく
     
     var photoURLArray = false
     var movieURLArray = false

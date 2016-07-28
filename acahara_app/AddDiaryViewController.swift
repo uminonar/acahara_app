@@ -41,15 +41,7 @@ class AddDiaryViewController: UIViewController, UITextViewDelegate,UIImagePicker
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-//        print(scrollView.frame)
-//        print("test")
-//        diaryTextView.backgroundColor = UIColor.greenColor()
-//        let testView: UIView = UIView()
-//        testView.backgroundColor = UIColor.greenColor()
-//        testView.frame = CGRectMake(0, 62, 318, 506)
-//        self.view.addSubview(testView)
-        
+
         diaryTextView.delegate = self
         
         
@@ -67,13 +59,6 @@ class AddDiaryViewController: UIViewController, UITextViewDelegate,UIImagePicker
             
              diaryTextView.becomeFirstResponder()
         }
-    
-       
-        
-       //行間の設定 ここで大きさがリセットされているから、リセット後にサイズを指定しないといけない
-        
-        
-       
 
         
 //履歴全件削除の設定 1回使ったらコメントアウト
@@ -146,16 +131,6 @@ class AddDiaryViewController: UIViewController, UITextViewDelegate,UIImagePicker
         
 
         
-//        let inbox = FAKFontAwesome.inboxIconWithSize(25)
-//        
-//        let sakura:UIColor = UIColor(red:1.0,green:0.4,blue:0.4,alpha:1.0)
-//        
-//        inbox.addAttribute(NSForegroundColorAttributeName, value: sakura)
-//
-//        
-//        let boxImage = inbox.imageWithSize(CGSizeMake(25, 25))
-//        
-//        saveBtn.setImage(boxImage, forState: .Normal)
         
         //保存ボタンのイメージを設置して色変更
         saveBtn.image = UIImage(named:"check")?.imageWithRenderingMode(.AlwaysTemplate)
@@ -173,13 +148,7 @@ class AddDiaryViewController: UIViewController, UITextViewDelegate,UIImagePicker
     func onClickCloseButton(sender: UIButton) {
         
         diaryTextView.resignFirstResponder()
-        
-        
-//        //Mark:ここを修正 記入時とフレームの位置を合わせる、カクンとさせない
-//        //diaryTextView.frame = CGRectMake(0, 20, 320, 700)
-//        diaryTextView.frame = CGRectMake(10,20, diaryTextView.bounds.width,myBoundsize.height-20)
-//        
-//        scrollView.setContentOffset(CGPointMake(0,20), animated: true)
+
         
     }
     
@@ -321,84 +290,12 @@ class AddDiaryViewController: UIViewController, UITextViewDelegate,UIImagePicker
             
         }
         
-        //画像表示の場合
-//            let manager: PHImageManager = PHImageManager()
-//            manager.requestImageForAsset(asset as! PHAsset,targetSize: CGSizeMake(200, 200),contentMode: .AspectFit,options: nil) { (image, info) -> Void in
-//                
-//                switch self.imagecount {
-//                case 1:
-//                    self.imageView1.image = image
-//                    break
-//                case 2:
-//                    self.imageView2.image = image
-//                    break
-//                case 3:
-//                    self.imageView3.image = image
-//                    break
-//                case 4:
-//                    self.imageView4.image = image
-//                    break
-//                default:
-//                    break
-//                }
-//                
-//            }
 
         dismissViewControllerAnimated(true, completion: nil)
     
     }
     
     
-    //写真や画像をリストから選択した時の処理。ユーザーデフォルトに選択したデータへのパスをセット
-//    func imagePickerController(imagePicker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {
-//            
-//            
-//            
-//        // ユーザーデフォルトを用意する
-//        var myDefault = NSUserDefaults.standardUserDefaults()
-//            
-//            
-//        let strTypeMovie:String = kUTTypeMovie as! String
-//            
-//            if info[UIImagePickerControllerMediaType] as! String == strTypeMovie{
-//                //動画
-//                var url:NSURL = info[UIImagePickerControllerMediaURL] as! NSURL
-//                
-//                var strURL:String = url.description//こうすると文字列型に変換できる
-//                
-//
-//                
-//                //ここで配列にappendする
-//                
-//                selectedPhoto.append(strURL)
-//                
-//                // データを書き込んで
-//                myDefault.setObject(strURL, forKey: "selectedMovieList")
-//                
-//                
-//                
-//                
-//            }else{
-//                let assetURL:AnyObject = info[UIImagePickerControllerReferenceURL]!
-//                
-//                var strURL:String = assetURL.description
-//                
-//                
-//                // データを書き込んで
-//                myDefault.setObject(strURL, forKey: "selectedPhotoList")
-//                
-//            }
-//        
-//            // 即反映させる
-//            myDefault.synchronize()
-//            //　選択画面を落とす
-//            self.dismissViewControllerAnimated(true, completion: nil)
-//        
-//    }
-    
-    
-
-    //TODO:こちらでは空のファイルイメージだけバーの上の方に置く
  
  
     
@@ -443,6 +340,111 @@ class AddDiaryViewController: UIViewController, UITextViewDelegate,UIImagePicker
             
 
         }
+        
+        //写真か動画が選択されたら横スクロールを動的に配置する、もし既に写真か動画が選択されている場合、２段目のスクロールを動的に配置する。高さ幅は小さめで。
+        
+        
+        
+        
+//        
+//        以下、参考に置く
+//        
+//        var myDefault = NSUserDefaults.standardUserDefaults()
+//        var photoURLArray = myDefault.objectForKey("photoURLArray") as! NSMutableArray
+//        var movieURLArray = myDefault.objectForKey("movieURLArray") as! NSMutableArray
+//        
+//        
+//        // if strURL != nil{
+//        
+//        if photoURLArray.count > 0 {
+//            
+//            var cell:photoTableViewCell = tableView.dequeueReusableCellWithIdentifier("photoCell", forIndexPath: indexPath) as! photoTableViewCell
+//            
+//            
+//            var arrayNum = photoURLArray.count
+//            
+//            //スクロールが走る表示全体サイズを指定。写真の150幅に、20の余白で170
+//            let scrViewWidth:CGFloat = CGFloat(170 * arrayNum )
+//            
+//            
+//            
+//            
+//            //スクロールビューから追加したビューを一旦削除
+//            removeAllSubviews(cell.scrView)
+//            
+//            var subviews = cell.scrView.subviews
+//            for subview in subviews{
+//                subview.removeFromSuperview()
+//            }
+//            
+//            
+//            
+//            cell.scrView.contentSize = CGSizeMake(scrViewWidth, 150)
+//            
+//            
+//            countNum = 0
+//            for strURL in photoURLArray{
+//                print(strURL)
+//                
+//                var url = NSURL(string: strURL as! String)
+//                
+//                let fetchResult: PHFetchResult = PHAsset.fetchAssetsWithALAssetURLs([url!], options: nil)
+//                
+//                if fetchResult.firstObject != nil{
+//                    
+//                    let asset: PHAsset = fetchResult.firstObject as! PHAsset
+//                    
+//                    
+//                    //                      print("pixelWidth:\(asset.pixelWidth)");
+//                    //                      print("pixelHeight:\(asset.pixelHeight)");
+//                    //
+//                    let manager: PHImageManager = PHImageManager()
+//                    manager.requestImageForAsset(asset,targetSize: CGSizeMake(5, 500),contentMode: .AspectFit,options: nil) { (image, info) -> Void in
+//                        
+//                        //imageViewのaspectFitをつける必要がある？このままで良いかも
+//                        var imageView = UIImageView()
+//                        
+//                        //各写真イメージのX座標開始位置をpositionXとする。150幅に、20の余白で170
+//                        var positionX:CGFloat = CGFloat(170 * self.countNum)
+//                        
+//                        //写真の位置サイズ指定
+//                        imageView.frame = CGRectMake(positionX, 0, 150, 150)
+//                        imageView.image = image
+//                        cell.scrView.addSubview(imageView)
+//                        
+//                        //写真をキャンセルするボタンイメージを各写真に設置する
+//                        var picCancelImage = UIImageView()
+//                        
+//                        picCancelImage.frame = CGRectMake(positionX+125,0,25,25)
+//                        picCancelImage.image = UIImage(named:"cancel-red")
+//                        cell.scrView.addSubview(picCancelImage)
+//                        
+//                        //キャンセルボタンの位置に透明ボタンを被せて配置する
+//                        var picCancelBtn = UIButton()
+//                        picCancelBtn.setTitle("", forState: .Normal)
+//                        picCancelBtn.frame = CGRectMake(positionX+125, 0, 25, 25)
+//                        picCancelBtn.addTarget(self, action: "tapCancel:", forControlEvents:.TouchUpInside)
+//                        cell.scrView.addSubview(picCancelBtn)
+//                        
+//                        
+//                        self.countNum++
+//                        
+//                        
+//                        //                              cell.picCancelBtn.hidden = false
+//                    }
+//                }
+//                
+//            }
+//            
+//            return cell
+//
+//        ここまで参考
+//        
+//        
+//        
+//        
+//        
+        
         
         
         //キーボードがテキストに被らないようにする下処理、キーボードの動きを感知？
@@ -494,35 +496,17 @@ class AddDiaryViewController: UIViewController, UITextViewDelegate,UIImagePicker
         }
 
         
-//        if let userInfo = notification.userInfo {
-//            if let keyboardFrame = userInfo[UIKeyboardFrameEndUserInfoKey]?.CGRectValue, animationDuration = userInfo[UIKeyboardAnimationDurationUserInfoKey]?.doubleValue {
-//                restoreScrollViewSize()
-//                
-//                let convertedKeyboardFrame = scrollView.convertRect(keyboardFrame, fromView: nil)
-//                var offsetY: CGFloat = CGRectGetMaxY(diaryTextView.frame) - CGRectGetMinY(convertedKeyboardFrame)
-//                
-//                //MARK:追加
-//                diaryTextView.frame = CGRectMake(8,8, diaryTextView.bounds.width, myBoundsize.height - convertedKeyboardFrame.height-65)
-//                
-//                if offsetY < 0 { return }
-//                //Mark:計算結果を使わずにここで決め打ちしてしまう方が安定
-//                offsetY = 10.0
-//                
-//                
-//                updateScrollViewSize(offsetY, duration: animationDuration)
-//            }
-//        }
         
     }
     
     func keyboardWillBeHidden(notification: NSNotification) {
-//        restoreScrollViewSize()
+
         
         if let userInfo = notification.userInfo {
             
             let duration : NSTimeInterval = userInfo[UIKeyboardAnimationDurationUserInfoKey]! as! NSTimeInterval
             
-            //どうしてここ８？
+ 
             self.bottomLayoutConstraint.constant = 8
             
             UIView.animateWithDuration(duration, animations: { () -> Void in
@@ -533,30 +517,6 @@ class AddDiaryViewController: UIViewController, UITextViewDelegate,UIImagePicker
 
         
     }
-
-    // MARK: - UITextFieldDelegate//ここがリターンじゃなくボタンの設定も？//ここが効かない,テキストフィールドなので　doneボタンを付ける
-//    func textFieldShouldReturn(textField: UITextField) -> Bool {
-//        textField.resignFirstResponder()
-//        return true
-//    }
-    
-    
-//    func updateScrollViewSize(moveSize: CGFloat, duration: NSTimeInterval) {
-//        UIView.beginAnimations("ResizeForKeyboard", context: nil)
-//        UIView.setAnimationDuration(duration)
-//        
-//        let contentInsets = UIEdgeInsetsMake(0, 0, moveSize, 0)
-//        scrollView.contentInset = contentInsets
-//        scrollView.scrollIndicatorInsets = contentInsets
-//        scrollView.contentOffset = CGPointMake(0, moveSize)
-//        
-//        UIView.commitAnimations()
-//    }
-//    
-//    func restoreScrollViewSize() {
-//        scrollView.contentInset = UIEdgeInsetsZero
-//        scrollView.scrollIndicatorInsets = UIEdgeInsetsZero
-//    }
 
 
     @IBAction func saveBtn(sender: UIButton) {
