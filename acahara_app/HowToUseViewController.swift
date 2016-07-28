@@ -60,12 +60,45 @@ class HowToUseViewController: UIViewController {
 
         addBtn.tintColor = UIColor.whiteColor()
     }
+    
+    
+    override func viewWillAppear(animated: Bool) {
+        var myDefault = NSUserDefaults.standardUserDefaults()
+        var stepAdd = myDefault.stringForKey("howToAdd")
+        
+        if stepAdd != nil{
+           
+            
+            //タブで記録のページAddTableVCへ切り替え　そこで記録成功のアラートが出る。
+            //これだと違和感があるのでやめとく　後学のために残す
+            
+//          self.tabBarController!.selectedIndex = 1;
+            
+            let alert: UIAlertController = UIAlertController(title: "記録成功", message: "負けないで！", preferredStyle: .Alert)
+            self.presentViewController(alert, animated: true) { () -> Void in
+                let delay = 1.0 * Double(NSEC_PER_SEC)
+                let time  = dispatch_time(DISPATCH_TIME_NOW, Int64(delay))
+                dispatch_after(time, dispatch_get_main_queue(), {
+                    self.dismissViewControllerAnimated(true, completion: nil)
+                })
+            }
+            
+            //"howToAdd"を空にして
+            var appDomain:String = NSBundle.mainBundle().bundleIdentifier!
+            myDefault.removeObjectForKey("howToAdd")
+            myDefault.synchronize()
+            
+
+        }
+
+        
+    }
 
     @IBAction func addCoverBtn(sender: UIButton) {
 
         var myDefault = NSUserDefaults.standardUserDefaults()
         
-        myDefault.setObject("1", forKey: "stepAdd")
+        myDefault.setObject("1", forKey: "howToAdd")
         
         myDefault.synchronize()
         

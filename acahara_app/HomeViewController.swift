@@ -164,10 +164,7 @@ class HomeViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
 
 
     }
-    
-    
-    
-    
+
     
     
     

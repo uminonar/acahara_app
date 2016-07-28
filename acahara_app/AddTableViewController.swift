@@ -1523,12 +1523,17 @@ class AddTableViewController: UIViewController,UITableViewDelegate,UITableViewDa
         myDefault.removeObjectForKey("photoURLArray")
         
         //userDefaultにデータを書き込んで保存したことを書き込む
+        //howToAddVCから来たのでない場合には、という条件を付ける
+        
+        var howToAdd = myDefault.stringForKey("howToAdd")
+        if howToAdd == nil{
+        
         myDefault.setObject("true", forKey: "saveSuccess")
         
         //即反映させる
         myDefault.synchronize()
 
-        
+        }
     }
 
 //            // 古い書き方
