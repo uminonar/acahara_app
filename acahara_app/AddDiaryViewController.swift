@@ -154,6 +154,14 @@ class AddDiaryViewController: UIViewController, UITextViewDelegate,UIImagePicker
     
     //photoCoverBtnがタップされた時、写真を選択できる一覧を表示
     func onClickPhotoButton(sender: UIButton){
+        
+        
+        //それまでに書きかけの文章があった場合にそれを保持させる
+        var diaryText = diaryTextView.text
+        var myDefault = NSUserDefaults.standardUserDefaults()
+        myDefault.setObject(diaryText, forKey: "diary")
+        myDefault.synchronize()
+
 
         let picker = QBImagePickerController()
         picker.delegate = self
@@ -183,7 +191,14 @@ class AddDiaryViewController: UIViewController, UITextViewDelegate,UIImagePicker
     
     //movieCoverBtnがタップされた時、動画を選択できる一覧を表示
     func onClickFilmButton(sender: UIButton){
-
+        
+        //それまでに書きかけの文章があった場合にそれを保持させる
+        var diaryText = diaryTextView.text
+        var myDefault = NSUserDefaults.standardUserDefaults()
+        myDefault.setObject(diaryText, forKey: "diary")
+        myDefault.synchronize()
+        
+        
         
         let picker = QBImagePickerController()
         picker.delegate = self
@@ -252,7 +267,9 @@ class AddDiaryViewController: UIViewController, UITextViewDelegate,UIImagePicker
                 //            photoURLArray.append("assets-library://asset/asset.JPG?id="+urlArray2[2]+"&ext=JPG")
                 
                 let assetURL = "assets-library://asset/asset.JPG?id="+urlArray2[2]+"&ext=JPG"
-                print(assetURL)
+                
+                print("------------")
+                print("assetURL = \(assetURL)")
                 
                 
                 // photoURLArray.addObject(assetURL) as! NSMutableArray
@@ -274,7 +291,8 @@ class AddDiaryViewController: UIViewController, UITextViewDelegate,UIImagePicker
                 
                 //TODO:ここがJPGをMOVに変えただけではダメ
                 let movieURL = "assets-library://asset/asset.MOV?id="+movieArray2[2]+"&ext=MOV"
-                print(movieURL)
+                print("--------------")
+                print("movieURL = \(movieURL)")
                 
                 
                 movieURLArray.addObject(movieURL)
@@ -521,21 +539,19 @@ class AddDiaryViewController: UIViewController, UITextViewDelegate,UIImagePicker
 
     @IBAction func saveBtn(sender: UIButton) {
         
-        var diaryText = diaryTextView.text
+        var diaryText = String(diaryTextView.text)
     
-        //if ((diaryText != nil) && (diaryText != "")){
-            //ユーザーデフォルトを用意する
-            var myDefault = NSUserDefaults.standardUserDefaults()
-            //データを書き込んで
-            myDefault.setObject(diaryText, forKey: "diary")
-            
-            //即反映させる
-            myDefault.synchronize()
+        //以下とまらない
+        var myDefault = NSUserDefaults.standardUserDefaults()
+        myDefault.setObject(diaryText, forKey: "diary")
+        print("------diary-----")
+        print(myDefault.stringForKey("diary"))
+        myDefault.synchronize()
         
         diaryTextView.resignFirstResponder()
             
         self.dismissViewControllerAnimated(true, completion: nil)
-        //}
+        
         
     }
     
@@ -543,13 +559,19 @@ class AddDiaryViewController: UIViewController, UITextViewDelegate,UIImagePicker
     
     @IBAction func cancelBtn(sender: UIButton) {
         
+        var appDomain:String = NSBundle.mainBundle().bundleIdentifier!
+        var myDefault = NSUserDefaults.standardUserDefaults()
+        myDefault.removeObjectForKey("diary")
+        myDefault.removeObjectForKey("photoURLArray")
+        myDefault.removeObjectForKey("movieURLArray")
+        
         diaryTextView.resignFirstResponder()
         
         self.dismissViewControllerAnimated(true, completion: nil)
     }
     
     
-    //キャンセルがされた時の処理
+    //画像や動画の選択画面でキャセルが押された時の処理
     func qb_imagePickerControllerDidCancel(imagePickerController: QBImagePickerController!) {
         //モーダル画面を落とす
         self.dismissViewControllerAnimated(true, completion: nil)

@@ -110,7 +110,7 @@
                 <outlet property="addWhere" destination="dRm-FQ-5hX" id="P70-HC-UhY"/>
                 <outlet property="addWho" destination="XuH-Y7-MQK" id="73p-YI-89D"/>
             </connections>
-            <point key="canvasLocation" x="294" y="-160"/>
+            <point key="canvasLocation" x="182" y="-166"/>
         </tableViewCell>
     </objects>
 </document>

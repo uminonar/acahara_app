@@ -14,6 +14,7 @@ class HomeViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
     let myBoundsize:CGSize = UIScreen.mainScreen().bounds.size
     
     var countNum = 0
+    var movCountNum = 0
     var selectedIndex = -1
     @IBOutlet weak var homeTableView: UITableView!
 
@@ -282,7 +283,7 @@ class HomeViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
             cell.pictureScrView.contentSize = CGSizeMake(scrViewWidth, 120)
             
                 
-            countNum = 0
+            self.countNum = 0
             for strURL in selectedPictures{
                 print("画像のassetURL:\(strURL)")
                 
@@ -395,7 +396,7 @@ class HomeViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
             cell.movieScrView.contentSize = CGSizeMake(scrViewWidth, 120)
             
             
-            countNum = 0
+            self.movCountNum = 0
             for strURL in selectedMovies{
                 print("動画のassetURL:\(strURL)")
                 
@@ -437,7 +438,7 @@ class HomeViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
                         
                         movSelectBtn.tag = indexPath.row
                         
-                        self.countNum++
+                        self.movCountNum++
                         
                         
                         //                              cell.picCancelBtn.hidden = false
