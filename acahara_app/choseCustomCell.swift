@@ -36,7 +36,6 @@ class choseCustomCell: UITableViewCell {
 
     @IBOutlet weak var postTextViewBtn: UIButton!
 
-    @IBOutlet weak var coverBtn: UIButton!
 
     
 

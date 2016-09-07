@@ -18,8 +18,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate,SSASideMenuDelegate  {
     var photoURLArray = false
     var movieURLArray = false
     
+    //トップページから記録フォームに行ってキャンセルでなく保存して戻った場合にのみ保存成功のメッセージを表示するために
+    var saveCheck = false
+    
  
-
     var window: UIWindow?
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {

@@ -10,6 +10,10 @@ import UIKit
 
 class homeTableViewCell: UITableViewCell {
     
+    @IBOutlet weak var imageScrollHeightLC: NSLayoutConstraint!
+    
+    @IBOutlet weak var movieScrollHeightLC: NSLayoutConstraint!
+    
     //起動画面サイズの取得
     let myBoundsize:CGSize = UIScreen.mainScreen().bounds.size
     

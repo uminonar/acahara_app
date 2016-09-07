@@ -231,7 +231,7 @@ class AddDiaryViewController: UIViewController, UITextViewDelegate,UIImagePicker
     
     func qb_imagePickerController(imagePickerController: QBImagePickerController, didFinishPickingAssets assets: [AnyObject]) {
         
-        
+        var myDefault = NSUserDefaults.standardUserDefaults()
         
         imagecount = 0
         var photoURLArray:NSMutableArray = []
@@ -275,6 +275,8 @@ class AddDiaryViewController: UIViewController, UITextViewDelegate,UIImagePicker
                 // photoURLArray.addObject(assetURL) as! NSMutableArray
                 
                 photoURLArray.addObject(assetURL)
+                myDefault.setObject(photoURLArray, forKey: "photoURLArray")
+                myDefault.synchronize()
                 
             }
             
@@ -297,15 +299,10 @@ class AddDiaryViewController: UIViewController, UITextViewDelegate,UIImagePicker
                 
                 movieURLArray.addObject(movieURL)
                 
+                myDefault.setObject(movieURLArray, forKey: "movieURLArray")
+                myDefault.synchronize()
             }
     
-        
-            //UserDefaultに配列を保存
-            var myDefault = NSUserDefaults.standardUserDefaults()
-            myDefault.setObject(photoURLArray, forKey: "photoURLArray")
-            myDefault.setObject(movieURLArray, forKey: "movieURLArray")
-            myDefault.synchronize()
-            
         }
         
 

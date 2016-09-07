@@ -11,6 +11,8 @@ import UIKit
 class HowToUseViewController: UIViewController {
 
     
+    var myApp = UIApplication.sharedApplication()
+        .delegate as! AppDelegate
 
     
     @IBOutlet weak var htuImageVIew: UIImageView!
@@ -41,14 +43,12 @@ class HowToUseViewController: UIViewController {
         htuMessage.text = message[r]
         
 
-        let sakura:UIColor = UIColor(red:1.0,green:0.3,blue:0.3,alpha:1.0)
         
         //sideBar向け
         navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Left", style: .Plain, target: self, action: #selector(SSASideMenu.presentLeftMenuViewController))
         
         htuMenu.image = UIImage(named:"menu")?.imageWithRenderingMode(.AlwaysTemplate)
         
-        let sakura3:UIColor = UIColor(red:1.0,green:0.3,blue:0.3,alpha:1.0)
         
         htuMenu.tintColor = UIColor.whiteColor()
         
@@ -66,7 +66,12 @@ class HowToUseViewController: UIViewController {
         var myDefault = NSUserDefaults.standardUserDefaults()
         var stepAdd = myDefault.stringForKey("howToAdd")
         
-        if stepAdd != nil{
+        
+        //記録フォームを立ち上げて戻った時はこのデフォルトが空じゃない
+        //その場合にメッセージを表示する
+        //キャンセルでなく保存した場合かどうか判定してメッセージ表示
+        
+        if stepAdd != nil && self.myApp.saveCheck == true {
            
             
             //タブで記録のページAddTableVCへ切り替え　そこで記録成功のアラートが出る。
@@ -87,6 +92,8 @@ class HowToUseViewController: UIViewController {
             var appDomain:String = NSBundle.mainBundle().bundleIdentifier!
             myDefault.removeObjectForKey("howToAdd")
             myDefault.synchronize()
+            //フォーム保存時にtrueにしたappDelegateの変数をfalseに戻す
+            self.myApp.saveCheck = false
             
 
         }
@@ -95,7 +102,8 @@ class HowToUseViewController: UIViewController {
     }
 
     @IBAction func addCoverBtn(sender: UIButton) {
-
+        
+        //記録フォームから戻ってきた時にメッセージが流れるようにセット
         var myDefault = NSUserDefaults.standardUserDefaults()
         
         myDefault.setObject("1", forKey: "howToAdd")
@@ -103,7 +111,7 @@ class HowToUseViewController: UIViewController {
         myDefault.synchronize()
         
         
-        
+        //記録フォームを立ち上げる
         let AddTableView = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("AddTableViewController") as UIViewController
         
         presentViewController(AddTableView, animated: true, completion: nil)

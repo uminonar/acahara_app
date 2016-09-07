@@ -246,6 +246,8 @@ class AssistTableViewController: UIViewController,UITableViewDelegate,UITableVie
         //var cell: UITableViewCell
         
         
+        //var adjustrow_no = indexPath.row
+        
         if indexPath.row == 0{
             
             //cellを生成？
@@ -267,6 +269,7 @@ class AssistTableViewController: UIViewController,UITableViewDelegate,UITableVie
             
             let HiddenSeparatorInset: UIEdgeInsets = UIEdgeInsetsMake(0, CGFloat(UInt16.max), 0, 0)
             cell.separatorInset = HiddenSeparatorInset
+            
             return cell
             
         }
@@ -441,11 +444,11 @@ class AssistTableViewController: UIViewController,UITableViewDelegate,UITableVie
                 cell.postDiary.attributedText = NSAttributedString(string: cell.postDiary.text,
                                                                    attributes: attributes)
                 cell.postDiary.font = UIFont.systemFontOfSize(13)
-                
-                let myTap = UITapGestureRecognizer(target: self, action: "tapGesture:")
-                
-                cell.postDiary.addGestureRecognizer(myTap)
-                cell.postDiary.tag = postindex
+//                
+//                let myTap = UITapGestureRecognizer(target: self, action: "tapGesture:")
+//                
+//                cell.postDiary.addGestureRecognizer(myTap)
+//                cell.postDiary.tag = postindex
                 
 //ここ改造
 //                cell.postImageView.image = UIImage(named:(posts[postindex]["picture"] as! String))
@@ -645,9 +648,10 @@ class AssistTableViewController: UIViewController,UITableViewDelegate,UITableVie
                 }
 
                 
-                
-                cell.coverBtn.addTarget(self, action: "selected:", forControlEvents: .TouchUpInside)
-                cell.coverBtn.tag = postindex
+//                
+//                cell.coverBtn.addTarget(self, action: "selected:", forControlEvents: .TouchUpInside)
+//                cell.coverBtn.tag = postindex
+                cell.tag = postindex
                 
 //                
 //                //全選択ボタンが押されたら
@@ -663,8 +667,10 @@ class AssistTableViewController: UIViewController,UITableViewDelegate,UITableVie
 //                //ここ何で重ねてる？
 
 //                var selectedFlag = posts[postindex]["selectedFlag"]
-                var strFlag = String(posts[postindex]["selectedFlag"]!)
-                var selectedFlag = Int(strFlag)
+                var strFlag = String(posts[postindex]["selectFlag"]!)
+                print("=======================================================================================")
+                print("strFlag = \(strFlag)")
+                var selectedFlag = Int(strFlag) // 原因
                 
                 
                 if selectedFlag == 1 {
@@ -899,6 +905,7 @@ class AssistTableViewController: UIViewController,UITableViewDelegate,UITableVie
     
     // delegate didSelectRow
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        print("cell tap tag = \(tableView.cellForRowAtIndexPath(indexPath)?.tag)")
         
         if 0 == indexPath.row {
             //            // switching open or close
@@ -914,9 +921,63 @@ class AssistTableViewController: UIViewController,UITableViewDelegate,UITableVie
             }
             
             
+        }else if indexPath.row == 1 {
+            //deselect
+            tableView.deselectRowAtIndexPath(indexPath, animated: true)
+            
+        }else if indexPath.row == 2 {
+            //deselect
+            tableView.deselectRowAtIndexPath(indexPath, animated: true)
         }
-        // deselec
-        tableView.deselectRowAtIndexPath(indexPath, animated: true)
+        
+        
+        
+        //        var selectedFlag = posts[sender.tag]["selectedFlag"] as! Bool
+        var strFlag = String(posts[indexPath.row]["selectedFlag"]!)
+        print("===============================================")
+        print("strFlag \(strFlag)")
+        var selectedFlag = Int(strFlag)
+        
+        if selectedFlag == 1{
+            
+            var postDic = posts[indexPath.row].mutableCopy() as! NSMutableDictionary
+            print("postDic1 = \(postDic)")
+            
+            postDic["selectedFlag"] = 0
+            print("postDic2 = \(postDic)")
+            
+            posts[indexPath.row] = postDic
+            print("posts[sender.tag] = \(posts[indexPath.row])")
+            
+            //            posts[sender.tag]["selectedFlag"] = 0
+            
+            //選択された投稿の数を調べるグローバル変数を調整
+            selectedFlagCount -= 1
+            //ここネットから引っ張ってくる前にエラーが出るの、なぜ他は出ない？
+            var selectedID = posts[indexPath.row]["id"]
+            print("selectedID1 = \(selectedID)")
+            //            selctedPostsID.removeObject(selectedID)
+            
+        }else{
+            
+            var postDic = posts[indexPath.row].mutableCopy() as! NSMutableDictionary
+            postDic["selectedFlag"] = 1
+            
+            posts[indexPath.row] = postDic
+            
+            //選択された投稿の数を調べるグローバル変数を調整
+            selectedFlagCount += 1
+            
+            
+            var selectedID = posts[indexPath.row]["id"]
+            print("selectedID0 = \(selectedID)")
+            //            selctedPostsID.addObject(selectedID)
+            
+        }
+        
+        assistTableView.reloadData()
+
+        
     }
     
     

@@ -22,9 +22,6 @@
                             <constraint firstAttribute="width" constant="25" id="F5e-Sa-fdt"/>
                         </constraints>
                     </imageView>
-                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rjl-wz-ZVZ">
-                        <rect key="frame" x="0.0" y="9" width="299" height="253"/>
-                    </button>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="NSx-69-h6F">
                         <rect key="frame" x="41" y="13" width="40" height="40"/>
                         <constraints>
@@ -153,7 +150,6 @@
             </tableViewCellContentView>
             <connections>
                 <outlet property="circle" destination="1Ck-qb-Dh9" id="Q3V-B8-B0y"/>
-                <outlet property="coverBtn" destination="rjl-wz-ZVZ" id="PGk-Ys-lBK"/>
                 <outlet property="postCreated" destination="Wid-xO-76S" id="grz-nF-tVp"/>
                 <outlet property="postDiary" destination="egZ-g6-PIm" id="SPD-lh-veJ"/>
                 <outlet property="postMoreBtn" destination="A6F-vO-HpP" id="QUg-QP-VuG"/>

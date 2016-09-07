@@ -27,13 +27,8 @@ class HomeViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
     // ボタンを用意
 
     @IBOutlet weak var addBtn: UIBarButtonItem!
+    
     var posts:NSMutableArray = []
-    
-    //var temp:NSMutableArray
-    
-    
-    
-    
     
 
     override func viewDidLoad() {
@@ -89,6 +84,7 @@ class HomeViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
 //        homeWrite.setImage(writeImage, forState: .Normal)
         
         //ここをAPI取得に切り替える
+        
         var url = NSURL(string: "http://acahara.angry.jp/get.post_json.php")
         var request = NSURLRequest(URL:url!)
         var jsondata = (try! NSURLConnection.sendSynchronousRequest(request, returningResponse: nil))
@@ -276,6 +272,8 @@ class HomeViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
         
         if picNum > 0{
             print("============ 写真が存在するとき ============")
+            cell.imageScrollHeightLC.constant = 120
+            
             print(picNum)
             //スクロールが走る表示全体サイズを指定。写真の120幅に、10の余白で130
             let scrViewWidth:CGFloat = CGFloat(130 * picNum )
@@ -344,9 +342,8 @@ class HomeViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
             
             //選択写真が存在しない場合、画像表示箇所が縮まるように
             removeAllSubviews(cell.pictureScrView)
-            cell.pictureScrView.frame.size.height = 0
-            cell.pictureScrView.frame.size.width = 0
-            print(cell.pictureScrView.frame.size.height)
+            
+            cell.imageScrollHeightLC.constant = 0
             
 //            return cell
             
@@ -389,6 +386,9 @@ class HomeViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
         
         if movNum > 0{
             print("============ 動画が存在するとき ============")
+            
+            cell.movieScrollHeightLC.constant = 120
+            
             print(movNum)
             //スクロールが走る表示全体サイズを指定。写真の120幅に、10の余白で130
             let scrViewWidth:CGFloat = CGFloat(130 * picNum )
@@ -453,9 +453,8 @@ class HomeViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
         }else{
             print("============ 動画が存在しないとき ============")
             //選択写真が存在しない場合、画像表示箇所が縮まるように
-            cell.movieScrView.frame.size.height = 0
-            cell.movieScrView.frame.size.width = 0
-            print(cell.movieScrView.frame.size.height)
+            
+            cell.movieScrollHeightLC.constant = 0
         
 //            return cell
         }   // if movNum > 0　の終わり
